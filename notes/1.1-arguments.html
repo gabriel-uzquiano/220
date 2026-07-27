@@ -7,6 +7,26 @@
   <link rel="stylesheet" href="../shared/notes.css">
   <script type="text/javascript" async
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<style>
+.mc-exercise { margin: 1.2rem 0 2rem; width: 55%; margin-left: 8%; }
+.mc-question { margin-bottom: 0.7rem; font-size: 1.4rem; line-height: 2rem; }
+.mc-options { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.8rem; }
+.mc-option { display: flex; align-items: baseline; gap: 0.6rem; cursor: pointer; font-size: 1.3rem; line-height: 1.7rem; }
+.mc-option input { margin: 0; flex-shrink: 0; }
+.mc-controls { display: flex; gap: 0.6rem; margin-bottom: 0.5rem; }
+.btn-check, .btn-reveal {
+  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+  font-size: 0.82rem; padding: 0.22rem 0.7rem;
+  border-radius: 3px; cursor: pointer; border: 1px solid #ccc;
+  background: #fffff8; color: #111;
+}
+.btn-check:hover { background: #006666; color: #fff; border-color: #006666; }
+.mc-feedback { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.9rem; margin-bottom: 0.3rem; }
+.fb-ok { color: #1a6e2e; } .fb-err { color: #8b1a1a; }
+.mc-answer { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.88rem; color: #555; margin-top: 0.3rem; }
+</style>
+
 </head>
 <body>
 <nav class="back-nav"><a href="https://gabriel-uzquiano.github.io/courses/220">← PHIL 220</a></nav>
@@ -275,15 +295,24 @@ true or false. There is a contrast between them and
 to ask questions and issue commands, respectively.</p>
 <p>Which of the sentences below are <em>declarative sentences</em> of
 English?</p>
-<pre class="QualitativeProblem MultipleSelection" data-options="check"
-data-submission="none"><code>1.
-| Fight on!
-|* Whales live underwater
-| Where do whales live?
-|* If whales live underwater, then some mammals do
-| Shut the door please
-|* You will shut the door
-| Would you shut the door?</code></pre>
+<div class="mc-exercise" data-correct='[1,3,5]' data-multi="true">
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="checkbox" name="ex_1_0" value="0"><span>Fight on!</span></label>
+    <label class="mc-option"><input type="checkbox" name="ex_1_1" value="1"><span>Whales live underwater</span></label>
+    <label class="mc-option"><input type="checkbox" name="ex_1_2" value="2"><span>Where do whales live?</span></label>
+    <label class="mc-option"><input type="checkbox" name="ex_1_3" value="3"><span>If whales live underwater, then some mammals do</span></label>
+    <label class="mc-option"><input type="checkbox" name="ex_1_4" value="4"><span>Shut the door please</span></label>
+    <label class="mc-option"><input type="checkbox" name="ex_1_5" value="5"><span>You will shut the door</span></label>
+    <label class="mc-option"><input type="checkbox" name="ex_1_6" value="6"><span>Would you shut the door?</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> Whales live underwater; If whales live underwater, then some mammals do; You will shut the door</div>
+</div>
 <p>The premises are meant to support the conclusion, but there is no set
 order in which premises and conclusion occur in an argument. The
 conclusion is generally marked by occurrences of phrases such as ‘so’,
@@ -317,12 +346,21 @@ Nothing is future, present, and past. So, there is no genuine
 change.</p>
 </dd>
 </dl>
-<pre class="QualitativeProblem MultipleChoice" data-options="check"
-data-submission="none"><code>A.
-| If there is genuine change, then events must be future, then present, then past.
-| If something is future, then it is neither present nor past. 
-| Nothing is future, present, and past.
-|* There is no genuine change.</code></pre>
+<div class="mc-exercise" data-correct='[3]' >
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="radio" name="ex_2_0" value="0"><span>If there is genuine change, then events must be future, then present, then past.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_2_1" value="1"><span>If something is future, then it is neither present nor past.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_2_2" value="2"><span>Nothing is future, present, and past.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_2_3" value="3"><span>There is no genuine change.</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> There is no genuine change.</div>
+</div>
 <dl>
 <dt>Argument B</dt>
 <dd>
@@ -330,11 +368,20 @@ data-submission="none"><code>A.
 I’m bilingual. For after all, I speak both English and Spanish.</p>
 </dd>
 </dl>
-<pre class="QualitativeProblem MultipleChoice" data-options="check"
-data-submission="none"><code>B.
-|If I speak both English and Spanish, then I&#39;m bilingual.
-|*I&#39;m bilingual
-|I speak both English and Spanish.</code></pre>
+<div class="mc-exercise" data-correct='[1]' >
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="radio" name="ex_3_0" value="0"><span>If I speak both English and Spanish, then I&#x27;m bilingual.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_3_1" value="1"><span>I&#x27;m bilingual</span></label>
+    <label class="mc-option"><input type="radio" name="ex_3_2" value="2"><span>I speak both English and Spanish.</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> I&#x27;m bilingual</div>
+</div>
 <dl>
 <dt>Argument C</dt>
 <dd>
@@ -343,11 +390,20 @@ time traveler could change the past. Nothing, however, can change the
 past.</p>
 </dd>
 </dl>
-<pre class="QualitativeProblem MultipleChoice" data-options="check"
-data-submission="none"><code>C.
-|* Time travel is impossible.
-| If time travel were possible, then a time traveler could change the past. 
-| Nothing can change the past.</code></pre>
+<div class="mc-exercise" data-correct='[0]' >
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="radio" name="ex_4_0" value="0"><span>Time travel is impossible.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_4_1" value="1"><span>If time travel were possible, then a time traveler could change the past.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_4_2" value="2"><span>Nothing can change the past.</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> Time travel is impossible.</div>
+</div>
 <h1 id="validity">validity</h1>
 <p>Some arguments seem <em>risk-free</em> in that the truth of their
 premises automatically guarantees the truth of its conclusion. That
@@ -492,5 +548,33 @@ start.</li>
 <p>This argument will do <em>provided it is given in a context in which
 the tank is not full and the car does not start.</em></p>
 </article>
+
+<script>
+function checkMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var correct = JSON.parse(ex.dataset.correct);
+  var multi = ex.dataset.multi === "true";
+  var feedback = ex.querySelector('.mc-feedback');
+  feedback.removeAttribute('hidden');
+  if (multi) {
+    var checked = Array.from(ex.querySelectorAll('input[type=checkbox]:checked')).map(function(c){ return parseInt(c.value); });
+    var ok = correct.length === checked.length && correct.every(function(v){ return checked.includes(v); });
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  } else {
+    var selected = ex.querySelector('input[type=radio]:checked');
+    if (!selected) { feedback.textContent = 'Please select an option.'; feedback.className = 'mc-feedback'; return; }
+    var ok = correct.includes(parseInt(selected.value));
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  }
+}
+function revealMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var ans = ex.querySelector('.mc-answer');
+  ans.removeAttribute('hidden');
+}
+</script>
+
 </body>
 </html>
