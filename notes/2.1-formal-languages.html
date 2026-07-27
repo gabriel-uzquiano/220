@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>formal languages and logic — PHIL 220</title>
+  <link rel="stylesheet" href="../shared/style.css">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <style>
+    /* Definition lists */
+    dl { margin: 1rem 0 1.25rem; }
+    dt { font-family: var(--font-sans); font-size: 0.82rem; font-weight: 600;
+         text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-primary);
+         margin-bottom: 0.1rem; }
+    dd { margin: 0 0 0.9rem 0; padding-left: 1.5rem;
+         border-left: 3px solid var(--color-border); }
+    /* Blockquotes */
+    blockquote { border-left: 3px solid var(--color-border); margin: 1rem 0;
+                 padding: 0.4rem 1rem; color: var(--color-muted); font-style: italic; }
+    /* Headings */
+    h1 { font-size: 1.55rem; margin: 0 0 1.5rem; font-weight: normal; }
+    h2 { font-size: 1.1rem; margin: 2rem 0 0.6rem; font-weight: bold; }
+    h3 { font-family: var(--font-sans); font-size: 0.85rem; font-weight: 700;
+         text-transform: uppercase; letter-spacing: 0.06em; margin: 1.5rem 0 0.4rem;
+         color: var(--color-primary); }
+    /* Lists */
+    ul, ol { margin: 0.5rem 0 0.9rem 1.4rem; }
+    li { margin-bottom: 0.25rem; }
+    /* Strong inside lists / body */
+    strong { font-weight: bold; }
+    em { font-style: italic; }
+    /* Nav */
+    .back-link { font-family: var(--font-sans); font-size: 0.78rem; }
+    .back-link a { color: var(--color-teal); text-decoration: none; }
+    .back-link a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="course-label">University of Southern California &middot; Philosophy</div>
+    <h1>PHIL 220: Introduction to Logic</h1>
+  </header>
+  <nav class="breadcrumb">
+    <a href="../index.html">Schedule</a>
+    <span>&rsaquo;</span>
+    formal languages and logic
+  </nav>
+<h1 id="formal-languages-and-logic">formal languages and logic</h1>
+<p>To make progress with the question of validity, we will now introduce
+a formal language, whose main purpose is to help us isolate and study an
+important family of valid argument forms centered on the behavior of a
+certain set of sentential connectives.</p>
+<h2 id="quotation">quotation</h2>
+<p>In order to discuss different aspects of natural language, we often
+mention some of its expressions. One way to do this is through the use
+of quotation marks. By way of illustration, consider the contrast:</p>
+<ul>
+<li>‘Los Angeles’ is composed of two words</li>
+<li>Los Angeles is composed of more than eighty cities</li>
+</ul>
+<p>The use of quotation marks makes sure the first sentence predicates
+something of a linguistic expression rather than the city designated by
+that expression. The same linguistic expression is <em>used</em> in the
+second sentence to predicate something of the city it designates,
+namely, the fact that it is composed of more than eighty cities. In the
+first sentence, the linguistic expression is merely <em>mentioned</em>
+in order to predicate something of it.</p>
+<p>In order to explore the distinction, please add quotation marks to
+each sentence below in order to produce a <em>true</em> statement.</p>
+<p>Please select any true statements below.</p>
+<pre class="QualitativeProblem MultipleSelection" data-options="check"
+data-submission="none"><code>A.
+| I is a Roman numeral for &#39;1&#39;
+|+&#39;I&#39; is a Roman numeral for 1
+| I is a Roman numeral for 1
+|&#39;I&#39; is a Roman numeral for &#39;1&#39;</code></pre>
+<pre class="QualitativeProblem MultipleSelection" data-options="check"
+data-submission="none"><code>B. 
+| England is part of &#39;New England&#39;
+|*&#39;England&#39; is part of &#39;New England&#39;
+| &#39;England&#39; is part of New England</code></pre>
+<pre class="QualitativeProblem MultipleSelection" data-options="check"
+data-submission="none"><code>C.
+| &#39;England&#39; is not part of &#39;New England&#39;
+|* England is not part of &#39;New England&#39;
+|* England is not part of New England</code></pre>
+<h2 id="form-and-meaning">form and meaning</h2>
+<p>We should now make explicit the link between the validity and the
+meaning of an important family of sentential connectives of English.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>The validity of the following form is due to the meaning of the word
+‘and’:</p>
+</dd>
+</dl>
+<ol type="1">
+<li><span class="math inline">\(p\)</span> and <span
+class="math inline">\(q\)</span>.</li>
+<li>Therefore, <span class="math inline">\(q\)</span>.</li>
+</ol>
+<p>There is no way to construct an instance of the argument with true
+premises and a false conclusion. To explain the link between the
+validity of the argument form and the meaning of the word ‘and’, note
+that</p>
+<ul>
+<li><p>The truth value of a sentence of the form ‘<span
+class="math inline">\(p\)</span> and <span
+class="math inline">\(q\)</span>’ is a function of the truth values of
+the simpler constituents <span class="math inline">\(p\)</span> and
+<span class="math inline">\(q\)</span>:</p>
+<pre class="TruthTable Simple" data-system="gamutPND"
+data-options="nocounterexample autoAtoms"
+data-submission="none"><code>1. p &amp; q</code></pre></li>
+<li><p>A sentence of the form ‘<span class="math inline">\(p\)</span>
+and <span class="math inline">\(q\)</span>’ is true only if both <span
+class="math inline">\(p\)</span> is true and <span
+class="math inline">\(q\)</span> is true. So, if ‘<span
+class="math inline">\(p\)</span> and <span
+class="math inline">\(q\)</span>’ is true, then <span
+class="math inline">\(q\)</span> <em>must be</em> true.</p></li>
+</ul>
+<p>If the premise of an argument of the form given above is true, then
+since both constituents are true, the latter constituent must be true.
+So, if the premises are true, then the conclusion must be true as
+well.</p>
+<h2 id="truth-functional-connectives">truth-functional connectives</h2>
+<p>We will now place the focus on valid argument forms, whose validity
+is explained in terms of the semantic behavior of sentential connectives
+such as</p>
+<ol type="1">
+<li><p>‘not’</p>
+<p>We will use the symbol <span class="math inline">\(\neg\)</span> for
+the word ‘not’ and rewrite ‘not <span class="math inline">\(p\)</span>’
+as: <span class="math inline">\(\neg p\)</span></p></li>
+<li><p>‘or’</p>
+<p>We will use the symbol <span class="math inline">\(\vee\)</span> for
+the word ‘or’ and rewrite ‘<span class="math inline">\(p\)</span> or
+<span class="math inline">\(q\)</span>’ as: <span
+class="math inline">\((p \vee q)\)</span>.</p></li>
+<li><p>‘and’</p>
+<p>We will use the symbol <span class="math inline">\(\wedge\)</span>
+for the word ‘and’ and rewrite ‘<span class="math inline">\(p\)</span>
+and <span class="math inline">\(q\)</span>’ as: <span
+class="math inline">\((p \wedge q)\)</span>.</p></li>
+<li><p>‘if …, then …’</p>
+<p>We will use the symbol <span class="math inline">\(\to\)</span> for
+the word ‘and’ and rewrite ‘if <span class="math inline">\(p\)</span>,
+then <span class="math inline">\(q\)</span>’ as: <span
+class="math inline">\((p \to q)\)</span>.</p></li>
+</ol>
+<p>What these connectives have in common is that the truth value of a
+sentence constructed in terms of them is a function of the truth values
+of their constituents, e.g.,</p>
+<pre class="TruthTable Simple" data-system="gamutPND"
+data-options="nocounterexample autoAtoms" data-submission="none"><code>2. (p \/ q)</code></pre>
+<pre class="TruthTable Simple" data-system="gamutPND"
+data-options="nocounterexample autoAtoms" data-submission="none"><code>3. - p</code></pre>
+<p>The truth tables for these connectives are responsible for the
+validity of the argument form:</p>
+<ol type="1">
+<li><span class="math inline">\(p \vee q\)</span>.</li>
+<li><span class="math inline">\(\neg p\)</span>.</li>
+<li>Therefore, <span class="math inline">\(q\)</span>.</li>
+</ol>
+<h2 id="how-to-specify-a-formal-language">how to specify a formal
+language</h2>
+<p>The formal language we will introduce is in some respects less
+complicated than natural languages such as English. You may even
+conceive of it as a <em>model</em> of natural language, one which will
+study the contribution of connectives like ‘not’, ‘or’, etc to the truth
+conditions of the sentences in which they occur and abstract away from
+other non-truth-functional features of those expressions.</p>
+<p>We should distinguish at least two different aspects of a language,
+whether natural or formal: syntax and semantics.</p>
+<ul>
+<li><p><em>Syntax</em> is concerned with the formal features of the
+expressions of a language regardless of what they mean.</p>
+<p>In a spoken natural language like English, certain sounds are
+combined into syllables and words, which are in turn parts of larger
+syntactic items such as sentences. The grammar of the language specifies
+what counts as word and how words may be combined into well-formed
+sentences of the language.</p></li>
+<li><p><em>Semantics</em> is concerned with the interpretation of the
+language.</p>
+<p>In order to be a competent user of a natural language, one must not
+only be able to recognize a word or a sentence of the language, one must
+know what they mean. Notice, however, that different words make
+different contributions to the meaning of the sentences in which they
+appear.</p></li>
+</ul>
+<p>There is a third aspect to consider when it comes to natural
+language:</p>
+<ul>
+<li><p><em>Pragmatics</em> studies the role of context in
+communication.</p>
+<p>In order to understand what is communicated by the use of a sentence,
+one must acknowledge know not only what the sentence literally means,
+but how that meaning interacts with the intentions of the speaker and
+the common ground of the context in which it is uttered.</p></li>
+</ul>
+<p>Pragmatics will <em>not</em> be relevant for the study of the formal
+languages we will subsequently introduce, but it will play a role in our
+discussion of the behavior of connectives such as ‘or’ and ‘if …, then
+…’ in natural language and the extent to which they are captured by the
+semantics of the formal language.</p>
+<h2 id="why-a-formal-language">why a formal language?</h2>
+<p>There are at least two important reasons to move to a formal
+language.</p>
+<p>First, we will be able to abstract away from certain
+non-truth-functional aspects of certain uses of connectives like ‘not’,
+‘or’, ‘and’ or ‘if …, then …’. It is not uncommon, for example, to hear
+an apparent difference in the truth conditions of the sentences:</p>
+<ul>
+<li>I felt ill and I took some syrup.</li>
+<li>I took some syrup and I felt ill.</li>
+</ul>
+<p>For another example, notice that it is not uncommon to hear an
+exclusive reading of the sentence:</p>
+<ul>
+<li>You can have ice cream or you can have pie</li>
+</ul>
+<p>when the truth conditions of a sentence of the form ‘<span
+class="math inline">\(p\)</span> or <span
+class="math inline">\(q\)</span>’ is compatible with the truth of both
+<span class="math inline">\(p\)</span> and <span
+class="math inline">\(q\)</span>.</p>
+<p>Second, we will be able to avoid the structural ambiguity of natural
+language. For a classic illustration of the issue, consider the
+argument:</p>
+<ol type="1">
+<li>Everything is caused by something.</li>
+<li>Only God can cause everything.</li>
+<li>Therefore, everything is caused by God.</li>
+</ol>
+<p>One reason the argument is difficult to assess is that the first
+premise is ambiguous between at least two different interpretations:</p>
+<ul>
+<li>Something causes everything.</li>
+<li>Everything is caused by something or another.</li>
+</ul>
+<p>The argument looks more promising on the first interpretation of the
+first premise, which makes it doubtful. On the other hand, the argument
+is hopeless on the second interpretation of the premise on which the
+premise looks more plausible.</p>
+<p>The issue of structural ambiguity arises for sentential connectives
+in English. For consider the argument:</p>
+<ol type="1">
+<li><p>The tank is empty or the car will start if, and only if, you turn
+the ignition.</p></li>
+<li><p>The car will start.</p></li>
+<li><p>You did not turn the ignition.</p></li>
+<li><p>The tank is empty</p></li>
+</ol>
+<p>The first premise is now ambiguous between two interpretations:</p>
+<ul>
+<li><p>The tank is empty <em>or</em> (the car will start if, and only
+if, you turn the ignition).</p></li>
+<li><p>(The tank is empty or the car will start) <em>if, and only
+if,</em> you turn the ignition.</p></li>
+</ul>
+</body>
+</html>

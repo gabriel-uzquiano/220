@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>validity and form — PHIL 220</title>
+  <link rel="stylesheet" href="../shared/style.css">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <style>
+    /* Definition lists */
+    dl { margin: 1rem 0 1.25rem; }
+    dt { font-family: var(--font-sans); font-size: 0.82rem; font-weight: 600;
+         text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-primary);
+         margin-bottom: 0.1rem; }
+    dd { margin: 0 0 0.9rem 0; padding-left: 1.5rem;
+         border-left: 3px solid var(--color-border); }
+    /* Blockquotes */
+    blockquote { border-left: 3px solid var(--color-border); margin: 1rem 0;
+                 padding: 0.4rem 1rem; color: var(--color-muted); font-style: italic; }
+    /* Headings */
+    h1 { font-size: 1.55rem; margin: 0 0 1.5rem; font-weight: normal; }
+    h2 { font-size: 1.1rem; margin: 2rem 0 0.6rem; font-weight: bold; }
+    h3 { font-family: var(--font-sans); font-size: 0.85rem; font-weight: 700;
+         text-transform: uppercase; letter-spacing: 0.06em; margin: 1.5rem 0 0.4rem;
+         color: var(--color-primary); }
+    /* Lists */
+    ul, ol { margin: 0.5rem 0 0.9rem 1.4rem; }
+    li { margin-bottom: 0.25rem; }
+    /* Strong inside lists / body */
+    strong { font-weight: bold; }
+    em { font-style: italic; }
+    /* Nav */
+    .back-link { font-family: var(--font-sans); font-size: 0.78rem; }
+    .back-link a { color: var(--color-teal); text-decoration: none; }
+    .back-link a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="course-label">University of Southern California &middot; Philosophy</div>
+    <h1>PHIL 220: Introduction to Logic</h1>
+  </header>
+  <nav class="breadcrumb">
+    <a href="../index.html">Schedule</a>
+    <span>&rsaquo;</span>
+    validity and form
+  </nav>
+<h1 id="validity-and-form">validity and form</h1>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>An argument is <em>valid</em> if, and only if, it is an instance of a
+<em>valid argument form</em>.</p>
+</dd>
+</dl>
+<p>It is the task of formal logic to offer a more precise
+characterization of a valid argument form. For the time being, we will
+content ourselves with the observation that valid forms exemplify the
+following features:</p>
+<ol type="1">
+<li><p>A valid argument form has <em>no</em> instances with <em>true
+premises</em> and a <em>false conclusion</em>.</p></li>
+<li><p>Instances of valid argument forms are truth preserving regardless
+of subject matter.</p></li>
+</ol>
+<p>For an argument to be valid is not just for the argument to be
+risk-free.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>The following argument is <em>risk-free</em>, yet it is not an
+instance of a valid argument form.</p>
+</dd>
+</dl>
+<ol type="1">
+<li>There is an elefant in the room.</li>
+<li>There are infinitely many numbers.</li>
+</ol>
+<p>The argument is risk-free because there is no risk the premise may be
+true and the conclusion false. Yet, it is not valid, since it fails to
+exemplify a valid argument form. If we let <span
+class="math inline">\(p\)</span> stand for ‘there is an elephant in the
+room’ and <span class="math inline">\(q\)</span> stand for ‘there are
+infinitely many numbers’, then the argument exemplifies the form:</p>
+<ol type="1">
+<li><span class="math inline">\(p\)</span></li>
+<li><span class="math inline">\(q\)</span></li>
+</ol>
+<p>But there are many instances of that argument form with true premises
+and a false conclusion, for example:</p>
+<ol type="1">
+<li>Los Angeles is in Southern California.</li>
+<li>New York is in Northern California.</li>
+</ol>
+<p>Here <span class="math inline">\(p\)</span> is replaced with ‘Los
+Angeles is in Southern California’ and <span
+class="math inline">\(q\)</span> is replaced with ‘New York is in
+Northern California’.</p>
+<p>Which argument forms are valid? And which forms are invalid?</p>
+<p>We are able to rule out the validity of some argument forms if we are
+able to find an argument instance with true premises and a false
+conclusion.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>The following <em>argument form</em> is <em>not</em> valid because at
+least some instances have true premises and a false conclusion.</p>
+</dd>
+</dl>
+<ol type="1">
+<li><span class="math inline">\(p\)</span> or <span
+class="math inline">\(q\)</span></li>
+<li><span class="math inline">\(q\)</span></li>
+<li>Therefore, <span class="math inline">\(p\)</span></li>
+</ol>
+<p>Here is an instance of that form with <em>true premises</em> and a
+<em>false conclusion</em>:</p>
+<ol type="1">
+<li>Charles Dickens wrote <em>Tom Sawyer</em> or Mark Twain did</li>
+<li>Mark Twain wrote <em>Tom Sawyer</em></li>
+<li>Therefore, Charles Dickens wrote <em>Tom Sawyer</em></li>
+</ol>
+<p>Here is another:</p>
+<ol type="1">
+<li>My office number is even or odd.</li>
+<li>My office number is odd.</li>
+<li>Therefore, my office number is even.</li>
+</ol>
+<p>My office is in fact STO 221, which is odd.</p>
+<p>Here are some paradigmatic examples of <em>valid argument
+forms</em>:</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>This is sometimes known as <em>Modus Ponens</em>, though the label is
+unimportant. What matters is that no instance of the argument form has
+true premises and a false conclusion.</p>
+</dd>
+</dl>
+<ol type="1">
+<li><p>If <span class="math inline">\(p\)</span>, then <span
+class="math inline">\(q\)</span></p></li>
+<li><p><span class="math inline">\(p\)</span></p></li>
+<li><p>Therefore, <span class="math inline">\(q\)</span></p></li>
+</ol>
+<p>Which arguments below are instances of Modus Ponens?</p>
+<pre class="QualitativeProblem MultipleChoice" data-options="check"
+data-submission="none" data-content-format="html"><code>2a.
+| If the car starts, then there&#39;s gas in the tank. There&#39;s gas in the tank. Therefore, the car started.
+| If the car starts, then there&#39;s gas in the tank. The car starts. Therefore, you turned the ignition.
+|* If the car starts, then there&#39;s gas in the tank. The car started. Therefore, there&#39;s gas in the tank.</code></pre>
+<pre class="QualitativeProblem MultipleChoice" data-options="check"
+data-submission="none" data-content-format="html"><code>2b.
+| If I flip the coin, then it&#39;ll land heads. It&#39;ll land heads. Therefore, I&#39;ll flip the coin.
+|* If I flip the coin, then it&#39;ll land heads. I&#39;ll flip the coin. Therefore, it&#39;ll land heads.
+| If the coin lands heads, then I will flip it. I&#39;ll flip the coin. Therefore, it&#39;ll land heads.</code></pre>
+<p>One feature of valid argument forms is that <strong>they have no
+instances with true premises and a false conclusion</strong>.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Here is another example of an <em>invalid</em> argument form:</p>
+</dd>
+</dl>
+<ol type="1">
+<li><p>If <span class="math inline">\(p\)</span>, then <span
+class="math inline">\(q\)</span></p></li>
+<li><p><span class="math inline">\(q\)</span></p></li>
+<li><p>Therefore, <span class="math inline">\(p\)</span></p></li>
+</ol>
+<p>To appreciate its invalidity, we may consider some instances of that
+form with true premises and a false conclusion:</p>
+<ol type="1">
+<li>If I’m a millionaire, then I can make ends meet.</li>
+<li>I can make ends meet.</li>
+<li>Therefore, I’m a millionaire.</li>
+</ol>
+<p>Here is another:</p>
+<ol type="1">
+<li><p>If I purchase a Tesla, then I will own at least two
+cars.</p></li>
+<li><p>I will own at least two cars.</p></li>
+<li><p>Therefore, I will purchase a Tesla.</p></li>
+</ol>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>The next example of a <em>valid</em> argument form is sometimes known
+as <em>Modus Tollens</em>, though the label again is unimportant.</p>
+</dd>
+</dl>
+<ol type="1">
+<li><p>If <span class="math inline">\(p\)</span>, then <span
+class="math inline">\(q\)</span></p></li>
+<li><p>Not-<span class="math inline">\(q\)</span></p></li>
+<li><p>Therefore, not-<span class="math inline">\(p\)</span></p></li>
+</ol>
+<p>No instance of Modus Tollens has true premises and a false
+conclusion.</p>
+<p>Which arguments below are instances of Modus Tollens?</p>
+<pre class="QualitativeProblem MultipleChoice" data-options="check"
+data-submission="none"><code>3a.
+|* If I&#39;m a millionaire, then I can make ends meet. I cannot make ends meet. Therefore, I&#39;m not a millionaire.
+| If I&#39;m a millionaire, then I can make ends meet. I&#39;m not a millionaire. Therefore, I cannot make ends meet.
+| If I&#39;m a millionaire, then I can make ends meet. I can make ends meet. Therefore I&#39;m a millionaire.</code></pre>
+<pre class="QualitativeProblem MultipleChoice" data-options="check"
+data-submission="none"><code>3b.
+| If my age is divisible by 4, then it&#39;s even. My age is not divisible by 4. Therefore, my age isn&#39;t even.
+|* If my age is divisible by 4, then it&#39;s even. My age isn&#39;t even. Therefore, my age is not divisible by 4.
+| If my age is divisible by 4, then it&#39;s even. My age is even. Therefore, my age isn&#39;t divisible by 4.</code></pre>
+<p>There is again no way to provide an instance of the form with true
+premises and a false conclusion.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Here is an <em>invalid</em> argument form:</p>
+</dd>
+</dl>
+<ol type="1">
+<li>If <span class="math inline">\(p\)</span>, then <span
+class="math inline">\(q\)</span></li>
+<li>Not-<span class="math inline">\(p\)</span></li>
+<li>Therefore, not-<span class="math inline">\(q\)</span></li>
+</ol>
+<p>One way to tell is to notice that some instances of that form may
+have true premises and a false conclusion. For example:</p>
+<ol type="1">
+<li>If whales are fish, then they live underwater.</li>
+<li>Whales are not fish.</li>
+<li>Therefore, whales do not live underwater.</li>
+</ol>
+<p>Or, for another example, consider:</p>
+<ol type="1">
+<li>If there is an elephant in the room, then the room has a very large
+door.</li>
+<li>There is no elephant in the room.</li>
+<li>Therefore, the room does not have a very large door.</li>
+</ol>
+<h2 id="validity">Validity</h2>
+<p>We are in a position to make <em>partial</em> progress on the
+assessment of validity of some arguments in English.</p>
+<p>Determine whether each argument below is valid.</p>
+<p>Many Americans speak Tagalog. Most USC students are American.
+Therefore, most USC students speak Tagalog.</p>
+<pre class="QualitativeProblem MultipleChoice" data-options="check"
+data-submission="none"><code>3.1. 
+|Yes
+|*No</code></pre>
+<blockquote>
+<p><span style="color: blue;">Why?</span></p>
+<p><span style="color: blue;"><em>The argument has true premises and a
+false conclusion. So, it cannot be an instance of a valid argument
+form.</em></span></p>
+</blockquote>
+<p>If many Americans speak Tagalog, then some USC students do. Many
+Americans speak Tagalog. Therefore, some USC students speak Tagalog.</p>
+<pre class="QualitativeProblem MultipleChoice" data-options="check"
+data-submission="none"><code>3.2.
+|*Yes
+|No</code></pre>
+<blockquote>
+<p><span style="color: blue;">Why?</span></p>
+<p><span style="color: blue;"><em>The argument is valid because it is an
+instance of the form ‘If <span class="math inline">\(p\)</span>, then
+<span class="math inline">\(q\)</span>; <span
+class="math inline">\(p\)</span>. Therefore, <span
+class="math inline">\(q\)</span>.’ Just let <span
+class="math inline">\(p\)</span> stand for ‘many Americans speak
+Tagalog’ and <span class="math inline">\(q\)</span> for ‘some USC
+students speak Tagalog’. That argument form has no instances with true
+premises and a false conclusion.</em></span></p>
+</blockquote>
+<p>Every Tesla is an electric car. Every electric car is fuel-efficient.
+So, every Tesla is fuel-efficient.</p>
+<pre class="QualitativeProblem MultipleChoice" data-options="check"
+data-submission="none"><code>3.3.
+|*Yes.
+|No.</code></pre>
+<blockquote>
+<p><span style="color: blue;">Why?</span></p>
+<p><span style="color: blue;"><em>The argument is valid because it is an
+instance of the form ‘Every A is B. Every B is C. Therefore, every A is
+C’. Just let <span class="math inline">\(A\)</span> stand for
+‘Tesla’, <span class="math inline">\(B\)</span> for ‘an electric car’,
+and <span class="math inline">\(C\)</span> for ‘fuel-efficient’. That
+argument form has no instances with true premises and a false
+conclusion.</em></span></p>
+</blockquote>
+<p>Some Teslas are fuel-efficient cars. Some fuel-efficient cars are
+electric cars. Therefore, some Teslas are electric cars.</p>
+<pre class="QualitativeProblem MultipleChoice" data-options="check"
+data-submission="none"><code>3.4.
+|Yes.
+|*No.</code></pre>
+<blockquote>
+<p><span style="color: blue;">Why?</span></p>
+<p><span style="color: blue;"><em>The argument is not an instance of a
+valid argument form. It is an instance of at least two argument
+forms.</em></span> <span style="color: blue;"><em>One is the
+following:</em> </span></p>
+<ol type="1">
+<li><span style="color: blue;"> <span
+class="math inline">\(p\)</span></span></li>
+<li><span style="color: blue;"> <span
+class="math inline">\(q\)</span>.</span></li>
+<li><span style="color: blue;"> <span
+class="math inline">\(r\)</span>.</span></li>
+</ol>
+<p><span style="color: blue;">Here we let <span
+class="math inline">\(p\)</span> be ‘some Teslas are fuel-efficient’,
+<span class="math inline">\(q\)</span> be ‘some fuel-efficient cars are
+electric’, and <span class="math inline">\(r\)</span> be ‘some Teslas
+are electric’. Unfortunately, there are instances of that form with true
+premises and a false conclusion.</span></p>
+<p><span style="color: blue;"><em>The other is the following:</em>
+</span></p>
+<ol type="1">
+<li><span style="color: blue;"> Some <span
+class="math inline">\(A\)</span> is <span
+class="math inline">\(B\)</span></span></li>
+<li><span style="color: blue;"> Some <span
+class="math inline">\(B\)</span> is <span
+class="math inline">\(C\)</span>.</span></li>
+<li><span style="color: blue;"> Some <span
+class="math inline">\(A\)</span> is <span
+class="math inline">\(C\)</span>.</span></li>
+</ol>
+<p><span style="color: blue;">Here we let <span
+class="math inline">\(A\)</span> be ‘Tesla’, <span
+class="math inline">\(B\)</span> be ‘fuel-efficient car’, and <span
+class="math inline">\(C\)</span> be ‘electric car’. Unfortunately, there
+are instances of that form with true premises and a false conclusion.
+For example: </span></p>
+<ol type="1">
+<li><span style="color: blue;"> Some Teslas are
+fuel-efficient.</span></li>
+<li><span style="color: blue;"> Some fuel-efficient cars are
+hybrid.</span></li>
+<li><span style="color: blue;"> Some Teslas are hybrid.</span></li>
+</ol>
+</blockquote>
+<h2 id="soundness">Soundness</h2>
+<p>You may find some arguments persuasive even if their conclusion is
+not in fact true. That may happen for example if we are given a valid
+argument some of whose premises are false.</p>
+<ol type="1">
+<li>If Bilbao is in Southern Spain, then it is closer to Sevilla than to
+Barcelona</li>
+<li>Bilbao is in Southern Spain</li>
+<li>Therefore, Bilbao is closer to Sevilla than to Barcelona</li>
+</ol>
+<p>We are most interested in valid arguments with <em>true
+premises</em>, since we know that they <em>must</em> have a true
+conclusion.</p>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>An argument is <em>sound</em> if, and only if, it is a valid argument
+with true premises.</p>
+</dd>
+<dt>Example</dt>
+<dd>
+<p>Consider the argument:</p>
+</dd>
+</dl>
+<ol type="1">
+<li>If I know that snow is white, then snow is white</li>
+<li>I know that snow is white</li>
+<li>Therefore, snow is white</li>
+</ol>
+<blockquote>
+<p><span style="color: blue;">The argument is sound because …</span></p>
+<p><span style="color: blue;">it is <em>valid</em>, since it is an
+instance of a valid argument form, and</span></p>
+<p><span style="color: blue;">its premises are true.</span></p>
+</blockquote>
+<p>Because the argument is sound, we can be confident in the truth of
+the conclusion.</p>
+<p>Compare with the following <em>unsound</em> argument.</p>
+<ol type="1">
+<li>If I know that the world will end tomorrow, then the world will end
+tomorrow.</li>
+<li>I know that the world will end tomorrow.</li>
+<li>Therefore, the world will end tomorrow.</li>
+</ol>
+<blockquote>
+<p><span style="color: blue;">The argument is <em>unsound</em> because
+…</span></p>
+<p><span style="color: blue;">at least one premise is false</span></p>
+</blockquote>
+<p>Recall the debate over the Monty Hall problem:</p>
+<p>The Case against the Switch:</p>
+<ol type="1">
+<li>Door <span class="math inline">\(\#1\)</span> has the same chance of
+being the winner as door <span class="math inline">\(\#2\)</span>.</li>
+<li>If door <span class="math inline">\(\#1\)</span> has the same chance
+of being the winner as door <span class="math inline">\(\#2\)</span>,
+then there is no reason to switch.</li>
+<li>Therefore, there is no reason to switch.</li>
+</ol>
+<p>The Case for the Switch:</p>
+<ol type="1">
+<li>Door <span class="math inline">\(\#2\)</span> has a greater chance
+of being the winner than door <span class="math inline">\(\#
+1\)</span>.</li>
+<li>If door <span class="math inline">\(\#2\)</span> has a greater
+chance of being the winner than door <span
+class="math inline">\(\#2\)</span>, then you should switch.</li>
+<li>So, you should switch.</li>
+</ol>
+<p><em>Both arguments</em> are valid, since they exemplify the same
+valid argument form:</p>
+<ol type="1">
+<li><span class="math inline">\(p\)</span></li>
+<li>If <span class="math inline">\(p\)</span>, then <span
+class="math inline">\(q\)</span></li>
+<li><span class="math inline">\(q\)</span></li>
+</ol>
+<p>However, only one of them is <em>sound</em>, and there may be
+reasonable disagreement as to which one it is.</p>
+<p>Which of the arguments given below are <em>sound</em>?</p>
+<pre class="QualitativeProblem MultipleChoice" data-options="check"
+data-submission="none"><code>4. 
+| All fish live underwater. Whales are fish. Therefore, whales live underwater.
+| No mammals live underwater. Whales are mammals. Therefore, whales do not live underwater.
+|*All fish live underwater. No bears live underwater. Therefore, no bear is a fish.</code></pre>
+<pre class="QualitativeProblem MultipleChoice" data-options="check"
+data-submission="none"><code>5.
+|* All Spanish cities enjoy great weather. Barcelona is a Spanish city. Therefore, Barcelona enjoys great weather.
+| No Spanish cities enjoy great weather. Oslo is in Spain. Therefore, Oslo does not enjoy great weather.
+| Some cities in Norway enjoy great weather. Madrid is in Norway. Therefore, Madrid enjoys great weather.</code></pre>
+<p>How exactly are validity and soundness related?</p>
+<ul>
+<li>If an argument is sound, then it is valid.</li>
+</ul>
+<p>On the other hand, some valid arguments are unsound as witnessed
+above.</p>
+<ul>
+<li>If an argument is sound, then its conclusion is true.</li>
+</ul>
+<p>If the argument is sound, then it is a valid argument with true
+premises. But valid arguments are instances of valid argument forms,
+which preserve truth. So, the conclusion must be true.</p>
+<p>Which of the following statements are <em>true</em>?</p>
+<pre class="QualitativeProblem MultipleSelection" data-options="check"
+data-submission="none"><code>6.
+| If an argument is valid, then it is sound.
+|* If an argument is sound, then it is valid.
+|* If an argument is sound, then its conclusion is true.
+| If an argument is valid, then its conclusion is true.</code></pre>
+<p>Which of the following statements are <em>true</em>?</p>
+<pre class="QualitativeProblem MultipleSelection" data-options="check"
+data-submission="none"><code>7.
+| If an argument has true premises and a true conclusion, then it is sound.
+| If an argument has true premises and a true conclusion, then it is valid.
+| If an argument has false premises and a false conclusion, then it is not valid.
+|*If an argument has true premises and a false conclusion, then it is not valid.
+|*If an argument has false premises, then it is not sound.</code></pre>
+<pre class="QualitativeProblem MultipleSelection" data-options="check"
+data-submission="none"><code>8.
+| Every valid argument has true premises and a true conclusion.
+|*Every sound argument has true premises and a true conclusion.
+| No valid argument has false premises and a true conclusion.
+|*No sound argument has true premises and a false conclusion.</code></pre>
+</body>
+</html>

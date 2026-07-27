@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>syntax of propositional logic — PHIL 220</title>
+  <link rel="stylesheet" href="../shared/style.css">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <style>
+    /* Definition lists */
+    dl { margin: 1rem 0 1.25rem; }
+    dt { font-family: var(--font-sans); font-size: 0.82rem; font-weight: 600;
+         text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-primary);
+         margin-bottom: 0.1rem; }
+    dd { margin: 0 0 0.9rem 0; padding-left: 1.5rem;
+         border-left: 3px solid var(--color-border); }
+    /* Blockquotes */
+    blockquote { border-left: 3px solid var(--color-border); margin: 1rem 0;
+                 padding: 0.4rem 1rem; color: var(--color-muted); font-style: italic; }
+    /* Headings */
+    h1 { font-size: 1.55rem; margin: 0 0 1.5rem; font-weight: normal; }
+    h2 { font-size: 1.1rem; margin: 2rem 0 0.6rem; font-weight: bold; }
+    h3 { font-family: var(--font-sans); font-size: 0.85rem; font-weight: 700;
+         text-transform: uppercase; letter-spacing: 0.06em; margin: 1.5rem 0 0.4rem;
+         color: var(--color-primary); }
+    /* Lists */
+    ul, ol { margin: 0.5rem 0 0.9rem 1.4rem; }
+    li { margin-bottom: 0.25rem; }
+    /* Strong inside lists / body */
+    strong { font-weight: bold; }
+    em { font-style: italic; }
+    /* Nav */
+    .back-link { font-family: var(--font-sans); font-size: 0.78rem; }
+    .back-link a { color: var(--color-teal); text-decoration: none; }
+    .back-link a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="course-label">University of Southern California &middot; Philosophy</div>
+    <h1>PHIL 220: Introduction to Logic</h1>
+  </header>
+  <nav class="breadcrumb">
+    <a href="../index.html">Schedule</a>
+    <span>&rsaquo;</span>
+    syntax of propositional logic
+  </nav>
+<h1 id="syntax-for-propositional-logic">syntax for propositional
+logic</h1>
+<p>To specify the syntax, we specify:</p>
+<ul>
+<li>a <em>vocabulary</em> or stock of primitive symbols.</li>
+<li>a <em>grammar</em> or set of rules for the formation of formulas out
+of primitive symbols.</li>
+</ul>
+<h2 id="vocabulary">vocabulary</h2>
+<p>The vocabulary contains three types of symbols:</p>
+<dl>
+<dt><strong>Propositional Variables</strong></dt>
+<dd>
+<p>These are the lowercase letters <span
+class="math inline">\(p\)</span>, <span
+class="math inline">\(q\)</span>, <span
+class="math inline">\(r\)</span>, <span class="math inline">\(s\)</span>
+and <span class="math inline">\(t\)</span> with or without numerical
+subscripts:</p>
+</dd>
+</dl>
+<p><span class="math display">\[
+p, \ q, \ r, \ s, \ t, \ p_1, \ q_1, \ r_1, \ s_1, \ t_1 \ \dots
+\]</span></p>
+<dl>
+<dt><strong>Connectives</strong>.</dt>
+<dd>
+<p>These are four connectives: <span class="math display">\[
+\neg, \ \vee, \ \wedge, \ \to
+\]</span></p>
+</dd>
+</dl>
+<p>Some presentations of propositional logic include a symbol for ‘… if,
+and only if, …’. We will eventually introduce the symbol <span
+class="math inline">\(\leftrightarrow\)</span> as a device for
+abbreviation.</p>
+<dl>
+<dt><strong>Parentheses</strong>.</dt>
+<dd>
+<p>There are two parentheses: <span class="math display">\[
+),(
+\]</span></p>
+</dd>
+</dl>
+<p><em>Nothing else</em> is a primitive symbol of the language.</p>
+<p>In particular, notice that uppercase letters such as ‘<span
+class="math inline">\(A\)</span>’, ‘<span
+class="math inline">\(B\)</span>’, ‘<span
+class="math inline">\(C\)</span>’, etc, are not part of the vocabulary
+of the language. Nor are metavariables of the form ‘<span
+class="math inline">\(\varphi\)</span>’ or ‘<span
+class="math inline">\(\psi\)</span>’ part of the official vocabulary,
+even though we will sometimes use them to describe the language from
+outside.</p>
+<h2 id="grammar">grammar</h2>
+<p>We now define what is for a string of symbols of the language to be a
+<em>formula of propositional logic</em>:</p>
+<ol type="1">
+<li><p>All propositional variables are formulas.</p></li>
+<li><p>If <span class="math inline">\(\varphi\)</span> and <span
+class="math inline">\(\psi\)</span> are formulas, then so are: <span
+class="math display">\[
+\neg  \varphi, \ (\varphi \ \wedge \ \psi),  \ (\varphi \ \vee \ \psi),
+\ (\varphi \ \to \ \psi).
+\]</span></p></li>
+<li><p>Nothing else is a formula.</p></li>
+</ol>
+<p>Let us use the definition of formula of in order to discern whether
+each string of symbols below is a sentence of the language.</p>
+<p>The crucial clause is the second one, which enables us to combine
+formulas into even more complex formulas. In particular:</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>If <span class="math inline">\(\dots \dots\)</span> is a formula,
+then <span class="math inline">\(\neg \dots \dots\)</span> is a
+formula.</p>
+</dd>
+</dl>
+<ul>
+<li>If <span class="math inline">\(p\)</span> is a formula, then <span
+class="math inline">\(\neg p\)</span> is a formula.</li>
+<li>If <span class="math inline">\(\neg p\)</span> is a formula, then
+<span class="math inline">\(\neg \neg p\)</span> is a formula.</li>
+<li>If <span class="math inline">\(\neg \neg p\)</span> is a formula,
+then <span class="math inline">\(\neg \neg \neg p\)</span> is a
+formula</li>
+<li>Etc.</li>
+</ul>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>If <span class="math inline">\(\dots \dots_1\)</span> is a formula
+and <span class="math inline">\(\dots \dots_2\)</span> is a formula,
+then <span class="math inline">\((\dots \dots_1 \ \wedge \ \dots
+\dots_2)\)</span> is a formula.</p>
+</dd>
+</dl>
+<ul>
+<li>If <span class="math inline">\(\neg p\)</span> is a formula and
+<span class="math inline">\(\neg \neg q\)</span> is a formula, then
+<span class="math inline">\((\neg p \ \wedge \ \neg \neg q)\)</span> is
+a formula.</li>
+<li>If <span class="math inline">\((p \ \wedge \ q)\)</span> is a
+formula and <span class="math inline">\(\neg \neg q\)</span> is a
+formula, then <span class="math inline">\(((p \ \wedge \ q) \ \wedge \
+\neg \neg q)\)</span> is a formula</li>
+<li>If <span class="math inline">\((p \ \wedge \ q)\)</span> is a
+formula and <span class="math inline">\((r \ \wedge \ t)\)</span> is a
+formula, then <span class="math inline">\(((p \ \wedge \ q) \ \wedge \
+(r \ \wedge \ t))\)</span> is a formula.</li>
+<li>Etc</li>
+</ul>
+<p>The only difference is that the official characterization of a
+formula uses Greek letters <span class="math inline">\(\varphi\)</span>,
+<span class="math inline">\(\psi\)</span>, etc in place of <span
+class="math inline">\(\dots \dots_1\)</span>, <span
+class="math inline">\(\dots \dots_2\)</span>, etc</p>
+<p>A. <span class="math inline">\((p \ \wedge \ \neg q)\)</span></p>
+<p>This is a <em>formula</em> of the language.</p>
+<ul>
+<li>By rule 2, <span class="math inline">\((p \ \wedge \ \neg
+q)\)</span> is a formula <strong>if</strong> <span
+class="math inline">\(p\)</span> is a formula ✅ and <span
+class="math inline">\(\neg q\)</span> is a formula ✅.
+<ul>
+<li>By rule 1, <span class="math inline">\(p\)</span> is a formula.</li>
+<li>By rule 2, <span class="math inline">\(\neg q\)</span> is a formula
+<strong>if</strong> <span class="math inline">\(q\)</span> is a formula
+✅.
+<ul>
+<li>By rule 1, <span class="math inline">\(q\)</span> is a formula.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>We will now draw a construction tree for the formula, which
+illustrates how it has been constructed from simpler constituents.</p>
+<pre class="SynChecker Match" data-system="gamutIPND"
+data-options="check" data-submission="none"><code>A. (p &amp; - q)</code></pre>
+<ol start="2" type="A">
+<li><span class="math inline">\(((p \to q) \ \vee \ (q \ \to \ (r \
+\wedge \ s) ))\)</span></li>
+</ol>
+<p>This is a <em>formula</em> of the language.</p>
+<ul>
+<li><p>By rule 2, <span class="math inline">\(((p \to q) \ \vee \ (q \
+\to \ (r \ \wedge \ s) ))\)</span> is a formula <strong>if</strong>
+<span class="math inline">\((p \to q)\)</span> is a formula ✅ and <span
+class="math inline">\((q\to (r \ \wedge \ s))\)</span> is a formula
+✅.</p>
+<ul>
+<li><p>By rule 2, <span class="math inline">\((p \to q)\)</span> is a
+formula <strong>if</strong> <span class="math inline">\(p\)</span> is a
+formula ✅. and <span class="math inline">\(q\)</span> is a formula.
+✅.</p></li>
+<li><p>By rule 2, <span class="math inline">\((q \ \to \ (r \ \wedge \
+s))\)</span> is a formula <strong>if</strong> <span
+class="math inline">\(q\)</span> is a formula ✅ and <span
+class="math inline">\((r \ \wedge \ s)\)</span> is a formula ✅.</p>
+<ul>
+<li>By rule 2, <span class="math inline">\((r \ \wedge \ s)\)</span> is
+a formula <strong>if</strong> <span class="math inline">\(r\)</span> is
+a formula ✅ and <span class="math inline">\(s\)</span> is a formula
+✅.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Here is a construction tree for the formula:</p>
+<pre class="SynChecker Match" data-system="gamutIPND"
+data-options="check" data-submission="none"><code>B. (p \/ (q -&gt; (r &amp; s)))</code></pre>
+<ol start="3" type="A">
+<li><span class="math inline">\(\neg A\)</span></li>
+</ol>
+<p>This is <em>not</em> a formula of the language.</p>
+<ul>
+<li><p>By rule 2, <span class="math inline">\(\neg A\)</span> is a
+formula <strong>if</strong> <span class="math inline">\(A\)</span> is
+one ❌.</p>
+<ul>
+<li>By rule 3, <span class="math inline">\(A\)</span> is <em>not</em> a
+formula.</li>
+</ul></li>
+<li><p>By rule 3, <span class="math inline">\(\neg A\)</span> is not a
+formula.</p>
+<p>The letter ‘<span class="math inline">\(A\)</span>’ is not even part
+of the vocabulary of propositional logic.</p></li>
+</ul>
+<ol start="4" type="A">
+<li><span class="math inline">\(((p \ \wedge \ q))\)</span></li>
+</ol>
+<p>This is <em>not</em> a formula of the language.</p>
+<ul>
+<li>By rule 2, <span class="math inline">\(((p \ \wedge \ q))\)</span>
+is a formula <strong>if</strong> <span class="math inline">\((p\)</span>
+is a formula ❌ and <span class="math inline">\(q)\)</span> is a formula
+❌.
+<ul>
+<li>By rule 3, <span class="math inline">\((p\)</span> is <em>not</em> a
+formula.</li>
+</ul></li>
+<li>By rule 3, <span class="math inline">\(((p \ \wedge \ q))\)</span>
+is not a formula.</li>
+</ul>
+<ol start="5" type="A">
+<li><span class="math inline">\(((p \ \vee \ q) \to (q \ \wedge \ \neg
+r))\)</span></li>
+</ol>
+<p>This is a formula of the language.</p>
+<ul>
+<li>By rule 2, <span class="math inline">\(((p \ \vee \ q) \to (q \
+\wedge \ \neg r))\)</span> is a formula <strong>if</strong> <span
+class="math inline">\((p \ \vee \ q)\)</span> is a formula ✅, and <span
+class="math inline">\((q \ \wedge \ \neg r)\)</span> is a formula ✅.
+<ul>
+<li>By rule 2, <span class="math inline">\((p \ \vee \ q)\)</span> is a
+formula <strong>if</strong> <span class="math inline">\(p\)</span> is a
+formula ✅ and <span class="math inline">\(q\)</span> is a formula
+✅.</li>
+<li>By rule 2, <span class="math inline">\((q \ \wedge \ \neg
+r)\)</span> is a formula <strong>if</strong> <span
+class="math inline">\(q\)</span> is a formula ✅ and <span
+class="math inline">\(\neg r\)</span> is a formula.
+<ul>
+<li>By rule 2, <span class="math inline">\(\neg r\)</span> is a formula
+<strong>if</strong> <span class="math inline">\(r\)</span> is a formula
+✅.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Here is a construction tree for the formula:</p>
+<pre class="SynChecker Match" data-system="gamutIPND"
+data-options="check" data-submission="none"><code>C. ((p \/ q) &gt; (q &amp; - r))</code></pre>
+<ol start="4" type="A">
+<li><span class="math inline">\((\varphi \ \to \ \psi)\)</span></li>
+</ol>
+<p>This is <em>not</em> a formula of the language.</p>
+<p>By rule 2, <span class="math inline">\((\varphi \ \to \
+\psi))\)</span> is a formula <strong>if</strong> <span
+class="math inline">\(\varphi\)</span> is a formula ❌ and <span
+class="math inline">\(\psi\)</span> is a formula ❌.</p>
+<ul>
+<li><p>By rule 3, <span class="math inline">\(\varphi\)</span> is
+<em>not</em> a formula.</p>
+<p>Greek letters are not even part of the vocabulary of propositional
+logic.</p></li>
+</ul>
+<h2 id="a-notational-convention">a notational convention</h2>
+<p>For ease of expression, we will adopt a further notational
+conventions which will allow us to simplify notation. This is
+<em>not</em> meant as a revision of the official characterization of
+formula as it is not part of the official syntax of the language.
+Instead, we simply use certain expressions as abbreviations for the
+official formulas of the language.</p>
+<dl>
+<dt>Notational Convention</dt>
+<dd>
+<p>We may remove the outer parentheses of a formula that is not part of
+another formula.</p>
+</dd>
+<dt>Example</dt>
+<dd>
+<p>We will write <span class="math inline">\(p \wedge q\)</span> as an
+<strong>abbreviation for</strong> the formula</p>
+</dd>
+</dl>
+<p><span class="math inline">\((p \ \wedge \ q)\)</span>.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>We will write <span class="math inline">\(q \ \to \ (r \ \wedge \
+t)\)</span> as an <strong>abbreviation for</strong> the formula</p>
+</dd>
+</dl>
+<p><span class="math inline">\((q \ \to \ (r \ \wedge \
+t))\)</span>.</p>
+<p>On the other hand, none of the following formulas abbreviate formulas
+of propositional logic.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p><span class="math inline">\(p \ \wedge \ q \ \vee \ r\)</span> is
+<strong>not</strong> an abbreviation for a formula of propositional
+logic. This is because we do <strong>not</strong> obtain a formula when
+we add outer parenthesis to form:</p>
+</dd>
+</dl>
+<p><span class="math inline">\((p \ \wedge \ q \ \vee \ r)\)</span></p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p><span class="math inline">\(p \ \to \ q \ \wedge \ r\)</span> is
+<strong>not</strong> an abbreviation for a formula of propositional
+logic. This is because we do <strong>not</strong> obtain a formula when
+we add outer parenthesis to form:</p>
+</dd>
+</dl>
+<p><span class="math inline">\((p \ \to \ q \ \wedge \ r)\)</span></p>
+</body>
+</html>

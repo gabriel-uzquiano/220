@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>arguments and validity — PHIL 220</title>
+  <link rel="stylesheet" href="../shared/style.css">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <style>
+    /* Definition lists */
+    dl { margin: 1rem 0 1.25rem; }
+    dt { font-family: var(--font-sans); font-size: 0.82rem; font-weight: 600;
+         text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-primary);
+         margin-bottom: 0.1rem; }
+    dd { margin: 0 0 0.9rem 0; padding-left: 1.5rem;
+         border-left: 3px solid var(--color-border); }
+    /* Blockquotes */
+    blockquote { border-left: 3px solid var(--color-border); margin: 1rem 0;
+                 padding: 0.4rem 1rem; color: var(--color-muted); font-style: italic; }
+    /* Headings */
+    h1 { font-size: 1.55rem; margin: 0 0 1.5rem; font-weight: normal; }
+    h2 { font-size: 1.1rem; margin: 2rem 0 0.6rem; font-weight: bold; }
+    h3 { font-family: var(--font-sans); font-size: 0.85rem; font-weight: 700;
+         text-transform: uppercase; letter-spacing: 0.06em; margin: 1.5rem 0 0.4rem;
+         color: var(--color-primary); }
+    /* Lists */
+    ul, ol { margin: 0.5rem 0 0.9rem 1.4rem; }
+    li { margin-bottom: 0.25rem; }
+    /* Strong inside lists / body */
+    strong { font-weight: bold; }
+    em { font-style: italic; }
+    /* Nav */
+    .back-link { font-family: var(--font-sans); font-size: 0.78rem; }
+    .back-link a { color: var(--color-teal); text-decoration: none; }
+    .back-link a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="course-label">University of Southern California &middot; Philosophy</div>
+    <h1>PHIL 220: Introduction to Logic</h1>
+  </header>
+  <nav class="breadcrumb">
+    <a href="../index.html">Schedule</a>
+    <span>&rsaquo;</span>
+    arguments and validity
+  </nav>
+<h1 id="why-logic">why logic?</h1>
+<p>We reason to persuade ourselves and others to accept a claim on the
+basis of other claims we accept.</p>
+<h3 id="coin-toss">Coin Toss</h3>
+<p>Consider the puzzle below:</p>
+<blockquote>
+<p>You and I toss a coin, but we have no access to the other’s coin. We
+each make a guess as to the outcome of the other’s coin. We win if at
+least one of us makes a correct guess. However, we are allowed to agree
+on a common strategy before the coins are tossed.</p>
+<p>What strategy should we use to make sure we win no matter what the
+outcomes of the tosses are?</p>
+</blockquote>
+<p>It may be helpful to look at an <a
+href="https://coinflips.com.au/">illustration</a>.</p>
+<p>There is in fact one:</p>
+<ul>
+<li>I will make my guess <strong>match</strong> the outcome of my
+coin.</li>
+<li>You will make your guess <strong>differ</strong> from the outcome of
+your coin.</li>
+</ul>
+<dl>
+<dt>The Case for the Strategy:</dt>
+<dd>
+<p>Once we toss our coins, they will either match or not match. If they
+match, then my guess is guaranteed to succeed, since your coin will have
+landed in exactly the same way as mine. On the other hand, if they do
+not match, then your guess is guaranteed to succeed, since your coin
+will have landed differently from mine. Either way, one of our guesses
+will be successful, which means we will win the game.</p>
+</dd>
+</dl>
+<p>Here is a more explicit formulation of the case for the strategy:</p>
+<ol type="1">
+<li>Either the outcomes of our respective tosses will match or they will
+not match.</li>
+<li>If they match, then since I guess the same outcome as that I
+observed in my coin, I’m guaranteed to succeed.</li>
+<li>If I succeed, then at least one of us does and we win the game.</li>
+<li>If they do not match, then since you guess a different outcome from
+the one you observed in your coin, your guess is guaranteed to
+succeed.</li>
+<li>If you succeed, then at least one of us does and we win the
+game.</li>
+<li>So, at least one of us will succeed and we win the game.</li>
+</ol>
+<h3 id="monty-hall">Monty Hall</h3>
+<p>Consider the <a
+href="https://www.khanacademy.org/math/statistics-probability/probability-library/basic-theoretical-probability/v/monty-hall-problem">Monty
+Hall Problem</a> for which there is a simple <a
+href="https://montyhall.io/">interactive demonstration</a>.</p>
+<blockquote>
+<p>There are three doors <span class="math inline">\(\#1\)</span>, <span
+class="math inline">\(\#2\)</span>, and <span
+class="math inline">\(\#3\)</span>, one with a prize behind it. You may
+first pick one of the three doors at random. You pick door <span
+class="math inline">\(\#1\)</span>, but you are not told yet whether
+there is a prize behind it.</p>
+<p>The host now opens one of the other two doors being careful to select
+one without a prize behind it, say the host opens door <span
+class="math inline">\(\#3\)</span>.</p>
+<p>At this point, you cannot yet know whether the prize is behind door
+<span class="math inline">\(\#1\)</span> or door <span
+class="math inline">\(\#2\)</span>.</p>
+<p>“Do you want to switch to door <span
+class="math inline">\(\#2\)</span>?” the host asks.</p>
+<p>What should you do?</p>
+</blockquote>
+<dl>
+<dt>The Case against the Switch</dt>
+<dd>
+<p>Once the host opens door <span class="math inline">\(\#3\)</span>
+without a prize, there is a <em>one in two</em> chance door <span
+class="math inline">\(\#1\)</span> is the winner and a <em>one in
+two</em> chance the prize is behind door <span
+class="math inline">\(\#2\)</span>. That is, both doors have the same
+chance of being the winner. But if both have the same chance of being
+the winner, then there is nothing to gain from the switch to the other
+door. So, there is nothing to gain from the switch to the other
+door.</p>
+</dd>
+</dl>
+<p>Here is a more explicit formulation of the case:</p>
+<ol type="1">
+<li><p>Both door <span class="math inline">\(\#1\)</span> and door <span
+class="math inline">\(\#2\)</span> have the same chance of being the
+winner.</p></li>
+<li><p>If both doors have the same chance of being the winner, then
+there is nothing to gain from the switch from one to the other.</p></li>
+<li><p>So, there is nothing to gain from the switch from one to the
+other.</p></li>
+</ol>
+<dl>
+<dt>The Case for the Switch</dt>
+<dd>
+<p>Once the host opens door <span class="math inline">\(\#3\)</span>
+without a prize, the chance that door <span
+class="math inline">\(\#2\)</span> is the winner is the same as the
+chance door <span class="math inline">\(\#1\)</span> had <em>no</em>
+prize behind it. There was a <em>two in three</em> chance door <span
+class="math inline">\(\# 1\)</span> had no prize behind it. That means
+that there is a <em>two in three</em> chance door <span
+class="math inline">\(\#2\)</span> is the winner, which is greater than
+the chance door <span class="math inline">\(\#1\)</span> is the winner.
+But if door <span class="math inline">\(\#2\)</span> has a greater
+chance of being the winner, then you should switch. So, you should
+switch.</p>
+</dd>
+</dl>
+<p>Here is the case reformulated:</p>
+<ol type="1">
+<li>The chance that door <span class="math inline">\(\#2\)</span> is the
+winner is the same as the chance door <span
+class="math inline">\(\#1\)</span> had <em>no</em> prize behind it.</li>
+<li>There is a two in three chance door <span
+class="math inline">\(\#1\)</span> is not the winner .</li>
+<li>If the chance that door <span class="math inline">\(\#2\)</span> is
+the winner is the same as the chance door <span
+class="math inline">\(\#1\)</span> had <em>no</em> prize behind it, then
+there is a two in three chance door <span
+class="math inline">\(\#2\)</span> is the winner.</li>
+<li>There is a two in three chance door <span
+class="math inline">\(\#2\)</span> is the winner .</li>
+<li>If there is a two in three chance door <span
+class="math inline">\(\#2\)</span> is the winner , then the chance that
+door <span class="math inline">\(\#2\)</span> is the winner is greater
+than the chance door <span class="math inline">\(\#1\)</span> is the
+winner .</li>
+<li>The chance that <span class="math inline">\(\#2\)</span> is the
+winner is greater than the chance door <span
+class="math inline">\(\#1\)</span> is the winner.</li>
+<li>If the chance that <span class="math inline">\(\#2\)</span> is the
+winner is greater than the chance door <span
+class="math inline">\(\#1\)</span> is the winner, then you should
+switch.</li>
+<li>Therefore, you should switch.</li>
+</ol>
+<p>The goal in each case is to persuade you of the truth of a statement
+on the basis of other statements you may already accept. Whether they
+succeed will depend partly on whether the claim in question follows from
+the claims you are supposed to accept and partly on whether you in fact
+accept them.</p>
+<p>Or consider Galileo’s paradox, which attempts to persuade you of the
+truth of a statement you may have initially been inclined to reject on
+the basis of claims you should presumably accept.</p>
+<h3 id="galileos-paradox">Galileo’s Paradox</h3>
+<p>Are there <em>more</em> natural numbers such as 1, 2, 3, etc than
+<em>perfect squares</em> such as 1, 4, 9, etc?</p>
+<dl>
+<dt>The Case for <em>More</em></dt>
+<dd>
+<p>Every perfect square is a natural number. However, not every natural
+number is a perfect square, for example, 2, 3, 5, 7, etc are not the
+square of any natural number. If every perfect square is a natural
+number but some natural numbers are not perfect squares, then there are
+strictly more natural numbers than perfect squares. So, there are
+strictly more natural numbers than perfect squares.</p>
+</dd>
+<dt>The Case for <em>No More</em></dt>
+<dd>
+<p>There is a way to match natural numbers with perfect squares in a
+one-one fashion, for example, <span class="math inline">\(n^2 \mapsto
+n\)</span>. If there is a way to match natural numbers with perfect
+squares in a one-one fashion, then there are no more natural numbers
+than perfect squares. So, there are no more natural numbers than there
+are perfect squares.</p>
+</dd>
+</dl>
+<p>Logic is concerned with the question of what follows from what.
+Sometimes a statement does <em>not</em> follow from the antecedently
+given statements and we rely on logic for an explanation.</p>
+<dl>
+<dt>The Case for a Gift Card</dt>
+<dd>
+<p>A gift card is better than a postcard. A poscard is better than
+nothing. Therefore, a gift card is better than nothing.</p>
+</dd>
+<dd>
+<p>A gift card is better than nothing. Nothing is better than a yacht.
+So, a gift card is better than a yacht.</p>
+</dd>
+</dl>
+<h1 id="arguments">arguments</h1>
+<p>When we reason, we move from a body of statements, which we call
+<em>premises</em>, to another statement they are supposed to support,
+which we call the <em>conclusion</em>.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Door <span class="math inline">\(\#1\)</span> has the same chance of
+being the winner as door <span class="math inline">\(\#2\)</span>. But
+if door <span class="math inline">\(\#1\)</span> has the same chance of
+being the winner as door <span class="math inline">\(\#2\)</span>, then
+there is nothing ot be gained from the switch to <span
+class="math inline">\(\#2\)</span> So, there is nothing to be gained
+from the switch to <span class="math inline">\(\#2\)</span>.</p>
+</dd>
+</dl>
+<p>In this case, there are two <em>premises</em>:</p>
+<ol type="1">
+<li>Door <span class="math inline">\(\#1\)</span> has the same chance of
+being the winner as door <span class="math inline">\(\#2\)</span>.</li>
+<li>If door <span class="math inline">\(\#1\)</span> has the same chance
+of being the winner as door <span class="math inline">\(\#2\)</span>,
+then there is nothing to be gained from the switch to <span
+class="math inline">\(\#2\)</span></li>
+</ol>
+<p>The <em>conclusion</em>, which is marked by the use of the phrase
+‘so,’ is the statement:</p>
+<ol start="3" type="1">
+<li>There is nothing to be gained from the switch to <span
+class="math inline">\(\#2\)</span>.</li>
+</ol>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>A gift card is better than a postcard. A postcard is better than
+nothing. Therefore, a gift card is better than nothing.</p>
+</dd>
+</dl>
+<p>In this case, there are two <em>premises</em>:</p>
+<ol type="1">
+<li>A gift card is better than a postcard.</li>
+<li>A postcard is better than nothing</li>
+</ol>
+<p>The <em>conclusion</em>, which is marked by the use of the phrase
+‘therefore,’ is the statement:</p>
+<ol start="3" type="1">
+<li>A gift card is better than nothing.</li>
+</ol>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>If my client had been the burglar, she would have had to break in
+through an unlocked window in the second floor. My client couldn’t have
+climbed to the the second floor. So, my client is not the burglar.</p>
+</dd>
+</dl>
+<p>In this case, we have two <em>premises</em>:</p>
+<ol type="1">
+<li>If my client had been the burglar, she would have had to break in
+through an unlocked window in the second floor.</li>
+<li>My client couldn’t have climbed to the second floor.</li>
+</ol>
+<p>The <em>conclusion</em>, which is preceded by the phrase ‘so’, is the
+statement:</p>
+<ol start="4" type="1">
+<li>My client is not the burglar.</li>
+</ol>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>An <em>argument</em> is a sequence of declarative sentences, which
+are the <em>premises</em>, and a declarative sentence marked as the
+<em>conclusion</em>.</p>
+</dd>
+</dl>
+<p>We use <em>declarative sentences</em> to make statements, which are
+true or false. There is a contrast between them and
+<em>interrogative</em> and <em>imperative sentences</em>, which are used
+to ask questions and issue commands, respectively.</p>
+<p>Which of the sentences below are <em>declarative sentences</em> of
+English?</p>
+<pre class="QualitativeProblem MultipleSelection" data-options="check"
+data-submission="none"><code>1.
+| Fight on!
+|* Whales live underwater
+| Where do whales live?
+|* If whales live underwater, then some mammals do
+| Shut the door please
+|* You will shut the door
+| Would you shut the door?</code></pre>
+<p>The premises are meant to support the conclusion, but there is no set
+order in which premises and conclusion occur in an argument. The
+conclusion is generally marked by occurrences of phrases such as ‘so’,
+‘thus’, ‘therefore’, ‘it follows that’, etc, which indicate support from
+the premises.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>The laptop will not work if the battery is dead. The battery is dead.
+So, <em>the laptop will not work</em>.</p>
+</dd>
+<dd>
+<p>The laptop will not work if the battery is dead. So, <em>the laptop
+will not work</em>. That is because the battery is dead.</p>
+</dd>
+<dd>
+<p><em>The laptop will not work.</em> For the laptop will not work if
+the battery is dead. And, moreover, the battery is dead.</p>
+</dd>
+</dl>
+<p>It takes some skill to extract an argument from a paragraph, which we
+will use in the remainder of the course.</p>
+<h2 id="how-to-extract-an-argument-from-a-paragraph">how to extract an
+argument from a paragraph</h2>
+<dl>
+<dt>Argument A</dt>
+<dd>
+<p>If there is genuine change, then events must be future, then present,
+then past. If something is future, then it is neither present nor past.
+Nothing is future, present, and past. So, there is no genuine
+change.</p>
+</dd>
+</dl>
+<pre class="QualitativeProblem MultipleChoice" data-options="check"
+data-submission="none"><code>A.
+| If there is genuine change, then events must be future, then present, then past.
+| If something is future, then it is neither present nor past. 
+| Nothing is future, present, and past.
+|* There is no genuine change.</code></pre>
+<dl>
+<dt>Argument B</dt>
+<dd>
+<p>If I speak both English and Spanish, then I’m bilingual. Therefore,
+I’m bilingual. For after all, I speak both English and Spanish.</p>
+</dd>
+</dl>
+<pre class="QualitativeProblem MultipleChoice" data-options="check"
+data-submission="none"><code>B.
+|If I speak both English and Spanish, then I&#39;m bilingual.
+|*I&#39;m bilingual
+|I speak both English and Spanish.</code></pre>
+<dl>
+<dt>Argument C</dt>
+<dd>
+<p>Time travel is impossible. For if time travel were possible, then a
+time traveler could change the past. Nothing, however, can change the
+past.</p>
+</dd>
+</dl>
+<pre class="QualitativeProblem MultipleChoice" data-options="check"
+data-submission="none"><code>C.
+|* Time travel is impossible.
+| If time travel were possible, then a time traveler could change the past. 
+| Nothing can change the past.</code></pre>
+<h1 id="validity">validity</h1>
+<p>Some arguments seem <em>risk-free</em> in that the truth of their
+premises automatically guarantees the truth of its conclusion. That
+seems to be the case with two of the four arguments below but not with
+the other two. Which ones?</p>
+<blockquote>
+<p>Whales live underwater. Few mammals live underwater. Therefore,
+whales are not mammals.</p>
+</blockquote>
+<blockquote>
+<p>People are now carrying umbrellas on the street. Therefore, it must
+be raining.</p>
+</blockquote>
+<blockquote>
+<p><em>All Things Considered</em> is a radio program. All radio programs
+are broadcast at least once a week. So, <em>All Things Considered</em>
+is broadcast at least once a week.</p>
+</blockquote>
+<blockquote>
+<p>No one carries an umbrella on the street unless it is raining.
+Someone is now carrying an umbrella on the street. Therefore, it is
+raining.</p>
+</blockquote>
+<p>We are interested in the contrast between what we have called
+<em>risk-free</em> arguments where the truth of the premises is
+automatically guaranteed by the truth of the premises and arguments for
+which <em>some risk</em> remains, no matter how minimal, that the
+premises may be true while the conclusion is false.</p>
+<blockquote>
+<p>I bought ninety tickets for a fair raffle with just one hundred
+tickets. Therefore, I will win the raffle.</p>
+</blockquote>
+<p>In this case, there is at least a one percent chance that the premise
+may be true and the conclusion false, which is not the case with the
+arguments below:</p>
+<ol type="1">
+<li><p>If there is gas in the tank, then the engine will start. There is
+gas in the tank. Therefore, the engine will start.</p></li>
+<li><p>If today is Thursday, then tomorrow will be Friday. Today is
+Thursday. Therefore, tomorrow will be Friday.</p></li>
+<li><p>If the animal in the pen is a zebra, then it is not a cleverly
+painted mule. The animal in the pen is a zebra. Therefore, the animal in
+the pen is not a cleverly painted mule.</p></li>
+<li><p>The battery is dead or the laptop is broken. The battery is not
+dead. Therefore, the laptop is broken.</p></li>
+<li><p>Either the butler did it or the gardener did it. The butler did
+not do it. So, the gardener did it.</p></li>
+<li><p>Either interest rates will be raised further or inflation will
+continue to rise. Interest rates will not be raised further. Therefore,
+inflation will continue to rise.</p></li>
+</ol>
+<p>The reason these arguments are <em>risk-free</em> is that they
+exemplify certain patterns:</p>
+<ul>
+<li><p>Arguments 1, 2, and 3 all exemplify the pattern:</p>
+<ol type="1">
+<li>If <span class="math inline">\(p\)</span>, then <span
+class="math inline">\(q\)</span>.</li>
+<li><span class="math inline">\(p\)</span>.</li>
+<li>Therefore, <span class="math inline">\(q\)</span>.</li>
+</ol></li>
+<li><p>Arguments 4, 5, and 6 all exemplify the pattern:</p>
+<ol type="1">
+<li><span class="math inline">\(p\)</span> or <span
+class="math inline">\(q\)</span></li>
+<li>Not <span class="math inline">\(p\)</span></li>
+<li><span class="math inline">\(q\)</span></li>
+</ol></li>
+</ul>
+<p>In these case, <span class="math inline">\(p\)</span> and <span
+class="math inline">\(q\)</span> are <em>placeholders</em> for English
+declarative sentences.</p>
+<p>What these argument patterns or forms have in common is that they
+<em>never</em> take one from <em>true</em> premises to a <em>false</em>
+conclusion. In what follows, we will be interested in what we will call
+a <em>valid argument form</em>, which we will use in order to
+characterize the <em>validity</em> of an argument.</p>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>An argument is <em>valid</em> if, and only if, it is an instance of a
+<em>valid argument form</em>.</p>
+</dd>
+</dl>
+<p>It is the task of formal logic to offer a more precise
+characterization of a valid argument form. For the time being, we will
+content ourselves with the observation that valid forms exemplify the
+following features:</p>
+<ol type="1">
+<li><p>A valid argument form has <em>no</em> argument instances with
+<em>true premises</em> and a <em>false conclusion</em>.</p></li>
+<li><p>A valid argument form preserves the truth of the premises
+regardless of subject matter.</p></li>
+</ol>
+<p>Given what we know, we can dismiss an argument form as
+<em>invalid</em> <em>if</em> we can find some instances with true
+premises and a false conclusion.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>The following argument form is <em>invalid</em>:</p>
+</dd>
+</dl>
+<ol type="1">
+<li><span class="math inline">\(p\)</span> if, and only if, <span
+class="math inline">\(q\)</span></li>
+<li><span class="math inline">\(p\)</span> and <span
+class="math inline">\(q\)</span></li>
+</ol>
+<p>To appreciate that, it suffices to provide an instance with
+<em>true</em> premises and a <em>false</em> conclusion:</p>
+<ol type="1">
+<li><p>Mark Twain wrote <em>Hamlet</em> if, and only if, Samuel Clemens
+did.</p></li>
+<li><p>Mark Twain wrote <em>Hamlet</em> and Samuel Clements
+did.</p></li>
+</ol>
+<p>In this case, the premise is true because Mark Twain is the same
+individual as Samuel Clemens, but the conclusion is false because
+neither wrote <em>Hamlet</em>.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>The following argument form is <em>invalid</em>:</p>
+</dd>
+</dl>
+<ol type="1">
+<li>If <span class="math inline">\(p\)</span> and <span
+class="math inline">\(q\)</span>, then <span
+class="math inline">\(r\)</span></li>
+<li><span class="math inline">\(p\)</span></li>
+<li><span class="math inline">\(r\)</span></li>
+</ol>
+<p>To appreciate the invalidity of this argument pattern, we can provide
+an instance with true premises and a false conclusion.</p>
+<ol type="1">
+<li>If you turn the ignition and the tank is full, then the car will
+start.</li>
+<li>You turn the ignition.</li>
+<li>The car will start.</li>
+</ol>
+<p>This argument will do <em>provided it is given in a context in which
+the tank is not full and the car does not start.</em></p>
+</body>
+</html>
