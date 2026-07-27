@@ -7,6 +7,26 @@
   <link rel="stylesheet" href="../shared/notes.css">
   <script type="text/javascript" async
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<style>
+.mc-exercise { margin: 1.2rem 0 2rem; width: 55%; margin-left: 8%; }
+.mc-question { margin-bottom: 0.7rem; font-size: 1.4rem; line-height: 2rem; }
+.mc-options { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.8rem; }
+.mc-option { display: flex; align-items: baseline; gap: 0.6rem; cursor: pointer; font-size: 1.3rem; line-height: 1.7rem; }
+.mc-option input { margin: 0; flex-shrink: 0; }
+.mc-controls { display: flex; gap: 0.6rem; margin-bottom: 0.5rem; }
+.btn-check, .btn-reveal {
+  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+  font-size: 0.82rem; padding: 0.22rem 0.7rem;
+  border-radius: 3px; cursor: pointer; border: 1px solid #ccc;
+  background: #fffff8; color: #111;
+}
+.btn-check:hover { background: #006666; color: #fff; border-color: #006666; }
+.mc-feedback { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.9rem; margin-bottom: 0.3rem; }
+.fb-ok { color: #1a6e2e; } .fb-err { color: #8b1a1a; }
+.mc-answer { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.88rem; color: #555; margin-top: 0.3rem; }
+</style>
+
 </head>
 <body>
 <nav class="back-nav"><a href="https://gabriel-uzquiano.github.io/courses/220">← PHIL 220</a></nav>
@@ -34,22 +54,49 @@ in order to predicate something of it.</p>
 <p>In order to explore the distinction, please add quotation marks to
 each sentence below in order to produce a <em>true</em> statement.</p>
 <p>Please select any true statements below.</p>
-<pre class="QualitativeProblem MultipleSelection" data-options="check"
-data-submission="none"><code>A.
-| I is a Roman numeral for &#39;1&#39;
-|+&#39;I&#39; is a Roman numeral for 1
-| I is a Roman numeral for 1
-|&#39;I&#39; is a Roman numeral for &#39;1&#39;</code></pre>
-<pre class="QualitativeProblem MultipleSelection" data-options="check"
-data-submission="none"><code>B. 
-| England is part of &#39;New England&#39;
-|*&#39;England&#39; is part of &#39;New England&#39;
-| &#39;England&#39; is part of New England</code></pre>
-<pre class="QualitativeProblem MultipleSelection" data-options="check"
-data-submission="none"><code>C.
-| &#39;England&#39; is not part of &#39;New England&#39;
-|* England is not part of &#39;New England&#39;
-|* England is not part of New England</code></pre>
+<div class="mc-exercise" data-correct='[]' data-multi="true">
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="checkbox" name="ex_1_0" value="0"><span>I is a Roman numeral for &#x27;1&#x27;</span></label>
+    <label class="mc-option"><input type="checkbox" name="ex_1_1" value="1"><span>+&#x27;I&#x27; is a Roman numeral for 1</span></label>
+    <label class="mc-option"><input type="checkbox" name="ex_1_2" value="2"><span>I is a Roman numeral for 1</span></label>
+    <label class="mc-option"><input type="checkbox" name="ex_1_3" value="3"><span>&#x27;I&#x27; is a Roman numeral for &#x27;1&#x27;</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> </div>
+</div>
+<div class="mc-exercise" data-correct='[1]' data-multi="true">
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="checkbox" name="ex_2_0" value="0"><span>England is part of &#x27;New England&#x27;</span></label>
+    <label class="mc-option"><input type="checkbox" name="ex_2_1" value="1"><span>&#x27;England&#x27; is part of &#x27;New England&#x27;</span></label>
+    <label class="mc-option"><input type="checkbox" name="ex_2_2" value="2"><span>&#x27;England&#x27; is part of New England</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> &#x27;England&#x27; is part of &#x27;New England&#x27;</div>
+</div>
+<div class="mc-exercise" data-correct='[1,2]' data-multi="true">
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="checkbox" name="ex_3_0" value="0"><span>&#x27;England&#x27; is not part of &#x27;New England&#x27;</span></label>
+    <label class="mc-option"><input type="checkbox" name="ex_3_1" value="1"><span>England is not part of &#x27;New England&#x27;</span></label>
+    <label class="mc-option"><input type="checkbox" name="ex_3_2" value="2"><span>England is not part of New England</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> England is not part of &#x27;New England&#x27;; England is not part of New England</div>
+</div>
 <h2 id="form-and-meaning">form and meaning</h2>
 <p>We should now make explicit the link between the validity and the
 meaning of an important family of sentential connectives of English.</p>
@@ -226,5 +273,33 @@ if, you turn the ignition).</p></li>
 if,</em> you turn the ignition.</p></li>
 </ul>
 </article>
+
+<script>
+function checkMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var correct = JSON.parse(ex.dataset.correct);
+  var multi = ex.dataset.multi === "true";
+  var feedback = ex.querySelector('.mc-feedback');
+  feedback.removeAttribute('hidden');
+  if (multi) {
+    var checked = Array.from(ex.querySelectorAll('input[type=checkbox]:checked')).map(function(c){ return parseInt(c.value); });
+    var ok = correct.length === checked.length && correct.every(function(v){ return checked.includes(v); });
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  } else {
+    var selected = ex.querySelector('input[type=radio]:checked');
+    if (!selected) { feedback.textContent = 'Please select an option.'; feedback.className = 'mc-feedback'; return; }
+    var ok = correct.includes(parseInt(selected.value));
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  }
+}
+function revealMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var ans = ex.querySelector('.mc-answer');
+  ans.removeAttribute('hidden');
+}
+</script>
+
 </body>
 </html>

@@ -7,6 +7,26 @@
   <link rel="stylesheet" href="../shared/notes.css">
   <script type="text/javascript" async
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<style>
+.mc-exercise { margin: 1.2rem 0 2rem; width: 55%; margin-left: 8%; }
+.mc-question { margin-bottom: 0.7rem; font-size: 1.4rem; line-height: 2rem; }
+.mc-options { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.8rem; }
+.mc-option { display: flex; align-items: baseline; gap: 0.6rem; cursor: pointer; font-size: 1.3rem; line-height: 1.7rem; }
+.mc-option input { margin: 0; flex-shrink: 0; }
+.mc-controls { display: flex; gap: 0.6rem; margin-bottom: 0.5rem; }
+.btn-check, .btn-reveal {
+  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+  font-size: 0.82rem; padding: 0.22rem 0.7rem;
+  border-radius: 3px; cursor: pointer; border: 1px solid #ccc;
+  background: #fffff8; color: #111;
+}
+.btn-check:hover { background: #006666; color: #fff; border-color: #006666; }
+.mc-feedback { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.9rem; margin-bottom: 0.3rem; }
+.fb-ok { color: #1a6e2e; } .fb-err { color: #8b1a1a; }
+.mc-answer { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.88rem; color: #555; margin-top: 0.3rem; }
+</style>
+
 </head>
 <body>
 <nav class="back-nav"><a href="https://gabriel-uzquiano.github.io/courses/220">← PHIL 220</a></nav>
@@ -110,16 +130,34 @@ class="math inline">\(q\)</span></p></li>
 <li><p>Therefore, <span class="math inline">\(q\)</span></p></li>
 </ol>
 <p>Which arguments below are instances of Modus Ponens?</p>
-<pre class="QualitativeProblem MultipleChoice" data-options="check"
-data-submission="none" data-content-format="html"><code>2a.
-| If the car starts, then there&#39;s gas in the tank. There&#39;s gas in the tank. Therefore, the car started.
-| If the car starts, then there&#39;s gas in the tank. The car starts. Therefore, you turned the ignition.
-|* If the car starts, then there&#39;s gas in the tank. The car started. Therefore, there&#39;s gas in the tank.</code></pre>
-<pre class="QualitativeProblem MultipleChoice" data-options="check"
-data-submission="none" data-content-format="html"><code>2b.
-| If I flip the coin, then it&#39;ll land heads. It&#39;ll land heads. Therefore, I&#39;ll flip the coin.
-|* If I flip the coin, then it&#39;ll land heads. I&#39;ll flip the coin. Therefore, it&#39;ll land heads.
-| If the coin lands heads, then I will flip it. I&#39;ll flip the coin. Therefore, it&#39;ll land heads.</code></pre>
+<div class="mc-exercise" data-correct='[2]' >
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="radio" name="ex_1_0" value="0"><span>If the car starts, then there&#x27;s gas in the tank. There&#x27;s gas in the tank. Therefore, the car started.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_1_1" value="1"><span>If the car starts, then there&#x27;s gas in the tank. The car starts. Therefore, you turned the ignition.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_1_2" value="2"><span>If the car starts, then there&#x27;s gas in the tank. The car started. Therefore, there&#x27;s gas in the tank.</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> If the car starts, then there&#x27;s gas in the tank. The car started. Therefore, there&#x27;s gas in the tank.</div>
+</div>
+<div class="mc-exercise" data-correct='[1]' >
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="radio" name="ex_2_0" value="0"><span>If I flip the coin, then it&#x27;ll land heads. It&#x27;ll land heads. Therefore, I&#x27;ll flip the coin.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_2_1" value="1"><span>If I flip the coin, then it&#x27;ll land heads. I&#x27;ll flip the coin. Therefore, it&#x27;ll land heads.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_2_2" value="2"><span>If the coin lands heads, then I will flip it. I&#x27;ll flip the coin. Therefore, it&#x27;ll land heads.</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> If I flip the coin, then it&#x27;ll land heads. I&#x27;ll flip the coin. Therefore, it&#x27;ll land heads.</div>
+</div>
 <p>One feature of valid argument forms is that <strong>they have no
 instances with true premises and a false conclusion</strong>.</p>
 <dl>
@@ -164,16 +202,34 @@ class="math inline">\(q\)</span></p></li>
 <p>No instance of Modus Tollens has true premises and a false
 conclusion.</p>
 <p>Which arguments below are instances of Modus Tollens?</p>
-<pre class="QualitativeProblem MultipleChoice" data-options="check"
-data-submission="none"><code>3a.
-|* If I&#39;m a millionaire, then I can make ends meet. I cannot make ends meet. Therefore, I&#39;m not a millionaire.
-| If I&#39;m a millionaire, then I can make ends meet. I&#39;m not a millionaire. Therefore, I cannot make ends meet.
-| If I&#39;m a millionaire, then I can make ends meet. I can make ends meet. Therefore I&#39;m a millionaire.</code></pre>
-<pre class="QualitativeProblem MultipleChoice" data-options="check"
-data-submission="none"><code>3b.
-| If my age is divisible by 4, then it&#39;s even. My age is not divisible by 4. Therefore, my age isn&#39;t even.
-|* If my age is divisible by 4, then it&#39;s even. My age isn&#39;t even. Therefore, my age is not divisible by 4.
-| If my age is divisible by 4, then it&#39;s even. My age is even. Therefore, my age isn&#39;t divisible by 4.</code></pre>
+<div class="mc-exercise" data-correct='[0]' >
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="radio" name="ex_3_0" value="0"><span>If I&#x27;m a millionaire, then I can make ends meet. I cannot make ends meet. Therefore, I&#x27;m not a millionaire.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_3_1" value="1"><span>If I&#x27;m a millionaire, then I can make ends meet. I&#x27;m not a millionaire. Therefore, I cannot make ends meet.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_3_2" value="2"><span>If I&#x27;m a millionaire, then I can make ends meet. I can make ends meet. Therefore I&#x27;m a millionaire.</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> If I&#x27;m a millionaire, then I can make ends meet. I cannot make ends meet. Therefore, I&#x27;m not a millionaire.</div>
+</div>
+<div class="mc-exercise" data-correct='[1]' >
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="radio" name="ex_4_0" value="0"><span>If my age is divisible by 4, then it&#x27;s even. My age is not divisible by 4. Therefore, my age isn&#x27;t even.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_4_1" value="1"><span>If my age is divisible by 4, then it&#x27;s even. My age isn&#x27;t even. Therefore, my age is not divisible by 4.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_4_2" value="2"><span>If my age is divisible by 4, then it&#x27;s even. My age is even. Therefore, my age isn&#x27;t divisible by 4.</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> If my age is divisible by 4, then it&#x27;s even. My age isn&#x27;t even. Therefore, my age is not divisible by 4.</div>
+</div>
 <p>There is again no way to provide an instance of the form with true
 premises and a false conclusion.</p>
 <dl>
@@ -208,10 +264,19 @@ assessment of validity of some arguments in English.</p>
 <p>Determine whether each argument below is valid.</p>
 <p>Many Americans speak Tagalog. Most USC students are American.
 Therefore, most USC students speak Tagalog.</p>
-<pre class="QualitativeProblem MultipleChoice" data-options="check"
-data-submission="none"><code>3.1. 
-|Yes
-|*No</code></pre>
+<div class="mc-exercise" data-correct='[1]' >
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="radio" name="ex_5_0" value="0"><span>Yes</span></label>
+    <label class="mc-option"><input type="radio" name="ex_5_1" value="1"><span>No</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> No</div>
+</div>
 <blockquote>
 <p><span style="color: blue;">Why?</span></p>
 <p><span style="color: blue;"><em>The argument has true premises and a
@@ -220,10 +285,19 @@ form.</em></span></p>
 </blockquote>
 <p>If many Americans speak Tagalog, then some USC students do. Many
 Americans speak Tagalog. Therefore, some USC students speak Tagalog.</p>
-<pre class="QualitativeProblem MultipleChoice" data-options="check"
-data-submission="none"><code>3.2.
-|*Yes
-|No</code></pre>
+<div class="mc-exercise" data-correct='[0]' >
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="radio" name="ex_6_0" value="0"><span>Yes</span></label>
+    <label class="mc-option"><input type="radio" name="ex_6_1" value="1"><span>No</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> Yes</div>
+</div>
 <blockquote>
 <p><span style="color: blue;">Why?</span></p>
 <p><span style="color: blue;"><em>The argument is valid because it is an
@@ -238,10 +312,19 @@ premises and a false conclusion.</em></span></p>
 </blockquote>
 <p>Every Tesla is an electric car. Every electric car is fuel-efficient.
 So, every Tesla is fuel-efficient.</p>
-<pre class="QualitativeProblem MultipleChoice" data-options="check"
-data-submission="none"><code>3.3.
-|*Yes.
-|No.</code></pre>
+<div class="mc-exercise" data-correct='[0]' >
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="radio" name="ex_7_0" value="0"><span>Yes.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_7_1" value="1"><span>No.</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> Yes.</div>
+</div>
 <blockquote>
 <p><span style="color: blue;">Why?</span></p>
 <p><span style="color: blue;"><em>The argument is valid because it is an
@@ -254,10 +337,19 @@ conclusion.</em></span></p>
 </blockquote>
 <p>Some Teslas are fuel-efficient cars. Some fuel-efficient cars are
 electric cars. Therefore, some Teslas are electric cars.</p>
-<pre class="QualitativeProblem MultipleChoice" data-options="check"
-data-submission="none"><code>3.4.
-|Yes.
-|*No.</code></pre>
+<div class="mc-exercise" data-correct='[1]' >
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="radio" name="ex_8_0" value="0"><span>Yes.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_8_1" value="1"><span>No.</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> No.</div>
+</div>
 <blockquote>
 <p><span style="color: blue;">Why?</span></p>
 <p><span style="color: blue;"><em>The argument is not an instance of a
@@ -385,16 +477,34 @@ class="math inline">\(q\)</span></li>
 <p>However, only one of them is <em>sound</em>, and there may be
 reasonable disagreement as to which one it is.</p>
 <p>Which of the arguments given below are <em>sound</em>?</p>
-<pre class="QualitativeProblem MultipleChoice" data-options="check"
-data-submission="none"><code>4. 
-| All fish live underwater. Whales are fish. Therefore, whales live underwater.
-| No mammals live underwater. Whales are mammals. Therefore, whales do not live underwater.
-|*All fish live underwater. No bears live underwater. Therefore, no bear is a fish.</code></pre>
-<pre class="QualitativeProblem MultipleChoice" data-options="check"
-data-submission="none"><code>5.
-|* All Spanish cities enjoy great weather. Barcelona is a Spanish city. Therefore, Barcelona enjoys great weather.
-| No Spanish cities enjoy great weather. Oslo is in Spain. Therefore, Oslo does not enjoy great weather.
-| Some cities in Norway enjoy great weather. Madrid is in Norway. Therefore, Madrid enjoys great weather.</code></pre>
+<div class="mc-exercise" data-correct='[2]' >
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="radio" name="ex_9_0" value="0"><span>All fish live underwater. Whales are fish. Therefore, whales live underwater.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_9_1" value="1"><span>No mammals live underwater. Whales are mammals. Therefore, whales do not live underwater.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_9_2" value="2"><span>All fish live underwater. No bears live underwater. Therefore, no bear is a fish.</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> All fish live underwater. No bears live underwater. Therefore, no bear is a fish.</div>
+</div>
+<div class="mc-exercise" data-correct='[0]' >
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="radio" name="ex_10_0" value="0"><span>All Spanish cities enjoy great weather. Barcelona is a Spanish city. Therefore, Barcelona enjoys great weather.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_10_1" value="1"><span>No Spanish cities enjoy great weather. Oslo is in Spain. Therefore, Oslo does not enjoy great weather.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_10_2" value="2"><span>Some cities in Norway enjoy great weather. Madrid is in Norway. Therefore, Madrid enjoys great weather.</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> All Spanish cities enjoy great weather. Barcelona is a Spanish city. Therefore, Barcelona enjoys great weather.</div>
+</div>
 <p>How exactly are validity and soundness related?</p>
 <ul>
 <li>If an argument is sound, then it is valid.</li>
@@ -408,26 +518,81 @@ above.</p>
 premises. But valid arguments are instances of valid argument forms,
 which preserve truth. So, the conclusion must be true.</p>
 <p>Which of the following statements are <em>true</em>?</p>
-<pre class="QualitativeProblem MultipleSelection" data-options="check"
-data-submission="none"><code>6.
-| If an argument is valid, then it is sound.
-|* If an argument is sound, then it is valid.
-|* If an argument is sound, then its conclusion is true.
-| If an argument is valid, then its conclusion is true.</code></pre>
+<div class="mc-exercise" data-correct='[1,2]' data-multi="true">
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="checkbox" name="ex_11_0" value="0"><span>If an argument is valid, then it is sound.</span></label>
+    <label class="mc-option"><input type="checkbox" name="ex_11_1" value="1"><span>If an argument is sound, then it is valid.</span></label>
+    <label class="mc-option"><input type="checkbox" name="ex_11_2" value="2"><span>If an argument is sound, then its conclusion is true.</span></label>
+    <label class="mc-option"><input type="checkbox" name="ex_11_3" value="3"><span>If an argument is valid, then its conclusion is true.</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> If an argument is sound, then it is valid.; If an argument is sound, then its conclusion is true.</div>
+</div>
 <p>Which of the following statements are <em>true</em>?</p>
-<pre class="QualitativeProblem MultipleSelection" data-options="check"
-data-submission="none"><code>7.
-| If an argument has true premises and a true conclusion, then it is sound.
-| If an argument has true premises and a true conclusion, then it is valid.
-| If an argument has false premises and a false conclusion, then it is not valid.
-|*If an argument has true premises and a false conclusion, then it is not valid.
-|*If an argument has false premises, then it is not sound.</code></pre>
-<pre class="QualitativeProblem MultipleSelection" data-options="check"
-data-submission="none"><code>8.
-| Every valid argument has true premises and a true conclusion.
-|*Every sound argument has true premises and a true conclusion.
-| No valid argument has false premises and a true conclusion.
-|*No sound argument has true premises and a false conclusion.</code></pre>
+<div class="mc-exercise" data-correct='[3,4]' data-multi="true">
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="checkbox" name="ex_12_0" value="0"><span>If an argument has true premises and a true conclusion, then it is sound.</span></label>
+    <label class="mc-option"><input type="checkbox" name="ex_12_1" value="1"><span>If an argument has true premises and a true conclusion, then it is valid.</span></label>
+    <label class="mc-option"><input type="checkbox" name="ex_12_2" value="2"><span>If an argument has false premises and a false conclusion, then it is not valid.</span></label>
+    <label class="mc-option"><input type="checkbox" name="ex_12_3" value="3"><span>If an argument has true premises and a false conclusion, then it is not valid.</span></label>
+    <label class="mc-option"><input type="checkbox" name="ex_12_4" value="4"><span>If an argument has false premises, then it is not sound.</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> If an argument has true premises and a false conclusion, then it is not valid.; If an argument has false premises, then it is not sound.</div>
+</div>
+<div class="mc-exercise" data-correct='[1,3]' data-multi="true">
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="checkbox" name="ex_13_0" value="0"><span>Every valid argument has true premises and a true conclusion.</span></label>
+    <label class="mc-option"><input type="checkbox" name="ex_13_1" value="1"><span>Every sound argument has true premises and a true conclusion.</span></label>
+    <label class="mc-option"><input type="checkbox" name="ex_13_2" value="2"><span>No valid argument has false premises and a true conclusion.</span></label>
+    <label class="mc-option"><input type="checkbox" name="ex_13_3" value="3"><span>No sound argument has true premises and a false conclusion.</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> Every sound argument has true premises and a true conclusion.; No sound argument has true premises and a false conclusion.</div>
+</div>
 </article>
+
+<script>
+function checkMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var correct = JSON.parse(ex.dataset.correct);
+  var multi = ex.dataset.multi === "true";
+  var feedback = ex.querySelector('.mc-feedback');
+  feedback.removeAttribute('hidden');
+  if (multi) {
+    var checked = Array.from(ex.querySelectorAll('input[type=checkbox]:checked')).map(function(c){ return parseInt(c.value); });
+    var ok = correct.length === checked.length && correct.every(function(v){ return checked.includes(v); });
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  } else {
+    var selected = ex.querySelector('input[type=radio]:checked');
+    if (!selected) { feedback.textContent = 'Please select an option.'; feedback.className = 'mc-feedback'; return; }
+    var ok = correct.includes(parseInt(selected.value));
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  }
+}
+function revealMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var ans = ex.querySelector('.mc-answer');
+  ans.removeAttribute('hidden');
+}
+</script>
+
 </body>
 </html>
