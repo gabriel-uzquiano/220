@@ -53,6 +53,7 @@ MC_CSS = """
 .mc-feedback { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.9rem; margin-bottom: 0.3rem; }
 .fb-ok { color: #1a6e2e; } .fb-err { color: #8b1a1a; }
 .mc-answer { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.88rem; color: #555; margin-top: 0.3rem; }
+.mc-explanation { margin-top: 0.4rem; font-family: et-book, Palatino, serif; font-size: 1.2rem; line-height: 1.7rem; color: #333; }
 </style>
 """
 
@@ -61,25 +62,39 @@ def parse_carnap_block(label, lines, multi):
     Parse Carnap pipe-format options.
     |* option  -> correct
     | option   -> incorrect
-    Returns (options: list of (text, is_correct))
+    Explanation: text -> explanation (may span multiple lines)
+    Returns (options: list of (text, is_correct), explanation: str)
     """
     options = []
+    explanation_lines = []
+    in_explanation = False
     for line in lines:
-        line = line.strip()
-        if not line or line == label + '.':
+        stripped = line.strip()
+        if stripped.startswith('Explanation:'):
+            in_explanation = True
+            rest = stripped[len('Explanation:'):].strip()
+            if rest:
+                explanation_lines.append(rest)
             continue
-        if line.startswith('|*'):
-            text = line[2:].strip()  # strip |* with or without space
+        if in_explanation:
+            # continuation lines of the explanation
+            explanation_lines.append(stripped)
+            continue
+        if not stripped or stripped == label + '.':
+            continue
+        if stripped.startswith('|*'):
+            text = stripped[2:].strip()
             options.append((text, True))
-        elif line.startswith('|'):
-            text = line[1:].strip()
+        elif stripped.startswith('|'):
+            text = stripped[1:].strip()
             if text:
                 options.append((text, False))
-    return options
+    explanation = ' '.join(explanation_lines).strip()
+    return options, explanation
 
 counter = [0]
 
-def make_widget(label, options, multi, context_question=None):
+def make_widget(label, options, multi, context_question=None, explanation=''):
     counter[0] += 1
     idx = counter[0]
     name = f"ex_{idx}"
@@ -98,11 +113,15 @@ def make_widget(label, options, multi, context_question=None):
     
     correct_texts = [escape(options[i][0]) for i in correct]
     answer_str = "; ".join(correct_texts)
-    
+
     question_html = ""
     if context_question:
         question_html = f'<div class="mc-question">{escape(context_question)}</div>'
-    
+
+    explanation_html = ""
+    if explanation:
+        explanation_html = f'<div class="mc-explanation">{explanation}</div>'
+
     return (
         f'<div class="mc-exercise" data-correct=\'{correct_json}\' {multi_attr}>\n'
         f'  {question_html}\n'
@@ -112,7 +131,9 @@ def make_widget(label, options, multi, context_question=None):
         f'    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>\n'
         f'  </div>\n'
         f'  <div class="mc-feedback" hidden></div>\n'
-        f'  <div class="mc-answer" hidden><strong>Answer:</strong> {answer_str}</div>\n'
+        f'  <div class="mc-answer" hidden><strong>Answer:</strong> {answer_str}'
+        + (f'<br><br>{explanation_html}' if explanation_html else '') +
+        f'</div>\n'
         f'</div>'
     )
 
@@ -134,12 +155,12 @@ def transform(html):
         lines = raw.split('\n')
         # First line is the label (e.g. "1." or "A.")
         label = lines[0].strip().rstrip('.') if lines else ''
-        options = parse_carnap_block(label, lines[1:], multi)
-        
+        options, explanation = parse_carnap_block(label, lines[1:], multi)
+
         if not options:
             return m.group(0)  # leave unchanged if parsing fails
-        
-        return make_widget(label, options, multi)
+
+        return make_widget(label, options, multi, explanation=explanation)
     
     result = pattern.sub(replace_block, html)
     

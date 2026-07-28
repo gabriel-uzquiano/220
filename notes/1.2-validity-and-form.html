@@ -25,6 +25,7 @@
 .mc-feedback { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.9rem; margin-bottom: 0.3rem; }
 .fb-ok { color: #1a6e2e; } .fb-err { color: #8b1a1a; }
 .mc-answer { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.88rem; color: #555; margin-top: 0.3rem; }
+.mc-explanation { margin-top: 0.4rem; font-family: et-book, Palatino, serif; font-size: 1.2rem; line-height: 1.7rem; color: #333; }
 </style>
 
 </head>
@@ -275,7 +276,7 @@ Therefore, most USC students speak Tagalog.</p>
     <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
   </div>
   <div class="mc-feedback" hidden></div>
-  <div class="mc-answer" hidden><strong>Answer:</strong> No</div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> No<br><br><div class="mc-explanation">The argument has true premises and a false conclusion. So, it cannot be an instance of a valid argument form.</div></div>
 </div>
 <p>If many Americans speak Tagalog, then some USC students do. Many
 Americans speak Tagalog. Therefore, some USC students speak Tagalog.</p>
@@ -290,7 +291,7 @@ Americans speak Tagalog. Therefore, some USC students speak Tagalog.</p>
     <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
   </div>
   <div class="mc-feedback" hidden></div>
-  <div class="mc-answer" hidden><strong>Answer:</strong> Yes</div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> Yes<br><br><div class="mc-explanation">The argument is valid because it is an instance of the form 'If $p$, then $q$; $p$. Therefore, $q$.' Just let $p$ stand for 'many Americans speak Tagalog' and $q$ for 'some USC students speak Tagalog'. That argument form has no instances with true premises and a false conclusion.</div></div>
 </div>
 <p>Every Tesla is an electric car. Every electric car is fuel-efficient.
 So, every Tesla is fuel-efficient.</p>
@@ -305,7 +306,7 @@ So, every Tesla is fuel-efficient.</p>
     <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
   </div>
   <div class="mc-feedback" hidden></div>
-  <div class="mc-answer" hidden><strong>Answer:</strong> Yes.</div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> Yes.<br><br><div class="mc-explanation">The argument is valid because it is an instance of the form 'Every $A$ is $B$. Every $B$ is $C$. Therefore, every $A$ is $C$'. Just let $A$ stand for 'Tesla', $B$ for 'an electric car', and $C$ for 'fuel-efficient'. That argument form has no instances with true premises and a false conclusion.</div></div>
 </div>
 <p>Some Teslas are fuel-efficient cars. Some fuel-efficient cars are
 electric cars. Therefore, some Teslas are electric cars.</p>
@@ -320,7 +321,7 @@ electric cars. Therefore, some Teslas are electric cars.</p>
     <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
   </div>
   <div class="mc-feedback" hidden></div>
-  <div class="mc-answer" hidden><strong>Answer:</strong> No.</div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> No.<br><br><div class="mc-explanation">The argument is not an instance of a valid argument form. It is an instance of at least two forms:  1. $p$ 2. $q$ 3. $r$  This is not a valid argument form. The other argument form is:  1. Some $A$ is $B$ 2. Some $B$ is $C$ 3. Some $A$ is $C$$  Here we let $A$ be 'Tesla', $B$ be 'fuel-efficient car', and $C$ be 'electric car'. This is not a valid argument form, since it has instances with true premises and a false conclusion, e.g.,  1. Some whales are mammals. 2. Some mammals live at high altitude. 3. Some whales live at high altitude.</div></div>
 </div>
 <h2 id="soundness">Soundness</h2>
 <p>You may find some arguments persuasive even if their conclusion is
