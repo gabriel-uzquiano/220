@@ -355,6 +355,7 @@ function revealMC(btn) {
   var ex = btn.closest('.mc-exercise');
   var ans = ex.querySelector('.mc-answer');
   ans.removeAttribute('hidden');
+  if (window.MathJax) { MathJax.Hub.Queue(['Typeset', MathJax.Hub, ans]); }
 }
 </script>
 
