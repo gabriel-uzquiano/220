@@ -4,7 +4,20 @@ with interactive MC widgets matching the USC Logic Web Unit I style.
 """
 import re
 import sys
+import subprocess
 from html import escape
+
+def pandoc_inline(text):
+    """Convert a snippet of markdown (with $...$ math) to HTML inline via pandoc."""
+    result = subprocess.run(
+        ['pandoc', '--from', 'markdown+tex_math_dollars', '--to', 'html5'],
+        input=text, capture_output=True, text=True
+    )
+    # pandoc wraps output in <p>...</p> — strip that
+    html = result.stdout.strip()
+    if html.startswith('<p>') and html.endswith('</p>'):
+        html = html[3:-4]
+    return html
 
 MC_JS = """
 <script>
@@ -121,8 +134,8 @@ def make_widget(label, options, multi, context_question=None, explanation=''):
 
     explanation_html = ""
     if explanation:
-        # Do not escape explanation — it may contain MathJax ($...$) and HTML
-        explanation_html = f'<div class="mc-explanation">{explanation}</div>'
+        # Run through pandoc so $...$ math becomes \(...\) for MathJax
+        explanation_html = f'<div class="mc-explanation">{pandoc_inline(explanation)}</div>'
 
     return (
         f'<div class="mc-exercise" data-correct=\'{correct_json}\' {multi_attr}>\n'
