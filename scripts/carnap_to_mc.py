@@ -31,6 +31,7 @@ function revealMC(btn) {
   var ex = btn.closest('.mc-exercise');
   var ans = ex.querySelector('.mc-answer');
   ans.removeAttribute('hidden');
+  if (window.MathJax) { MathJax.Hub.Queue(['Typeset', MathJax.Hub, ans]); }
 }
 </script>
 """
@@ -120,6 +121,7 @@ def make_widget(label, options, multi, context_question=None, explanation=''):
 
     explanation_html = ""
     if explanation:
+        # Do not escape explanation — it may contain MathJax ($...$) and HTML
         explanation_html = f'<div class="mc-explanation">{explanation}</div>'
 
     return (
