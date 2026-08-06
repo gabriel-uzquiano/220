@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>truth tables — PHIL 220</title>
+  <link rel="stylesheet" href="../shared/notes.css">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<style>
+.mc-exercise { margin: 1.2rem 0 2rem; width: 55%; margin-left: 8%; }
+.mc-question { margin-bottom: 0.7rem; font-size: 1.4rem; line-height: 2rem; }
+.mc-options { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.8rem; }
+.mc-option { display: flex; align-items: baseline; gap: 0.6rem; cursor: pointer; font-size: 1.3rem; line-height: 1.7rem; }
+.mc-option input { margin: 0; flex-shrink: 0; }
+.mc-controls { display: flex; gap: 0.6rem; margin-bottom: 0.5rem; }
+.btn-check, .btn-reveal {
+  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+  font-size: 0.82rem; padding: 0.22rem 0.7rem;
+  border-radius: 3px; cursor: pointer; border: 1px solid #ccc;
+  background: #fffff8; color: #111;
+}
+.btn-check:hover { background: #006666; color: #fff; border-color: #006666; }
+.mc-feedback { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.9rem; margin-bottom: 0.3rem; }
+.fb-ok { color: #1a6e2e; } .fb-err { color: #8b1a1a; }
+.mc-answer { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.88rem; color: #555; margin-top: 0.3rem; }
+.mc-explanation { margin-top: 0.4rem; font-family: et-book, Palatino, serif; font-size: 1.2rem; line-height: 1.7rem; color: #333; }
+</style>
+
+</head>
+<body>
+<nav class="back-nav"><a href="https://gabriel-uzquiano.github.io/courses/220">← PHIL 220</a></nav>
+<article>
+<h1 id="semantics">semantics</h1>
+<p>We will use truth values to interpret the propositional variables and
+truth functions to interpret the connectives of the language.</p>
+<h2 id="negation">negation</h2>
+<p>The <em>negation</em> <span class="math inline">\(\neg
+\varphi\)</span> of a formula <span
+class="math inline">\(\varphi\)</span> of propositional logic is true
+if, and only if, <span class="math inline">\(\varphi\)</span> is false.
+That is because <span class="math inline">\(\neg\)</span> is a formal
+counterpart of ‘not’ and an English sentence of the form ‘not <span
+class="math inline">\(\varphi\)</span>’ is true if, and only if, <span
+class="math inline">\(\varphi\)</span> is not true.</p>
+<pre class="TruthTable Simple" data-system="gamutPND"
+data-options="nocounterexample autoAtoms" data-submission="none"><code>A. - p</code></pre>
+<p><span class="math inline">\(\varphi\)</span> may itself be a complex
+formula:</p>
+<pre class="TruthTable Simple" data-system="gamutPND"
+data-options="nocounterexample autoAtoms" data-submission="none"><code>B. - - q</code></pre>
+<h2 id="conjunction">conjunction</h2>
+<p>The <em>conjunction</em> <span class="math inline">\((\varphi \
+\wedge \ \psi)\)</span> of two formulas <span
+class="math inline">\(\varphi\)</span> and <span
+class="math inline">\(\psi\)</span> is true if, and only if, <span
+class="math inline">\(\varphi\)</span> is true and <span
+class="math inline">\(\psi\)</span> is true. That is because <span
+class="math inline">\(\wedge\)</span> is the formal counterpart of ‘and’
+and an English sentence of the form ‘<span
+class="math inline">\(\varphi\)</span> and <span
+class="math inline">\(\psi\)</span>’ is true if, and only if, <span
+class="math inline">\(\varphi\)</span> is true and <span
+class="math inline">\(\psi\)</span> is true.</p>
+<pre class="TruthTable Simple" data-system="gamutPND"
+data-options="nocounterexample autoAtoms" data-submission="none"><code>C. p &amp; q</code></pre>
+<p><span class="math inline">\(\varphi\)</span> and <span
+class="math inline">\(\psi\)</span> may themselves be complex
+formulas:</p>
+<pre class="TruthTable Simple" data-system="gamutPND"
+data-options="nocounterexample autoAtoms" data-submission="none"><code>D. -p &amp; - q</code></pre>
+<h2 id="disjunction">disjunction</h2>
+<p>The <em>disjunction</em> <span class="math inline">\((\varphi \ \vee
+\ \psi)\)</span> of two formulas <span
+class="math inline">\(\varphi\)</span> and <span
+class="math inline">\(\psi\)</span> is true if, and only if, <span
+class="math inline">\(\varphi\)</span> is true or <span
+class="math inline">\(\psi\)</span> is true. That is because <span
+class="math inline">\(\wedge\)</span> is the formal counterpart of ‘or’
+and an English sentence of the form ‘<span
+class="math inline">\(\varphi\)</span> or <span
+class="math inline">\(\psi\)</span>’ is true if, and only if, <span
+class="math inline">\(\varphi\)</span> is true or <span
+class="math inline">\(\psi\)</span> is true.</p>
+<pre class="TruthTable Simple" data-system="gamutPND"
+data-options="nocounterexample autoAtoms" data-submission="none"><code>E. p \/ q</code></pre>
+<p><span class="math inline">\(\varphi\)</span> and <span
+class="math inline">\(\psi\)</span> may themselves be complex
+formulas:</p>
+<pre class="TruthTable Simple" data-system="gamutPND"
+data-options="nocounterexample autoAtoms" data-submission="none"><code>F. -p \/  (q &amp; - r)</code></pre>
+<h2 id="conditional">conditional</h2>
+<p>The <em>conditional</em> <span class="math inline">\((\varphi \to
+\psi)\)</span> with <em>antecedent</em> <span
+class="math inline">\(\varphi\)</span> and <em>consequent</em> <span
+class="math inline">\(\psi\)</span> is true if, and only if, <span
+class="math inline">\(\varphi\)</span> is false or <span
+class="math inline">\(\psi\)</span> is true.</p>
+<pre class="TruthTable Simple" data-system="gamutPND"
+data-options="nocounterexample autoAtoms" data-submission="none"><code>G. p &gt; q</code></pre>
+<p>Consider the truth conditions of the sentence:</p>
+<p>‘if today is Thursday, then today is a workday’</p>
+<p>The <em>antecedent</em> of this conditional is ‘today is Thursday’
+and the <em>consequent</em> is ‘today is a workday’. That sentence is
+<em>true</em> not matter when we utter it. Now:</p>
+<ul>
+<li>On Thursday, both antecedent and consequent are true. That is, it is
+Thursday, and it is a workday</li>
+<li>On Friday, the antecedent is false but the consequent is true. That
+is, it is <em>not</em> Thursday, but it <em>is</em> a workday.</li>
+<li>On Saturday, both antecedent and consequent are false. That is, it
+is neither Thursday nor a a workday.</li>
+</ul>
+<p>To be sure, <span class="math inline">\(\to\)</span> is a formal
+counterpart of the English connective ‘if <span
+class="math inline">\(\dots\)</span> , then <span
+class="math inline">\(\dots\)</span>’.</p>
+<p>However, we will in what follows set aside the fact that some uses of
+the conditional in English appear to be non-truth-functional. Consider,
+for example, our attitude towards utterances of the sentence:</p>
+<ul>
+<li>‘if there is an elephant in the room, then I will win the lottery
+tomorrow’</li>
+</ul>
+<p>You may be tempted to regard the sentence as false, despite the
+falsity of the antecedent, on the grounds that there appears to be no
+link between antecedent and consequent. The official line, however, is
+to treat the sentence much how we would treat:</p>
+<ul>
+<li>‘it is not the case that there is an elephant in the room or I will
+win the lottery tomorrow’.</li>
+</ul>
+<p>This sentence would be true in a circumstance in which I win the
+lottery tomorrow but it would be difficult to imagine a context in which
+an utterance of that sentence makes a felicitous contribution to a
+conversation. Many, however, are inclined to offer a pragmatic
+explanation of the phenomenon, one which may carry over to the original
+case.</p>
+<p>The treatment of the conditional generalizes to cover more complex
+sentences:</p>
+<pre class="TruthTable Simple" data-system="gamutPND"
+data-options="nocounterexample autoAtoms" data-submission="none"><code>H. (p &amp; q) &gt; - r</code></pre>
+<h3 id="truth-tables">truth tables</h3>
+<p>We want to calculate the truth value of a complex formula in terms of
+the truth values of the propositional letters that occur in the
+formula.</p>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>An <em>assignment</em> for propositional logic maps each
+propositional variable into a truth value.</p>
+</dd>
+</dl>
+<p>We use a truth table in order to calculate the truth value of a
+complex formula <em>under an assignment</em> of truth values to the
+propositional variables in the formula.</p>
+<p>If a formula includes two propositional letters, e.g., <span
+class="math inline">\((p \to (q \to p))\)</span>, then there are at most
+four assignments of truth values to the propositional letters in the
+formula:</p>
+<pre class="TruthTable Simple" data-system="gamutPND"
+data-options="nocounterexample" data-submission="none"><code>A. (p &gt; (q &gt; p))</code></pre>
+<p>On the other hand, if a formula includes three propositional letters,
+e.g., <span class="math inline">\((p \to (q \to r))\)</span>, then we
+have eight assignments to consider:</p>
+<pre class="TruthTable Simple" data-system="gamutPND"
+data-options="nocounterexample" data-submission="none"><code>B. (p &gt; (q &gt; r))</code></pre>
+<p>More generally, if a formula includes <span
+class="math inline">\(n\)</span> propositional letters, then we will
+have <span class="math inline">\(2^n\)</span> assignments to
+consider.</p>
+<p>Because truth tables can become complex and unwieldy as more
+propositional letters are involved in a formula, we want to devise a
+<em>systematic</em> method for constructing a truth table for a
+formula.</p>
+<ol type="1">
+<li><p>We draw a column for each propositional letter occurring in the
+formula, which we list in alphabetical order.</p></li>
+<li><p>Given <span class="math inline">\(n\)</span> propositional
+letters, we draw <span class="math inline">\(2^n\)</span> rows, one for
+each assignment of truth values to the propositional letters.</p>
+<p>We populate the rows as follows:</p>
+<ul>
+<li>Start with the <span class="math inline">\(n\)</span>th innermost
+column for a propositional letter and alternate one occurrence of ‘<span
+class="math inline">\(T\)</span>’ with one of ‘<span
+class="math inline">\(F\)</span>’.</li>
+<li>For the column immediately on the left, we alternate <span
+class="math inline">\(2^1\)</span> occurrences of ‘<span
+class="math inline">\(T\)</span>’ with <span
+class="math inline">\(2^1\)</span> occurrences of ‘<span
+class="math inline">\(F\)</span>’.</li>
+<li>For the column immediately on the left, we alternate <span
+class="math inline">\(2^2\)</span> occurrences of ‘<span
+class="math inline">\(T\)</span>’ with <span
+class="math inline">\(2^2\)</span> occurrences of ‘<span
+class="math inline">\(F\)</span>’.</li>
+<li><span class="math inline">\(\cdots\)</span></li>
+<li>For the first column now, we alternate <span
+class="math inline">\(2^{n}\)</span> occurrences of ‘<span
+class="math inline">\(T\)</span>’ with <span
+class="math inline">\(2^{n}\)</span> occurrences of ‘<span
+class="math inline">\(F\)</span>’.</li>
+</ul></li>
+<li><p>We populate the rest of columns in accordance with the rules
+governing truth under an assignment.</p></li>
+</ol>
+<p>Here are some examples of truth tables for complex formulas of
+propositional logic.</p>
+<pre class="TruthTable Simple" data-system="gamutPND"
+data-options="nocounterexample autoAtoms" data-submission="none"><code>C. p &amp; (q \/ - r)</code></pre>
+<pre class="TruthTable Simple" data-system="gamutPND"
+data-options="nocounterexample autoAtoms" data-submission="none"><code>D. (p &gt; q) &amp; (q \/ r)</code></pre>
+<h2 id="tautologies-and-contradictions">tautologies and
+contradictions</h2>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>A formula <span class="math inline">\(\varphi\)</span> is a
+<em>tautology</em> if, and only if, it is true under every
+assignment.</p>
+</dd>
+<dt>Example</dt>
+<dd>
+<p>The formula <span class="math inline">\((p \to \neg q) \vee (q \to
+p)\)</span> is a tautology.</p>
+</dd>
+</dl>
+<pre class="TruthTable Simple" data-system="gamutPND"
+data-options="nocounterexample autoAtoms" data-submission="none"><code>E. (p &gt; - q) \/ (q &gt; p)</code></pre>
+<p>If a formula is <em>not</em> a tautology, then we can provide an
+assignment under which the formula is false.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>The formula <span class="math inline">\((p \to - q) \to (q \to
+p)\)</span> is <em>not</em> a tautology.</p>
+</dd>
+</dl>
+<pre class="TruthTable Simple" data-system="gamutPND"
+data-counterexample-to="tautology" data-options="autoAtoms"
+data-submission="none"><code>F. (p &gt; -q) &gt; (q &gt; p)</code></pre>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>A formula <span class="math inline">\(\varphi\)</span> is a
+<em>contradiction</em> if, and only if, it is false under every
+assignment.</p>
+</dd>
+<dt>Example</dt>
+<dd>
+<p>The formula <span class="math inline">\((p \wedge q) \wedge \neg
+q\)</span> is a contradiction.</p>
+</dd>
+</dl>
+<pre class="TruthTable Simple" data-system="gamutPND"
+data-options="nocounterexample autoAtoms" data-submission="none"><code>G. (p &amp; q) &amp; - q</code></pre>
+<p>If a formula is <em>not</em> a contradiction, then we can provide an
+assignment under which the formula is true.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>The formula <span class="math inline">\((p \to \neg q)\)</span> is
+<em>not</em> a contradiction.</p>
+</dd>
+</dl>
+<pre class="TruthTable Simple" data-system="gamutPND"
+data-counterexample-to="contradiction" data-options="autoAtoms"
+data-submission="none"><code>H. p &gt; - q</code></pre>
+<h2 id="equivalence">equivalence</h2>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>Two formulas <span class="math inline">\(\varphi\)</span> and <span
+class="math inline">\(\psi\)</span> are <em>equivalent</em> if, and only
+if, they are true under exactly the same assignments.</p>
+</dd>
+<dt>Example</dt>
+<dd>
+<p>The formulas <span class="math inline">\(p \to q\)</span> and <span
+class="math inline">\(\neg (p \wedge \neg q)\)</span> are
+<em>equivalent</em>.</p>
+</dd>
+</dl>
+<pre class="TruthTable Simple" data-system="gamutPND"
+data-options="nocounterexample autoAtoms" data-submission="none"><code>I. p &gt; q, -(p &amp; - q)</code></pre>
+<p>On the other hand, if two formulas are <em>not</em> equivalent, then
+we can provide an assignment on which one is true and the other is
+false.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>The formulas <span class="math inline">\(p \to  q\)</span> and <span
+class="math inline">\(q \to  p\)</span> are <em>not</em> equivalent.</p>
+</dd>
+</dl>
+<pre class="TruthTable Simple" data-system="gamutPND"
+data-counterexample-to="equivalence" data-options="autoAtoms"
+data-submission="none"><code>J. p &gt; q, q &gt; p</code></pre>
+<h2 id="consistency">consistency</h2>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>A set of formulas <span class="math inline">\(S\)</span> is
+<em>consistent</em> if, and only if, there is at least on assignment
+under which they are all true.</p>
+</dd>
+<dt>Example</dt>
+<dd>
+<p>The set <span class="math inline">\(\{p \to q, q \to r, r \to \neg
+p\}\)</span> is <em>consistent</em>.</p>
+</dd>
+</dl>
+<pre class="TruthTable Simple" data-system="gamutPND"
+data-counterexample-to="inconsistency" data-options="autoAtoms"
+data-submission="none"><code>K. p &gt; q, q &gt; r, r &gt; -p</code></pre>
+<p>On the other hand, if a set of formulas is inconsistent, then there
+is no assignment under which they are all true.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>The set <span class="math inline">\(\{p, p \to q, q \to \neg
+p\}\)</span> is inconsistent.</p>
+</dd>
+</dl>
+<pre class="TruthTable Simple" data-system="gamutPND"
+data-options="nocounterexample autoAtoms" data-submission="none"><code>L. p, p &gt; q, q &gt; - p</code></pre>
+</article>
+
+<script>
+function checkMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var correct = JSON.parse(ex.dataset.correct);
+  var multi = ex.dataset.multi === "true";
+  var feedback = ex.querySelector('.mc-feedback');
+  feedback.removeAttribute('hidden');
+  if (multi) {
+    var checked = Array.from(ex.querySelectorAll('input[type=checkbox]:checked')).map(function(c){ return parseInt(c.value); });
+    var ok = correct.length === checked.length && correct.every(function(v){ return checked.includes(v); });
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  } else {
+    var selected = ex.querySelector('input[type=radio]:checked');
+    if (!selected) { feedback.textContent = 'Please select an option.'; feedback.className = 'mc-feedback'; return; }
+    var ok = correct.includes(parseInt(selected.value));
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  }
+}
+function revealMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var ans = ex.querySelector('.mc-answer');
+  ans.removeAttribute('hidden');
+  if (window.MathJax) { MathJax.Hub.Queue(['Typeset', MathJax.Hub, ans]); }
+}
+</script>
+
+</body>
+</html>

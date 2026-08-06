@@ -1,5 +1,5 @@
 ---
-title: formal languages and logic
+title: "formal languages and logic"
 author: Gabriel Uzquiano
 description: |
   formal languages and logic

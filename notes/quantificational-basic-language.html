@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>basic quantificational language — PHIL 220</title>
+  <link rel="stylesheet" href="../shared/notes.css">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<style>
+.mc-exercise { margin: 1.2rem 0 2rem; width: 55%; margin-left: 8%; }
+.mc-question { margin-bottom: 0.7rem; font-size: 1.4rem; line-height: 2rem; }
+.mc-options { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.8rem; }
+.mc-option { display: flex; align-items: baseline; gap: 0.6rem; cursor: pointer; font-size: 1.3rem; line-height: 1.7rem; }
+.mc-option input { margin: 0; flex-shrink: 0; }
+.mc-controls { display: flex; gap: 0.6rem; margin-bottom: 0.5rem; }
+.btn-check, .btn-reveal {
+  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+  font-size: 0.82rem; padding: 0.22rem 0.7rem;
+  border-radius: 3px; cursor: pointer; border: 1px solid #ccc;
+  background: #fffff8; color: #111;
+}
+.btn-check:hover { background: #006666; color: #fff; border-color: #006666; }
+.mc-feedback { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.9rem; margin-bottom: 0.3rem; }
+.fb-ok { color: #1a6e2e; } .fb-err { color: #8b1a1a; }
+.mc-answer { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.88rem; color: #555; margin-top: 0.3rem; }
+.mc-explanation { margin-top: 0.4rem; font-family: et-book, Palatino, serif; font-size: 1.2rem; line-height: 1.7rem; color: #333; }
+</style>
+
+</head>
+<body>
+<nav class="back-nav"><a href="https://gabriel-uzquiano.github.io/courses/220">← PHIL 220</a></nav>
+<article>
+<h1 id="designators-predicates-and-quantifiers">designators, predicates,
+and quantifiers</h1>
+<p>Propositional logic remains unable to account for the validity of a
+large family of risk-free arguments in English.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider the natural language below:</p>
+</dd>
+</dl>
+<blockquote>
+<p>Every US citizen can travel to the UK without a visa. You are a US
+citizen. Therefore, you can travel to the UK without a visa.</p>
+</blockquote>
+<h3 id="premise-conclusion-form">premise-conclusion form</h3>
+<ol type="1">
+<li>Every US citizen can travel to the UK without a visa.</li>
+<li>You are a US citizen.</li>
+<li>You can travel to the UK without a visa.</li>
+</ol>
+<h3 id="translation">translation</h3>
+<p><strong>Translation Key</strong>:</p>
+<p><span class="math inline">\(p\)</span>: Every US citizen is allowed
+to travel to the UK without a visa.</p>
+<p><span class="math inline">\(q\)</span>: You are a US citizen.</p>
+<p><span class="math inline">\(r\)</span>: You are allowed to travel to
+the UK without a visa.</p>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>1. p :Every US citizen is allowed travel to the UK without a visa.
+| p</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>2. q :You are a US citizen.
+|q</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>3. r :You are allowed to travel to the UK without a visa.
+|r</code></pre>
+<h3 id="validity">validity</h3>
+<p>The argument is invalid because there is an assignment on which the
+premises are true and the conclusion false, namely, <span
+class="math inline">\(p:T\)</span>, <span
+class="math inline">\(q:T\)</span>, and <span
+class="math inline">\(r:F\)</span>.</p>
+<pre class="TruthTable Partial" data-system="gamutPND"
+data-options="turnstilemark double-turnstile nodash"
+data-submission="none"><code>4. p, q, r
+|  T  T  F</code></pre>
+<p>That means that the argument is propositionally invalid, despite the
+fact that it is <em>risk-free</em>. That is, there is no risk that the
+conclusion is false given the truth of the premises. And it is risk-free
+because it exemplifies a certain form.</p>
+<ol type="1">
+<li>Every <span class="math inline">\(P\)</span> is <span
+class="math inline">\(Q\)</span></li>
+<li><span class="math inline">\(a\)</span> is <span
+class="math inline">\(P\)</span></li>
+<li><span class="math inline">\(a\)</span> is <span
+class="math inline">\(Q\)</span></li>
+</ol>
+<p>The framework of propositional logic is too coarse-grained to
+represent that form, which is what motivates the move to a richer
+language.</p>
+<p>Here is another example of an argument, whose validity is not
+explained by propositional logic:</p>
+<ol type="1">
+<li><p>No US citizen is allowed to travel to the UK without a
+visa</p></li>
+<li><p>Jones is a US citizen</p></li>
+<li><p>Jones is not allowed to travel to the UK without a visa</p></li>
+<li><p>No <span class="math inline">\(P\)</span> is <span
+class="math inline">\(Q\)</span></p></li>
+<li><p><span class="math inline">\(a\)</span> is <span
+class="math inline">\(P\)</span></p></li>
+<li><p><span class="math inline">\(a\)</span> is not <span
+class="math inline">\(Q\)</span></p></li>
+</ol>
+<p>We begin with a distinction between three broad grammatical
+categories a subsentential expression may belong to.</p>
+<h2 id="designators">designators</h2>
+<p>We may break the second premise ‘you are a US citizen’ into two main
+constituents, namely, ‘you’ and the expression ‘are a US citizen’. The
+primary function of the frst constituent, namely, ‘you’ is to
+<em>designate</em> an individual. More generally, we will use the term
+‘designator’ to refer to expressions whose primary semantic function is
+to designate something.</p>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>A <em>designator</em> is an expression whose primary function is to
+designate something.</p>
+</dd>
+<dt>Example</dt>
+<dd>
+<p>We have highlighted the occurrences of designators in each of the
+sentences below:</p>
+</dd>
+</dl>
+<ul>
+<li><mark>Zeno</mark> is a Greek philosopher</li>
+<li><mark>Wednesday</mark> comes between <mark>Tuesday</mark> and
+<mark>Thursday</mark></li>
+<li><mark>The Griffith Observatory</mark> is a historic-cultural
+landmark, and <mark>it</mark> is free to visit.</li>
+<li>Someone will meet <mark>you</mark> before <mark>lunch</mark></li>
+<li>All philosophers are curious</li>
+</ul>
+<p>Notice how the pronoun ‘it’ is used in the last sentence to co-refer
+to the designation of ‘The Griffith Observatory’ , which is itself a
+designator. However, not all occurrences of a pronoun in a sentence are
+occurrences of a designator, e.g.,</p>
+<ul>
+<li>Something is a historic-cultural landmark, and it is free to
+visit.</li>
+</ul>
+<p>We will discuss these occurrences of a pronoun in connection to the
+category of a quantifier phrase.</p>
+<h2 id="predicates">predicates</h2>
+<p>In the second premise of the argument above, ‘you are a US citizen’,
+the expression ‘are a US citizen’ is used not to designate anything but
+rather to <em>predicate</em> something of you, which is to say of you
+that you are a certain way.</p>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>A <em>predicate</em> is an expression whose primary function is to
+say of something that it is a certain way.</p>
+</dd>
+<dt>Example</dt>
+<dd>
+<p>We have highlighted the occurrences of predicates in each of the
+sentences below:</p>
+</dd>
+</dl>
+<ul>
+<li><p>Zeno <mark>is a Greek philosopher</mark></p></li>
+<li><p>Wednesday <mark>comes between</mark> Tuesday <mark>and</mark>
+Thursday</p></li>
+<li><p>The Griffith Observatory <mark>is a historic-cultural
+landmark</mark>, and it <mark>is free to visit</mark></p></li>
+<li><p>Something <mark>is a historic-cultural landmark</mark>, and it
+<mark>is free to visit</mark></p></li>
+<li><p>Someone <mark>will meet</mark> you <mark>before</mark>
+lunch</p></li>
+<li><p>All philosophers <mark>are curious</mark></p></li>
+</ul>
+<p>Notice that a predicate expression may combine with different numbers
+of expressions or <em>arguments</em> as we may call them. For example,
+‘__ is a Greek philosopher’ takes one argument, whereas the predicate
+’__ comes between __ and ___’ takes three arguments.</p>
+<h3 id="quantifier-phrases">quantifier phrases</h3>
+<p>One more category of expressions is that of a <em>quantifier
+phrase</em>, which is an expression used to express generality. In the
+first premise, ‘Every US citizen can travel to the UK without a visa’,
+the expression ‘every US citizen’ is neither a designator nor a
+predicate. It is <em>not</em> a designator because it fails to denote
+something. Nor is it a predicate since it is not used to predicate
+anything of anything. Instead, it is an expression used to make a
+general claim, one concerned with US citizens.</p>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>A <em>quantifier phrase</em> is an expression used to indicate
+generality.</p>
+</dd>
+<dt>Example</dt>
+<dd>
+<p>We have highlighted the occurrences of designators in each of the
+sentences below:</p>
+</dd>
+</dl>
+<ul>
+<li><p>Zeno is a Greek philosopher</p></li>
+<li><p>Wednesday comes between Tuesday and Thursday</p></li>
+<li><p>The Griffith Observatory is a historic-cultural landmark, and it
+is free to visit</p></li>
+<li><p><mark>Something</mark> is a historic-cultural landmark, and it is
+free to visit</p></li>
+<li><p><mark>Someone</mark> will meet you before lunch</p></li>
+<li><p><mark>All philosophers</mark> are curious</p></li>
+</ul>
+<p>The expressions ‘someone’ and ‘all philosophers’ are not used to
+designate anything or to say of something that it is a certain way.
+Instead, they are used to express generality.</p>
+<p>Quantifier expressions may bind certain occurrences of pronouns in
+natural language.</p>
+<ul>
+<li><mark>Something</mark> is a historic-cultural landmark, and
+<mark>it</mark> is free to visit</li>
+</ul>
+<p>The language of quantificational logic will contain formal
+counterparts for each category of expressions.</p>
+<h1 id="basic-language">basic language</h1>
+<p>To specify the syntax, we specify:</p>
+<ul>
+<li>a <em>vocabulary</em> or stock of primitive symbols.</li>
+<li>a <em>grammar</em> or set of rules for the formation of formulas out
+of primitive symbols.</li>
+</ul>
+<h2 id="vocabulary">vocabulary</h2>
+<p>The vocabulary contains three types of symbols:</p>
+<dl>
+<dt>Constants</dt>
+<dd>
+<p>These are the lowercase letters <span
+class="math inline">\(a\)</span>, <span
+class="math inline">\(b\)</span>, <span
+class="math inline">\(c\)</span>, <span class="math inline">\(d\)</span>
+and <span class="math inline">\(e\)</span>​​ with or without numerical
+subscripts: <span class="math display">\[
+\ a, \ b, \ c, \ d, \ e, \ a_1, \ b_1, \ c_1, \ d_1, \ e_1 \ \dots
+\]</span></p>
+</dd>
+<dt>Predicates</dt>
+<dd>
+<p>These are the upper case letters <span
+class="math inline">\(P\)</span>, <span
+class="math inline">\(Q\)</span>, <span
+class="math inline">\(R\)</span>, <span
+class="math inline">\(S\)</span>, and <span
+class="math inline">\(T\)</span>​ with or without numerical
+subscripts:</p>
+</dd>
+</dl>
+<p><span class="math display">\[
+\ P, \ Q, \ R, \ S, \ T, \ P_1, \ Q_1, \ R_1, \ S_1, \ T_1 \ \dots
+\]</span></p>
+<dl>
+<dt>Variables</dt>
+<dd>
+<p>These are the lowercase letters <span
+class="math inline">\(x\)</span>, <span
+class="math inline">\(y\)</span>, and <span
+class="math inline">\(z\)</span> with or without numerical subscripts:
+<span class="math display">\[
+x, \ y, \ z,  x_1, \ y_1, \ z_1, \ \dots
+\]</span></p>
+</dd>
+<dt>Connectives</dt>
+<dd>
+<p>These are, as usual, the symbols: <span class="math display">\[
+\neg, \ \vee, \ \wedge, \ \to
+\]</span></p>
+</dd>
+<dt>Quantifiers</dt>
+<dd>
+<p>These are two quantifier expressions: <span class="math display">\[
+\forall, \exists
+\]</span></p>
+</dd>
+<dt>Parentheses</dt>
+<dd>
+<p>There are two parentheses: <span class="math display">\[
+),(
+\]</span></p>
+</dd>
+</dl>
+<p><em>Nothing else</em> is a primitive symbol of the language.</p>
+<h2 id="grammar">grammar</h2>
+<p>The grammar of quantificational logic explains how to combine these
+symbols into formulas of the language.</p>
+<p>We proceed in two stages:</p>
+<dl>
+<dt>Atomic Formula</dt>
+<dd>
+<p>If <span class="math inline">\(P\)</span> is a predicate with <span
+class="math inline">\(n\)</span> argument places and each of <span
+class="math inline">\(\tau_1 \ \dots \ \tau_n\)</span> is either a
+<em>constant</em> or a <em>variable</em>, then <span
+class="math display">\[
+P\tau_1 \dots \tau_n
+\]</span> is an <em>atomic formula</em> or quantificational logic.</p>
+</dd>
+</dl>
+<p>Atomic formulas are simple predications.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>The expressions below are atomic formulas of quantificational logic:
+<span class="math display">\[
+Pa, Qab, Px, Qacxb, \dots
+\]</span></p>
+</dd>
+<dt>Formula</dt>
+<dd>
+<p>We now define what is for a string of symbols of the language to be a
+<em>formula of quantificational logic</em>:</p>
+</dd>
+</dl>
+<ol type="1">
+<li><p>All atomic formulas are formulas.</p></li>
+<li><p>If <span class="math inline">\(\varphi\)</span> and <span
+class="math inline">\(\psi\)</span> are formulas, then so are: <span
+class="math display">\[
+\neg  \varphi, \ (\varphi \wedge \psi),  \ (\varphi \vee \psi), \
+(\varphi \to \psi).
+\]</span></p></li>
+<li><p>If <span class="math inline">\(\varphi\)</span> is a formula and
+<span class="math inline">\(v\)</span> is a variable, then so are: <span
+class="math display">\[
+\forall v \varphi, \exists v \varphi
+\]</span></p></li>
+<li><p>Nothing else is a formula.</p></li>
+</ol>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>The following string of symbols is a formula of quantificational
+logic. <span class="math display">\[
+(\forall x Pxy \to \exists y Qab)
+\]</span></p>
+</dd>
+</dl>
+<ul>
+<li>By rule 2, <span class="math inline">\((\forall x Pxy \to \exists y
+Qab)\)</span> is a formula if <span class="math inline">\(\forall x \
+Pxy\)</span> and <span class="math inline">\(\exists y \ Qab\)</span>
+are each a formula.</li>
+<li>By rule 3, <span class="math inline">\(\forall x  Pxy\)</span> is a
+formula if <span class="math inline">\(Pxy\)</span> is a formula.</li>
+<li>By rule 3, <span class="math inline">\(\exists y \ Qab\)</span> is a
+formula if <span class="math inline">\(Qab\)</span> is a formula.</li>
+<li>By rule 1, each <span class="math inline">\(Pxy\)</span> and <span
+class="math inline">\(Qab\)</span> are formulas, since they are each
+atomic formulas.</li>
+</ul>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>The following string of symbols is a formula of quantificational
+logic. <span class="math display">\[
+\forall x (Pxy \to \exists y Qab)
+\]</span></p>
+</dd>
+</dl>
+<ul>
+<li>By rule 3, <span class="math inline">\(\forall x (Pxy \to \exists y
+Qab)\)</span> is a formula if <span class="math inline">\((Pxy \to
+\exists y \ Qab)\)</span> is a formula.</li>
+<li>By rule 2, <span class="math inline">\((Pxy \to \exists y \
+Qab)\)</span> is a formula if <span class="math inline">\(Pxy\)</span>
+is a formula and <span class="math inline">\(\exists y \ Qab\)</span> is
+a formula.</li>
+<li>By rule 3, <span class="math inline">\(\exists y \ Qab\)</span> is a
+formula if <span class="math inline">\(Qab\)</span> is a formula.</li>
+<li>By rule 1, each <span class="math inline">\(Pxy\)</span> and <span
+class="math inline">\(Qab\)</span> are formulas, since they are each
+atomic formulas.</li>
+</ul>
+<h3 id="free-and-bound-variables">free and bound variables</h3>
+<p>We have provided a definition of <em>formula</em> for the language of
+quantificational logic, but we now want to make some further important
+distinctions between formulas.</p>
+<p>Compare the formulas of quantificational logic:</p>
+<p><span class="math display">\[
+(\forall x Px \to \exists y Qxy)
+\]</span></p>
+<p><span class="math display">\[
+\forall x (Px \to \exists y Qxy)
+\]</span></p>
+<p>Notice that the last occurrence of the variable <span
+class="math inline">\(x\)</span> falls outside the scope of the
+quantifier <span class="math inline">\(\forall x\)</span> in the first,
+but not in the second formula. We intend to capture the distinction by
+means of the definition of a <em>free</em> occurrence of a variable.</p>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>We define define what is for an occurrence of a variable to be
+<em>free</em> in a formula:</p>
+</dd>
+</dl>
+<ol type="1">
+<li><p>All occurrences of a variable in an atomic formula are
+<em>free</em>.</p></li>
+<li><p>The <em>free</em> occurrences of a variable in formulas of the
+form <span class="math inline">\(\varphi\)</span> and <span
+class="math inline">\(\psi\)</span> remain <em>free</em> when they occur
+in <span class="math display">\[
+\neg  \varphi, \ (\varphi \wedge \psi),  \ (\varphi \vee \psi), \
+(\varphi \to \psi), \ (\varphi
+   \leftrightarrow \psi)
+\]</span></p></li>
+<li><p>No occurrence of the variable <span
+class="math inline">\(v\)</span> is <em>free</em> in a formula of the
+form <span class="math display">\[
+\forall v \ \varphi, \ \ \exists v \ \varphi
+\]</span></p></li>
+</ol>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>The first two occurrences of the variable <span
+class="math inline">\(x\)</span>​ occur free in the following formula:
+<span class="math display">\[
+(Px \to (Qxy \to \forall x Rxx))
+\]</span></p>
+</dd>
+</dl>
+<ul>
+<li>By rule 1, <span class="math inline">\(x\)</span> occurs free in
+<span class="math inline">\(Px\)</span>, which is an atomic formula,
+and, by rule 2, the occurrence remains free when it occurs in a
+conditional of the form <span class="math inline">\((Px \to
+\psi)\)</span>.</li>
+<li>By rule 1, <span class="math inline">\(x\)</span> occurs free in
+<span class="math inline">\(Qxy\)</span>, which is an atomic formula,
+and, by rule 2, the occurrence remains free when it occurs in a formula
+of the form <span class="math inline">\((Qxy \to \psi)\)</span>.</li>
+<li>By rule 3, the last two occurrences of <span
+class="math inline">\(x\)</span> in <span class="math inline">\(\forall
+x Rxx\)</span> are not free.</li>
+</ul>
+<p>An occurrence of a variable is free if it has not been captured by a
+quantifier. In the last example, the last two occurrences of the
+variable <span class="math inline">\(x\)</span> are under the scope of
+the universal quantifier <span class="math inline">\(\forall x\)</span>,
+whereas the first two occurrences of the variable are not under the
+scope of a quantifier.</p>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>An occurrence of a variable in a formula is <em>bound</em> if, and
+only if, it is not free in that formula.</p>
+</dd>
+<dt>Definition</dt>
+<dd>
+<p>A variable occurs <em>freely</em> in a formula if, and only if, some
+of its occurrences in the formula are <em>free</em>.</p>
+</dd>
+<dt>Definition</dt>
+<dd>
+<p>A formula is <em>open</em> if, and only if, some variables occur
+freely in the formula. Otherwise, the formula is <em>closed</em>.</p>
+</dd>
+<dt>Definition</dt>
+<dd>
+<p>A <em>sentence</em> of quantificational logic is a closed formula of
+the language.</p>
+</dd>
+</dl>
+</article>
+
+<script>
+function checkMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var correct = JSON.parse(ex.dataset.correct);
+  var multi = ex.dataset.multi === "true";
+  var feedback = ex.querySelector('.mc-feedback');
+  feedback.removeAttribute('hidden');
+  if (multi) {
+    var checked = Array.from(ex.querySelectorAll('input[type=checkbox]:checked')).map(function(c){ return parseInt(c.value); });
+    var ok = correct.length === checked.length && correct.every(function(v){ return checked.includes(v); });
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  } else {
+    var selected = ex.querySelector('input[type=radio]:checked');
+    if (!selected) { feedback.textContent = 'Please select an option.'; feedback.className = 'mc-feedback'; return; }
+    var ok = correct.includes(parseInt(selected.value));
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  }
+}
+function revealMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var ans = ex.querySelector('.mc-answer');
+  ans.removeAttribute('hidden');
+  if (window.MathJax) { MathJax.Hub.Queue(['Typeset', MathJax.Hub, ans]); }
+}
+</script>
+
+</body>
+</html>

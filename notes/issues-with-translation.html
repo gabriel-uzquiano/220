@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>issues with translation — PHIL 220</title>
+  <link rel="stylesheet" href="../shared/notes.css">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<style>
+.mc-exercise { margin: 1.2rem 0 2rem; width: 55%; margin-left: 8%; }
+.mc-question { margin-bottom: 0.7rem; font-size: 1.4rem; line-height: 2rem; }
+.mc-options { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.8rem; }
+.mc-option { display: flex; align-items: baseline; gap: 0.6rem; cursor: pointer; font-size: 1.3rem; line-height: 1.7rem; }
+.mc-option input { margin: 0; flex-shrink: 0; }
+.mc-controls { display: flex; gap: 0.6rem; margin-bottom: 0.5rem; }
+.btn-check, .btn-reveal {
+  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+  font-size: 0.82rem; padding: 0.22rem 0.7rem;
+  border-radius: 3px; cursor: pointer; border: 1px solid #ccc;
+  background: #fffff8; color: #111;
+}
+.btn-check:hover { background: #006666; color: #fff; border-color: #006666; }
+.mc-feedback { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.9rem; margin-bottom: 0.3rem; }
+.fb-ok { color: #1a6e2e; } .fb-err { color: #8b1a1a; }
+.mc-answer { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.88rem; color: #555; margin-top: 0.3rem; }
+.mc-explanation { margin-top: 0.4rem; font-family: et-book, Palatino, serif; font-size: 1.2rem; line-height: 1.7rem; color: #333; }
+</style>
+
+</head>
+<body>
+<nav class="back-nav"><a href="https://gabriel-uzquiano.github.io/courses/220">← PHIL 220</a></nav>
+<article>
+<h1 id="issues-with-translation">issues with translation</h1>
+<p>We now look at difficulties raised by special quantifier phrases and
+by the structural ambiguity of a variety of English sentences.</p>
+<h2 id="special-phrases">special phrases</h2>
+<h3 id="a">‘a’</h3>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider the following sentences:</p>
+</dd>
+</dl>
+<ol type="1">
+<li><p>A whale lives underwater.</p></li>
+<li><p>A whale came close to shore.</p></li>
+</ol>
+<p><strong>Translation Key</strong></p>
+<p>Domain: Animals</p>
+<p><span class="math inline">\(P \ \_\)</span>: __ is a whale</p>
+<p><span class="math inline">\(Q \ \_\)</span>: __ lives underwater</p>
+<p><span class="math inline">\(R. \ \_\)</span>: __ came close to
+shore</p>
+<p>While strictly speaking ambiguous, two different readings become
+salient in each case:</p>
+<ol type="1">
+<li><p>Every whale lives underwater.</p>
+<p>For every <span class="math inline">\(x\)</span>, if <span
+class="math inline">\(x\)</span> is a whale, then <span
+class="math inline">\(x\)</span> lives underwater.</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>1. Ax (Px -&gt; Qx) : A whale lives underwater.
+|Ax (Px -&gt; Qx)</code></pre>
+<ol start="2" type="1">
+<li><p>Some whale came close to shore.</p>
+<p>Some <span class="math inline">\(x\)</span> is such that <span
+class="math inline">\(x\)</span> is a whale and <span
+class="math inline">\(x\)</span> came close to shore.</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>2. Ex (Px /\ Rx) : A whale came close to shore.
+|Ex(Px /\ Rx)</code></pre>
+<p>Notice that the syntax of 1 is consistent with <span
+class="math inline">\(\exists x (Px \wedge Qx)\)</span> but it is
+difficult to hear that reading in common contexts. Similarly, while the
+syntax of 2 is strictly speaking consistent with <span
+class="math inline">\(\forall x(Px \to Rx)\)</span>, it is difficult to
+hear that reading in common contexts.</p>
+<h3 id="only">‘only’</h3>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider the following sentences:</p>
+</dd>
+</dl>
+<ol start="3" type="1">
+<li><p>Only credit cards are welcome.</p></li>
+<li><p>Some restaurants only accept credit cards.</p></li>
+</ol>
+<p><strong>Translation Key</strong></p>
+<p>Domain: Establishments and payment methods</p>
+<p><span class="math inline">\(P \ \_\)</span>: __ is a credit card</p>
+<p><span class="math inline">\(Q \ \_\)</span>: __ is a welcome
+method</p>
+<p><span class="math inline">\(R \ \_\)</span>: __ is a restaurant</p>
+<p><span class="math inline">\(S \ \_ \ \_\)</span>: __ accepts __</p>
+<p>​</p>
+<p>The first step as usual is to paraphrase the target sentences:</p>
+<ol start="3" type="1">
+<li><p>All welcome methods are credit cards.</p>
+<p>For every <span class="math inline">\(x\)</span>, <span
+class="math inline">\(x\)</span> is a welcome method <strong>only
+if</strong> <span class="math inline">\(x\)</span> is a credit card.</p>
+<p>For every <span class="math inline">\(x\)</span>, <strong>if</strong>
+<span class="math inline">\(x\)</span> is a welcome method,
+<strong>then</strong> <span class="math inline">\(x\)</span> is a credit
+card.</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>3. Ax (Qx -&gt; Px) : Only credit cards are welcome.
+|Ax (Qx -&gt; Px)</code></pre>
+<ol start="4" type="1">
+<li><p>Some restaurants only accept credit cards.</p>
+<p>Some <span class="math inline">\(x\)</span> is such that <span
+class="math inline">\(x\)</span> is a restaurant and <span
+class="math inline">\(x\)</span>​ accepts only credit cards.</p>
+<p>Some <span class="math inline">\(x\)</span> is such that <span
+class="math inline">\(x\)</span> is a restaurant and for every <span
+class="math inline">\(y\)</span>, <span class="math inline">\(x\)</span>
+accepts <span class="math inline">\(y\)</span> <strong>only if</strong>
+<span class="math inline">\(y\)</span> is a credit card.</p>
+<p>Some <span class="math inline">\(x\)</span> is such that <span
+class="math inline">\(x\)</span> is a restaurant and for every <span
+class="math inline">\(y\)</span>, <strong>if</strong> <span
+class="math inline">\(x\)</span> accepts <span
+class="math inline">\(y\)</span>, <strong>then</strong> <span
+class="math inline">\(y\)</span> is a credit card.</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>4. Ex (Rx /\ Ay(Sxy -&gt; Py)) : Some restaurants only accept credit cards.
+|Ex (Rx /\ Ay(Sxy -&gt; Py))</code></pre>
+<h3 id="no-p-is-___">’no <span class="math inline">\(P\)</span> is
+___’</h3>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider the following sentences:</p>
+</dd>
+</dl>
+<ol start="5" type="1">
+<li>No credit card is welcome.</li>
+</ol>
+<p>We paraphrase the sentence as follows:</p>
+<ol start="5" type="1">
+<li><p>All credit cards are not welcome</p>
+<p>Every <span class="math inline">\(x\)</span> is such that if <span
+class="math inline">\(x\)</span> is a credit card, then <span
+class="math inline">\(x\)</span> is not welcome.</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>5. Ax (Px -&gt; -Qx) : No credit card is welcome.
+|Ax (Px -&gt; -Qx)</code></pre>
+<p>Or, equivalently:</p>
+<ol start="5" type="1">
+<li><p>It’s not the case that some credit card is welcome.</p>
+<p>It’s not the case that some <span class="math inline">\(x\)</span> is
+such that <span class="math inline">\(x\)</span> is a credit card and
+<span class="math inline">\(x\)</span> is welcome.</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>5. -Ex (Px /\ Qx) : No credit card is welcome.
+|-Ex (Px /\ Qx)</code></pre>
+<p>Both translations are acceptable as they are equivalent to each
+other.</p>
+<h3 id="any">‘any’</h3>
+<p>One difficulty with ‘any’ is that its translation calls for different
+quantifiers in different contexts.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider the sentences below:</p>
+</dd>
+</dl>
+<ol start="6" type="1">
+<li>Any credit card is welcome.</li>
+<li>If any credit card is welcome, then they all are.</li>
+</ol>
+<p>We proceed to paraphrase them in turn:</p>
+<ol start="6" type="1">
+<li><p>All credit cards are welcome.</p>
+<p>Every <span class="math inline">\(x\)</span> is such that if <span
+class="math inline">\(x\)</span> is a credit card, then <span
+class="math inline">\(x\)</span> is welcome.</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>6. Ax (Px -&gt; Qx) : Any credit card is welcome.
+|Ax (Px -&gt; Qx)</code></pre>
+<ol start="7" type="1">
+<li><p>If some credit card is welcome, then all credit cards are
+welcome.</p>
+<p>If some <span class="math inline">\(x\)</span> is such that <span
+class="math inline">\(x\)</span> is a credit card and <span
+class="math inline">\(x\)</span> is welcome, then for every <span
+class="math inline">\(x\)</span>, if <span
+class="math inline">\(x\)</span> is a credit card, then <span
+class="math inline">\(x\)</span> is welcome.</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>5. Ex(Px /\ Qx) -&gt; Ax(Px -&gt; Qx) : If any credit card is welcome, then they all are.
+|Ex(Px /\ Qx) -&gt; Ax(Px -&gt; Qx)</code></pre>
+<h2 id="multiple-generality-and-structural-ambiguity">multiple
+generality and structural ambiguity</h2>
+<p>Ambiguity is the source of special difficulties for purposes of
+translation.</p>
+<h3 id="multiple-generality">multiple generality</h3>
+<p>The presence of multiple quantifiers often makes for structural
+ambiguity in English.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider the sentence:</p>
+</dd>
+</dl>
+<ol start="8" type="1">
+<li>There is a cause for everything</li>
+</ol>
+<p><strong>Translation Key</strong></p>
+<p>Domain: Events</p>
+<p><span class="math inline">\(R \ \_ \ \_\)</span>: __ causes __</p>
+<p>There are two candidate interpretations of the sentence:</p>
+<ol start="8" type="1">
+<li><p>Every <span class="math inline">\(x\)</span> is such that <span
+class="math inline">\(x\)</span>​ has a cause</p>
+<p>Every <span class="math inline">\(x\)</span> is such that some <span
+class="math inline">\(y\)</span> is such that <span
+class="math inline">\(y\)</span> causes <span
+class="math inline">\(x\)</span>.</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>8. Ax Ey Ryx : Everything has a cause.
+|Ax Ey Ryx</code></pre>
+<ol start="8" type="1">
+<li><p>Some <span class="math inline">\(x\)</span>​ is a cause of
+everything.</p>
+<p>Some <span class="math inline">\(x\)</span> is such that every <span
+class="math inline">\(y\)</span> is such that <span
+class="math inline">\(y\)</span> causes <span
+class="math inline">\(x\)</span>.</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>8. ExAy Rxy :Everything has a cause.
+|ExAy Rxy</code></pre>
+<p>Which one is the <em>correct</em> translation? We have to rely on
+contextual cues to find out which one is the interpretation intended by
+the speaker, but in case of doubt it is best to provide both
+translations and explain that the target sentence is ambiguous between
+the two of them.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider the sentence:</p>
+</dd>
+</dl>
+<ol start="9" type="1">
+<li>Every student must register for some logic class.</li>
+</ol>
+<p><strong>Translation Key</strong></p>
+<p>Domain: Students and courses</p>
+<p><span class="math inline">\(P \ \_\)</span>: __ is a student</p>
+<p><span class="math inline">\(Q \ \_\)</span>: __ is a logic class</p>
+<p><span class="math inline">\(R \ \_ \ \_\)</span>: __ registers for
+__</p>
+<p>There is again a choice between two non-equivalent readings of the
+sentence:</p>
+<ol start="9" type="1">
+<li><p>Every <span class="math inline">\(x\)</span> is such that if
+<span class="math inline">\(x\)</span> is a student, then <span
+class="math inline">\(x\)</span> must register for some logic class.</p>
+<p>Every <span class="math inline">\(x\)</span> is such that if <span
+class="math inline">\(x\)</span> is a student, then for some <span
+class="math inline">\(y\)</span>, <span class="math inline">\(y\)</span>
+is a logic class and <span class="math inline">\(x\)</span> must
+register for <span class="math inline">\(y\)</span>.</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>9. Ax(Px -&gt; Ey(Qy /\Rxy)) : Every student must register for some logic class.
+|Ax(Px -&gt; Ey(Qy /\Rxy))</code></pre>
+<ol start="9" type="1">
+<li><p>Some <span class="math inline">\(x\)</span> is such that <span
+class="math inline">\(x\)</span> is a logic class and every student must
+register for <span class="math inline">\(x\)</span>.</p>
+<p>Some <span class="math inline">\(x\)</span> is that <span
+class="math inline">\(x\)</span> is a logic class and for every <span
+class="math inline">\(y\)</span>, if <span
+class="math inline">\(y\)</span> is a student, then <span
+class="math inline">\(y\)</span> must register for <span
+class="math inline">\(x\)</span>.</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>9. Ex(Qx /\ Ay(Py -&gt; Ryx)) : Every student must register for some logic class.
+|Ex(Qx /\ Ay(Py -&gt; Ryx))</code></pre>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider the sentence:</p>
+</dd>
+</dl>
+<ol start="10" type="1">
+<li>Every student must register for every logic course.</li>
+</ol>
+<p>We first paraphrase the target sentence as follows:</p>
+<ol start="10" type="1">
+<li><p>Every <span class="math inline">\(x\)</span> is such that if
+<span class="math inline">\(x\)</span> is a student, then <span
+class="math inline">\(x\)</span> must register for every logic
+course.</p>
+<p>Every <span class="math inline">\(x\)</span> is such that if <span
+class="math inline">\(x\)</span> is a student, then for every <span
+class="math inline">\(y\)</span>, if <span
+class="math inline">\(y\)</span> is a logic course, then <span
+class="math inline">\(x\)</span> must register for <span
+class="math inline">\(y\)</span>.</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>10. Ax(Px -&gt; Ay(Qy -&gt; Rxy)) : Every student must register for every logic course.
+|Ax(Px -&gt; Ay(Qy -&gt; Rxy))</code></pre>
+</article>
+
+<script>
+function checkMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var correct = JSON.parse(ex.dataset.correct);
+  var multi = ex.dataset.multi === "true";
+  var feedback = ex.querySelector('.mc-feedback');
+  feedback.removeAttribute('hidden');
+  if (multi) {
+    var checked = Array.from(ex.querySelectorAll('input[type=checkbox]:checked')).map(function(c){ return parseInt(c.value); });
+    var ok = correct.length === checked.length && correct.every(function(v){ return checked.includes(v); });
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  } else {
+    var selected = ex.querySelector('input[type=radio]:checked');
+    if (!selected) { feedback.textContent = 'Please select an option.'; feedback.className = 'mc-feedback'; return; }
+    var ok = correct.includes(parseInt(selected.value));
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  }
+}
+function revealMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var ans = ex.querySelector('.mc-answer');
+  ans.removeAttribute('hidden');
+  if (window.MathJax) { MathJax.Hub.Queue(['Typeset', MathJax.Hub, ans]); }
+}
+</script>
+
+</body>
+</html>

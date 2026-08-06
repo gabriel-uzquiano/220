@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>translation into quantificational logic — PHIL 220</title>
+  <link rel="stylesheet" href="../shared/notes.css">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<style>
+.mc-exercise { margin: 1.2rem 0 2rem; width: 55%; margin-left: 8%; }
+.mc-question { margin-bottom: 0.7rem; font-size: 1.4rem; line-height: 2rem; }
+.mc-options { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.8rem; }
+.mc-option { display: flex; align-items: baseline; gap: 0.6rem; cursor: pointer; font-size: 1.3rem; line-height: 1.7rem; }
+.mc-option input { margin: 0; flex-shrink: 0; }
+.mc-controls { display: flex; gap: 0.6rem; margin-bottom: 0.5rem; }
+.btn-check, .btn-reveal {
+  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+  font-size: 0.82rem; padding: 0.22rem 0.7rem;
+  border-radius: 3px; cursor: pointer; border: 1px solid #ccc;
+  background: #fffff8; color: #111;
+}
+.btn-check:hover { background: #006666; color: #fff; border-color: #006666; }
+.mc-feedback { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.9rem; margin-bottom: 0.3rem; }
+.fb-ok { color: #1a6e2e; } .fb-err { color: #8b1a1a; }
+.mc-answer { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.88rem; color: #555; margin-top: 0.3rem; }
+.mc-explanation { margin-top: 0.4rem; font-family: et-book, Palatino, serif; font-size: 1.2rem; line-height: 1.7rem; color: #333; }
+</style>
+
+</head>
+<body>
+<nav class="back-nav"><a href="https://gabriel-uzquiano.github.io/courses/220">← PHIL 220</a></nav>
+<article>
+<h1 id="translation">translation</h1>
+<p>We now build on the translation strategies we used for propositional
+logic. We first explain how the target sentence is made up out of
+simpler sentences with the help of propositional connectives. But unlike
+in the case of propositional logic, we will not use propositional
+variables to stand for them. Instead, we use the vocabulary of
+quantificational logic to identify further structure in them.</p>
+<h2 id="predication">predication</h2>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider the English sentences given below:</p>
+</dd>
+</dl>
+<ol type="1">
+<li><p>Aristotle followed Plato, but Plato followed Socrates.</p></li>
+<li><p>Aristotle and Plato followed each other.</p></li>
+<li><p>Aristotle followed Socrates only if Plato did.</p></li>
+</ol>
+<p>We specify a translation key:</p>
+<blockquote>
+<p><strong>Translation Key</strong></p>
+<p>Domain: People</p>
+<p><span class="math inline">\(R \ \_ \ \_\)</span>: __ followed __</p>
+<p>​ <span class="math inline">\(a\)</span>: Aristotle</p>
+<p>​ <span class="math inline">\(b\)</span>: Plato</p>
+<p>​ <span class="math inline">\(c\)</span>: Socrates</p>
+</blockquote>
+<p>Now:</p>
+<ol type="1">
+<li><p>Aristotle followed Plato, but Plato followed Socrates.</p>
+<p>(Aristotle followed Plato <span class="math inline">\(\wedge\)</span>
+Plato followed Socrates)</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>1. Rab /\ Rbc : Aristotle followed Plato, but Plato followed Socrates.
+|Rab /\ Rbc</code></pre>
+<ol start="2" type="1">
+<li><p>Aristotle and Plato followed each other.</p>
+<p>(Aristotled followed Plato <span
+class="math inline">\(\wedge\)</span>​ Plato followed Aristotle)</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>2. Rab /\ Rba : Aristotle and Plato followed each other.
+|Rab /\ Rba</code></pre>
+<ol start="3" type="1">
+<li><p>Aristotle followed Socrates only if Plato did.</p>
+<p>(Aristotle followed Socrates <span class="math inline">\(\to\)</span>
+Plato followed Socrates)</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>3. Rac -&gt; Rbc : Aristotle followed Socrates only if Plato did.
+|Rac -&gt; Rbc</code></pre>
+<h2 id="quantification">quantification</h2>
+<p>Quantifier phrases require more care. We begin with the simplest
+cases and build from them.</p>
+<h3 id="something-everything-nothing">‘something’, ‘everything’,
+‘nothing’</h3>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider the sentences below:</p>
+</dd>
+</dl>
+<ol start="4" type="1">
+<li>Something is heavy.</li>
+<li>Everything is concrete.</li>
+<li>Nothing lasts forever.</li>
+</ol>
+<p>The expressions ‘something’, ‘everything’, or ‘nothing’ are
+<strong>not</strong> designators, since their primary semantic function
+is not to refer but rather to express generality.</p>
+<p>We specify a translation key:</p>
+<blockquote>
+<p><strong>Translation Key</strong></p>
+<p>Domain: Things</p>
+<p><span class="math inline">\(P \ \_\)</span>: __ is heavy</p>
+<p><span class="math inline">\(Q \ \_\)</span>: __ is concrete</p>
+<p><span class="math inline">\(R \ \_\)</span>: __ is lasts forever</p>
+</blockquote>
+<p>We rephrase the first two sentences as follows:</p>
+<ol start="4" type="1">
+<li><p>Something is heavy.</p>
+<p>Some <em>thing</em> is such that <em>it</em> is heavy.</p>
+<p>Some <span class="math inline">\(x\)</span> is such that <span
+class="math inline">\(x\)</span> is heavy.</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>4. Ex Px : Something is heavy
+| Ex Px</code></pre>
+<ol start="5" type="1">
+<li><p>Everything is concrete.</p>
+<p>Every <em>thing</em> is such that <em>it</em> is concrete.</p>
+<p>Every <span class="math inline">\(x\)</span> is such that <span
+class="math inline">\(x\)</span>​ is concrete.</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>5. Ax Qx : Everything is concrete
+| Ax Qx</code></pre>
+<p>What should we make now of the third sentence:</p>
+<ol start="6" type="1">
+<li><p>Nothing lasts forever.</p>
+<p>It’s not the case that something lasts forever.</p>
+<p>It’s not the case that some <em>thing</em> is such that <em>it</em>
+lasts forever.</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>6. -Ex Rx :Nothing lasts forever.
+| -Ex Rx</code></pre>
+<p>Alternatively:</p>
+<ol start="6" type="1">
+<li><p>Nothing lasts forever.</p>
+<p>Everything doesn’t last forever.</p>
+<p>Every <em>thing</em> is such that <em>it</em> does not last
+forever</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>6. ~Ex Rx :Nothing lasts forever.
+|Ax -Rx</code></pre>
+<h3 id="some-p-is-___-and-every-p-is-___">‘some <span
+class="math inline">\(P\)</span> is ___’ and ‘every <span
+class="math inline">\(P\)</span> is ___’</h3>
+<p>The expressions ‘some’ and ‘every’ often combine with a predicate to
+form a quantifier phrase such as for example, ‘some apple’, ‘every
+apple’, ‘some computer’ or ‘every computer’.</p>
+<p>We now focus on two types of sentences.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider now the sentence:</p>
+</dd>
+</dl>
+<ol start="7" type="1">
+<li>Some apples are delicious.</li>
+</ol>
+<blockquote>
+<p><strong>Translation Key</strong></p>
+<p>Domain: Things</p>
+<p><span class="math inline">\(P \ \_\)</span>: __ is an apple</p>
+<p><span class="math inline">\(Q \ \_\)</span>: __ is delicious</p>
+</blockquote>
+<ol start="7" type="1">
+<li><p>Some apples are delicious.</p>
+<p>Some <em>thing</em> is such that <em>it</em> is an apple
+<strong>and</strong> <em>it</em> is delicious.</p>
+<p>Some <span class="math inline">\(x\)</span> is such that <span
+class="math inline">\(x\)</span> is an apple and <span
+class="math inline">\(x\)</span> is delicious.</p>
+<p>Some <span class="math inline">\(x\)</span> is such that (<span
+class="math inline">\(x\)</span> is an apple <span
+class="math inline">\(\wedge\)</span> <span
+class="math inline">\(x\)</span> is delicious).</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>7. Ex(Px/\Qx) : Some apples are delicious.
+|Ex(Px/\Qx)</code></pre>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider:</p>
+</dd>
+</dl>
+<ol start="8" type="1">
+<li>Every computer is expensive.</li>
+</ol>
+<blockquote>
+<p><strong>Translation Key</strong></p>
+<p>Domain: Things</p>
+<p><span class="math inline">\(P \ \_\)</span>: __ is a computer</p>
+<p><span class="math inline">\(Q \ \_\)</span>: __ is expensive</p>
+</blockquote>
+<ol start="8" type="1">
+<li><p>Every computer is expensive.</p>
+<p>Every <em>thing</em> is such that <strong>if</strong> <em>it</em> is
+a computer, <strong>then</strong> <em>it</em> is expensive.</p>
+<p>Every <span class="math inline">\(x\)</span> is such that
+<strong>if</strong> <span class="math inline">\(x\)</span> is a
+computer, <strong>then</strong> <span class="math inline">\(x\)</span>
+is expensive.</p>
+<p>Every <span class="math inline">\(x\)</span> is such that (if <span
+class="math inline">\(x\)</span> is a computer <span
+class="math inline">\(\to\)</span> <span
+class="math inline">\(x\)</span> is expensive).</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>8. Ax(Px-&gt;Qx) : Every computer is expensive.
+|Ax(Px-&gt;Qx)</code></pre>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider the sentences below:</p>
+</dd>
+</dl>
+<ol start="9" type="1">
+<li><p>Some computers are connected to the network.</p></li>
+<li><p>Every computer is connected to the network.</p></li>
+</ol>
+<blockquote>
+<p><strong>Translation Key</strong></p>
+<p>Domain: Things</p>
+<p><span class="math inline">\(P \ \_\)</span>: __ is a computer</p>
+<p><span class="math inline">\(R \ \_ \ \_\)</span>: __ is connected to
+__</p>
+<p>​ <span class="math inline">\(a\)</span>: the network</p>
+</blockquote>
+<p>We first rephrase the sentences as follows:</p>
+<ol start="9" type="1">
+<li><p>Some computers are connected to the network.</p>
+<p>Some <em>thing</em> is such that <em>it</em> is a computer and
+<em>it</em> is connected to the network.</p>
+<p>Some <span class="math inline">\(x\)</span> is such that (<span
+class="math inline">\(x\)</span> is a computer <span
+class="math inline">\(\wedge\)</span> <span
+class="math inline">\(x\)</span>​​ is connected to the network)</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>9. Ex (Px /\ Rxa) : Some computers are connected to the network.
+|Ex (Px /\ Rxa)</code></pre>
+<ol start="10" type="1">
+<li><p>Every computer is connected to the network.</p>
+<p>Every <em>thing</em> is such that if <em>it</em> is a computer, then
+<em>it</em> is connected to the network.</p>
+<p>Every <span class="math inline">\(x\)</span> is such that (if <span
+class="math inline">\(x\)</span> is a computer <span
+class="math inline">\(\to\)</span> <span
+class="math inline">\(x\)</span> is connected to the network)</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>10. Ax (Px -&gt; Rxa) : Every computer is connected to the network.
+|Ax (Px -&gt; Rxa)</code></pre>
+<h2 id="multiple-generality">multiple generality</h2>
+<p>One further layer of complexity involves predicates with more than
+one argument place.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Compare the sentences given below:</p>
+</dd>
+</dl>
+<ol start="11" type="1">
+<li>Aristotle followed Plato.</li>
+<li>Someone followed Plato.</li>
+<li>Aristotle followed someone.</li>
+<li>Everyone followed Plato.</li>
+<li>Aristotle followed everyone.</li>
+<li>Someone followed someone.</li>
+<li>Someone followed everyone.</li>
+<li>Everyone followed someone.</li>
+<li>Everyone followed everyone.</li>
+</ol>
+<p>Here is a translation key we may use for these and further examples
+down below:</p>
+<blockquote>
+<p><strong>Translation Key</strong></p>
+<p>Domain: People</p>
+<p><span class="math inline">\(R \ \_ \ \_\)</span>: __ follows __</p>
+<p><span class="math inline">\(P \ \_\)</span>: __ is a philosopher</p>
+<p><span class="math inline">\(Q \ \_\)</span>: __ is a
+mathematician</p>
+<p>​ <span class="math inline">\(a\)</span>: Aristotle</p>
+<p>​ <span class="math inline">\(b\)</span>: Plato</p>
+</blockquote>
+<p>We know how to translate the first five sentences, since they involve
+the quantifers ‘someone’ and ‘everyone’:</p>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>11. Rab : Aristotle followed Plato.</code></pre>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>12. Ex Rxb : Someone followed Plato.</code></pre>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>13. Ex Rax : Aristotle followed someone.</code></pre>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>14. Ax Rxb : Everyone followed Plato.</code></pre>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>15. Ax Rax : Aristotle followed everyone.</code></pre>
+<p>The next four sentences are more delicate, but we break down the task
+into simpler pieces:</p>
+<ol start="16" type="1">
+<li><p>Someone followed someone</p>
+<p>Some <span class="math inline">\(x\)</span> is such that <span
+class="math inline">\(x\)</span> followed someone.</p>
+<p>Some <span class="math inline">\(x\)</span> is such that some
+<em>one</em> is such that <span class="math inline">\(x\)</span>
+followed <em>them</em>.</p>
+<p>Some <span class="math inline">\(x\)</span> is such that some <span
+class="math inline">\(y\)</span> is such that <span
+class="math inline">\(x\)</span> followed <span
+class="math inline">\(y\)</span>​</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>16. Ex Ey Rxy : Someone followed someone.
+|Ex Ey Rxy</code></pre>
+<ol start="17" type="1">
+<li><p>Someone followed everyone</p>
+<p>Some <span class="math inline">\(x\)</span> is such that <span
+class="math inline">\(x\)</span> followed everyone.</p>
+<p>Some <span class="math inline">\(x\)</span> is such that every
+<em>one</em> is such that <span class="math inline">\(x\)</span>
+followed <em>them</em>.</p>
+<p>Some <span class="math inline">\(x\)</span> is such that every <span
+class="math inline">\(y\)</span> is such that <span
+class="math inline">\(x\)</span> followed <span
+class="math inline">\(y\)</span>​</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>17. Ex Ay Rxy : Someone followed everyone.
+|Ex Ay Rxy</code></pre>
+<ol start="18" type="1">
+<li><p>Everyone followed someone</p>
+<p>Every <span class="math inline">\(x\)</span> is such that <span
+class="math inline">\(x\)</span> followed someone.</p>
+<p>Every <span class="math inline">\(x\)</span> is such that some
+<em>one</em> is such that <span class="math inline">\(x\)</span>
+followed <em>them</em>.</p>
+<p>Every <span class="math inline">\(x\)</span> is such that some <span
+class="math inline">\(y\)</span> is such that <span
+class="math inline">\(x\)</span> followed <span
+class="math inline">\(y\)</span>​</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>18. Ax Ey Rxy : Everyone followed someone.
+|Ax Ey Rxy</code></pre>
+<ol start="19" type="1">
+<li><p>Everyone followed everyone</p>
+<p>Every <span class="math inline">\(x\)</span> is such that <span
+class="math inline">\(x\)</span> followed everyone.</p>
+<p>Every <span class="math inline">\(x\)</span> is such that every
+<em>one</em> is such that <span class="math inline">\(x\)</span>
+followed <em>them</em>.</p>
+<p>Every <span class="math inline">\(x\)</span> is such that every <span
+class="math inline">\(y\)</span> is such that <span
+class="math inline">\(x\)</span> followed <span
+class="math inline">\(y\)</span>​</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>19. Ax Ay Rxy : Everyone followed everyone.
+|Ax Ay Rxy</code></pre>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider the sentences below:</p>
+</dd>
+</dl>
+<ol start="20" type="1">
+<li>Some philosophers followed Plato.</li>
+<li>Plato followed some philosophers.</li>
+<li>Every philosopher followed Plato.</li>
+<li>Plato followed every philosopher.</li>
+</ol>
+<p>We proceed as before by making sure we break the task into simpler
+pieces.</p>
+<ol start="20" type="1">
+<li><p>Some philosopher followed Plato.</p>
+<p>Some <span class="math inline">\(x\)</span> is such that <span
+class="math inline">\(x\)</span> is a philosopher and <span
+class="math inline">\(x\)</span> followed Plato.</p>
+<p>Some <span class="math inline">\(x\)</span> is such that (<span
+class="math inline">\(x\)</span> is a philosopher <span
+class="math inline">\(\wedge\)</span> <span
+class="math inline">\(x\)</span>​ followed Plato)</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>20. Ex (Px /\ Rxb) : Some philosopher followed Plato.
+|Ex (Px /\ Rxb)</code></pre>
+<ol start="21" type="1">
+<li><p>Plato followed some philosophers.</p>
+<p>Some <span class="math inline">\(x\)</span> is such that <span
+class="math inline">\(x\)</span> is a philosopher and Plato followed
+<span class="math inline">\(x\)</span>.</p>
+<p>Some <span class="math inline">\(x\)</span> is such that (<span
+class="math inline">\(x\)</span> is a philosopher <span
+class="math inline">\(\wedge\)</span> Plato followed <span
+class="math inline">\(x\)</span>)</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>21. Ex (Px /\ Rbx) :  Plato followed some philosophers.
+|Ex (Px /\ Rbx)</code></pre>
+<ol start="22" type="1">
+<li><p>Every philosopher followed Plato.</p>
+<p>Every <span class="math inline">\(x\)</span> is such that if <span
+class="math inline">\(x\)</span> is a philosopher, then <span
+class="math inline">\(x\)</span> followed Plato.</p>
+<p>Every <span class="math inline">\(x\)</span> is such that (<span
+class="math inline">\(x\)</span> is a philosopher <span
+class="math inline">\(\to\)</span> <span
+class="math inline">\(x\)</span> followed Plato).</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>22. Ax(Px -&gt; Rxb) : Every philosopher followed Plato.
+|Ax(Px -&gt; Rxb)</code></pre>
+<ol start="23" type="1">
+<li><p>Plato followed every philosopher.</p>
+<p>Every <span class="math inline">\(x\)</span> is such that if <span
+class="math inline">\(x\)</span> is a philosopher, then Plato followed
+<span class="math inline">\(x\)</span>.</p>
+<p>Every <span class="math inline">\(x\)</span> is such that (<span
+class="math inline">\(x\)</span> is a philosopher <span
+class="math inline">\(\to\)</span> Plato followed <span
+class="math inline">\(x\)</span>).</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>23. Ax(Px -&gt; Rbx) : Plato followed every philosopher.
+|Ax(Px -&gt; Rbx)</code></pre>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider now the sentences:</p>
+</dd>
+</dl>
+<ol start="24" type="1">
+<li><p>Some philosophers followed some mathematicians.</p></li>
+<li><p>Every philosopher followed some mathematicians.</p></li>
+<li><p>Every philosopher followed every mathematician.</p></li>
+<li><p>Some philosophers followed some mathematicians.</p>
+<p>Some <span class="math inline">\(x\)</span> is such that <span
+class="math inline">\(x\)</span> is a philosopher and <span
+class="math inline">\(x\)</span> followed some mathematician.</p>
+<p>Some <span class="math inline">\(x\)</span> is such that (<span
+class="math inline">\(x\)</span> is a philosopher <span
+class="math inline">\(\wedge\)</span> <span
+class="math inline">\(x\)</span> followed some mathematician).</p>
+<p>Some <span class="math inline">\(x\)</span> is such that (<span
+class="math inline">\(x\)</span> is a philosopher <span
+class="math inline">\(\wedge\)</span> some <span
+class="math inline">\(y\)</span> is such that (<span
+class="math inline">\(y\)</span> is a mathematician <span
+class="math inline">\(\wedge\)</span> <span
+class="math inline">\(x\)</span> followed <span
+class="math inline">\(y\)</span>)).</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>24. Ex(Px /\ Ey (Qy /\ Rxy)) : Some philosophers followed some mathematicians.
+|Ex(Px /\ Ey (Qy /\ Rxy))</code></pre>
+<ol start="25" type="1">
+<li><p>Every philosopher followed some mathematicians.</p>
+<p>Every <span class="math inline">\(x\)</span> is such that if <span
+class="math inline">\(x\)</span> is a philosopher, then <span
+class="math inline">\(x\)</span> followed some mathematicians.</p>
+<p>Every <span class="math inline">\(x\)</span> is such that (<span
+class="math inline">\(x\)</span> is a philosopher <span
+class="math inline">\(\to\)</span> <span
+class="math inline">\(x\)</span> followed some mathematician).</p>
+<p>Every <span class="math inline">\(x\)</span> is such that (<span
+class="math inline">\(x\)</span> is a philosopher <span
+class="math inline">\(\to\)</span> some <span
+class="math inline">\(y\)</span> is such that (<span
+class="math inline">\(y\)</span> is a mathematician <span
+class="math inline">\(\wedge\)</span> <span
+class="math inline">\(x\)</span> followed <span
+class="math inline">\(y\)</span>)).</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>25. Ax (Px -&gt; Ey(Qy /\ Rxy)) : Every philosopher followed some mathematicians.
+|Ax (Px -&gt; Ey(Qy /\ Rxy))</code></pre>
+<ol start="26" type="1">
+<li><p>Every philosopher followed every mathematician.</p>
+<p>Every <span class="math inline">\(x\)</span> is such that if <span
+class="math inline">\(x\)</span> is a philosopher, then <span
+class="math inline">\(x\)</span> followed every mathematician.</p>
+<p>Every <span class="math inline">\(x\)</span> is such that (<span
+class="math inline">\(x\)</span> is a philosopher <span
+class="math inline">\(\to\)</span> <span
+class="math inline">\(x\)</span> followed every mathematician).</p>
+<p>Every <span class="math inline">\(x\)</span> is such that (<span
+class="math inline">\(x\)</span> is a philosopher <span
+class="math inline">\(\to\)</span> every <span
+class="math inline">\(y\)</span> is such that (<span
+class="math inline">\(y\)</span> is a mathematician <span
+class="math inline">\(\to\)</span> <span
+class="math inline">\(x\)</span> followed <span
+class="math inline">\(y\)</span>)).</p></li>
+</ol>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>26. Ax (Px -&gt; Ay(Qy -&gt; Rxy)) : Every philosopher followed every mathematician.
+|Ax (Px -&gt; Ay(Qy -&gt; Rxy))</code></pre>
+</article>
+
+<script>
+function checkMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var correct = JSON.parse(ex.dataset.correct);
+  var multi = ex.dataset.multi === "true";
+  var feedback = ex.querySelector('.mc-feedback');
+  feedback.removeAttribute('hidden');
+  if (multi) {
+    var checked = Array.from(ex.querySelectorAll('input[type=checkbox]:checked')).map(function(c){ return parseInt(c.value); });
+    var ok = correct.length === checked.length && correct.every(function(v){ return checked.includes(v); });
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  } else {
+    var selected = ex.querySelector('input[type=radio]:checked');
+    if (!selected) { feedback.textContent = 'Please select an option.'; feedback.className = 'mc-feedback'; return; }
+    var ok = correct.includes(parseInt(selected.value));
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  }
+}
+function revealMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var ans = ex.querySelector('.mc-answer');
+  ans.removeAttribute('hidden');
+  if (window.MathJax) { MathJax.Hub.Queue(['Typeset', MathJax.Hub, ans]); }
+}
+</script>
+
+</body>
+</html>

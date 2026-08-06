@@ -1,5 +1,5 @@
 ---
-title: validity and form
+title: "validity and form"
 author: Gabriel Uzquiano
 description: |
   Validity and Form

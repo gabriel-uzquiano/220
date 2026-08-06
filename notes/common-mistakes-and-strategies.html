@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>common mistakes and strategies — PHIL 220</title>
+  <link rel="stylesheet" href="../shared/notes.css">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<style>
+.mc-exercise { margin: 1.2rem 0 2rem; width: 55%; margin-left: 8%; }
+.mc-question { margin-bottom: 0.7rem; font-size: 1.4rem; line-height: 2rem; }
+.mc-options { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.8rem; }
+.mc-option { display: flex; align-items: baseline; gap: 0.6rem; cursor: pointer; font-size: 1.3rem; line-height: 1.7rem; }
+.mc-option input { margin: 0; flex-shrink: 0; }
+.mc-controls { display: flex; gap: 0.6rem; margin-bottom: 0.5rem; }
+.btn-check, .btn-reveal {
+  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+  font-size: 0.82rem; padding: 0.22rem 0.7rem;
+  border-radius: 3px; cursor: pointer; border: 1px solid #ccc;
+  background: #fffff8; color: #111;
+}
+.btn-check:hover { background: #006666; color: #fff; border-color: #006666; }
+.mc-feedback { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.9rem; margin-bottom: 0.3rem; }
+.fb-ok { color: #1a6e2e; } .fb-err { color: #8b1a1a; }
+.mc-answer { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.88rem; color: #555; margin-top: 0.3rem; }
+.mc-explanation { margin-top: 0.4rem; font-family: et-book, Palatino, serif; font-size: 1.2rem; line-height: 1.7rem; color: #333; }
+</style>
+
+</head>
+<body>
+<nav class="back-nav"><a href="https://gabriel-uzquiano.github.io/courses/220">← PHIL 220</a></nav>
+<article>
+<h1 id="review">review</h1>
+<p>We first look at some further illustrations of the rules we have
+introduced for the quantifiers:</p>
+<pre class="ProofChecker GamutNDPlus"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>1. Ax (Px -&gt; Ay Rxy), Ay Py :|-: Rab
+|Ax (Px -&gt; Ay Rxy) :assumption
+|Ay Py :assumption
+|Pa -&gt; Ay Ray :EA 1
+|Pa :EA 2
+|AyRay :E-&gt; 3, 4
+|Rab :EA 5
+</code></pre>
+<pre class="ProofChecker GamutNDPlus"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>2. :|-: Ax(Rxa -&gt; Rxa)
+| Rba :assumption
+| Rba :rep 1
+|Rba -&gt; Rba :I-&gt; 1-2
+|Ax(Rxa -&gt; Rxa) :IA 3
+</code></pre>
+<pre class="ProofChecker GamutNDPlus"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>3. Ax Px -&gt; Ay Ray, Ay Py :|-: Ez Ay Rzy
+|Ax Px -&gt; Ay Ray :assumption
+|Ay Py :assumption
+|Pb :EA 2
+|Ax Px :IA 3
+|Ay Ray :E-&gt; 1, 4
+|EzAyRzy :IE 5</code></pre>
+<pre class="ProofChecker GamutNDPlus"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>4. Ey Ray, Ax(Rax -&gt; Rbx) :|-: EzRbz
+|EyRay :assumption
+|Ax(Rax -&gt; Rbx) :assumption
+| Rac :assumption
+| Rac -&gt; Rbc :EA 2
+| Rbc :E-&gt; 3, 4
+| EzRbz :IE 5
+|Rac -&gt; EzRbz :I-&gt; 3-6
+|EzRbz :EE 1, 7
+</code></pre>
+<p>Here is finally a derivation, which requires all four rules of
+inference.</p>
+<pre class="ProofChecker GamutNDPlus"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>5. Ax(Px -&gt; Ey(Py /\ Rxy)), ~Ax Ey Rxy  :|-: ~Ax Px
+|Ax(Px -&gt; Ey(Py /\ Rxy)) :assumption
+|~Ax Ey Rxy :assumption
+| Ax Px :assumption
+| Pa :EA 3
+| Pa -&gt; Ey(Py /\ Ray) :EA 1
+| Ey(Py/\ Ray) :E-&gt; 4, 5
+|  Pb /\ Rab :assumption
+|  Rab :E/\ 7
+|  Ey Ray :IE 8
+| (Pb /\ Rab) -&gt; Ey Ray :I-&gt; 7-9
+| EyRay :EE 6, 10
+| AxEyRxy :IA 11
+| !? :E~ 2, 12
+|~Ax Px :I~ 3-13</code></pre>
+<h1 id="common-mistakes-and-strategy">common mistakes and strategy</h1>
+<p>Much of the advice for propositional logic carries over to
+quantificational logic. You should begin with a plan for the derivation,
+which generally works backwards from your goal to appropriate subgoals
+you should reach out first.</p>
+<p>There are, however, some potential pitfalls we should be careful to
+avoid in quantificational logic.</p>
+<h2
+id="misapplications-of-the-rules-for-forall-and-exists">misapplications
+of the rules for <span class="math inline">\(\forall\)</span> and <span
+class="math inline">\(\exists\)</span></h2>
+<p>Here are some common misapplications of the rules for the universal
+and existential quantifiers</p>
+<h3
+id="misapplications-to-formulas-with-other-main-connectives">misapplications
+to formulas with other main connectives</h3>
+<p>One may be tempted to misapply <span
+class="math inline">\(E\forall\)</span> to a formula that is
+<em>not</em> a universally quantified formula</p>
+<pre class="ProofChecker GamutNDPlus"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>6. AxPx -&gt; Ax Qx :|-: Pa -&gt; Qa
+|Ax Px -&gt; Ax Qx :assumption
+|Pa -&gt; Qa :EA 1 ✗
+</code></pre>
+<p>The second line misapplies <span
+class="math inline">\(E\forall\)</span> to a <em>conditional</em>, not a
+universally quantified formula. Not only is this an incorrect proof, but
+notice that there is in fact <em>no</em> proof of the conclusion from
+the premise, since the argument is in fact <em>invalid</em>.</p>
+<pre class="CounterModeler Validity" data-system="gamutND"
+data-options="turnstilemark double-turnstile exam check"
+data-submission="none"><code>7. AxPx -&gt; Ax Qx :|-: Pa -&gt; Qa
+|Domain: 0, 1
+|P(_): 0
+|Q(_):
+|a: 0
+|b: 1</code></pre>
+<p>This model verifies the premise by making false <span
+class="math inline">\(\forall x Px\)</span>, which is the antecedent of
+the conditional. The conclusion, however, is false in the model, since
+<span class="math inline">\(Pa\)</span> is true in the model while <span
+class="math inline">\(Qa\)</span> remains false in the model. That makes
+the conditional false.</p>
+<p>Compare the argument above with a valid argument given below:</p>
+<pre class="ProofChecker GamutNDPlus"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>8. Ax(Px -&gt; Qx) :|-: Pa -&gt; Qa
+|Ax (Px -&gt; Qx) :assumption
+|Pa -&gt; Qa :EA 1 </code></pre>
+<p>For another example of a similar pitfall, consider the attempted
+proof below:</p>
+<pre class="ProofChecker GamutNDPlus"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>9. ExPx /\ Ex Qx :|-: Ex (Px /\ Qx)
+|ExPx /\ Ex Qx  :assumption
+| Pa /\ Qa :assumption
+| Ex(Px /\ Qx) :IE 2
+|(Pa /\ Qa) -&gt; Ex (Px /\ Qx) :I-&gt; 2-3
+|Ex(Px/\Qx) :EE 1, 5 ✗
+</code></pre>
+<p>The last step is incorrect simply because the first premise is a
+<em>conjunction</em> and not an existentially quantified formula. So, we
+cannot apply <span class="math inline">\(EE\)</span> to it.</p>
+<p>There is no proof of the conclusion from the premises, since the
+argument is in fact invalid as shown by the following countermodel.</p>
+<pre class="CounterModeler Validity" data-system="gamutND"
+data-options="turnstilemark double-turnstile exam check"
+data-submission="none"><code>10. ExPx /\ Ex Qx :|-: Ex (Px /\ Qx)
+|Domain: 0, 1
+|P(_): 0
+|Q(_): 1</code></pre>
+<p>The model verifies the conjunction <span
+class="math inline">\(\exists x Px \wedge \exists x Qx\)</span> because
+something is <span class="math inline">\(P\)</span> in the model and
+something is <span class="math inline">\(Q\)</span> in the model. The
+conclusion, however, is false in the model because nothing is both <span
+class="math inline">\(P\)</span> and <span
+class="math inline">\(Q\)</span> in the model.</p>
+<p>Compare the argument above with a valid argument given below:</p>
+<pre class="ProofChecker GamutNDPlus"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>11. Ex(Px /\ Qx) :|-: Ex Px /\ Ex Qx
+|Ex(Px /\ Qx)  :assumption
+| Pa /\ Qa :assumption
+| Pa :E/\ 2
+| Ex Px :IE 3
+| Qa :E/\ 2
+| Ex Qx :IE 5
+| ExPx /\ Ex Qx :I/\ 4, 6
+|(Pa /\ Qa) -&gt; (Ex Px /\ Ex Qx) :I-&gt; 2-7
+|Ex Px/\ Ex Qx :EE 1, 8</code></pre>
+<h3 id="failures-to-apply-the-rules-once-at-a-time">failures to apply
+the rules once at a time</h3>
+<p>One common temptation is to apply the rules twice at a time as in the
+attempted proof given below:</p>
+<pre class="ProofChecker GamutNDPlus"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>12. AxAy Rxy :|-: Rab
+|AxAy Rxy :assumption
+|Rab :EA 1 ✗</code></pre>
+<p>A correct proof would split the transition from premise to conclusion
+into two different steps each of which is an application of <span
+class="math inline">\(E\forall\)</span>:</p>
+<pre class="ProofChecker GamutNDPlus"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>13. AxAy Rxy :|-: Rab
+|AxAy Rxy :assumption
+|Ay Ray :EA 1 
+|Rab :EA 2</code></pre>
+<h3 id="misapplications-of-iforall-and-eexists">misapplications of
+I<span class="math inline">\(\forall\)</span> and E<span
+class="math inline">\(\exists\)</span></h3>
+<p>Both I<span class="math inline">\(\forall\)</span> and E<span
+class="math inline">\(\exists\)</span> come with special qualifications,
+which may present its own difficulties. Consider for example, a
+potential misapplication of I<span
+class="math inline">\(\forall\)</span>:</p>
+<pre class="ProofChecker GamutNDPlus"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>14. Ax Rxa :|-: Ax Rxx
+|Ax Rxa :assumption
+|Raa :EA 1
+|AxRxx :IA 2 ✗</code></pre>
+<p>The problem with the last step is that I<span
+class="math inline">\(\forall\)</span> does <em>not</em> license the
+step from line 3 to line 4 because the constant <span
+class="math inline">\(a\)</span> appears in an undischarged assumption,
+namely, line 1. Therefore, the last step is incorrect.</p>
+<p>That is for the best, since the argument above is in fact invalid as
+shown by the following countermodel:</p>
+<pre class="CounterModeler Validity" data-system="gamutND"
+data-options="turnstilemark double-turnstile exam check"
+data-submission="none"><code>15. Ax Rxa :|-: Ax Rxx
+|Domain: 0, 1
+|R(_,_): [0, 0], [1,0]
+|a: 0</code></pre>
+<p>The model verifies the premise by making sure that everything in the
+domain is related to 0, which is the denotation of the constant <span
+class="math inline">\(a\)</span>. The conclusion, however, is false,
+since it is not the case that everything in the domain is related to
+itself, e.g., 1 is not related to itself in the model.</p>
+<p>For a correct application of the rule, consider the proof:</p>
+<pre class="ProofChecker GamutNDPlus"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>16. Ax Rxa, Ax (Rxa -&gt; Rax), AxAy Az ((Rxy /\ Ryz)-&gt; Rxz) :|-: Ax Rxx
+|Ax Rxa :assumption
+|Ax (Rxa-&gt; Rax) :assumption
+|Ax Ay Az((Rxy/\Ryz)-&gt;Rxz) :assumption
+|Rba :EA 1
+|Rba-&gt;Rab :EA 2
+|Rab :E-&gt; 4, 5
+|Ay Az((Rby /\ Ryz)-&gt;Rbz) :EA 3
+|Az ((Rba/\Raz)-&gt;Rbz) :EA 7
+|(Rba/\Rab)-&gt; Rbb :EA 8
+|Rba/\Rab :I/\ 4, 6
+|Rbb :E-&gt; 9, 10
+|Ax Rxx :IA 11
+</code></pre>
+<p>We face a similar risk with the rule of existential elimination.
+Consider for example, a potential misapplication of I<span
+class="math inline">\(\exists\)</span>:</p>
+<pre class="ProofChecker GamutNDPlus"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>17. Ex Rxa :|-: Ex Rxx
+|Ex Rxa :assumption
+| Raa :assumption
+| Ex Rxx :IE 2
+|Raa -&gt; Ex Rxx :I-&gt; 2-3
+|ExRxx :IE 1, 4 ✗
+</code></pre>
+<p>The problem with the last step is again that I<span
+class="math inline">\(\exists\)</span> does <em>not</em> license the
+step from lines 1 and 4 to line 5 because the constant <span
+class="math inline">\(a\)</span> appears in an undischarged assumption,
+namely, line 1. Therefore, the last step is incorrect.</p>
+<p>That is for the best, since the argument above is in fact invalid as
+shown by the following countermodel:</p>
+<pre class="CounterModeler Validity" data-system="gamutND"
+data-options="turnstilemark double-turnstile exam check"
+data-submission="none"><code>18. Ex Rxa :|-: Ex Rxx
+|Domain: 0, 1
+|R(_,_): [1,0]
+|a: 0</code></pre>
+<p>The model verifies the premise by making sure that something in the
+domain, namely, 1, is related to 0, which is the denotation of the
+constant <span class="math inline">\(a\)</span>. The conclusion,
+however, is false, since nothing in the domain is related to itself.</p>
+<p>Compare again with the following proof:</p>
+<pre class="ProofChecker GamutNDPlus"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>19. Ex Rxa, Ax (Rxa -&gt; Rax), Ax Ay Az((Rxy/\Ryz)-&gt;Rxz) :|-: Ex Rxx
+|Ex Rxa :assumption
+|Ax (Rxa-&gt; Rax) :assumption
+|Ax Ay Az((Rxy/\Ryz)-&gt;Rxz) :assumption
+| Rba :assumption
+| Rba-&gt;Rab :EA 2
+| Rab :E-&gt; 4, 5
+| Ay Az((Rby /\ Ryz)-&gt;Rbz) :EA 3
+| Az ((Rba/\Raz)-&gt;Rbz) :EA 7
+| (Rba/\Rab)-&gt; Rbb :EA 8
+| Rba/\Rab :I/\ 4, 6
+| Rbb :E-&gt; 9, 10
+| Ex Rxx :IE 11
+|Rba-&gt; ExRxx :I-&gt; 4-12
+|ExRxx :EE 1, 13
+</code></pre>
+<h2 id="strategy">strategy</h2>
+<p>You may often find yourself in a position to exploit a universally
+quantified formula and an existentially quantified one in order to reach
+your conclusion. In such situations, it is generally better to exploit
+the existentially quantifier formula <em>first</em>, since otherwise,
+you may be forced to introduce yet another constant. Consider, for
+example, the order in which the rules of E<span
+class="math inline">\(\exists\)</span> and E<span
+class="math inline">\(A\)</span> have been used in the derivation
+below:</p>
+<pre class="ProofChecker GamutNDPlus"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>20. Ex Rax, Ay(Ray -&gt;Ryy) :|-: Ex Rxx 
+|Ex Rax :assumption
+|Ay(Ray -&gt;Ryy) :assumption
+| Rab :assumption
+| Rab -&gt; Rbb :EA 2
+| Rbb :E-&gt; 3, 4
+| Ex Rxx :IE 5
+|Rab -&gt; Ex Rxx :I-&gt; 3-6
+|Ex Rxx :EE 1, 7
+</code></pre>
+<p>For another example, consider the proof:</p>
+<pre class="ProofChecker GamutNDPlus"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>21. ExPx/\ExQx, -Ex(Px/\Qx), Ax(Rx -&gt; Px) :|-: Ex -Rx
+|ExPx/\ExQx :assumption
+|-Ex(Px/\Qx) :assumption
+|Ax(Rx -&gt; Px) :assumption
+|Ex Qx :E/\ 1
+| Qa :assumption
+|  Pa :assumption
+|  Pa /\ Qa :I/\ 5, 6
+|  Ex(Px/\Qx) :IE 7
+|  !? :E- 2, 8
+| -Pa :I- 6-9
+| Ra-&gt; Pa :EA 3
+|  Ra :assumption
+|  Pa :E-&gt; 11, 12
+|  !? :E- 10, 13
+| -Ra :I- 12-14
+| Ex -Rx :IE 15
+|Qa -&gt; Ex -Rx :I-&gt; 5-16
+|Ex -Rx :EE 4, 17</code></pre>
+<p>Here is a sandbox you can use to experiment further with derivations
+in quantificational logic:</p>
+<pre class="Playground GamutNDPlus"
+data-options="indent resize render popout tabindent"
+data-submission="none"><code></code></pre>
+</article>
+
+<script>
+function checkMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var correct = JSON.parse(ex.dataset.correct);
+  var multi = ex.dataset.multi === "true";
+  var feedback = ex.querySelector('.mc-feedback');
+  feedback.removeAttribute('hidden');
+  if (multi) {
+    var checked = Array.from(ex.querySelectorAll('input[type=checkbox]:checked')).map(function(c){ return parseInt(c.value); });
+    var ok = correct.length === checked.length && correct.every(function(v){ return checked.includes(v); });
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  } else {
+    var selected = ex.querySelector('input[type=radio]:checked');
+    if (!selected) { feedback.textContent = 'Please select an option.'; feedback.className = 'mc-feedback'; return; }
+    var ok = correct.includes(parseInt(selected.value));
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  }
+}
+function revealMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var ans = ex.querySelector('.mc-answer');
+  ans.removeAttribute('hidden');
+  if (window.MathJax) { MathJax.Hub.Queue(['Typeset', MathJax.Hub, ans]); }
+}
+</script>
+
+</body>
+</html>

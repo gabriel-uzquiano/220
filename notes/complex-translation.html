@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>complex translation — PHIL 220</title>
+  <link rel="stylesheet" href="../shared/notes.css">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<style>
+.mc-exercise { margin: 1.2rem 0 2rem; width: 55%; margin-left: 8%; }
+.mc-question { margin-bottom: 0.7rem; font-size: 1.4rem; line-height: 2rem; }
+.mc-options { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.8rem; }
+.mc-option { display: flex; align-items: baseline; gap: 0.6rem; cursor: pointer; font-size: 1.3rem; line-height: 1.7rem; }
+.mc-option input { margin: 0; flex-shrink: 0; }
+.mc-controls { display: flex; gap: 0.6rem; margin-bottom: 0.5rem; }
+.btn-check, .btn-reveal {
+  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+  font-size: 0.82rem; padding: 0.22rem 0.7rem;
+  border-radius: 3px; cursor: pointer; border: 1px solid #ccc;
+  background: #fffff8; color: #111;
+}
+.btn-check:hover { background: #006666; color: #fff; border-color: #006666; }
+.mc-feedback { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.9rem; margin-bottom: 0.3rem; }
+.fb-ok { color: #1a6e2e; } .fb-err { color: #8b1a1a; }
+.mc-answer { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.88rem; color: #555; margin-top: 0.3rem; }
+.mc-explanation { margin-top: 0.4rem; font-family: et-book, Palatino, serif; font-size: 1.2rem; line-height: 1.7rem; color: #333; }
+</style>
+
+</head>
+<body>
+<nav class="back-nav"><a href="https://gabriel-uzquiano.github.io/courses/220">← PHIL 220</a></nav>
+<article>
+<h1 id="complex-translation">complex translation</h1>
+<p>We will now use the skills we have developed thus far for the
+evaluation of real life arguments. They will involve three main steps in
+each case:</p>
+<ol type="1">
+<li>We will write the argument in premise-conclusion form.</li>
+<li>We will translate the argument into the language of propositional
+logic.</li>
+<li>We will use a truth table to determine whether the argument is
+valid.</li>
+</ol>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider the argument:</p>
+</dd>
+</dl>
+<blockquote>
+<p><em>My client is not the burglar. For if there are no signs of forced
+entry, then, if my client had been the burglar, she would have had an
+accomplice inside the building. But we can discard that option, as no
+one in the building could have known my client before today. Nor are
+there any signs of forced entry.</em></p>
+</blockquote>
+<h3 id="premise-conclusion-form">premise-conclusion form</h3>
+<ol type="1">
+<li>If there are no signs of forced entry, then if my client had been
+the burglar, then she would have had an accomplice inside the
+building.</li>
+<li>She did not have an accomplice inside the building.</li>
+<li>There are no signs of forced entry.</li>
+<li>My client is not the burglar.</li>
+</ol>
+<h3 id="translation">translation</h3>
+<ol type="1">
+<li><p>((<u><span style="color: red;"><strong>If</strong></span></u>
+there are no signs of forced entry, <u><span
+style="color: red;"><strong>then</strong></span></u> (<span
+style="color: red;"><strong>if</strong></span> my client had been the
+burglar, <span style="color: red;"><strong>then</strong></span> she
+would have had an accomplice inside the building.))</p></li>
+<li><p>It is <u><span
+style="color: red;"><strong>not</strong></span></u> the case that she
+had an accomplice inside the building.</p></li>
+<li><p>It is <u><span
+style="color: red;"><strong>not</strong></span></u> the case that there
+are signs of forced entry.</p></li>
+<li><p>It is <u><span
+style="color: red;"><strong>not</strong></span></u> the case that my
+client is the burglar.</p></li>
+</ol>
+<p><strong>translation key</strong></p>
+<p><span class="math inline">\(p\)</span>: There are signs of forced
+entry</p>
+<p><span class="math inline">\(q\)</span>: My client is the burglar</p>
+<p><span class="math inline">\(r\)</span>: My client had an accomplice
+inside the building</p>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>1. -p &gt; (q &gt; r): If there are no signs of forced entry, then if my client was the burglar, then she had an accomplice inside the building.</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>2. -r: She did not have an accomplice inside the building.</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>3. -p: There are no signs of forced entry.</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>4. -q: My client is not the burglar.</code></pre>
+<h3 id="evaluation">evaluation</h3>
+<p>Once we have a translation of the argument into propositional logic,
+we may make use of a truth table in order to determine its validity or
+invalidity.</p>
+<pre class="TruthTable Validity Partial" data-system="gamutPND"
+data-counterexample-to="validity"
+data-options="turnstilemark double-turnstile nodash autoAtoms"
+data-submission="none"><code>A. -p &gt; (q &gt; r), -r, -p :|-: -q</code></pre>
+<p>We find that the argument is <em>valid</em> because there is
+<em>no</em> assignment of truth values to the propositional variables on
+which the premises come out true and the conclusion false.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider the argument:</p>
+</dd>
+</dl>
+<blockquote>
+<p><em>If the mind is the same thing as the brain, then the mind is made
+of matter only if the brain is made of matter. Unless the mind is
+mortal, it is not made of matter. The brain is made of matter.
+Therefore, the mind is not the same thing as the brain.</em></p>
+</blockquote>
+<h3 id="premise-conclusion-form-1">premise-conclusion form</h3>
+<ol type="1">
+<li>If the mind is the same thing as the brain, then the mind is made of
+matter only if the brain is made of matter.</li>
+<li>Unless the mind is mortal, it is not made of matter.</li>
+<li>The brain is made of matter.</li>
+<li>The mind is not the same thing as the brain.</li>
+</ol>
+<h3 id="translation-1">translation</h3>
+<ol type="1">
+<li><p>((<u><span style="color: red;"><strong>If</strong></span></u> the
+mind is the same thing as the brain, <u><span
+style="color: red;"><strong>then</strong></span></u> (<span
+style="color: red;"><strong>if</strong></span> the mind is made of
+matter, <span style="color: red;"><strong>then</strong></span> the brain
+is made of matter.))</p></li>
+<li><p>(<u><span style="color: red;"><strong>If</strong></span></u> it
+is <span style="color: red;"><strong>not</strong></span> the case that
+the mind is mortal, <u><span
+style="color: red;"><strong>then</strong></span></u> it is <span
+style="color: red;"><strong>not</strong></span> the case that the mind
+is made of matter)</p></li>
+<li><p>The brain is made of matter.</p></li>
+<li><p>It is <u><span
+style="color: red;"><strong>not</strong></span></u> the case that the
+mind is the same thing as the brain.</p></li>
+</ol>
+<p><strong>translation key</strong></p>
+<p><span class="math inline">\(p\)</span>: The the mind is the same
+thing as the brain.</p>
+<p><span class="math inline">\(q\)</span>: The mind is made of
+matter.</p>
+<p><span class="math inline">\(r\)</span>: The brain is made of
+matter.</p>
+<p><span class="math inline">\(t\)</span>: The mind is mortal</p>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>5. p &gt; (q &gt; r): If the mind is the same thing as the brain, then the mind is made of matter only if the brain is made of matter.</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>6. -t &gt; ~q: Unless the mind is mortal, it is not made of matter.</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>7. r: The brain is made of matter.</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>8. -p: The mind is not the same thing as the brain.</code></pre>
+<h3 id="evaluation-1">evaluation</h3>
+<p>Once we have a translation of the argument into propositional logic,
+we may make use of a truth table in order to determine its validity or
+invalidity.</p>
+<pre class="TruthTable Validity Partial" data-system="gamutPND"
+data-counterexample-to="validity"
+data-options="turnstilemark double-turnstile nodash autoAtoms"
+data-submission="none"><code>B. p &gt; (q &gt; r), -t &gt; ~q, r :|-: -p</code></pre>
+<p>We may, if we like, directly look for a counterexample to validity by
+means of a <em>partial</em> truth table. Here we simply list premise and
+conclusion and we look for an assignment that makes the premises true
+and the conclusion false.</p>
+<pre class="TruthTable Partial" data-system="gamutPND"
+data-options="turnstilemark double-turnstile nodash"
+data-submission="none"><code>B.1. p &gt; (q &gt; r), -t &gt; ~q, r, -p</code></pre>
+<p>To make the conclusion false in this case, we must make the negation
+<span class="math inline">\(\neg p\)</span> False, which requires <span
+class="math inline">\(p\)</span> to be true. Similarly, to make the
+third premise true, we must make <span class="math inline">\(r\)</span>
+true. Notice that making <span class="math inline">\(q\)</span> and
+<span class="math inline">\(t\)</span> false provides us with an
+assignment on which the premises are true and the conclusion false. So,
+we conclude that the assignment <span
+class="math inline">\(TFTF\)</span> is a counterexample to the validity
+of the argument.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider the following example adapted from W.V. O. Quine’s
+<em>Methods of Logic</em>:</p>
+</dd>
+</dl>
+<blockquote>
+<p><em>If Jones is ill or Smith is away, then unless Robinson comes to
+his senses, neither will the Argus deal be concluded nor will the
+directors declare a dividend. Consequently, if Smith is away and
+Robinson does not come to his senses, the Argus deal will not be
+concluded.</em></p>
+</blockquote>
+<h3 id="premise-conclusion-form-2">premise-conclusion form</h3>
+<ol type="1">
+<li>If Jones is ill or Smith is away, then unless Robinson comes to his
+senses, neither will the Argus deal be concluded nor will the directors
+declare a dividend.</li>
+<li>If Smith is away and Robinson does not come to his senses, then the
+Argus deal will not be concluded.</li>
+</ol>
+<h3 id="translation-2">translation</h3>
+<ol type="1">
+<li>((<u><span style="color: red;"><strong>If</strong></span></u> (Jones
+is ill <span style="color: red;"><strong>or</strong></span> Smith is
+away), <u><span style="color: red;"><strong>then</strong></span></u>
+(<span style="color: red;"><strong>if</strong></span> (Robinson does
+<span style="color: red;"><strong>not</strong></span> come to his
+senses, <span style="color: red;"><strong>then</strong></span> (the
+Argus deal will <span style="color: red;"><strong>not</strong></span> be
+completed <span style="color: red;"><strong>and</strong></span> the
+directors will <span style="color: red;"><strong>not</strong></span>
+declare a dividend))).</li>
+<li>((<u><span style="color: red;"><strong>If</strong></span></u> (Smith
+is away <span style="color: red;"><strong>and</strong></span> Robinson
+does <span style="color: red;"><strong>not</strong></span> come to his
+senses), <u><span style="color: red;"><strong>then</strong></span></u>
+the Argus deal will <span
+style="color: red;"><strong>not</strong></span> be concluded.</li>
+</ol>
+<p><strong>translation key</strong></p>
+<p><span class="math inline">\(p\)</span>: Jones is ill.</p>
+<p><span class="math inline">\(q\)</span>: Smith is away</p>
+<p><span class="math inline">\(r\)</span>: Robinson comes to his
+senses</p>
+<p><span class="math inline">\(s\)</span>: The Argus deal will be
+completed</p>
+<p><span class="math inline">\(t\)</span>: The directors will declare a
+dividend</p>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>9. (p \/ q) &gt; (-r &gt; (-s /\ -t)): If Jones is ill or Smith is away, then if Robinson does not come to his senses, then the Argus deal will not be completed and the directors will not declare a dividend.</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>10. (q /\ -r) &gt; - s: If Smith is away and Robinson does not come to his senses, then the Argus deal will not be concluded.</code></pre>
+<h3 id="evaluation-2">evaluation</h3>
+<p>Once we have a translation of the argument into propositional logic,
+we may make use of a truth table in order to determine its validity or
+invalidity. Unfortunately, the truth table in question has <span
+class="math inline">\(2^5\)</span>, that is, <span
+class="math inline">\(32\)</span> rows, which means that it would take
+too long to complete.</p>
+<pre class="TruthTable Validity Partial" data-system="gamutPND"
+data-options="turnstilemark double-turnstile nodash autoAtoms"
+data-submission="none"><code>C. (p \/ q) &gt; (-r &gt; (-s /\ -t)) :|-: (q /\ -r) &gt; - s</code></pre>
+<p>We may instead directly look for a counterexample to validity by
+means of a <em>partial</em> truth table. Here we simply list premise and
+conclusion and we look for an assignment that makes the premises true
+and the conclusion false. We may convince ourselves of the validity of
+the argument if we realize that there is <em>no way</em> to fill the
+partial truth table to make the premise true and the conclusion
+false.</p>
+<pre class="TruthTable Partial" data-system="gamutPND"
+data-options="turnstilemark double-turnstile nodash"
+data-submission="none"><code>C.1. (p \/ q) &gt; (-r &gt; (-s /\ -t)), (q /\ -r) &gt; - s</code></pre>
+<p>To make the conclusion false in this case, we must make the
+conditional <span class="math inline">\((q \ \wedge \ \neg r) \to \neg
+s\)</span> false, which would require to make <span
+class="math inline">\(q\)</span> true, <span
+class="math inline">\(r\)</span> false, and <span
+class="math inline">\(s\)</span> false. However, when we do that, we
+realize that the premise comes out true: if <span
+class="math inline">\(r\)</span> is false, then the conditional <span
+class="math inline">\(\neg r \to (\neg s \wedge \neg t)\)</span> is
+automatically true making the first premise in fact true. So, <em>there
+is no way to correctly fill the partial truth table making the premise
+true and the conclusion false</em>.</p>
+<p>That means that there is <em>no</em> assignment of truth values to
+the propositional variables on which the premises come out true and the
+conclusion false. The argument is valid.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider the argument adapted from Michael Resnik’s <em>Elementary
+Logic</em>.</p>
+</dd>
+</dl>
+<blockquote>
+<p>If the horse loses a shoe, the owner will shoe the horse or hire
+someone to do so. If the owner shoes the horse, the owner will have a
+sore back. The race will be canceled if the owner has a sore back. So,
+if the horse loses a shoe and the owner does not hire someone to shoe
+the horse, the race will be canceled.</p>
+</blockquote>
+<h3 id="premise-conclusion-form-3">premise-conclusion form</h3>
+<ol type="1">
+<li>If the horse loses a shoe, then the owner will shoe the horse or
+hire someone to do so.</li>
+<li>If the owner shoes the horse, then the owner will have a sore
+back.</li>
+<li>The race will be canceled if the owner has a sore back.</li>
+<li>If the horse loses a shoe and the owner does not hire someone to
+shoe the horse, the race will be canceled.</li>
+</ol>
+<h3 id="translation-3">translation</h3>
+<ol type="1">
+<li>(<u><span style="color: red;"><strong>If</strong></span></u> the
+horse loses a shoe, <u><span
+style="color: red;"><strong>then</strong></span></u> (the owner will
+shoe the horse <span style="color: red;"><strong>or</strong></span> hire
+someone to do so.))</li>
+<li>(<u><span style="color: red;"><strong>If</strong></span></u> the
+owner shoes the horse, <u><span
+style="color: red;"><strong>then</strong></span></u> the owner will have
+a sore back.)</li>
+<li>(<u><span style="color: red;"><strong>If</strong></span></u> the
+owner has a sore back, <u><span
+style="color: red;"><strong>then</strong></span></u> the race will be
+canceled.)</li>
+<li>(<u><span style="color: red;"><strong>If</strong></span></u> (the
+horse loses a shoe <span style="color: red;"><strong>and</strong></span>
+the owner does <span style="color: red;"><strong>not</strong></span>
+hire someone to shoe the horse), <u><span
+style="color: red;"><strong>the</strong></span></u> race will be
+canceled.)</li>
+</ol>
+<p><strong>translation key</strong></p>
+<p><span class="math inline">\(p\)</span>: The horse loses a shoe.</p>
+<p><span class="math inline">\(q\)</span>: The owner will shoe the
+horse.</p>
+<p><span class="math inline">\(r\)</span>: The owner will hire someone
+to shoe the horse.</p>
+<p><span class="math inline">\(s\)</span>: The owner will have a sore
+back.</p>
+<p><span class="math inline">\(t\)</span>: The race will be
+canceled.</p>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>11. p &gt; (q \/ r): If the horse loses a shoe, then the owner will shoe the horse or hire someone to do so.</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>12. q &gt; s: If the owner shoes the horse, the owner will have a sore back.</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>13. s &gt; t: If the owner has a sore back, then the race will be canceled.</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>14. (p /\ -r) &gt; t: If the horse loses a shoe and the owner does not hire someone to shoe the horse, then the race will be canceled.</code></pre>
+<h3 id="evaluation-3">evaluation</h3>
+<p>Once we have translated the argument into propositional logic, we may
+use a truth table in order to determine its validity or invalidity.
+Unfortunately, much like before, the truth table in question consists of
+<span class="math inline">\(2^5\)</span>, that is, <span
+class="math inline">\(32\)</span> rows, which means that the task to
+completely fill out the table becomes unmanageable.</p>
+<pre class="TruthTable Validity Partial" data-system="gamutPND"
+data-counterexample-to="validity"
+data-options="turnstilemark double-turnstile nodash autoAtoms"
+data-submission="none"><code>D. p &gt; (q \/ r), q &gt; s, s &gt; t :|-: (p /\ -r) &gt; t</code></pre>
+<p>We may instead directly look for a counterexample to validity by
+means of a <em>partial</em> truth table. Here we simply list the
+premises and conclusion of the argument, and we look for an assignment
+that makes the premises true and the conclusion false.</p>
+<pre class="TruthTable Partial" data-system="gamutPND"
+data-options="turnstilemark double-turnstile nodash"
+data-submission="none"><code>D.1. p &gt; (q \/ r), q &gt; s, s &gt; t, (p /\ -r) &gt; t</code></pre>
+<p>To make the conclusion false in this case, we must make the
+conditional <span class="math inline">\((p \ \wedge \ \neg r) \to
+t\)</span> false, which would require to make <span
+class="math inline">\(p\)</span> true, <span
+class="math inline">\(r\)</span> false, and <span
+class="math inline">\(t\)</span> false. However, when make <span
+class="math inline">\(t\)</span> false, we find we must make <span
+class="math inline">\(s\)</span> false as well; otherwise, the premise
+<span class="math inline">\(s \to t\)</span> would be false. And that
+leads us to make <span class="math inline">\(q\)</span> false as well;
+otherwise, <span class="math inline">\(q \to s\)</span> would similarly
+be false. At this point, however, we have made <span
+class="math inline">\(p\)</span> true and both <span
+class="math inline">\(q\)</span> and <span
+class="math inline">\(r\)</span> false, which means that the first
+premise <span class="math inline">\(p \to (q \ \vee \ r)\)</span> is in
+fact false. So, <em>there is no way to correctly fill the partial truth
+table making the premise true and the conclusion false</em>.</p>
+<p>We conclude that the argument is <em>valid</em> because there is
+<em>no</em> assignment of truth values to the propositional variables on
+which the premises come out true and the conclusion false.</p>
+</article>
+
+<script>
+function checkMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var correct = JSON.parse(ex.dataset.correct);
+  var multi = ex.dataset.multi === "true";
+  var feedback = ex.querySelector('.mc-feedback');
+  feedback.removeAttribute('hidden');
+  if (multi) {
+    var checked = Array.from(ex.querySelectorAll('input[type=checkbox]:checked')).map(function(c){ return parseInt(c.value); });
+    var ok = correct.length === checked.length && correct.every(function(v){ return checked.includes(v); });
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  } else {
+    var selected = ex.querySelector('input[type=radio]:checked');
+    if (!selected) { feedback.textContent = 'Please select an option.'; feedback.className = 'mc-feedback'; return; }
+    var ok = correct.includes(parseInt(selected.value));
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  }
+}
+function revealMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var ans = ex.querySelector('.mc-answer');
+  ans.removeAttribute('hidden');
+  if (window.MathJax) { MathJax.Hub.Queue(['Typeset', MathJax.Hub, ans]); }
+}
+</script>
+
+</body>
+</html>

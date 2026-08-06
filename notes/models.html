@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>models — PHIL 220</title>
+  <link rel="stylesheet" href="../shared/notes.css">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<style>
+.mc-exercise { margin: 1.2rem 0 2rem; width: 55%; margin-left: 8%; }
+.mc-question { margin-bottom: 0.7rem; font-size: 1.4rem; line-height: 2rem; }
+.mc-options { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.8rem; }
+.mc-option { display: flex; align-items: baseline; gap: 0.6rem; cursor: pointer; font-size: 1.3rem; line-height: 1.7rem; }
+.mc-option input { margin: 0; flex-shrink: 0; }
+.mc-controls { display: flex; gap: 0.6rem; margin-bottom: 0.5rem; }
+.btn-check, .btn-reveal {
+  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+  font-size: 0.82rem; padding: 0.22rem 0.7rem;
+  border-radius: 3px; cursor: pointer; border: 1px solid #ccc;
+  background: #fffff8; color: #111;
+}
+.btn-check:hover { background: #006666; color: #fff; border-color: #006666; }
+.mc-feedback { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.9rem; margin-bottom: 0.3rem; }
+.fb-ok { color: #1a6e2e; } .fb-err { color: #8b1a1a; }
+.mc-answer { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.88rem; color: #555; margin-top: 0.3rem; }
+.mc-explanation { margin-top: 0.4rem; font-family: et-book, Palatino, serif; font-size: 1.2rem; line-height: 1.7rem; color: #333; }
+</style>
+
+</head>
+<body>
+<nav class="back-nav"><a href="https://gabriel-uzquiano.github.io/courses/220">← PHIL 220</a></nav>
+<article>
+<h1 id="models">models</h1>
+<p>We now set out to interpret the language of quantificational logic.
+Recall that we used truth tables to test the validity of arguments
+formulated in the language of propositional logic. We will now use
+<em>models</em> to test the validity of arguments formulated in
+quantificational logic. To that purpose, we will now explain what is a
+model for quantificational logic and what it takes for a formula of the
+language to be true at a model.</p>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>A <em>model</em> for quantificational logic consists of three main
+ingredients:</p>
+</dd>
+</dl>
+<ol type="1">
+<li>a <em>domain</em> of discourse over which the quantifiers range</li>
+<li>a <em>denotation</em> for each constant of the language</li>
+<li>an <em>extension</em> for each predicate of the language. Now:
+<ul>
+<li>for a <em>one-place</em> predicate, an extension is a list of items
+in the domain to which it applies.</li>
+<li>for a <em>two-place</em> predicate, an extension is a list of
+<em>ordered pairs</em> of items in the domain to which it applies in
+that order.</li>
+<li>for a <em>three</em>-place predicate, an extension is a list of
+<em>ordered triples</em> of items in the domain to which it applies in
+that order</li>
+<li>Etc</li>
+</ul></li>
+</ol>
+<h3 id="how-to-specify-a-model">how to specify a model</h3>
+<p>We use models to interpret some formulas of quantificational logic.
+We may, for example, be interested in the question of whether there is
+an interpretation of the formulas below on which they all come out
+true:</p>
+<ol type="1">
+<li><span class="math inline">\(Raa\)</span></li>
+<li><span class="math inline">\(Qa \to Pa\)</span></li>
+<li><span class="math inline">\(Rab\)</span></li>
+</ol>
+<p>Now, to specify a model, we provide a domain and an interpretation of
+the constants and predicates of the language.</p>
+<ol type="1">
+<li><p>A <em>domain</em>:</p>
+<p>LA, SD, SF</p></li>
+<li><p>A <em>denotation</em> for each constant:</p>
+<p><span class="math inline">\(a\)</span>: LA</p>
+<p><span class="math inline">\(b\)</span>: SD</p></li>
+<li><p>An <em>extension</em> for each predicate:</p>
+<p><span class="math inline">\(P \_\)</span>: LA, SD</p>
+<p><span class="math inline">\(Q \_\)</span>: SF</p>
+<p><span class="math inline">\(R\)</span> _ _: [LA, LA], [LA, SD], [SD,
+SD]</p></li>
+</ol>
+<p>We will eventually ask whether each of the formulas are true or false
+<em>in the model</em>, e.g., <span class="math inline">\(Rab\)</span> is
+true in the model because the denotation of <span
+class="math inline">\(a\)</span>, namely, LA, is related to the
+denotation of <span class="math inline">\(b\)</span>, namely, SD, by the
+interpretation of <span class="math inline">\(R\)</span> in the
+model.</p>
+<h3 id="models-in-carnap">models in carnap</h3>
+<p>Carnap requires you to use numbers to specify the domain, denotations
+and extensions of constants and predicates respectively.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider the formulas of quantifional logic given below:</p>
+</dd>
+</dl>
+<ol type="1">
+<li><span class="math inline">\(Raa\)</span></li>
+<li><span class="math inline">\(Qa \to Pa\)</span></li>
+<li><span class="math inline">\(Rab\)</span>​</li>
+</ol>
+<p>Here is how to specify a model in Carnap.</p>
+<pre class="CounterModeler Simple" data-system="gamutND"
+data-submission="none"><code>1. Pa, Qa -&gt; Pa, Rab
+|Domain : 0, 1, 2
+|P(_) : 1, 2
+|Q(_) : 2
+|R(_,_) : [1, 1], [1,2]
+|a : 1
+|b : 2</code></pre>
+<p>Alternatively:</p>
+<pre class="CounterModeler Simple" data-system="gamutND"
+data-submission="none"><code>1.a. Pa, Qa -&gt; Pa, Rab</code></pre>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Find a model that verifies the formulas given below:</p>
+</dd>
+</dl>
+<ol type="1">
+<li><span class="math inline">\(Rab \wedge \neg Rba\)</span></li>
+<li><span class="math inline">\(Pa \wedge \neg Rac\)</span></li>
+<li><span class="math inline">\(Qa \to Rac\)</span></li>
+</ol>
+<pre class="CounterModeler Simple" data-system="gamutND"
+data-submission="none"><code>2. Rab /\ -Rba, Pa /\ -Rac, Qa -&gt; Rac
+|Domain : 0, 1, 2
+|P(_) : 0
+|Q(_) : 1
+|R(_,_) : [0, 1]
+|a : 0
+|b : 1
+|c : 2</code></pre>
+<p>For another example:</p>
+<pre class="CounterModeler Simple" data-system="gamutND"
+data-submission="none"><code>2.a. Rab /\ -Rba, Pa /\ -Rac, Qa -&gt; Rac</code></pre>
+<p>Or, alternatively, we may use models in Carnap to check that an
+argument given in quantificational logic is not valid.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Find a model on which the premises of the following argument are true
+and the conclusion false:</p>
+</dd>
+</dl>
+<ol type="1">
+<li><span class="math inline">\(Pa \vee Pb\)</span></li>
+<li><span class="math inline">\(Qa\)</span></li>
+<li><span class="math inline">\(Pb \wedge Qa\)</span></li>
+<li><span class="math inline">\(Pa\)</span></li>
+</ol>
+<pre class="CounterModeler Validity" data-system="gamutND"
+data-submission="none"><code>3. Pa \/ Pb, Qa, Pb /\ Qa :|-: Pa</code></pre>
+<p>Now, we find another:</p>
+<pre class="CounterModeler Validity" data-system="gamutND"
+data-submission="none"><code>3.a. Pa \/ Pb, Qa, Pb /\ Qa :|-: Pa</code></pre>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Find a model on which the premises of the following argument are true
+and the conclusion false:</p>
+</dd>
+</dl>
+<ol type="1">
+<li><span class="math inline">\(Pa \to Rab\)</span></li>
+<li><span class="math inline">\(Rab \to (Raa \vee \neg
+Rba)\)</span></li>
+<li><span class="math inline">\(Rba\)</span></li>
+<li><span class="math inline">\(\neg Pa\)</span></li>
+</ol>
+<pre class="CounterModeler Validity" data-system="gamutND"
+data-submission="none"><code>4. Pa -&gt; Rab, Rab -&gt; (Raa \/ -Rba), Rba :|-: -Pa</code></pre>
+<pre class="CounterModeler Validity" data-system="gamutND"
+data-submission="none"><code>4.a. Pa -&gt; Rab, Rab -&gt; (Raa \/ -Rba), Rba :|-: -Pa</code></pre>
+<h2 id="section"></h2>
+<p>What is for a formula, whether open or closed, to be true at a model
+under an assignment?</p>
+<h2 id="truth-in-a-model-under-an-assignment">truth in a model under an
+assignment</h2>
+<p>We proceed in stages. That is, we explain what is for a formula of
+each type to be true in a model under an assignment.</p>
+<h3 id="atomic-formulas">atomic formulas</h3>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>An atomic formula <span class="math inline">\(P\tau_1 \dots
+\tau_n\)</span> is true in a model <span
+class="math inline">\(M\)</span> under <span
+class="math inline">\(\alpha\)</span> iff the denotations of the
+constants and the values of the variables in <span
+class="math inline">\(\tau_1 \dots \tau_n\)</span> under <span
+class="math inline">\(\alpha\)</span> fall under <span
+class="math inline">\(P\)</span> in the model.</p>
+</dd>
+<dt>Example</dt>
+<dd>
+<p>Let <span class="math inline">\(M\)</span> and <span
+class="math inline">\(\alpha\)</span> be as described:</p>
+</dd>
+</dl>
+<pre class="CounterModeler Simple" data-system="gamutND"
+data-submission="none"><code>1. Pa, Rbc, Rab
+|Domain : 0, 1, 2
+|P(_) : 0
+|R(_,_) :[0,1], [1,2]
+|a: 0
+|b: 1
+|c: 2</code></pre>
+<p><span class="math inline">\(\alpha\)</span> is an assignment on
+which:</p>
+<table>
+<tr>
+<th>
+<span class="math inline">\(x\)</span>
+</th>
+<th>
+<span class="math inline">\(y\)</span>
+</th>
+<th>
+<span class="math inline">\(z\)</span>
+</th>
+<th>
+<span class="math inline">\(x_1\)</span>
+</th>
+<th>
+<span class="math inline">\(y_2\)</span>
+</th>
+<th>
+<span class="math inline">\(z_3\)</span>
+</th>
+<th>
+<span class="math inline">\(\dots\)</span>
+</th>
+</tr>
+<tr>
+<th>
+1
+</th>
+<th>
+0
+</th>
+<th>
+2
+</th>
+<th>
+1
+</th>
+<th>
+0
+</th>
+<th>
+2
+</th>
+<th>
+<span class="math inline">\(\dots\)</span>
+</th>
+</tr>
+</table>
+<p><span class="math inline">\(Py\)</span></p>
+<div class="mc-exercise" data-correct='[]' >
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="radio" name="ex_1_0" value="0"><span>*true, since 0 falls under the interpretation of P.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_1_1" value="1"><span>not true, since 0 does not fall under the interpretation of P</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> </div>
+</div>
+<p><span class="math inline">\(Ryb\)</span></p>
+<div class="mc-exercise" data-correct='[0]' >
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="radio" name="ex_2_0" value="0"><span>true, since [0,1] falls under the interpretation of R.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_2_1" value="1"><span>not true, since [0,1] does not fall under the interpretation of R.</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> true, since [0,1] falls under the interpretation of R.</div>
+</div>
+<h3 id="negations-and-conjunctions">negations and conjunctions</h3>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>A negation <span class="math inline">\(\neg \varphi\)</span> is true
+in <span class="math inline">\(M\)</span> under <span
+class="math inline">\(\alpha\)</span> iff <span
+class="math inline">\(\varphi\)</span> is not true in <span
+class="math inline">\(M\)</span> under <span
+class="math inline">\(\alpha\)</span>.</p>
+</dd>
+<dd>
+<p>A conjunction <span class="math inline">\((\varphi \wedge
+\psi)\)</span> is true in <span class="math inline">\(M\)</span> under
+<span class="math inline">\(\alpha\)</span> iff <span
+class="math inline">\(\varphi\)</span> is true in <span
+class="math inline">\(M\)</span> under <span
+class="math inline">\(\alpha\)</span> and <span
+class="math inline">\(\psi\)</span> is true in <span
+class="math inline">\(M\)</span> under <span
+class="math inline">\(\alpha\)</span>.</p>
+</dd>
+<dt>Example</dt>
+<dd>
+<p>Let <span class="math inline">\(M\)</span> and <span
+class="math inline">\(\alpha\)</span> be as described:</p>
+</dd>
+</dl>
+<pre class="CounterModeler Simple" data-system="gamutND"
+data-submission="none"><code>2. Pa, Rbc, Rab
+|Domain : 0, 1, 2
+|P(_) : 0
+|R(_,_) :[0,1], [1,2]
+|a: 0
+|b: 1
+|c: 2</code></pre>
+<p><span class="math inline">\(\alpha\)</span>​ is an assignment on
+which:</p>
+<table>
+<tr>
+<th>
+<span class="math inline">\(x\)</span>
+</th>
+<th>
+<span class="math inline">\(y\)</span>
+</th>
+<th>
+<span class="math inline">\(z\)</span>
+</th>
+<th>
+<span class="math inline">\(x_1\)</span>
+</th>
+<th>
+<span class="math inline">\(y_2\)</span>
+</th>
+<th>
+<span class="math inline">\(z_3\)</span>
+</th>
+<th>
+<span class="math inline">\(\dots\)</span>
+</th>
+</tr>
+<tr>
+<th>
+1
+</th>
+<th>
+0
+</th>
+<th>
+2
+</th>
+<th>
+1
+</th>
+<th>
+0
+</th>
+<th>
+2
+</th>
+<th>
+<span class="math inline">\(\dots\)</span>
+</th>
+</tr>
+</table>
+<p><span class="math inline">\(\neg Rxy\)</span>​</p>
+<div class="mc-exercise" data-correct='[0]' >
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="radio" name="ex_3_0" value="0"><span>true, since Rxy is not true relative to the assignment.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_3_1" value="1"><span>not true, since Rxy is true relative to the assignment.</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> true, since Rxy is not true relative to the assignment.</div>
+</div>
+<p>To check the truth value of <span class="math inline">\(Rxy\)</span>​
+in the model under that assignment, we note that <span
+class="math inline">\([1,0]\)</span> is not in the list of pairs to
+which <span class="math inline">\(R\)</span> applies.</p>
+<p><span class="math inline">\((Py \wedge Rxc)\)</span></p>
+<div class="mc-exercise" data-correct='[0]' >
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="radio" name="ex_4_0" value="0"><span>true, since Py and Rxc are each true relative to the assignment.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_4_1" value="1"><span>not true, since at least one of Py and Rxc is not true relative to the assignment.</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> true, since Py and Rxc are each true relative to the assignment.</div>
+</div>
+<p>We need only check the truth value of each <span
+class="math inline">\(Py\)</span> and <span
+class="math inline">\(Qxyx\)</span> in the model under that
+assignment.</p>
+<h3 id="disjunctions-and-conditionals">disjunctions and
+conditionals</h3>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>A disjunction <span class="math inline">\((\varphi \vee
+\psi)\)</span> is true in <span class="math inline">\(M\)</span> under
+<span class="math inline">\(\alpha\)</span> iff <span
+class="math inline">\(\varphi\)</span> is true in <span
+class="math inline">\(M\)</span> relative to <span
+class="math inline">\(\alpha\)</span> or <span
+class="math inline">\(\psi\)</span> is true in <span
+class="math inline">\(M\)</span> relative to <span
+class="math inline">\(\alpha\)</span>.</p>
+</dd>
+<dd>
+<p>A conditional <span class="math inline">\((\varphi \to \psi)\)</span>
+is true in <span class="math inline">\(M\)</span> under <span
+class="math inline">\(\alpha\)</span> iff <span
+class="math inline">\(\varphi\)</span> is not true in <span
+class="math inline">\(M\)</span> relative to <span
+class="math inline">\(\alpha\)</span> or <span
+class="math inline">\(\psi\)</span> is true in <span
+class="math inline">\(M\)</span> relative to <span
+class="math inline">\(\alpha\)</span>.</p>
+</dd>
+<dt>Example</dt>
+<dd>
+<p>Let <span class="math inline">\(M\)</span> and <span
+class="math inline">\(\alpha\)</span> be as described:</p>
+</dd>
+</dl>
+<pre class="CounterModeler Simple" data-system="gamutND"
+data-submission="none"><code>3. Pa, Rbc, Rab
+|Domain : 0, 1, 2
+|P(_) : 0
+|R(_,_) :[0,1], [1,2]
+|a: 0
+|b: 1
+|c: 2</code></pre>
+<p><span class="math inline">\(\alpha\)</span>​ is an assignment on
+which:</p>
+<table>
+<tr>
+<th>
+<span class="math inline">\(x\)</span>
+</th>
+<th>
+<span class="math inline">\(y\)</span>
+</th>
+<th>
+<span class="math inline">\(z\)</span>
+</th>
+<th>
+<span class="math inline">\(x_1\)</span>
+</th>
+<th>
+<span class="math inline">\(y_2\)</span>
+</th>
+<th>
+<span class="math inline">\(z_3\)</span>
+</th>
+<th>
+<span class="math inline">\(\dots\)</span>
+</th>
+</tr>
+<tr>
+<th>
+1
+</th>
+<th>
+0
+</th>
+<th>
+2
+</th>
+<th>
+1
+</th>
+<th>
+0
+</th>
+<th>
+2
+</th>
+<th>
+<span class="math inline">\(\dots\)</span>
+</th>
+</tr>
+</table>
+<p><span class="math inline">\((Rxx \vee Rax)\)</span>​</p>
+<div class="mc-exercise" data-correct='[0]' >
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="radio" name="ex_5_0" value="0"><span>true, since at least one of Rxx and Rax is true relative to the assignment.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_5_1" value="1"><span>not true, since neither Rxx nor Rax are true relative to the assignment.</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> true, since at least one of Rxx and Rax is true relative to the assignment.</div>
+</div>
+<p><span class="math inline">\((Rxy \to Rxx)\)</span></p>
+<div class="mc-exercise" data-correct='[0]' >
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="radio" name="ex_6_0" value="0"><span>true, since Rxy is false under the assignment or Rxx is true under the assignment.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_6_1" value="1"><span>not true, since Rxy is true under the assignment and Rax is not true under the assignment.</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> true, since Rxy is false under the assignment or Rxx is true under the assignment.</div>
+</div>
+<p>We need only check the truth value of each <span
+class="math inline">\(Py\)</span> and <span
+class="math inline">\(Qxyx\)</span> in the model relative to that
+assignment.</p>
+<h3 id="quantification">quantification</h3>
+<p>We now look at quantified formulas of the form <span
+class="math inline">\(\exists v \varphi\)</span> and <span
+class="math inline">\(\forall v \varphi\)</span> in turn.</p>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>An assignment <span class="math inline">\(\beta\)</span> over a model
+<span class="math inline">\(M\)</span> is a <span
+class="math inline">\(v\)</span>-variant of an assignment <span
+class="math inline">\(\alpha\)</span> iff <span
+class="math inline">\(\beta\)</span> differs from <span
+class="math inline">\(\alpha\)</span> <em>at most</em> with respect to
+the value it assigns to <span class="math inline">\(v\)</span>.</p>
+</dd>
+<dt>Definition</dt>
+<dd>
+<p>An existential quantification <span class="math inline">\(\exists v
+\varphi\)</span> is true in <span class="math inline">\(M\)</span> under
+<span class="math inline">\(\alpha\)</span> iff <span
+class="math inline">\(\varphi\)</span> is true in <span
+class="math inline">\(M\)</span> under some <span
+class="math inline">\(v\)</span>-variant of <span
+class="math inline">\(\alpha\)</span>.</p>
+</dd>
+</dl>
+<p><span class="math inline">\(\exists v \varphi\)</span> is true in
+<span class="math inline">\(M\)</span> under <span
+class="math inline">\(\alpha\)</span> if there is something in the
+domain we can assign to <span class="math inline">\(v\)</span> to make
+<span class="math inline">\(\varphi\)</span> true in the model <em>while
+leaving <span class="math inline">\(\alpha\)</span> otherwise
+unchanged</em>.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Let <span class="math inline">\(\alpha\)</span> an assignment over a
+model <span class="math inline">\(M\)</span>​ on which:</p>
+</dd>
+</dl>
+<table>
+<tr>
+<th>
+<span class="math inline">\(x\)</span>
+</th>
+<th>
+<span class="math inline">\(y\)</span>
+</th>
+<th>
+<span class="math inline">\(z\)</span>
+</th>
+<th>
+<span class="math inline">\(x_1\)</span>
+</th>
+<th>
+<span class="math inline">\(y_2\)</span>
+</th>
+<th>
+<span class="math inline">\(z_3\)</span>
+</th>
+<th>
+<span class="math inline">\(\dots\)</span>
+</th>
+</tr>
+<tr>
+<th>
+1
+</th>
+<th>
+0
+</th>
+<th>
+2
+</th>
+<th>
+1
+</th>
+<th>
+0
+</th>
+<th>
+2
+</th>
+<th>
+<span class="math inline">\(\dots\)</span>
+</th>
+</tr>
+</table>
+<p>An assignment <span class="math inline">\(\beta\)</span> just like
+<span class="math inline">\(\alpha\)</span> except for the fact that
+<span class="math inline">\(\beta\)</span> assigns <span
+class="math inline">\(2\)</span> to <span
+class="math inline">\(x\)</span> would be a <span
+class="math inline">\(x\)</span>-variant of <span
+class="math inline">\(\alpha\)</span>, e.g.,</p>
+<table>
+<tr>
+<th>
+<span class="math inline">\(x\)</span>
+</th>
+<th>
+<span class="math inline">\(y\)</span>
+</th>
+<th>
+<span class="math inline">\(z\)</span>
+</th>
+<th>
+<span class="math inline">\(x_1\)</span>
+</th>
+<th>
+<span class="math inline">\(y_2\)</span>
+</th>
+<th>
+<span class="math inline">\(z_3\)</span>
+</th>
+<th>
+<span class="math inline">\(\dots\)</span>
+</th>
+</tr>
+<tr>
+<th>
+2
+</th>
+<th>
+0
+</th>
+<th>
+2
+</th>
+<th>
+1
+</th>
+<th>
+0
+</th>
+<th>
+2
+</th>
+<th>
+<span class="math inline">\(\dots\)</span>
+</th>
+</tr>
+</table>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Let <span class="math inline">\(M\)</span> and <span
+class="math inline">\(\alpha\)</span> be as described:</p>
+</dd>
+</dl>
+<pre class="CounterModeler Simple" data-system="gamutND"
+data-submission="none"><code>3. Pa, Rbc, Rab
+|Domain : 0, 1, 2
+|P(_) : 0
+|R(_,_) :[0,1], [1,2]
+|a: 0
+|b: 1
+|c: 2</code></pre>
+<p><span class="math inline">\(\alpha\)</span>​ is an assignment on
+which:</p>
+<table>
+<tr>
+<th>
+<span class="math inline">\(x\)</span>
+</th>
+<th>
+<span class="math inline">\(y\)</span>
+</th>
+<th>
+<span class="math inline">\(z\)</span>
+</th>
+<th>
+<span class="math inline">\(x_1\)</span>
+</th>
+<th>
+<span class="math inline">\(y_2\)</span>
+</th>
+<th>
+<span class="math inline">\(z_3\)</span>
+</th>
+<th>
+<span class="math inline">\(\dots\)</span>
+</th>
+</tr>
+<tr>
+<th>
+1
+</th>
+<th>
+0
+</th>
+<th>
+2
+</th>
+<th>
+1
+</th>
+<th>
+0
+</th>
+<th>
+2
+</th>
+<th>
+<span class="math inline">\(\dots\)</span>
+</th>
+</tr>
+</table>
+<p><span class="math inline">\(\exists x Px\)</span></p>
+<div class="mc-exercise" data-correct='[0]' >
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="radio" name="ex_7_0" value="0"><span>true, since Px is true under a x-variant of the assignment.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_7_1" value="1"><span>not true, since there is no x-variant of the assignment under which Px comes out true</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> true, since Px is true under a x-variant of the assignment.</div>
+</div>
+<p><span class="math inline">\(Px\)</span> is true when we assign <span
+class="math inline">\(0\)</span> to <span
+class="math inline">\(x\)</span> and leave the assignment unchanged
+everywhere else.</p>
+<p><span class="math inline">\(\exists z (Pz \wedge \neg
+Rzz)\)</span>​</p>
+<div class="mc-exercise" data-correct='[0]' >
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="radio" name="ex_8_0" value="0"><span>true, since the conjunction is true under a z-variant of the assignment.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_8_1" value="1"><span>not true, since there is no z-variant of the assignment on which the conjunction comes out true</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> true, since the conjunction is true under a z-variant of the assignment.</div>
+</div>
+<p>Consider a <span class="math inline">\(z\)</span>-variant of <span
+class="math inline">\(\alpha\)</span> on which we assign <span
+class="math inline">\(0\)</span> to <span
+class="math inline">\(z\)</span> and leave the assignment unchanged
+everywhere else.</p>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>A universal quantification <span class="math inline">\(\forall v
+\varphi\)</span> is true in <span class="math inline">\(M\)</span>
+relative to <span class="math inline">\(\alpha\)</span> iff <span
+class="math inline">\(\varphi\)</span> is true in <span
+class="math inline">\(M\)</span> under every <span
+class="math inline">\(v\)</span>-variant of <span
+class="math inline">\(\alpha\)</span>.</p>
+</dd>
+</dl>
+<p><span class="math inline">\(\forall v \varphi\)</span> is true in
+<span class="math inline">\(M\)</span> under <span
+class="math inline">\(\alpha\)</span> if <span
+class="math inline">\(\varphi\)</span> remains true in the model under
+the assignment no matter what we may assign to <span
+class="math inline">\(v\)</span> <em>while leaving <span
+class="math inline">\(\alpha\)</span> otherwise unchanged</em>.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Let <span class="math inline">\(M\)</span> and <span
+class="math inline">\(\alpha\)</span> be as described:</p>
+</dd>
+</dl>
+<pre class="CounterModeler Simple" data-system="gamutND"
+data-submission="none"><code>3. Pa, Qabc, Rab
+|Domain : 0, 1, 2
+|P(_) : 0
+|R(_,_) :[0,1], [1,2]
+|a: 0
+|b: 1
+|c: 2</code></pre>
+<p><span class="math inline">\(\alpha\)</span>​ is an assignment on
+which:</p>
+<table>
+<tr>
+<th>
+<span class="math inline">\(x\)</span>
+</th>
+<th>
+<span class="math inline">\(y\)</span>
+</th>
+<th>
+<span class="math inline">\(z\)</span>
+</th>
+<th>
+<span class="math inline">\(x_1\)</span>
+</th>
+<th>
+<span class="math inline">\(y_2\)</span>
+</th>
+<th>
+<span class="math inline">\(z_3\)</span>
+</th>
+<th>
+<span class="math inline">\(\dots\)</span>
+</th>
+</tr>
+<tr>
+<th>
+1
+</th>
+<th>
+0
+</th>
+<th>
+2
+</th>
+<th>
+1
+</th>
+<th>
+0
+</th>
+<th>
+2
+</th>
+<th>
+<span class="math inline">\(\dots\)</span>
+</th>
+</tr>
+</table>
+<p><span class="math inline">\(\forall x Px\)</span></p>
+<div class="mc-exercise" data-correct='[1]' >
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="radio" name="ex_9_0" value="0"><span>true, since Px is true under every x-variant of the assignment.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_9_1" value="1"><span>not true, since there are x-variants of the assignment under which Px comes out false.</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> not true, since there are x-variants of the assignment under which Px comes out false.</div>
+</div>
+<p><span class="math inline">\(Px\)</span> is not true when we assign
+<span class="math inline">\(1\)</span> to <span
+class="math inline">\(x\)</span> and leave the assignment unchanged
+everywhere else.</p>
+<p><span class="math inline">\(\forall x (Px \to \neg Rxx)\)</span></p>
+<div class="mc-exercise" data-correct='[0]' >
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="radio" name="ex_10_0" value="0"><span>true, since the conditional is true under every x-variant of the assignment.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_10_1" value="1"><span>not true, since there are x-variants of the assignment under which the conditional comes out false.</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> true, since the conditional is true under every x-variant of the assignment.</div>
+</div>
+<p>There are three cases to consider:</p>
+<p><span class="math inline">\((Px \to \neg Rxx)\)</span></p>
+<div class="mc-exercise" data-correct='[0]' >
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="radio" name="ex_11_0" value="0"><span>true, since the consequent is true under that assignment.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_11_1" value="1"><span>not true, since the antecedent is true and the consequent is false under that assignment.</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> true, since the consequent is true under that assignment.</div>
+</div>
+<p><span class="math inline">\((Px \to \neg Rxx)\)</span></p>
+<div class="mc-exercise" data-correct='[0]' >
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="radio" name="ex_12_0" value="0"><span>true, since the antecedent is false under that assignment.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_12_1" value="1"><span>not true, since the antecedent is true and the consequent is false under that assignment.</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> true, since the antecedent is false under that assignment.</div>
+</div>
+<p><span class="math inline">\((Px \to \neg Rxx)\)</span></p>
+<div class="mc-exercise" data-correct='[0]' >
+  
+  <div class="mc-options">
+    <label class="mc-option"><input type="radio" name="ex_13_0" value="0"><span>true, since the antecedent is false under that assignment.</span></label>
+    <label class="mc-option"><input type="radio" name="ex_13_1" value="1"><span>not true, since the antecedent is true and the consequent is false under that assignment.</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden></div>
+  <div class="mc-answer" hidden><strong>Answer:</strong> true, since the antecedent is false under that assignment.</div>
+</div>
+<h1 id="truth-in-a-model">truth in a model</h1>
+<p>We now explain what is for a formula to be true in a model.</p>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>A formula <span class="math inline">\(\varphi\)</span> is <em>true in
+a model</em> <span class="math inline">\(M\)</span> iff <span
+class="math inline">\(\varphi\)</span> is true in <span
+class="math inline">\(M\)</span> under <em>every assignment</em>.</p>
+</dd>
+<dt>Example</dt>
+<dd>
+<p>Let <span class="math inline">\(M\)</span> be a model as
+described.</p>
+</dd>
+</dl>
+<pre class="CounterModeler Simple" data-system="gamutND"
+data-submission="none"><code>1. Ex Px, Ax Ey Rxy
+|Domain : 0, 1, 2
+|P(_) : 0
+|R(_,_) :[0,1], [1,2], [2,0]
+|a: 0
+|b: 1
+|c: 2</code></pre>
+<p><span class="math inline">\(\exists x Px\)</span> says that
+<em>something is P</em>, and when we look at the domain of the model, we
+find that at least one thing in the domain is in the list for <span
+class="math inline">\(P\)</span>, namely, <span
+class="math inline">\(0\)</span>.</p>
+<p>More formally, <span class="math inline">\(\exists x Px\)</span> is
+true in the model <span class="math inline">\(M\)</span> because <span
+class="math inline">\(\exists x Px\)</span> is true in the model under
+every assignment. If <span class="math inline">\(\alpha\)</span> is an
+assignment over <span class="math inline">\(M\)</span>, then <span
+class="math inline">\(Px\)</span> is true under a <span
+class="math inline">\(x\)</span>-variant of <span
+class="math inline">\(\alpha\)</span> on which <span
+class="math inline">\(x\)</span> is assigned <span
+class="math inline">\(0\)</span>.</p>
+<p>Notice that <span class="math inline">\(\forall x \exists y
+Rxy\)</span> says that <em>every thing</em> <span
+class="math inline">\(x\)</span> in the domain is related to <em>some
+thing</em> <span class="math inline">\(y\)</span> in the domain — that
+is, <em>everything</em> in the domain is related to <em>something</em>.
+That is true of each of the objects in the domain: <span
+class="math inline">\(0\)</span> is related to <span
+class="math inline">\(1\)</span>, <span class="math inline">\(1\)</span>
+is related to <span class="math inline">\(2\)</span>, and <span
+class="math inline">\(2\)</span> is related to <span
+class="math inline">\(0\)</span>.</p>
+<p>More formally, <span class="math inline">\(\forall x \exists y
+Rxy\)</span> is true in the model <span class="math inline">\(M\)</span>
+because <span class="math inline">\(\forall x \exists y Rxy\)</span> is
+true in the model under every assignment. If <span
+class="math inline">\(\alpha\)</span> is an assignment over <span
+class="math inline">\(M\)</span>, then no matter what <span
+class="math inline">\(\alpha\)</span> assigns to <span
+class="math inline">\(x\)</span>, <span class="math inline">\(\exists y
+Rxy\)</span> is true under under <span
+class="math inline">\(\alpha\)</span>. This is because there is a <span
+class="math inline">\(y\)</span>-variant of <span
+class="math inline">\(\alpha\)</span> under which <span
+class="math inline">\(Rxy\)</span> is true. (Which <span
+class="math inline">\(y\)</span>-variant it is depends on what is the
+value of <span class="math inline">\(x\)</span> under <span
+class="math inline">\(\alpha\)</span>.)</p>
+<h1 id="logical-truth-equivalence-and-validity">logical truth,
+equivalence, and validity</h1>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>A formula <span class="math inline">\(\varphi\)</span> is <em>true in
+a model</em> <span class="math inline">\(M\)</span> iff <span
+class="math inline">\(\varphi\)</span> is true in <span
+class="math inline">\(M\)</span> under every assignment.</p>
+</dd>
+<dt>Example</dt>
+<dd>
+<p>Let <span class="math inline">\(M\)</span> be a model as
+described.</p>
+</dd>
+</dl>
+<pre class="CounterModeler Simple" data-system="gamutND"
+data-submission="none"><code>1. Ex Px, Ax Ey Rxy
+|Domain : 0, 1, 2
+|P(_) : 0
+|R(_,_) :[0,1], [1,2], [2,0]
+|a: 0
+|b: 1
+|c: 2</code></pre>
+<p><span class="math inline">\(\exists x Px\)</span> is true in the
+model <span class="math inline">\(M\)</span> because <span
+class="math inline">\(\exists x Px\)</span> is true in the model under
+every assignment.</p>
+<p><span class="math inline">\(\forall x \exists y Rxy\)</span> is true
+in the model <span class="math inline">\(M\)</span> because <span
+class="math inline">\(\forall x \exists y Rxy\)</span> is true in the
+model under every assignment.</p>
+<h2 id="logical-truth">logical truth</h2>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>A formula is a <em>logical truth</em> iff there is no model in which
+it is ever false.</p>
+</dd>
+<dt>Example</dt>
+<dd>
+<p><span class="math inline">\(Pa \to \exists x Px\)</span>​ is a logical
+truth.</p>
+</dd>
+</dl>
+<p>No model of quantificational logic will ever falsify that formula.
+Once we specify a domain and a denotation for the constant <span
+class="math inline">\(a\)</span>, we find that no matter how we
+interpret <span class="math inline">\(P\)</span>, will either make <span
+class="math inline">\(Pa\)</span> false or we will make <span
+class="math inline">\(\exists x Px\)</span> true. Either way, the
+formula will come out true in the model.</p>
+<p>We cannot establish the logical truth of a formula through a survey
+of every model for the language of quantificational logic, since there
+is an infinity of them. On the other hand, we need only provide one
+model to refute the claim that a given formula is a logical truth.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>The formula <span class="math inline">\(\exists x Px \to Pa\)</span>
+is <em>not</em> a logical truth.</p>
+</dd>
+</dl>
+<pre class="CounterModeler Simple" data-counterexample-to="tautology"
+data-system="gamutND" data-submission="none"><code>2. ExPx -&gt; Pa
+|Domain:0,1
+|P(_) : 1
+|a:0</code></pre>
+<p>The model verifies <span class="math inline">\(\exists x Px\)</span>
+but not <span class="math inline">\(Pa\)</span>, which means that <span
+class="math inline">\(\exists x Px \to Pa\)</span>​ is false in the
+model.</p>
+<h2 id="equivalence">equivalence</h2>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>Two formulas are <em>equivalent</em> iff they are true in exactly the
+same models.</p>
+</dd>
+<dt>Example</dt>
+<dd>
+<p>The formulas <span class="math inline">\(\forall x Px\)</span> and
+<span class="math inline">\(\neg \exists x \neg Px\)</span> are
+equivalent.</p>
+</dd>
+</dl>
+<p>No model of quantificational logic will ever verify one formula
+without the other. Once we specify the domain of a model and the
+interpretation of <span class="math inline">\(P\)</span>, we will find
+that either something in the domain does not fall under <span
+class="math inline">\(P\)</span> in which case both formulas would be
+false or else everything in the domain falls under <span
+class="math inline">\(P\)</span> in which case both formulas would be
+true.</p>
+<p>We need only provide a model as a witness to the non-equivalence of
+two formulas.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>The formulas <span class="math inline">\(\exists x Px \wedge \exists
+x Qx\)</span> and <span class="math inline">\(\exists x (Px \wedge
+Qx)\)</span> are <em>not</em> equivalent.</p>
+</dd>
+</dl>
+<pre class="CounterModeler Simple" data-counterexample-to="equivalence"
+data-system="gamutND" data-submission="none"><code>3. Ex Px /\ Ex Qx, Ex (Px /\ Qx)
+|Domain : 0,1
+|P(_) : 0
+|Q(_) : 1</code></pre>
+<p>No matter what we assign to the variables, the model will verify the
+first formula (as something in the domain is <span
+class="math inline">\(P\)</span> and something is <span
+class="math inline">\(Q\)</span>) but not the second (as nothing in the
+domain is <em>both</em> <span class="math inline">\(P\)</span> and <span
+class="math inline">\(Q\)</span>​).</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>The formulas <span class="math inline">\(\exists x \forall y
+Rxy\)</span> and <span class="math inline">\(\forall x \exists y
+Rxy\)</span> are <em>not</em> equivalent.</p>
+</dd>
+</dl>
+<pre class="CounterModeler Simple" data-counterexample-to="equivalence"
+data-system="gamutND" data-submission="none"><code>4. ExAyRxy, AxEyRxy
+|Domain : 0, 1</code></pre>
+<p>One formula requires something to relate to everything in the domain,
+whereas the other merely requires that everything be related to
+something in the domain.</p>
+<h2 id="consistency">consistency</h2>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>A set of formulas of quantificational logic is <em>consistent</em>
+iff there is at least one model in which they are all true. Otherwise,
+the set is <em>inconsistent</em>.</p>
+</dd>
+<dt>Example</dt>
+<dd>
+<p>The set consisting of <span class="math inline">\(\exists x Px,
+\exists x Qx\)</span>, and <span class="math inline">\(\neg \exists x
+(Px \wedge Qx)\)</span> is consistent.</p>
+</dd>
+</dl>
+<p>The model we used above is one in which all three formulas come out
+true.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>The set consisting of <span class="math inline">\(Rab, Pa, Qb,
+\exists x (Px \wedge Qx)\)</span> is consistent.</p>
+</dd>
+</dl>
+<pre class="CounterModeler Simple" data-system="gamutND"
+data-submission="none"><code>5. Rab, Pa, Qb, Ex (Px/\Qx)
+|Domain : 0,1
+|P(_) : 0
+|Q(_) : 0, 1
+|R(_,_): [0,1]
+|a:0
+|b:1</code></pre>
+<h2 id="validity">validity</h2>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>An argument is <em>valid</em> iff there is no model in which the
+premises are true and the conclusion false.</p>
+</dd>
+<dt>Example</dt>
+<dd>
+<p>The argument given below is valid:</p>
+</dd>
+</dl>
+<ol type="1">
+<li><span class="math inline">\(\forall x (Px \to Qx)\)</span></li>
+<li><span class="math inline">\(Pa\)</span></li>
+<li><span class="math inline">\(Qa\)</span></li>
+</ol>
+<p>There is <em>no</em> model in which the premises are true and the
+conclusion false. If <span class="math inline">\(M\)</span> is a model,
+then the denotation of <span class="math inline">\(a\)</span> in the
+model will fall under the interpretation of <span
+class="math inline">\(P\)</span> if the second premise is true. On the
+other hand, the truth of the first premise requires everything in the
+interpretation of <span class="math inline">\(P\)</span> to be in the
+interpretation of <span class="math inline">\(Q\)</span>, which means,
+however, that the denotation of <span class="math inline">\(a\)</span>
+falls under the interpretation of <span
+class="math inline">\(Q\)</span>. So, the conclusion must be true in the
+model if the first two premises are true there.</p>
+<p>To establish the invalidity of an argument, we must specify a model
+in which the premises are true and the conclusion is false.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>The argument given below is invalid:</p>
+</dd>
+</dl>
+<ol type="1">
+<li><span class="math inline">\(\neg \forall x (Px \to
+Rxa)\)</span></li>
+<li><span class="math inline">\(Pb \wedge Rba\)</span></li>
+<li><span class="math inline">\(Rbc\)</span></li>
+</ol>
+<pre class="CounterModeler Validity" data-system="gamutND"
+data-options="turnstilemark double-turnstile exam check"
+data-submission="none"><code>6. -Ax(Px-&gt;Rxa), Pb /\Rba :|-: Rbc
+|Domain : 0,1
+|P(_) : 0, 1
+|R(_,_): [0,1],[1,0]
+|a:0
+|b:1
+|c:1</code></pre>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>The argument given below is invalid:</p>
+</dd>
+</dl>
+<ol type="1">
+<li><span class="math inline">\(\forall x \exists y Rxy\)</span></li>
+<li><span class="math inline">\(\forall x \exists y Ryx\)</span></li>
+<li><span class="math inline">\(\forall x \forall y Rxy\)</span></li>
+</ol>
+<pre class="CounterModeler Validity" data-system="gamutND"
+data-options="turnstilemark double-turnstile exam check"
+data-submission="none"><code>7. Ax Ey Rxy, Ax Ey Ryx :|-: Ax Ay Rxy
+|Domain : 0,1,2
+|R(_,_): [0,1],[1,2],[2,0]
+</code></pre>
+<p>The use of models to establish the invalidity of an argument in
+quantificational logic will help us determine the invalidity of many
+natural language arguments.</p>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>A natural language argument is <em>quantificationally valid</em> if,
+and only if, it translates into a valid argument of quantificational
+logic.</p>
+</dd>
+<dt>Example</dt>
+<dd>
+<p>Consider the following natural language argument:</p>
+</dd>
+</dl>
+<ol type="1">
+<li>Aristotle follows someone who follows Socrates.</li>
+<li>Every follower of Socrates is a follower of Plato.</li>
+<li>So, Aristotle follows Plato.</li>
+</ol>
+<p>We will translate the argument into the language of quantificational
+logic with the help of a translation key.</p>
+<p><strong>Translation Key</strong></p>
+<p><span class="math inline">\(R(\_,\_)\)</span>: __ follows __</p>
+<p>​ <span class="math inline">\(a\)</span>: Aristotle</p>
+<p>​ <span class="math inline">\(b\)</span>: Socrates</p>
+<p>​ <span class="math inline">\(c\)</span>: Plato</p>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>8. Ex(Rax /\ Rxb) : Aristotle follows someone who follows Socrates
+|Ex(Rax /\ Rxb)</code></pre>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>9. Ax(Rxb -&gt; Rxc) : Every follower of Socrates is a follower of Plato
+|Ax(Rxb -&gt; Rxc)</code></pre>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>10. Rac : Aristotle follows Plato
+|Rac</code></pre>
+<p>The translation of the original argument into quantificational logic
+is <em>invalid</em> because there is a model on which both premises come
+out true and the conclusion comes out false.</p>
+<ol type="1">
+<li><span class="math inline">\(\exists x (Rax \wedge Rxb)\)</span></li>
+<li><span class="math inline">\(\forall x (Rxb \to Rxc)\)</span></li>
+<li><span class="math inline">\(Rac\)</span></li>
+</ol>
+<pre class="CounterModeler Validity" data-system="gamutND"
+data-options="turnstilemark double-turnstile exam check"
+data-submission="none"><code>11. Ex(Rax /\ Rxb), Ax(Rxb -&gt; Rxc) :|-: Rac
+|Domain : 0,1,2,3
+|R(_,_): [0,1],[1,2],[1,3]
+|a:0
+|b:2
+|c:3</code></pre>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider the following natural language argument:</p>
+</dd>
+</dl>
+<ol type="1">
+<li>Everything has a cause.</li>
+<li>Only a deity can be a cause of everything.</li>
+<li>So, something is a deity.</li>
+</ol>
+<p>We will translate the argument into the language of quantificational
+logic with the help of a translation key.</p>
+<p><strong>Translation Key</strong></p>
+<p><span class="math inline">\(R(\_,\_)\)</span>: __ causes __</p>
+<p><span class="math inline">\(P(\_)\)</span>: __ is a deity</p>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>12. AxEyRxy : Everything has a cause.
+|AxEyRxy</code></pre>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>13. Ax(AyRxy -&gt; Px) : Only a deity can be a cause of everything.
+|Ax(AyRxy -&gt; Px)</code></pre>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>14. Ex Px : Something is a deity.
+|Ex Px</code></pre>
+<p>The translation of the original argument into quantificational logic
+is <em>invalid</em> because there is a model on which both premises come
+out true and the conclusion comes out false.</p>
+<ol type="1">
+<li><span class="math inline">\(\forall x \exists y Rxy\)</span></li>
+<li><span class="math inline">\(\forall x (\forall y Rxy \to
+Px)\)</span></li>
+<li><span class="math inline">\(\exists x Px\)</span></li>
+</ol>
+<pre class="CounterModeler Validity" data-system="gamutND"
+data-options="turnstilemark double-turnstile exam check"
+data-submission="none"><code>15. AxEyRxy, Ax(AyRxy -&gt; Px) :|-: Ex Px
+|Domain : 0,1
+|R(_,_): [0,1],[1,0]
+|P(_): </code></pre>
+</article>
+
+<script>
+function checkMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var correct = JSON.parse(ex.dataset.correct);
+  var multi = ex.dataset.multi === "true";
+  var feedback = ex.querySelector('.mc-feedback');
+  feedback.removeAttribute('hidden');
+  if (multi) {
+    var checked = Array.from(ex.querySelectorAll('input[type=checkbox]:checked')).map(function(c){ return parseInt(c.value); });
+    var ok = correct.length === checked.length && correct.every(function(v){ return checked.includes(v); });
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  } else {
+    var selected = ex.querySelector('input[type=radio]:checked');
+    if (!selected) { feedback.textContent = 'Please select an option.'; feedback.className = 'mc-feedback'; return; }
+    var ok = correct.includes(parseInt(selected.value));
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  }
+}
+function revealMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var ans = ex.querySelector('.mc-answer');
+  ans.removeAttribute('hidden');
+  if (window.MathJax) { MathJax.Hub.Queue(['Typeset', MathJax.Hub, ans]); }
+}
+</script>
+
+</body>
+</html>

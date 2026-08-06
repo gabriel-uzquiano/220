@@ -1,5 +1,5 @@
 ---
-title: syntax of propositional logic
+title: "syntax of propositional logic"
 author: Gabriel Uzquiano
 description: |
   Syntax of Propositional Logic

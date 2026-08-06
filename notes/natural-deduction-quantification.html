@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>natural deduction: quantification — PHIL 220</title>
+  <link rel="stylesheet" href="../shared/notes.css">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<style>
+.mc-exercise { margin: 1.2rem 0 2rem; width: 55%; margin-left: 8%; }
+.mc-question { margin-bottom: 0.7rem; font-size: 1.4rem; line-height: 2rem; }
+.mc-options { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.8rem; }
+.mc-option { display: flex; align-items: baseline; gap: 0.6rem; cursor: pointer; font-size: 1.3rem; line-height: 1.7rem; }
+.mc-option input { margin: 0; flex-shrink: 0; }
+.mc-controls { display: flex; gap: 0.6rem; margin-bottom: 0.5rem; }
+.btn-check, .btn-reveal {
+  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+  font-size: 0.82rem; padding: 0.22rem 0.7rem;
+  border-radius: 3px; cursor: pointer; border: 1px solid #ccc;
+  background: #fffff8; color: #111;
+}
+.btn-check:hover { background: #006666; color: #fff; border-color: #006666; }
+.mc-feedback { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.9rem; margin-bottom: 0.3rem; }
+.fb-ok { color: #1a6e2e; } .fb-err { color: #8b1a1a; }
+.mc-answer { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.88rem; color: #555; margin-top: 0.3rem; }
+.mc-explanation { margin-top: 0.4rem; font-family: et-book, Palatino, serif; font-size: 1.2rem; line-height: 1.7rem; color: #333; }
+</style>
+
+</head>
+<body>
+<nav class="back-nav"><a href="https://gabriel-uzquiano.github.io/courses/220">← PHIL 220</a></nav>
+<article>
+<h1 id="natural-deduction-quantification">natural deduction:
+quantification</h1>
+<p>Here is a simple derivation in quantificational logic:</p>
+<pre class="ProofChecker GamutNDPlus"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>1. -Raa -&gt; Ex -Rxx, -Ex-Rxx :|-: Raa
+|-Raa -&gt; Ex -Rxx :assumption
+|-Ex -Rxx :assumption
+| -Raa :assumption
+| Ex-Rxx :E-&gt; 1, 3
+| !? :E- 2, 4 
+|--Raa :I- 3-5
+|Raa :-- 6</code></pre>
+<p>We now extend the system of natural deduction with introduction and
+elimination rules for each quantifier.</p>
+<p>First, we explain what is for a formula to be an <em>instance</em> of
+a quantified formula.</p>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>If <span class="math inline">\(a\)</span> is a constant, we let <span
+class="math inline">\(\varphi(a/x)\)</span> be the formula that results
+from <span class="math inline">\(\varphi\)</span> when we substitute
+<span class="math inline">\(a\)</span> for every <em>free</em>
+occurrence of the variable <span class="math inline">\(x\)</span> in
+<span class="math inline">\(\varphi\)</span>. The formula <span
+class="math inline">\(\varphi(a/x)\)</span> is an <em>instance</em> of
+each <span class="math inline">\(\forall x \varphi\)</span> and <span
+class="math inline">\(\exists x \varphi\)</span>, respectively.</p>
+</dd>
+<dt>Examples</dt>
+<dd>
+<p>Let us look at some examples:</p>
+</dd>
+</dl>
+<ul>
+<li><span class="math inline">\(Px(c/x)\)</span> is the formula <span
+class="math inline">\(Pc\)</span>, which is an instance of each <span
+class="math inline">\(\forall xPx\)</span> and <span
+class="math inline">\(\exists x Px\)</span>.</li>
+<li><span class="math inline">\((Rxy→∃xQx)(b/x)\)</span> is the formula
+<span class="math inline">\((Rby→∃xQx)\)</span>, which is an instance of
+each <span class="math inline">\(\forall x(Rxy→∃xQx)\)</span> and <span
+class="math inline">\(∃x(Rxy→∃xQx)\)</span>.</li>
+</ul>
+<pre class="Playground GamutNDPlus"
+data-options="indent resize render popout tabindent"
+data-submission="none"><code></code></pre>
+<h3 id="universal-quantifier">universal quantifier</h3>
+<p>We begin with a simple elimination rule for the universal
+quantifier:</p>
+<dl>
+<dt>Elimination (<span class="math inline">\(E\forall\)</span>)</dt>
+<dd>
+<p>You may write an instance <span
+class="math inline">\(\varphi(a/x)\)</span> of a universally quantified
+formula <span class="math inline">\(\forall x \varphi\)</span> if the
+latter is available on a prior line of the derivation.</p>
+</dd>
+</dl>
+<figure>
+<img src="ue.png" alt="EA" />
+<figcaption aria-hidden="true">EA</figcaption>
+</figure>
+<p>When we say that <em>every</em> individual satisfies a given
+condition <span class="math inline">\(\varphi\)</span>, we are entitled
+to the more specific claim that a given individual <span
+class="math inline">\(a\)</span>​ satisfies the condition.</p>
+<p>Let us look at the rule in action.</p>
+<pre class="ProofChecker GamutNDPlus"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>2. Ax Px, Ax(Px -&gt; Qx) :|-: Qa
+|Ax Px :assumption
+|Ax(Px -&gt; Qx) :assumption
+|Pa :EA 1
+|Pa -&gt; Qa :EA 2
+|Qa :E-&gt; 3, 4
+</code></pre>
+<pre class="ProofChecker GamutNDPlus"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>3. AxAyRxy, Ax(Rxb -&gt; Px) :|-: Pa
+|AxAyRxy :assumption
+|Ax(Rxb -&gt; Px) :assumption
+|AyRay :EA 1
+|Rab :EA 3
+|Rab -&gt; Pa :EA 2
+|Pa :E-&gt; 4, 5</code></pre>
+<p>The introduction rule requires care. We <em>cannot</em> move from
+<em>any</em> instance <span class="math inline">\(\varphi(a/x)\)</span>
+to a universal generalization <span class="math inline">\(\forall x
+\varphi(x)\)</span>. Maybe an individual <span
+class="math inline">\(a\)</span> satisfies the condition <span
+class="math inline">\(\varphi\)</span> while others do <em>not</em>;
+that is, maybe <span class="math inline">\(a\)</span> satisfies the
+condition in virtue of specific features of <span
+class="math inline">\(a\)</span> that other individuals lack.</p>
+<p>In order to make a generalization, we simply make sure <em>no
+specific assumptions about</em> the relevant individual are in play. We
+can do that by imposing the further requirement that the constant in
+question makes no appearance in either the condition <span
+class="math inline">\(\varphi\)</span>​ or in any undischarged
+assumption. So, what applies to the individual in question applies to
+any other individual.</p>
+<dl>
+<dt>Introduction (<span class="math inline">\(I\forall\)</span>)</dt>
+<dd>
+<p>You may write a universally quantified formula <span
+class="math inline">\(\forall x \varphi\)</span> if some instance <span
+class="math inline">\(\varphi(a/x)\)</span> becomes available on a prior
+line and <span class="math inline">\(a\)</span> occurs neither in <span
+class="math inline">\(\varphi\)</span> nor in an undischarged
+assumption.</p>
+</dd>
+</dl>
+<p>Let us look at some applications of the rule.</p>
+<figure>
+<img src="ui.png" alt="IA" />
+<figcaption aria-hidden="true">IA</figcaption>
+</figure>
+<p>If we are in a position to establish <span
+class="math inline">\(\varphi(a)\)</span> independently on any specific
+assumptions about <span class="math inline">\(a\)</span>, then what
+applies to it should applies to <em>every</em> other individual and we
+may conclude that they <em>all</em> satisfy the condition in
+question.</p>
+<p>Consider some applications of the rule.</p>
+<pre class="ProofChecker GamutNDPlus"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>4. Ax Px, Ax (Px -&gt; Qx) :|-: Ax Qx
+|AxPx :assumption
+|Ax(Px -&gt; Qx) :assumption
+|Pa :EA 1
+|Pa -&gt; Qa :EA2
+|Qa :E-&gt; 3, 4
+|Ax Qx :IA 5</code></pre>
+<pre class="ProofChecker GamutNDPlus"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>5. Ax (Px /\ Qx) :|-: AyQy
+|Ax (Px /\Qx) :assumption
+|Pa/\Qa :EA 1
+|Qa :E/\ 2
+|AyQy :IA 3</code></pre>
+<pre class="ProofChecker GamutNDPlus"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>6. Ax Px \/ Ax Qx :|-: Ay (Py \/ Qy)
+|Ax Px \/ Ax Qx :assumption
+| Ax Px :assumption
+| Pa :EA 2
+| Pa \/ Qa :I\/ 3
+| Ay (Py \/ Qy) :IA 4
+|AxPx -&gt; Ay(Py\/Qy) :I-&gt; 2-5
+| Ax Qx :assumption
+| Qa :EA 7
+| Pa \/Qa :I\/ 8
+| Ay(Py \/ Qy) :IA 9
+|AxQx -&gt; Ay(Py\/Qy) :I-&gt; 7-10
+|Ay(Py\/Qy) :E\/ 1, 6, 11
+</code></pre>
+<h3 id="existential-quantifier">existential quantifier</h3>
+<p>We now move to the introduction and elimination rules for the
+existential quantifier.</p>
+<dl>
+<dt>Introduction (I<span class="math inline">\(\exists\)</span>)</dt>
+<dd>
+<p>You may write an existentially quantified formula <span
+class="math inline">\(\exists x \varphi\)</span> provided an instance
+<span class="math inline">\(\varphi(a/v)\)</span> is available on a
+prior line of the derivation</p>
+</dd>
+</dl>
+<figure>
+<img src="ei.png" alt="IE" />
+<figcaption aria-hidden="true">IE</figcaption>
+</figure>
+<p>We are entitle to infer that <em>something</em> satisfies a given
+condition <span class="math inline">\(\varphi\)</span>, we are given the
+more specific claim that an individual <span
+class="math inline">\(a\)</span>​ satisfies the condition.</p>
+<p>Let us consider some examples.</p>
+<pre class="ProofChecker GamutNDPlus"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>7. Ax (Px -&gt; Qx), Pa :|-: Ex (Px /\Qx)
+|Ax (Px -&gt; Qx) :assumption
+|Pa :assumption
+|Pa -&gt; Qa :EA 1
+|Qa :E-&gt; 2,3
+|Pa /\ Qa :I/\ 2, 4
+|Ex(Px /\Qx) :IE 5
+</code></pre>
+<pre class="ProofChecker GamutNDPlus"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>8. Ax (Px -&gt; Ay Rxy), Pa :|-: Ex Rxx
+|Ax (Px -&gt; AyRxy) :assumption
+|Pa :assumption
+|Pa -&gt; AyRay :EA 1
+|AyRay :E-&gt; 2, 3
+|Raa :EA 4
+|Ex Rxx :IE 5
+</code></pre>
+<p>The elimination rule for the existential quantifier is more
+delicate.</p>
+<dl>
+<dt>Elimination (E<span class="math inline">\(\exists\)</span>)</dt>
+<dd>
+<p>You may write <span class="math inline">\(\psi\)</span> if the
+existentially quantified formula <span class="math inline">\(\exists x
+\varphi\)</span> and the conditional <span
+class="math inline">\(\varphi(a/x) \to \psi\)</span> are available at
+prior lines provided that <span class="math inline">\(a\)</span> occurs
+neither in <span class="math inline">\(\psi\)</span> nor in <span
+class="math inline">\(\exists x \varphi\)</span> nor in any undischarged
+assumption.</p>
+</dd>
+</dl>
+<figure>
+<img src="ee.png" alt="EE" />
+<figcaption aria-hidden="true">EE</figcaption>
+</figure>
+<p>Suppose we are given <span class="math inline">\(\exists x
+\varphi\)</span>​. Then we <em>cannot just</em> infer any instance <span
+class="math inline">\(\varphi(a/x)\)</span>. We can, however, show the
+conditional <span class="math inline">\(\varphi(a/x) \to \psi\)</span>
+making no assumptions about the specific identity of <span
+class="math inline">\(a\)</span>. Since the identity of <span
+class="math inline">\(a\)</span> makes no difference to what follows
+from that instance, we conclude <span
+class="math inline">\(\psi\)</span>. For if <span
+class="math inline">\(\exists x \varphi\)</span> is true, then
+<em>some</em> instance of the form <span
+class="math inline">\(\varphi(a/x)\)</span> may be true, though we do
+<em>not</em> know which, and if we have the conditional <span
+class="math inline">\(\varphi(a/x) \to \psi\)</span> for an arbitrary
+instance of the quantified formula, we can infer <span
+class="math inline">\(\psi\)</span>.</p>
+<p>Let us look at the rule of existential elimination in action.</p>
+<pre class="ProofChecker GamutNDPlus"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>9. Ax (Px -&gt; Qx), Ex Px :|-: Ex Qx
+|Ax(Px -&gt; Qx) :assumption
+|Ex Px :assumption
+| Pa :assumption
+| Pa -&gt; Qa :EA 1
+| Qa :E-&gt; 3, 4
+| ExQx :IE 5
+|Pa -&gt; Ex Qx :I-&gt; 3-6
+|ExQx :EE 2, 7
+</code></pre>
+<pre class="ProofChecker GamutNDPlus"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>10. Ex (Px/\-Rxa) :|-: Ex-(Px /\ Rxa)
+|Ex (Px /\-Rxa) :assumption
+| Pb /\ -Rba :assumption
+|  Pb /\ Rba :assumption
+|  -Rba :E/\ 2
+|  Rba :E/\ 3
+|  !? :E- 4, 5
+| -(Pb /\ Rba) :I- 3-6
+| Ex -(Px /\ Rxa) :IE 7
+|(Pb /\ -Rba) -&gt; Ex -(Px /\ Rxa) :I-&gt; 2-8
+|Ex -(Px /\ Rxa) :EE 1, 9
+
+</code></pre>
+<p>Here is a sandbox you can use to experiment with derivations in
+quantificational logic:</p>
+<pre class="Playground GamutNDPlus"
+data-options="indent resize render popout tabindent"
+data-submission="none"><code></code></pre>
+</article>
+
+<script>
+function checkMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var correct = JSON.parse(ex.dataset.correct);
+  var multi = ex.dataset.multi === "true";
+  var feedback = ex.querySelector('.mc-feedback');
+  feedback.removeAttribute('hidden');
+  if (multi) {
+    var checked = Array.from(ex.querySelectorAll('input[type=checkbox]:checked')).map(function(c){ return parseInt(c.value); });
+    var ok = correct.length === checked.length && correct.every(function(v){ return checked.includes(v); });
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  } else {
+    var selected = ex.querySelector('input[type=radio]:checked');
+    if (!selected) { feedback.textContent = 'Please select an option.'; feedback.className = 'mc-feedback'; return; }
+    var ok = correct.includes(parseInt(selected.value));
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  }
+}
+function revealMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var ans = ex.querySelector('.mc-answer');
+  ans.removeAttribute('hidden');
+  if (window.MathJax) { MathJax.Hub.Queue(['Typeset', MathJax.Hub, ans]); }
+}
+</script>
+
+</body>
+</html>

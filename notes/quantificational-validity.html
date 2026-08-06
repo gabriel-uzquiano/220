@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>logical truth, equivalence, and validity — PHIL 220</title>
+  <link rel="stylesheet" href="../shared/notes.css">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<style>
+.mc-exercise { margin: 1.2rem 0 2rem; width: 55%; margin-left: 8%; }
+.mc-question { margin-bottom: 0.7rem; font-size: 1.4rem; line-height: 2rem; }
+.mc-options { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.8rem; }
+.mc-option { display: flex; align-items: baseline; gap: 0.6rem; cursor: pointer; font-size: 1.3rem; line-height: 1.7rem; }
+.mc-option input { margin: 0; flex-shrink: 0; }
+.mc-controls { display: flex; gap: 0.6rem; margin-bottom: 0.5rem; }
+.btn-check, .btn-reveal {
+  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+  font-size: 0.82rem; padding: 0.22rem 0.7rem;
+  border-radius: 3px; cursor: pointer; border: 1px solid #ccc;
+  background: #fffff8; color: #111;
+}
+.btn-check:hover { background: #006666; color: #fff; border-color: #006666; }
+.mc-feedback { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.9rem; margin-bottom: 0.3rem; }
+.fb-ok { color: #1a6e2e; } .fb-err { color: #8b1a1a; }
+.mc-answer { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.88rem; color: #555; margin-top: 0.3rem; }
+.mc-explanation { margin-top: 0.4rem; font-family: et-book, Palatino, serif; font-size: 1.2rem; line-height: 1.7rem; color: #333; }
+</style>
+
+</head>
+<body>
+<nav class="back-nav"><a href="https://gabriel-uzquiano.github.io/courses/220">← PHIL 220</a></nav>
+<article>
+<h1 id="logical-truth-equivalence-and-validity">logical truth,
+equivalence, and validity</h1>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>A formula <span class="math inline">\(\varphi\)</span> is <em>true in
+a model</em> <span class="math inline">\(M\)</span> iff <span
+class="math inline">\(\varphi\)</span> is true in <span
+class="math inline">\(M\)</span> under every assignment.</p>
+</dd>
+<dt>Example</dt>
+<dd>
+<p>Let <span class="math inline">\(M\)</span> be a model as
+described.</p>
+</dd>
+</dl>
+<pre class="CounterModeler Simple" data-system="gamutND"
+data-submission="none"><code>1. Ex Px, Ax Ey Rxy
+|Domain : 0, 1, 2
+|P(_) : 0
+|R(_,_) :[0,1], [1,2], [2,0]
+|a: 0
+|b: 1
+|c: 2</code></pre>
+<p><span class="math inline">\(\exists x Px\)</span> is true in the
+model <span class="math inline">\(M\)</span> because <span
+class="math inline">\(\exists x Px\)</span> is true in the model under
+every assignment.</p>
+<p><span class="math inline">\(\forall x \exists y Rxy\)</span> is true
+in the model <span class="math inline">\(M\)</span> because <span
+class="math inline">\(\forall x \exists y Rxy\)</span> is true in the
+model under every assignment.</p>
+<h2 id="logical-truth">logical truth</h2>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>A formula is a <em>logical truth</em> iff there is no model in which
+it is ever false.</p>
+</dd>
+<dt>Example</dt>
+<dd>
+<p><span class="math inline">\(Pa \to \exists x Px\)</span>​ is a logical
+truth.</p>
+</dd>
+</dl>
+<p>No model of quantificational logic will ever falsify that formula.
+Once we specify a domain and a denotation for the constant <span
+class="math inline">\(a\)</span>, we find that no matter how we
+interpret <span class="math inline">\(P\)</span>, will either make <span
+class="math inline">\(Pa\)</span> false or we will make <span
+class="math inline">\(\exists x Px\)</span> true. Either way, the
+formula will come out true in the model.</p>
+<p>We cannot establish the logical truth of a formula through a survey
+of every model for the language of quantificational logic, since there
+is an infinity of them. On the other hand, we need only provide one
+model to refute the claim that a given formula is a logical truth.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>The formula <span class="math inline">\(\exists x Px \to Pa\)</span>
+is <em>not</em> a logical truth.</p>
+</dd>
+</dl>
+<pre class="CounterModeler Simple" data-counterexample-to="tautology"
+data-system="gamutND" data-submission="none"><code>2. ExPx -&gt; Pa
+|Domain:0,1
+|P(_) : 1
+|a:0</code></pre>
+<p>The model verifies <span class="math inline">\(\exists x Px\)</span>
+but not <span class="math inline">\(Pa\)</span>, which means that <span
+class="math inline">\(\exists x Px \to Pa\)</span>​ is false in the
+model.</p>
+<h2 id="equivalence">equivalence</h2>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>Two formulas are <em>equivalent</em> iff they are true in exactly the
+same models.</p>
+</dd>
+<dt>Example</dt>
+<dd>
+<p>The formulas <span class="math inline">\(\forall x Px\)</span> and
+<span class="math inline">\(\neg \exists x \neg Px\)</span> are
+equivalent.</p>
+</dd>
+</dl>
+<p>No model of quantificational logic will ever verify one formula
+without the other. Once we specify the domain of a model and the
+interpretation of <span class="math inline">\(P\)</span>, we will find
+that either something in the domain does not fall under <span
+class="math inline">\(P\)</span> in which case both formulas would be
+false or else everything in the domain falls under <span
+class="math inline">\(P\)</span> in which case both formulas would be
+true.</p>
+<p>We need only provide a model as a witness to the non-equivalence of
+two formulas.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>The formulas <span class="math inline">\(\exists x Px \wedge \exists
+x Qx\)</span> and <span class="math inline">\(\exists x (Px \wedge
+Qx)\)</span> are <em>not</em> equivalent.</p>
+</dd>
+</dl>
+<pre class="CounterModeler Simple" data-counterexample-to="equivalence"
+data-system="gamutND" data-submission="none"><code>3. Ex Px /\ Ex Qx, Ex (Px /\ Qx)
+|Domain : 0,1
+|P(_) : 0
+|Q(_) : 1</code></pre>
+<p>No matter what we assign to the variables, the model will verify the
+first formula (as something in the domain is <span
+class="math inline">\(P\)</span> and something is <span
+class="math inline">\(Q\)</span>) but not the second (as nothing in the
+domain is <em>both</em> <span class="math inline">\(P\)</span> and <span
+class="math inline">\(Q\)</span>​).</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>The formulas <span class="math inline">\(\exists x \forall y
+Rxy\)</span> and <span class="math inline">\(\forall x \exists y
+Rxy\)</span> are <em>not</em> equivalent.</p>
+</dd>
+</dl>
+<pre class="CounterModeler Simple" data-counterexample-to="equivalence"
+data-system="gamutND" data-submission="none"><code>4. ExAyRxy, AxEyRxy
+|Domain : 0, 1</code></pre>
+<p>One formula requires something to relate to everything in the domain,
+whereas the other merely requires that everything be related to
+something in the domain.</p>
+<h2 id="consistency">consistency</h2>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>A set of formulas of quantificational logic is <em>consistent</em>
+iff there is at least one model in which they are all true. Otherwise,
+the set is <em>inconsistent</em>.</p>
+</dd>
+<dt>Example</dt>
+<dd>
+<p>The set consisting of <span class="math inline">\(\exists x Px,
+\exists x Qx\)</span>, and <span class="math inline">\(\neg \exists x
+(Px \wedge Qx)\)</span> is consistent.</p>
+</dd>
+</dl>
+<p>The model we used above is one in which all three formulas come out
+true.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>The set consisting of <span class="math inline">\(Rab, Pa, Qb,
+\exists x (Px \wedge Qx)\)</span> is consistent.</p>
+</dd>
+</dl>
+<pre class="CounterModeler Simple" data-system="gamutND"
+data-submission="none"><code>5. Rab, Pa, Qb, Ex (Px/\Qx)
+|Domain : 0,1
+|P(_) : 0
+|Q(_) : 0, 1
+|R(_,_): [0,1]
+|a:0
+|b:1</code></pre>
+<h2 id="validity">validity</h2>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>An argument is <em>valid</em> iff there is no model in which the
+premises are true and the conclusion false.</p>
+</dd>
+<dt>Example</dt>
+<dd>
+<p>The argument given below is valid:</p>
+</dd>
+</dl>
+<ol type="1">
+<li><span class="math inline">\(\forall x (Px \to Qx)\)</span></li>
+<li><span class="math inline">\(Pa\)</span></li>
+<li><span class="math inline">\(Qa\)</span></li>
+</ol>
+<p>There is <em>no</em> model in which the premises are true and the
+conclusion false. If <span class="math inline">\(M\)</span> is a model,
+then the denotation of <span class="math inline">\(a\)</span> in the
+model will fall under the interpretation of <span
+class="math inline">\(P\)</span> if the second premise is true. On the
+other hand, the truth of the first premise requires everything in the
+interpretation of <span class="math inline">\(P\)</span> to be in the
+interpretation of <span class="math inline">\(Q\)</span>, which means,
+however, that the denotation of <span class="math inline">\(a\)</span>
+falls under the interpretation of <span
+class="math inline">\(Q\)</span>. So, the conclusion must be true in the
+model if the first two premises are true there.</p>
+<p>To establish the invalidity of an argument, we must specify a model
+in which the premises are true and the conclusion is false.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>The argument given below is invalid:</p>
+</dd>
+</dl>
+<ol type="1">
+<li><span class="math inline">\(\neg \forall x (Px \to
+Rxa)\)</span></li>
+<li><span class="math inline">\(Pb \wedge Rba\)</span></li>
+<li><span class="math inline">\(Rbc\)</span></li>
+</ol>
+<pre class="CounterModeler Validity" data-system="gamutND"
+data-options="turnstilemark double-turnstile exam check"
+data-submission="none"><code>6. -Ax(Px-&gt;Rxa), Pb /\Rba :|-: Rbc
+|Domain : 0,1
+|P(_) : 0, 1
+|R(_,_): [0,1],[1,0]
+|a:0
+|b:1
+|c:1</code></pre>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>The argument given below is invalid:</p>
+</dd>
+</dl>
+<ol type="1">
+<li><span class="math inline">\(\forall x \exists y Rxy\)</span></li>
+<li><span class="math inline">\(\forall x \exists y Ryx\)</span></li>
+<li><span class="math inline">\(\forall x \forall y Rxy\)</span></li>
+</ol>
+<pre class="CounterModeler Validity" data-system="gamutND"
+data-options="turnstilemark double-turnstile exam check"
+data-submission="none"><code>7. Ax Ey Rxy, Ax Ey Ryx :|-: Ax Ay Rxy
+|Domain : 0,1,2
+|R(_,_): [0,1],[1,2],[2,0]
+</code></pre>
+<p>The use of models to establish the invalidity of an argument in
+quantificational logic will help us determine the invalidity of many
+natural language arguments.</p>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>A natural language argument is <em>quantificationally valid</em> if,
+and only if, it translates into a valid argument of quantificational
+logic.</p>
+</dd>
+<dt>Example</dt>
+<dd>
+<p>Consider the following natural language argument:</p>
+</dd>
+</dl>
+<ol type="1">
+<li>Aristotle follows someone who follows Socrates.</li>
+<li>Every follower of Socrates is a follower of Plato.</li>
+<li>So, Aristotle follows Plato.</li>
+</ol>
+<p>We will translate the argument into the language of quantificational
+logic with the help of a translation key.</p>
+<p><strong>Translation Key</strong></p>
+<p><span class="math inline">\(R(\_,\_)\)</span>: __ follows __</p>
+<p>​ <span class="math inline">\(a\)</span>: Aristotle</p>
+<p>​ <span class="math inline">\(b\)</span>: Socrates</p>
+<p>​ <span class="math inline">\(c\)</span>: Plato</p>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>8. Ex(Rax /\ Rxb) : Aristotle follows someone who follows Socrates
+|Ex(Rax /\ Rxb)</code></pre>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>9. Ax(Rxb -&gt; Rxc) : Every follower of Socrates is a follower of Plato
+|Ax(Rxb -&gt; Rxc)</code></pre>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>10. Rac : Aristotle follows Plato
+|Rac</code></pre>
+<p>The translation of the original argument into quantificational logic
+is <em>invalid</em> because there is a model on which both premises come
+out true and the conclusion comes out false.</p>
+<ol type="1">
+<li><span class="math inline">\(\exists x (Rax \wedge Rxb)\)</span></li>
+<li><span class="math inline">\(\forall x (Rxb \to Rxc)\)</span></li>
+<li><span class="math inline">\(Rac\)</span></li>
+</ol>
+<pre class="CounterModeler Validity" data-system="gamutND"
+data-options="turnstilemark double-turnstile exam check"
+data-submission="none"><code>11. Ex(Rax /\ Rxb), Ax(Rxb -&gt; Rxc) :|-: Rac
+|Domain : 0,1,2,3
+|R(_,_): [0,1],[1,2],[1,3]
+|a:0
+|b:2
+|c:3</code></pre>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider the following natural language argument:</p>
+</dd>
+</dl>
+<ol type="1">
+<li>Everything has a cause.</li>
+<li>Only a deity can be a cause of everything.</li>
+<li>So, something is a deity.</li>
+</ol>
+<p>We will translate the argument into the language of quantificational
+logic with the help of a translation key.</p>
+<p><strong>Translation Key</strong></p>
+<p><span class="math inline">\(R(\_,\_)\)</span>: __ causes __</p>
+<p><span class="math inline">\(P(\_)\)</span>: __ is a deity</p>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>12. AxEyRxy : Everything has a cause.
+|AxEyRxy</code></pre>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>13. Ax(AyRxy -&gt; Px) : Only a deity can be a cause of everything.
+|Ax(AyRxy -&gt; Px)</code></pre>
+<pre class="Translate FOL" data-system="gamutND"
+data-submission="none"><code>14. Ex Px : Something is a deity.
+|Ex Px</code></pre>
+<p>The translation of the original argument into quantificational logic
+is <em>invalid</em> because there is a model on which both premises come
+out true and the conclusion comes out false.</p>
+<ol type="1">
+<li><span class="math inline">\(\forall x \exists y Rxy\)</span></li>
+<li><span class="math inline">\(\forall x (\forall y Rxy \to
+Px)\)</span></li>
+<li><span class="math inline">\(\exists x Px\)</span></li>
+</ol>
+<pre class="CounterModeler Validity" data-system="gamutND"
+data-options="turnstilemark double-turnstile exam check"
+data-submission="none"><code>15. AxEyRxy, Ax(AyRxy -&gt; Px) :|-: Ex Px
+|Domain : 0,1
+|R(_,_): [0,1],[1,0]
+|P(_): </code></pre>
+</article>
+
+<script>
+function checkMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var correct = JSON.parse(ex.dataset.correct);
+  var multi = ex.dataset.multi === "true";
+  var feedback = ex.querySelector('.mc-feedback');
+  feedback.removeAttribute('hidden');
+  if (multi) {
+    var checked = Array.from(ex.querySelectorAll('input[type=checkbox]:checked')).map(function(c){ return parseInt(c.value); });
+    var ok = correct.length === checked.length && correct.every(function(v){ return checked.includes(v); });
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  } else {
+    var selected = ex.querySelector('input[type=radio]:checked');
+    if (!selected) { feedback.textContent = 'Please select an option.'; feedback.className = 'mc-feedback'; return; }
+    var ok = correct.includes(parseInt(selected.value));
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  }
+}
+function revealMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var ans = ex.querySelector('.mc-answer');
+  ans.removeAttribute('hidden');
+  if (window.MathJax) { MathJax.Hub.Queue(['Typeset', MathJax.Hub, ans]); }
+}
+</script>
+
+</body>
+</html>
