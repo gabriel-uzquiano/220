@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>propositional validity — PHIL 220</title>
+  <link rel="stylesheet" href="../shared/notes.css">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<style>
+.mc-exercise { margin: 1.2rem 0 2rem; width: 55%; margin-left: 8%; }
+.mc-question { margin-bottom: 0.7rem; font-size: 1.4rem; line-height: 2rem; }
+.mc-options { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.8rem; }
+.mc-option { display: flex; align-items: baseline; gap: 0.6rem; cursor: pointer; font-size: 1.3rem; line-height: 1.7rem; }
+.mc-option input { margin: 0; flex-shrink: 0; }
+.mc-controls { display: flex; gap: 0.6rem; margin-bottom: 0.5rem; }
+.btn-check, .btn-reveal {
+  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+  font-size: 0.82rem; padding: 0.22rem 0.7rem;
+  border-radius: 3px; cursor: pointer; border: 1px solid #ccc;
+  background: #fffff8; color: #111;
+}
+.btn-check:hover { background: #006666; color: #fff; border-color: #006666; }
+.mc-feedback { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.9rem; margin-bottom: 0.3rem; }
+.fb-ok { color: #1a6e2e; } .fb-err { color: #8b1a1a; }
+.mc-answer { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.88rem; color: #555; margin-top: 0.3rem; }
+.mc-explanation { margin-top: 0.4rem; font-family: et-book, Palatino, serif; font-size: 1.2rem; line-height: 1.7rem; color: #333; }
+</style>
+
+</head>
+<body>
+<nav class="back-nav"><a href="https://gabriel-uzquiano.github.io/courses/220">← PHIL 220</a></nav>
+<article>
+<h1 id="propositional-validity">propositional validity</h1>
+<p>The ability to translate from natural language into the language of
+propositional logic enables one to check whether a natural language
+argument exemplifies a valid <em>propositional form</em>.</p>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>A natural language argument is <em>propositionally valid</em> if, and
+only if, it translates into a valid argument of propositional logic.</p>
+</dd>
+<dt>Example</dt>
+<dd>
+<p>Consider the natural language argument below:</p>
+</dd>
+</dl>
+<p><em>You’ll be rich tomorrow if you buy a lottery ticket from me.
+You’ll buy a ticket from me if the lottery is rigged and you think that
+I’m part of the scheme. The lottery is rigged, but you won’t be rich
+tomorrow. Therefore, you don’t think that I’m part of the
+scheme.</em></p>
+<h3 id="premise-conclusion-form">premise-conclusion form</h3>
+<ol type="1">
+<li>You will be rich tomorrow if you buy a lottery ticket from me.</li>
+<li>You will buy a lottery ticket from me if the lottery is rigged and
+you think that I’m part of the scheme.</li>
+<li>The lottery is rigged, but you will not be rich tomorrow.</li>
+<li>You do not think that I’m part of the scheme.</li>
+</ol>
+<h3 id="translation">translation</h3>
+<p><strong>Translation Key</strong></p>
+<p><span class="math inline">\(p\)</span>: You will be rich
+tomorrow.</p>
+<p><span class="math inline">\(q\)</span>: You will buy a lottery ticket
+from me.</p>
+<p><span class="math inline">\(r\)</span>: The lottery is rigged.</p>
+<p><span class="math inline">\(s\)</span>: You think I’m part of the
+scheme.</p>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>1. q -&gt; p : You will be rich tomorrow if you buy a lottery ticket from me.
+| q -&gt; p</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>2. (r /\ s) -&gt; q : You will buy a lottery ticket from me if the lottery is rigged and you think that I&#39;m part of the scheme.
+| (r /\ s) -&gt; q</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>3. r /\ -p : The lottery is rigged, but you will not be rich tomorrow.
+| r /\ -p</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>4. -s: You do not think I&#39;m part of the scheme
+| -s</code></pre>
+<h3 id="validity">validity</h3>
+<p>The argument is valid because there is a derivation of its conclusion
+from its premises.</p>
+<pre class="ProofChecker GamutPND"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>5. q -&gt; p, (r/\s) -&gt;q, r /\ -p :|-: -s
+|q -&gt; p :assumption
+|(r /\ s) &gt; q :assumption
+|r /\ -p :assumption
+| s :assumption
+| r :E/\ 3
+| r/\s :I/\ 4, 5
+| q :E-&gt; 2, 6
+| p :E-&gt; 1, 7
+| -p :E/\ 3 
+| !? :E- 8, 9
+|-s :I- 4-10</code></pre>
+<p>We conclude that the initial natural language argument is
+<em>propositionally valid</em>, since it exemplifies a valid argument
+form.</p>
+<p>The important point to note now is that propositional validity is
+just one way in which a natural language argument may be valid. To be
+sure,</p>
+<dl>
+<dt>Fact</dt>
+<dd>
+<p>If a natural language argument is propositionally valid, then it is
+valid simpliciter.</p>
+</dd>
+</dl>
+<p>However:</p>
+<dl>
+<dt>Fact</dt>
+<dd>
+<p>A natural language arguments may still valid even if it is
+<em>not</em> propositionally valid.</p>
+</dd>
+</dl>
+<p>That means, a natural language argument may exemplify a valid form
+<em>even if it does not exemplify a propositionally valid form.</em>
+This is what will motivate the introduction of the language of
+quantificational logic.</p>
+<p>In the meantime, it will pay to consider a few more examples from the
+practice timed test.</p>
+<h2 id="a">A</h2>
+<p><em>If the board committed fraud, then they’ll be charged if there is
+any evidence against them. There is evidence against them if they
+committed fraud. So, unless they are charged, there is no evidence
+against them.</em></p>
+<h3 id="premise-conclusion-form-1">premise-conclusion form</h3>
+<ol type="1">
+<li>If the board committed fraud, then they will be charged if there is
+evidence against them.</li>
+<li>There is evidence against them if they committed fraud.</li>
+<li>Unless they are charged, there is no evidence against them.</li>
+</ol>
+<h3 id="translation-1">translation</h3>
+<p><strong>Translation Key</strong></p>
+<p><span class="math inline">\(p\)</span>: The board committed
+fraud.</p>
+<p><span class="math inline">\(q\)</span>: The board will be
+charged.</p>
+<p><span class="math inline">\(r\)</span>: There is evidence against
+them.</p>
+<pre class="Translate Prop" data-system="gamutPND"
+data-options="exam, nocheck" data-submission="none"><code>1. p -&gt;(r -&gt; q)  : If the board committed fraud, then they will be charged if there is any evidence against them.
+|p -&gt;(r -&gt; q)</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-options="exam, nocheck" data-submission="none"><code>2. p -&gt; r : There is evidence against them if they committed fraud.
+|p -&gt; r </code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-options="exam, nocheck" data-submission="none"><code>3. - q -&gt; -r : Unless they are charged, there is no evidence against them.
+| -q -&gt; -r</code></pre>
+<h3 id="validity-1">validity</h3>
+<p>The argument is <em>invalid</em> because there is an assignment on
+which the premises are true and the conclusion false, namely, <span
+class="math inline">\(p:F\)</span>, <span
+class="math inline">\(q:F\)</span>, and <span
+class="math inline">\(r:T\)</span>, as shown by the partial truth table
+given below.</p>
+<pre class="TruthTable Partial" data-system="gamutPND"
+data-options="turnstilemark double-turnstile nodash"
+data-submission="none"><code>4. p -&gt; (r -&gt; q), p -&gt; r, -q -&gt; -r
+|  F T   T F  F   F T  T  TF  F FT  </code></pre>
+<h2 id="b">B</h2>
+<p><em>If you flip the coin, then it’ll land heads or tails but not
+both. If the coin is biased, then it’ll land heads. So, if you flip the
+coin and the coin lands tails, then it’s not biased.</em></p>
+<h3 id="premise-conclusion-form-2">premise-conclusion form</h3>
+<ol type="1">
+<li>If you flip the coin, then it will land heads or tails but not
+both.</li>
+<li>If the coin is biased, then it will land heads.</li>
+<li>if you flip the coin and the coin lands tails, then it is not
+biased.</li>
+</ol>
+<h3 id="translation-2">translation</h3>
+<p><strong>Translation Key</strong></p>
+<p><span class="math inline">\(p\)</span>: You flip the coin.</p>
+<p><span class="math inline">\(q\)</span>: The coin lands heads.</p>
+<p><span class="math inline">\(r\)</span>: The coin lands tails.</p>
+<p><span class="math inline">\(s\)</span>: The coin is biased.</p>
+<pre class="Translate Prop" data-system="gamutPND"
+data-options="exam, nocheck" data-submission="none"><code>1. p -&gt;((q \/ r) /\ -(q /\ r))  : If you flip the coin, then it will land heads or tails but not both.
+|p -&gt;((q \/ r) /\ -(q /\ r))</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-options="exam, nocheck" data-submission="none"><code>2. s -&gt; q : If the coin is biased, then it will land heads.
+|s -&gt; q </code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-options="exam, nocheck" data-submission="none"><code>3. (p /\ r) -&gt; - s : if you flip the coin and the coin lands tails, then it is not biased.
+| (p /\ r) -&gt; - s</code></pre>
+<h3 id="validity-2">validity</h3>
+<p>The argument is valid because there is a derivation of its conclusion
+from its premises.</p>
+<pre class="Playground GamutPND"
+data-options="indent resize render popout tabindent"
+data-submission="none"><code>p -&gt;((q \/ r) /\ -(q /\ r)) :assumption
+s -&gt; q :assumption
+ p/\r :assumption
+ p :E/\ 3
+ (q \/ r) /\ -(q /\ r) :E-&gt; 1, 4
+ r :E/\ 3
+  s :assumption
+  q :E-&gt; 2, 7
+  q/\r :I/\ 6, 8
+  -(q/\r) :E/\ 5
+  !? :E- 9, 10
+ -s :I- 7-11
+(p/\r)-&gt; -s :I-&gt; 3-12 </code></pre>
+<h2 id="c">C</h2>
+<p><em>If you’re in the Expo line, then you’ll reach Santa Monica only
+if you board a westbound train. Although you’re in the Expo line, you’re
+not boarding a westbound train. Therefore, you won’t reach Santa
+Monica.</em></p>
+<h3 id="premise-conclusion-form-3">premise-conclusion form</h3>
+<ol type="1">
+<li>If you’re in the Expo line, then you will reach Santa Monica only if
+you board a westbound train.</li>
+<li>Although you’re in the Expo line, you’re not boarding a westbound
+train.</li>
+<li>You will not reach Santa Monica.</li>
+</ol>
+<h3 id="translation-3">translation</h3>
+<p><strong>Translation Key</strong></p>
+<p><span class="math inline">\(p\)</span>: You are in the Expo line.</p>
+<p><span class="math inline">\(q\)</span>: You will reach Santa
+Monica.</p>
+<p><span class="math inline">\(r\)</span>: You’re boarding a westbound
+train.</p>
+<pre class="Translate Prop" data-system="gamutPND"
+data-options="exam, nocheck" data-submission="none"><code>1. p -&gt;(q -&gt; r)  : If you&#39;re in the Expo line, then you will reach Santa Monica only if you board a westbound train. 
+|p -&gt;(q -&gt; r)</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-options="exam, nocheck" data-submission="none"><code>2. p /\ -r : Although you&#39;re in the Expo line, you&#39;re not boarding a westbound train.
+|p /\ -r</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-options="exam, nocheck" data-submission="none"><code>3. - q : You will not reach Santa Monica.
+| -q</code></pre>
+<h3 id="validity-3">validity</h3>
+<p>The argument is <em>valid</em> because there is a derivation of its
+conclusion from its premises.</p>
+<pre class="Playground GamutPND"
+data-options="indent resize render popout tabindent"
+data-submission="none"><code>p -&gt;(q -&gt; r) :assumption
+p /\ -r :assumption
+ q :assumption
+ p :E/\ 2
+ q-&gt; r :E-&gt; 1, 4
+ r :E-&gt; 3, 5
+ -r :E/\ 2
+ !? :E- 6, 7
+-q :I- 3-8</code></pre>
+<h2 id="d">D</h2>
+<p><em>I’ll win the hand if I’m dealt an ace. On the other hand, if I’m
+dealt a four of hearts, then I will still win the hand unless someone
+else is dealt an ace. I’ll be dealt an ace or a four of hearts.
+Therefore, I’ll win the hand.</em></p>
+<h3 id="premise-conclusion-form-4">premise-conclusion form</h3>
+<ol type="1">
+<li>I will win the hand if I’m dealt an ace.</li>
+<li>If I’m dealt a four of hearts, then I will still win the hand unless
+someone else is dealt an ace.</li>
+<li>I will be dealt an ace or a four of hearts.</li>
+<li>I will win the hand.</li>
+</ol>
+<h3 id="translation-4">translation</h3>
+<p><strong>Translation Key</strong></p>
+<p><span class="math inline">\(p\)</span>: I will win the hand.</p>
+<p><span class="math inline">\(q\)</span>: I’m dealt an ace.</p>
+<p><span class="math inline">\(r\)</span>: I’m dealt a four of
+hearts.</p>
+<p><span class="math inline">\(s\)</span>: Someone else is dealt an
+ace.</p>
+<pre class="Translate Prop" data-system="gamutPND"
+data-options="exam, nocheck" data-submission="none"><code>1. q -&gt; p  : I will win the hand if I&#39;m dealt an ace.
+|q -&gt; p</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-options="exam, nocheck" data-submission="none"><code>2. r -&gt; (-s -&gt; p) : If I&#39;m dealt a four of hearts, then I will still win the hand unless someone else is dealt an ace.
+|r -&gt; (-s -&gt; p) </code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-options="exam, nocheck" data-submission="none"><code>3. q \/ r : I will be dealt an ace or a four of hearts.
+| q \/ r</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-options="exam, nocheck" data-submission="none"><code>4. p : I will win the hand.
+|p</code></pre>
+<h3 id="validity-4">validity</h3>
+<p>The argument is <em>invalid</em> because there is an assignment on
+which the premises are true and the conclusion false, namely, <span
+class="math inline">\(p:F\)</span>, <span
+class="math inline">\(q:F\)</span>, <span
+class="math inline">\(r:T\)</span>, and <span
+class="math inline">\(s:T\)</span>, as shown by the partial truth table
+given below.</p>
+<pre class="TruthTable Partial" data-system="gamutPND"
+data-options="turnstilemark double-turnstile nodash"
+data-submission="none"><code>5. q -&gt; p, r -&gt; (-s -&gt; p), q \/ r, p
+|  F T  F  T T   FT T  F   F  T T  F</code></pre>
+</article>
+
+<script>
+function checkMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var correct = JSON.parse(ex.dataset.correct);
+  var multi = ex.dataset.multi === "true";
+  var feedback = ex.querySelector('.mc-feedback');
+  feedback.removeAttribute('hidden');
+  if (multi) {
+    var checked = Array.from(ex.querySelectorAll('input[type=checkbox]:checked')).map(function(c){ return parseInt(c.value); });
+    var ok = correct.length === checked.length && correct.every(function(v){ return checked.includes(v); });
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  } else {
+    var selected = ex.querySelector('input[type=radio]:checked');
+    if (!selected) { feedback.textContent = 'Please select an option.'; feedback.className = 'mc-feedback'; return; }
+    var ok = correct.includes(parseInt(selected.value));
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  }
+}
+function revealMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var ans = ex.querySelector('.mc-answer');
+  ans.removeAttribute('hidden');
+  if (window.MathJax) { MathJax.Hub.Queue(['Typeset', MathJax.Hub, ans]); }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>natural deduction: conjunction — PHIL 220</title>
+  <link rel="stylesheet" href="../shared/notes.css">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<style>
+.mc-exercise { margin: 1.2rem 0 2rem; width: 55%; margin-left: 8%; }
+.mc-question { margin-bottom: 0.7rem; font-size: 1.4rem; line-height: 2rem; }
+.mc-options { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.8rem; }
+.mc-option { display: flex; align-items: baseline; gap: 0.6rem; cursor: pointer; font-size: 1.3rem; line-height: 1.7rem; }
+.mc-option input { margin: 0; flex-shrink: 0; }
+.mc-controls { display: flex; gap: 0.6rem; margin-bottom: 0.5rem; }
+.btn-check, .btn-reveal {
+  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+  font-size: 0.82rem; padding: 0.22rem 0.7rem;
+  border-radius: 3px; cursor: pointer; border: 1px solid #ccc;
+  background: #fffff8; color: #111;
+}
+.btn-check:hover { background: #006666; color: #fff; border-color: #006666; }
+.mc-feedback { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.9rem; margin-bottom: 0.3rem; }
+.fb-ok { color: #1a6e2e; } .fb-err { color: #8b1a1a; }
+.mc-answer { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.88rem; color: #555; margin-top: 0.3rem; }
+.mc-explanation { margin-top: 0.4rem; font-family: et-book, Palatino, serif; font-size: 1.2rem; line-height: 1.7rem; color: #333; }
+</style>
+
+</head>
+<body>
+<nav class="back-nav"><a href="https://gabriel-uzquiano.github.io/courses/220">← PHIL 220</a></nav>
+<article>
+<h1 id="natural-deduction-conjunction">natural deduction:
+conjunction</h1>
+<p>We have a decision method for propositional validity. If an argument
+formulated in the language of propositional logic is valid, then we
+should be able to establish its validity in a finite number of steps. If
+the argument is invalid, then we will find an assignment of truth values
+to propositional variables on which the premises are true and the
+conclusion false. On the other hand, if the argument is valid, then a
+close look at its truth table will reveal that. Unfortunately, matters
+are more complicated for more expressive languages for which we lack a
+similar decision method.</p>
+<p>We now introduce another strategy for validity. If an argument is
+valid, then we should be able to prove its conclusion from its premises
+by means of a chain of steps constrained by certain rules of inference,
+which constrain the behavior of the logical connectives of propositional
+logic. One reason the method is of interest is that unlike the truth
+table method, it will be generalized to cover more expressive
+languages.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider the argument:</p>
+</dd>
+</dl>
+<blockquote>
+<p><em>Interest rates are high. Inflation will come down if interest
+rates are high and economic growth is slow. As it turns out, economic
+growth is slow. So, inflation will come down.</em></p>
+</blockquote>
+<p>In premise-conclusion form:</p>
+<ol type="1">
+<li>Interest rates are high.</li>
+<li>If interest rates are high and economic growth is slow, then
+inflation will come down.</li>
+<li>Economic growth is slow.</li>
+<li>Inflation will come down.</li>
+</ol>
+<p>We may now reason as follows:</p>
+<p>From 1 and 3, we infer:</p>
+<ul>
+<li>Interest rates are high and economic growth is slow.</li>
+</ul>
+<p>From 2, we have:</p>
+<ul>
+<li>If interest rates are high and economic growth is slow, then
+inflation will come down.</li>
+</ul>
+<p>From these two observations, we now infer:</p>
+<ul>
+<li>Inflation will come down.</li>
+</ul>
+<p>In order to turn the argument into a proof, we translate the argument
+English into the language of propositional logic:</p>
+<p><strong>translation key</strong></p>
+<p><span class="math inline">\(p\)</span>: Interest rates are high.</p>
+<p><span class="math inline">\(q\)</span>: Economic growth is slow.</p>
+<p><span class="math inline">\(r\)</span>: Inflation will come down.</p>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>1. p : Interest rates are high.
+| p</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>2. (p /\ q) -&gt; r : If interest rates are high and economic growth is slow, then inflation will come down.
+| (p /\ q) -&gt; r </code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>3. q : Economic growth is slow.
+| q</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>4. r: Inflation will come down.
+| r</code></pre>
+<p>We now aim to produce a <em>proof</em> of the conclusion from the
+premises. A proof generally consists of a sequence of formulas each of
+which is either a premise or assumption or a <em>consequence</em> we
+derive from earlier formulas by means of a rule of inference.</p>
+<p>Here is how we will prove the conclusion of the argument above on the
+basis of the premises:</p>
+<pre class="ProofChecker GamutPND"
+data-options="indent resize popout fonts render tabindent"
+data-submission="none"><code>1. p, (p /\ q) &gt; r, q :|-: r
+|p :assumption
+|(p /\ q) &gt; r :assumption
+|q :assumption
+|p/\q :I/\ 1,3
+|r :E-&gt; 2, 4</code></pre>
+<p>We annotated the key steps in lines 4 and 5 with the name of a rule
+of inference for conjunction and conditional, respectively, and the
+lines to which each rule had been applied.</p>
+<p>More generally:</p>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>A <em>derivation</em> or <em>proof</em> is a finite sequence of
+formulas each of which is either an <em>assumption</em> or the outcome
+of an application of a rule of inference to prior formulas. The last
+formula in the sequence is the <em>conclusion</em> of the proof.</p>
+</dd>
+</dl>
+<p>If an argument of propositional logic is valid, then we will be able
+to provide a proof of the conclusion of the argument from its
+premises.</p>
+<p>We now specify the catalogue of rules of inference you may employ in
+a proof. There will be one structural rule, and rules associated to
+specific connectives of propositional logic. Each connective will come
+with at least two different rules: a rule of <em>introduction</em> will
+specify the conditions under which we are allowed to write a formula
+with that connective as the main connective on the basis of prior
+formulas, and a rule of <em>elimination</em> will specify the conditions
+under which we are allowed to exploit a formula with that connective as
+the main connective in combination with other formulas.</p>
+<h2 id="natural-deduction-rules">natural deduction rules</h2>
+<dl>
+<dt>Repetition</dt>
+<dd>
+<p>You may repeat a formula <span class="math inline">\(\varphi\)</span>
+on a line if it is available on a prior line of the derivation.</p>
+</dd>
+</dl>
+<figure>
+<img src="Repetition.png" alt="repetition" />
+<figcaption aria-hidden="true">repetition</figcaption>
+</figure>
+<p>Here is the simplest proof you will ever encounter:</p>
+<pre class="ProofChecker GamutPND"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>1. p :|-: p
+|p :assumption
+|p :rep 1</code></pre>
+<h3 id="conjunction">conjunction</h3>
+<p>We have two rules of inference for conjunction.</p>
+<dl>
+<dt>Introduction <span class="math inline">\(\wedge\)</span></dt>
+<dd>
+<p>You may write a conjunction <span class="math inline">\(\varphi
+\wedge \psi\)</span> on a line if <span
+class="math inline">\(\varphi\)</span> and <span
+class="math inline">\(\psi\)</span>​ are available at prior lines in the
+derivation.</p>
+</dd>
+</dl>
+<figure>
+<img src="conj%20intro.png" alt="I\wedge" />
+<figcaption aria-hidden="true">I<span
+class="math inline">\(\wedge\)</span></figcaption>
+</figure>
+<p>Here is how to apply the rule in a derivation:</p>
+<pre class="ProofChecker GamutPND"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>2. p, q :|-: p /\ q
+|p :assumption
+|q :assumption
+|p/\q :I/\ 1,2</code></pre>
+<p>For another illustration, consider:</p>
+<pre class="ProofChecker GamutPND"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>3. p, q, r :|-: (p/\r) /\ q
+|p :assumption
+|q :assumption
+|r :assumption
+|p/\r :I/\ 1, 3
+|(p/\r)/\q :I/\ 2, 4</code></pre>
+<dl>
+<dt>Elimination <span class="math inline">\(\wedge\)</span>​</dt>
+<dd>
+<p>You may write a conjunct <span class="math inline">\(\varphi\)</span>
+on a line if a conjunction <span class="math inline">\(\varphi \wedge
+\psi\)</span> is available at a prior line</p>
+</dd>
+<dd>
+<p>You may write a conjunct <span class="math inline">\(\psi\)</span> on
+a line if a conjunction <span class="math inline">\(\varphi \wedge
+\psi\)</span> is available at a prior line</p>
+</dd>
+</dl>
+<figure>
+<img src="conj%20elim.png" alt="E\wedge" />
+<figcaption aria-hidden="true">E<span
+class="math inline">\(\wedge\)</span></figcaption>
+</figure>
+<p>Let us look at some examples:</p>
+<pre class="ProofChecker GamutPND"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>4. p, (q/\r) :|-: p /\ r
+|p :assumption
+|q/\ r :assumption
+|r :E/\ 2
+|p/\ r :I/\ 1,3</code></pre>
+<pre class="ProofChecker GamutPND"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>5. (p/\q)/\(r/\t) :|-: (p/\r) /\ (q /\ t)
+|(p/\q)/\(r/\t) :assumption
+|p/\q :E/\ 1
+|r/\t :E/\ 1
+|p :E/\ 2
+|r :E/\ 3
+|q :E/\ 2
+|t :E/\ 3
+|p/\r :I/\ 4, 5
+|q/\t :I/\ 6, 7
+|(p/\r)/\(q/\t) :I/\ 8, 9</code></pre>
+<p>Let us put the rules into practice:</p>
+<pre class="ProofChecker GamutPND"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>6. p, q, r :|-: (p /\ q) /\ (q /\ r)
+|p :assumption
+|q :assumption
+|r :assumption
+</code></pre>
+<pre class="ProofChecker GamutPND"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>7. (p /\ q), (r /\ s) :|-: (p /\ r) /\ (q /\ s)
+|p /\ q :assumption
+|r /\ s :assumption
+</code></pre>
+<pre class="ProofChecker GamutPND"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>8. (p /\ (q /\ r)), ((p /\ t) /\ s) :|-: r /\ t
+|p /\ (q /\ r) :assumption
+|(p/\t)/\ s :assumption
+</code></pre>
+<p>Here is a proof box you may use in order to experiment with these
+rules:</p>
+<pre class="Playground GamutPND"
+data-options="indent resize render popout tabindent"
+data-submission="none"><code></code></pre>
+</article>
+
+<script>
+function checkMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var correct = JSON.parse(ex.dataset.correct);
+  var multi = ex.dataset.multi === "true";
+  var feedback = ex.querySelector('.mc-feedback');
+  feedback.removeAttribute('hidden');
+  if (multi) {
+    var checked = Array.from(ex.querySelectorAll('input[type=checkbox]:checked')).map(function(c){ return parseInt(c.value); });
+    var ok = correct.length === checked.length && correct.every(function(v){ return checked.includes(v); });
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  } else {
+    var selected = ex.querySelector('input[type=radio]:checked');
+    if (!selected) { feedback.textContent = 'Please select an option.'; feedback.className = 'mc-feedback'; return; }
+    var ok = correct.includes(parseInt(selected.value));
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  }
+}
+function revealMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var ans = ex.querySelector('.mc-answer');
+  ans.removeAttribute('hidden');
+  if (window.MathJax) { MathJax.Hub.Queue(['Typeset', MathJax.Hub, ans]); }
+}
+</script>
+
+</body>
+</html>

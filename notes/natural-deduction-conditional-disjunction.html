@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>natural deduction: conditional and
+disjunction — PHIL 220</title>
+  <link rel="stylesheet" href="../shared/notes.css">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<style>
+.mc-exercise { margin: 1.2rem 0 2rem; width: 55%; margin-left: 8%; }
+.mc-question { margin-bottom: 0.7rem; font-size: 1.4rem; line-height: 2rem; }
+.mc-options { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.8rem; }
+.mc-option { display: flex; align-items: baseline; gap: 0.6rem; cursor: pointer; font-size: 1.3rem; line-height: 1.7rem; }
+.mc-option input { margin: 0; flex-shrink: 0; }
+.mc-controls { display: flex; gap: 0.6rem; margin-bottom: 0.5rem; }
+.btn-check, .btn-reveal {
+  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+  font-size: 0.82rem; padding: 0.22rem 0.7rem;
+  border-radius: 3px; cursor: pointer; border: 1px solid #ccc;
+  background: #fffff8; color: #111;
+}
+.btn-check:hover { background: #006666; color: #fff; border-color: #006666; }
+.mc-feedback { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.9rem; margin-bottom: 0.3rem; }
+.fb-ok { color: #1a6e2e; } .fb-err { color: #8b1a1a; }
+.mc-answer { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.88rem; color: #555; margin-top: 0.3rem; }
+.mc-explanation { margin-top: 0.4rem; font-family: et-book, Palatino, serif; font-size: 1.2rem; line-height: 1.7rem; color: #333; }
+</style>
+
+</head>
+<body>
+<nav class="back-nav"><a href="https://gabriel-uzquiano.github.io/courses/220">← PHIL 220</a></nav>
+<article>
+<h1 id="natural-deduction-conditional-and-disjunction">natural
+deduction: conditional and disjunction</h1>
+<p>We have by now provided introduction and elimination rules for
+conjunction. To expand the deductive system, we must provide rules for
+the other connectives. We begin with the conditional.</p>
+<h3 id="conditional">conditional</h3>
+<p>We have two rules of inference for the conditional.</p>
+<dl>
+<dt>Elimination <span class="math inline">\(\to\)</span>​</dt>
+<dd>
+<p>You may write <span class="math inline">\(\psi\)</span> if both the
+conditional <span class="math inline">\(\varphi \to \psi\)</span> and
+the formula <span class="math inline">\(\varphi\)</span> are available
+at prior lines.</p>
+</dd>
+</dl>
+<figure>
+<img src="cond%20elim.png" alt="E\to" />
+<figcaption aria-hidden="true">E<span
+class="math inline">\(\to\)</span></figcaption>
+</figure>
+<p>By way of illustration, consider the proofs below:</p>
+<pre class="ProofChecker GamutPND"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>1. (p/\ q) -&gt; t, p, q :|-: t
+|(p/\ q) -&gt; t :assumption
+|p :assumption
+|q :assumption
+|p/\q :I/\ 2, 3
+|t :E-&gt; 1, 4</code></pre>
+<pre class="ProofChecker GamutPND"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>2. p -&gt; (q -&gt; r), p/\ q :|-: r
+|p -&gt; (q -&gt; r) :assumption
+|p/\q :assumption
+|p :E/\ 2
+|q-&gt; r :E-&gt; 1, 3
+|q :E/\ 2
+|r :E-&gt; 4, 5</code></pre>
+<pre class="ProofChecker GamutPND"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>3. p, (p /\ q) -&gt; r, p -&gt; q :|-: r
+|p :assumption
+|(p/\ q) -&gt; r :assumption
+|p -&gt; q :assumption
+</code></pre>
+<p>The rule of conditional introduction requires more explanation.</p>
+<dl>
+<dt>Introduction <span class="math inline">\(\to\)</span></dt>
+<dd>
+<p>You may write <span class="math inline">\(\varphi \to \psi\)</span>
+if you are able to derive <span class="math inline">\(\psi\)</span> from
+the assumption that <span class="math inline">\(\varphi\)</span>. Once
+you do, you should bracket the lines employed in your auxiliary
+derivation of <span class="math inline">\(\psi\)</span> from the
+assumption that <span class="math inline">\(\varphi\)</span>​ and never
+ever appeal to them again.</p>
+</dd>
+</dl>
+<figure>
+<img src="cond%20intro.png" alt="I\to" />
+<figcaption aria-hidden="true">I<span
+class="math inline">\(\to\)</span></figcaption>
+</figure>
+<p>For assorted applications of the rule, consider:</p>
+<pre class="ProofChecker GamutPND"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>4. p -&gt; (q /\ r) :|-: p -&gt; r
+|p -&gt; (q/\r) :assumption
+| p :assumption
+| q/\ r :E-&gt; 1, 2
+| r :E/\ 3
+|p-&gt;r :I-&gt; 2-4</code></pre>
+<pre class="ProofChecker GamutPND"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>5. p -&gt; r, q -&gt; t :|-: (p /\ q) -&gt; (r /\ t)
+|p -&gt; r :assumption
+|q-&gt;t :assumption
+| p /\ q :assumption
+| p :E/\ 3
+| r :E-&gt; 1, 4
+| q :E/\ 3
+| t :E-&gt; 2, 6
+| r/\t :I/\ 5, 7
+|(p/\q) -&gt; (r/\t) :I-&gt; 3-8</code></pre>
+<pre class="ProofChecker GamutPND"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>6. p -&gt; (q -&gt; r) :|-: q -&gt; (p -&gt; r)
+|p -&gt; (q -&gt; r) :assumption
+
+</code></pre>
+<p>Here is a proof box you may use in order to experiment with
+derivations:</p>
+<pre class="Playground GamutPND"
+data-options="indent resize render popout tabindent"
+data-submission="none"><code></code></pre>
+<h3 id="disjunction">disjunction</h3>
+<p>We have two rules of inference for conjunction.</p>
+<dl>
+<dt>Introduction <span class="math inline">\(\vee\)</span></dt>
+<dd>
+<p>You may write a disjunction <span class="math inline">\(\varphi \vee
+\psi\)</span> if one of the disjuncts <span
+class="math inline">\(\varphi\)</span> or <span
+class="math inline">\(\psi\)</span> becomes available at a prior
+line.</p>
+</dd>
+</dl>
+<figure>
+<img src="disj%20intro.png" alt="I\vee" />
+<figcaption aria-hidden="true">I<span
+class="math inline">\(\vee\)</span></figcaption>
+</figure>
+<p>Here is how to apply the rule in proofs:</p>
+<pre class="ProofChecker GamutPND"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>7. p, q :|-: (p \/ r) /\ (r \/ q)
+|p :assumption
+|q :assumption
+|p\/r :I\/ 1
+|r \/ q :I\/ 2
+|(p\/r)/\(r\/q) :I/\ 3, 4</code></pre>
+<pre class="ProofChecker GamutPND"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>8. p, (p \/ q)-&gt; r :|-: r
+|p :assumption
+|(p\/q) -&gt; r :assumption
+|p \/ q :I\/ 1
+|r :E-&gt; 2, 3</code></pre>
+<pre class="ProofChecker GamutPND"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>9. p /\ q :|-: (p \/ r) /\ (q \/ t)
+|p /\ q :assumption
+</code></pre>
+<dl>
+<dt>Elimination <span class="math inline">\(\vee\)</span>​</dt>
+<dd>
+<p>You may write <span class="math inline">\(\chi\)</span> if the
+disjunction <span class="math inline">\(\varphi \vee \psi\)</span> and
+the conditionals <span class="math inline">\(\varphi \to \chi\)</span>
+and <span class="math inline">\(\psi \to \chi\)</span> are available at
+prior lines.</p>
+</dd>
+</dl>
+<figure>
+<img src="disj%20elim.png" alt="E\vee" />
+<figcaption aria-hidden="true">E<span
+class="math inline">\(\vee\)</span></figcaption>
+</figure>
+<p>Let us look at some examples:</p>
+<pre class="ProofChecker GamutPND"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>10. p &gt; r, q &gt; r, r&gt; t, (p \/ q) :|-: t
+|p &gt; r :assumption
+|q &gt; r :assumption
+|r &gt; t :assumption
+|p\/q :assumption
+| p :assumption
+| r :E-&gt; 1, 5
+| t :E-&gt; 3, 6
+|p-&gt;t :I-&gt; 5-7
+| q :assumption
+| r :E-&gt; 2, 9
+| t :E-&gt; 3, 10
+|q-&gt; t :I-&gt; 9-11
+|t :E\/ 4, 8, 12</code></pre>
+<pre class="ProofChecker GamutPND"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>11. (p /\ q) \/ (r /\ p) :|-: p
+|(p /\ q) \/ (r /\ p) :assumption
+| p /\ q :assumption
+| p :E/\ 2
+|(p /\ q)-&gt; p :I-&gt; 2-3
+| r /\ p :assumption
+| p :E/\ 5
+|(r/\p)-&gt;p :I-&gt; 5-6
+|p :E\/ 1, 4, 7
+</code></pre>
+<pre class="ProofChecker GamutPND"
+data-options="indent resize fonts popout render tabindent"
+data-submission="none"><code>12. (p /\ q) \/ (p /\ r) :|-: q \/ r
+|(p /\ q) \/ (p /\ r) :assumption
+| p /\ q :assumption
+| q :E/\ 2
+| q \/ r :I\/ 3
+|(p/\q) -&gt; (q\/r) :I-&gt; 2-4
+| p/\r :assumption
+| r :E/\ 6
+| q\/r :I\/ 7
+|(p/\r)-&gt; (q\/ r) :I-&gt; 6-8
+|q\/r :E\/ 1, 5, 9</code></pre>
+<h3 id="applications">applications</h3>
+<p>We are now in a position to justify the validity of a great number of
+arguments.</p>
+<blockquote>
+<p>The British are coming by land or they are coming by sea. Paul Revere
+will light one lamp if the British are coming by land. However, Paul
+Revere will light two lamps if they are coming by sea. So, Paul Revere
+will light one lamp or he will light two lamps.</p>
+</blockquote>
+<h3 id="premise-conclusion-form">premise-conclusion form</h3>
+<ol type="1">
+<li>The British are coming by land or they are coming by sea.</li>
+<li>If the British are coming by land, then Paul Revere will light one
+lamp.</li>
+<li>If the British are coming by sea, then Paul Revere will light two
+lamps.</li>
+<li>Paul Revere will light one lamp or he will light two lamps.</li>
+</ol>
+<h3 id="translation">translation</h3>
+<p><strong>Translation Key</strong></p>
+<p><span class="math inline">\(p\)</span>: The British are coming by
+land.</p>
+<p><span class="math inline">\(q\)</span>: The British are coming by
+sea.</p>
+<p><span class="math inline">\(r\)</span>: Paul Revere will light one
+lamp.</p>
+<p><span class="math inline">\(s\)</span>: Paul Revere will light two
+lamps.</p>
+<pre class="Translate Prop" data-system="gamutPND"
+data-options="exam, nocheck"><code>1. p \/ q : The British are coming by land or they are coming by sea.
+|p \/ q</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-options="exam, nocheck"><code>2. p -&gt; r : If the British are coming by land, then Paul Revere will light one lamp.
+|p -&gt; r </code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-options="exam, nocheck"><code>3. q -&gt; s : If the British are coming by sea, then Paul Revere will light two lamps.
+| q -&gt; s</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-options="exam, nocheck"><code>4. r \/ s : Paul Revere will light one lamp or he will light two lamps.
+| r \/ s</code></pre>
+<h3 id="validity">validity</h3>
+<p>The argument is valid because there is a derivation of its conclusion
+from its premises.</p>
+<pre class="Playground GamutPND"
+data-options="indent resize render popout tabindent"
+data-submission="none"><code>|p \/ q :assumption
+|p -&gt; r :assumption
+|q -&gt; s :assumption
+| p :assumption
+| r :E-&gt; 2, 4
+| r \/ s :I\/ 5
+|p-&gt; (r \/ s) :I-&gt; 4-6
+| q :assumption
+| s :E-&gt; 3, 8
+| r\/ s :I\/ 9
+|q -&gt; (r\/ s) :I-&gt; 8-10
+|r\/s :E\/ 1, 7, 11</code></pre>
+</article>
+
+<script>
+function checkMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var correct = JSON.parse(ex.dataset.correct);
+  var multi = ex.dataset.multi === "true";
+  var feedback = ex.querySelector('.mc-feedback');
+  feedback.removeAttribute('hidden');
+  if (multi) {
+    var checked = Array.from(ex.querySelectorAll('input[type=checkbox]:checked')).map(function(c){ return parseInt(c.value); });
+    var ok = correct.length === checked.length && correct.every(function(v){ return checked.includes(v); });
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  } else {
+    var selected = ex.querySelector('input[type=radio]:checked');
+    if (!selected) { feedback.textContent = 'Please select an option.'; feedback.className = 'mc-feedback'; return; }
+    var ok = correct.includes(parseInt(selected.value));
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  }
+}
+function revealMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var ans = ex.querySelector('.mc-answer');
+  ans.removeAttribute('hidden');
+  if (window.MathJax) { MathJax.Hub.Queue(['Typeset', MathJax.Hub, ans]); }
+}
+</script>
+
+</body>
+</html>

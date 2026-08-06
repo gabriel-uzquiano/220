@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>validity — PHIL 220</title>
+  <link rel="stylesheet" href="../shared/notes.css">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<style>
+.mc-exercise { margin: 1.2rem 0 2rem; width: 55%; margin-left: 8%; }
+.mc-question { margin-bottom: 0.7rem; font-size: 1.4rem; line-height: 2rem; }
+.mc-options { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.8rem; }
+.mc-option { display: flex; align-items: baseline; gap: 0.6rem; cursor: pointer; font-size: 1.3rem; line-height: 1.7rem; }
+.mc-option input { margin: 0; flex-shrink: 0; }
+.mc-controls { display: flex; gap: 0.6rem; margin-bottom: 0.5rem; }
+.btn-check, .btn-reveal {
+  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+  font-size: 0.82rem; padding: 0.22rem 0.7rem;
+  border-radius: 3px; cursor: pointer; border: 1px solid #ccc;
+  background: #fffff8; color: #111;
+}
+.btn-check:hover { background: #006666; color: #fff; border-color: #006666; }
+.mc-feedback { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.9rem; margin-bottom: 0.3rem; }
+.fb-ok { color: #1a6e2e; } .fb-err { color: #8b1a1a; }
+.mc-answer { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.88rem; color: #555; margin-top: 0.3rem; }
+.mc-explanation { margin-top: 0.4rem; font-family: et-book, Palatino, serif; font-size: 1.2rem; line-height: 1.7rem; color: #333; }
+</style>
+
+</head>
+<body>
+<nav class="back-nav"><a href="https://gabriel-uzquiano.github.io/courses/220">← PHIL 220</a></nav>
+<article>
+<h1 id="validity">validity</h1>
+<p>We began the study of propositional logic with a main goal in mind,
+namely, to provide a framework within which to assess the validity of
+argument forms exemplified by natural language arguments.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider the argument:</p>
+</dd>
+</dl>
+<ol type="1">
+<li>If mica is a metal, then it conducts electricity.</li>
+<li>Mica does not conduct electricity.</li>
+<li>Mica is not a metal</li>
+</ol>
+<p>On a first approximation, we may regard the argument to exemplify the
+form:</p>
+<ol type="1">
+<li><span class="math inline">\(p \to q\)</span></li>
+<li><span class="math inline">\(\neg q\)</span></li>
+<li><span class="math inline">\(\neg p\)</span></li>
+</ol>
+<p>Notice that this is now an argument of propositional logic, and the
+question of whether the argument form is valid reduces to the question
+of whether the argument is valid in propositional logic.</p>
+<dl>
+<dt>Definition</dt>
+<dd>
+<p>An argument of propositional logic is <em>valid</em> if, and only if,
+there is no assignment of truth values to the propositional variables on
+which the premises are true while the conclusion is false.</p>
+</dd>
+<dt>Example</dt>
+<dd>
+<p>Below is a <em>valid</em> argument of propositional logic.</p>
+</dd>
+</dl>
+<ol type="1">
+<li><span class="math inline">\(p \to q\)</span></li>
+<li><span class="math inline">\(\neg q\)</span></li>
+<li><span class="math inline">\(\neg p\)</span></li>
+</ol>
+<p>The reason is that there is <em>no</em> row in the truth table for
+the argument on which both premises come out true and the conclusion
+false.</p>
+<pre class="TruthTable Validity Partial" data-system="gamutPND"
+data-counterexample-to="validity"
+data-options="turnstilemark double-turnstile nodash autoAtoms"
+data-submission="none"><code>A. p &gt; q, -q :|-: -p</code></pre>
+<p>If an argument is <em>invalid</em>, then we can provide an assignment
+under which the premises are true and the conclusion is false.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Below is an <em>invalid</em> argument of propositional logic.</p>
+</dd>
+</dl>
+<ol type="1">
+<li><span class="math inline">\(p \to q\)</span></li>
+<li><span class="math inline">\(\neg p\)</span></li>
+<li><span class="math inline">\(\neg q\)</span></li>
+</ol>
+<p>The third row of the truth table determines an assignment on which
+the premises come out true and the conclusion false.</p>
+<pre class="TruthTable Validity Partial" data-system="gamutPND"
+data-counterexample-to="validity"
+data-options="turnstilemark double-turnstile nodash autoAtoms"
+data-submission="none"><code>B. p &gt; q, -p :|-: -q</code></pre>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Below is an <em>invalid</em> argument of propositional logic.</p>
+</dd>
+</dl>
+<ol type="1">
+<li><span class="math inline">\(p \vee q\)</span></li>
+<li><span class="math inline">\(p \to \neg r\)</span></li>
+<li><span class="math inline">\(\neg r \vee p\)</span></li>
+</ol>
+<p>The fifth row of the truth table determines an assignment on which
+the premises come out true and the conclusion false.</p>
+<pre class="TruthTable Validity Partial" data-system="gamutPND"
+data-counterexample-to="validity"
+data-options="turnstilemark double-turnstile nodash autoAtoms"
+data-submission="none"><code>C. p\/q, p&gt;-r :|-: -r\/p</code></pre>
+<h2 id="how-to-search-for-a-counterexample">how to search for a
+counterexample</h2>
+<p>In order to determine the validity of an argument, we have focused on
+assignments to the propositional variables on which the premises come
+out true in search for a counterexample. This method is particularly
+helpful when confronted with arguments with a large number of
+propositional variables making the truth table rather complex.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Below is another <em>invalid</em> argument.</p>
+</dd>
+</dl>
+<ol type="1">
+<li><span class="math inline">\(p \to ((q \wedge \neg r) \vee (r \wedge
+q))\)</span></li>
+<li><span class="math inline">\(p \wedge q\)</span></li>
+<li><span class="math inline">\(r \vee \neg p\)</span></li>
+<li><span class="math inline">\(\neg q \to r\)</span></li>
+</ol>
+<p>A close look at the argument shows that there are just two candidate
+rows to consider, namely, the <em>first</em> and <em>fifth</em> row of
+the truth table for the argument. Those correspond to the only two
+assignments on which the conclusion comes out false. One of those,
+namely, the first row is one on which the premises come out true and the
+conclusion false. So, we conclude that the argument is invalid.</p>
+<p>When asked for an assignment on which the premises come true and the
+conclusion false, we may now input T T T, which is the assignment on
+which all three propositional variables are true.</p>
+<pre class="TruthTable Validity Partial" data-system="gamutPND"
+data-counterexample-to="validity"
+data-options="autoAtoms turnstilemark double-turnstile"
+data-submission="none"><code>D. p-&gt;((q&amp;-r)\/(r&amp;q)), p&amp;q, r\/-p :|-: q-&gt;-r</code></pre>
+<p>We may even do this with a <em>partial</em> truth table</p>
+<pre class="TruthTable Partial" data-system="gamutPND"
+data-options="turnstilemark double-turnstile nodash"
+data-submission="none"><code>D.1. p-&gt;((q&amp;-r)\/(r&amp;q)), p&amp;q, r\/-p, q-&gt;-r</code></pre>
+<p>This truth table includes a column for each premise followed by a
+column for the conclusion, and the question is whether we <em>can</em>
+find a way to fill out the row to make the premises true and the
+conclusion false. The assignment we used above, namely, TTT, will do for
+that purpose.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Below is another <em>invalid</em> argument.</p>
+</dd>
+</dl>
+<ol type="1">
+<li><span class="math inline">\(p \vee q\)</span></li>
+<li><span class="math inline">\(\neg r \to q\)</span></li>
+<li><span class="math inline">\(p \to r\)</span></li>
+</ol>
+<pre class="TruthTable Validity Partial" data-system="gamutPND"
+data-counterexample-to="validity"
+data-options="autoAtoms turnstilemark double-turnstile"
+data-submission="none"><code>E. p \/ q, -r &gt; -q :|-: p &gt; r</code></pre>
+<p>In this case, there is an assignment on which the premises are true
+and the conclusion false, namely, the assignment corresponding to the
+fourth row of the truth table: TFF.</p>
+<p>We may again make do with a <em>partial</em> truth table</p>
+<pre class="TruthTable Partial" data-system="gamutPND"
+data-options="turnstilemark double-turnstile nodash"
+data-submission="none"><code>E.1. p \/ q, -r &gt; -q, p &gt; r</code></pre>
+<p>This truth table includes a column for each premise followed by a
+column for the conclusion, and the question is whether we <em>can</em>
+find a way to fill out the row to make the premises true and the
+conclusion false. The assignment we used above, namely, TFF, will do for
+that purpose.</p>
+<h2 id="propositional-validity">propositional validity</h2>
+<p>We are now in a position to revisit the question of validity for
+arguments initially phrased in English.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider the argument below</p>
+</dd>
+</dl>
+<ol type="1">
+<li>The mind nothing over and above the brain.</li>
+<li>If the mind is nothing over and above the brain, then the mind is
+mortal.</li>
+<li>The mind is mortal</li>
+</ol>
+<p>This argument exemplifies the form:</p>
+<ol type="1">
+<li><span class="math inline">\(p\)</span></li>
+<li><span class="math inline">\(p \to q\)</span></li>
+<li><span class="math inline">\(q\)</span></li>
+</ol>
+<p>Here we let <span class="math inline">\(p\)</span> stand for ‘the
+mind is nothing over and above the brain’ and <span
+class="math inline">\(q\)</span> stand for ‘the mind is mortal’.</p>
+<p>We are now in a position to justify the validity of that form by
+means of a truth table:</p>
+<pre class="TruthTable Validity Partial" data-system="gamutPND"
+data-counterexample-to="validity"
+data-options="autoAtoms turnstilemark double-turnstile"
+data-submission="none"><code>F. p, p &gt; q :|-: q</code></pre>
+<p>The reason being that there is no assignment, that is, no row of the
+truth table on which the premises are true and the conclusion is
+false.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider now the argument</p>
+</dd>
+</dl>
+<ol type="1">
+<li>You didn’t turn the ignition</li>
+<li>If you turned the ignition, then the car started</li>
+<li>The car didn’t start</li>
+</ol>
+<p>This argument exemplifies the form:</p>
+<ol type="1">
+<li><span class="math inline">\(\neg p\)</span></li>
+<li><span class="math inline">\(p \to q\)</span></li>
+<li><span class="math inline">\(\neg q\)</span></li>
+</ol>
+<p>Here we let <span class="math inline">\(p\)</span> stand for ‘you
+turned the ignition’ and <span class="math inline">\(q\)</span> for ‘the
+car will start’.</p>
+<p>We are now able to justify the invalidity of that form by means of a
+truth table:</p>
+<pre class="TruthTable Validity Partial" data-system="gamutPND"
+data-counterexample-to="validity"
+data-options="autoAtoms turnstilemark double-turnstile"
+data-submission="none"><code>G. -p, p &gt; q :|-: -q</code></pre>
+<p>Note that there is one assignment, namely, the one corresponding to
+the third row of the truth table on which the premises come out true and
+the conclusion false. So, the argument is invalid in propositional
+logic, and consequently, the initial natural language argument is
+propositionally invalid.</p>
+</article>
+
+<script>
+function checkMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var correct = JSON.parse(ex.dataset.correct);
+  var multi = ex.dataset.multi === "true";
+  var feedback = ex.querySelector('.mc-feedback');
+  feedback.removeAttribute('hidden');
+  if (multi) {
+    var checked = Array.from(ex.querySelectorAll('input[type=checkbox]:checked')).map(function(c){ return parseInt(c.value); });
+    var ok = correct.length === checked.length && correct.every(function(v){ return checked.includes(v); });
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  } else {
+    var selected = ex.querySelector('input[type=radio]:checked');
+    if (!selected) { feedback.textContent = 'Please select an option.'; feedback.className = 'mc-feedback'; return; }
+    var ok = correct.includes(parseInt(selected.value));
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  }
+}
+function revealMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var ans = ex.querySelector('.mc-answer');
+  ans.removeAttribute('hidden');
+  if (window.MathJax) { MathJax.Hub.Queue(['Typeset', MathJax.Hub, ans]); }
+}
+</script>
+
+</body>
+</html>

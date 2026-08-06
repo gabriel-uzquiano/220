@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>translation — PHIL 220</title>
+  <link rel="stylesheet" href="../shared/notes.css">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<style>
+.mc-exercise { margin: 1.2rem 0 2rem; width: 55%; margin-left: 8%; }
+.mc-question { margin-bottom: 0.7rem; font-size: 1.4rem; line-height: 2rem; }
+.mc-options { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.8rem; }
+.mc-option { display: flex; align-items: baseline; gap: 0.6rem; cursor: pointer; font-size: 1.3rem; line-height: 1.7rem; }
+.mc-option input { margin: 0; flex-shrink: 0; }
+.mc-controls { display: flex; gap: 0.6rem; margin-bottom: 0.5rem; }
+.btn-check, .btn-reveal {
+  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+  font-size: 0.82rem; padding: 0.22rem 0.7rem;
+  border-radius: 3px; cursor: pointer; border: 1px solid #ccc;
+  background: #fffff8; color: #111;
+}
+.btn-check:hover { background: #006666; color: #fff; border-color: #006666; }
+.mc-feedback { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.9rem; margin-bottom: 0.3rem; }
+.fb-ok { color: #1a6e2e; } .fb-err { color: #8b1a1a; }
+.mc-answer { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.88rem; color: #555; margin-top: 0.3rem; }
+.mc-explanation { margin-top: 0.4rem; font-family: et-book, Palatino, serif; font-size: 1.2rem; line-height: 1.7rem; color: #333; }
+</style>
+
+</head>
+<body>
+<nav class="back-nav"><a href="https://gabriel-uzquiano.github.io/courses/220">← PHIL 220</a></nav>
+<article>
+<h1 id="translation">translation</h1>
+<p>We know how to use truth tables in order to assess the validity of
+arguments couched in the language of propositional logic. But in order
+to assess the validity of natural language arguments, we need to
+translate their premises and conclusions into the language of
+propositional logic.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider the argument:</p>
+</dd>
+</dl>
+<blockquote>
+<p><em>The British are coming by sea. For if they are coming by land,
+then Paul Revere should light two lamps. And if the British are not
+coming by land, then they are coming by sea. However, Paul Revere did
+not light two lamps.</em></p>
+</blockquote>
+<p>In premise-conclusion form:</p>
+<ol type="1">
+<li>If the British are coming by land, Paul Revere should light two
+lamps.</li>
+<li>If the British are not coming by land, then they are coming by
+sea.</li>
+<li>Paul Revere did not light two lamps.</li>
+<li>The British are coming by sea.</li>
+</ol>
+<p>When translated into the language of propositional logic, the
+argument will eventually read:</p>
+<ol type="1">
+<li><span class="math inline">\(p \to q\)</span></li>
+<li><span class="math inline">\(\neg p \to r\)</span></li>
+<li><span class="math inline">\(\neg q\)</span></li>
+<li><span class="math inline">\(r\)</span></li>
+</ol>
+<p>Translation Key</p>
+<p><span class="math inline">\(p\)</span> : The British are coming by
+land</p>
+<p><span class="math inline">\(q\)</span>: Paul Revere lights two
+lamps</p>
+<p><span class="math inline">\(r\)</span>: The British are coming by
+sea</p>
+<p>How should we proceed? We will break down the task of translation
+into three main steps:</p>
+<ol type="1">
+<li><p>paraphrase the target sentence to reveal how it has been
+constructed from simpler sentences by means of truth-functional
+connectives such as ‘not’, ‘and’, ‘or’, and ‘if … then …’</p></li>
+<li><p>replace each truth-functional connective with the formal
+counterpart in propositional logic</p></li>
+<li><p>replace the simplest sentences that remain with propositional
+variables</p></li>
+</ol>
+<p>We will now apply the method to the taks at hand</p>
+<h2 id="paraphrase">paraphrase</h2>
+<p>The first step is to rephrase the sentences in order to reveal how
+they have been constructed from simple sentences by means of
+truth-functional connectives.</p>
+<p>We will use parentheses in order to highlight how the sentence has
+been constructed from simpler sentences.</p>
+<p>Thus:</p>
+<ol type="1">
+<li>(<u><span style="color: red;"><strong>If</strong></span></u> the
+British are coming by land, <u><strong><span
+style="color: red;">then</span></strong></u> Paul Revere is supposed to
+light two lamps).</li>
+<li>(<u><strong><span style="color: red;">If</span></strong></u> the
+British are <strong><span style="color: red;">not</span></strong> coming
+by land, <u><strong><span style="color: red;">then</span></strong></u>
+they are coming by sea.)</li>
+<li>Paul Revere did <u><strong><span
+style="color: red;">not</span></strong></u> light two lamps.</li>
+<li>The British are coming by sea.</li>
+</ol>
+<h2 id="propositional-connectives">propositional connectives</h2>
+<p>We replace the occurrences of the truth-functional connectives with
+the symbols for their counterparts in propositional logic. That is, in
+general, we replace:</p>
+<ul>
+<li><p>occurrences of ‘not’ with <span
+class="math inline">\(\neg\)</span>.</p></li>
+<li><p>occurrences of ‘and’ with <span
+class="math inline">\(\wedge\)</span>.</p></li>
+<li><p>occurrences of ‘or’ with <span
+class="math inline">\(\vee\)</span>.</p></li>
+<li><p>occurrences of ‘if <span class="math inline">\(\dots\)</span>,
+then <span class="math inline">\(\dots\)</span>’ with <span
+class="math inline">\(\to\)</span>.</p></li>
+</ul>
+<p>Thus:</p>
+<ol type="1">
+<li><p>(The British are coming by land <span
+class="math inline">\(\to\)</span> Paul Revere will light two
+lamps).</p></li>
+<li><p>(<span class="math inline">\(\neg\)</span> The British are coming
+by land <span class="math inline">\(\to\)</span> The British are coming
+by sea).</p></li>
+<li><p><span class="math inline">\(\neg\)</span> Paul Revere lit two
+lamps.</p></li>
+<li><p>The British are coming by sea.</p></li>
+</ol>
+<h2 id="propositional-variables">propositional variables</h2>
+<p>We choose a propositional variable for each simple sentence and we
+proceed to substitute an occurrence of the propositional variable for
+each occurrence of the simple sentence in the target sentence. In the
+case at hand, we choose the following translation key:</p>
+<p><strong>translation key</strong>:</p>
+<p><span class="math inline">\(p\)</span>: The British are coming by
+land</p>
+<p><span class="math inline">\(q\)</span>: Paul Revere lights two
+lamps</p>
+<p><span class="math inline">\(r\)</span>: The British are coming by
+sea</p>
+<p>Given the key, the first premise translates into the following
+sentence of propositional logic:</p>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>1. p &gt; q: If the British are coming by land, then Paul Revere should light two lamps</code></pre>
+<p>The second premise now becomes:</p>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>2. -p &gt; r: If the British are not coming by land, then they are coming by sea</code></pre>
+<p>The last premise, on the other hand, translates into a simple
+sentence of propositional logic:</p>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>3. -q: Paul Revere did not light two lamps</code></pre>
+<p>The conclusion of the argument becomes:</p>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>4. r: The British are coming by sea</code></pre>
+<p>The outcome of translation is an argument in the language of
+propositional logic:</p>
+<ol type="1">
+<li><span class="math inline">\(p \to q\)</span></li>
+<li><span class="math inline">\(\neg p \to r\)</span></li>
+<li><span class="math inline">\(\neg q\)</span></li>
+<li><span class="math inline">\(r\)</span></li>
+</ol>
+<p>But we now know how to determine whether the argument is valid:</p>
+<pre class="TruthTable Validity Partial" data-system="gamutPND"
+data-counterexample-to="validity"
+data-options="autoAtoms turnstilemark double-turnstile"
+data-submission="none"><code>A. p &gt; q, -p &gt; r, -q :|-: r</code></pre>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider the argument:</p>
+</dd>
+</dl>
+<blockquote>
+<p><em>Interest rates will rise or they will stay the same. If interest
+rates rise, then inflation will not rise. But if they stay the same,
+then inflation will rise. Inflation will not rise. Therefore, interest
+rates will rise.</em></p>
+</blockquote>
+<p>In premise-conclusion form:</p>
+<ol type="1">
+<li>Interest rates will rise or they will stay the same.</li>
+<li>If interest rates rise, then inflation will not.</li>
+<li>If they stay the same, then inflation will rise.</li>
+<li>Inflation will not rise.</li>
+<li>Interest rates will rise.</li>
+</ol>
+<p>On to the task of translation, we follow the three steps mentioned
+above:</p>
+<h2 id="paraphrase-1">paraphrase</h2>
+<p>We first reveal how each sentence has been constructed from simpler
+sentences by means of truth-functional connectives.</p>
+<ol type="1">
+<li>(Interest rates will rise <u><span
+style="color: red;"><strong>or</strong></span></u> interest rates will
+stay the same)</li>
+<li>(<u><span style="color: red;"><strong>If</strong></span></u>
+interest rates rise, <u><span
+style="color: red;"><strong>then</strong></span></u> inflation will
+<strong><span style="color: red;">not</span></strong> rise)</li>
+<li>(<u><span style="color: red;"><strong>If</strong></span></u>
+interest rates stay the same, <u><span
+style="color: red;"><strong>then</strong></span></u> inflation will
+rise)</li>
+<li>Inflation will <u><span
+style="color: red;"><strong>not</strong></span></u> rise</li>
+<li>Interest rates will rase</li>
+</ol>
+<h2 id="propositional-connectives-1">propositional connectives</h2>
+<p>We now replace occurrences of truth-functional connectives by
+connectives of propositional logic.</p>
+<ol type="1">
+<li><p>(Interest rates will rise <span
+class="math inline">\(\vee\)</span> interest rates will stay the
+same)</p></li>
+<li><p>(Interest rates rise <span class="math inline">\(\to\)</span>
+<span class="math inline">\(\neg\)</span> inflation will rise)</p></li>
+<li><p>(If interest rates stay the same <span
+class="math inline">\(\to\)</span> inflation will rise)</p></li>
+<li><p><span class="math inline">\(\neg\)</span> Inflation will
+rise</p></li>
+<li><p>Interest rates will rase</p></li>
+</ol>
+<h2 id="propositional-variables-1">propositional variables</h2>
+<p>We finally replace the simplest sentences with propositional
+variables and we specify a translation key:</p>
+<p><strong>translation key</strong>:</p>
+<p><span class="math inline">\(p\)</span>: Interest rates will rise</p>
+<p><span class="math inline">\(q\)</span>: Interest rates will stay the
+same</p>
+<p><span class="math inline">\(r\)</span>: Inflation will rise</p>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>5. p \/ q: Interest rates will rise or they will stay the same</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>6. p &gt; -r: If interest rates rise, then inflation will not rise</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>7. q &gt; r: If interest rates stay the same, then inflation will rise</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>8. -r: Inflation will not rise</code></pre>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>9. p: Interest rates will rise</code></pre>
+<p>Here is the argument that results:</p>
+<ol type="1">
+<li><span class="math inline">\(p \vee q\)</span></li>
+<li><span class="math inline">\(p \to \neg r\)</span></li>
+<li><span class="math inline">\(q \to r\)</span></li>
+<li><span class="math inline">\(\neg r\)</span></li>
+<li><span class="math inline">\(p\)</span></li>
+</ol>
+<p>We are now in a position to determine whether the argument is
+valid:</p>
+<pre class="TruthTable Validity Partial" data-system="gamutPND"
+data-options="autoAtoms turnstilemark double-turnstile"
+data-submission="none"><code>B. p \/ q, p &gt; -r, q &gt; r, -r :|-: p</code></pre>
+<h2 id="issues-with-translation">issues with translation</h2>
+<p>Some issues require special discussion.</p>
+<h3 id="structural-ambiguity">structural ambiguity</h3>
+<p>One of the reasons why we moved to a formal language is that English
+is fraught with ambiguity. Sometimes the ambiguity is <em>lexical</em>,
+e.g., ‘I will wait for you near the bank’. In other cases, the ambiguity
+is <em>structural</em> and concerns the way in which the sentence has
+been constructed from simpler sentences with the help of
+truth-functional operators.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Consider the English sentence:</p>
+</dd>
+</dl>
+<ul>
+<li>The British are coming and Paul Revere will light one lamp or he
+will light two lamps.</li>
+</ul>
+<p>When we aim to paraphrase the sentence to reveal how it has been
+constructed from simpler sentences by means of truth-functional
+operators, we find that there are at least two options:</p>
+<ul>
+<li><p>((The British are coming <strong><span
+style="color: red;">and</span></strong> Paul Revere will light one lamp)
+<u><span style="color: red;"><strong>or</strong></span></u> Paul Revere
+will light two lamps)</p></li>
+<li><p>(The British are coming <u><span
+style="color: red;"><strong>and</strong></span></u> (Paul Revere will
+light one lamp <strong><span style="color: red;">or</span></strong> Paul
+Revere will light two lamps))</p></li>
+</ul>
+<p>The first option identifies <strong>or</strong> as the main
+connective whereas the second identifies <strong>and</strong> as the
+main connective.</p>
+<p>Which is it?</p>
+<p>The answer is that the original sentence is <em>structurally
+ambiguous</em> between those two interpretations, and when face with
+such ambiguities, we should highlight it and explain what the options
+are. For they each translate differently into the language of
+propositional logic.</p>
+<p><strong>translation key</strong>:</p>
+<p><span class="math inline">\(p\)</span>: The British are coming</p>
+<p><span class="math inline">\(q\)</span>: Paul Revere will light one
+lamp</p>
+<p><span class="math inline">\(r\)</span>: Paul Revere will light two
+lamps</p>
+<p>There are two translations corresponding to each of the readings:</p>
+<ul>
+<li><span class="math inline">\(((p \ \wedge \ q) \ \vee \
+r)\)</span></li>
+<li><span class="math inline">\((p \ \wedge \ (q \ \vee \
+r))\)</span></li>
+</ul>
+<p>Notice that these sentences are <em>not</em> logically equivalent:
+they receive different truth values when we make <span
+class="math inline">\(p\)</span> and <span
+class="math inline">\(q\)</span> false and we make <span
+class="math inline">\(r\)</span> true.</p>
+<pre class="TruthTable Partial" data-system="gamutPND"
+data-options="autoAtoms" data-submission="none"><code>C. (p &amp; q) \/ r, p &amp; (q \/ r)</code></pre>
+<p>So, we must disambiguate in order to indicate the availability of the
+two readings for the original sentence.</p>
+<h3 id="special-phrases">special phrases</h3>
+<p>How much force should we apply to the original sentence in order to
+make clear how the sentence is constructed from simpler sentences by
+means of the truth-functional connectives? Some phrases require special
+discussion.</p>
+<h3 id="neither-nor">neither … nor …</h3>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Paul Revere will light <u><strong><span
+style="color: red;">neither</span></strong></u> one lamp
+<u><strong><span style="color: red;">nor</span></strong></u> two
+lamps</p>
+</dd>
+</dl>
+<p>It is not obvious how to paraphrase a sentence of that form into one
+built from simpler sentences by means of one of the four
+truth-functional connectives we singled out at the outset. The sentence
+in question should have exactly the same truth conditions as the target
+sentence.</p>
+<p>There are at least two options:</p>
+<ul>
+<li>(Paul Revere will light <strong><span
+style="color: red;">not</span></strong> light one lamp <u><strong><span
+style="color: red;">and</span></strong></u> Paul Revere will
+<strong><span style="color: red;">not</span></strong> light two
+lamps)</li>
+<li>It is <u><strong><span style="color: red;">not</span></strong></u>
+the case that (Paul Revere will light one <strong><span
+style="color: red;">or</span></strong> two lamps)</li>
+</ul>
+<p>Both paraphrases are acceptable as they match the truth conditions of
+the target sentence exactly.</p>
+<p>That means that there are at least two acceptable translations of the
+original sentence:</p>
+<p><strong>translation key</strong>:</p>
+<p><span class="math inline">\(p\)</span>: Paul Revere will light one
+lamp</p>
+<p><span class="math inline">\(q\)</span>: Paul Revere will light two
+lamps</p>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>D. -p &amp; -q: Paul Revere will light neither one lamp nor two lamps.</code></pre>
+<h3 id="only-if">only if</h3>
+<p>Despite the superficial similarity between the phrases ‘only if’ and
+‘if’, they achieve very different effects in English.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Paul Revere will light two lamps <em>only if</em> the British are
+coming by sea.</p>
+</dd>
+</dl>
+<p>This sentence conveys the fact that the British <em>must</em> be
+coming by sea in order for Paul Revere to light two lamps, which means
+that coming by sea is <em>necessary</em> for lighting two lamps.</p>
+<p>Compare with the sentence ‘I will win the lottery <em>only if</em> I
+buy a ticket’. The purchase of a ticket is a <strong>necessary
+condition</strong> for me to win the lottery. On the other hand, if I
+say ‘I will win the lottery <em>if</em> I buy a ticket’, then I would be
+conveying something false, namely, that the purchase of a ticket is
+<strong>sufficient</strong> for me to win the lottery.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Paul Revere will light two lamps <em>if</em> the British are coming
+by sea.</p>
+</dd>
+</dl>
+<p>This sentence assures us that Paul Revere will light two lamps on the
+assumption the British are coming by sea, which means that coming by sea
+is <em>sufficient</em> for lighting two lamps. (Compare with the
+sentence ‘I will win the lottery <em>if</em> I buy a ticket’.)</p>
+<p>The two sentences above very different truth conditions and should be
+given different paraphrases. Start with the first:</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Paul Revere will light two lamps <em>only if</em> the British are
+coming by sea.</p>
+</dd>
+</dl>
+<p>This should be paraphrased as:</p>
+<ul>
+<li>(<u><strong><span style="color: red;">If</span></strong></u> Paul
+Revere will light two lamps, <u><strong><span
+style="color: red;">then</span></strong></u> the British will have come
+by sea)</li>
+</ul>
+<p><strong>translation key</strong>:</p>
+<p><span class="math inline">\(p\)</span>: Paul Revere will light two
+lamps</p>
+<p><span class="math inline">\(q\)</span>: The British come by sea</p>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>E. p &gt; q: Paul Revere will light two lamps only if the British are coming by sea.</code></pre>
+<p>On the other hand, consider the other sentence.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Paul Revere will light two lamps <em>if</em> the British come by the
+sea.</p>
+</dd>
+</dl>
+<p>This should be paraphrased as:</p>
+<ul>
+<li>(<u><strong><span style="color: red;">If</span></strong></u> the
+British come by the sea, <u><strong><span
+style="color: red;">then</span></strong></u> Paul Revere will light two
+lamps)</li>
+</ul>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>F. q &gt; p: Paul Revere will light two lamps if the British are coming by sea.</code></pre>
+<h3 id="if-and-only-if">if, and only if,</h3>
+<p>Once we know how to paraphrase ‘only if’, we are in a position to
+deal with ‘if, and only if’.</p>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Paul Revere will light two lamps if, and only if, the British are
+coming by sea.</p>
+</dd>
+</dl>
+<p>The proposal is to analyze this sentence as a conjunction of two
+simpler sentences:</p>
+<ul>
+<li>(Paul Revere will light two lamps <strong><span
+style="color: red;">if</span></strong> the British are coming by sea)
+<u><strong><span style="color: red;">and</span></strong></u> (Paul
+Revere will light two lamps <strong><span style="color: red;">only
+if</span></strong> the British are coming by sea),</li>
+<li>(<strong><span style="color: red;">If</span></strong> the British
+are coming by sea, <strong><span
+style="color: red;">then</span></strong> Paul Revere will light two
+lamps) <u><strong><span style="color: red;">and</span></strong></u>
+(<strong><span style="color: red;">if</span></strong> Paul Revere lights
+two lamps, <strong><span style="color: red;">then</span></strong> the
+British are coming by sea.)</li>
+</ul>
+<p><strong>translation key</strong>:</p>
+<p><span class="math inline">\(p\)</span>: Paul Revere will light two
+lamps</p>
+<p><span class="math inline">\(q\)</span>: The British are coming by
+sea</p>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>G. (q &gt; p) /\ (p &gt; q): Paul Revere will light one lamp if, and only if, the British are coming by sea.</code></pre>
+<p>We will sometimes use the symbol <span
+class="math inline">\(\leftrightarrow\)</span> in order to abbeviate
+formulas of that form. In general: <span class="math display">\[
+(\varphi \leftrightarrow \psi) := (\varphi \to \psi) \wedge (\psi \to
+\varphi).
+\]</span> It would be acceptable to use that symbol as an abbreviation
+as we translate from English:</p>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>H. (p &lt;-&gt; q): Paul Revere will light two lamps if, and only if, the British are coming by sea.</code></pre>
+<h3 id="unless">unless</h3>
+<dl>
+<dt>Example</dt>
+<dd>
+<p>Paul Revere will light one lamp unless the British are coming by
+sea.</p>
+</dd>
+</dl>
+<p>We want to paraphrase this sentence into one built from simpler
+sentences by means of one of the four truth-functional connectives.
+There is again more than one option.</p>
+<p>There is first the option to paraphrase ‘unless’ in terms of ‘if
+not’:</p>
+<ul>
+<li>Paul Revere will light one lamp <u><strong><span
+style="color: red;">if</span></strong></u> the British are <strong><span
+style="color: red;">not</span></strong> coming by sea</li>
+<li>(<u><strong><span style="color: red;">if</span></strong></u> the
+British are <strong><span style="color: red;">not</span></strong> coming
+by sea, <u><strong><span style="color: red;">then</span></strong></u>
+Paul Revere will light one lamp.)</li>
+</ul>
+<p><strong>translation key</strong>:</p>
+<p><span class="math inline">\(p\)</span>: The British are coming by
+sea</p>
+<p><span class="math inline">\(q\)</span>: Paul Revere will light one
+lamp</p>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>D. -p &gt; q: Paul Revere will light one lamp unless the British are coming by sea.</code></pre>
+<p>Equivalently, we may paraphrase the target sentence with the help of
+‘or’:</p>
+<ul>
+<li>(Paul Revere will light one lamp <u><strong><span
+style="color: red;">or</span></strong></u> the British are coming by
+sea.)</li>
+</ul>
+<pre class="Translate Prop" data-system="gamutPND"
+data-submission="none"><code>D. p \/ q: Paul Revere will light one lamp unless the British are coming by sea.</code></pre>
+</article>
+
+<script>
+function checkMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var correct = JSON.parse(ex.dataset.correct);
+  var multi = ex.dataset.multi === "true";
+  var feedback = ex.querySelector('.mc-feedback');
+  feedback.removeAttribute('hidden');
+  if (multi) {
+    var checked = Array.from(ex.querySelectorAll('input[type=checkbox]:checked')).map(function(c){ return parseInt(c.value); });
+    var ok = correct.length === checked.length && correct.every(function(v){ return checked.includes(v); });
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  } else {
+    var selected = ex.querySelector('input[type=radio]:checked');
+    if (!selected) { feedback.textContent = 'Please select an option.'; feedback.className = 'mc-feedback'; return; }
+    var ok = correct.includes(parseInt(selected.value));
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  }
+}
+function revealMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var ans = ex.querySelector('.mc-answer');
+  ans.removeAttribute('hidden');
+  if (window.MathJax) { MathJax.Hub.Queue(['Typeset', MathJax.Hub, ans]); }
+}
+</script>
+
+</body>
+</html>
