@@ -29,7 +29,7 @@ Example
 
 :	The following argument is *risk-free*, yet it is not an instance of a valid argument form.
 
-1. There is an elefant in the room.
+1. There is an elephant in the room.
 2. There are infinitely many numbers.
 
 The argument is risk-free because there is no risk the premise may be true and the conclusion false. Yet, it is not valid, since it fails to exemplify a valid argument form. If we let $p$ stand for 'there is an elephant in the room' and $q$ stand for 'there are infinitely many numbers', then the argument exemplifies the form:
@@ -236,7 +236,7 @@ This is not a valid argument form. The other argument form is:
 
 1. Some $A$ is $B$
 2. Some $B$ is $C$
-3. Some $A$ is $C$$
+3. Some $A$ is $C$
 
 Here we let $A$ be 'Tesla', $B$ be 'fuel-efficient car', and $C$ be 'electric car'. This is not a valid argument form, since it has instances with true premises and a false conclusion, e.g.,
 
@@ -296,15 +296,15 @@ The Case against the Switch:
 
 The Case for the Switch:
 
-1. Door $\#2$ has a greater chance of being the winner than door $\# 1$.
-2. If door $\#2$ has a greater chance of being the winner than door $\#2$, then you should switch.
+1. Door $\#2$ has a greater chance of being the winner than door $\#1$.
+2. If door $\#2$ has a greater chance of being the winner than door $\#1$, then you should switch.
 3. So, you should switch.
 
 *Both arguments* are valid, since they exemplify the same valid argument form:
 
 1. $p$
 2. If $p$, then $q$
-3. $q$
+3. Therefore, $q$
 
 However, only one of them is *sound*, and there may be reasonable disagreement as to which one it is.
 
