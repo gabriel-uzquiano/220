@@ -9,23 +9,26 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 <style>
-.mc-exercise { margin: 1.2rem 0 2rem; width: 55%; margin-left: 8%; }
-.mc-question { margin-bottom: 0.7rem; font-size: 1.4rem; line-height: 2rem; }
-.mc-options { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.8rem; }
-.mc-option { display: flex; align-items: baseline; gap: 0.6rem; cursor: pointer; font-size: 1.3rem; line-height: 1.7rem; }
-.mc-option input { margin: 0; flex-shrink: 0; }
-.mc-controls { display: flex; gap: 0.6rem; margin-bottom: 0.5rem; }
-.btn-check, .btn-reveal {
-  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
-  font-size: 0.82rem; padding: 0.22rem 0.7rem;
-  border-radius: 3px; cursor: pointer; border: 1px solid #ccc;
+.syn-exercise { margin: 1.2rem 0 2rem; width: 55%; margin-left: 8%; }
+.syn-prompt { font-size: 1.4rem; line-height: 2rem; margin-bottom: 0.6rem; }
+.syn-prompt .syn-label { font-variant: small-caps; margin-right: 0.4rem; color: #555; }
+.syn-input-row { display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem; }
+.syn-input {
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+  font-size: 1rem; padding: 0.25rem 0.4rem;
+  border: 1px solid #ccc; border-radius: 3px;
   background: #fffff8; color: #111;
+  min-width: 18rem;
 }
-.btn-check:hover { background: #006666; color: #fff; border-color: #006666; }
-.mc-feedback { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.9rem; margin-bottom: 0.3rem; }
-.fb-ok { color: #1a6e2e; } .fb-err { color: #8b1a1a; }
-.mc-answer { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.88rem; color: #555; margin-top: 0.3rem; }
-.mc-explanation { margin-top: 0.4rem; font-family: et-book, Palatino, serif; font-size: 1.2rem; line-height: 1.7rem; color: #333; }
+.syn-input:focus { outline: none; border-color: #006666; }
+.syn-controls { display: flex; gap: 0.6rem; margin-bottom: 0.4rem; }
+.syn-feedback { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.9rem; margin-bottom: 0.3rem; }
+.syn-feedback.fb-ok  { color: #1a6e2e; }
+.syn-feedback.fb-err { color: #8b1a1a; }
+.syn-feedback.fb-note { color: #555; }
+.syn-answer { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.9rem; color: #555; margin-top: 0.3rem; }
+.syn-answer .syn-answer-math { font-family: et-book, Palatino, serif; font-size: 1.2rem; }
+.syn-hint { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.78rem; color: #888; margin-top: 0.2rem; }
 </style>
 
 </head>
@@ -169,8 +172,19 @@ class="math inline">\(\neg q\)</span> is a formula ✅.
 </ul>
 <p>We will now draw a construction tree for the formula, which
 illustrates how it has been constructed from simpler constituents.</p>
-<pre class="SynChecker Match" data-system="gamutIPND"
-data-options="check" data-submission="none"><code>A. (p &amp; - q)</code></pre>
+<div class="syn-exercise" data-target="(p &amp; - q)">
+  <div class="syn-prompt"><span class="syn-label">A.</span>Enter the formula in the official syntax.</div>
+  <div class="syn-input-row">
+    <input class="syn-input" type="text" spellcheck="false" autocapitalize="off" autocomplete="off" placeholder="e.g. (p &amp; - q)" aria-label="formula input 1">
+  </div>
+  <div class="syn-controls">
+    <button class="btn-check" onclick="checkSyn(this)">Check</button>
+    <button class="btn-reveal" onclick="revealSyn(this)">Show answer</button>
+  </div>
+  <div class="syn-feedback" hidden></div>
+  <div class="syn-answer" hidden><strong>Answer:</strong> <span class="syn-answer-math"></span></div>
+  <div class="syn-hint">Symbols: <code>-</code> ¬ &nbsp; <code>&amp;</code> ∧ &nbsp; <code>\/</code> ∨ &nbsp; <code>-&gt;</code> → &nbsp; <code>&lt;-&gt;</code> ↔</div>
+</div>
 <ol start="2" type="A">
 <li><span class="math inline">\(((p \to q) \ \vee \ (q \ \to \ (r \
 \wedge \ s) ))\)</span></li>
@@ -200,8 +214,19 @@ a formula ✅ and <span class="math inline">\(s\)</span> is a formula
 </ul></li>
 </ul>
 <p>Here is a construction tree for the formula:</p>
-<pre class="SynChecker Match" data-system="gamutIPND"
-data-options="check" data-submission="none"><code>B. (p \/ (q -&gt; (r &amp; s)))</code></pre>
+<div class="syn-exercise" data-target="(p \/ (q -&gt; (r &amp; s)))">
+  <div class="syn-prompt"><span class="syn-label">B.</span>Enter the formula in the official syntax.</div>
+  <div class="syn-input-row">
+    <input class="syn-input" type="text" spellcheck="false" autocapitalize="off" autocomplete="off" placeholder="e.g. (p &amp; - q)" aria-label="formula input 2">
+  </div>
+  <div class="syn-controls">
+    <button class="btn-check" onclick="checkSyn(this)">Check</button>
+    <button class="btn-reveal" onclick="revealSyn(this)">Show answer</button>
+  </div>
+  <div class="syn-feedback" hidden></div>
+  <div class="syn-answer" hidden><strong>Answer:</strong> <span class="syn-answer-math"></span></div>
+  <div class="syn-hint">Symbols: <code>-</code> ¬ &nbsp; <code>&amp;</code> ∧ &nbsp; <code>\/</code> ∨ &nbsp; <code>-&gt;</code> → &nbsp; <code>&lt;-&gt;</code> ↔</div>
+</div>
 <ol start="3" type="A">
 <li><span class="math inline">\(\neg A\)</span></li>
 </ol>
@@ -262,8 +287,19 @@ class="math inline">\(\neg r\)</span> is a formula.
 </ul></li>
 </ul>
 <p>Here is a construction tree for the formula:</p>
-<pre class="SynChecker Match" data-system="gamutIPND"
-data-options="check" data-submission="none"><code>C. ((p \/ q) &gt; (q &amp; - r))</code></pre>
+<div class="syn-exercise" data-target="((p \/ q) &gt; (q &amp; - r))">
+  <div class="syn-prompt"><span class="syn-label">C.</span>Enter the formula in the official syntax.</div>
+  <div class="syn-input-row">
+    <input class="syn-input" type="text" spellcheck="false" autocapitalize="off" autocomplete="off" placeholder="e.g. (p &amp; - q)" aria-label="formula input 3">
+  </div>
+  <div class="syn-controls">
+    <button class="btn-check" onclick="checkSyn(this)">Check</button>
+    <button class="btn-reveal" onclick="revealSyn(this)">Show answer</button>
+  </div>
+  <div class="syn-feedback" hidden></div>
+  <div class="syn-answer" hidden><strong>Answer:</strong> <span class="syn-answer-math"></span></div>
+  <div class="syn-hint">Symbols: <code>-</code> ¬ &nbsp; <code>&amp;</code> ∧ &nbsp; <code>\/</code> ∨ &nbsp; <code>-&gt;</code> → &nbsp; <code>&lt;-&gt;</code> ↔</div>
+</div>
 <ol start="4" type="A">
 <li><span class="math inline">\((\varphi \ \to \ \psi)\)</span></li>
 </ol>
@@ -332,31 +368,218 @@ we add outer parenthesis to form:</p>
 </article>
 
 <script>
-function checkMC(btn) {
-  var ex = btn.closest('.mc-exercise');
-  var correct = JSON.parse(ex.dataset.correct);
-  var multi = ex.dataset.multi === "true";
-  var feedback = ex.querySelector('.mc-feedback');
-  feedback.removeAttribute('hidden');
-  if (multi) {
-    var checked = Array.from(ex.querySelectorAll('input[type=checkbox]:checked')).map(function(c){ return parseInt(c.value); });
-    var ok = correct.length === checked.length && correct.every(function(v){ return checked.includes(v); });
-    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
-    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
-  } else {
-    var selected = ex.querySelector('input[type=radio]:checked');
-    if (!selected) { feedback.textContent = 'Please select an option.'; feedback.className = 'mc-feedback'; return; }
-    var ok = correct.includes(parseInt(selected.value));
-    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
-    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+(function(){
+  // ─── Tokenizer ───────────────────────────────────────────────────────────
+  function tokenize(src) {
+    var toks = [];
+    var i = 0;
+    while (i < src.length) {
+      var c = src[i];
+      if (c === ' ' || c === '\t' || c === '\n') { i++; continue; }
+      if (c === '(') { toks.push({t:'('}); i++; continue; }
+      if (c === ')') { toks.push({t:')'}); i++; continue; }
+      // two- and three-char operators first
+      if (src.substr(i,3) === '<->') { toks.push({t:'iff'}); i += 3; continue; }
+      if (src.substr(i,2) === '<>')  { toks.push({t:'iff'}); i += 2; continue; }
+      if (src.substr(i,2) === '->')  { toks.push({t:'imp'}); i += 2; continue; }
+      if (src.substr(i,2) === '/\\') { toks.push({t:'and'}); i += 2; continue; }
+      if (src.substr(i,2) === '\\/') { toks.push({t:'or'});  i += 2; continue; }
+      if (c === '>') { toks.push({t:'imp'}); i++; continue; }
+      if (c === '&') { toks.push({t:'and'}); i++; continue; }
+      if (c === '-') { toks.push({t:'not'}); i++; continue; }
+      // 'v' as a bare token means or; but 'v' inside identifier is not
+      if (c === 'v' && !isVarChar(src[i+1] || '') && !isVarStart(src[i-1] || '')) {
+        toks.push({t:'or'}); i++; continue;
+      }
+      // propositional variable: letter (p q r s t) optionally with digits
+      if (isVarStart(c)) {
+        var j = i + 1;
+        while (j < src.length && /[0-9]/.test(src[j])) j++;
+        toks.push({t:'var', v: src.substring(i,j)});
+        i = j; continue;
+      }
+      return {error: 'Unexpected character: "' + c + '"'};
+    }
+    return {tokens: toks};
   }
-}
-function revealMC(btn) {
-  var ex = btn.closest('.mc-exercise');
-  var ans = ex.querySelector('.mc-answer');
-  ans.removeAttribute('hidden');
-  if (window.MathJax) { MathJax.Hub.Queue(['Typeset', MathJax.Hub, ans]); }
-}
+  function isVarStart(c){ return c==='p'||c==='q'||c==='r'||c==='s'||c==='t'; }
+  function isVarChar(c){ return /[0-9]/.test(c); }
+
+  // ─── Parser (recursive-descent, precedence: ¬ > ∧,∨ > →,↔) ──────────────
+  // But our Tufte notes teach *official* syntax: every binary must be wrapped
+  // in explicit outer parentheses. So we accept the strict grammar first, and
+  // fall back to the lax precedence-based grammar only if strict fails — that
+  // lets the widget report "not a formula (missing parens)" more helpfully.
+  function makeParser(tokens, strict) {
+    var pos = 0;
+    function peek(){ return tokens[pos]; }
+    function eat(t){ if (tokens[pos] && tokens[pos].t === t) { pos++; return true; } return false; }
+    function expect(t){
+      if (!eat(t)) throw new Error('Expected ' + t + ' at token ' + pos);
+    }
+    function parseFormula(){
+      if (strict) return parseStrict();
+      return parseImp();
+    }
+    // Strict: F := var | '-' F | '(' F op F ')'
+    function parseStrict(){
+      var tk = peek();
+      if (!tk) throw new Error('Unexpected end');
+      if (tk.t === 'var') { pos++; return {k:'var', v:tk.v}; }
+      if (tk.t === 'not') { pos++; return {k:'not', a: parseStrict()}; }
+      if (tk.t === '(')   {
+        pos++;
+        var left = parseStrict();
+        var op = peek();
+        if (!op || (op.t !== 'and' && op.t !== 'or' && op.t !== 'imp' && op.t !== 'iff')) {
+          throw new Error('Expected connective inside parens');
+        }
+        pos++;
+        var right = parseStrict();
+        expect(')');
+        return {k: op.t, a: left, b: right};
+      }
+      throw new Error('Unexpected token');
+    }
+    // Lax precedence grammar (only used to distinguish "wrong formula" from
+    // "garbage"): iff (right) > imp (right) > or (left) > and (left) > not > atom
+    function parseImp(){
+      var left = parseOr();
+      var t = peek();
+      if (t && (t.t === 'imp' || t.t === 'iff')) { pos++; var right = parseImp(); return {k:t.t, a:left, b:right}; }
+      return left;
+    }
+    function parseOr(){
+      var left = parseAnd();
+      while (peek() && peek().t === 'or') { pos++; var right = parseAnd(); left = {k:'or', a:left, b:right}; }
+      return left;
+    }
+    function parseAnd(){
+      var left = parseNot();
+      while (peek() && peek().t === 'and') { pos++; var right = parseNot(); left = {k:'and', a:left, b:right}; }
+      return left;
+    }
+    function parseNot(){
+      if (peek() && peek().t === 'not') { pos++; return {k:'not', a: parseNot()}; }
+      return parseAtom();
+    }
+    function parseAtom(){
+      var t = peek();
+      if (!t) throw new Error('Unexpected end');
+      if (t.t === 'var') { pos++; return {k:'var', v:t.v}; }
+      if (t.t === '(') {
+        pos++;
+        var f = parseImp();
+        expect(')');
+        return f;
+      }
+      throw new Error('Unexpected token');
+    }
+    return {
+      parse: function(){
+        var f = parseFormula();
+        if (pos !== tokens.length) throw new Error('Extra tokens after formula');
+        return f;
+      }
+    };
+  }
+
+  function parse(src, strict){
+    var tk = tokenize(src);
+    if (tk.error) return {error: tk.error};
+    try { return {ast: makeParser(tk.tokens, strict).parse()}; }
+    catch (e) { return {error: e.message}; }
+  }
+
+  function astEq(a, b){
+    if (!a || !b) return false;
+    if (a.k !== b.k) return false;
+    if (a.k === 'var') return a.v === b.v;
+    if (a.k === 'not') return astEq(a.a, b.a);
+    return astEq(a.a, b.a) && astEq(a.b, b.b);
+  }
+
+  function astToLatex(a){
+    if (a.k === 'var') {
+      // subscript digits
+      var m = /^([pqrst])([0-9]+)$/.exec(a.v);
+      if (m) return m[1] + '_{' + m[2] + '}';
+      return a.v;
+    }
+    if (a.k === 'not') return '\\neg ' + wrap(a.a);
+    var op = {and:'\\wedge', or:'\\vee', imp:'\\to', iff:'\\leftrightarrow'}[a.k];
+    return '(' + astToLatex(a.a) + ' ' + op + ' ' + astToLatex(a.b) + ')';
+  }
+  function wrap(a){
+    if (a.k === 'var' || a.k === 'not') return astToLatex(a);
+    return astToLatex(a);
+  }
+
+  window.checkSyn = function(btn){
+    var ex = btn.closest('.syn-exercise');
+    var target = ex.dataset.target;
+    var input = ex.querySelector('.syn-input');
+    var feedback = ex.querySelector('.syn-feedback');
+    feedback.removeAttribute('hidden');
+
+    var raw = (input.value || '').trim();
+    if (!raw) {
+      feedback.textContent = 'Type a formula, then press Check.';
+      feedback.className = 'syn-feedback fb-note';
+      return;
+    }
+
+    // Try strict parse first
+    var strict = parse(raw, true);
+    var lax    = parse(raw, false);
+    var targetStrict = parse(target, true);
+    var targetLax    = parse(target, false);
+    var targetAst = targetStrict.ast || targetLax.ast;
+
+    if (strict.ast) {
+      if (astEq(strict.ast, targetAst)) {
+        feedback.textContent = '✓ Correct — that is a well-formed formula matching the target.';
+        feedback.className = 'syn-feedback fb-ok';
+        return;
+      }
+      feedback.textContent = '✓ Well-formed, but not the target formula. Try again.';
+      feedback.className = 'syn-feedback fb-err';
+      return;
+    }
+    if (lax.ast) {
+      if (astEq(lax.ast, targetAst)) {
+        feedback.textContent = '✗ Right shape, but missing the outer parentheses required by the official syntax.';
+      } else {
+        feedback.textContent = '✗ Not a formula in the official syntax (check parentheses).';
+      }
+      feedback.className = 'syn-feedback fb-err';
+      return;
+    }
+    feedback.textContent = '✗ Not a well-formed formula: ' + (strict.error || lax.error || 'parse failed') + '.';
+    feedback.className = 'syn-feedback fb-err';
+  };
+
+  window.revealSyn = function(btn){
+    var ex = btn.closest('.syn-exercise');
+    var ans = ex.querySelector('.syn-answer');
+    var target = ex.dataset.target;
+    var mathSpan = ans.querySelector('.syn-answer-math');
+    var parsed = parse(target, true).ast || parse(target, false).ast;
+    if (parsed) {
+      mathSpan.innerHTML = '\\(' + astToLatex(parsed) + '\\)';
+    } else {
+      mathSpan.textContent = target;
+    }
+    ans.removeAttribute('hidden');
+    if (window.MathJax) {
+      if (MathJax.Hub && MathJax.Hub.Queue) {
+        MathJax.Hub.Queue(['Typeset', MathJax.Hub, ans]);
+      } else if (MathJax.typesetPromise) {
+        MathJax.typesetPromise([ans]);
+      }
+    }
+  };
+})();
 </script>
 
 </body>
