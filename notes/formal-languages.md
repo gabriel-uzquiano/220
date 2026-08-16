@@ -95,7 +95,7 @@ We will now place the focus on valid argument forms, whose validity is explained
 
 4. 'if ..., then ...' 
 
-   We will use the symbol $\to$ for the word 'and' and rewrite 'if $p$, then $q$' as: $(p \to q)$.
+   We will use the symbol $\to$ for the words 'if …, then …' and rewrite 'if $p$, then $q$' as: $(p \to q)$.
 
 What these connectives have in common is that the truth value of a sentence constructed in terms of them is a function of the truth values of their constituents, e.g.,
 
