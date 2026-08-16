@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
+
+  <meta name="author" content="Gabriel Uzquiano">
+  <title>PHIL 220 slides – Arguments and Validity</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-35b85488f31224ca9a5d04894c025955.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Arguments and Validity</h1>
+  <p class="subtitle">PHIL 220. Introduction to Logic · 1.1</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Gabriel Uzquiano 
+</div>
+</div>
+</div>
+
+</section>
+<section>
+<section id="why-logic" class="title-slide slide level1 divider center">
+<h1>why logic?</h1>
+<p>We reason to persuade someone to accept a claim on the basis of something they already accept.</p>
+<aside class="notes">
+<p>One minute. The point of the opening puzzles is that they are cases where you already reason well — the course is about making explicit what you are doing.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="a-coin-toss" class="slide level2">
+<h2>A coin toss</h2>
+<blockquote>
+<p>You and I toss a coin, but we have no access to the other’s coin. We each make a guess as to the outcome of the other’s coin. We win if <strong>at least one of us</strong> makes a correct guess. We may agree on a common strategy before the coins are tossed.</p>
+<p>What strategy guarantees a win, no matter how the coins land?</p>
+</blockquote>
+<div class="fragment">
+<p>Nothing about the two coins is correlated. So how can we guarantee anything?</p>
+<aside class="notes">
+<p>Let them sit with it. Take a show of hands on whether a guaranteed strategy exists at all before revealing that it does. The illustration at coinflips.com.au is worth two minutes if the room is stuck.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="a-strategy-that-always-wins" class="slide level2">
+<h2>A strategy that always wins</h2>
+<ul>
+<li class="fragment">I make my guess <strong>match</strong> the outcome of my coin.</li>
+<li class="fragment">You make your guess <strong>differ</strong> from the outcome of your coin.</li>
+</ul>
+<div class="fragment">
+
+<aside class="notes">
+<p>Draw it on the chalkboard here — press C and sketch the two cases, MATCH and DIFFER. Do not put the reconstruction up until someone has said the key thing: the two cases are exhaustive.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+<aside><div>
+<p>Take a moment: why does this work?</p>
+</div></aside></section>
+<section id="why-it-works" class="slide level2">
+<h2>Why it works</h2>
+<p>Once we toss our coins, they either match or they do not.</p>
+<div class="fragment">
+<p>If they <strong>match</strong>, my guess is guaranteed to succeed — your coin landed exactly as mine did.</p>
+</div>
+<div class="fragment">
+<p>If they <strong>do not match</strong>, your guess is guaranteed to succeed — your coin landed differently from mine.</p>
+</div>
+<div class="fragment">
+<p>Either way, one of our guesses succeeds, and we win.</p>
+</div>
+</section>
+<section id="the-same-case-made-explicit" class="slide level2 smaller">
+<h2>The same case, made explicit</h2>
+<div class="argument">
+<ol type="1">
+<li class="fragment">Either the outcomes of our tosses match or they do not.</li>
+<li class="fragment">If they match, then since I guess the outcome I observed in my coin, I am guaranteed to succeed.</li>
+<li class="fragment">If I succeed, then at least one of us does, and we win.</li>
+<li class="fragment">If they do not match, then since you guess a different outcome from the one you observed, you are guaranteed to succeed.</li>
+<li class="fragment">If you succeed, then at least one of us does, and we win.</li>
+</ol>
+<div class="conclusion fragment">
+<ol start="6" type="1">
+<li>So at least one of us succeeds, and we win the game.</li>
+</ol>
+</div>
+</div>
+<aside class="notes">
+<p>This is the slide the whole opening builds to. Reveal one premise at a time and leave them all up: the argument has to be visible <em>as a whole</em> for the last step to land. Ask before revealing 6: what is still missing? (Nothing — that is the point.)</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="arguments" class="title-slide slide level1 divider center">
+<h1>arguments</h1>
+<p>From a body of statements — the <strong>premises</strong> — to a statement they are meant to support — the <strong>conclusion</strong>.</p>
+</section>
+<section id="premises-and-conclusion" class="slide level2">
+<h2>Premises and conclusion</h2>
+<div class="columns">
+<div class="column" style="width:46%;">
+<blockquote>
+<p>A gift card is better than a postcard. A postcard is better than nothing. Therefore, a gift card is better than nothing.</p>
+</blockquote>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<p><strong>Premises</strong></p>
+<ol type="1">
+<li>A gift card is better than a postcard.</li>
+<li>A postcard is better than nothing.</li>
+</ol>
+<div class="conclusion">
+<p><strong>Conclusion</strong>, marked by ‘therefore’</p>
+<ol start="3" type="1">
+<li>A gift card is better than nothing.</li>
+</ol>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p>Contrast with the companion case: “A gift card is better than nothing. Nothing is better than a yacht. So a gift card is better than a yacht.” Same shape, absurd result — worth putting on the board by hand rather than on a slide.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="definition" class="slide level2">
+<h2>Definition</h2>
+<div class="argument">
+<p>An <strong>argument</strong> is a sequence of declarative sentences, the <strong>premises</strong>, and a declarative sentence marked as the <strong>conclusion</strong>.</p>
+</div>
+<div class="fragment">
+<p>We use <em>declarative</em> sentences to make statements, which are true or false. Contrast <em>interrogative</em> and <em>imperative</em> sentences, which ask and command.</p>
+</div>
+<div class="fragment">
+
+</div>
+<aside><div>
+<p>There is no fixed order. ‘So’, ‘thus’, ‘therefore’, ‘it follows that’ mark the conclusion wherever it appears.</p>
+</div></aside></section>
+<section id="extracting-an-argument-from-a-paragraph" class="slide level2">
+<h2>Extracting an argument from a paragraph</h2>
+<blockquote>
+<p>Time travel is impossible. For if time travel were possible, then a time traveler could change the past. Nothing, however, can change the past.</p>
+</blockquote>
+<div class="fragment">
+<p>Which sentence is the conclusion?</p>
+</div>
+<div class="fragment">
+<div class="argument">
+<ol type="1">
+<li>If time travel were possible, then a time traveler could change the past.</li>
+<li>Nothing can change the past.</li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li><span class="cardinal">Time travel is impossible.</span></li>
+</ol>
+</div>
+</div>
+<aside class="notes">
+<p>The conclusion comes <em>first</em> here, and ‘for’ marks what supports it. This is the skill they will need all term. If there is time, do Argument B from the notes on the chalkboard the same way.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section></section>
+<section>
+<section id="validity" class="title-slide slide level1 divider center">
+<h1>validity</h1>
+<p>Some arguments are <em>risk-free</em>: the truth of the premises guarantees the truth of the conclusion.</p>
+</section>
+<section id="which-of-these-are-risk-free" class="slide level2 smaller">
+<h2>Which of these are risk-free?</h2>
+<blockquote>
+<p>Whales live underwater. Few mammals live underwater. Therefore, whales are not mammals.</p>
+</blockquote>
+<blockquote>
+<p>People are now carrying umbrellas on the street. Therefore, it must be raining.</p>
+</blockquote>
+<blockquote>
+<p><em>All Things Considered</em> is a radio program. All radio programs are broadcast at least once a week. So <em>All Things Considered</em> is broadcast at least once a week.</p>
+</blockquote>
+<blockquote>
+<p>No one carries an umbrella on the street unless it is raining. Someone is now carrying an umbrella on the street. Therefore, it is raining.</p>
+</blockquote>
+<aside class="notes">
+<p>Two of the four. Take a vote on each as it appears, before saying anything. The umbrella pair is the useful contrast: same subject matter, different form.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="risk-free-because-of-a-pattern" class="slide level2">
+<h2>Risk-free because of a pattern</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<blockquote>
+<p>If there is gas in the tank, the engine will start. There is gas in the tank. So the engine will start.</p>
+</blockquote>
+<div class="fragment">
+<div class="argument">
+<ol type="1">
+<li>If <span class="math inline">\(p\)</span>, then <span class="math inline">\(q\)</span></li>
+<li><span class="math inline">\(p\)</span></li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li>Therefore, <span class="math inline">\(q\)</span></li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<blockquote>
+<p>Either the butler did it or the gardener did it. The butler did not do it. So the gardener did it.</p>
+</blockquote>
+<div class="fragment">
+<div class="argument">
+<ol type="1">
+<li><span class="math inline">\(p\)</span> or <span class="math inline">\(q\)</span></li>
+<li>Not <span class="math inline">\(p\)</span></li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li>Therefore, <span class="math inline">\(q\)</span></li>
+</ol>
+</div>
+</div>
+</div>
+</div></div>
+
+<aside><div>
+<p><span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are placeholders for English declarative sentences. The pattern never takes you from true premises to a false conclusion — whatever they stand for.</p>
+</div></aside></section>
+<section id="validity-1" class="slide level2">
+<h2>Validity</h2>
+<div class="argument">
+<p>An argument is <strong>valid</strong> if, and only if, it is an instance of a <strong>valid argument form</strong>.</p>
+</div>
+<ol type="1">
+<li class="fragment">A valid argument form has <em>no</em> instances with true premises and a false conclusion.</li>
+<li class="fragment">A valid argument form preserves truth regardless of subject matter.</li>
+</ol>
+<div class="fragment">
+
+</div>
+<aside><div>
+<p>So to show a form <strong>invalid</strong>, it is enough to produce one instance with true premises and a false conclusion.</p>
+</div></aside></section>
+<section id="one-instance-is-enough" class="slide level2 smaller">
+<h2>One instance is enough</h2>
+<div class="argument">
+<ol type="1">
+<li><span class="math inline">\(p\)</span> if, and only if, <span class="math inline">\(q\)</span></li>
+</ol>
+<div class="conclusion">
+<ol start="2" type="1">
+<li><span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span></li>
+</ol>
+</div>
+</div>
+<div class="fragment">
+<div class="argument">
+<ol type="1">
+<li>Mark Twain wrote <em>Hamlet</em> if, and only if, Samuel Clemens did.</li>
+</ol>
+<div class="conclusion">
+<ol start="2" type="1">
+<li>Mark Twain wrote <em>Hamlet</em> and Samuel Clemens did.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="fragment">
+
+<aside class="notes">
+<p>Insist on this: we did not need to survey every instance. One suffices. That asymmetry between showing validity and showing invalidity runs through the whole course.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+<aside><div>
+<p>The premise is <strong>true</strong> — Mark Twain <em>is</em> Samuel Clemens. The conclusion is <strong>false</strong> — neither wrote <em>Hamlet</em>. One such instance kills the form.</p>
+</div></aside></section>
+<section id="lets-check-it" class="slide level2" data-background-color="#fffff8">
+<h2>Let’s check it</h2>
+<iframe class="app" data-src="https://gabriel-uzquiano.github.io/prop-truth-table/#v1:eyJmb3JtdWxhcyI6WyJwIOKGlCBxIiwicCDiiKcgcSJdfQ==" title="Truth table builder, preloaded with p if and only if q, and p and q">
+</iframe>
+<div class="caption">
+<p>Truth Tables · scroll to the table and look for the row where the premise is true and the conclusion is false.</p>
+</div>
+<aside class="notes">
+<p>This is live, not a screenshot. The two formulas are already loaded. Scroll to the table and point at the row where p and q are both false: premise true, conclusion false. That single row is the countermodel we just described in English. If a student proposes a different form, type it in here and run it.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="next-time" class="slide level2">
+<h2>Next time</h2>
+<p>We look for the <strong>form</strong> of an argument, and build a language in which forms can be written down precisely.</p>
+
+<aside class="notes">
+<p>Remind them: Quiz 1 follows Problem Session 1 on Monday 8/31.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+
+
+<aside><div>
+<p>Notes for this session: <a href="https://gabriel-uzquiano.github.io/220/notes/arguments.html">gabriel-uzquiano.github.io/220/notes/arguments.html</a></p>
+</div></aside></section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1100,
+
+        height: 750,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 6.0e-2,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

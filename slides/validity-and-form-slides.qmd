@@ -1,0 +1,535 @@
+---
+title: "Validity and Form"
+subtitle: "PHIL 220. Introduction to Logic &middot; 1.2"
+author: "Gabriel Uzquiano"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    output-file: validity-and-form-slides.html
+    slide-number: c/t
+    chalkboard: true          # press B for a blank board, C to draw on a slide
+    preview-links: auto       # links open in an overlay, without leaving the deck
+    history: false
+    transition: none          # no swooping; the content should not move
+    center: false
+    width: 1100
+    height: 750
+    margin: 0.06
+    hash-type: title
+    menu:
+      side: left
+---
+
+# validity and form {.divider}
+
+Last time: some arguments are *risk-free*. Today: what makes them so.
+
+::: {.notes}
+One minute of recap. They left last time with the definition below and the two
+umbrella arguments. The job today is to make 'form' do real work — and to draw
+the line between risk-free and valid, which is the one thing most of them will
+get wrong on the quiz.
+:::
+
+## The definition
+
+::: {.argument}
+An argument is **valid** if, and only if, it is an instance of a **valid
+argument form**.
+:::
+
+. . .
+
+Formal logic will make 'valid argument form' precise. For now, two features:
+
+::: {.incremental}
+1. A valid argument form has **no** instances with true premises and a false
+   conclusion.
+2. Instances of valid argument forms preserve truth **regardless of subject
+   matter**.
+:::
+
+# risk-free is not enough {.divider}
+
+To be valid is not merely to be risk-free.
+
+::: {.notes}
+This is the hard slide of the session. Go slowly. Most students arrive thinking
+'valid' just means 'the premises couldn't be true with the conclusion false',
+and this example is the wedge.
+:::
+
+## A risk-free argument that is not valid
+
+::: {.argument}
+1. There is an elephant in the room.
+
+::: {.conclusion}
+2. There are infinitely many numbers.
+:::
+:::
+
+. . .
+
+There is no risk the premise is true and the conclusion false — the conclusion
+could not have been false.
+
+. . .
+
+::: {.aside}
+So it is risk-free. Is it valid?
+:::
+
+::: {.notes}
+Take the vote here before moving on. Most hands will say valid. Hold that in the
+room for a moment — the next slide is the correction.
+:::
+
+## Its form has terrible instances {.smaller}
+
+Let $p$ be 'there is an elephant in the room' and $q$ 'there are infinitely many
+numbers'. The form is:
+
+::: {.argument}
+1. $p$
+
+::: {.conclusion}
+2. $q$
+:::
+:::
+
+. . .
+
+Another instance of the same form:
+
+::: {.argument}
+1. Los Angeles is in Southern California.
+
+::: {.conclusion}
+2. New York is in Northern California.
+:::
+:::
+
+::: {.fragment .verdict}
+True premise, false conclusion. So the form is not valid — and the original
+argument is not an instance of a valid form, however risk-free it was.
+:::
+
+::: {.notes}
+The moral: validity is a property an argument has *through its form*. Risk-free
+is about this argument; valid is about every argument shaped like it. Write both
+words on the board and keep them there for the rest of the hour.
+:::
+
+## Refuting a form takes one instance
+
+::: {.argument}
+1. $p$ or $q$
+2. $q$
+
+::: {.conclusion}
+3. Therefore, $p$
+:::
+:::
+
+. . .
+
+::: {.argument}
+1. Charles Dickens wrote *Tom Sawyer* or Mark Twain did.
+2. Mark Twain wrote *Tom Sawyer*.
+
+::: {.conclusion}
+3. Therefore, Charles Dickens wrote *Tom Sawyer*.
+:::
+:::
+
+::: {.fragment .aside}
+Or: my office number is even or odd; it is odd; so it is even. STO 221.
+:::
+
+::: {.notes}
+Two instances of the same bad form, one literary and one about the room number
+on my door. Either one is enough. Ask them for a third.
+:::
+
+# four forms {.divider}
+
+Two that are valid, two that are not — and they look alike.
+
+## Modus ponens
+
+::: {.argument}
+1. If $p$, then $q$
+2. $p$
+
+::: {.conclusion}
+3. Therefore, $q$
+:::
+:::
+
+. . .
+
+No instance has true premises and a false conclusion. The label does not matter;
+that property does.
+
+::: {.notes}
+Do not dwell on the Latin. If someone asks, the names are traditional and I will
+use them as shorthand, but nothing turns on them.
+:::
+
+## Which of these is modus ponens?
+
+::: {.incremental}
+- If the car starts, then there's gas in the tank. There's gas in the tank.
+  Therefore, the car started.
+- If the car starts, then there's gas in the tank. The car starts. Therefore,
+  you turned the ignition.
+- If the car starts, then there's gas in the tank. The car started. Therefore,
+  there's gas in the tank.
+:::
+
+::: {.fragment .verdict}
+The third. The first affirms the *consequent*; the second has a conclusion that
+appears nowhere in the premises.
+:::
+
+## And which of these?
+
+::: {.incremental}
+- If I flip the coin, then it'll land heads. It'll land heads. Therefore, I'll
+  flip the coin.
+- If I flip the coin, then it'll land heads. I'll flip the coin. Therefore, it'll
+  land heads.
+- If the coin lands heads, then I will flip it. I'll flip the coin. Therefore,
+  it'll land heads.
+:::
+
+::: {.fragment .verdict}
+The second. In the third the conditional runs the other way — 'if heads, then I
+flip' does not let you go from flipping to heads.
+:::
+
+::: {.notes}
+The third option is the one worth time. It is a genuine modus ponens shape with
+the antecedent and consequent swapped, so it tests whether they are reading the
+conditional or pattern-matching on the words.
+:::
+
+## Affirming the consequent
+
+::: {.argument}
+1. If $p$, then $q$
+2. $q$
+
+::: {.conclusion}
+3. Therefore, $p$
+:::
+:::
+
+. . .
+
+::: {.argument}
+1. If I'm a millionaire, then I can make ends meet.
+2. I can make ends meet.
+
+::: {.conclusion}
+3. Therefore, I'm a millionaire.
+:::
+:::
+
+::: {.fragment .aside}
+Or: if I purchase a Tesla, I will own at least two cars; I will own at least two
+cars; so I will purchase a Tesla.
+:::
+
+## Let's check it {background-color="#fffff8"}
+
+<iframe class="app check" data-src="https://gabriel-uzquiano.github.io/prop-truth-table/?search=1#v1:eyJmb3JtdWxhcyI6IFsiKHAg4oaSIHEpIiwgInEiLCAicCJdfQ==" title="Counterexample search for the form: if p then q, q, therefore p"></iframe>
+
+::: {.caption}
+Premises $(p \to q)$ and $q$; conclusion $p$. The table shows only the rows where
+the conclusion is false.
+:::
+
+::: {.notes}
+Live, not a screenshot. It shows the two rows where the conclusion is false and
+highlights the one that also makes both premises true: p false, q true. That row
+*is* the millionaire — someone who makes ends meet without being a millionaire.
+The verdict line says 'Counterexample found'.
+
+Then, if you like, type modus ponens in and watch the verdict change to 'Valid'.
+:::
+
+## Modus tollens
+
+::: {.argument}
+1. If $p$, then $q$
+2. Not-$q$
+
+::: {.conclusion}
+3. Therefore, not-$p$
+:::
+:::
+
+. . .
+
+Which of these is an instance?
+
+::: {.incremental}
+- If I'm a millionaire, then I can make ends meet. I cannot make ends meet.
+  Therefore, I'm not a millionaire.
+- If I'm a millionaire, then I can make ends meet. I'm not a millionaire.
+  Therefore, I cannot make ends meet.
+:::
+
+::: {.fragment .verdict}
+The first. The second denies the *antecedent* — the form on the next slide.
+:::
+
+## Denying the antecedent
+
+::: {.argument}
+1. If $p$, then $q$
+2. Not-$p$
+
+::: {.conclusion}
+3. Therefore, not-$q$
+:::
+:::
+
+. . .
+
+::: {.argument}
+1. If whales are fish, then they live underwater.
+2. Whales are not fish.
+
+::: {.conclusion}
+3. Therefore, whales do not live underwater.
+:::
+:::
+
+::: {.fragment .aside}
+Premises both true, conclusion false. One instance is enough.
+:::
+
+::: {.notes}
+The whale example is the best one in the notes because the falsity of the
+conclusion is not a matter of opinion. The elephant-and-large-door example is
+the backup if someone wants a second.
+:::
+
+## Four forms, one tool
+
+Valid:
+
+- [If $p$ then $q$; $p$; so $q$](https://gabriel-uzquiano.github.io/prop-truth-table/?search=1#v1:eyJmb3JtdWxhcyI6IFsiKHAg4oaSIHEpIiwgInAiLCAicSJdfQ==)
+- [If $p$ then $q$; not-$q$; so not-$p$](https://gabriel-uzquiano.github.io/prop-truth-table/?search=1#v1:eyJmb3JtdWxhcyI6IFsiKHAg4oaSIHEpIiwgIsKscSIsICLCrHAiXX0=)
+
+Not valid:
+
+- [If $p$ then $q$; $q$; so $p$](https://gabriel-uzquiano.github.io/prop-truth-table/?search=1#v1:eyJmb3JtdWxhcyI6IFsiKHAg4oaSIHEpIiwgInEiLCAicCJdfQ==)
+- [If $p$ then $q$; not-$p$; so not-$q$](https://gabriel-uzquiano.github.io/prop-truth-table/?search=1#v1:eyJmb3JtdWxhcyI6IFsiKHAg4oaSIHEpIiwgIsKscCIsICLCrHEiXX0=)
+- [$p$; so $q$](https://gabriel-uzquiano.github.io/prop-truth-table/?search=1#v1:eyJmb3JtdWxhcyI6IFsicCIsICJxIl19)
+
+::: {.caption}
+Each link opens the checker in an overlay, already loaded. Press Escape to
+return to the slides.
+:::
+
+::: {.notes}
+This slide is a menu, not something to read out. Use it when a student proposes
+a form and you want to settle it on the spot. The last link is the elephant
+argument from the start of the hour.
+:::
+
+# validity in English {.divider}
+
+Enough to make partial progress on real arguments.
+
+## Is this valid? {.smaller}
+
+> Many Americans speak Tagalog. Most USC students are American. Therefore, most
+> USC students speak Tagalog.
+
+::: {.fragment .verdict}
+**No.** The premises are true and the conclusion is false, so it cannot be an
+instance of a valid form.
+:::
+
+. . .
+
+> If many Americans speak Tagalog, then some USC students do. Many Americans
+> speak Tagalog. Therefore, some USC students speak Tagalog.
+
+::: {.fragment .verdict}
+**Yes.** Modus ponens, with $p$ for 'many Americans speak Tagalog'.
+:::
+
+::: {.notes}
+Vote on each before revealing. The pair is deliberately close in subject matter
+so that only the form distinguishes them.
+:::
+
+## And these? {.smaller}
+
+> Every Tesla is an electric car. Every electric car is fuel-efficient. So every
+> Tesla is fuel-efficient.
+
+::: {.fragment .verdict}
+**Yes.** Every $A$ is $B$; every $B$ is $C$; so every $A$ is $C$.
+:::
+
+. . .
+
+> Some Teslas are fuel-efficient cars. Some fuel-efficient cars are electric
+> cars. Therefore, some Teslas are electric cars.
+
+::: {.fragment .verdict}
+**No.** Some $A$ is $B$; some $B$ is $C$; so some $A$ is $C$ — and: some whales
+are mammals; some mammals live at high altitude; so some whales live at high
+altitude.
+:::
+
+::: {.notes}
+These two are the first quantificational forms of the course, and they will come
+back in October. Note out loud that 'every' and 'some' are not among the
+connectives we are about to formalise — this is a promissory note.
+:::
+
+# soundness {.divider}
+
+Valid is not yet everything we want.
+
+## A valid argument you should not believe
+
+::: {.argument}
+1. If Bilbao is in Southern Spain, then it is closer to Sevilla than to
+   Barcelona.
+2. Bilbao is in Southern Spain.
+
+::: {.conclusion}
+3. Therefore, Bilbao is closer to Sevilla than to Barcelona.
+:::
+:::
+
+. . .
+
+Valid — but the second premise is false, and so is the conclusion.
+
+. . .
+
+::: {.argument}
+An argument is **sound** if, and only if, it is a valid argument with true
+premises.
+:::
+
+## Sound and unsound {.smaller}
+
+::: {.argument}
+1. If I know that snow is white, then snow is white.
+2. I know that snow is white.
+
+::: {.conclusion}
+3. Therefore, snow is white.
+:::
+:::
+
+::: {.fragment .verdict}
+**Sound**: valid, and the premises are true. So we can be confident in the
+conclusion.
+:::
+
+. . .
+
+::: {.argument}
+1. If I know that the world will end tomorrow, then the world will end tomorrow.
+2. I know that the world will end tomorrow.
+
+::: {.conclusion}
+3. Therefore, the world will end tomorrow.
+:::
+:::
+
+::: {.fragment .verdict}
+**Unsound**: valid, but at least one premise is false.
+:::
+
+## Monty Hall, revisited {.smaller}
+
+::: {.columns}
+::: {.column width="46%"}
+**Against switching**
+
+1. Door 1 is as likely to win as door 2.
+2. If so, there is no reason to switch.
+3. So there is no reason to switch.
+:::
+
+::: {.column width="50%"}
+**For switching**
+
+1. Door 2 is likelier to win than door 1.
+2. If so, you should switch.
+3. So you should switch.
+:::
+:::
+
+::: {.fragment .verdict}
+Both are **valid** — same form: $p$; if $p$ then $q$; so $q$. Only one is
+**sound**, and that is where the real disagreement lives.
+:::
+
+::: {.notes}
+This is the payoff of the Monty Hall discussion from last time. The argument was
+never about logic; it was about which first premise is true. Logic told us the
+disagreement had to be there and nowhere else.
+:::
+
+## How they relate
+
+::: {.incremental}
+- If an argument is sound, then it is valid.
+- If an argument is sound, then its conclusion is true.
+:::
+
+. . .
+
+But not conversely:
+
+::: {.incremental}
+- A valid argument may have false premises — and a false conclusion.
+- An argument with true premises and a true conclusion need not be valid.
+:::
+
+::: {.notes}
+The two traps on the quiz are 'if valid then sound' and 'if valid then the
+conclusion is true'. Say both out loud as false, twice.
+:::
+
+## What kills what {.smaller}
+
+::: {.incremental}
+- True premises and a false conclusion $\Rightarrow$ **not valid**.
+- A false premise $\Rightarrow$ **not sound**.
+- Every sound argument has true premises and a true conclusion.
+- No sound argument has true premises and a false conclusion.
+:::
+
+::: {.notes}
+This is the summary slide. If you are short of time, cut the Tesla pair earlier
+rather than this.
+:::
+
+## Next time
+
+We look for a **language** in which forms can be written down precisely — and
+start with the difference between using a word and mentioning it.
+
+::: {.aside}
+Notes for this session:
+[gabriel-uzquiano.github.io/220/notes/validity-and-form.html](https://gabriel-uzquiano.github.io/220/notes/validity-and-form.html)
+:::
+
+::: {.notes}
+Problem Session 1 is Monday 8/31, with Quiz 1.
+:::

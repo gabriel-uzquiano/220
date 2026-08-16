@@ -1,0 +1,306 @@
+---
+title: "Formal Languages"
+subtitle: "PHIL 220. Introduction to Logic &middot; 2.1"
+author: "Gabriel Uzquiano"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    output-file: formal-languages-slides.html
+    slide-number: c/t
+    chalkboard: true          # press B for a blank board, C to draw on a slide
+    preview-links: auto       # links open in an overlay, without leaving the deck
+    history: false
+    transition: none
+    center: false
+    width: 1100
+    height: 750
+    margin: 0.06
+    hash-type: title
+    menu:
+      side: left
+---
+
+# formal languages {.divider}
+
+We know validity is a matter of form. Now we need somewhere to *write forms
+down*.
+
+::: {.notes}
+Frame the whole unit in one sentence: the last two sessions told us that validity
+depends on form, and English is not a good place to display form. Everything
+today is preparation for that claim.
+:::
+
+# use and mention {.divider}
+
+A first lesson about being careful with words.
+
+## Two things you can talk about
+
+::: {.columns}
+::: {.column width="48%"}
+> Los Angeles has more than eighty cities in its metropolitan area.
+
+::: {.fragment .caption}
+About a **city**.
+:::
+:::
+
+::: {.column width="48%"}
+> 'Los Angeles' consists of two words.
+
+::: {.fragment .caption}
+About a **name**.
+:::
+:::
+:::
+
+. . .
+
+::: {.argument}
+Quotation marks make a word *mention* itself instead of doing its usual work.
+:::
+
+::: {.fragment .verdict}
+Los Angeles does not consist of two words. 'Los Angeles' has no cities in it.
+:::
+
+::: {.notes}
+Say the two false sentences out loud — they get a laugh, and the laugh is the
+lesson. This distinction will matter in two places later: when we say what a
+formula *is*, and when we talk about substitution in quantificational logic.
+:::
+
+## Where do the quotation marks go?
+
+Add quotation marks wherever they belong:
+
+::: {.incremental}
+1. I is a Roman numeral, and I am a philosopher.
+2. England is part of New England, but England is not part of New England.
+:::
+
+. . .
+
+::: {.verdict}
+1. **'I'** is a Roman numeral, and **I** am a philosopher.
+2. **'England'** is part of **'New England'**, but **England** is not part of
+   **New England**.
+:::
+
+::: {.notes}
+Do the second one on the board. The trick is that the first half is a claim about
+words — the string is literally contained in the longer string — and the second
+is a claim about geography. Same characters, different subject.
+:::
+
+# form and meaning {.divider}
+
+Which words does the form depend on?
+
+## The word that does the work
+
+::: {.argument}
+1. $p$ and $q$
+
+::: {.conclusion}
+2. Therefore, $q$
+:::
+:::
+
+. . .
+
+This is valid, and it is valid because of what **'and'** means. Replace 'and'
+with 'or' and it collapses:
+
+::: {.argument}
+1. It is raining or it is snowing.
+
+::: {.conclusion}
+2. Therefore, it is snowing.
+:::
+:::
+
+::: {.notes}
+The point to land: the *letters* can be replaced by anything at all, but the
+logical words cannot. A formal language is a language in which only the logical
+words are fixed.
+:::
+
+## Let's check it {background-color="#fffff8"}
+
+<iframe class="app check" data-src="https://gabriel-uzquiano.github.io/prop-truth-table/?search=1#v1:eyJmb3JtdWxhcyI6IFsiKHAg4oinIHEpIiwgInEiXX0=" title="Counterexample search for the form: p and q, therefore q"></iframe>
+
+::: {.caption}
+Premise $(p \wedge q)$; conclusion $q$. Only the rows where the conclusion is
+false are shown.
+:::
+
+::: {.notes}
+Two rows come back, and in both of them the premise is false. So there is nowhere
+for a counterexample to live, and the verdict reads 'Valid'. Contrast with the
+affirming-the-consequent search from last session, where the highlighted row was
+the counterexample.
+:::
+
+## Four connectives
+
+| | | |
+|---|---|---|
+| $\neg$ | negation | it is not the case that |
+| $\wedge$ | conjunction | and |
+| $\vee$ | disjunction | or |
+| $\to$ | the conditional | if &hellip;, then &hellip; |
+
+: {.symbols tbl-colwidths="[8,26,66]"}
+
+. . .
+
+Everything in propositional logic is built from sentence letters and these four
+symbols.
+
+::: {.notes}
+Write each symbol on the board as you say it; they need to be able to draw them,
+not just recognise them. Flag now that $\to$ is the one whose truth table will
+surprise them, and that we come back to it.
+:::
+
+## Their truth tables {background-color="#fffff8"}
+
+<iframe class="app" data-src="https://gabriel-uzquiano.github.io/prop-truth-table/#v1:eyJmb3JtdWxhcyI6IFsiwqxwIiwgIihwIOKIpyBxKSIsICIocCDiiKggcSkiLCAiKHAg4oaSIHEpIl19" title="Truth tables for the four connectives"></iframe>
+
+::: {.caption}
+Already loaded — press **Evaluate** to fill them in.
+:::
+
+::: {.notes}
+Do not press the button immediately. Ask them for the rows of $(p \vee q)$ first
+and see whether anyone gives you the exclusive reading — that sets up the syrup
+example at the end of the hour.
+:::
+
+## A form the tables settle {background-color="#fffff8"}
+
+<iframe class="app check" data-src="https://gabriel-uzquiano.github.io/prop-truth-table/?search=1#v1:eyJmb3JtdWxhcyI6IFsiKHAg4oioIHEpIiwgIsKscCIsICJxIl19" title="Counterexample search for: p or q, not p, therefore q"></iframe>
+
+::: {.caption}
+$(p \vee q)$ and $\neg p$; therefore $q$.
+:::
+
+::: {.notes}
+This is the form behind 'my office number is even or odd; it is not even; so it
+is odd'. Once the connectives have tables, questions about validity stop being
+matters of judgement.
+:::
+
+# three things to ask {.divider}
+
+Syntax, semantics, pragmatics.
+
+## Three questions about any language {.smaller}
+
+::: {.incremental}
+- **Syntax.** Which strings of symbols count as sentences? A question with a
+  precise answer and no reference to meaning.
+- **Semantics.** What do the sentences mean — and when are they true?
+- **Pragmatics.** What do speakers *convey* by uttering them on an occasion?
+:::
+
+. . .
+
+::: {.aside}
+The next session is entirely syntax. Semantics follows, and pragmatics is what we
+will keep having to set aside.
+:::
+
+::: {.notes}
+An example of the third: 'some students passed' suggests not all did, though it
+does not say so. That suggestion is pragmatic, and it is why some of our
+translations will feel slightly wrong at first.
+:::
+
+# why bother? {.divider}
+
+Two reasons, and both are about English rather than about logic.
+
+## Reason one: only the form should matter {.smaller}
+
+> Would you like syrup on your pancakes or waffles?
+
+. . .
+
+::: {.incremental}
+- 'Or' here excludes: you are being offered one or the other, not both.
+- Elsewhere it does not: 'we are hiring someone with a degree in philosophy or
+  mathematics'.
+:::
+
+. . .
+
+::: {.verdict}
+A formal language fixes one meaning per symbol. $\vee$ will be the inclusive
+one — and we will say why that is the useful choice.
+:::
+
+## Reason two: English hides structure {.smaller}
+
+::: {.argument}
+1. Everything is caused by something.
+2. Only God can cause everything.
+
+::: {.conclusion}
+3. Therefore, God causes everything.
+:::
+:::
+
+. . .
+
+'Everything is caused by something' can mean:
+
+::: {.incremental}
+- for each thing, there is something that causes it; or
+- there is one thing that causes everything.
+:::
+
+::: {.fragment .verdict}
+On the first reading the premise is plausible but the argument fails. On the
+second the argument works but the premise is what was to be proved.
+:::
+
+::: {.notes}
+This is the best argument on the syllabus for the whole enterprise. The fallacy
+is invisible in English and impossible to state in a formal language, because the
+two readings get different formulas. We will translate this one properly in
+November.
+:::
+
+## Structure with connectives too {.smaller}
+
+> The car starts if there is gas in the tank and you turn the ignition.
+
+. . .
+
+::: {.incremental}
+- $(\text{gas} \wedge \text{ignition}) \to \text{starts}$
+- $\text{gas} \wedge (\text{ignition} \to \text{starts})$
+:::
+
+::: {.fragment .verdict}
+The brackets are not decoration. English left them out; the formal language will
+not let us.
+:::
+
+::: {.notes}
+Ask which one they meant. Then point out that the second one asserts that there
+is gas in the tank, which the English sentence plainly does not.
+:::
+
+## Next time
+
+The **syntax** of propositional logic: exactly which strings count as formulas,
+and how to tell.
+
+::: {.aside}
+Notes for this session:
+[gabriel-uzquiano.github.io/220/notes/formal-languages.html](https://gabriel-uzquiano.github.io/220/notes/formal-languages.html)
+:::
