@@ -28,12 +28,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Pinned deliberately. A floating version would eventually pull a new
-      # reveal.js and shift slide layouts in the middle of the semester.
+      # Pinned deliberately, and pinned to match the Quarto bundled with
+      # RStudio on the authoring machine. A floating version would eventually
+      # pull a new reveal.js and shift slide layouts mid-semester; a version
+      # that merely differs from the local one produces churn, because every
+      # local render rewrites the committed HTML.
+      #
+      # When RStudio updates Quarto, check `quarto --version` locally and bump
+      # this to match, then re-render and eyeball the decks.
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
-          version: 1.7.32
+          version: 1.9.38
 
       - name: Render slides
         run: quarto render
