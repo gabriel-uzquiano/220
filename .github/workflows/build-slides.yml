@@ -1,0 +1,51 @@
+name: Build lecture slides
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'slides/**.qmd'
+      - 'slides/custom.scss'
+      - 'slides/_quarto.yml'
+  # Lets you force a rebuild of every deck from the Actions tab, which is what
+  # you want after editing custom.scss in a way the path filter misses, or after
+  # bumping the pinned Quarto version below.
+  workflow_dispatch:
+
+# Shared with build-notes.yml. Both workflows commit and push to main, so they
+# must not run at the same time or one of the two pushes gets rejected.
+concurrency:
+  group: publish-main
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Pinned deliberately. A floating version would eventually pull a new
+      # reveal.js and shift slide layouts in the middle of the semester.
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 1.7.32
+
+      - name: Render slides
+        run: quarto render
+        working-directory: slides
+
+      - name: Commit rendered slides
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add slides/*.html slides/site_libs
+          git diff --cached --quiet && exit 0
+          git commit -m "auto: rebuild slides from qmd"
+          # Retry once against a moved main, in case the notes workflow landed a
+          # commit while Quarto was rendering.
+          git push || (git pull --rebase && git push)

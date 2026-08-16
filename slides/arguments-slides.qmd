@@ -1,0 +1,343 @@
+---
+title: "Arguments and Validity"
+subtitle: "PHIL 220. Introduction to Logic &middot; 1.1"
+author: "Gabriel Uzquiano"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    output-file: arguments-slides.html
+    slide-number: c/t
+    chalkboard: true          # press B for a blank board, C to draw on a slide
+    preview-links: auto       # links open in an overlay, without leaving the deck
+    history: false
+    transition: none          # no swooping; the content should not move
+    center: false
+    width: 1100
+    height: 750
+    margin: 0.06
+    hash-type: title
+    menu:
+      side: left
+---
+
+# why logic? {.divider}
+
+We reason to persuade someone to accept a claim on the basis of something they
+already accept.
+
+::: {.notes}
+One minute. The point of the opening puzzles is that they are cases where you
+already reason well — the course is about making explicit what you are doing.
+:::
+
+## A coin toss
+
+> You and I toss a coin, but we have no access to the other's coin. We each
+> make a guess as to the outcome of the other's coin. We win if **at least one
+> of us** makes a correct guess. We may agree on a common strategy before the
+> coins are tossed.
+>
+> What strategy guarantees a win, no matter how the coins land?
+
+. . .
+
+Nothing about the two coins is correlated. So how can we guarantee anything?
+
+::: {.notes}
+Let them sit with it. Take a show of hands on whether a guaranteed strategy
+exists at all before revealing that it does. The illustration at
+coinflips.com.au is worth two minutes if the room is stuck.
+:::
+
+## A strategy that always wins
+
+::: {.incremental}
+- I make my guess **match** the outcome of my coin.
+- You make your guess **differ** from the outcome of your coin.
+:::
+
+. . .
+
+::: {.aside}
+Take a moment: why does this work?
+:::
+
+::: {.notes}
+Draw it on the chalkboard here — press C and sketch the two cases, MATCH and
+DIFFER. Do not put the reconstruction up until someone has said the key thing:
+the two cases are exhaustive.
+:::
+
+## Why it works
+
+Once we toss our coins, they either match or they do not.
+
+. . .
+
+If they **match**, my guess is guaranteed to succeed — your coin landed exactly
+as mine did.
+
+. . .
+
+If they **do not match**, your guess is guaranteed to succeed — your coin
+landed differently from mine.
+
+. . .
+
+Either way, one of our guesses succeeds, and we win.
+
+## The same case, made explicit {.smaller}
+
+::: {.argument}
+::: {.incremental}
+1. Either the outcomes of our tosses match or they do not.
+2. If they match, then since I guess the outcome I observed in my coin, I am
+   guaranteed to succeed.
+3. If I succeed, then at least one of us does, and we win.
+4. If they do not match, then since you guess a different outcome from the one
+   you observed, you are guaranteed to succeed.
+5. If you succeed, then at least one of us does, and we win.
+:::
+
+::: {.conclusion .fragment}
+6. So at least one of us succeeds, and we win the game.
+:::
+:::
+
+::: {.notes}
+This is the slide the whole opening builds to. Reveal one premise at a time and
+leave them all up: the argument has to be visible *as a whole* for the last step
+to land. Ask before revealing 6: what is still missing? (Nothing — that is the
+point.)
+:::
+
+# arguments {.divider}
+
+From a body of statements — the **premises** — to a statement they are meant to
+support — the **conclusion**.
+
+## Premises and conclusion
+
+::: {.columns}
+::: {.column width="46%"}
+> A gift card is better than a postcard. A postcard is better than nothing.
+> Therefore, a gift card is better than nothing.
+:::
+
+::: {.column width="50%"}
+::: {.fragment}
+**Premises**
+
+1. A gift card is better than a postcard.
+2. A postcard is better than nothing.
+
+::: {.conclusion}
+**Conclusion**, marked by 'therefore'
+
+3. A gift card is better than nothing.
+:::
+:::
+:::
+:::
+
+::: {.notes}
+Contrast with the companion case: "A gift card is better than nothing. Nothing
+is better than a yacht. So a gift card is better than a yacht." Same shape,
+absurd result — worth putting on the board by hand rather than on a slide.
+:::
+
+## Definition
+
+::: {.argument}
+An **argument** is a sequence of declarative sentences, the **premises**, and a
+declarative sentence marked as the **conclusion**.
+:::
+
+. . .
+
+We use *declarative* sentences to make statements, which are true or false.
+Contrast *interrogative* and *imperative* sentences, which ask and command.
+
+. . .
+
+::: {.aside}
+There is no fixed order. 'So', 'thus', 'therefore', 'it follows that' mark the
+conclusion wherever it appears.
+:::
+
+## Extracting an argument from a paragraph
+
+> Time travel is impossible. For if time travel were possible, then a time
+> traveler could change the past. Nothing, however, can change the past.
+
+. . .
+
+Which sentence is the conclusion?
+
+. . .
+
+::: {.argument}
+1. If time travel were possible, then a time traveler could change the past.
+2. Nothing can change the past.
+
+::: {.conclusion}
+3. [Time travel is impossible.]{.cardinal}
+:::
+:::
+
+::: {.notes}
+The conclusion comes *first* here, and 'for' marks what supports it. This is the
+skill they will need all term. If there is time, do Argument B from the notes on
+the chalkboard the same way.
+:::
+
+# validity {.divider}
+
+Some arguments are *risk-free*: the truth of the premises guarantees the truth
+of the conclusion.
+
+## Which of these are risk-free? {.smaller}
+
+::: {.incremental}
+> Whales live underwater. Few mammals live underwater. Therefore, whales are not
+> mammals.
+
+> People are now carrying umbrellas on the street. Therefore, it must be
+> raining.
+
+> *All Things Considered* is a radio program. All radio programs are broadcast
+> at least once a week. So *All Things Considered* is broadcast at least once a
+> week.
+
+> No one carries an umbrella on the street unless it is raining. Someone is now
+> carrying an umbrella on the street. Therefore, it is raining.
+:::
+
+::: {.notes}
+Two of the four. Take a vote on each as it appears, before saying anything.
+The umbrella pair is the useful contrast: same subject matter, different form.
+:::
+
+## Risk-free because of a pattern
+
+::: {.columns}
+::: {.column width="50%"}
+> If there is gas in the tank, the engine will start. There is gas in the tank.
+> So the engine will start.
+
+::: {.fragment}
+::: {.argument}
+1. If $p$, then $q$
+2. $p$
+
+::: {.conclusion}
+3. Therefore, $q$
+:::
+:::
+:::
+:::
+
+::: {.column width="50%"}
+> Either the butler did it or the gardener did it. The butler did not do it. So
+> the gardener did it.
+
+::: {.fragment}
+::: {.argument}
+1. $p$ or $q$
+2. Not $p$
+
+::: {.conclusion}
+3. Therefore, $q$
+:::
+:::
+:::
+:::
+:::
+
+::: {.fragment .aside}
+$p$ and $q$ are placeholders for English declarative sentences. The pattern never
+takes you from true premises to a false conclusion — whatever they stand for.
+:::
+
+## Validity
+
+::: {.argument}
+An argument is **valid** if, and only if, it is an instance of a **valid
+argument form**.
+:::
+
+::: {.incremental}
+1. A valid argument form has *no* instances with true premises and a false
+   conclusion.
+2. A valid argument form preserves truth regardless of subject matter.
+:::
+
+. . .
+
+::: {.aside}
+So to show a form **invalid**, it is enough to produce one instance with true
+premises and a false conclusion.
+:::
+
+## One instance is enough {.smaller}
+
+::: {.argument}
+1. $p$ if, and only if, $q$
+
+::: {.conclusion}
+2. $p$ and $q$
+:::
+:::
+
+. . .
+
+::: {.argument}
+1. Mark Twain wrote *Hamlet* if, and only if, Samuel Clemens did.
+
+::: {.conclusion}
+2. Mark Twain wrote *Hamlet* and Samuel Clemens did.
+:::
+:::
+
+. . .
+
+::: {.aside}
+The premise is **true** — Mark Twain *is* Samuel Clemens. The conclusion is
+**false** — neither wrote *Hamlet*. One such instance kills the form.
+:::
+
+::: {.notes}
+Insist on this: we did not need to survey every instance. One suffices. That
+asymmetry between showing validity and showing invalidity runs through the
+whole course.
+:::
+
+## Let's check it {background-color="#fffff8"}
+
+<iframe class="app" data-src="https://gabriel-uzquiano.github.io/prop-truth-table/#v1:eyJmb3JtdWxhcyI6WyJwIOKGlCBxIiwicCDiiKcgcSJdfQ==" title="Truth table builder, preloaded with p if and only if q, and p and q"></iframe>
+
+::: {.caption}
+Truth Tables &middot; scroll to the table and look for the row where the premise
+is true and the conclusion is false.
+:::
+
+::: {.notes}
+This is live, not a screenshot. The two formulas are already loaded. Scroll to
+the table and point at the row where p and q are both false: premise true,
+conclusion false. That single row is the countermodel we just described in
+English. If a student proposes a different form, type it in here and run it.
+:::
+
+## Next time
+
+We look for the **form** of an argument, and build a language in which forms can
+be written down precisely.
+
+::: {.aside}
+Notes for this session:
+[gabriel-uzquiano.github.io/220/notes/arguments.html](https://gabriel-uzquiano.github.io/220/notes/arguments.html)
+:::
+
+::: {.notes}
+Remind them: Quiz 1 follows Problem Session 1 on Monday 8/31.
+:::

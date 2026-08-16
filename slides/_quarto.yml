@@ -1,0 +1,19 @@
+# Renders every deck in this directory in place, so a deck lives at
+#   gabriel-uzquiano.github.io/220/slides/<slug>-slides.html
+#
+# The project type is `website` for one reason: it hoists the reveal.js
+# runtime into a single shared site_libs/ directory. A plain `default`
+# project emits a private 8 MB copy of reveal per deck, which across the
+# nineteen sessions would be ~155 MB of duplicated assets in git.
+#
+# index.html is hand-written and is left alone by the render.
+
+project:
+  type: website
+  output-dir: .
+  render:
+    - "*.qmd"
+
+website:
+  title: "PHIL 220 slides"
+  search: false
