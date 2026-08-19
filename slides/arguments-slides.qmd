@@ -1,6 +1,6 @@
 ---
-title: "Arguments and Validity"
-subtitle: "PHIL 220. Introduction to Logic &middot; 1.1"
+title: "arguments and validity"
+subtitle: "PHIL 220. Introduction to Logic"
 author: "Gabriel Uzquiano"
 format:
   revealjs:
@@ -26,22 +26,80 @@ We reason to persuade someone to accept a claim on the basis of something they
 already accept.
 
 ::: {.notes}
-One minute. The point of the opening puzzles is that they are cases where you
-already reason well — the course is about making explicit what you are doing.
+One minute. The point of the puzzle is to provide some illustration of how we reason effectively in certain circumstances. We want to make explicit what we do when we reason well.
 :::
 
-## A coin toss
+## two coin tosses
 
-> You and I toss a coin, but we have no access to the other's coin. We each
-> make a guess as to the outcome of the other's coin. We win if **at least one
-> of us** makes a correct guess. We may agree on a common strategy before the
-> coins are tossed.
+> You and I toss a coin. We learn the outcome of our coin toss but we have no access to the 
+> other coin. We each make a guess as to the outcome of *the other* coin toss. We win 
+> if *at least one of us* makes guesses correctly the outcome of the other coin toss. 
+> We are allowed to agree on a common strategy even before the coins are tossed.
 >
 > What strategy guarantees a win, no matter how the coins land?
 
 . . .
 
-Nothing about the two coins is correlated. So how can we guarantee anything?
+The coin tosses are independent from each other. How can we make one of us guesses correctly the outcome of the *other* coin toss?
+
+
+```{=html}
+<div class="coin-flip-wrap">
+  <div class="coin" id="coin1" onclick="flipCoin('coin1')">
+    <div class="coin-inner">
+      <div class="coin-face heads">H</div>
+      <div class="coin-face tails">T</div>
+    </div>
+  </div>
+  <div class="coin" id="coin2" onclick="flipCoin('coin2')">
+    <div class="coin-inner">
+      <div class="coin-face heads">H</div>
+      <div class="coin-face tails">T</div>
+    </div>
+  </div>
+</div>
+
+<button onclick="flipCoin('coin1'); flipCoin('coin2')">Flip Both</button>
+
+<style>
+.coin-flip-wrap { display: flex; gap: 40px; justify-content: center; margin: 30px 0; font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif; }
+.coin { width: 100px; height: 100px; perspective: 600px; cursor: pointer; }
+.coin-inner {
+  width: 100%; height: 100%; position: relative;
+  transform-style: preserve-3d; transition: transform 0.6s ease-out;
+}
+.coin.show-tails .coin-inner { transform: rotateY(180deg); }
+.coin.flipping .coin-inner { transform: rotateY(1440deg); transition: transform 0.6s ease-in; }
+.coin-face {
+  position: absolute; width: 100%; height: 100%; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4em; font-weight: 400; backface-visibility: hidden;
+  border: 3px solid #7a003c; background: #fffff8; color: #7a003c;
+}
+.coin-face.tails { transform: rotateY(180deg); border-color: #999; background: #f5f5f0; color: #666; }
+.coin-flip-wrap button, .coin-flip-wrap + button {
+  font-family: inherit; background: #fffff8; border: 1px solid #d8ccd2;
+  color: #7a003c; padding: 0.3em 0.9em; border-radius: 3px; cursor: pointer;
+}
+</style>
+
+<script>
+function flipCoin(id) {
+  const coin = document.getElementById(id);
+  const result = Math.random() < 0.5 ? 'heads' : 'tails';
+  coin.classList.remove('show-heads', 'show-tails', 'flipping');
+  void coin.offsetWidth; // restart animation
+  coin.classList.add('flipping');
+  setTimeout(() => {
+    coin.classList.remove('flipping');
+    coin.classList.add(result === 'heads' ? 'show-heads' : 'show-tails');
+  }, 600);
+}
+</script>
+```
+
+
+
 
 ::: {.notes}
 Let them sit with it. Take a show of hands on whether a guaranteed strategy
@@ -49,18 +107,40 @@ exists at all before revealing that it does. The illustration at
 coinflips.com.au is worth two minutes if the room is stuck.
 :::
 
-## A strategy that always wins
+## one strategy is guaranteed to win
 
 ::: {.incremental}
-- I make my guess **match** the outcome of my coin.
-- You make your guess **differ** from the outcome of your coin.
+- I make **my guess** **match** the outcome of **my** coin.
+- You make **your guess** **differ** from the outcome of **your** coin.
 :::
 
 . . .
 
-::: {.aside}
-Take a moment: why does this work?
-:::
+```{=html}
+<div class="coin-flip-wrap">
+  <div class="coin" id="coin1-s2" onclick="flipCoin('coin1-s2')">
+    <div class="coin-inner">
+      <div class="coin-face heads">H</div>
+      <div class="coin-face tails">T</div>
+    </div>
+  </div>
+  <div class="coin" id="coin2-s2" onclick="flipCoin('coin2-s2')">
+    <div class="coin-inner">
+      <div class="coin-face heads">H</div>
+      <div class="coin-face tails">T</div>
+    </div>
+  </div>
+</div>
+
+<button onclick="flipCoin('coin1-s2'); flipCoin('coin2-s2')">Flip Both</button>
+```
+
+. . .
+
+
+Take a moment: why does the strategy work?
+
+
 
 ::: {.notes}
 Draw it on the chalkboard here — press C and sketch the two cases, MATCH and
@@ -68,25 +148,27 @@ DIFFER. Do not put the reconstruction up until someone has said the key thing:
 the two cases are exhaustive.
 :::
 
-## Why it works
+## why it works
 
-Once we toss our coins, they either match or they do not.
-
-. . .
-
-If they **match**, my guess is guaranteed to succeed — your coin landed exactly
-as mine did.
+Once the two coins are tossed, they either match or they do not.
 
 . . .
 
-If they **do not match**, your guess is guaranteed to succeed — your coin
-landed differently from mine.
+If they **match**, **my guess** is guaranteed to succeed: 
+
+- your coin landed exactly as mine did.
 
 . . .
 
-Either way, one of our guesses succeeds, and we win.
+If they **do not match**, **your guess** is guaranteed to succeed:
 
-## The same case, made explicit {.smaller}
+- your coin landed differently from mine.
+
+. . .
+
+Either way, one of our guesses will succeed, and we win.
+
+## The same case, made explicit
 
 ::: {.argument}
 ::: {.incremental}
@@ -111,12 +193,13 @@ to land. Ask before revealing 6: what is still missing? (Nothing — that is the
 point.)
 :::
 
+
 # arguments {.divider}
 
 From a body of statements — the **premises** — to a statement they are meant to
 support — the **conclusion**.
 
-## Premises and conclusion
+## premises and conclusion
 
 ::: {.columns}
 ::: {.column width="46%"}
@@ -126,13 +209,13 @@ support — the **conclusion**.
 
 ::: {.column width="50%"}
 ::: {.fragment}
-**Premises**
+**premises**
 
 1. A gift card is better than a postcard.
 2. A postcard is better than nothing.
 
 ::: {.conclusion}
-**Conclusion**, marked by 'therefore'
+**conclusion**, marked by 'therefore'
 
 3. A gift card is better than nothing.
 :::
@@ -146,7 +229,37 @@ is better than a yacht. So a gift card is better than a yacht." Same shape,
 absurd result — worth putting on the board by hand rather than on a slide.
 :::
 
-## Definition
+## the coin toss argument
+
+::: {.columns}
+::: {.column width="46%"}
+> Either the outcomes of our tosses match or they do not. If they match, I'm guaranteed to succeed. If they do not, you are guaranteed to succeed.
+> Either way, at least one of us is guaranteed to succeed.
+:::
+
+::: {.column width="50%"}
+::: {.fragment}
+**premises**
+
+1. Either the outcomes of our tosses match or they do not.
+2. If they match, I'm guaranteed to succeed.
+3. If they do not, you are guaranteed to succeed.
+
+::: {.conclusion}
+**conclusion**, marked by 'so'
+
+4. At least one of us is guaranteed to succeed.
+:::
+:::
+:::
+:::
+
+::: {.notes}
+Connect explicitly back to the previous slide: the 'gift card' example had two premises; here we have a three-premise argument.
+:::
+
+
+## definition
 
 ::: {.argument}
 An **argument** is a sequence of declarative sentences, the **premises**, and a
@@ -155,17 +268,92 @@ declarative sentence marked as the **conclusion**.
 
 . . .
 
+
+There is no fixed order. 'So', 'thus', 'therefore', 'it follows that' mark the
+conclusion wherever it appears.
+
+. . .
+
 We use *declarative* sentences to make statements, which are true or false.
 Contrast *interrogative* and *imperative* sentences, which ask and command.
 
 . . .
 
-::: {.aside}
-There is no fixed order. 'So', 'thus', 'therefore', 'it follows that' mark the
-conclusion wherever it appears.
+
+
+## three types of sentence
+
+::: {.columns}
+
+::: {.column width="32%"}
+**declarative** (statements)
+
+::: {.sentence-type .declarative}
+It is raining outside.
 :::
 
-## Extracting an argument from a paragraph
+::: {.sentence-type .declarative}
+No one can change the past.
+:::
+
+::: {.fragment}
+::: {.sentence-verdict .true}
+✓ true or false
+:::
+:::
+:::
+
+::: {.column width="32%"}
+**interrogative** (questions)
+
+::: {.sentence-type .interrogative}
+Is it raining outside?
+:::
+
+::: {.sentence-type .interrogative}
+Can anyone change the past?
+:::
+
+::: {.fragment}
+::: {.sentence-verdict .neither}
+✗ neither true nor false
+:::
+:::
+:::
+
+::: {.column width="32%"}
+**imperative** (commands)
+
+::: {.sentence-type .imperative}
+Bring an umbrella!
+:::
+
+::: {.sentence-type .imperative}
+Do not attempt to change the past.
+:::
+
+::: {.fragment}
+::: {.sentence-verdict .neither}
+✗ neither true nor false
+:::
+:::
+:::
+
+:::
+
+. . .
+
+Only declarative sentences can serve as **premises** or **conclusion** in an
+argument.
+
+::: {.notes}
+One beat per column — reveal the verdict row last so students predict it first.
+The rain / past examples echo what they have already seen, which makes the
+contrast land faster than fresh examples would.
+:::
+
+
+## how to extract an argument from a paragraph
 
 > Time travel is impossible. For if time travel were possible, then a time
 > traveler could change the past. Nothing, however, can change the past.
@@ -185,40 +373,78 @@ Which sentence is the conclusion?
 :::
 :::
 
+. . .
+
+Notice that the conclusion is the very first sentence. The last two sentences, marked by 'for', are premises offered in support of the conclusion.
+
+
 ::: {.notes}
 The conclusion comes *first* here, and 'for' marks what supports it. This is the
-skill they will need all term. If there is time, do Argument B from the notes on
-the chalkboard the same way.
+skill they will need all term.
 :::
+
+
+## how to extract an argument from a paragraph
+
+> If I speak both English and Spanish, then I'm bilingual. Therefore, I'm
+> bilingual. For after all, I speak both English and Spanish.
+
+. . .
+
+Which sentence is the conclusion?
+
+. . .
+
+::: {.argument}
+1. If I speak both English and Spanish, then I'm bilingual.
+2. I speak both English and Spanish.
+
+::: {.conclusion}
+3. [I'm bilingual.]{.cardinal}
+:::
+:::
+
+. . .
+
+Notice that the conclusion, marked by 'therefore', is the second sentence. The last sentence is a premise that supports it, not a further conclusion.
+
+::: {.notes}
+The conclusion appears in the *middle* here, marked by 'therefore'. The last
+sentence ('for after all') is a premise that supports it, not a further
+conclusion. Contrast with the time-travel example where the conclusion came
+first — the point is that position never determines the role.
+:::
+
 
 # validity {.divider}
 
-Some arguments are *risk-free*: the truth of the premises guarantees the truth
-of the conclusion.
+Some arguments seem *risk-free* in that the truth of the premises is sufficient to guarantee the truth of the conclusion.
 
-## Which of these are risk-free? {.smaller}
+## which of these are risk-free? 
 
-::: {.incremental}
+::: {.fragment}
 > Whales live underwater. Few mammals live underwater. Therefore, whales are not
 > mammals.
+:::
 
+::: {.fragment}
 > People are now carrying umbrellas on the street. Therefore, it must be
 > raining.
+:::
 
+::: {.fragment}
 > *All Things Considered* is a radio program. All radio programs are broadcast
 > at least once a week. So *All Things Considered* is broadcast at least once a
 > week.
+:::
 
+::: {.fragment}
 > No one carries an umbrella on the street unless it is raining. Someone is now
 > carrying an umbrella on the street. Therefore, it is raining.
 :::
 
-::: {.notes}
-Two of the four. Take a vote on each as it appears, before saying anything.
-The umbrella pair is the useful contrast: same subject matter, different form.
-:::
+## risk-free because of a pattern
 
-## Risk-free because of a pattern
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -253,36 +479,44 @@ The umbrella pair is the useful contrast: same subject matter, different form.
 :::
 :::
 :::
-
-::: {.fragment .aside}
-$p$ and $q$ are placeholders for English declarative sentences. The pattern never
-takes you from true premises to a false conclusion — whatever they stand for.
+::: {.fragment}
+We use $p$ and $q$ as placeholders for English declarative sentences. Notice that the pattern never
+takes you from true premises to a false conclusion, no matter what $p$ and $q$ may stand for.
 :::
 
-## Validity
+
+## validity
 
 ::: {.argument}
 An argument is **valid** if, and only if, it is an instance of a **valid
 argument form**.
 :::
 
+. . .
+
+What is a **valid argument form**, you ask?
+
+. . .
+
+The course will develop a toolkit designed to answer this question. In the meantime, note that ...
+
+
 ::: {.incremental}
-1. A valid argument form has *no* instances with true premises and a false
+1. A **valid argument form** has *no* instances with true premises and a false
    conclusion.
 2. A valid argument form preserves truth regardless of subject matter.
 :::
 
 . . .
 
-::: {.aside}
-So to show a form **invalid**, it is enough to produce one instance with true
+So to show that an argument form is **invalid**, it suffices to produce one instance with true
 premises and a false conclusion.
-:::
 
-## One instance is enough {.smaller}
+
+## one instance suffices
 
 ::: {.argument}
-1. $p$ if, and only if, $q$
+1. $p$ or $q$
 
 ::: {.conclusion}
 2. $p$ and $q$
@@ -292,50 +526,47 @@ premises and a false conclusion.
 . . .
 
 ::: {.argument}
-1. Mark Twain wrote *Hamlet* if, and only if, Samuel Clemens did.
+1. William Shakespeare wrote *Hamlet* or Mark Twain wrote *Hamlet*.
 
 ::: {.conclusion}
-2. Mark Twain wrote *Hamlet* and Samuel Clemens did.
+2. William Shakespeare wrote *Hamlet* and Mark Twain wrote *Hamlet*.
 :::
 :::
 
 . . .
 
-::: {.aside}
-The premise is **true** — Mark Twain *is* Samuel Clemens. The conclusion is
-**false** — neither wrote *Hamlet*. One such instance kills the form.
+::: {.incremental}
+1. The premise is **true**, since William Shakespeare wrote *Hamlet*. 
+
+2. The conclusion is **false**, since Mark Twain did *not* write *Hamlet*. 
 :::
+
+. . .
+
+One such instance suffices to rule out the validity of the argument form.
+
 
 ::: {.notes}
 Insist on this: we did not need to survey every instance. One suffices. That
-asymmetry between showing validity and showing invalidity runs through the
-whole course.
+asymmetry between the justification of validity and and that of invalidity will play
+a role throughout the course.
 :::
 
-## Let's check it {background-color="#fffff8"}
+## truth tables {background-color="#fffff8"}
 
-<iframe class="app" data-src="https://gabriel-uzquiano.github.io/prop-truth-table/#v1:eyJmb3JtdWxhcyI6WyJwIOKGlCBxIiwicCDiiKcgcSJdfQ==" title="Truth table builder, preloaded with p if and only if q, and p and q"></iframe>
+<iframe class="app" data-src="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=validity#v1:eyJmb3JtdWxhcyI6WyJwIOKIqCBxIiwicCDiiKcgcSJdfQ==" title="Truth table builder in validity mode, preloaded with p or q, and p and q"></iframe>
 
 ::: {.caption}
-Truth Tables &middot; scroll to the table and look for the row where the premise
+Scroll down to *Check* and click on *Evaluate*. Look for the rows where the premise
 is true and the conclusion is false.
-:::
-
-::: {.notes}
-This is live, not a screenshot. The two formulas are already loaded. Scroll to
-the table and point at the row where p and q are both false: premise true,
-conclusion false. That single row is the countermodel we just described in
-English. If a student proposes a different form, type it in here and run it.
 :::
 
 ## Next time
 
-We look for the **form** of an argument, and build a language in which forms can
-be written down precisely.
+We will look for the **form** of an argument, and we will build a language in which a wide family argument forms can be written down precisely.
 
 ::: {.aside}
-Notes for this session:
-[gabriel-uzquiano.github.io/220/notes/arguments.html](https://gabriel-uzquiano.github.io/220/notes/arguments.html)
+The slides cover material from [Chapter 1](https://gabriel-uzquiano.github.io/logic/reason.html#reason) of [Introduction to Logic](https://gabriel-uzquiano.github.io/logic/).
 :::
 
 ::: {.notes}
