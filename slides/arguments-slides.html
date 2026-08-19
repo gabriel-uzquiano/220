@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.9.38">
 
   <meta name="author" content="Gabriel Uzquiano">
-  <title>PHIL 220 slides – Arguments and Validity</title>
+  <title>PHIL 220 slides – arguments and validity</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -132,8 +132,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Arguments and Validity</h1>
-  <p class="subtitle">PHIL 220. Introduction to Logic · 1.1</p>
+  <h1 class="title">arguments and validity</h1>
+  <p class="subtitle">PHIL 220. Introduction to Logic</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -149,7 +149,7 @@ Gabriel Uzquiano
 <h1>why logic?</h1>
 <p>We reason to persuade someone to accept a claim on the basis of something they already accept.</p>
 <aside class="notes">
-<p>One minute. The point of the opening puzzles is that they are cases where you already reason well — the course is about making explicit what you are doing.</p>
+<p>One minute. The point of the puzzle is to provide some illustration of how we reason effectively in certain circumstances. We want to make explicit what we do when we reason well.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -162,14 +162,66 @@ Gabriel Uzquiano
           display:block!important;
       }</style></aside>
 </section>
-<section id="a-coin-toss" class="slide level2">
-<h2>A coin toss</h2>
+<section id="two-coin-tosses" class="slide level2">
+<h2>two coin tosses</h2>
 <blockquote>
-<p>You and I toss a coin, but we have no access to the other’s coin. We each make a guess as to the outcome of the other’s coin. We win if <strong>at least one of us</strong> makes a correct guess. We may agree on a common strategy before the coins are tossed.</p>
+<p>You and I toss a coin. We learn the outcome of our coin toss but we have no access to the other coin. We each make a guess as to the outcome of <em>the other</em> coin toss. We win if <em>at least one of us</em> makes guesses correctly the outcome of the other coin toss. We are allowed to agree on a common strategy even before the coins are tossed.</p>
 <p>What strategy guarantees a win, no matter how the coins land?</p>
 </blockquote>
 <div class="fragment">
-<p>Nothing about the two coins is correlated. So how can we guarantee anything?</p>
+<p>The coin tosses are independent from each other. How can we make one of us guesses correctly the outcome of the <em>other</em> coin toss?</p>
+<div class="coin-flip-wrap">
+  <div class="coin" id="coin1" onclick="flipCoin('coin1')">
+    <div class="coin-inner">
+      <div class="coin-face heads">H</div>
+      <div class="coin-face tails">T</div>
+    </div>
+  </div>
+  <div class="coin" id="coin2" onclick="flipCoin('coin2')">
+    <div class="coin-inner">
+      <div class="coin-face heads">H</div>
+      <div class="coin-face tails">T</div>
+    </div>
+  </div>
+</div>
+
+<button onclick="flipCoin('coin1'); flipCoin('coin2')">Flip Both</button>
+
+<style>
+.coin-flip-wrap { display: flex; gap: 40px; justify-content: center; margin: 30px 0; font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif; }
+.coin { width: 100px; height: 100px; perspective: 600px; cursor: pointer; }
+.coin-inner {
+  width: 100%; height: 100%; position: relative;
+  transform-style: preserve-3d; transition: transform 0.6s ease-out;
+}
+.coin.show-tails .coin-inner { transform: rotateY(180deg); }
+.coin.flipping .coin-inner { transform: rotateY(1440deg); transition: transform 0.6s ease-in; }
+.coin-face {
+  position: absolute; width: 100%; height: 100%; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4em; font-weight: 400; backface-visibility: hidden;
+  border: 3px solid #7a003c; background: #fffff8; color: #7a003c;
+}
+.coin-face.tails { transform: rotateY(180deg); border-color: #999; background: #f5f5f0; color: #666; }
+.coin-flip-wrap button, .coin-flip-wrap + button {
+  font-family: inherit; background: #fffff8; border: 1px solid #d8ccd2;
+  color: #7a003c; padding: 0.3em 0.9em; border-radius: 3px; cursor: pointer;
+}
+</style>
+
+<script>
+function flipCoin(id) {
+  const coin = document.getElementById(id);
+  const result = Math.random() < 0.5 ? 'heads' : 'tails';
+  coin.classList.remove('show-heads', 'show-tails', 'flipping');
+  void coin.offsetWidth; // restart animation
+  coin.classList.add('flipping');
+  setTimeout(() => {
+    coin.classList.remove('flipping');
+    coin.classList.add(result === 'heads' ? 'show-heads' : 'show-tails');
+  }, 600);
+}
+</script>
 <aside class="notes">
 <p>Let them sit with it. Take a show of hands on whether a guaranteed strategy exists at all before revealing that it does. The illustration at coinflips.com.au is worth two minutes if the room is stuck.</p>
 <style type="text/css">
@@ -185,14 +237,32 @@ Gabriel Uzquiano
       }</style></aside>
 </div>
 </section>
-<section id="a-strategy-that-always-wins" class="slide level2">
-<h2>A strategy that always wins</h2>
+<section id="one-strategy-is-guaranteed-to-win" class="slide level2">
+<h2>one strategy is guaranteed to win</h2>
 <ul>
-<li class="fragment">I make my guess <strong>match</strong> the outcome of my coin.</li>
-<li class="fragment">You make your guess <strong>differ</strong> from the outcome of your coin.</li>
+<li class="fragment">I make <strong>my guess</strong> <strong>match</strong> the outcome of <strong>my</strong> coin.</li>
+<li class="fragment">You make <strong>your guess</strong> <strong>differ</strong> from the outcome of <strong>your</strong> coin.</li>
 </ul>
 <div class="fragment">
+<div class="coin-flip-wrap">
+  <div class="coin" id="coin1-s2" onclick="flipCoin('coin1-s2')">
+    <div class="coin-inner">
+      <div class="coin-face heads">H</div>
+      <div class="coin-face tails">T</div>
+    </div>
+  </div>
+  <div class="coin" id="coin2-s2" onclick="flipCoin('coin2-s2')">
+    <div class="coin-inner">
+      <div class="coin-face heads">H</div>
+      <div class="coin-face tails">T</div>
+    </div>
+  </div>
+</div>
 
+<button onclick="flipCoin('coin1-s2'); flipCoin('coin2-s2')">Flip Both</button>
+</div>
+<div class="fragment">
+<p>Take a moment: why does the strategy work?</p>
 <aside class="notes">
 <p>Draw it on the chalkboard here — press C and sketch the two cases, MATCH and DIFFER. Do not put the reconstruction up until someone has said the key thing: the two cases are exhaustive.</p>
 <style type="text/css">
@@ -207,23 +277,27 @@ Gabriel Uzquiano
           display:block!important;
       }</style></aside>
 </div>
-<aside><div>
-<p>Take a moment: why does this work?</p>
-</div></aside></section>
+</section>
 <section id="why-it-works" class="slide level2">
-<h2>Why it works</h2>
-<p>Once we toss our coins, they either match or they do not.</p>
+<h2>why it works</h2>
+<p>Once the two coins are tossed, they either match or they do not.</p>
 <div class="fragment">
-<p>If they <strong>match</strong>, my guess is guaranteed to succeed — your coin landed exactly as mine did.</p>
+<p>If they <strong>match</strong>, <strong>my guess</strong> is guaranteed to succeed:</p>
+<ul>
+<li>your coin landed exactly as mine did.</li>
+</ul>
 </div>
 <div class="fragment">
-<p>If they <strong>do not match</strong>, your guess is guaranteed to succeed — your coin landed differently from mine.</p>
+<p>If they <strong>do not match</strong>, <strong>your guess</strong> is guaranteed to succeed:</p>
+<ul>
+<li>your coin landed differently from mine.</li>
+</ul>
 </div>
 <div class="fragment">
-<p>Either way, one of our guesses succeeds, and we win.</p>
+<p>Either way, one of our guesses will succeed, and we win.</p>
 </div>
 </section>
-<section id="the-same-case-made-explicit" class="slide level2 smaller">
+<section id="the-same-case-made-explicit" class="slide level2">
 <h2>The same case, made explicit</h2>
 <div class="argument">
 <ol type="1">
@@ -259,7 +333,7 @@ Gabriel Uzquiano
 <p>From a body of statements — the <strong>premises</strong> — to a statement they are meant to support — the <strong>conclusion</strong>.</p>
 </section>
 <section id="premises-and-conclusion" class="slide level2">
-<h2>Premises and conclusion</h2>
+<h2>premises and conclusion</h2>
 <div class="columns">
 <div class="column" style="width:46%;">
 <blockquote>
@@ -267,13 +341,13 @@ Gabriel Uzquiano
 </blockquote>
 </div><div class="column" style="width:50%;">
 <div class="fragment">
-<p><strong>Premises</strong></p>
+<p><strong>premises</strong></p>
 <ol type="1">
 <li>A gift card is better than a postcard.</li>
 <li>A postcard is better than nothing.</li>
 </ol>
 <div class="conclusion">
-<p><strong>Conclusion</strong>, marked by ‘therefore’</p>
+<p><strong>conclusion</strong>, marked by ‘therefore’</p>
 <ol start="3" type="1">
 <li>A gift card is better than nothing.</li>
 </ol>
@@ -294,22 +368,117 @@ Gabriel Uzquiano
           display:block!important;
       }</style></aside>
 </section>
+<section id="the-coin-toss-argument" class="slide level2">
+<h2>the coin toss argument</h2>
+<div class="columns">
+<div class="column" style="width:46%;">
+<blockquote>
+<p>Either the outcomes of our tosses match or they do not. If they match, I’m guaranteed to succeed. If they do not, you are guaranteed to succeed. Either way, at least one of us is guaranteed to succeed.</p>
+</blockquote>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<p><strong>premises</strong></p>
+<ol type="1">
+<li>Either the outcomes of our tosses match or they do not.</li>
+<li>If they match, I’m guaranteed to succeed.</li>
+<li>If they do not, you are guaranteed to succeed.</li>
+</ol>
+<div class="conclusion">
+<p><strong>conclusion</strong>, marked by ‘so’</p>
+<ol start="4" type="1">
+<li>At least one of us is guaranteed to succeed.</li>
+</ol>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p>Connect explicitly back to the previous slide: the ‘gift card’ example had two premises; here we have a three-premise argument.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="definition" class="slide level2">
-<h2>Definition</h2>
+<h2>definition</h2>
 <div class="argument">
 <p>An <strong>argument</strong> is a sequence of declarative sentences, the <strong>premises</strong>, and a declarative sentence marked as the <strong>conclusion</strong>.</p>
 </div>
 <div class="fragment">
-<p>We use <em>declarative</em> sentences to make statements, which are true or false. Contrast <em>interrogative</em> and <em>imperative</em> sentences, which ask and command.</p>
+<p>There is no fixed order. ‘So’, ‘thus’, ‘therefore’, ‘it follows that’ mark the conclusion wherever it appears.</p>
 </div>
 <div class="fragment">
-
+<p>We use <em>declarative</em> sentences to make statements, which are true or false. Contrast <em>interrogative</em> and <em>imperative</em> sentences, which ask and command.</p>
 </div>
-<aside><div>
-<p>There is no fixed order. ‘So’, ‘thus’, ‘therefore’, ‘it follows that’ mark the conclusion wherever it appears.</p>
-</div></aside></section>
-<section id="extracting-an-argument-from-a-paragraph" class="slide level2">
-<h2>Extracting an argument from a paragraph</h2>
+</section>
+<section id="three-types-of-sentence" class="slide level2">
+<h2>three types of sentence</h2>
+<div class="columns">
+<div class="column" style="width:32%;">
+<p><strong>declarative</strong> (statements)</p>
+<div class="sentence-type declarative">
+<p>It is raining outside.</p>
+</div>
+<div class="sentence-type declarative">
+<p>No one can change the past.</p>
+</div>
+<div class="fragment">
+<div class="sentence-verdict true">
+<p>✓ true or false</p>
+</div>
+</div>
+</div><div class="column" style="width:32%;">
+<p><strong>interrogative</strong> (questions)</p>
+<div class="sentence-type interrogative">
+<p>Is it raining outside?</p>
+</div>
+<div class="sentence-type interrogative">
+<p>Can anyone change the past?</p>
+</div>
+<div class="fragment">
+<div class="sentence-verdict neither">
+<p>✗ neither true nor false</p>
+</div>
+</div>
+</div><div class="column" style="width:32%;">
+<p><strong>imperative</strong> (commands)</p>
+<div class="sentence-type imperative">
+<p>Bring an umbrella!</p>
+</div>
+<div class="sentence-type imperative">
+<p>Do not attempt to change the past.</p>
+</div>
+<div class="fragment">
+<div class="sentence-verdict neither">
+<p>✗ neither true nor false</p>
+</div>
+</div>
+</div></div>
+<div class="fragment">
+<p>Only declarative sentences can serve as <strong>premises</strong> or <strong>conclusion</strong> in an argument.</p>
+<aside class="notes">
+<p>One beat per column — reveal the verdict row last so students predict it first. The rain / past examples echo what they have already seen, which makes the contrast land faster than fresh examples would.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="how-to-extract-an-argument-from-a-paragraph" class="slide level2">
+<h2>how to extract an argument from a paragraph</h2>
 <blockquote>
 <p>Time travel is impossible. For if time travel were possible, then a time traveler could change the past. Nothing, however, can change the past.</p>
 </blockquote>
@@ -328,8 +497,49 @@ Gabriel Uzquiano
 </ol>
 </div>
 </div>
+</div>
+<div class="fragment">
+<p>Notice that the conclusion is the very first sentence. The last two sentences, marked by ‘for’, are premises offered in support of the conclusion.</p>
 <aside class="notes">
-<p>The conclusion comes <em>first</em> here, and ‘for’ marks what supports it. This is the skill they will need all term. If there is time, do Argument B from the notes on the chalkboard the same way.</p>
+<p>The conclusion comes <em>first</em> here, and ‘for’ marks what supports it. This is the skill they will need all term.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="how-to-extract-an-argument-from-a-paragraph-1" class="slide level2">
+<h2>how to extract an argument from a paragraph</h2>
+<blockquote>
+<p>If I speak both English and Spanish, then I’m bilingual. Therefore, I’m bilingual. For after all, I speak both English and Spanish.</p>
+</blockquote>
+<div class="fragment">
+<p>Which sentence is the conclusion?</p>
+</div>
+<div class="fragment">
+<div class="argument">
+<ol type="1">
+<li>If I speak both English and Spanish, then I’m bilingual.</li>
+<li>I speak both English and Spanish.</li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li><span class="cardinal">I’m bilingual.</span></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>Notice that the conclusion, marked by ‘therefore’, is the second sentence. The last sentence is a premise that supports it, not a further conclusion.</p>
+<aside class="notes">
+<p>The conclusion appears in the <em>middle</em> here, marked by ‘therefore’. The last sentence (‘for after all’) is a premise that supports it, not a further conclusion. Contrast with the time-travel example where the conclusion came first — the point is that position never determines the role.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -346,38 +556,33 @@ Gabriel Uzquiano
 <section>
 <section id="validity" class="title-slide slide level1 divider center">
 <h1>validity</h1>
-<p>Some arguments are <em>risk-free</em>: the truth of the premises guarantees the truth of the conclusion.</p>
+<p>Some arguments seem <em>risk-free</em> in that the truth of the premises is sufficient to guarantee the truth of the conclusion.</p>
 </section>
-<section id="which-of-these-are-risk-free" class="slide level2 smaller">
-<h2>Which of these are risk-free?</h2>
+<section id="which-of-these-are-risk-free" class="slide level2">
+<h2>which of these are risk-free?</h2>
+<div class="fragment">
 <blockquote>
 <p>Whales live underwater. Few mammals live underwater. Therefore, whales are not mammals.</p>
 </blockquote>
+</div>
+<div class="fragment">
 <blockquote>
 <p>People are now carrying umbrellas on the street. Therefore, it must be raining.</p>
 </blockquote>
+</div>
+<div class="fragment">
 <blockquote>
 <p><em>All Things Considered</em> is a radio program. All radio programs are broadcast at least once a week. So <em>All Things Considered</em> is broadcast at least once a week.</p>
 </blockquote>
+</div>
+<div class="fragment">
 <blockquote>
 <p>No one carries an umbrella on the street unless it is raining. Someone is now carrying an umbrella on the street. Therefore, it is raining.</p>
 </blockquote>
-<aside class="notes">
-<p>Two of the four. Take a vote on each as it appears, before saying anything. The umbrella pair is the useful contrast: same subject matter, different form.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+</div>
 </section>
 <section id="risk-free-because-of-a-pattern" class="slide level2">
-<h2>Risk-free because of a pattern</h2>
+<h2>risk-free because of a pattern</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <blockquote>
@@ -414,30 +619,34 @@ Gabriel Uzquiano
 </div>
 </div>
 </div></div>
-
-<aside><div>
-<p><span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are placeholders for English declarative sentences. The pattern never takes you from true premises to a false conclusion — whatever they stand for.</p>
-</div></aside></section>
+<div class="fragment">
+<p>We use <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> as placeholders for English declarative sentences. Notice that the pattern never takes you from true premises to a false conclusion, no matter what <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> may stand for.</p>
+</div>
+</section>
 <section id="validity-1" class="slide level2">
-<h2>Validity</h2>
+<h2>validity</h2>
 <div class="argument">
 <p>An argument is <strong>valid</strong> if, and only if, it is an instance of a <strong>valid argument form</strong>.</p>
 </div>
+<div class="fragment">
+<p>What is a <strong>valid argument form</strong>, you ask?</p>
+</div>
+<div class="fragment">
+<p>The course will develop a toolkit designed to answer this question. In the meantime, note that …</p>
 <ol type="1">
-<li class="fragment">A valid argument form has <em>no</em> instances with true premises and a false conclusion.</li>
+<li class="fragment">A <strong>valid argument form</strong> has <em>no</em> instances with true premises and a false conclusion.</li>
 <li class="fragment">A valid argument form preserves truth regardless of subject matter.</li>
 </ol>
-<div class="fragment">
-
 </div>
-<aside><div>
-<p>So to show a form <strong>invalid</strong>, it is enough to produce one instance with true premises and a false conclusion.</p>
-</div></aside></section>
-<section id="one-instance-is-enough" class="slide level2 smaller">
-<h2>One instance is enough</h2>
+<div class="fragment">
+<p>So to show that an argument form is <strong>invalid</strong>, it suffices to produce one instance with true premises and a false conclusion.</p>
+</div>
+</section>
+<section id="one-instance-suffices" class="slide level2">
+<h2>one instance suffices</h2>
 <div class="argument">
 <ol type="1">
-<li><span class="math inline">\(p\)</span> if, and only if, <span class="math inline">\(q\)</span></li>
+<li><span class="math inline">\(p\)</span> or <span class="math inline">\(q\)</span></li>
 </ol>
 <div class="conclusion">
 <ol start="2" type="1">
@@ -448,19 +657,25 @@ Gabriel Uzquiano
 <div class="fragment">
 <div class="argument">
 <ol type="1">
-<li>Mark Twain wrote <em>Hamlet</em> if, and only if, Samuel Clemens did.</li>
+<li>William Shakespeare wrote <em>Hamlet</em> or Mark Twain wrote <em>Hamlet</em>.</li>
 </ol>
 <div class="conclusion">
 <ol start="2" type="1">
-<li>Mark Twain wrote <em>Hamlet</em> and Samuel Clemens did.</li>
+<li>William Shakespeare wrote <em>Hamlet</em> and Mark Twain wrote <em>Hamlet</em>.</li>
 </ol>
 </div>
 </div>
 </div>
 <div class="fragment">
-
+<ol type="1">
+<li class="fragment"><p>The premise is <strong>true</strong>, since William Shakespeare wrote <em>Hamlet</em>.</p></li>
+<li class="fragment"><p>The conclusion is <strong>false</strong>, since Mark Twain did <em>not</em> write <em>Hamlet</em>.</p></li>
+</ol>
+</div>
+<div class="fragment">
+<p>One such instance suffices to rule out the validity of the argument form.</p>
 <aside class="notes">
-<p>Insist on this: we did not need to survey every instance. One suffices. That asymmetry between showing validity and showing invalidity runs through the whole course.</p>
+<p>Insist on this: we did not need to survey every instance. One suffices. That asymmetry between the justification of validity and and that of invalidity will play a role throughout the course.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -473,33 +688,18 @@ Gabriel Uzquiano
           display:block!important;
       }</style></aside>
 </div>
-<aside><div>
-<p>The premise is <strong>true</strong> — Mark Twain <em>is</em> Samuel Clemens. The conclusion is <strong>false</strong> — neither wrote <em>Hamlet</em>. One such instance kills the form.</p>
-</div></aside></section>
-<section id="lets-check-it" class="slide level2" data-background-color="#fffff8">
-<h2>Let’s check it</h2>
-<iframe class="app" data-src="https://gabriel-uzquiano.github.io/prop-truth-table/#v1:eyJmb3JtdWxhcyI6WyJwIOKGlCBxIiwicCDiiKcgcSJdfQ==" title="Truth table builder, preloaded with p if and only if q, and p and q">
+</section>
+<section id="truth-tables" class="slide level2" data-background-color="#fffff8">
+<h2>truth tables</h2>
+<iframe class="app" data-src="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=validity#v1:eyJmb3JtdWxhcyI6WyJwIOKIqCBxIiwicCDiiKcgcSJdfQ==" title="Truth table builder in validity mode, preloaded with p or q, and p and q">
 </iframe>
 <div class="caption">
-<p>Truth Tables · scroll to the table and look for the row where the premise is true and the conclusion is false.</p>
+<p>Scroll down to <em>Check</em> and click on <em>Evaluate</em>. Look for the rows where the premise is true and the conclusion is false.</p>
 </div>
-<aside class="notes">
-<p>This is live, not a screenshot. The two formulas are already loaded. Scroll to the table and point at the row where p and q are both false: premise true, conclusion false. That single row is the countermodel we just described in English. If a student proposes a different form, type it in here and run it.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="next-time" class="slide level2">
 <h2>Next time</h2>
-<p>We look for the <strong>form</strong> of an argument, and build a language in which forms can be written down precisely.</p>
+<p>We will look for the <strong>form</strong> of an argument, and we will build a language in which a wide family argument forms can be written down precisely.</p>
 
 <aside class="notes">
 <p>Remind them: Quiz 1 follows Problem Session 1 on Monday 8/31.</p>
@@ -517,7 +717,7 @@ Gabriel Uzquiano
 
 
 <aside><div>
-<p>Notes for this session: <a href="https://gabriel-uzquiano.github.io/220/notes/arguments.html">gabriel-uzquiano.github.io/220/notes/arguments.html</a></p>
+<p>The slides cover material from <a href="https://gabriel-uzquiano.github.io/logic/reason.html#reason">Chapter 1</a> of <a href="https://gabriel-uzquiano.github.io/logic/">Introduction to Logic</a>.</p>
 </div></aside></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
