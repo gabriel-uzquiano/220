@@ -1,0 +1,200 @@
+/*-- scss:defaults --*/
+
+// Match the usc-logic site (unit-i/practice-reason.html style).
+// Fonts are the same et-book / Gill Sans pairing from shared/style.css.
+
+@font-face {
+  font-family: "et-book";
+  src: url("https://gabriel-uzquiano.github.io/logic/libs/tufte-css-2015.12.29/et-book/roman-line-figures.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "et-book";
+  src: url("https://gabriel-uzquiano.github.io/logic/libs/tufte-css-2015.12.29/et-book/bold-line-figures.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "et-book";
+  src: url("https://gabriel-uzquiano.github.io/logic/libs/tufte-css-2015.12.29/et-book/display-italic-old-style-figures.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+$font-body: et-book, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif !default;
+$font-sans: "Gill Sans", "Gill Sans MT", Calibri, sans-serif !default;
+
+$c-bg:      #fffff8;
+$c-text:    #111111;
+$c-muted:   #666660;
+$c-border:  #ddd8ce;
+$c-primary: #7a1a3a;
+$c-teal:    #006666;
+
+// Reveal defaults
+$backgroundColor: $c-bg !default;
+$mainColor:       $c-text !default;
+$headingColor:    $c-text !default;
+$linkColor:       $c-teal !default;
+
+$mainFont:        $font-body !default;
+$headingFont:     $font-body !default;
+$mainFontSize:    32px !default;
+$headingLineHeight: 1.2 !default;
+
+$headingTextTransform: none !default;
+$headingFontWeight:    normal !default;
+$heading1TextShadow:   none !default;
+
+// Selection colour
+$selectionBackgroundColor: rgba(122, 26, 58, 0.18) !default;
+
+/*-- scss:rules --*/
+
+// Root palette CSS custom properties so include-in-header CSS (which uses
+// var(--font-sans), var(--color-teal), etc.) works verbatim, exactly as on
+// the usc-logic site.
+:root {
+  --font-body:  #{$font-body};
+  --font-sans:  #{$font-sans};
+  --color-bg:      #{$c-bg};
+  --color-text:    #{$c-text};
+  --color-muted:   #{$c-muted};
+  --color-border:  #{$c-border};
+  --color-primary: #{$c-primary};
+  --color-teal:    #{$c-teal};
+}
+
+.reveal {
+  font-family: $font-body;
+  color: $c-text;
+  background: $c-bg;
+  font-size: 32px;
+  line-height: 1.5;
+}
+
+// Italic-normal-weight headings, matching the usc-logic site.
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  font-family: $font-body;
+  font-weight: normal;
+  font-style: italic;
+  color: $c-text;
+  text-transform: none;
+  letter-spacing: normal;
+  text-shadow: none;
+  line-height: 1.2;
+}
+
+.reveal h1 { font-size: 2.0em; }
+.reveal h2 { font-size: 1.5em; }
+.reveal h3 { font-size: 1.15em; }
+
+// Title slide: left-aligned, quiet, no all-caps.
+.reveal .title-slide {
+  text-align: left;
+}
+.reveal .title-slide h1.title {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 2em;
+  color: $c-text;
+  margin-bottom: 0.4em;
+}
+.reveal .title-slide .subtitle {
+  font-family: $font-sans;
+  font-size: 0.85em;
+  color: $c-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.reveal .title-slide .quarto-title-author-name,
+.reveal .title-slide .author,
+.reveal .title-slide p.author {
+  font-family: $font-body;
+  font-style: italic;
+  color: $c-muted;
+  font-size: 0.85em;
+}
+
+// Section-header slides (from `#` headings). Big italic title, cream bg.
+.reveal section.title,
+.reveal section > h1:first-child {
+  text-align: left;
+}
+.reveal .slide-background { background: $c-bg; }
+
+// Links
+.reveal a {
+  color: $c-teal;
+  text-decoration: none;
+}
+.reveal a:hover { text-decoration: underline; }
+
+// Emphasis + strong stay as-designed.
+.reveal em { font-style: italic; }
+.reveal strong { font-weight: bold; }
+
+// Blockquote — matches the reference page (thin left border, sans-serif,
+// muted). Used for puzzle statements & argument-form displays.
+.reveal blockquote {
+  border-left: 3px solid $c-border;
+  margin: 0.5rem 0 1rem 0;
+  padding: 0.3rem 1rem;
+  font-family: $font-sans;
+  color: $c-muted;
+  background: transparent;
+  box-shadow: none;
+  font-size: 0.85em;
+  line-height: 1.5;
+}
+
+// Callout-note ("minimal" appearance) — subtle teal-tinted panel that
+// mirrors the .instructions block on the usc-logic site.
+.reveal .callout.callout-style-simple,
+.reveal .callout-note.callout-style-simple {
+  border: none;
+  border-left: 3px solid $c-teal;
+  background: #f5fbfb;
+  padding: 0.55rem 0.9rem;
+  margin: 0.4rem 0 1rem;
+  font-size: 0.92em;
+  line-height: 1.55;
+  color: $c-text;
+}
+.reveal .callout .callout-title,
+.reveal .callout .callout-body { color: inherit; }
+
+// Ordered / unordered lists — sensible left padding, no bullet weirdness.
+.reveal ol, .reveal ul {
+  margin: 0.4em 0 0.8em 1.4em;
+  padding: 0;
+}
+.reveal li { margin-bottom: 0.25em; }
+
+// Definition lists — the "Argument :   A sequence …" pattern.
+.reveal dl { margin: 0.6em 0 1em; }
+.reveal dt {
+  font-style: italic;
+  color: $c-text;
+  margin-top: 0.4em;
+}
+.reveal dd {
+  margin: 0.15em 0 0.6em 1.4em;
+  color: $c-text;
+}
+
+// Math a hair smaller so display forms don't overflow.
+.reveal .math.display { font-size: 0.95em; }
+
+// Progress + controls in muted teal.
+.reveal .progress { color: $c-teal; height: 3px; }
+.reveal .controls { color: $c-teal; }
+
+// Speaker-notes styling is untouched; Reveal handles it.
+
+// Reveal's default h1 has a big text-shadow — kill it.
+.reveal h1 { text-shadow: none; }

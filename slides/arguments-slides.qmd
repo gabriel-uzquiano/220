@@ -480,8 +480,7 @@ Some arguments seem *risk-free* in that the truth of the premises is sufficient 
 :::
 :::
 ::: {.fragment}
-We use $p$ and $q$ as placeholders for English declarative sentences. Notice that the pattern never
-takes you from true premises to a false conclusion, no matter what $p$ and $q$ may stand for.
+We use $p$ and $q$ as placeholders for English declarative sentences. Notice that the pattern never takes you from true premises to a false conclusion, no matter what $p$ and $q$ may stand for.
 :::
 
 
@@ -552,13 +551,64 @@ asymmetry between the justification of validity and and that of invalidity will 
 a role throughout the course.
 :::
 
-## truth tables {background-color="#fffff8"}
+## truth tables {.smaller}
 
-<iframe class="app" data-src="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=validity#v1:eyJmb3JtdWxhcyI6WyJwIOKIqCBxIiwicCDiiKcgcSJdfQ==" title="Truth table builder in validity mode, preloaded with p or q, and p and q"></iframe>
+The truth value of premises and conclusion is determined by that of $p$ and $q$:
 
-::: {.caption}
-Scroll down to *Check* and click on *Evaluate*. Look for the rows where the premise
-is true and the conclusion is false.
+<div style="display:flex; justify-content:center; margin-top:1rem;">
+<table style="border-collapse:collapse; font-size:0.95em;">
+  <thead>
+    <tr>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">$p$</th>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-right:4px double #444; border-bottom:2px solid #444;">$q$</th>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">$p$ or $q$</th>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">$p$ and $q$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+    </tr>
+    <tr style="background-color:#fff3cd;">
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+    </tr>
+    <tr style="background-color:#fff3cd;">
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+    </tr>
+    <tr>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+::: {.fragment}
+Choose something true for $p$ and something false for $q$. Then the premises will be true and the conclusion will false, e.g., it is false that Shakespeare and Twain wrote Hamlet, but true that one did.
+
+Likewise:
+:::
+
+::: {.fragment}
+::: {.argument}
+1. Los Angeles is in California or New York is in California.
+
+::: {.conclusion}
+3. Los Angeles is in California and New York is in California.
+:::
+:::
 :::
 
 ## Next time

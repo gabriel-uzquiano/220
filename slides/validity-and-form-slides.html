@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.9.38">
 
   <meta name="author" content="Gabriel Uzquiano">
-  <title>PHIL 220 slides – Validity and Form</title>
+  <title>PHIL 220 slides – validity and form</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -132,8 +132,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Validity and Form</h1>
-  <p class="subtitle">PHIL 220. Introduction to Logic · 1.2</p>
+  <h1 class="title">validity and form</h1>
+  <p class="subtitle">PHIL 220. Introduction to Logic</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -147,9 +147,11 @@ Gabriel Uzquiano
 <section>
 <section id="validity-and-form" class="title-slide slide level1 divider center">
 <h1>validity and form</h1>
-<p>Last time: some arguments are <em>risk-free</em>. Today: what makes them so.</p>
+<p>Last time we noticed that some arguments are <em>risk-free</em> in that the truth of the premises suffices to guarantee the truth of the conclusion.</p>
+<p>We mentioned that some of them are <em>risk-free</em> because of the pattern they instantiate: they are <em>valid</em>.</p>
+<p>Today we ask <strong>what makes an argument <em>valid</em></strong>.</p>
 <aside class="notes">
-<p>One minute of recap. They left last time with the definition below and the two umbrella arguments. The job today is to make ‘form’ do real work — and to draw the line between risk-free and valid, which is the one thing most of them will get wrong on the quiz.</p>
+<p>One minute of recap. They left last time with the definition of validity and the two umbrella arguments. The task today is to make ‘form’ do real work and to draw the line between risk-free and valid.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -162,25 +164,25 @@ Gabriel Uzquiano
           display:block!important;
       }</style></aside>
 </section>
-<section id="the-definition" class="slide level2">
-<h2>The definition</h2>
+<section id="recall-the-definition" class="slide level2">
+<h2>recall the definition</h2>
 <div class="argument">
 <p>An argument is <strong>valid</strong> if, and only if, it is an instance of a <strong>valid argument form</strong>.</p>
 </div>
 <div class="fragment">
-<p>Formal logic will make ‘valid argument form’ precise. For now, two features:</p>
+<p>The toolkit of formal logic will make ‘valid argument form’ precise. In the meantime:</p>
 <ol type="1">
-<li class="fragment">A valid argument form has <strong>no</strong> instances with true premises and a false conclusion.</li>
-<li class="fragment">Instances of valid argument forms preserve truth <strong>regardless of subject matter</strong>.</li>
+<li class="fragment">A <em>valid argument form</em> has <em>no</em> instances with true premises and a false conclusion.</li>
+<li class="fragment">A <em>valid argument form</em> preserves truth regardless of subject matter.</li>
 </ol>
 </div>
 </section></section>
 <section>
-<section id="risk-free-is-not-enough" class="title-slide slide level1 divider center">
-<h1>risk-free is not enough</h1>
-<p>To be valid is not merely to be risk-free.</p>
+<section id="risk-free-is-not-the-same-as-valid" class="title-slide slide level1 divider center">
+<h1>risk-free is not the same as valid</h1>
+<p>Every valid argument is risk-free, but to be risk-free is not sufficient for an argument to be valid.</p>
 <aside class="notes">
-<p>This is the hard slide of the session. Go slowly. Most students arrive thinking ‘valid’ just means ‘the premises couldn’t be true with the conclusion false’, and this example is the wedge.</p>
+<p>This is the difficult slide of the session. Go slowly. Most students may initially think that ‘valid’ just means ‘the premises could not be true with the conclusion false’, and this example is the wedge.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -193,8 +195,8 @@ Gabriel Uzquiano
           display:block!important;
       }</style></aside>
 </section>
-<section id="a-risk-free-argument-that-is-not-valid" class="slide level2">
-<h2>A risk-free argument that is not valid</h2>
+<section id="some-risk-free-arguments-are-not-valid" class="slide level2">
+<h2>some risk-free arguments are not valid</h2>
 <div class="argument">
 <ol type="1">
 <li>There is an elephant in the room.</li>
@@ -206,10 +208,13 @@ Gabriel Uzquiano
 </div>
 </div>
 <div class="fragment">
-<p>There is no risk the premise is true and the conclusion false — the conclusion could not have been false.</p>
+<p>There is no risk here that the premise may be true and while the conclusion is false: the conclusion <em>could not have been</em> false. It is a necessary mathematical fact that there are infinitely many numbers.</p>
 </div>
 <div class="fragment">
-
+<p>So, the argument risk-free. Is it valid?</p>
+</div>
+<div class="fragment">
+<p>To ask whether the argument is valid is to ask whether it is an instance of a valid argument form.</p>
 <aside class="notes">
 <p>Take the vote here before moving on. Most hands will say valid. Hold that in the room for a moment — the next slide is the correction.</p>
 <style type="text/css">
@@ -224,12 +229,9 @@ Gabriel Uzquiano
           display:block!important;
       }</style></aside>
 </div>
-<aside><div>
-<p>So it is risk-free. Is it valid?</p>
-</div></aside></section>
-<section id="its-form-has-terrible-instances" class="slide level2 smaller">
-<h2>Its form has terrible instances</h2>
-<p>Let <span class="math inline">\(p\)</span> be ‘there is an elephant in the room’ and <span class="math inline">\(q\)</span> ‘there are infinitely many numbers’. The form is:</p>
+</section>
+<section id="an-invalid-argument-form" class="slide level2 smaller">
+<h2>an invalid argument form</h2>
 <div class="argument">
 <ol type="1">
 <li><span class="math inline">\(p\)</span></li>
@@ -241,22 +243,58 @@ Gabriel Uzquiano
 </div>
 </div>
 <div class="fragment">
-<p>Another instance of the same form:</p>
+<div class="columns">
+<div class="column" style="width:32%;">
 <div class="argument">
 <ol type="1">
-<li>Los Angeles is in Southern California.</li>
+<li>There is an elephant in the room.</li>
 </ol>
 <div class="conclusion">
 <ol start="2" type="1">
-<li>New York is in Northern California.</li>
+<li>There are infinitely many numbers.</li>
 </ol>
 </div>
 </div>
-<div class="fragment verdict">
-<p>True premise, false conclusion. So the form is not valid — and the original argument is not an instance of a valid form, however risk-free it was.</p>
+<div class="fragment">
+<div class="sentence-verdict true">
+<p>✓ false premise and a true conclusion</p>
 </div>
+</div>
+</div><div class="column" style="width:32%;">
+<div class="argument">
+<ol type="1">
+<li>Los Angeles is in California</li>
+</ol>
+<div class="conclusion">
+<ol start="2" type="1">
+<li>There are infinitely many numbers.</li>
+</ol>
+</div>
+</div>
+<div class="fragment">
+<div class="sentence-verdict true">
+<p>✓ true premise and a true conclusion</p>
+</div>
+</div>
+</div><div class="column" style="width:32%;">
+<div class="argument">
+<ol type="1">
+<li>Los Angeles is in California</li>
+</ol>
+<div class="conclusion">
+<ol start="2" type="1">
+<li>New York is in California</li>
+</ol>
+</div>
+</div>
+<div class="fragment">
+<div class="sentence-verdict true">
+<p>✗ true premise and a false conclusion</p>
+</div>
+</div>
+</div></div>
 <aside class="notes">
-<p>The moral: validity is a property an argument has <em>through its form</em>. Risk-free is about this argument; valid is about every argument shaped like it. Write both words on the board and keep them there for the rest of the hour.</p>
+<p>The moral: validity is a feature an argument has <em>through its form</em>. Risk-free is about this argument; valid is about every argument shaped like it. Write both words on the board and keep them there for the rest of the hour.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -270,8 +308,8 @@ Gabriel Uzquiano
       }</style></aside>
 </div>
 </section>
-<section id="refuting-a-form-takes-one-instance" class="slide level2">
-<h2>Refuting a form takes one instance</h2>
+<section id="it-takes-one-instance" class="slide level2 smaller">
+<h2>it takes one instance</h2>
 <div class="argument">
 <ol type="1">
 <li><span class="math inline">\(p\)</span> or <span class="math inline">\(q\)</span></li>
@@ -279,47 +317,37 @@ Gabriel Uzquiano
 </ol>
 <div class="conclusion">
 <ol start="3" type="1">
-<li>Therefore, <span class="math inline">\(p\)</span></li>
+<li><span class="math inline">\(p\)</span></li>
 </ol>
 </div>
 </div>
 <div class="fragment">
 <div class="argument">
 <ol type="1">
-<li>Charles Dickens wrote <em>Tom Sawyer</em> or Mark Twain did.</li>
-<li>Mark Twain wrote <em>Tom Sawyer</em>.</li>
+<li>My office number is even or it is odd.</li>
+<li>My office number is odd.</li>
 </ol>
 <div class="conclusion">
 <ol start="3" type="1">
-<li>Therefore, Charles Dickens wrote <em>Tom Sawyer</em>.</li>
+<li>Therefore, my office number is even.</li>
 </ol>
 </div>
 </div>
-
-<aside class="notes">
-<p>Two instances of the same bad form, one literary and one about the room number on my door. Either one is enough. Ask them for a third.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </div>
-<aside><div>
-<p>Or: my office number is even or odd; it is odd; so it is even. STO 221.</p>
-</div></aside></section></section>
+<div class="fragment">
+<p>The premises are true, since STO 221 has an odd number. However, the conclusion is false.</p>
+</div>
+<div class="fragment">
+<p>A single instance with true premises and a false conclusion suffices to establish the <em>invalidity</em> of the argument form.</p>
+</div>
+</section></section>
 <section>
 <section id="four-forms" class="title-slide slide level1 divider center">
 <h1>four forms</h1>
-<p>Two that are valid, two that are not — and they look alike.</p>
+<p>Two that are valid, two that are not.</p>
 </section>
 <section id="modus-ponens" class="slide level2">
-<h2>Modus ponens</h2>
+<h2>modus ponens</h2>
 <div class="argument">
 <ol type="1">
 <li>If <span class="math inline">\(p\)</span>, then <span class="math inline">\(q\)</span></li>
@@ -332,7 +360,7 @@ Gabriel Uzquiano
 </div>
 </div>
 <div class="fragment">
-<p>No instance has true premises and a false conclusion. The label does not matter; that property does.</p>
+<p>The label is unimportant, what matters is that no instance has true premises and a false conclusion.</p>
 <aside class="notes">
 <p>Do not dwell on the Latin. If someone asks, the names are traditional and I will use them as shorthand, but nothing turns on them.</p>
 <style type="text/css">
@@ -348,29 +376,97 @@ Gabriel Uzquiano
       }</style></aside>
 </div>
 </section>
-<section id="which-of-these-is-modus-ponens" class="slide level2">
-<h2>Which of these is modus ponens?</h2>
-<ul>
-<li class="fragment">If the car starts, then there’s gas in the tank. There’s gas in the tank. Therefore, the car started.</li>
-<li class="fragment">If the car starts, then there’s gas in the tank. The car starts. Therefore, you turned the ignition.</li>
-<li class="fragment">If the car starts, then there’s gas in the tank. The car started. Therefore, there’s gas in the tank.</li>
-</ul>
-<div class="fragment verdict">
-<p>The third. The first affirms the <em>consequent</em>; the second has a conclusion that appears nowhere in the premises.</p>
+<section id="which-of-these-is-modus-ponens" class="slide level2 smaller">
+<h2>which of these is modus ponens?</h2>
+<p>We let <span class="math inline">\(p\)</span> stand for ‘the car starts’ and <span class="math inline">\(q\)</span> for ‘there is gas in the tank’.</p>
+<div class="columns">
+<div class="column" style="width:32%;">
+<div class="argument">
+<ol type="1">
+<li>If the car starts, then there’s gas in the tank.</li>
+<li>There’s gas in the tank.</li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li>So, the car starts.</li>
+</ol>
 </div>
-</section>
-<section id="and-which-of-these" class="slide level2">
-<h2>And which of these?</h2>
-<ul>
-<li class="fragment">If I flip the coin, then it’ll land heads. It’ll land heads. Therefore, I’ll flip the coin.</li>
-<li class="fragment">If I flip the coin, then it’ll land heads. I’ll flip the coin. Therefore, it’ll land heads.</li>
-<li class="fragment">If the coin lands heads, then I will flip it. I’ll flip the coin. Therefore, it’ll land heads.</li>
-</ul>
-<div class="fragment verdict">
-<p>The second. In the third the conditional runs the other way — ‘if heads, then I flip’ does not let you go from flipping to heads.</p>
 </div>
+<div class="fragment">
+<div class="argument">
+<ol type="1">
+<li>If <span class="math inline">\(p\)</span>, then <span class="math inline">\(q\)</span></li>
+<li><span class="math inline">\(q\)</span></li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li><span class="math inline">\(p\)</span></li>
+</ol>
+</div>
+</div>
+<div class="verdict">
+<p>This is <strong>not</strong> modus ponens.</p>
+</div>
+</div>
+</div><div class="column" style="width:32%;">
+<div class="argument">
+<ol type="1">
+<li>If the car starts, then there’s gas in the tank.</li>
+<li>The car starts.</li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li>So, there’s gas in the tank.</li>
+</ol>
+</div>
+</div>
+<div class="fragment">
+<div class="argument">
+<ol type="1">
+<li>If <span class="math inline">\(p\)</span>, then <span class="math inline">\(q\)</span></li>
+<li><span class="math inline">\(p\)</span></li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li><span class="math inline">\(q\)</span></li>
+</ol>
+</div>
+</div>
+<div class="verdict">
+<p>This <strong>is</strong> modus ponens.</p>
+</div>
+</div>
+</div><div class="column" style="width:32%;">
+<div class="argument">
+<ol type="1">
+<li>If there’s gas in the tank, then the car starts.</li>
+<li>The car starts.</li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li>So, there’s gas in the tank.</li>
+</ol>
+</div>
+</div>
+<div class="fragment">
+<div class="argument">
+<ol type="1">
+<li>If <span class="math inline">\(q\)</span>, then <span class="math inline">\(p\)</span></li>
+<li><span class="math inline">\(p\)</span></li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li><span class="math inline">\(q\)</span></li>
+</ol>
+</div>
+</div>
+<div class="verdict">
+<p>This is <strong>not</strong> modus ponens.</p>
+</div>
+</div>
+</div></div>
 <aside class="notes">
-<p>The third option is the one worth time. It is a genuine modus ponens shape with the antecedent and consequent swapped, so it tests whether they are reading the conditional or pattern-matching on the words.</p>
+<p>All three English arguments are visible immediately. Then advance once for the analysis of Argument 1, once for Argument 2, and once for Argument 3. That lets students compare first and classify second.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -383,8 +479,224 @@ Gabriel Uzquiano
           display:block!important;
       }</style></aside>
 </section>
+<section id="and-which-of-these" class="slide level2 smaller">
+<h2>and which of these?</h2>
+<p>We let <span class="math inline">\(p\)</span> stand for ‘I flip the coin’ and <span class="math inline">\(q\)</span> for ‘the coin lands heads’.</p>
+<div class="columns">
+<div class="column" style="width:32%;">
+<div class="argument">
+<ol type="1">
+<li>If I flip the coin, then it will land heads.</li>
+<li>The coin will land heads.</li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li>So, I flip the coin.</li>
+</ol>
+</div>
+</div>
+<div class="fragment">
+<div class="argument">
+<ol type="1">
+<li>If <span class="math inline">\(p\)</span>, then <span class="math inline">\(q\)</span></li>
+<li><span class="math inline">\(q\)</span></li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li><span class="math inline">\(p\)</span></li>
+</ol>
+</div>
+</div>
+<div class="verdict">
+<p>This is <strong>not</strong> modus ponens.</p>
+</div>
+</div>
+</div><div class="column" style="width:32%;">
+<div class="argument">
+<ol type="1">
+<li>f I flip the coin, then it will land heads.</li>
+<li>I flip the coin.</li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li>So, I flip the coin.</li>
+</ol>
+</div>
+</div>
+<div class="fragment">
+<div class="argument">
+<ol type="1">
+<li>If <span class="math inline">\(p\)</span>, then <span class="math inline">\(q\)</span></li>
+<li><span class="math inline">\(p\)</span></li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li><span class="math inline">\(p\)</span></li>
+</ol>
+</div>
+</div>
+<div class="verdict">
+<p>This is <strong>not</strong> modus ponens, though it is a valid argument form.</p>
+</div>
+</div>
+</div><div class="column" style="width:32%;">
+<div class="argument">
+<ol type="1">
+<li>f I flip the coin, then it will land heads.</li>
+<li>I flip the coin.</li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li>So, the coin lands heads.</li>
+</ol>
+</div>
+</div>
+<div class="fragment">
+<div class="argument">
+<ol type="1">
+<li>If <span class="math inline">\(p\)</span>, then <span class="math inline">\(q\)</span></li>
+<li><span class="math inline">\(p\)</span></li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li><span class="math inline">\(q\)</span></li>
+</ol>
+</div>
+</div>
+<div class="verdict">
+<p>This <strong>is</strong> modus ponens.</p>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p>All three English arguments are visible immediately. Then advance once for the analysis of Argument 1, once for Argument 2, and once for Argument 3. That lets students compare first and classify second.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="why-is-modus-ponens-valid" class="slide level2 smaller">
+<h2>why is modus ponens valid?</h2>
+<div class="argument">
+<ol type="1">
+<li>If <span class="math inline">\(p\)</span>, then <span class="math inline">\(q\)</span></li>
+<li><span class="math inline">\(p\)</span></li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li>Therefore, <span class="math inline">\(q\)</span></li>
+</ol>
+</div>
+</div>
+<p>The truth values of premises and conclusion is determined by the truth value of <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>.</p>
+<div class="fragment">
+<div style="display:flex; justify-content:center; margin-top:1rem;">
+<table style="border-collapse:collapse; font-size:0.95em;">
+<thead>
+<tr>
+<th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">
+<span class="math inline">\(p\)</span>
+</th>
+<th style="text-align:center; padding:0.35rem 0.9rem; border-right:4px double #444; border-bottom:2px solid #444;">
+<span class="math inline">\(q\)</span>
+</th>
+<th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">
+if <span class="math inline">\(p\)</span>, then <span class="math inline">\(q\)</span>
+</th>
+<th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">
+<span class="math inline">\(p\)</span>
+</th>
+<th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">
+<span class="math inline">\(q\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+</tr>
+<tr>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+</tr>
+<tr>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+</tr>
+<tr>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<p>Whatever the truth values of <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>, there is no circumstance on which both premises are true while the conclusion is false. So, there are <strong>no</strong> instances with true premises and a false conclusion.</p>
+</div>
+</div>
+</section>
 <section id="affirming-the-consequent" class="slide level2">
-<h2>Affirming the consequent</h2>
+<h2>affirming the consequent</h2>
 <div class="argument">
 <ol type="1">
 <li>If <span class="math inline">\(p\)</span>, then <span class="math inline">\(q\)</span></li>
@@ -395,6 +707,9 @@ Gabriel Uzquiano
 <li>Therefore, <span class="math inline">\(p\)</span></li>
 </ol>
 </div>
+</div>
+<div class="fragment">
+<p>Some instances have true premises and a false conclusion.</p>
 </div>
 <div class="fragment">
 <div class="argument">
@@ -408,35 +723,124 @@ Gabriel Uzquiano
 </ol>
 </div>
 </div>
-
 </div>
-<aside><div>
-<p>Or: if I purchase a Tesla, I will own at least two cars; I will own at least two cars; so I will purchase a Tesla.</p>
-</div></aside></section>
-<section id="lets-check-it" class="slide level2" data-background-color="#fffff8">
-<h2>Let’s check it</h2>
-<iframe class="app check" data-src="https://gabriel-uzquiano.github.io/prop-truth-table/?search=1#v1:eyJmb3JtdWxhcyI6IFsiKHAg4oaSIHEpIiwgInEiLCAicCJdfQ==" title="Counterexample search for the form: if p then q, q, therefore p">
-</iframe>
-<div class="caption">
-<p>Premises <span class="math inline">\((p \to q)\)</span> and <span class="math inline">\(q\)</span>; conclusion <span class="math inline">\(p\)</span>. The table shows only the rows where the conclusion is false.</p>
+</section>
+<section id="why-is-affirming-the-consequent-invalid" class="slide level2 smaller">
+<h2>why is affirming the consequent invalid</h2>
+<p>The truth values of premises and conclusion is determined by the truth value of <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>.</p>
+<div style="display:flex; justify-content:center; margin-top:1rem;">
+<table style="border-collapse:collapse; font-size:0.95em;">
+<thead>
+<tr>
+<th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">
+<span class="math inline">\(p\)</span>
+</th>
+<th style="text-align:center; padding:0.35rem 0.9rem; border-right:4px double #444; border-bottom:2px solid #444;">
+<span class="math inline">\(q\)</span>
+</th>
+<th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">
+if <span class="math inline">\(p\)</span>, then <span class="math inline">\(q\)</span>
+</th>
+<th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">
+<span class="math inline">\(q\)</span>
+</th>
+<th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">
+<span class="math inline">\(p\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+</tr>
+<tr>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+</tr>
+<tr style="background-color:#fff3cd;">
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+</tr>
+<tr>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+</tr>
+</tbody>
+</table>
 </div>
-<aside class="notes">
-<p>Live, not a screenshot. It shows the two rows where the conclusion is false and highlights the one that also makes both premises true: p false, q true. That row <em>is</em> the millionaire — someone who makes ends meet without being a millionaire. The verdict line says ‘Counterexample found’.</p>
-<p>Then, if you like, type modus ponens in and watch the verdict change to ‘Valid’.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<div class="fragment">
+<p>Choose a false sentence for <span class="math inline">\(p\)</span> and a true sentence for <span class="math inline">\(q\)</span>. Then the premises will be true and the conclusion will false, e.g., it is false that I am a millionaire, but it is true that I can make ends meet.</p>
+<p>Likewise:</p>
+</div>
+<div class="fragment">
+<div class="argument">
+<ol type="1">
+<li>If all phones are built by apple, then your phone built by apple.</li>
+<li>Your phone is built by apple.</li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li>Therefore, all phones are built by apple.</li>
+</ol>
+</div>
+</div>
+</div>
 </section>
 <section id="modus-tollens" class="slide level2">
-<h2>Modus tollens</h2>
+<h2>modus tollens</h2>
 <div class="argument">
 <ol type="1">
 <li>If <span class="math inline">\(p\)</span>, then <span class="math inline">\(q\)</span></li>
@@ -449,18 +853,227 @@ Gabriel Uzquiano
 </div>
 </div>
 <div class="fragment">
-<p>Which of these is an instance?</p>
-<ul>
-<li class="fragment">If I’m a millionaire, then I can make ends meet. I cannot make ends meet. Therefore, I’m not a millionaire.</li>
-<li class="fragment">If I’m a millionaire, then I can make ends meet. I’m not a millionaire. Therefore, I cannot make ends meet.</li>
-</ul>
-<div class="fragment verdict">
-<p>The first. The second denies the <em>antecedent</em> — the form on the next slide.</p>
+<p>The label is again unimportant. What matters is that the argument form has no instances with true premises and a false conclusion.</p>
+</div>
+</section>
+<section id="which-of-these-is-modus-tollens" class="slide level2 smaller">
+<h2>which of these is modus tollens?</h2>
+<p>We let <span class="math inline">\(p\)</span> stand for ‘I’m a millionaire’ and <span class="math inline">\(q\)</span> for ‘I can make ends meet’.</p>
+<div class="columns">
+<div class="column" style="width:32%;">
+<div class="argument">
+<ol type="1">
+<li>If I’m a millionaire, then I can make ends meet.</li>
+<li>I cannot make ends meet.</li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li>So, I’m not a millionaire.</li>
+</ol>
+</div>
+</div>
+<div class="fragment">
+<div class="argument">
+<ol type="1">
+<li>If <span class="math inline">\(p\)</span>, then <span class="math inline">\(q\)</span></li>
+<li>Not-<span class="math inline">\(q\)</span></li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li>Not-<span class="math inline">\(p\)</span></li>
+</ol>
+</div>
+</div>
+<div class="verdict">
+<p>This <strong>is</strong> modus tollens.</p>
+</div>
+</div>
+</div><div class="column" style="width:32%;">
+<div class="argument">
+<ol type="1">
+<li>If I’m a millionaire, then I can make ends meet.</li>
+<li>I’m not a millionaire.</li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li>So, I cannot make ends meet.</li>
+</ol>
+</div>
+</div>
+<div class="fragment">
+<div class="argument">
+<ol type="1">
+<li>If <span class="math inline">\(p\)</span>, then <span class="math inline">\(q\)</span></li>
+<li>Not-<span class="math inline">\(p\)</span></li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li>Not-<span class="math inline">\(q\)</span></li>
+</ol>
+</div>
+</div>
+<div class="verdict">
+<p>This is <strong>not</strong> modus tollens.</p>
+</div>
+</div>
+</div><div class="column" style="width:32%;">
+<div class="argument">
+<ol type="1">
+<li>If I can make ends meet, then I’m a millionaire.</li>
+<li>I’m not a millionaire.</li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li>So, I cannot make ends meet.</li>
+</ol>
+</div>
+</div>
+<div class="fragment">
+<div class="argument">
+<ol type="1">
+<li>If <span class="math inline">\(q\)</span>, then <span class="math inline">\(p\)</span></li>
+<li>Not-<span class="math inline">\(p\)</span></li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li>Not-<span class="math inline">\(q\)</span></li>
+</ol>
+</div>
+</div>
+<div class="verdict">
+<p>This is <strong>not</strong> modus tollens.</p>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p>All three English arguments are visible immediately. Then advance once for the analysis of Argument 1, once for Argument 2, and once for Argument 3. That lets students compare first and classify second.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="why-is-modus-tollens-valid" class="slide level2 smaller">
+<h2>why is modus tollens valid?</h2>
+<div class="argument">
+<ol type="1">
+<li>If <span class="math inline">\(p\)</span>, then <span class="math inline">\(q\)</span></li>
+<li>Not-<span class="math inline">\(q\)</span></li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li>Therefore, not-<span class="math inline">\(p\)</span></li>
+</ol>
+</div>
+</div>
+<p>The truth values of premises and conclusion is determined by the truth value of <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>.</p>
+<div class="fragment">
+<div style="display:flex; justify-content:center; margin-top:1rem;">
+<table style="border-collapse:collapse; font-size:0.95em;">
+<thead>
+<tr>
+<th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">
+<span class="math inline">\(p\)</span>
+</th>
+<th style="text-align:center; padding:0.35rem 0.9rem; border-right:4px double #444; border-bottom:2px solid #444;">
+<span class="math inline">\(q\)</span>
+</th>
+<th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">
+if <span class="math inline">\(p\)</span>, then <span class="math inline">\(q\)</span>
+</th>
+<th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">
+not-<span class="math inline">\(p\)</span>
+</th>
+<th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">
+not-<span class="math inline">\(q\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+</tr>
+<tr>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+</tr>
+<tr>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+</tr>
+<tr>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<p>Whatever the truth values of <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>, there is no circumstance on which both premises are true while the conclusion is false. So, there are <strong>no</strong> instances with true premises and a false conclusion.</p>
 </div>
 </div>
 </section>
 <section id="denying-the-antecedent" class="slide level2">
-<h2>Denying the antecedent</h2>
+<h2>denying the antecedent</h2>
 <div class="argument">
 <ol type="1">
 <li>If <span class="math inline">\(p\)</span>, then <span class="math inline">\(q\)</span></li>
@@ -471,6 +1084,9 @@ Gabriel Uzquiano
 <li>Therefore, not-<span class="math inline">\(q\)</span></li>
 </ol>
 </div>
+</div>
+<div class="fragment">
+<p>Some instances have true premises and a false conclusion.</p>
 </div>
 <div class="fragment">
 <div class="argument">
@@ -484,42 +1100,123 @@ Gabriel Uzquiano
 </ol>
 </div>
 </div>
-
-<aside class="notes">
-<p>The whale example is the best one in the notes because the falsity of the conclusion is not a matter of opinion. The elephant-and-large-door example is the backup if someone wants a second.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </div>
-<aside><div>
-<p>Premises both true, conclusion false. One instance is enough.</p>
-</div></aside></section>
-<section id="four-forms-one-tool" class="slide level2">
-<h2>Four forms, one tool</h2>
-<p>Valid:</p>
-<ul>
-<li><a href="https://gabriel-uzquiano.github.io/prop-truth-table/?search=1#v1:eyJmb3JtdWxhcyI6IFsiKHAg4oaSIHEpIiwgInAiLCAicSJdfQ==">If <span class="math inline">\(p\)</span> then <span class="math inline">\(q\)</span>; <span class="math inline">\(p\)</span>; so <span class="math inline">\(q\)</span></a></li>
-<li><a href="https://gabriel-uzquiano.github.io/prop-truth-table/?search=1#v1:eyJmb3JtdWxhcyI6IFsiKHAg4oaSIHEpIiwgIsKscSIsICLCrHAiXX0=">If <span class="math inline">\(p\)</span> then <span class="math inline">\(q\)</span>; not-<span class="math inline">\(q\)</span>; so not-<span class="math inline">\(p\)</span></a></li>
-</ul>
-<p>Not valid:</p>
-<ul>
-<li><a href="https://gabriel-uzquiano.github.io/prop-truth-table/?search=1#v1:eyJmb3JtdWxhcyI6IFsiKHAg4oaSIHEpIiwgInEiLCAicCJdfQ==">If <span class="math inline">\(p\)</span> then <span class="math inline">\(q\)</span>; <span class="math inline">\(q\)</span>; so <span class="math inline">\(p\)</span></a></li>
-<li><a href="https://gabriel-uzquiano.github.io/prop-truth-table/?search=1#v1:eyJmb3JtdWxhcyI6IFsiKHAg4oaSIHEpIiwgIsKscCIsICLCrHEiXX0=">If <span class="math inline">\(p\)</span> then <span class="math inline">\(q\)</span>; not-<span class="math inline">\(p\)</span>; so not-<span class="math inline">\(q\)</span></a></li>
-<li><a href="https://gabriel-uzquiano.github.io/prop-truth-table/?search=1#v1:eyJmb3JtdWxhcyI6IFsicCIsICJxIl19"><span class="math inline">\(p\)</span>; so <span class="math inline">\(q\)</span></a></li>
-</ul>
-<div class="caption">
-<p>Each link opens the checker in an overlay, already loaded. Press Escape to return to the slides.</p>
+</section>
+<section id="why-is-denying-the-consequent-invalid" class="slide level2 smaller">
+<h2>why is denying the consequent invalid</h2>
+<p>The truth values of premises and conclusion is determined by the truth value of <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>.</p>
+<div style="display:flex; justify-content:center; margin-top:1rem;">
+<table style="border-collapse:collapse; font-size:0.95em;">
+<thead>
+<tr>
+<th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">
+<span class="math inline">\(p\)</span>
+</th>
+<th style="text-align:center; padding:0.35rem 0.9rem; border-right:4px double #444; border-bottom:2px solid #444;">
+<span class="math inline">\(q\)</span>
+</th>
+<th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">
+if <span class="math inline">\(p\)</span>, then <span class="math inline">\(q\)</span>
+</th>
+<th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">
+not-<span class="math inline">\(p\)</span>
+</th>
+<th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">
+not-<span class="math inline">\(q\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+</tr>
+<tr>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+</tr>
+<tr style="background-color:#fff3cd;">
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+</tr>
+<tr>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<p>Choose a false sentence for <span class="math inline">\(p\)</span> and a true sentence for <span class="math inline">\(q\)</span>. Then the premises will be true and the conclusion will false, e.g., it is false that whales are fish, but it is true that whales live underwater.</p>
+<p>Likewise:</p>
+</div>
+<div class="fragment">
+<div class="argument">
+<ol type="1">
+<li>If all phones are built by apple, then your phone built by apple.</li>
+<li>Not all phones are built by apple.</li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li>Therefore, your phone is not built by apple.</li>
+</ol>
+</div>
+</div>
 </div>
 <aside class="notes">
-<p>This slide is a menu, not something to read out. Use it when a student proposes a form and you want to settle it on the spot. The last link is the elephant argument from the start of the hour.</p>
+<p>The whale example is the best one in the notes because the falsity of the conclusion is not a matter of opinion.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -535,22 +1232,22 @@ Gabriel Uzquiano
 <section>
 <section id="validity-in-english" class="title-slide slide level1 divider center">
 <h1>validity in English</h1>
-<p>Enough to make partial progress on real arguments.</p>
+<p>We are in a position to make partial progress on real life arguments.</p>
 </section>
-<section id="is-this-valid" class="slide level2 smaller">
-<h2>Is this valid?</h2>
+<section id="is-this-a-valid-argument" class="slide level2 smaller">
+<h2>is this a valid argument?</h2>
 <blockquote>
 <p>Many Americans speak Tagalog. Most USC students are American. Therefore, most USC students speak Tagalog.</p>
 </blockquote>
 <div class="fragment verdict">
-<p><strong>No.</strong> The premises are true and the conclusion is false, so it cannot be an instance of a valid form.</p>
+<p>No.&nbsp;The premises are true and the conclusion is false, so it cannot be an instance of a valid form.</p>
 </div>
 <div class="fragment">
 <blockquote>
 <p>If many Americans speak Tagalog, then some USC students do. Many Americans speak Tagalog. Therefore, some USC students speak Tagalog.</p>
 </blockquote>
 <div class="fragment verdict">
-<p><strong>Yes.</strong> Modus ponens, with <span class="math inline">\(p\)</span> for ‘many Americans speak Tagalog’.</p>
+<p>Yes. This argument is an instance of modus ponens in which <span class="math inline">\(p\)</span> stands for ‘many Americans speak Tagalog’ and <span class="math inline">\(q\)</span> stands for ‘some students speak Tagalog’.</p>
 </div>
 <aside class="notes">
 <p>Vote on each before revealing. The pair is deliberately close in subject matter so that only the form distinguishes them.</p>
@@ -567,43 +1264,95 @@ Gabriel Uzquiano
       }</style></aside>
 </div>
 </section>
-<section id="and-these" class="slide level2 smaller">
-<h2>And these?</h2>
-<blockquote>
-<p>Every Tesla is an electric car. Every electric car is fuel-efficient. So every Tesla is fuel-efficient.</p>
-</blockquote>
-<div class="fragment verdict">
-<p><strong>Yes.</strong> Every <span class="math inline">\(A\)</span> is <span class="math inline">\(B\)</span>; every <span class="math inline">\(B\)</span> is <span class="math inline">\(C\)</span>; so every <span class="math inline">\(A\)</span> is <span class="math inline">\(C\)</span>.</p>
+<section id="and-this" class="slide level2 smaller">
+<h2>and this?</h2>
+<div class="argument">
+<ol type="1">
+<li>Every Tesla is an electric car.</li>
+<li>Every electric car is fuel-efficient.</li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li>Every Tesla is fuel-efficient.</li>
+</ol>
+</div>
 </div>
 <div class="fragment">
-<blockquote>
-<p>Some Teslas are fuel-efficient cars. Some fuel-efficient cars are electric cars. Therefore, some Teslas are electric cars.</p>
-</blockquote>
-<div class="fragment verdict">
-<p><strong>No.</strong> Some <span class="math inline">\(A\)</span> is <span class="math inline">\(B\)</span>; some <span class="math inline">\(B\)</span> is <span class="math inline">\(C\)</span>; so some <span class="math inline">\(A\)</span> is <span class="math inline">\(C\)</span> — and: some whales are mammals; some mammals live at high altitude; so some whales live at high altitude.</p>
+<p>This is an instance of a valid argument form:</p>
 </div>
-<aside class="notes">
-<p>These two are the first quantificational forms of the course, and they will come back in October. Note out loud that ‘every’ and ‘some’ are not among the connectives we are about to formalise — this is a promissory note.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<div class="fragment">
+<div class="argument">
+<ol type="1">
+<li>Every <span class="math inline">\(A\)</span> is <span class="math inline">\(B\)</span>.</li>
+<li>Every <span class="math inline">\(B\)</span> is <span class="math inline">\(C\)</span>.</li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li>Every <span class="math inline">\(A\)</span> is <span class="math inline">\(C\)</span>.</li>
+</ol>
+</div>
+</div>
+<p>No matter what we substitute for <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, and <span class="math inline">\(C\)</span>, we will never obtain an argument with true premises and a false conclusion.</p>
+</div>
+</section>
+<section id="compare" class="slide level2 smaller">
+<h2>compare</h2>
+<div class="argument">
+<ol type="1">
+<li>Some Teslas are fuel-efficient cars.</li>
+<li>Some fuel-efficient cars are electric cars.</li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li>Therefore, some Teslas are electric cars.</li>
+</ol>
+</div>
+</div>
+<div class="fragment">
+<p>This is an instance of the form:</p>
+<div class="argument">
+<ol type="1">
+<li>Some <span class="math inline">\(A\)</span> is <span class="math inline">\(B\)</span>.</li>
+<li>Some <span class="math inline">\(B\)</span> is <span class="math inline">\(C\)</span>.</li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li>Therefore, some <span class="math inline">\(A\)</span> is <span class="math inline">\(C\)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>Substitute:</p>
+<div class="columns">
+<div class="column" style="width:34%;">
+<ul>
+<li><span class="math inline">\(A\)</span> := whale</li>
+<li><span class="math inline">\(B\)</span> := mammal</li>
+<li><span class="math inline">\(C\)</span> := lives at high altitude</li>
+</ul>
+</div><div class="column" style="width:62%;">
+<div class="argument">
+<ol type="1">
+<li>Some whales are mammals.</li>
+<li>Some mammals live at high altitude.</li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li>Therefore, some whales live at high altitude.</li>
+</ol>
+</div>
+</div>
+</div></div>
 </div>
 </section></section>
 <section>
 <section id="soundness" class="title-slide slide level1 divider center">
 <h1>soundness</h1>
-<p>Valid is not yet everything we want.</p>
+<p>Validity is not all we want.</p>
 </section>
-<section id="a-valid-argument-you-should-not-believe" class="slide level2">
-<h2>A valid argument you should not believe</h2>
+<section id="some-valid-arguments-should-not-persuade-you" class="slide level2">
+<h2>some valid arguments should not persuade you</h2>
 <div class="argument">
 <ol type="1">
 <li>If Bilbao is in Southern Spain, then it is closer to Sevilla than to Barcelona.</li>
@@ -616,7 +1365,7 @@ Gabriel Uzquiano
 </div>
 </div>
 <div class="fragment">
-<p>Valid — but the second premise is false, and so is the conclusion.</p>
+<p>The argument is valid, as it is an instance of modus ponens. Yes, the second premise is false, and there is no reason for you to accept the conclusion.</p>
 </div>
 <div class="fragment">
 <div class="argument">
@@ -638,7 +1387,7 @@ Gabriel Uzquiano
 </div>
 </div>
 <div class="fragment verdict">
-<p><strong>Sound</strong>: valid, and the premises are true. So we can be confident in the conclusion.</p>
+<p><strong>Sound</strong>. This is a valid argument, and the premises are true. So, we must accept the conclusion.</p>
 </div>
 <div class="fragment">
 <div class="argument">
@@ -653,44 +1402,43 @@ Gabriel Uzquiano
 </div>
 </div>
 <div class="fragment verdict">
-<p><strong>Unsound</strong>: valid, but at least one premise is false.</p>
+<p><strong>Unsound</strong>. This is a valid argument, but its second premise is false.</p>
 </div>
 </div>
 </section>
-<section id="monty-hall-revisited" class="slide level2 smaller">
-<h2>Monty Hall, revisited</h2>
+<section id="free-will-example" class="slide level2 smaller">
+<h2>free will example</h2>
 <div class="columns">
 <div class="column" style="width:46%;">
-<p><strong>Against switching</strong></p>
+<div class="argument">
 <ol type="1">
-<li>Door 1 is as likely to win as door 2.</li>
-<li>If so, there is no reason to switch.</li>
-<li>So there is no reason to switch.</li>
+<li>If determinism is true, then if I have no control over the laws of nature or the initial conditions, then I have no control over what I do.</li>
+<li>Determinism is true.</li>
+<li>I have no control over the laws of nature or the initial conditions.</li>
 </ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li>So, I have no control over what I do.</li>
+</ol>
+</div>
+</div>
 </div><div class="column" style="width:50%;">
-<p><strong>For switching</strong></p>
+<div class="argument">
 <ol type="1">
-<li>Door 2 is likelier to win than door 1.</li>
-<li>If so, you should switch.</li>
-<li>So you should switch.</li>
+<li>If determinism is true, then if my actions are unimpeded by external coercion, compulsion or manipulation, then I have control over what I do.</li>
+<li>Determinism is true.</li>
+<li>My actions are unimpeded by external coercion, compulsion or manipulation.</li>
 </ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li>So, I have control over what I do.</li>
+</ol>
+</div>
+</div>
 </div></div>
 <div class="fragment verdict">
-<p>Both are <strong>valid</strong> — same form: <span class="math inline">\(p\)</span>; if <span class="math inline">\(p\)</span> then <span class="math inline">\(q\)</span>; so <span class="math inline">\(q\)</span>. Only one is <strong>sound</strong>, and that is where the real disagreement lives.</p>
+<p>Both are <em>valid</em> arguments, but <em>only one of them</em> is <em>sound</em>, and that is where the real disagreement lies.</p>
 </div>
-<aside class="notes">
-<p>This is the payoff of the Monty Hall discussion from last time. The argument was never about logic; it was about which first premise is true. Logic told us the disagreement had to be there and nowhere else.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="how-they-relate" class="slide level2">
 <h2>How they relate</h2>
@@ -699,10 +1447,10 @@ Gabriel Uzquiano
 <li class="fragment">If an argument is sound, then its conclusion is true.</li>
 </ul>
 <div class="fragment">
-<p>But not conversely:</p>
+<p>But on the other hand:</p>
 <ul>
-<li class="fragment">A valid argument may have false premises — and a false conclusion.</li>
-<li class="fragment">An argument with true premises and a true conclusion need not be valid.</li>
+<li class="fragment">A valid argument may have false premises, and a false conclusion.</li>
+<li class="fragment">An argument with true premises and a true conclusion may not be valid.</li>
 </ul>
 <aside class="notes">
 <p>The two traps on the quiz are ‘if valid then sound’ and ‘if valid then the conclusion is true’. Say both out loud as false, twice.</p>
@@ -719,16 +1467,15 @@ Gabriel Uzquiano
       }</style></aside>
 </div>
 </section>
-<section id="what-kills-what" class="slide level2 smaller">
-<h2>What kills what</h2>
+<section id="what-rules-out-what" class="slide level2">
+<h2>what rules out what</h2>
 <ul>
-<li class="fragment">True premises and a false conclusion <span class="math inline">\(\Rightarrow\)</span> <strong>not valid</strong>.</li>
-<li class="fragment">A false premise <span class="math inline">\(\Rightarrow\)</span> <strong>not sound</strong>.</li>
-<li class="fragment">Every sound argument has true premises and a true conclusion.</li>
-<li class="fragment">No sound argument has true premises and a false conclusion.</li>
+<li class="fragment">True premises and a false conclusion rule out validity.</li>
+<li class="fragment">False premises or conclusion rule out soundness.</li>
+<li class="fragment">Invalidity rules out soundness.</li>
 </ul>
 <aside class="notes">
-<p>This is the summary slide. If you are short of time, cut the Tesla pair earlier rather than this.</p>
+<p>This is the summary slide.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -743,25 +1490,15 @@ Gabriel Uzquiano
 </section>
 <section id="next-time" class="slide level2">
 <h2>Next time</h2>
-<p>We look for a <strong>language</strong> in which forms can be written down precisely — and start with the difference between using a word and mentioning it.</p>
-
-<aside class="notes">
-<p>Problem Session 1 is Monday 8/31, with Quiz 1.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<p>We look for a <strong>formal language</strong> in which to study forms.</p>
+<div class="fragment">
+<p>Problem Session 1 is scheduled for Monday 8/31 along with Quiz 1.</p>
 
 
+
+</div>
 <aside><div>
-<p>Notes for this session: <a href="https://gabriel-uzquiano.github.io/220/notes/validity-and-form.html">gabriel-uzquiano.github.io/220/notes/validity-and-form.html</a></p>
+<p>The slides cover material from <a href="https://gabriel-uzquiano.github.io/logic/reason.html#reason">Chapter 1</a> of <a href="https://gabriel-uzquiano.github.io/logic/">Introduction to Logic</a>.</p>
 </div></aside></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">

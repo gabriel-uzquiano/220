@@ -1,0 +1,168 @@
+/*-- scss:defaults --*/
+
+// ─── Web fonts (ET Book, from Tufte-CSS repo) ────────────────────────────────
+@font-face {
+  font-family: "et-book";
+  src: url("https://edwardtufte.github.io/tufte-css/et-book/et-book-roman-line-figures/et-book-roman-line-figures.woff") format("woff");
+  font-weight: normal; font-style: normal;
+}
+@font-face {
+  font-family: "et-book";
+  src: url("https://edwardtufte.github.io/tufte-css/et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.woff") format("woff");
+  font-weight: normal; font-style: italic;
+}
+@font-face {
+  font-family: "et-book";
+  src: url("https://edwardtufte.github.io/tufte-css/et-book/et-book-bold-line-figures/et-book-bold-line-figures.woff") format("woff");
+  font-weight: bold; font-style: normal;
+}
+
+// ─── Palette + typography variables (Reveal reads these) ─────────────────────
+$body-bg:    #fffff8 !default;
+$body-color: #111    !default;
+$link-color: #111    !default;
+$selection-bg: rgba(0,102,102,.25) !default;
+
+$font-family-sans-serif: "et-book", Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif !default;
+$presentation-font-size-root: 30px !default;
+$presentation-heading-font: "et-book", Palatino, Georgia, serif !default;
+$presentation-heading-color: #111 !default;
+$presentation-heading-font-weight: 400 !default;
+$presentation-heading-text-transform: none !default;
+$presentation-heading-line-height: 1.1 !default;
+$presentation-h1-font-size: 2.4em !default;
+$presentation-h2-font-size: 1.6em !default;
+$presentation-h3-font-size: 1.25em !default;
+$presentation-line-height: 1.5 !default;
+
+/*-- scss:rules --*/
+
+// ─── Base slide look ─────────────────────────────────────────────────────────
+.reveal, .reveal .slides, .reveal .slides section {
+  text-align: left;
+}
+
+.reveal .slides section > * {
+  max-width: 46em; // long line, but Tufte-ish -- adjust if you want narrower
+}
+
+.reveal .slides section.smaller {
+  font-size: 0.85em;
+}
+
+.reveal h1 {
+  font-weight: 400;
+  letter-spacing: 0;
+  margin-bottom: 0.6em;
+}
+.reveal h2, .reveal h3 {
+  font-style: italic;
+  font-weight: 400;
+}
+
+// Section-header slides (# ...) -- big, Tufte-ish
+.reveal section.title-slide h1.title,
+.reveal .slides > section.title-slide {
+  text-align: left;
+}
+.reveal .slides > section > .title,
+.reveal .slides > section > h1:first-child {
+  font-size: 2.4em;
+}
+
+// ─── Links: subtle underline like Tufte notes ────────────────────────────────
+.reveal a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid #333;
+}
+.reveal a:hover { color: #006666; border-bottom-color: #006666; }
+
+// ─── Emphasis + strong ───────────────────────────────────────────────────────
+.reveal em { font-style: italic; }
+.reveal strong { font-weight: bold; }
+
+// ─── Lists ───────────────────────────────────────────────────────────────────
+.reveal ul, .reveal ol { display: block; margin-left: 1.2em; }
+.reveal li { padding: 0.25em 0; line-height: 1.5; }
+
+// ─── Blockquotes / callouts ──────────────────────────────────────────────────
+.reveal blockquote {
+  background: transparent;
+  box-shadow: none;
+  border-left: 2px solid #ccc;
+  padding: 0.2em 0.9em;
+  font-style: italic;
+  color: #333;
+}
+.reveal div.callout {
+  background: #fffff0;
+  border: 1px solid #e5e2c8;
+  border-radius: 0;
+  box-shadow: none;
+}
+.reveal div.callout .callout-header {
+  background: transparent;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  font-weight: 400;
+  color: #555;
+}
+.reveal div.callout .callout-body { font-family: inherit; }
+
+// ─── Code (used sparingly here) ──────────────────────────────────────────────
+.reveal code, .reveal pre code {
+  font-family: "SF Mono", "Menlo", Consolas, monospace;
+  background: transparent;
+  color: #111;
+}
+
+// ─── Math (MathJax) ──────────────────────────────────────────────────────────
+.reveal .MathJax, .reveal mjx-container { color: #111 !important; }
+
+// ─── Slide number + controls: dimmed ─────────────────────────────────────────
+.reveal .slide-number,
+.reveal .slide-number a {
+  background: transparent;
+  color: #888;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  font-size: 0.7em;
+}
+.reveal .controls { color: #888; }
+.reveal .progress { color: #006666; height: 3px; }
+
+// ─── Fragments: keep default reveal behaviour, just soften ───────────────────
+.reveal .fragment.highlight-current-blue.current-fragment { color: #006666; }
+
+// ─── Carnap-to-MC widget style (same as notes) ──────────────────────────────
+.reveal .mc-exercise { margin: 1rem 0 1.5rem; width: 100%; }
+.reveal .mc-question { margin-bottom: 0.6rem; }
+.reveal .mc-options { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.8rem; }
+.reveal .mc-option { display: flex; align-items: baseline; gap: 0.5rem; cursor: pointer; }
+.reveal .mc-option input { margin: 0; flex-shrink: 0; }
+.reveal .mc-controls { display: flex; gap: 0.5rem; margin-bottom: 0.5rem; }
+.reveal .btn-check, .reveal .btn-reveal {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  font-size: 0.55em;
+  padding: 0.25rem 0.7rem;
+  border-radius: 3px; cursor: pointer;
+  border: 1px solid #ccc;
+  background: #fffff8; color: #111;
+}
+.reveal .btn-check:hover, .reveal .btn-reveal:hover {
+  background: #006666; color: #fff; border-color: #006666;
+}
+.reveal .mc-feedback {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  font-size: 0.6em; margin-bottom: 0.3rem;
+}
+.reveal .fb-ok  { color: #1a6e2e; }
+.reveal .fb-err { color: #8b1a1a; }
+.reveal .mc-answer {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  font-size: 0.6em; color: #555; margin-top: 0.3rem;
+}
+.reveal .mc-explanation {
+  margin-top: 0.4rem;
+  font-family: "et-book", Palatino, serif;
+  font-size: 0.8em; color: #333;
+}

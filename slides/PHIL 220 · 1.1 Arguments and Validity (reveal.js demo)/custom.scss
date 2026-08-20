@@ -1,0 +1,104 @@
+/*-- scss:defaults --*/
+
+// A Tufte-ish skin for the reveal.js deck, so the slides feel like the notes.
+// Cream paper, Palatino, cardinal accents.
+
+$body-bg:        #fffff8;
+$body-color:     #111111;
+$link-color:     #7a003c;
+$selection-bg:   #f2e3ea;
+
+$font-family-sans-serif: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+$presentation-font-size-root: 34px;
+$presentation-heading-font: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+$presentation-heading-color: #7a003c;
+$presentation-heading-font-weight: 400;
+$presentation-h1-font-size: 1.9em;
+$presentation-h2-font-size: 1.35em;
+$presentation-line-height: 1.35;
+
+/*-- scss:rules --*/
+
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+// Puzzle statements and specimen arguments: indented, ragged right, quieter.
+.reveal blockquote {
+  width: 100%;
+  margin: 0.4em 0;
+  padding: 0.4em 1em;
+  background: none;
+  border-left: 3px solid #d8ccd2;
+  box-shadow: none;
+  font-style: normal;
+}
+
+// Numbered reconstructions: give the lines room to breathe.
+.reveal ol li,
+.reveal ul li {
+  margin-bottom: 0.35em;
+}
+
+// A premise/conclusion block. The conclusion rule marks the inference.
+.reveal .argument {
+  border-left: 3px solid #7a003c;
+  padding: 0.3em 0 0.3em 1em;
+  margin: 0.5em 0;
+}
+
+.reveal .conclusion {
+  border-top: 1px solid #999;
+  padding-top: 0.35em;
+  margin-top: 0.35em;
+}
+
+// Section dividers.
+.reveal .divider h1 {
+  border-bottom: 1px solid #d8ccd2;
+  padding-bottom: 0.2em;
+}
+
+// Quarto lays columns out with flex and no gutter, so two columns whose widths
+// sum to 100% collide. Give every column an internal gutter and count the
+// padding inside the declared width.
+.reveal .columns > .column {
+  box-sizing: border-box;
+  padding-right: 1.4rem;
+}
+
+.reveal .columns > .column:last-child {
+  padding-right: 0;
+  padding-left: 1.4rem;
+}
+
+// Inside a column a blockquote should not add its own indent on top of that.
+.reveal .column blockquote {
+  padding-right: 0;
+}
+
+// Keep embedded apps from looking like an afterthought.
+.reveal iframe.app {
+  width: 100%;
+  height: 560px;
+  border: 1px solid #d8ccd2;
+  border-radius: 3px;
+  background: #fff;
+}
+
+.reveal .caption {
+  font-size: 0.62em;
+  color: #666;
+  margin-top: 0.3em;
+}
+
+// Verdict/aside line.
+.reveal .aside {
+  font-size: 0.8em;
+  color: #555;
+}
+
+.reveal .cardinal { color: #7a003c; }
