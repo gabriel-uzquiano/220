@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'slides/**.qmd'
+      - 'slides/**.lua'
       - 'slides/custom.scss'
       - 'slides/_quarto.yml'
   # Lets you force a rebuild of every deck from the Actions tab, which is what

@@ -656,7 +656,7 @@ This is **not** modus tollens.
 :::
 
 ::: {.verdict}
-This is **not** modus tollens.
+This **is** modus tollens.
 :::
 :::
 :::
@@ -690,8 +690,8 @@ The truth values of premises and conclusion is determined by the truth value of 
       <th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">$p$</th>
       <th style="text-align:center; padding:0.35rem 0.9rem; border-right:4px double #444; border-bottom:2px solid #444;">$q$</th>
       <th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">if $p$, then $q$</th>
-      <th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">not-$p$</th>
       <th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">not-$q$</th>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">not-$p$</th>
     </tr>
   </thead>
   <tbody>
@@ -706,15 +706,15 @@ The truth values of premises and conclusion is determined by the truth value of 
       <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
       <td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">F</td>
       <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
-      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
       <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
     </tr>
     <tr>
       <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
       <td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">T</td>
       <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
-      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
       <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
     </tr>
     <tr>
       <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>

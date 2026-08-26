@@ -17,3 +17,13 @@ project:
 website:
   title: "PHIL 220 slides"
   search: false
+
+# Lua filters, applied in order to every deck.
+#   carnap-widgets.lua  → turns `.QualitativeProblem` code blocks into
+#                          interactive multiple-choice widgets.
+#   checker-widget.lua  → turns `.FormulaChecker` code blocks into iframe
+#                          embeds of the propositional formula checker at
+#                          gabriel-uzquiano.github.io/prop-formula-checker.
+filters:
+  - carnap-widgets.lua
+  - checker-widget.lua
