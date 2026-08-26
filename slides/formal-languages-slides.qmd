@@ -1,6 +1,6 @@
 ---
-title: "Formal Languages"
-subtitle: "PHIL 220. Introduction to Logic &middot; 2.1"
+title: "formal languages"
+subtitle: "PHIL 220. Introduction to Logic"
 author: "Gabriel Uzquiano"
 format:
   revealjs:
@@ -22,83 +22,78 @@ format:
 
 # formal languages {.divider}
 
-We know validity is a matter of form. Now we need somewhere to *write forms
-down*.
+We have emphasized that validity is a matter of form. 
 
-::: {.notes}
-Frame the whole unit in one sentence: the last two sessions told us that validity
-depends on form, and English is not a good place to display form. Everything
-today is preparation for that claim.
-:::
+. . .
+
+We have focused on forms that combine basic statements with the help of connectives like 'or', 'and', 'not', 'if ... , then ...'.
+
+. . .
+
+Notice the use of *quotation marks* ... 
 
 # use and mention {.divider}
 
-A first lesson about being careful with words.
+Quotation marks are used to distinguish between use and mention.
 
-## Two things you can talk about
+## a distinction between use and mention
 
 ::: {.columns}
 ::: {.column width="48%"}
-> Los Angeles has more than eighty cities in its metropolitan area.
+Los Angeles has many cities in its metropolitan area.
 
 ::: {.fragment .caption}
-About a **city**.
+We predicate something of a *city*, not a *linguistic expression*.
 :::
 :::
 
 ::: {.column width="48%"}
-> 'Los Angeles' consists of two words.
+'Los Angeles' consists of two words.
 
 ::: {.fragment .caption}
-About a **name**.
+We predicate something of a *name*, which is itself a *linguistic expression*.
 :::
 :::
 :::
 
-. . .
 
-::: {.argument}
-Quotation marks make a word *mention* itself instead of doing its usual work.
-:::
-
-::: {.fragment .verdict}
-Los Angeles does not consist of two words. 'Los Angeles' has no cities in it.
-:::
-
-::: {.notes}
-Say the two false sentences out loud — they get a laugh, and the laugh is the
-lesson. This distinction will matter in two places later: when we say what a
-formula *is*, and when we talk about substitution in quantificational logic.
-:::
-
-## Where do the quotation marks go?
-
-Add quotation marks wherever they belong:
 
 ::: {.incremental}
-1. I is a Roman numeral, and I am a philosopher.
-2. England is part of New England, but England is not part of New England.
+- One statement **uses** a name for a city in order to denote a city.
+
+- The other statement **mentions** a name for a city in order to predicate something of the linguistic expression.
+
+- Quotation marks indicate that a given expression is being mentioned and not used.
 :::
 
-. . .
 
-::: {.verdict}
-1. **'I'** is a Roman numeral, and **I** am a philosopher.
-2. **'England'** is part of **'New England'**, but **England** is not part of
-   **New England**.
-:::
+## practice
 
-::: {.notes}
-Do the second one on the board. The trick is that the first half is a claim about
-words — the string is literally contained in the longer string — and the second
-is a claim about geography. Same characters, different subject.
-:::
+Which statements below are true?
+
+```{.QualitativeProblem .MultipleSelection options="check" submission="none"}
+A.
+| England is part of 'New England'
+|*'England' is part of 'New England'
+|'England' is part of New England
+```
+
+
+```{.QualitativeProblem .MultipleSelection options="check" submission="none"}
+B.
+| 'England' is not part of 'New England'
+|* England is not part of 'New England'
+|* England is not part of New England
+```
+
+
+
 
 # form and meaning {.divider}
 
 Which words does the form depend on?
 
-## The word that does the work
+## whence a valid form
 
 ::: {.argument}
 1. $p$ and $q$
@@ -110,40 +105,83 @@ Which words does the form depend on?
 
 . . .
 
-This is valid, and it is valid because of what **'and'** means. Replace 'and'
-with 'or' and it collapses:
+This is a valid argument form because of what **'and'** means. Replace 'and'
+with 'or' and we no longer have a valid form:
 
+. . .
+
+::: {.columns}
+::: {.column width="48%"}
 ::: {.argument}
-1. It is raining or it is snowing.
+1. $p$ or $q$
 
 ::: {.conclusion}
-2. Therefore, it is snowing.
+2. Therefore, $q$
+:::
+:::
+:::
+
+::: {.column width="48%"}
+::: {.argument}
+1. Snow is white or black.
+
+::: {.conclusion}
+2. Therefore, snow is black.
+:::
+:::
 :::
 :::
 
-::: {.notes}
-The point to land: the *letters* can be replaced by anything at all, but the
-logical words cannot. A formal language is a language in which only the logical
-words are fixed.
-:::
 
-## Let's check it {background-color="#fffff8"}
+## a truth table
 
-<iframe class="app check" data-src="https://gabriel-uzquiano.github.io/prop-truth-table/?search=1#v1:eyJmb3JtdWxhcyI6IFsiKHAg4oinIHEpIiwgInEiXX0=" title="Counterexample search for the form: p and q, therefore q"></iframe>
 
-::: {.caption}
-Premise $(p \wedge q)$; conclusion $q$. Only the rows where the conclusion is
-false are shown.
-:::
+<div style="display:flex; justify-content:center; margin-top:1rem;">
+<table style="border-collapse:collapse; font-size:0.95em;">
+  <thead>
+    <tr>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">$p$</th>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-right:4px double #444; border-bottom:2px solid #444;">$q$</th>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">$p$ and $q$</th>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">$q$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+    </tr>
+    <tr>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+    </tr>
+    <tr>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+    </tr>
+    <tr>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
-::: {.notes}
-Two rows come back, and in both of them the premise is false. So there is nowhere
-for a counterexample to live, and the verdict reads 'Valid'. Contrast with the
-affirming-the-consequent search from last session, where the highlighted row was
-the counterexample.
-:::
+. . .
 
-## Four connectives
+No matter what statements we choose for $p$ and $q$, no argument instance will take us from *true* premises to a *false* conclusion.
+
+
+
+## four basic connectives
 
 | | | |
 |---|---|---|
@@ -156,151 +194,183 @@ the counterexample.
 
 . . .
 
-Everything in propositional logic is built from sentence letters and these four
-symbols.
+Propositional logic will focus on forms obtained from basic propositional letters $p$, $q$, $r$, etc and the four connectives listed above.
 
-::: {.notes}
-Write each symbol on the board as you say it; they need to be able to draw them,
-not just recognise them. Flag now that $\to$ is the one whose truth table will
-surprise them, and that we come back to it.
-:::
 
-## Their truth tables {background-color="#fffff8"}
 
-<iframe class="app" data-src="https://gabriel-uzquiano.github.io/prop-truth-table/#v1:eyJmb3JtdWxhcyI6IFsiwqxwIiwgIihwIOKIpyBxKSIsICIocCDiiKggcSkiLCAiKHAg4oaSIHEpIl19" title="Truth tables for the four connectives"></iframe>
-
-::: {.caption}
-Already loaded — press **Evaluate** to fill them in.
-:::
-
-::: {.notes}
-Do not press the button immediately. Ask them for the rows of $(p \vee q)$ first
-and see whether anyone gives you the exclusive reading — that sets up the syrup
-example at the end of the hour.
-:::
-
-## A form the tables settle {background-color="#fffff8"}
-
-<iframe class="app check" data-src="https://gabriel-uzquiano.github.io/prop-truth-table/?search=1#v1:eyJmb3JtdWxhcyI6IFsiKHAg4oioIHEpIiwgIsKscCIsICJxIl19" title="Counterexample search for: p or q, not p, therefore q"></iframe>
-
-::: {.caption}
-$(p \vee q)$ and $\neg p$; therefore $q$.
-:::
-
-::: {.notes}
-This is the form behind 'my office number is even or odd; it is not even; so it
-is odd'. Once the connectives have tables, questions about validity stop being
-matters of judgement.
-:::
-
-# three things to ask {.divider}
+# how to specify a language  {.divider}
 
 Syntax, semantics, pragmatics.
 
-## Three questions about any language {.smaller}
+## three aspects of a language
 
 ::: {.incremental}
-- **Syntax.** Which strings of symbols count as sentences? A question with a
-  precise answer and no reference to meaning.
-- **Semantics.** What do the sentences mean — and when are they true?
-- **Pragmatics.** What do speakers *convey* by uttering them on an occasion?
+- **Syntax** 
+  
+    - What is the basic vocabulary from which to build the expressions of the language?
+    - Which combinations of symbols count as grammatical sentences of the language.
+
+- **Semantics** 
+
+    - How should the language be interpreted?
+    - What do the sentences of the language mean?
+
+- **Pragmatics** 
+
+    - What do speakers *convey* with an utterance of a sentence?
 :::
+
+. . . 
+
+Only syntax and semantics will be relevant for a formal language.
+
+
+# why a formal language? {.divider}
+
+There are at least two reasons 
+
+## reason one: discount pragmatic effects
+
+Do these sentences differ in truth conditions?
+
+> I felt ill, and I took some syrup
+
+> I took some syrup, and I felt ill
 
 . . .
 
-::: {.aside}
-The next session is entirely syntax. Semantics follows, and pragmatics is what we
-will keep having to set aside.
-:::
+In a formal language, we stipulate that order makes no difference to the truth conditions of a conjunction: $p \wedge q$ is true if, and only if, $q \wedge p$ no matter how we interpret $p$ and $q$.
 
-::: {.notes}
-An example of the third: 'some students passed' suggests not all did, though it
-does not say so. That suggestion is pragmatic, and it is why some of our
-translations will feel slightly wrong at first.
-:::
 
-# why bother? {.divider}
+## reason two: structure is not transparent in English {.smaller}
 
-Two reasons, and both are about English rather than about logic.
+::: {.columns}
+::: {.column width="46%"}
+::: {.fragment}
+**premises**
 
-## Reason one: only the form should matter {.smaller}
-
-> Would you like syrup on your pancakes or waffles?
-
-. . .
-
-::: {.incremental}
-- 'Or' here excludes: you are being offered one or the other, not both.
-- Elsewhere it does not: 'we are hiring someone with a degree in philosophy or
-  mathematics'.
-:::
-
-. . .
-
-::: {.verdict}
-A formal language fixes one meaning per symbol. $\vee$ will be the inclusive
-one — and we will say why that is the useful choice.
-:::
-
-## Reason two: English hides structure {.smaller}
-
-::: {.argument}
-1. Everything is caused by something.
-2. Only God can cause everything.
+1. Some Rolls Royce is better than any Audi.
+2. Some Audi is better than any Honda.
 
 ::: {.conclusion}
-3. Therefore, God causes everything.
+**conclusion**
+
+3. Some Rolls Royce is better than any Honda.
+:::
+:::
+:::
+
+::: {.column width="50%"}
+
+::: {.fragment}
+**premises**
+
+1. Some gift card is better than nothing.
+2. Nothing is better than any fine Swiss watch.
+
+::: {.conclusion}
+**conclusion**
+
+3. Some gift card is better than any fine Swiss watch.
+:::
+:::
+
 :::
 :::
 
 . . .
 
-'Everything is caused by something' can mean:
+One may be tempted to discern the same superficial form:
 
-::: {.incremental}
-- for each thing, there is something that causes it; or
-- there is one thing that causes everything.
+::: {.fragment}
+1. Some $A$ is better than any $B$.
+2. Some $B$ is better than any $C$.
+
+::: {.conclusion}
+3. Some $A$ is better than any $C$.
+:::
 :::
 
-::: {.fragment .verdict}
-On the first reading the premise is plausible but the argument fails. On the
-second the argument works but the premise is what was to be proved.
-:::
+. . .
 
-::: {.notes}
-This is the best argument on the syllabus for the whole enterprise. The fallacy
-is invisible in English and impossible to state in a formal language, because the
-two readings get different formulas. We will translate this one properly in
-November.
-:::
 
-## Structure with connectives too {.smaller}
+That would be a **mistake**. The two arguments do **not** share a valid form. 
 
-> The car starts if there is gas in the tank and you turn the ignition.
+Quantificational logic will enable to distinguish two different forms, one valid and one invalid.
+
+
+
+
+## Structural ambiguity
+
+> There is gas in the tank or the car will start if you turn the ignition.
 
 . . .
 
 ::: {.incremental}
-- $(\text{gas} \wedge \text{ignition}) \to \text{starts}$
-- $\text{gas} \wedge (\text{ignition} \to \text{starts})$
+- $\text{there is gas in the tank}$ **or** $[\text{you turn the ignition} \Rightarrow \text{the car starts}]$ 
+- $[\text{there is gas in the tank}$ **or** $\text{you turn the ignition}] \Rightarrow \text{the car starts}$ 
 :::
 
-::: {.fragment .verdict}
-The brackets are not decoration. English left them out; the formal language will
-not let us.
+. . .
+
+Unlike English, the formal language will not tolerate structural ambiguities.
+
+
+# the language of propositional logic {.divider}
+
+## vocabulary {.smaller}
+
+The vocabulary of propositional logic contains three types of symbols:
+
+Propositional Variables
+
+:   These are the lowercase letters $p$, $q$, $r$, $s$, and $t$ with or without numerical subscripts:
+   $$
+   p,  q, r, s, t
+   $$
+
+Connectives
+
+:   These are formal counterparts of 'not', 'or', 'and', and 'if $\dots$, then $\dots$':
+   $$
+   \neg, \vee, \wedge, \to
+   $$
+
+Parentheses
+
+:   There are two parentheses:
+   $$
+   ), (
+   $$
+
+**Nothing else** is a symbol of the language.
+
+## grammar
+
+Which expressions count as a formula of propositional logic?
+
+:::{.incremental}
+1. All propositional variables are *formulas*.\
+2. If $\varphi$ and $\psi$ are *formulas*, then each of
+$$
+\neg  \varphi, (\varphi \wedge \psi), (\varphi \vee \psi), (\varphi \to \psi)
+$$
+is a *formula*.\
+3. Nothing else is a *formula*.
 :::
 
-::: {.notes}
-Ask which one they meant. Then point out that the second one asserts that there
-is gas in the tank, which the English sentence plainly does not.
-:::
+## example
+
+```{.FormulaChecker card="tree"}
+(p ∧ (q → ¬r))
+```
+
 
 ## Next time
 
-The **syntax** of propositional logic: exactly which strings count as formulas,
-and how to tell.
+
 
 ::: {.aside}
-Notes for this session:
-[gabriel-uzquiano.github.io/220/notes/formal-languages.html](https://gabriel-uzquiano.github.io/220/notes/formal-languages.html)
+The slides cover material from [Chapter 1](https://gabriel-uzquiano.github.io/logic/reason.html#reason) of [Introduction to Logic](https://gabriel-uzquiano.github.io/logic/).
 :::
