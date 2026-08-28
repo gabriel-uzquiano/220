@@ -222,7 +222,7 @@ Syntax, semantics, pragmatics.
 
 . . . 
 
-Only syntax and semantics will be relevant for a formal language.
+Only syntax and semantics will be relevant for our formal languages.
 
 
 # why a formal language? {.divider}
@@ -239,8 +239,7 @@ Do these sentences differ in truth conditions?
 
 . . .
 
-In a formal language, we stipulate that order makes no difference to the truth conditions of a conjunction: $p \wedge q$ is true if, and only if, $q \wedge p$ no matter how we interpret $p$ and $q$.
-
+In propositional logic, order makes no difference to the truth conditions of a conjunction: $(p \wedge q)$ and $(q \wedge p)$ are true under exactly the same circumstances.
 
 ## reason two: structure is not transparent in English {.smaller}
 
@@ -249,13 +248,13 @@ In a formal language, we stipulate that order makes no difference to the truth c
 ::: {.fragment}
 **premises**
 
-1. Some Rolls Royce is better than any Audi.
-2. Some Audi is better than any Honda.
+1. A Rolls Royce is better than an Audi.
+2. An Audi is better than a Honda.
 
 ::: {.conclusion}
 **conclusion**
 
-3. Some Rolls Royce is better than any Honda.
+3. A Rolls Royce is better than a Honda.
 :::
 :::
 :::
@@ -265,13 +264,13 @@ In a formal language, we stipulate that order makes no difference to the truth c
 ::: {.fragment}
 **premises**
 
-1. Some gift card is better than nothing.
-2. Nothing is better than any fine Swiss watch.
+1. A gift card is better than nothing.
+2. Nothing is better than a fine Swiss watch.
 
 ::: {.conclusion}
 **conclusion**
 
-3. Some gift card is better than any fine Swiss watch.
+3. A gift card is better than a fine Swiss watch.
 :::
 :::
 
@@ -280,21 +279,11 @@ In a formal language, we stipulate that order makes no difference to the truth c
 
 . . .
 
-One may be tempted to discern the same superficial form:
-
-::: {.fragment}
-1. Some $A$ is better than any $B$.
-2. Some $B$ is better than any $C$.
-
-::: {.conclusion}
-3. Some $A$ is better than any $C$.
-:::
-:::
+One may be tempted to discern the same superficial form, but that would be a **mistake**. 
 
 . . .
 
-
-That would be a **mistake**. The two arguments do **not** share a valid form. 
+The two arguments do **not** share a valid form: one is *valid* and the other is *invalid*.
 
 Quantificational logic will enable to distinguish two different forms, one valid and one invalid.
 
@@ -308,8 +297,8 @@ Quantificational logic will enable to distinguish two different forms, one valid
 . . .
 
 ::: {.incremental}
-- $\text{there is gas in the tank}$ **or** $[\text{you turn the ignition} \Rightarrow \text{the car starts}]$ 
-- $[\text{there is gas in the tank}$ **or** $\text{you turn the ignition}] \Rightarrow \text{the car starts}$ 
+- There is gas in the tank **or** [**if** you turn the ignition, **then** the car starts]. 
+- **If** you turn the ignition, **then** [there is gas in the tank **or** the car starts]. 
 :::
 
 . . .
@@ -323,12 +312,16 @@ Unlike English, the formal language will not tolerate structural ambiguities.
 
 The vocabulary of propositional logic contains three types of symbols:
 
+. . .
+
 Propositional Variables
 
 :   These are the lowercase letters $p$, $q$, $r$, $s$, and $t$ with or without numerical subscripts:
    $$
    p,  q, r, s, t
    $$
+
+. . .
 
 Connectives
 
@@ -337,12 +330,16 @@ Connectives
    \neg, \vee, \wedge, \to
    $$
 
+. . .
+
 Parentheses
 
 :   There are two parentheses:
    $$
    ), (
    $$
+
+. . .
 
 **Nothing else** is a symbol of the language.
 
@@ -360,17 +357,39 @@ is a *formula*.\
 3. Nothing else is a *formula*.
 :::
 
-## example
 
-```{.FormulaChecker card="tree"}
+## practice
+
+```{.FormulaChecker}
 (p ∧ (q → ¬r))
+```
+
+## practice
+
+```{.FormulaChecker}
+((p ∧ q) → ¬r)
+```
+
+
+
+## assignment
+
+```{.FormulaChecker card="assign"}
+(p ∧ (q → ¬r))
+```
+
+
+## assignment
+
+```{.FormulaChecker card="assign"}
+((p ∧ q) → ¬r)
 ```
 
 
 ## Next time
 
-
+Next time we will explore the use of truth tables to interpret the language of propositional logic.
 
 ::: {.aside}
-The slides cover material from [Chapter 1](https://gabriel-uzquiano.github.io/logic/reason.html#reason) of [Introduction to Logic](https://gabriel-uzquiano.github.io/logic/).
+The slides cover material from [Chapter 2](https://gabriel-uzquiano.github.io/logic/proplogic.html#proplogic) of [Introduction to Logic](https://gabriel-uzquiano.github.io/logic/).
 :::
