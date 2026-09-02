@@ -227,7 +227,7 @@ Only syntax and semantics will be relevant for our formal languages.
 
 # why a formal language? {.divider}
 
-There are at least two reasons 
+There are at least three reasons 
 
 ## reason one: discount pragmatic effects
 
