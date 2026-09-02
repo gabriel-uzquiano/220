@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.9.38">
 
   <meta name="author" content="Gabriel Uzquiano">
-  <title>PHIL 220 slides – truth tables</title>
+  <title>PHIL 220 slides – formal languages</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -132,7 +132,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">truth tables</h1>
+  <h1 class="title">formal languages</h1>
   <p class="subtitle">PHIL 220. Introduction to Logic</p>
 
 <div class="quarto-title-authors">
@@ -144,63 +144,469 @@ Gabriel Uzquiano
 </div>
 
 </section>
-<section>
-<section id="truth-tables" class="title-slide slide level1 divider center">
-<h1>truth tables</h1>
+<section id="formal-languages" class="title-slide slide level1 divider center">
+<h1>formal languages</h1>
+<p>We have emphasized that validity is a matter of form.</p>
+<div class="fragment">
+<p>We have focused on forms that combine basic statements with the help of connectives like ‘or’, ‘and’, ‘not’, ‘if … , then …’.</p>
+</div>
+<div class="fragment">
+<p>Notice the use of <em>quotation marks</em> …</p>
+</div>
+</section>
 
+<section>
+<section id="use-and-mention" class="title-slide slide level1 divider center">
+<h1>use and mention</h1>
+<p>Quotation marks are used to distinguish between use and mention.</p>
 </section>
-<section id="negation" class="slide level2">
-<h2>negation</h2>
+<section id="a-distinction-between-use-and-mention" class="slide level2">
+<h2>a distinction between use and mention</h2>
+<div class="columns">
+<div class="column" style="width:48%;">
+<p>Los Angeles has many cities in its metropolitan area.</p>
+<div class="fragment caption">
+<p>We predicate something of a <em>city</em>, not a <em>linguistic expression</em>.</p>
+</div>
+</div><div class="column" style="width:48%;">
+<p>‘Los Angeles’ consists of two words.</p>
+<div class="fragment caption">
+<p>We predicate something of a <em>name</em>, which is itself a <em>linguistic expression</em>.</p>
+</div>
+</div></div>
+<ul>
+<li class="fragment"><p>One statement <strong>uses</strong> a name for a city in order to denote a city.</p></li>
+<li class="fragment"><p>The other statement <strong>mentions</strong> a name for a city in order to predicate something of the linguistic expression.</p></li>
+<li class="fragment"><p>Quotation marks indicate that a given expression is being mentioned and not used.</p></li>
+</ul>
 </section>
-<section id="conjunction" class="slide level2">
-<h2>conjunction</h2>
-</section>
-<section id="disjunction" class="slide level2">
-<h2>disjunction</h2>
-</section>
-<section id="conditional" class="slide level2">
-<h2>conditional</h2>
-</section>
-<section id="how-to-construct-a-truth-table" class="slide level2">
-<h2>how to construct a truth table</h2>
+<section id="practice" class="slide level2">
+<h2>practice</h2>
+<p>Which statements below are true?</p>
+<style>
+.mc-exercise { margin: 1.2rem 0 2rem; width: 55%; margin-left: 8%; }
+.mc-question { margin-bottom: 0.7rem; font-size: 1.4rem; line-height: 2rem; }
+.mc-options { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.8rem; }
+.mc-option { display: flex; align-items: baseline; gap: 0.6rem; cursor: pointer; font-size: 1.3rem; line-height: 1.7rem; }
+.mc-option input { margin: 0; flex-shrink: 0; }
+.mc-controls { display: flex; gap: 0.6rem; margin-bottom: 0.5rem; }
+.btn-check, .btn-reveal {
+  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+  font-size: 0.82rem; padding: 0.22rem 0.7rem;
+  border-radius: 3px; cursor: pointer; border: 1px solid #ccc;
+  background: #fffff8; color: #111;
+}
+.btn-check:hover { background: #006666; color: #fff; border-color: #006666; }
+.mc-feedback { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.9rem; margin-bottom: 0.3rem; }
+.fb-ok { color: #1a6e2e; } .fb-err { color: #8b1a1a; }
+.mc-answer { font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; font-size: 0.88rem; color: #555; margin-top: 0.3rem; }
+.mc-explanation { margin-top: 0.4rem; font-family: et-book, Palatino, serif; font-size: 1.2rem; line-height: 1.7rem; color: #333; }
+</style>
+
+<script>
+function checkMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var correct = JSON.parse(ex.dataset.correct);
+  var multi = ex.dataset.multi === "true";
+  var feedback = ex.querySelector('.mc-feedback');
+  feedback.removeAttribute('hidden');
+  if (multi) {
+    var checked = Array.from(ex.querySelectorAll('input[type=checkbox]:checked')).map(function(c){ return parseInt(c.value); });
+    var ok = correct.length === checked.length && correct.every(function(v){ return checked.includes(v); });
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  } else {
+    var selected = ex.querySelector('input[type=radio]:checked');
+    if (!selected) { feedback.textContent = 'Please select an option.'; feedback.className = 'mc-feedback'; return; }
+    var ok = correct.includes(parseInt(selected.value));
+    feedback.textContent = ok ? '✓ Correct.' : '✗ Not quite — try again.';
+    feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+  }
+}
+function revealMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var ans = ex.querySelector('.mc-answer');
+  ans.removeAttribute('hidden');
+  if (window.MathJax) {
+    if (MathJax.typesetPromise) { MathJax.typesetPromise([ans]); }
+    else if (MathJax.Hub && MathJax.Hub.Queue) { MathJax.Hub.Queue(['Typeset', MathJax.Hub, ans]); }
+  }
+}
+</script>
+
+<div class="mc-exercise" data-correct="[1]" data-multi="true">
+  <div class="mc-options">
+    <label class="mc-option"><input type="checkbox" name="ex_1_0" value="0"><span>England is part of 'New England'</span></label>
+    <label class="mc-option"><input type="checkbox" name="ex_1_1" value="1"><span>'England' is part of 'New England'</span></label>
+    <label class="mc-option"><input type="checkbox" name="ex_1_2" value="2"><span>'England' is part of New England</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden=""></div>
+  <div class="mc-answer" hidden=""><strong>Answer:</strong> 'England' is part of 'New England'</div>
+</div>
+<div class="mc-exercise" data-correct="[1,2]" data-multi="true">
+  <div class="mc-options">
+    <label class="mc-option"><input type="checkbox" name="ex_2_0" value="0"><span>'England' is not part of 'New England'</span></label>
+    <label class="mc-option"><input type="checkbox" name="ex_2_1" value="1"><span>England is not part of 'New England'</span></label>
+    <label class="mc-option"><input type="checkbox" name="ex_2_2" value="2"><span>England is not part of New England</span></label>
+  </div>
+  <div class="mc-controls">
+    <button class="btn-check" onclick="checkMC(this)">Check</button>
+    <button class="btn-reveal" onclick="revealMC(this)">Show answer</button>
+  </div>
+  <div class="mc-feedback" hidden=""></div>
+  <div class="mc-answer" hidden=""><strong>Answer:</strong> England is not part of 'New England'; England is not part of New England</div>
+</div>
 </section></section>
 <section>
-<section id="tautologies-and-contradictions" class="title-slide slide level1 divider center">
-<h1>tautologies and contradictions</h1>
-
+<section id="form-and-meaning" class="title-slide slide level1 divider center">
+<h1>form and meaning</h1>
+<p>Which words does the form depend on?</p>
 </section>
-<section id="how-to-check-for-tautologies" class="slide level2">
-<h2>how to check for tautologies</h2>
+<section id="whence-a-valid-form" class="slide level2">
+<h2>whence a valid form</h2>
+<div class="argument">
+<ol type="1">
+<li><span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span></li>
+</ol>
+<div class="conclusion">
+<ol start="2" type="1">
+<li>Therefore, <span class="math inline">\(q\)</span></li>
+</ol>
+</div>
+</div>
+<div class="fragment">
+<p>This is a valid argument form because of what <strong>‘and’</strong> means. Replace ‘and’ with ‘or’ and we no longer have a valid form:</p>
+</div>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:48%;">
+<div class="argument">
+<ol type="1">
+<li><span class="math inline">\(p\)</span> or <span class="math inline">\(q\)</span></li>
+</ol>
+<div class="conclusion">
+<ol start="2" type="1">
+<li>Therefore, <span class="math inline">\(q\)</span></li>
+</ol>
+</div>
+</div>
+</div><div class="column" style="width:48%;">
+<div class="argument">
+<ol type="1">
+<li>Snow is white or black.</li>
+</ol>
+<div class="conclusion">
+<ol start="2" type="1">
+<li>Therefore, snow is black.</li>
+</ol>
+</div>
+</div>
+</div></div>
+</div>
 </section>
-<section id="how-to-check-for-contradictions" class="slide level2">
-<h2>how to check for contradictions</h2>
+<section id="a-truth-table" class="slide level2">
+<h2>a truth table</h2>
+<div style="display:flex; justify-content:center; margin-top:1rem;">
+<table style="border-collapse:collapse; font-size:0.95em;">
+<thead>
+<tr>
+<th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">
+<span class="math inline">\(p\)</span>
+</th>
+<th style="text-align:center; padding:0.35rem 0.9rem; border-right:4px double #444; border-bottom:2px solid #444;">
+<span class="math inline">\(q\)</span>
+</th>
+<th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">
+<span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>
+</th>
+<th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">
+<span class="math inline">\(q\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+</tr>
+<tr>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+</tr>
+<tr>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">
+T
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+T
+</td>
+</tr>
+<tr>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+<td style="text-align:center; padding:0.3rem 0.9rem;">
+F
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<p>No matter what statements we choose for <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>, no argument instance will take us from <em>true</em> premises to a <em>false</em> conclusion.</p>
+</div>
+</section>
+<section id="four-basic-connectives" class="slide level2">
+<h2>four basic connectives</h2>
+<table class="symbols caption-top">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 26%">
+<col style="width: 66%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\neg\)</span></td>
+<td>negation</td>
+<td>it is not the case that</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\wedge\)</span></td>
+<td>conjunction</td>
+<td>and</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\vee\)</span></td>
+<td>disjunction</td>
+<td>or</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\to\)</span></td>
+<td>the conditional</td>
+<td>if …, then …</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p>Propositional logic will focus on forms obtained from basic propositional letters <span class="math inline">\(p\)</span>, <span class="math inline">\(q\)</span>, <span class="math inline">\(r\)</span>, etc and the four connectives listed above.</p>
+</div>
 </section></section>
 <section>
-<section id="equivalence" class="title-slide slide level1 divider center">
-<h1>equivalence</h1>
-
+<section id="how-to-specify-a-language" class="title-slide slide level1 divider center">
+<h1>how to specify a language</h1>
+<p>Syntax, semantics, pragmatics.</p>
 </section>
-<section id="how-to-check-for-equivalence" class="slide level2">
-<h2>how to check for equivalence</h2>
+<section id="three-aspects-of-a-language" class="slide level2">
+<h2>three aspects of a language</h2>
+<ul>
+<li class="fragment"><p><strong>Syntax</strong></p>
+<ul>
+<li class="fragment">What is the basic vocabulary from which to build the expressions of the language?</li>
+<li class="fragment">Which combinations of symbols count as grammatical sentences of the language.</li>
+</ul></li>
+<li class="fragment"><p><strong>Semantics</strong></p>
+<ul>
+<li class="fragment">How should the language be interpreted?</li>
+<li class="fragment">What do the sentences of the language mean?</li>
+</ul></li>
+<li class="fragment"><p><strong>Pragmatics</strong></p>
+<ul>
+<li class="fragment">What do speakers <em>convey</em> with an utterance of a sentence?</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<p>Only syntax and semantics will be relevant for our formal languages.</p>
+</div>
 </section></section>
 <section>
-<section id="consistency" class="title-slide slide level1 divider center">
-<h1>consistency</h1>
-
+<section id="why-a-formal-language" class="title-slide slide level1 divider center">
+<h1>why a formal language?</h1>
+<p>There are at least three reasons</p>
 </section>
-<section id="how-to-check-for-consistency" class="slide level2">
-<h2>how to check for consistency</h2>
+<section id="reason-one-discount-pragmatic-effects" class="slide level2">
+<h2>reason one: discount pragmatic effects</h2>
+<p>Do these sentences differ in truth conditions?</p>
+<blockquote>
+<p>I felt ill, and I took some syrup</p>
+</blockquote>
+<blockquote>
+<p>I took some syrup, and I felt ill</p>
+</blockquote>
+<div class="fragment">
+<p>In propositional logic, order makes no difference to the truth conditions of a conjunction: <span class="math inline">\((p \wedge q)\)</span> and <span class="math inline">\((q \wedge p)\)</span> are true under exactly the same circumstances.</p>
+</div>
+</section>
+<section id="reason-two-structure-is-not-transparent-in-english" class="slide level2 smaller">
+<h2>reason two: structure is not transparent in English</h2>
+<div class="columns">
+<div class="column" style="width:46%;">
+<div class="fragment">
+<p><strong>premises</strong></p>
+<ol type="1">
+<li>A Rolls Royce is better than an Audi.</li>
+<li>An Audi is better than a Honda.</li>
+</ol>
+<div class="conclusion">
+<p><strong>conclusion</strong></p>
+<ol start="3" type="1">
+<li>A Rolls Royce is better than a Honda.</li>
+</ol>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<p><strong>premises</strong></p>
+<ol type="1">
+<li>A gift card is better than nothing.</li>
+<li>Nothing is better than a fine Swiss watch.</li>
+</ol>
+<div class="conclusion">
+<p><strong>conclusion</strong></p>
+<ol start="3" type="1">
+<li>A gift card is better than a fine Swiss watch.</li>
+</ol>
+</div>
+</div>
+</div></div>
+<div class="fragment">
+<p>One may be tempted to discern the same superficial form, but that would be a <strong>mistake</strong>.</p>
+</div>
+<div class="fragment">
+<p>The two arguments do <strong>not</strong> share a valid form: one is <em>valid</em> and the other is <em>invalid</em>.</p>
+<p>Quantificational logic will enable to distinguish two different forms, one valid and one invalid.</p>
+</div>
+</section>
+<section id="structural-ambiguity" class="slide level2">
+<h2>Structural ambiguity</h2>
+<blockquote>
+<p>There is gas in the tank or the car will start if you turn the ignition.</p>
+</blockquote>
+<div class="fragment">
+<ul>
+<li class="fragment">There is gas in the tank <strong>or</strong> [<strong>if</strong> you turn the ignition, <strong>then</strong> the car starts].</li>
+<li class="fragment"><strong>If</strong> you turn the ignition, <strong>then</strong> [there is gas in the tank <strong>or</strong> the car starts].</li>
+</ul>
+</div>
+<div class="fragment">
+<p>Unlike English, the formal language will not tolerate structural ambiguities.</p>
+</div>
 </section></section>
 <section>
-<section id="validity" class="title-slide slide level1 divider center">
-<h1>validity</h1>
+<section id="the-language-of-propositional-logic" class="title-slide slide level1 divider center">
+<h1>the language of propositional logic</h1>
 
 </section>
-<section id="how-to-check-for-validity" class="slide level2">
-<h2>how to check for validity</h2>
+<section id="vocabulary" class="slide level2 smaller">
+<h2>vocabulary</h2>
+<p>The vocabulary of propositional logic contains three types of symbols:</p>
+<div class="fragment">
+<dl>
+<dt>Propositional Variables</dt>
+<dd>
+<p>These are the lowercase letters <span class="math inline">\(p\)</span>, <span class="math inline">\(q\)</span>, <span class="math inline">\(r\)</span>, <span class="math inline">\(s\)</span>, and <span class="math inline">\(t\)</span> with or without numerical subscripts: <span class="math display">\[
+   p,  q, r, s, t
+   \]</span></p>
+</dd>
+</dl>
+</div>
+<div class="fragment">
+<dl>
+<dt>Connectives</dt>
+<dd>
+<p>These are formal counterparts of ‘not’, ‘or’, ‘and’, and ‘if <span class="math inline">\(\dots\)</span>, then <span class="math inline">\(\dots\)</span>’: <span class="math display">\[
+   \neg, \vee, \wedge, \to
+   \]</span></p>
+</dd>
+</dl>
+</div>
+<div class="fragment">
+<dl>
+<dt>Parentheses</dt>
+<dd>
+<p>There are two parentheses: <span class="math display">\[
+   ), (
+   \]</span></p>
+</dd>
+</dl>
+</div>
+<div class="fragment">
+<p><strong>Nothing else</strong> is a symbol of the language.</p>
+</div>
+</section>
+<section id="grammar" class="slide level2">
+<h2>grammar</h2>
+<p>Which expressions count as a formula of propositional logic?</p>
+<ol type="1">
+<li class="fragment">All propositional variables are <em>formulas</em>.<br>
+</li>
+<li class="fragment">If <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> are <em>formulas</em>, then each of <span class="math display">\[
+\neg  \varphi, (\varphi \wedge \psi), (\varphi \vee \psi), (\varphi \to \psi)
+\]</span> is a <em>formula</em>.<br>
+</li>
+<li class="fragment">Nothing else is a <em>formula</em>.</li>
+</ol>
+</section>
+<section id="practice-1" class="slide level2">
+<h2>practice</h2>
+<div class="checker-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-formula-checker/?card=formula#v1:eyJmIjoiKHAg4oinIChxIOKGkiDCrHIpKSJ9" style="width: 100%; height: 620px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Formula checker (formula)"></iframe></div>
+</section>
+<section id="practice-2" class="slide level2">
+<h2>practice</h2>
+<div class="checker-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-formula-checker/?card=formula#v1:eyJmIjoiKChwIOKIpyBxKSDihpIgwqxyKSJ9" style="width: 100%; height: 620px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Formula checker (formula)"></iframe></div>
+</section>
+<section id="assignment" class="slide level2">
+<h2>assignment</h2>
+<div class="checker-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-formula-checker/?card=assign#v1:eyJmIjoiKHAg4oinIChxIOKGkiDCrHIpKSJ9" style="width: 100%; height: 620px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Formula checker (assign)"></iframe></div>
+</section>
+<section id="assignment-1" class="slide level2">
+<h2>assignment</h2>
+<div class="checker-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-formula-checker/?card=assign#v1:eyJmIjoiKChwIOKIpyBxKSDihpIgwqxyKSJ9" style="width: 100%; height: 620px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Formula checker (assign)"></iframe></div>
+</section>
+<section id="next-time" class="slide level2">
+<h2>Next time</h2>
+<p>Next time we will explore the use of truth tables to interpret the language of propositional logic.</p>
 
 
-</section></section>
+
+<aside><div>
+<p>The slides cover material from <a href="https://gabriel-uzquiano.github.io/logic/proplogic.html#proplogic">Chapter 2</a> of <a href="https://gabriel-uzquiano.github.io/logic/">Introduction to Logic</a>.</p>
+</div></aside></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
