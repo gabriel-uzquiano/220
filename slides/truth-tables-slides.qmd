@@ -1,0 +1,610 @@
+---
+title: "truth tables"
+subtitle: "PHIL 220. Introduction to Logic"
+author: "Gabriel Uzquiano"
+
+filters:
+  - carnap-widgets.lua
+  - checker-widget.lua
+  - truth-table-widgets.lua
+  
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    output-file: truth-tables-slides.html
+    slide-number: c/t
+    chalkboard: true          # press B for a blank board, C to draw on a slide
+    preview-links: auto       # links open in an overlay, without leaving the deck
+    history: false
+    transition: none
+    center: false
+    width: 1100
+    height: 750
+    margin: 0.06
+    hash-type: title
+    menu:
+      side: left
+---
+
+# truth tables {.divider}
+
+We assign truth values to the propositional variables, and we will use truth functions to interpret the connectives.
+
+## negation
+
+::: {.columns}
+::: {.column width="40%"}
+$$
+\begin{array}{|c|c|}
+\hline
+\varphi  & \neg \varphi  \\
+\hline
+T & F \\
+F  & T \\
+\hline
+\end{array}
+$$
+
+$\neg \varphi$ is true 
+iff $\varphi$ is false.
+
+:::
+
+::: {.column width="30%"}
+
+```{.TruthTable card="table" height="460px"}
+~ p
+```
+:::
+
+::: {.column width="30%"}
+```{.TruthTable card="table" height="460px"}
+~ ~ p
+```
+:::
+:::
+
+## conjunction
+
+::: {.colums}
+::: {.column width="30%"}
+\begin{array}{|c|c|c|}
+\hline
+\varphi & \psi & (\varphi \wedge \psi) \\
+\hline
+T & T  & T \\
+T & F  & F \\
+F & T  & F \\
+F & F  & F \\
+\hline
+\end{array}
+
+::: {style="text-align: center;"}
+$(\varphi \wedge \psi)$ is true <br/>
+iff <br/>
+$\varphi$ and $\psi$ are true.
+:::
+:::
+
+::: {.column width="60%"}
+```{.TruthTable card="table" height="460px"}
+(~ p /\ ~q)
+```
+:::
+
+:::
+
+## disjunction
+
+
+::: {.colums}
+::: {.column width="30%"}
+\begin{array}{|c|c|c|}
+\hline
+\varphi & \psi & (\varphi \vee \psi) \\
+\hline
+T & T  & T \\
+T & F  & T \\
+F & T  & T \\
+F & F  & F \\
+\hline
+\end{array}
+
+::: {style="text-align: center;"}
+$(\varphi \vee \psi)$ is true <br/>
+iff <br/>
+$\varphi$ or $\psi$ are true.
+:::
+:::
+
+::: {.column width="60%"}
+```{.TruthTable card="table" height="460px"}
+((p /\ q) \/ ~q)
+```
+:::
+
+:::
+
+
+## solution
+
+```{.TruthTable card="table" solved="true" height="560px"}
+((p /\ q) \/ ~q)
+```
+
+
+## an apparent contrast with 'or'
+
+::: {.incremental}
+- In English, we may sometimes be inclined to judge a disjunction false if both disjuncts are true, e.g., consider an utterance of the sentence 'You can have ice cream or you can have cake'.
+
+- We may sometimes judge the statement to be false if we can indeed have **both** ice cream and cake.
+
+- We discount the exclusive interpretation of the English connective 'or' as a *pragmatic effect*. 
+
+- $(\varphi \vee \psi)$ is **never** false when both $\varphi$ and $\psi$ are true.
+
+:::
+
+## conditional
+
+::: {.colums}
+::: {.column width="30%"}
+\begin{array}{|c|c|c|}
+\hline
+\varphi & \psi & (\varphi \to \psi) \\
+\hline
+T & T  & T \\
+T & F  & F \\
+F & T  & T \\
+F & F  & T \\
+\hline
+\end{array}
+
+::: {style="text-align: center;"}
+$(\varphi \to \psi)$ is true <br/>
+iff <br/>
+$\varphi$ is false or $\psi$ is true.
+:::
+:::
+
+::: {.column width="70%"}
+::: {style="text-align: center;"}
+'If today is a Wednesday, then tomorrow is a workday'
+:::
+
+
+::: {style="margin-left: 2em;"}
+Utterances of the sentence are true throughout the week.
+
+::: {.incremental}
+- On a Wednesday, both *antecedent* and *consequent* are true.
+
+- On a Thursday, the *antecedent* is false but the *consequent* is true.
+
+- On a Friday, both *antecedent* and *consequent* are false.
+:::
+:::
+:::
+
+:::
+
+
+## practice
+
+```{.TruthTable card="table" height="560px"}
+(~p -> (p /\ q))
+```
+
+
+## solution
+
+```{.TruthTable card="table" solved="true" height="560px"}
+(~p -> (p /\ q))
+```
+
+
+
+## an apparent contrast with 'if ... then ...'
+
+::: {.incremental}
+- In English, we are often inclined to judge a conditional false when the antecedent is false, e.g., consider an utterance of the sentence: 'If I scratch my head now, then I will win the lottery tomorrow'.
+
+- We may be inclined judge the statement to be false because there is **no link** (causal or otherwise) between antecedent and consequent.
+
+- We discount the apparent requirement for a link between the antecedent and the consequent of conditional in English as a *pragmatic effect*. 
+
+- $(\varphi \vee \psi)$ is **never** false when $\varphi$ is false.
+
+:::
+
+
+
+
+## how to construct a truth table: step 1 {.smaller}
+
+Because truth tables become more complex as more propositional letters are involved
+in the formula, we need a *systematic* method for constructing them.
+
+1. List, in alphabetical order, each distinct propositional letter occurring
+   in the formula. Draw one column for each letter.
+   
+   Given a complex formula like $(p \to ((q \vee \neg r) \to t)$, we begin:
+
+::: {style="margin-left: 2em;"}
+$$
+\begin{array}{|c|c|c|c|}
+\hline
+p & q & r  & (p \to ((q \vee \neg r) \to q)) \\
+\hline
+  &   &   &   &                                 \\
+\end{array}
+$$
+:::
+
+
+## how to construct a truth table: step 2 {.smaller}
+
+
+2. If there are \\(n\\) distinct propositional letters, draw \\(2^n\\) rows:
+   one row for each possible assignment of truth values to those letters. 
+  
+::: {style="margin-left: 2em;"}   
+Since we have $3$ propositional letters in our example, we build $2^3$, namely $8$ rows.   
+   $$
+\begin{array}{|c|c|c|c|}
+\hline
+p & q & r &  (p \to ((q \vee \neg r) \to q)) \\
+\hline
+  &   &   &                                    \\
+\hline  
+ &   &   &                                    \\
+\hline  
+ &   &   &                                    \\
+\hline  
+ &   &   &                                   \\
+\hline  
+ &   &   &                                    \\
+\hline  
+ &   &   &                                    \\
+\hline  
+ &   &   &                                    \\
+\hline  
+ &   &   &                                   \\
+\hline  
+\end{array}
+$$
+:::   
+   
+
+## how to build a truth table: step 2 continued    {.smaller}
+  We now fill the letter-columns systematically:
+
+::: {columns}
+
+::: {.column width="50%"}
+   - In the rightmost letter column, we alternate one occurrence of \\(T\\) with one of \\(F\\).
+   - As we move one column to the left, we alternate a blocks of two occurrences of \\(T\\) with
+     blocks of two occurrences of \\(F\\).
+   - As we continue leftward, we double the size of each block each time.
+:::
+
+::: {.column width="50%"}
+::: {style="margin-left: 2em;"}      
+   $$
+\begin{array}{|c|c|c|c|}
+\hline
+p & q & r &  (p \to ((q \vee \neg r) \to q)) \\
+\hline
+T  & T  &  T &                                    \\
+\hline  
+T &  T &  \color{red}{F} &                                    \\
+\hline  
+T &  \color{red}{F} &  T &                                    \\
+\hline  
+T &  \color{red}{F} &  \color{red}{F} &                                   \\
+\hline  
+\color{red}{F} &  T &  T &                                    \\
+\hline  
+\color{red}{F} &  T &  \color{red}{F} &                                    \\
+\hline  
+\color{red}{F} &  \color{red}{F} &  T &                                    \\
+\hline  
+\color{red}{F} &  \color{red}{F} &  \color{red}{F} &                                   \\
+\hline  
+\end{array}
+$$
+
+:::
+::: 
+:::
+   
+
+##   how to construct a truth table: step 3 {.smaller}
+
+3. Draw additional columns for the relevant subformulas, working from the
+   smallest subformulas outward to the complete formula.
+   
+  
+   ```{.TruthTable card="table" height="560px"}
+(p -> ((q /\ ~r) -> q))
+```
+
+   
+##   how to construct a truth table: step 4 {.smaller}  
+
+4. Fill each additional column according to the truth-value rule for its
+   main connective.
+
+   ```{.TruthTable card="table" solved="true" height="560px"}
+(p -> ((q /\ ~r) -> q))
+```
+
+
+# tautologies {.divider}
+
+A formula is a *tautology* iff it is true **under every assignment**.
+
+## how to check for tautologies {.smaller}
+
+We check if the formula comes out true **in every row** of the truth table. 
+
+::: {.columns}
+
+::: {.column width="30%"}
+Consider the formula:
+
+<br/>
+
+$(p \to (p \to q))$
+
+<br/>
+
+The formula is **not a tautology**, since
+it comes out false at some rows of the truth table.
+:::
+
+::: {.column width="70%"}
+```{.TruthTable solved="true" mode="tautology"}
+(p -> (p -> q))
+```
+:::
+:::
+
+
+## how to check for tautologies {.smaller}
+
+We check if the formula comes out true **in every row** of the truth table. 
+
+::: {.columns}
+::: {.column width="30%"}
+Consider the formula:
+
+<br/>
+$((p \to q) \vee (q \to p)))$
+
+<br/>
+
+The formula is **a tautology**, since
+it comes out true at every row of the truth table.
+:::
+
+::: {.column width="70%"}
+```{.TruthTable solved="true" mode="tautology"}
+((p -> q) \/ (q -> p))
+```
+:::
+:::
+
+
+
+# equivalence {.divider}
+
+Two formulas are *equivalent* iff they are true **under exactly the same assignments**.
+
+## how to check for equivalence {.smaller}
+
+We check if the two formulas **agree** in truth value **in every row** of the truth table. 
+
+::: {.columns}
+::: {.column width="30%"}
+Consider the formulas:
+
+<br/>
+$$
+\begin{array}{ccc}
+(p \to q) & &  (\neg q \to \neg p) & & 
+\end{array}
+$$
+
+<br/>
+
+The two formulas are **equivalent**, since
+they agree in truth value in every row of the table.
+:::
+
+::: {.column width="70%"}
+```{.TruthTable solved="true"  mode="equivalence"}
+(p -> q)  
+(~q -> ~p)
+```
+:::
+:::
+
+## how to check for equivalence {.smaller}
+
+We check if the two formulas **agree** in truth value **in every row** of the truth table. 
+
+::: {.columns}
+::: {.column width="30%"}
+Consider the formulas:
+
+<br/>
+$$
+\begin{array}{ccc}
+(p \to q) & &  (\neg p \to \neg q) & & 
+\end{array}
+$$
+
+<br/>
+
+The two formulas are **not equivalent**, since
+they have different truth values in some rows of the table.
+:::
+
+::: {.column width="70%"}
+```{.TruthTable solved="true"  mode="equivalence"}
+(p -> q)
+(~p -> ~q)
+```
+:::
+:::
+
+
+# consistency {.divider}
+
+A set of formulas is **consistent** iff some assignment makes true every member of the set.
+
+## how to check for consistency {.smaller}
+
+We check if every formula comes out true **in some row** of the truth table. 
+
+::: {.columns}
+::: {.column width="30%"}
+Consider a set of formulas:
+
+<br/>
+$$
+\{ (p \to q), (\neg q \to \neg p), \neg p \}
+$$
+
+<br/>
+
+This set of formulas is **consistent**, since
+they come out true in some rows of the truth table.
+:::
+
+::: {.column width="70%"}
+```{.TruthTable solved="true"  mode="consistency"}
+(p -> q)  
+(~q -> ~p)
+~ p
+```
+:::
+:::
+
+## how to check for consistency {.smaller}
+
+We check if every formula comes out true **in some row** of the truth table.
+
+::: {.columns}
+
+::: {.column width="30%"}
+Consider a set of formulas:
+
+<br/>
+$$
+\{ (p \to q), (\neg p \to \neg q), \neg q, p \}
+$$
+
+<br/>
+
+This set of formulas is **inconsistent**, since
+there is no row of the truth table on which they all come out true.
+:::
+
+::: {.column width="70%"}
+```{.TruthTable solved="true" mode="consistency"}
+(p -> q)
+(~p -> ~q)
+~q
+p
+```
+:::
+:::
+
+
+
+
+
+
+# validity {.divider}
+
+An argument is **valid** iff there is **no assignment** on which **the premises come out true** and **the conclusion false**.
+
+::: {.incremental}
+- Or, equivalently:
+- An argument is **valid** iff every assignment on which the premises come out true is one on which the conclusion is true.
+:::
+
+
+
+## how to check for validity {.smaller}
+
+
+We check that **no row** of the truth table makes **the premises true** and **the conclusion false**. 
+
+::: {.columns}
+
+::: {.column width="40%"}
+Consider the argument:
+
+<br/>
+
+1. $(p \to q)$
+
+2. $(q \to \neg r)$
+
+3. $r$
+
+4. $\neg p$
+
+<br/>
+
+
+The argument is **valid** because **no row makes the premises true and the conclusion false**.
+:::
+
+::: {.column width="60%"}
+```{.TruthTable mode="validity"}
+(p -> q)  
+(q -> ~r)
+r
+~p
+```
+:::
+:::
+
+## how to check for validity {.smaller}
+
+
+::: {.column width="40%"}
+Consider the argument:
+
+<br/>
+
+1. $(p \to q)$
+
+2. $(\neg p \to \neg q)$
+
+3. $q \vee r$
+
+4. $r$
+
+<br/>
+
+
+The argument is **invalid** because **some rows make the premises true and the conclusion false**.
+:::
+
+::: {.column width="60%"}
+```{.TruthTable mode="validity"}
+(p -> q)
+(~p -> ~q)
+q \/ r
+r
+```
+:::
+:::
+
+
