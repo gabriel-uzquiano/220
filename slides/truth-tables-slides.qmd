@@ -30,7 +30,7 @@ format:
 
 We assign truth values to the propositional variables, and we will use truth functions to interpret the connectives.
 
-## negation
+## negation {.smaller}
 
 ::: {.columns}
 ::: {.column width="40%"}
@@ -45,8 +45,10 @@ F  & T \\
 \end{array}
 $$
 
+::: {style="text-align: center;"}
 $\neg \varphi$ is true 
 iff $\varphi$ is false.
+:::
 
 :::
 
@@ -64,7 +66,7 @@ iff $\varphi$ is false.
 :::
 :::
 
-## conjunction
+## conjunction {.smaller}
 
 ::: {.colums}
 ::: {.column width="30%"}
@@ -94,7 +96,7 @@ $\varphi$ and $\psi$ are true.
 
 :::
 
-## disjunction
+## disjunction {.smaller}
 
 
 ::: {.colums}
@@ -146,7 +148,7 @@ $\varphi$ or $\psi$ are true.
 
 :::
 
-## conditional
+## conditional {.smaller}
 
 ::: {.colums}
 ::: {.column width="30%"}
@@ -185,6 +187,8 @@ Utterances of the sentence are true throughout the week.
 - On a Friday, both *antecedent* and *consequent* are false.
 :::
 :::
+
+
 :::
 
 :::
@@ -214,7 +218,7 @@ Utterances of the sentence are true throughout the week.
 
 - We discount the apparent requirement for a link between the antecedent and the consequent of conditional in English as a *pragmatic effect*. 
 
-- $(\varphi \vee \psi)$ is **never** false when $\varphi$ is false.
+- $(\varphi \to \psi)$ is **never** false when $\varphi$ is false.
 
 :::
 
@@ -326,7 +330,7 @@ $$
    smallest subformulas outward to the complete formula.
    
   
-   ```{.TruthTable card="table" height="560px"}
+   ```{.TruthTable card="table" height="500px"}
 (p -> ((q /\ ~r) -> q))
 ```
 
@@ -336,7 +340,7 @@ $$
 4. Fill each additional column according to the truth-value rule for its
    main connective.
 
-   ```{.TruthTable card="table" solved="true" height="560px"}
+   ```{.TruthTable card="table" solved="true" height="500px"}
 (p -> ((q /\ ~r) -> q))
 ```
 
@@ -352,7 +356,7 @@ We check if the formula comes out true **in every row** of the truth table.
 ::: {.columns}
 
 ::: {.column width="30%"}
-Consider the formula:
+The formula
 
 <br/>
 
@@ -360,12 +364,13 @@ $(p \to (p \to q))$
 
 <br/>
 
-The formula is **not a tautology**, since
-it comes out false at some rows of the truth table.
+is **not a tautology**.
+
+It is false in the second row of the truth table.
 :::
 
 ::: {.column width="70%"}
-```{.TruthTable solved="true" mode="tautology"}
+```{.TruthTable solved="true" mode="tautology" height="490px"}
 (p -> (p -> q))
 ```
 :::
@@ -374,23 +379,24 @@ it comes out false at some rows of the truth table.
 
 ## how to check for tautologies {.smaller}
 
-We check if the formula comes out true **in every row** of the truth table. 
+We check if the formula comes out true **in all rows** of the truth table. 
 
 ::: {.columns}
 ::: {.column width="30%"}
-Consider the formula:
+The formula:
 
 <br/>
 $((p \to q) \vee (q \to p)))$
 
 <br/>
 
-The formula is **a tautology**, since
-it comes out true at every row of the truth table.
+is **a tautology**.
+
+It is true in all rows of the truth table.
 :::
 
 ::: {.column width="70%"}
-```{.TruthTable solved="true" mode="tautology"}
+```{.TruthTable solved="true" mode="tautology" height="490px"}
 ((p -> q) \/ (q -> p))
 ```
 :::
@@ -404,11 +410,11 @@ Two formulas are *equivalent* iff they are true **under exactly the same assignm
 
 ## how to check for equivalence {.smaller}
 
-We check if the two formulas **agree** in truth value **in every row** of the truth table. 
+We check if the two formulas **agree** in truth value **in all rows** of the truth table. 
 
 ::: {.columns}
 ::: {.column width="30%"}
-Consider the formulas:
+The formulas:
 
 <br/>
 $$
@@ -419,12 +425,13 @@ $$
 
 <br/>
 
-The two formulas are **equivalent**, since
-they agree in truth value in every row of the table.
+are **equivalent**.
+
+They agree in truth value in all rows of the table.
 :::
 
 ::: {.column width="70%"}
-```{.TruthTable solved="true"  mode="equivalence"}
+```{.TruthTable solved="true"  mode="equivalence" height="490px"}
 (p -> q)  
 (~q -> ~p)
 ```
@@ -433,11 +440,11 @@ they agree in truth value in every row of the table.
 
 ## how to check for equivalence {.smaller}
 
-We check if the two formulas **agree** in truth value **in every row** of the truth table. 
+We check if the two formulas **agree** in truth value **in all rows** of the truth table. 
 
 ::: {.columns}
 ::: {.column width="30%"}
-Consider the formulas:
+The formulas:
 
 <br/>
 $$
@@ -448,12 +455,13 @@ $$
 
 <br/>
 
-The two formulas are **not equivalent**, since
-they have different truth values in some rows of the table.
+are **not equivalent**.
+
+They differ in truth value in the second and third row of the table.
 :::
 
 ::: {.column width="70%"}
-```{.TruthTable solved="true"  mode="equivalence"}
+```{.TruthTable solved="true"  mode="equivalence" height="490px"}
 (p -> q)
 (~p -> ~q)
 ```
@@ -471,7 +479,7 @@ We check if every formula comes out true **in some row** of the truth table.
 
 ::: {.columns}
 ::: {.column width="30%"}
-Consider a set of formulas:
+The set of three formulas:
 
 <br/>
 $$
@@ -480,12 +488,13 @@ $$
 
 <br/>
 
-This set of formulas is **consistent**, since
-they come out true in some rows of the truth table.
+is **consistent**.
+
+All three are true in the last two rows of the truth table.
 :::
 
 ::: {.column width="70%"}
-```{.TruthTable solved="true"  mode="consistency"}
+```{.TruthTable solved="true"  mode="consistency" height="490px"}
 (p -> q)  
 (~q -> ~p)
 ~ p
@@ -500,7 +509,7 @@ We check if every formula comes out true **in some row** of the truth table.
 ::: {.columns}
 
 ::: {.column width="30%"}
-Consider a set of formulas:
+The set of four formulas:
 
 <br/>
 $$
@@ -509,12 +518,13 @@ $$
 
 <br/>
 
-This set of formulas is **inconsistent**, since
-there is no row of the truth table on which they all come out true.
+is **inconsistent**.
+
+No row verifies all four formulas.
 :::
 
 ::: {.column width="70%"}
-```{.TruthTable solved="true" mode="consistency"}
+```{.TruthTable solved="true" mode="consistency" height="490px"}
 (p -> q)
 (~p -> ~q)
 ~q
@@ -534,7 +544,7 @@ An argument is **valid** iff there is **no assignment** on which **the premises 
 
 ::: {.incremental}
 - Or, equivalently:
-- An argument is **valid** iff every assignment on which the premises come out true is one on which the conclusion is true.
+- An argument is **valid** iff every assignment on which the premises are true is one on which the conclusion is true.
 :::
 
 
@@ -547,7 +557,7 @@ We check that **no row** of the truth table makes **the premises true** and **th
 ::: {.columns}
 
 ::: {.column width="40%"}
-Consider the argument:
+The argument:
 
 <br/>
 
@@ -561,12 +571,13 @@ Consider the argument:
 
 <br/>
 
+is **valid**.
 
-The argument is **valid** because **no row makes the premises true and the conclusion false**.
+**No row makes the premises true and the conclusion false**.
 :::
 
 ::: {.column width="60%"}
-```{.TruthTable mode="validity"}
+```{.TruthTable mode="validity" height="490px"}
 (p -> q)  
 (q -> ~r)
 r
@@ -579,7 +590,7 @@ r
 
 
 ::: {.column width="40%"}
-Consider the argument:
+The argument:
 
 <br/>
 
@@ -594,11 +605,13 @@ Consider the argument:
 <br/>
 
 
-The argument is **invalid** because **some rows make the premises true and the conclusion false**.
+is **invalid**.
+
+**The second row makes the premises true and the conclusion false**.
 :::
 
 ::: {.column width="60%"}
-```{.TruthTable mode="validity"}
+```{.TruthTable mode="validity" height="490px"}
 (p -> q)
 (~p -> ~q)
 q \/ r
