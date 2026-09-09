@@ -598,7 +598,7 @@ The argument:
 
 2. $(\neg p \to \neg q)$
 
-3. $q \vee r$
+3. $(q \vee r)$
 
 4. $r$
 
