@@ -135,7 +135,7 @@ $\varphi$ or $\psi$ are true.
 ```
 
 
-## an apparent contrast with 'or'
+## an apparent contrast with 'or' {.smaller}
 
 ::: {.incremental}
 - In English, we may sometimes be inclined to judge a disjunction false if both disjuncts are true, e.g., consider an utterance of the sentence 'You can have ice cream or you can have cake'.
@@ -209,7 +209,7 @@ Utterances of the sentence are true throughout the week.
 
 
 
-## an apparent contrast with 'if ... then ...'
+## an apparent contrast with 'if ... then ...' {.smaller}
 
 ::: {.incremental}
 - In English, we are often inclined to judge a conditional false when the antecedent is false, e.g., consider an utterance of the sentence: 'If I scratch my head now, then I will win the lottery tomorrow'.
