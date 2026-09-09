@@ -34,6 +34,8 @@ We assign truth values to the propositional variables, and we will use truth fun
 
 ::: {.columns}
 ::: {.column width="40%"}
+<br/>
+<br/>
 $$
 \begin{array}{|c|c|}
 \hline
@@ -70,6 +72,8 @@ iff $\varphi$ is false.
 
 ::: {.colums}
 ::: {.column width="30%"}
+<br/>
+<br/>
 \begin{array}{|c|c|c|}
 \hline
 \varphi & \psi & (\varphi \wedge \psi) \\
@@ -82,7 +86,7 @@ F & F  & F \\
 \end{array}
 
 ::: {style="text-align: center;"}
-$(\varphi \wedge \psi)$ is true <br/>
+$(\varphi \wedge \psi)$ is true 
 iff <br/>
 $\varphi$ and $\psi$ are true.
 :::
@@ -101,6 +105,8 @@ $\varphi$ and $\psi$ are true.
 
 ::: {.colums}
 ::: {.column width="30%"}
+<br/>
+<br/>
 \begin{array}{|c|c|c|}
 \hline
 \varphi & \psi & (\varphi \vee \psi) \\
@@ -113,7 +119,7 @@ F & F  & F \\
 \end{array}
 
 ::: {style="text-align: center;"}
-$(\varphi \vee \psi)$ is true <br/>
+$(\varphi \vee \psi)$ is true 
 iff <br/>
 $\varphi$ or $\psi$ are true.
 :::
@@ -152,6 +158,8 @@ $\varphi$ or $\psi$ are true.
 
 ::: {.colums}
 ::: {.column width="30%"}
+<br/>
+<br/>
 \begin{array}{|c|c|c|}
 \hline
 \varphi & \psi & (\varphi \to \psi) \\
@@ -164,7 +172,7 @@ F & F  & T \\
 \end{array}
 
 ::: {style="text-align: center;"}
-$(\varphi \to \psi)$ is true <br/>
+$(\varphi \to \psi)$ is true 
 iff <br/>
 $\varphi$ is false or $\psi$ is true.
 :::
@@ -356,17 +364,14 @@ We check if the formula comes out true **in every row** of the truth table.
 ::: {.columns}
 
 ::: {.column width="30%"}
+<br/>
+<br/>
 The formula
 
-<br/>
-
-$(p \to (p \to q))$
-
-<br/>
-
-is **not a tautology**.
-
-It is false in the second row of the truth table.
+$$
+(p \to (p \to q))
+$$
+is **not** a tautology because it is false in the second row of the truth table.
 :::
 
 ::: {.column width="70%"}
@@ -383,16 +388,16 @@ We check if the formula comes out true **in all rows** of the truth table.
 
 ::: {.columns}
 ::: {.column width="30%"}
+<br/>
+<br/>
 The formula:
 
-<br/>
-$((p \to q) \vee (q \to p)))$
 
-<br/>
+$$
+((p \to q) \vee (q \to p)))
+$$
 
-is **a tautology**.
-
-It is true in all rows of the truth table.
+is a tautology because it is true in all rows of the truth table.
 :::
 
 ::: {.column width="70%"}
@@ -414,20 +419,18 @@ We check if the two formulas **agree** in truth value **in all rows** of the tru
 
 ::: {.columns}
 ::: {.column width="30%"}
-The formulas:
-
 <br/>
+<br/>
+The two formulas:
+
 $$
 \begin{array}{ccc}
 (p \to q) & &  (\neg q \to \neg p) & & 
 \end{array}
 $$
 
-<br/>
 
-are **equivalent**.
-
-They agree in truth value in all rows of the table.
+are **equivalent** because they agree in truth value in all rows of the table.
 :::
 
 ::: {.column width="70%"}
@@ -444,20 +447,17 @@ We check if the two formulas **agree** in truth value **in all rows** of the tru
 
 ::: {.columns}
 ::: {.column width="30%"}
-The formulas:
-
 <br/>
+<br/>
+The two formulas:
+
 $$
 \begin{array}{ccc}
 (p \to q) & &  (\neg p \to \neg q) & & 
 \end{array}
 $$
 
-<br/>
-
-are **not equivalent**.
-
-They differ in truth value in the second and third row of the table.
+are **not equivalent** because they differ in truth value in the second and third row of the table.
 :::
 
 ::: {.column width="70%"}
@@ -479,18 +479,17 @@ We check if every formula comes out true **in some row** of the truth table.
 
 ::: {.columns}
 ::: {.column width="30%"}
+<br/>
+<br/>
 The set of three formulas:
 
-<br/>
 $$
 \{ (p \to q), (\neg q \to \neg p), \neg p \}
 $$
 
-<br/>
 
-is **consistent**.
 
-All three are true in the last two rows of the truth table.
+is **consistent** because all three are true in the last two rows of the truth table.
 :::
 
 ::: {.column width="70%"}
@@ -509,18 +508,16 @@ We check if every formula comes out true **in some row** of the truth table.
 ::: {.columns}
 
 ::: {.column width="30%"}
+<br/>
+<br/>
 The set of four formulas:
 
-<br/>
 $$
 \{ (p \to q), (\neg p \to \neg q), \neg q, p \}
 $$
 
-<br/>
 
-is **inconsistent**.
-
-No row verifies all four formulas.
+is **inconsistent** because no row verifies all four formulas.
 :::
 
 ::: {.column width="70%"}
@@ -542,10 +539,13 @@ p
 
 An argument is **valid** iff there is **no assignment** on which **the premises come out true** and **the conclusion false**.
 
-::: {.incremental}
-- Or, equivalently:
-- An argument is **valid** iff every assignment on which the premises are true is one on which the conclusion is true.
-:::
+. . . 
+
+Or, equivalently:
+
+. . .
+
+An argument is **valid** iff every assignment on which the premises are true is one on which the conclusion is true.
 
 
 
@@ -557,9 +557,11 @@ We check that **no row** of the truth table makes **the premises true** and **th
 ::: {.columns}
 
 ::: {.column width="40%"}
+<br/>
+<br/>
+
 The argument:
 
-<br/>
 
 1. $(p \to q)$
 
@@ -569,11 +571,9 @@ The argument:
 
 4. $\neg p$
 
-<br/>
 
-is **valid**.
 
-**No row makes the premises true and the conclusion false**.
+is **valid** because **no row makes the premises true and the conclusion false**.
 :::
 
 ::: {.column width="60%"}
@@ -590,9 +590,10 @@ r
 
 
 ::: {.column width="40%"}
+<br/>
+<br/>
 The argument:
 
-<br/>
 
 1. $(p \to q)$
 
@@ -602,12 +603,10 @@ The argument:
 
 4. $r$
 
-<br/>
 
 
-is **invalid**.
 
-**The second row makes the premises true and the conclusion false**.
+is **invalid** because **the second row makes the premises true and the conclusion false**.
 :::
 
 ::: {.column width="60%"}

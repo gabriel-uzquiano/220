@@ -153,7 +153,7 @@ Gabriel Uzquiano
 <h2>negation</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><span class="math display">\[
+<p><br> <br> <span class="math display">\[
 \begin{array}{|c|c|}
 \hline
 \varphi  &amp; \neg \varphi  \\
@@ -176,6 +176,7 @@ F  &amp; T \\
 <h2>conjunction</h2>
 <div class="colums">
 <div class="column" style="width:30%;">
+<br> <br>
 <span class="math display">\[\begin{array}{|c|c|c|}
 \hline
 \varphi &amp; \psi &amp; (\varphi \wedge \psi) \\
@@ -187,7 +188,7 @@ F &amp; F  &amp; F \\
 \hline
 \end{array}\]</span>
 <div style="text-align: center;">
-<p><span class="math inline">\((\varphi \wedge \psi)\)</span> is true <br> iff <br> <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> are true.</p>
+<p><span class="math inline">\((\varphi \wedge \psi)\)</span> is true iff <br> <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> are true.</p>
 </div>
 </div><div class="column" style="width:60%;">
 <div class="truth-table-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-truth-table/?card=table#v1:eyJidWlsZCI6Iih+IHAgL1xcIH5xKSJ9" style="width: 100%; height: 460px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Truth-table construction exercise"></iframe></div>
@@ -197,6 +198,7 @@ F &amp; F  &amp; F \\
 <h2>disjunction</h2>
 <div class="colums">
 <div class="column" style="width:30%;">
+<br> <br>
 <span class="math display">\[\begin{array}{|c|c|c|}
 \hline
 \varphi &amp; \psi &amp; (\varphi \vee \psi) \\
@@ -208,7 +210,7 @@ F &amp; F  &amp; F \\
 \hline
 \end{array}\]</span>
 <div style="text-align: center;">
-<p><span class="math inline">\((\varphi \vee \psi)\)</span> is true <br> iff <br> <span class="math inline">\(\varphi\)</span> or <span class="math inline">\(\psi\)</span> are true.</p>
+<p><span class="math inline">\((\varphi \vee \psi)\)</span> is true iff <br> <span class="math inline">\(\varphi\)</span> or <span class="math inline">\(\psi\)</span> are true.</p>
 </div>
 </div><div class="column" style="width:60%;">
 <div class="truth-table-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-truth-table/?card=table#v1:eyJidWlsZCI6IigocCAvXFwgcSkgXFwvIH5xKSJ9" style="width: 100%; height: 460px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Truth-table construction exercise"></iframe></div>
@@ -231,6 +233,7 @@ F &amp; F  &amp; F \\
 <h2>conditional</h2>
 <div class="colums">
 <div class="column" style="width:30%;">
+<br> <br>
 <span class="math display">\[\begin{array}{|c|c|c|}
 \hline
 \varphi &amp; \psi &amp; (\varphi \to \psi) \\
@@ -242,7 +245,7 @@ F &amp; F  &amp; T \\
 \hline
 \end{array}\]</span>
 <div style="text-align: center;">
-<p><span class="math inline">\((\varphi \to \psi)\)</span> is true <br> iff <br> <span class="math inline">\(\varphi\)</span> is false or <span class="math inline">\(\psi\)</span> is true.</p>
+<p><span class="math inline">\((\varphi \to \psi)\)</span> is true iff <br> <span class="math inline">\(\varphi\)</span> is false or <span class="math inline">\(\psi\)</span> is true.</p>
 </div>
 </div><div class="column" style="width:70%;">
 <div style="text-align: center;">
@@ -387,12 +390,10 @@ T &amp;  \color{red}{F} &amp;  \color{red}{F} &amp;                             
 <p>We check if the formula comes out true <strong>in every row</strong> of the truth table.</p>
 <div class="columns">
 <div class="column" style="width:30%;">
-<p>The formula</p>
-<p><br></p>
-<p><span class="math inline">\((p \to (p \to q))\)</span></p>
-<p><br></p>
-<p>is <strong>not a tautology</strong>.</p>
-<p>It is false in the second row of the truth table.</p>
+<p><br> <br> The formula</p>
+<p><span class="math display">\[
+(p \to (p \to q))
+\]</span> is <strong>not</strong> a tautology because it is false in the second row of the truth table.</p>
 </div><div class="column" style="width:70%;">
 <div class="truth-table-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=tautology#v1:eyJmb3JtdWxhcyI6WyIocCAtPiAocCAtPiBxKSkiXX0=" style="width: 100%; height: 490px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Truth-table exercise: tautology"></iframe></div>
 </div></div>
@@ -402,11 +403,11 @@ T &amp;  \color{red}{F} &amp;  \color{red}{F} &amp;                             
 <p>We check if the formula comes out true <strong>in all rows</strong> of the truth table.</p>
 <div class="columns">
 <div class="column" style="width:30%;">
-<p>The formula:</p>
-<p><br> <span class="math inline">\(((p \to q) \vee (q \to p)))\)</span></p>
-<p><br></p>
-<p>is <strong>a tautology</strong>.</p>
-<p>It is true in all rows of the truth table.</p>
+<p><br> <br> The formula:</p>
+<p><span class="math display">\[
+((p \to q) \vee (q \to p)))
+\]</span></p>
+<p>is a tautology because it is true in all rows of the truth table.</p>
 </div><div class="column" style="width:70%;">
 <div class="truth-table-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=tautology#v1:eyJmb3JtdWxhcyI6WyIoKHAgLT4gcSkgXFwvIChxIC0+IHApKSJdfQ==" style="width: 100%; height: 490px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Truth-table exercise: tautology"></iframe></div>
 </div></div>
@@ -421,15 +422,13 @@ T &amp;  \color{red}{F} &amp;  \color{red}{F} &amp;                             
 <p>We check if the two formulas <strong>agree</strong> in truth value <strong>in all rows</strong> of the truth table.</p>
 <div class="columns">
 <div class="column" style="width:30%;">
-<p>The formulas:</p>
-<p><br> <span class="math display">\[
+<p><br> <br> The two formulas:</p>
+<p><span class="math display">\[
 \begin{array}{ccc}
 (p \to q) &amp; &amp;  (\neg q \to \neg p) &amp; &amp;
 \end{array}
 \]</span></p>
-<p><br></p>
-<p>are <strong>equivalent</strong>.</p>
-<p>They agree in truth value in all rows of the table.</p>
+<p>are <strong>equivalent</strong> because they agree in truth value in all rows of the table.</p>
 </div><div class="column" style="width:70%;">
 <div class="truth-table-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=equivalence#v1:eyJmb3JtdWxhcyI6WyIocCAtPiBxKSIsIih+cSAtPiB+cCkiXX0=" style="width: 100%; height: 490px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Truth-table exercise: equivalence"></iframe></div>
 </div></div>
@@ -439,15 +438,13 @@ T &amp;  \color{red}{F} &amp;  \color{red}{F} &amp;                             
 <p>We check if the two formulas <strong>agree</strong> in truth value <strong>in all rows</strong> of the truth table.</p>
 <div class="columns">
 <div class="column" style="width:30%;">
-<p>The formulas:</p>
-<p><br> <span class="math display">\[
+<p><br> <br> The two formulas:</p>
+<p><span class="math display">\[
 \begin{array}{ccc}
 (p \to q) &amp; &amp;  (\neg p \to \neg q) &amp; &amp;
 \end{array}
 \]</span></p>
-<p><br></p>
-<p>are <strong>not equivalent</strong>.</p>
-<p>They differ in truth value in the second and third row of the table.</p>
+<p>are <strong>not equivalent</strong> because they differ in truth value in the second and third row of the table.</p>
 </div><div class="column" style="width:70%;">
 <div class="truth-table-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=equivalence#v1:eyJmb3JtdWxhcyI6WyIocCAtPiBxKSIsIih+cCAtPiB+cSkiXX0=" style="width: 100%; height: 490px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Truth-table exercise: equivalence"></iframe></div>
 </div></div>
@@ -462,13 +459,11 @@ T &amp;  \color{red}{F} &amp;  \color{red}{F} &amp;                             
 <p>We check if every formula comes out true <strong>in some row</strong> of the truth table.</p>
 <div class="columns">
 <div class="column" style="width:30%;">
-<p>The set of three formulas:</p>
-<p><br> <span class="math display">\[
+<p><br> <br> The set of three formulas:</p>
+<p><span class="math display">\[
 \{ (p \to q), (\neg q \to \neg p), \neg p \}
 \]</span></p>
-<p><br></p>
-<p>is <strong>consistent</strong>.</p>
-<p>All three are true in the last two rows of the truth table.</p>
+<p>is <strong>consistent</strong> because all three are true in the last two rows of the truth table.</p>
 </div><div class="column" style="width:70%;">
 <div class="truth-table-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=consistency#v1:eyJmb3JtdWxhcyI6WyIocCAtPiBxKSIsIih+cSAtPiB+cCkiLCJ+IHAiXX0=" style="width: 100%; height: 490px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Truth-table exercise: consistency"></iframe></div>
 </div></div>
@@ -478,13 +473,11 @@ T &amp;  \color{red}{F} &amp;  \color{red}{F} &amp;                             
 <p>We check if every formula comes out true <strong>in some row</strong> of the truth table.</p>
 <div class="columns">
 <div class="column" style="width:30%;">
-<p>The set of four formulas:</p>
-<p><br> <span class="math display">\[
+<p><br> <br> The set of four formulas:</p>
+<p><span class="math display">\[
 \{ (p \to q), (\neg p \to \neg q), \neg q, p \}
 \]</span></p>
-<p><br></p>
-<p>is <strong>inconsistent</strong>.</p>
-<p>No row verifies all four formulas.</p>
+<p>is <strong>inconsistent</strong> because no row verifies all four formulas.</p>
 </div><div class="column" style="width:70%;">
 <div class="truth-table-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=consistency#v1:eyJmb3JtdWxhcyI6WyIocCAtPiBxKSIsIih+cCAtPiB+cSkiLCJ+cSIsInAiXX0=" style="width: 100%; height: 490px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Truth-table exercise: consistency"></iframe></div>
 </div></div>
@@ -493,27 +486,27 @@ T &amp;  \color{red}{F} &amp;  \color{red}{F} &amp;                             
 <section id="validity" class="title-slide slide level1 divider center">
 <h1>validity</h1>
 <p>An argument is <strong>valid</strong> iff there is <strong>no assignment</strong> on which <strong>the premises come out true</strong> and <strong>the conclusion false</strong>.</p>
-<ul>
-<li class="fragment">Or, equivalently:</li>
-<li class="fragment">An argument is <strong>valid</strong> iff every assignment on which the premises are true is one on which the conclusion is true.</li>
-</ul>
+<div class="fragment">
+<p>Or, equivalently:</p>
+</div>
+<div class="fragment">
+<p>An argument is <strong>valid</strong> iff every assignment on which the premises are true is one on which the conclusion is true.</p>
+</div>
 </section>
 <section id="how-to-check-for-validity" class="slide level2 smaller">
 <h2>how to check for validity</h2>
 <p>We check that <strong>no row</strong> of the truth table makes <strong>the premises true</strong> and <strong>the conclusion false</strong>.</p>
 <div class="columns">
 <div class="column" style="width:40%;">
+<p><br> <br></p>
 <p>The argument:</p>
-<p><br></p>
 <ol type="1">
 <li><p><span class="math inline">\((p \to q)\)</span></p></li>
 <li><p><span class="math inline">\((q \to \neg r)\)</span></p></li>
 <li><p><span class="math inline">\(r\)</span></p></li>
 <li><p><span class="math inline">\(\neg p\)</span></p></li>
 </ol>
-<p><br></p>
-<p>is <strong>valid</strong>.</p>
-<p><strong>No row makes the premises true and the conclusion false</strong>.</p>
+<p>is <strong>valid</strong> because <strong>no row makes the premises true and the conclusion false</strong>.</p>
 </div><div class="column" style="width:60%;">
 <div class="truth-table-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=validity#v1:eyJmb3JtdWxhcyI6WyIocCAtPiBxKSIsIihxIC0+IH5yKSIsInIiLCJ+cCJdfQ==" style="width: 100%; height: 490px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Truth-table exercise: validity"></iframe></div>
 </div></div>
@@ -521,17 +514,14 @@ T &amp;  \color{red}{F} &amp;  \color{red}{F} &amp;                             
 <section id="how-to-check-for-validity-1" class="slide level2 smaller">
 <h2>how to check for validity</h2>
 <div class="column" style="width:40%;">
-<p>The argument:</p>
-<p><br></p>
+<p><br> <br> The argument:</p>
 <ol type="1">
 <li><p><span class="math inline">\((p \to q)\)</span></p></li>
 <li><p><span class="math inline">\((\neg p \to \neg q)\)</span></p></li>
 <li><p><span class="math inline">\((q \vee r)\)</span></p></li>
 <li><p><span class="math inline">\(r\)</span></p></li>
 </ol>
-<p><br></p>
-<p>is <strong>invalid</strong>.</p>
-<p><strong>The second row makes the premises true and the conclusion false</strong>.</p>
+<p>is <strong>invalid</strong> because <strong>the second row makes the premises true and the conclusion false</strong>.</p>
 </div><div class="column" style="width:60%;">
 <div class="truth-table-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=validity#v1:eyJmb3JtdWxhcyI6WyIocCAtPiBxKSIsIih+cCAtPiB+cSkiLCJxIFxcLyByIiwiciJdfQ==" style="width: 100%; height: 490px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Truth-table exercise: validity"></iframe></div>
 </div></section></section>
