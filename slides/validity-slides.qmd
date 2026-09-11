@@ -1,0 +1,1083 @@
+---
+title: "validity and form"
+subtitle: "PHIL 220. Introduction to Logic"
+author: "Gabriel Uzquiano"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    output-file: validity-and-form-slides.html
+    slide-number: c/t
+    chalkboard: true          # press B for a blank board, C to draw on a slide
+    preview-links: auto       # links open in an overlay, without leaving the deck
+    history: false
+    transition: none          # no swooping; the content should not move
+    center: false
+    width: 1100
+    height: 750
+    margin: 0.06
+    hash-type: title
+    menu:
+      side: left
+---
+
+# validity and form {.divider}
+
+Last time we noticed that some arguments are *risk-free* in that the truth of the premises suffices to guarantee the truth of the conclusion.
+
+We mentioned that some of them are *risk-free* because of the pattern they instantiate: they are *valid*.
+
+Today we ask **what makes an argument *valid***.
+
+
+::: {.notes}
+One minute of recap. They left last time with the definition of validity and the two
+umbrella arguments. The task today is to make 'form' do real work and to draw
+the line between risk-free and valid.
+:::
+
+## recall the definition
+
+::: {.argument}
+An argument is **valid** if, and only if, it is an instance of a **valid
+argument form**.
+:::
+
+. . .
+
+The toolkit of formal logic will make 'valid argument form' precise. In the meantime:
+
+::: {.incremental}
+1. A *valid argument form* has *no* instances with true premises and a false
+   conclusion.
+2. A *valid argument form* preserves truth regardless of subject
+   matter.
+:::
+
+# risk-free is not the same as valid {.divider}
+
+Every valid argument is risk-free, but to be risk-free is not sufficient for an argument to be valid.
+
+::: {.notes}
+This is the difficult slide of the session. Go slowly. Most students may initially think that 'valid' just means 'the premises could not be true with the conclusion false', and this example is the wedge.
+:::
+
+## some risk-free arguments are not valid
+
+::: {.argument}
+1. There is an elephant in the room.
+
+::: {.conclusion}
+2. There are infinitely many numbers.
+:::
+:::
+
+. . .
+
+There is no risk here that the premise may be true and while the conclusion is false: the conclusion *could not have been* false. It is a necessary mathematical fact that there are infinitely many numbers.
+
+. . .
+
+
+So, the argument risk-free. Is it valid?
+
+. . .
+
+To ask whether the argument is valid is to ask whether it is an instance of a valid argument form. 
+
+
+::: {.notes}
+Take the vote here before moving on. Most hands will say valid. Hold that in the
+room for a moment — the next slide is the correction.
+:::
+
+## an invalid argument form {.smaller}
+
+::: {.argument}
+1. $p$
+
+::: {.conclusion}
+2. $q$
+:::
+:::
+
+. . .
+
+
+::: {.columns}
+
+::: {.column width="32%"}
+::: {.argument}
+1. There is an elephant in the room.
+
+::: {.conclusion}
+2. There are infinitely many numbers.
+:::
+:::
+
+::: {.fragment}
+::: {.sentence-verdict .true}
+✓ false premise and a true conclusion
+:::
+:::
+:::
+
+::: {.column width="32%"}
+::: {.argument}
+1. Los Angeles is in California
+
+::: {.conclusion}
+2. There are infinitely many numbers.
+:::
+:::
+
+::: {.fragment}
+::: {.sentence-verdict .true}
+✓ true premise and a true conclusion
+:::
+:::
+:::
+
+::: {.column width="32%"}
+::: {.argument}
+1. Los Angeles is in California
+
+::: {.conclusion}
+2. New York is in California
+:::
+:::
+
+::: {.fragment}
+::: {.sentence-verdict .true}
+✗ true premise and a false conclusion
+:::
+:::
+:::
+
+:::
+
+
+::: {.notes}
+The moral: validity is a feature an argument has *through its form*. Risk-free
+is about this argument; valid is about every argument shaped like it. Write both
+words on the board and keep them there for the rest of the hour.
+:::
+
+## it takes one instance {.smaller}
+
+::: {.argument}
+1. $p$ or $q$
+2. $q$
+
+::: {.conclusion}
+3. $p$
+:::
+:::
+
+. . .
+
+::: {.argument}
+1. My office number is even or it is odd.
+2. My office number is odd.
+
+::: {.conclusion}
+3. Therefore, my office number is even.
+:::
+:::
+
+. . .
+
+The premises are true, since STO 221 has an odd number. However, the conclusion is false.
+
+. . .
+
+A single instance with true premises and a false conclusion suffices to establish the *invalidity* of the argument form.
+
+
+
+# four forms {.divider}
+
+Two that are valid, two that are not.
+
+## modus ponens
+
+::: {.argument}
+1. If $p$, then $q$
+2. $p$
+
+::: {.conclusion}
+3. Therefore, $q$
+:::
+:::
+
+. . .
+
+The label is unimportant, what matters is that no instance has true premises and a false conclusion.
+
+::: {.notes}
+Do not dwell on the Latin. If someone asks, the names are traditional and I will
+use them as shorthand, but nothing turns on them.
+:::
+
+
+## which of these is modus ponens? {.smaller}
+
+We let $p$ stand for 'the car starts' and $q$ for 'there is gas in the tank'.
+
+::: {.columns}
+::: {.column width="32%"}
+::: {.argument}
+1. If the car starts, then there's gas in the tank.
+2. There's gas in the tank.
+
+::: {.conclusion}
+3. So, the car starts.
+:::
+:::
+
+::: {.fragment}
+::: {.argument}
+1. If $p$, then $q$
+2. $q$
+
+::: {.conclusion}
+3. $p$
+:::
+:::
+
+::: {.verdict}
+This is **not** modus ponens.
+:::
+:::
+:::
+
+::: {.column width="32%"}
+::: {.argument}
+1. If the car starts, then there's gas in the tank.
+2. The car starts.
+
+::: {.conclusion}
+3. So, there's gas in the tank.
+:::
+:::
+
+::: {.fragment}
+::: {.argument}
+1. If $p$, then $q$
+2. $p$
+
+::: {.conclusion}
+3. $q$
+:::
+:::
+
+::: {.verdict}
+This **is** modus ponens.
+:::
+:::
+:::
+
+::: {.column width="32%"}
+::: {.argument}
+1. If there's gas in the tank, then the car starts.
+2. The car starts.
+
+::: {.conclusion}
+3. So, there's gas in the tank.
+:::
+:::
+
+::: {.fragment}
+::: {.argument}
+1. If $q$, then $p$
+2. $p$
+
+::: {.conclusion}
+3. $q$
+:::
+:::
+
+::: {.verdict}
+This is **not** modus ponens.
+:::
+:::
+:::
+:::
+
+::: {.notes}
+All three English arguments are visible immediately. Then advance once for the
+analysis of Argument 1, once for Argument 2, and once for Argument 3. That lets
+students compare first and classify second.
+:::
+
+
+
+
+## and which of these?{.smaller}
+
+We let $p$ stand for 'I flip the coin' and $q$ for 'the coin lands heads'.
+
+::: {.columns}
+::: {.column width="32%"}
+::: {.argument}
+1. If I flip the coin, then it will land heads.
+2. The coin will land heads.
+
+::: {.conclusion}
+3. So, I flip the coin.
+:::
+:::
+
+::: {.fragment}
+::: {.argument}
+1. If $p$, then $q$
+2. $q$
+
+::: {.conclusion}
+3. $p$
+:::
+:::
+
+::: {.verdict}
+This is **not** modus ponens.
+:::
+:::
+:::
+
+::: {.column width="32%"}
+::: {.argument}
+1. f I flip the coin, then it will land heads.
+2. I flip the coin.
+
+::: {.conclusion}
+3. So, I flip the coin.
+:::
+:::
+
+::: {.fragment}
+::: {.argument}
+1. If $p$, then $q$
+2. $p$
+
+::: {.conclusion}
+3. $p$
+:::
+:::
+
+::: {.verdict}
+This is **not** modus ponens, though it is a valid argument form.
+:::
+:::
+:::
+
+::: {.column width="32%"}
+::: {.argument}
+1. f I flip the coin, then it will land heads.
+2. I flip the coin.
+
+::: {.conclusion}
+3. So, the coin lands heads.
+:::
+:::
+
+::: {.fragment}
+::: {.argument}
+1. If $p$, then $q$
+2. $p$
+
+::: {.conclusion}
+3. $q$
+:::
+:::
+
+::: {.verdict}
+This **is** modus ponens.
+:::
+:::
+:::
+:::
+
+::: {.notes}
+All three English arguments are visible immediately. Then advance once for the
+analysis of Argument 1, once for Argument 2, and once for Argument 3. That lets
+students compare first and classify second.
+:::
+
+
+## why is modus ponens valid? {.smaller}
+
+::: {.argument}
+1. If $p$, then $q$
+2. $p$
+
+::: {.conclusion}
+3. Therefore, $q$
+:::
+:::
+
+The truth values of premises and conclusion is determined by the truth value of $p$ and $q$.
+
+. . .
+
+<div style="display:flex; justify-content:center; margin-top:1rem;">
+<table style="border-collapse:collapse; font-size:0.95em;">
+  <thead>
+    <tr>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">$p$</th>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-right:4px double #444; border-bottom:2px solid #444;">$q$</th>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">if $p$, then $q$</th>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">$p$</th>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">$q$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+    </tr>
+    <tr>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+    </tr>
+    <tr>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+    </tr>
+    <tr>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+::: {.fragment}
+Whatever the truth values of $p$ and $q$, there is no circumstance on which both premises are true while the conclusion is false. So, there are **no** instances with true premises and a false conclusion.
+:::
+
+
+
+## affirming the consequent
+
+::: {.argument}
+1. If $p$, then $q$
+2. $q$
+
+::: {.conclusion}
+3. Therefore, $p$
+:::
+:::
+
+. . .
+
+Some instances have true premises and a false conclusion.
+
+. . .
+
+::: {.argument}
+1. If I'm a millionaire, then I can make ends meet.
+2. I can make ends meet.
+
+::: {.conclusion}
+3. Therefore, I'm a millionaire.
+:::
+:::
+
+
+## why is affirming the consequent invalid {.smaller}
+
+The truth values of premises and conclusion is determined by the truth value of $p$ and $q$.
+
+<div style="display:flex; justify-content:center; margin-top:1rem;">
+<table style="border-collapse:collapse; font-size:0.95em;">
+  <thead>
+    <tr>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">$p$</th>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-right:4px double #444; border-bottom:2px solid #444;">$q$</th>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">if $p$, then $q$</th>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">$q$</th>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">$p$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+    </tr>
+    <tr>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+    </tr>
+    <tr style="background-color:#fff3cd;">
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+    </tr>
+    <tr>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+::: {.fragment}
+Choose a false sentence for $p$ and a true sentence for $q$. Then the premises will be true and the conclusion will false, e.g., it is false that I am a millionaire, but it is true that I can make ends meet.
+
+Likewise:
+:::
+
+::: {.fragment}
+::: {.argument}
+1. If all phones are built by apple, then your phone built by apple.
+2. Your phone is built by apple.
+
+::: {.conclusion}
+3. Therefore, all phones are built by apple. 
+:::
+:::
+:::
+
+
+
+## modus tollens
+
+::: {.argument}
+1. If $p$, then $q$
+2. Not-$q$
+
+::: {.conclusion}
+3. Therefore, not-$p$
+:::
+:::
+
+. . .
+
+The label is again unimportant. What matters is that the argument form has no instances with true premises and a false conclusion.
+
+
+## which of these is modus tollens? {.smaller}
+
+We let $p$ stand for 'I'm a millionaire' and $q$ for 'I can make ends meet'.
+
+::: {.columns}
+::: {.column width="32%"}
+::: {.argument}
+1. If I'm a millionaire, then I can make ends meet. 
+2. I cannot make ends meet.
+
+::: {.conclusion}
+3. So, I'm not a millionaire.
+:::
+:::
+
+::: {.fragment}
+::: {.argument}
+1. If $p$, then $q$
+2. Not-$q$
+
+::: {.conclusion}
+3. Not-$p$
+:::
+:::
+
+::: {.verdict}
+This **is** modus tollens.
+:::
+:::
+:::
+
+::: {.column width="32%"}
+::: {.argument}
+1. If I'm a millionaire, then I can make ends meet. 
+2. I'm not a millionaire.
+
+::: {.conclusion}
+3. So, I cannot make ends meet.
+:::
+:::
+
+::: {.fragment}
+::: {.argument}
+1. If $p$, then $q$
+2. Not-$p$
+
+::: {.conclusion}
+3. Not-$q$
+:::
+:::
+
+::: {.verdict}
+This is **not** modus tollens.
+:::
+:::
+:::
+
+::: {.column width="32%"}
+::: {.argument}
+1. If I can make ends meet, then I'm a millionaire. 
+2. I'm not a millionaire.
+
+::: {.conclusion}
+3. So, I cannot make ends meet.
+:::
+:::
+
+::: {.fragment}
+::: {.argument}
+1. If $q$, then $p$
+2. Not-$p$
+
+::: {.conclusion}
+3. Not-$q$
+:::
+:::
+
+::: {.verdict}
+This **is** modus tollens.
+:::
+:::
+:::
+:::
+
+::: {.notes}
+All three English arguments are visible immediately. Then advance once for the
+analysis of Argument 1, once for Argument 2, and once for Argument 3. That lets
+students compare first and classify second.
+:::
+
+## why is modus tollens valid? {.smaller}
+
+::: {.argument}
+1. If $p$, then $q$
+2. Not-$q$
+
+::: {.conclusion}
+3. Therefore, not-$p$
+:::
+:::
+
+The truth values of premises and conclusion is determined by the truth value of $p$ and $q$.
+
+. . .
+
+<div style="display:flex; justify-content:center; margin-top:1rem;">
+<table style="border-collapse:collapse; font-size:0.95em;">
+  <thead>
+    <tr>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">$p$</th>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-right:4px double #444; border-bottom:2px solid #444;">$q$</th>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">if $p$, then $q$</th>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">not-$q$</th>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">not-$p$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+    </tr>
+    <tr>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+    </tr>
+    <tr>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+    </tr>
+    <tr>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+::: {.fragment}
+Whatever the truth values of $p$ and $q$, there is no circumstance on which both premises are true while the conclusion is false. So, there are **no** instances with true premises and a false conclusion.
+:::
+
+
+
+
+
+## denying the antecedent
+
+::: {.argument}
+1. If $p$, then $q$
+2. Not-$p$
+
+::: {.conclusion}
+3. Therefore, not-$q$
+:::
+:::
+
+. . .
+
+Some instances have true premises and a false conclusion.
+
+. . .
+
+::: {.argument}
+1. If whales are fish, then they live underwater.
+2. Whales are not fish.
+
+::: {.conclusion}
+3. Therefore, whales do not live underwater.
+:::
+:::
+
+
+## why is denying the consequent invalid {.smaller}
+
+The truth values of premises and conclusion is determined by the truth value of $p$ and $q$.
+
+<div style="display:flex; justify-content:center; margin-top:1rem;">
+<table style="border-collapse:collapse; font-size:0.95em;">
+  <thead>
+    <tr>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">$p$</th>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-right:4px double #444; border-bottom:2px solid #444;">$q$</th>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">if $p$, then $q$</th>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">not-$p$</th>
+      <th style="text-align:center; padding:0.35rem 0.9rem; border-bottom:2px solid #444;">not-$q$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+    </tr>
+    <tr>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+    </tr>
+    <tr style="background-color:#fff3cd;">
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+    </tr>
+    <tr>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem; border-right:4px double #444;">F</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+      <td style="text-align:center; padding:0.3rem 0.9rem;">T</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+::: {.fragment}
+Choose a false sentence for $p$ and a true sentence for $q$. Then the premises will be true and the conclusion will false, e.g., it is false that whales are fish, but it is true that whales live underwater.
+
+Likewise:
+:::
+
+::: {.fragment}
+::: {.argument}
+1. If all phones are built by apple, then your phone built by apple.
+2. Not all phones are built by apple.
+
+::: {.conclusion}
+3. Therefore, your phone is not built by apple. 
+:::
+:::
+:::
+
+
+::: {.notes}
+The whale example is the best one in the notes because the falsity of the
+conclusion is not a matter of opinion.
+:::
+
+
+
+
+# validity in English {.divider}
+
+We are in a position to make partial progress on real life arguments.
+
+## is this a valid argument? {.smaller}
+
+> Many Americans speak Tagalog. Most USC students are American. Therefore, most
+> USC students speak Tagalog.
+
+::: {.fragment .verdict}
+No. The premises are true and the conclusion is false, so it cannot be an
+instance of a valid form.
+:::
+
+. . .
+
+> If many Americans speak Tagalog, then some USC students do. Many Americans
+> speak Tagalog. Therefore, some USC students speak Tagalog.
+
+::: {.fragment .verdict}
+Yes. This argument is an instance of modus ponens in which $p$ stands for 'many Americans speak Tagalog' and $q$ stands for 'some students speak Tagalog'.
+:::
+
+::: {.notes}
+Vote on each before revealing. The pair is deliberately close in subject matter
+so that only the form distinguishes them.
+:::
+
+## and this?{.smaller}
+
+::: {.argument}
+1. Every Tesla is an electric car.
+2. Every electric car is fuel-efficient.
+
+::: {.conclusion}
+3. Every Tesla is fuel-efficient.
+:::
+:::
+
+. . . 
+
+This is an instance of a valid argument form:
+
+. . .
+
+::: {.argument}
+1. Every $A$ is $B$.
+2. Every $B$ is $C$.
+
+::: {.conclusion}
+3. Every $A$ is $C$.
+:::
+:::
+No matter what we substitute for $A$, $B$, and $C$, we will never obtain an argument with true premises and a false conclusion.
+
+## compare {.smaller}
+
+::: {.argument}
+1. Some Teslas are fuel-efficient cars.
+2. Some fuel-efficient cars are electric cars.
+
+::: {.conclusion}
+3. Therefore, some Teslas are electric cars.
+:::
+:::
+
+. . .
+
+This is an instance of the form:
+
+::: {.argument}
+1. Some $A$ is $B$.
+2. Some $B$ is $C$.
+
+::: {.conclusion}
+3. Therefore, some $A$ is $C$.
+:::
+:::
+
+. . .
+
+Substitute:
+
+::: {.columns}
+::: {.column width="34%"}
+- $A$ := whale
+- $B$ := mammal
+- $C$ := lives at high altitude
+:::
+
+::: {.column width="62%"}
+::: {.argument}
+1. Some whales are mammals.
+2. Some mammals live at high altitude.
+
+::: {.conclusion}
+3. Therefore, some whales live at high altitude.
+:::
+:::
+:::
+:::
+
+
+
+# soundness {.divider}
+
+Validity is not all we want.
+
+## some valid arguments should not persuade you
+
+::: {.argument}
+1. If Bilbao is in Southern Spain, then it is closer to Sevilla than to
+   Barcelona.
+2. Bilbao is in Southern Spain.
+
+::: {.conclusion}
+3. Therefore, Bilbao is closer to Sevilla than to Barcelona.
+:::
+:::
+
+. . .
+
+The argument is valid, as it is an instance of modus ponens. Yes, the second premise is false, and there is no reason for you to accept the conclusion.
+
+. . .
+
+::: {.argument}
+An argument is **sound** if, and only if, it is a valid argument with true
+premises.
+:::
+
+## Sound and unsound {.smaller}
+
+::: {.argument}
+1. If I know that snow is white, then snow is white.
+2. I know that snow is white.
+
+::: {.conclusion}
+3. Therefore, snow is white.
+:::
+:::
+
+::: {.fragment .verdict}
+**Sound**. This is a valid argument, and the premises are true. So, we must accept the
+conclusion.
+:::
+
+. . .
+
+::: {.argument}
+1. If I know that the world will end tomorrow, then the world will end tomorrow.
+2. I know that the world will end tomorrow.
+
+::: {.conclusion}
+3. Therefore, the world will end tomorrow.
+:::
+:::
+
+::: {.fragment .verdict}
+**Unsound**. This is a valid argument, but its second premise is false.
+:::
+
+## free will example {.smaller}
+
+::: {.columns}
+::: {.column width="46%"}
+::: {.argument}
+1. If determinism is true, then if I have no control over the laws of nature or the initial conditions, then I have no control over what I do.
+2. Determinism is true.
+3. I have no control over the laws of nature or the initial conditions.
+
+::: {.conclusion}
+3. So, I have no control over what I do.
+:::
+:::
+:::
+
+::: {.column width="50%"}
+::: {.argument}
+1. If determinism is true, then if my actions are unimpeded by external coercion, compulsion or manipulation, then I have control over what I do.
+2. Determinism is true.
+2. My actions are unimpeded by external coercion, compulsion or manipulation.
+
+::: {.conclusion}
+3. So, I have control over what I do.
+:::
+:::
+:::
+:::
+
+::: {.fragment .verdict}
+Both are *valid* arguments, but *only one of them* is *sound*, and that is where the real disagreement lies.
+:::
+
+
+## How they relate
+
+::: {.incremental}
+- If an argument is sound, then it is valid.
+- If an argument is sound, then its conclusion is true.
+:::
+
+. . .
+
+But on the other hand:
+
+::: {.incremental}
+- A valid argument may have false premises, and a false conclusion.
+- An argument with true premises and a true conclusion may not be valid.
+:::
+
+::: {.notes}
+The two traps on the quiz are 'if valid then sound' and 'if valid then the
+conclusion is true'. Say both out loud as false, twice.
+:::
+
+## what rules out what
+
+::: {.incremental}
+- True premises and a false conclusion rule out validity.
+- False premises or conclusion rule out soundness.
+- Invalidity rules out soundness.
+:::
+
+::: {.notes}
+This is the summary slide.
+:::
+
+
+
+
+## Next time
+
+We look for a **formal language** in which to study forms.
+
+. . . 
+
+Problem Session 1 is scheduled for Monday 8/31 along with Quiz 1.
+
+
+::: {.aside}
+The slides cover material from [Chapter 1](https://gabriel-uzquiano.github.io/logic/reason.html#reason) of [Introduction to Logic](https://gabriel-uzquiano.github.io/logic/).
+:::
+
+
