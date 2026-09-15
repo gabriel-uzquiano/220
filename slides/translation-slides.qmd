@@ -225,6 +225,16 @@ r
 No row makes all three premises true and the conclusion false — the argument is valid. Run the table live rather than reading off a pre-filled one if time allows.
 :::
 
+## putting it all together
+
+One last pass over the British-are-coming argument — this time, do all three steps yourself in a single interactive worksheet: pick out the atomic sentences, assign them letters, and translate the argument.
+
+[Open the full exercise in the translation app](https://gabriel-uzquiano.github.io/prop-translation/#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJJZiB0aGUgQnJpdGlzaCBhcmUgY29taW5nIGJ5IGxhbmQsIFBhdWwgUmV2ZXJlIHdpbGwgbGlnaHQgdHdvIGxhbXBzLiIsInJlZkZvcm11bGEiOiIiLCJyZWZBdG9tcyI6W119LHsidGV4dCI6IklmIHRoZSBCcml0aXNoIGFyZSBub3QgY29taW5nIGJ5IGxhbmQsIHRoZW4gdGhleSBhcmUgY29taW5nIGJ5IHNlYS4iLCJyZWZGb3JtdWxhIjoiIiwicmVmQXRvbXMiOltdfSx7InRleHQiOiJQYXVsIFJldmVyZSBkaWQgbm90IGxpZ2h0IHR3byBsYW1wcy4iLCJyZWZGb3JtdWxhIjoiIiwicmVmQXRvbXMiOltdfSx7InRleHQiOiJUaGUgQnJpdGlzaCBhcmUgY29taW5nIGJ5IHNlYS4iLCJyZWZGb3JtdWxhIjoiIiwicmVmQXRvbXMiOltdfV0sIndzQXRvbXMiOlt7ImxldHRlciI6IiIsImNsYXVzZSI6IiJ9XSwidHJhbnMiOlt7ImZvcm11bGEiOiIifSx7ImZvcm11bGEiOiIifSx7ImZvcm11bGEiOiIifSx7ImZvcm11bGEiOiIifV19)
+
+::: {.notes}
+This link opens the full app (not just the translation card) with the argument's four sentences pre-loaded and no answer key given — clicking it during the talk opens an overlay thanks to preview-links, so there's no need to leave the deck. Good for a live cold-call: let a student drive the whole pipeline from scratch.
+:::
+
 # worked example: interest rates {.divider}
 
 ::: {.notes}

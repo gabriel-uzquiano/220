@@ -6,8 +6,8 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.39">
 
   <meta name="author" content="Gabriel Uzquiano">
   <title>PHIL 220 slides – translation</title>
@@ -17,9 +17,6 @@
   <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
   <style>
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -32,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-5cde01b1358b36af9c1b84d05fb52047.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-4449bf1c5b09ee48072c537cc9310dff.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -185,11 +182,13 @@ Gabriel Uzquiano
 <section id="the-plan" class="slide level2">
 <h2>the plan</h2>
 <p>Three steps, applied to each sentence in turn:</p>
+<div>
 <ol type="1">
 <li class="fragment"><strong>paraphrase</strong> the sentence to reveal how it is built from simpler sentences by truth-functional connectives — ‘not’, ‘and’, ‘or’, ‘if … then …’</li>
 <li class="fragment"><strong>replace each connective</strong> with its formal counterpart</li>
 <li class="fragment"><strong>replace the simplest sentences</strong> that remain with propositional variables</li>
 </ol>
+</div>
 <aside class="notes">
 <p>Preview only — do not dwell. The two worked examples that follow are where this actually lands.</p>
 <style type="text/css">
@@ -271,12 +270,14 @@ Gabriel Uzquiano
 <section id="step-1-paraphrase" class="slide level2 smaller">
 <h2>step 1 — paraphrase</h2>
 <p>We use parentheses to reveal how each sentence is built from simpler ones.</p>
+<div>
 <ol type="1">
 <li class="fragment">(<span class="cardinal"><u><strong>If</strong></u></span> the British are coming by land, <span class="cardinal"><u><strong>then</strong></u></span> Paul Revere is supposed to light two lamps).</li>
 <li class="fragment">(<span class="cardinal"><u><strong>If</strong></u></span> the British are <span class="cardinal"><u><strong>not</strong></u></span> coming by land, <span class="cardinal"><u><strong>then</strong></u></span> they are coming by sea.)</li>
 <li class="fragment">Paul Revere did <span class="cardinal"><u><strong>not</strong></u></span> light two lamps.</li>
 <li class="fragment">The British are coming by sea.</li>
 </ol>
+</div>
 <aside class="notes">
 <p>Nothing has changed in meaning — we are only making the grammatical skeleton visible. Point at ‘if’, ‘not’, ‘then’ as they light up.</p>
 <style type="text/css">
@@ -340,12 +341,14 @@ Gabriel Uzquiano
 </section>
 <section id="step-2-continued-applying-it" class="slide level2 smaller">
 <h2>step 2 continued — applying it</h2>
+<div>
 <ol type="1">
 <li class="fragment">(The British are coming by land <span class="math inline">\(\to\)</span> Paul Revere will light two lamps).</li>
 <li class="fragment">(<span class="math inline">\(\neg\)</span> The British are coming by land <span class="math inline">\(\to\)</span> The British are coming by sea).</li>
 <li class="fragment"><span class="math inline">\(\neg\)</span> Paul Revere lit two lamps.</li>
 <li class="fragment">The British are coming by sea.</li>
 </ol>
+</div>
 <aside class="notes">
 <p>Each line is a direct substitution from the previous slide — no new decisions being made here yet.</p>
 <style type="text/css">
@@ -453,6 +456,24 @@ Gabriel Uzquiano
 <div class="truth-table-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=validity#v1:eyJmb3JtdWxhcyI6WyIocCAtPiBxKSIsIih+cCAtPiByKSIsIn5xIiwiciJdfQ==" style="width: 100%; height: 600px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Truth-table exercise: validity"></iframe></div>
 <aside class="notes">
 <p>No row makes all three premises true and the conclusion false — the argument is valid. Run the table live rather than reading off a pre-filled one if time allows.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="putting-it-all-together" class="slide level2">
+<h2>putting it all together</h2>
+<p>One last pass over the British-are-coming argument — this time, do all three steps yourself in a single interactive worksheet: pick out the atomic sentences, assign them letters, and translate the argument.</p>
+<p><a href="https://gabriel-uzquiano.github.io/prop-translation/#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJJZiB0aGUgQnJpdGlzaCBhcmUgY29taW5nIGJ5IGxhbmQsIFBhdWwgUmV2ZXJlIHdpbGwgbGlnaHQgdHdvIGxhbXBzLiIsInJlZkZvcm11bGEiOiIiLCJyZWZBdG9tcyI6W119LHsidGV4dCI6IklmIHRoZSBCcml0aXNoIGFyZSBub3QgY29taW5nIGJ5IGxhbmQsIHRoZW4gdGhleSBhcmUgY29taW5nIGJ5IHNlYS4iLCJyZWZGb3JtdWxhIjoiIiwicmVmQXRvbXMiOltdfSx7InRleHQiOiJQYXVsIFJldmVyZSBkaWQgbm90IGxpZ2h0IHR3byBsYW1wcy4iLCJyZWZGb3JtdWxhIjoiIiwicmVmQXRvbXMiOltdfSx7InRleHQiOiJUaGUgQnJpdGlzaCBhcmUgY29taW5nIGJ5IHNlYS4iLCJyZWZGb3JtdWxhIjoiIiwicmVmQXRvbXMiOltdfV0sIndzQXRvbXMiOlt7ImxldHRlciI6IiIsImNsYXVzZSI6IiJ9XSwidHJhbnMiOlt7ImZvcm11bGEiOiIifSx7ImZvcm11bGEiOiIifSx7ImZvcm11bGEiOiIifSx7ImZvcm11bGEiOiIifV19">Open the full exercise in the translation app</a></p>
+<aside class="notes">
+<p>This link opens the full app (not just the translation card) with the argument’s four sentences pre-loaded and no answer key given — clicking it during the talk opens an overlay thanks to preview-links, so there’s no need to leave the deck. Good for a live cold-call: let a student drive the whole pipeline from scratch.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -635,10 +656,12 @@ Gabriel Uzquiano
 <p>The British are coming and Paul Revere will light one lamp or he will light two lamps.</p>
 </blockquote>
 <div class="fragment">
+<div>
 <ul>
 <li class="fragment">((The British are coming <span class="cardinal"><u><strong>and</strong></u></span> Paul Revere will light one lamp) <span class="cardinal"><u><strong>or</strong></u></span> Paul Revere will light two lamps) — <strong>or</strong> is the main connective</li>
 <li class="fragment">(The British are coming <span class="cardinal"><u><strong>and</strong></u></span> (Paul Revere will light one lamp <span class="cardinal"><u><strong>or</strong></u></span> Paul Revere will light two lamps)) — <strong>and</strong> is the main connective</li>
 </ul>
+</div>
 <aside class="notes">
 <p>Both parses are grammatical. English does not disambiguate; we have to, and we have to say so out loud when it happens.</p>
 <style type="text/css">
@@ -773,10 +796,12 @@ sentence at all.</div></div>
 </blockquote>
 <div class="fragment">
 <p>Two acceptable paraphrases, matching the same truth conditions:</p>
+<div>
 <ul>
 <li class="fragment">(Paul Revere will <span class="cardinal"><u><strong>not</strong></u></span> light one lamp <span class="cardinal"><u><strong>and</strong></u></span> Paul Revere will <span class="cardinal"><u><strong>not</strong></u></span> light two lamps)</li>
 <li class="fragment">It is <span class="cardinal"><u><strong>not</strong></u></span> the case that (Paul Revere will light one <span class="cardinal"><u><strong>or</strong></u></span> two lamps)</li>
 </ul>
+</div>
 </div>
 <div class="fragment">
 <p><strong>translation key</strong>: <span class="math inline">\(p\)</span>: Paul Revere lights one lamp &nbsp;&nbsp; <span class="math inline">\(q\)</span>: Paul Revere lights two lamps</p>
@@ -845,9 +870,11 @@ q \to p
 </blockquote>
 <div class="fragment">
 <p>A conjunction of the two conditionals from the previous slide:</p>
+<div>
 <ul>
 <li class="fragment">(Paul Revere will light two lamps <span class="cardinal"><u><strong>if</strong></u></span> the British are coming by sea) <span class="cardinal"><u><strong>and</strong></u></span> (Paul Revere will light two lamps <span class="cardinal"><u><strong>only if</strong></u></span> the British are coming by sea)</li>
 </ul>
+</div>
 </div>
 <div class="fragment">
 <p><span class="math display">\[
@@ -1142,7 +1169,7 @@ p \vee q
         margin: 6.0e-2,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -1169,173 +1196,190 @@ p \vee q
       });
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
-      window.document.addEventListener("DOMContentLoaded", function (event) {
-        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-        tabsets.forEach(function(tabset) {
-          const tabby = new Tabby('#' + tabset.id);
-        });
-        const isCodeAnnotation = (el) => {
-          for (const clz of el.classList) {
-            if (clz.startsWith('code-annotation-')) {                     
-              return true;
-            }
-          }
-          return false;
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
         }
-        const onCopySuccess = function(e) {
-          // button target
-          const button = e.trigger;
-          // don't keep focus
-          button.blur();
-          // flash "checked"
-          button.classList.add('code-copy-button-checked');
-          var currentTitle = button.getAttribute("title");
-          button.setAttribute("title", "Copied!");
-          let tooltip;
-          if (window.bootstrap) {
-            button.setAttribute("data-bs-toggle", "tooltip");
-            button.setAttribute("data-bs-placement", "left");
-            button.setAttribute("data-bs-title", "Copied!");
-            tooltip = new bootstrap.Tooltip(button, 
-              { trigger: "manual", 
-                customClass: "code-copy-button-tooltip",
-                offset: [0, -8]});
-            tooltip.show();    
-          }
-          setTimeout(function() {
-            if (tooltip) {
-              tooltip.hide();
-              button.removeAttribute("data-bs-title");
-              button.removeAttribute("data-bs-toggle");
-              button.removeAttribute("data-bs-placement");
-            }
-            button.setAttribute("title", currentTitle);
-            button.classList.remove('code-copy-button-checked');
-          }, 1000);
-          // clear code selection
-          e.clearSelection();
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
         }
-        const getTextToCopy = function(trigger) {
-          const outerScaffold = trigger.parentElement.cloneNode(true);
-          const codeEl = outerScaffold.querySelector('code');
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
           for (const childEl of codeEl.children) {
             if (isCodeAnnotation(childEl)) {
               childEl.remove();
             }
           }
           return codeEl.innerText;
-        }
-        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-          text: getTextToCopy
-        });
-        clipboard.on('success', onCopySuccess);
-        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-            text: getTextToCopy,
-            container: window.document.getElementById('quarto-embedded-source-code-modal')
-          });
-          clipboardModal.on('success', onCopySuccess);
-        }
-          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-          var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp('/' + window.location.host + '/');
-          var isInternal = (href) => {
-              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-          }
-          // Inspect non-navigation links and adorn them if external
-         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-          for (var i=0; i<links.length; i++) {
-            const link = links[i];
-            if (!isInternal(link.href)) {
-              // undo the damage that might have been done by quarto-nav.js in the case of
-              // links that we want to consider external
-              if (link.dataset.originalHref !== undefined) {
-                link.href = link.dataset.originalHref;
-              }
-            }
-          }
-        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-          const config = {
-            allowHTML: true,
-            maxWidth: 500,
-            delay: 100,
-            arrow: false,
-            appendTo: function(el) {
-                return el.closest('section.slide') || el.parentElement;
-            },
-            interactive: true,
-            interactiveBorder: 10,
-            theme: 'light-border',
-            placement: 'bottom-start',
-          };
-          if (contentFn) {
-            config.content = contentFn;
-          }
-          if (onTriggerFn) {
-            config.onTrigger = onTriggerFn;
-          }
-          if (onUntriggerFn) {
-            config.onUntrigger = onUntriggerFn;
-          }
-            config['offset'] = [0,0];
-            config['maxWidth'] = 700;
-          window.tippy(el, config); 
-        }
-        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-        for (var i=0; i<noterefs.length; i++) {
-          const ref = noterefs[i];
-          tippyHover(ref, function() {
-            // use id or data attribute instead here
-            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-            try { href = new URL(href).hash; } catch {}
-            const id = href.replace(/^#\/?/, "");
-            const note = window.document.getElementById(id);
-            if (note) {
-              return note.innerHTML;
-            } else {
-              return "";
-            }
-          });
-        }
-        const findCites = (el) => {
-          const parentEl = el.parentElement;
-          if (parentEl) {
-            const cites = parentEl.dataset.cites;
-            if (cites) {
-              return {
-                el,
-                cites: cites.split(' ')
-              };
-            } else {
-              return findCites(el.parentElement)
-            }
-          } else {
-            return undefined;
-          }
-        };
-        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-        for (var i=0; i<bibliorefs.length; i++) {
-          const ref = bibliorefs[i];
-          const citeInfo = findCites(ref);
-          if (citeInfo) {
-            tippyHover(citeInfo.el, function() {
-              var popup = window.document.createElement('div');
-              citeInfo.cites.forEach(function(cite) {
-                var citeDiv = window.document.createElement('div');
-                citeDiv.classList.add('hanging-indent');
-                citeDiv.classList.add('csl-entry');
-                var biblioDiv = window.document.getElementById('ref-' + cite);
-                if (biblioDiv) {
-                  citeDiv.innerHTML = biblioDiv.innerHTML;
-                }
-                popup.appendChild(citeDiv);
-              });
-              return popup.innerHTML;
-            });
-          }
-        }
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      </script>
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
     
 
 </body></html>
