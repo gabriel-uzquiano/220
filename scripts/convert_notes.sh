@@ -18,6 +18,7 @@ for src in "$NOTES_DIR"/*.md; do
     --from markdown+definition_lists+smart+tex_math_dollars \
     --to html5 \
     --template "$TEMPLATE" \
+    --lua-filter slides/translate-widget.lua \
     --mathjax \
     --no-highlight \
     "$src" -o "$tmp"

@@ -48,18 +48,10 @@ from me.</p>
 <p><span class="math inline">\(r\)</span>: The lottery is rigged.</p>
 <p><span class="math inline">\(s\)</span>: You think I’m part of the
 scheme.</p>
-<pre class="Translate Prop" data-system="gamutPND"
-data-submission="none"><code>1. q -&gt; p : You will be rich tomorrow if you buy a lottery ticket from me.
-| q -&gt; p</code></pre>
-<pre class="Translate Prop" data-system="gamutPND"
-data-submission="none"><code>2. (r /\ s) -&gt; q : You will buy a lottery ticket from me if the lottery is rigged and you think that I&#39;m part of the scheme.
-| (r /\ s) -&gt; q</code></pre>
-<pre class="Translate Prop" data-system="gamutPND"
-data-submission="none"><code>3. r /\ -p : The lottery is rigged, but you will not be rich tomorrow.
-| r /\ -p</code></pre>
-<pre class="Translate Prop" data-system="gamutPND"
-data-submission="none"><code>4. -s: You do not think I&#39;m part of the scheme
-| -s</code></pre>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJZb3Ugd2lsbCBiZSByaWNoIHRvbW9ycm93IGlmIHlvdSBidXkgYSBsb3R0ZXJ5IHRpY2tldCBmcm9tIG1lLiIsInJlZkZvcm11bGEiOiJxIOKGkiBwIiwicmVmQXRvbXMiOltdfV0sIndzQXRvbXMiOlt7ImxldHRlciI6IiIsImNsYXVzZSI6IiJ9XSwidHJhbnMiOlt7ImZvcm11bGEiOiIifV19" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJZb3Ugd2lsbCBidXkgYSBsb3R0ZXJ5IHRpY2tldCBmcm9tIG1lIGlmIHRoZSBsb3R0ZXJ5IGlzIHJpZ2dlZCBhbmQgeW91IHRoaW5rIHRoYXQgSSdtIHBhcnQgb2YgdGhlIHNjaGVtZS4iLCJyZWZGb3JtdWxhIjoiKHIg4oinIHMpIOKGkiBxIiwicmVmQXRvbXMiOltdfV0sIndzQXRvbXMiOlt7ImxldHRlciI6IiIsImNsYXVzZSI6IiJ9XSwidHJhbnMiOlt7ImZvcm11bGEiOiIifV19" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJUaGUgbG90dGVyeSBpcyByaWdnZWQsIGJ1dCB5b3Ugd2lsbCBub3QgYmUgcmljaCB0b21vcnJvdy4iLCJyZWZGb3JtdWxhIjoiciDiiKcgwqxwIiwicmVmQXRvbXMiOltdfV0sIndzQXRvbXMiOlt7ImxldHRlciI6IiIsImNsYXVzZSI6IiJ9XSwidHJhbnMiOlt7ImZvcm11bGEiOiIifV19" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJZb3UgZG8gbm90IHRoaW5rIEknbSBwYXJ0IG9mIHRoZSBzY2hlbWUiLCJyZWZGb3JtdWxhIjoiwqxzIiwicmVmQXRvbXMiOltdfV0sIndzQXRvbXMiOlt7ImxldHRlciI6IiIsImNsYXVzZSI6IiJ9XSwidHJhbnMiOlt7ImZvcm11bGEiOiIifV19" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
 <h3 id="validity">validity</h3>
 <p>The argument is valid because there is a derivation of its conclusion
 from its premises.</p>
@@ -124,15 +116,9 @@ fraud.</p>
 charged.</p>
 <p><span class="math inline">\(r\)</span>: There is evidence against
 them.</p>
-<pre class="Translate Prop" data-system="gamutPND"
-data-options="exam, nocheck" data-submission="none"><code>1. p -&gt;(r -&gt; q)  : If the board committed fraud, then they will be charged if there is any evidence against them.
-|p -&gt;(r -&gt; q)</code></pre>
-<pre class="Translate Prop" data-system="gamutPND"
-data-options="exam, nocheck" data-submission="none"><code>2. p -&gt; r : There is evidence against them if they committed fraud.
-|p -&gt; r </code></pre>
-<pre class="Translate Prop" data-system="gamutPND"
-data-options="exam, nocheck" data-submission="none"><code>3. - q -&gt; -r : Unless they are charged, there is no evidence against them.
-| -q -&gt; -r</code></pre>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJJZiB0aGUgYm9hcmQgY29tbWl0dGVkIGZyYXVkLCB0aGVuIHRoZXkgd2lsbCBiZSBjaGFyZ2VkIGlmIHRoZXJlIGlzIGFueSBldmlkZW5jZSBhZ2FpbnN0IHRoZW0uIiwicmVmRm9ybXVsYSI6InAg4oaSKHIg4oaSIHEpIiwicmVmQXRvbXMiOltdfV0sIndzQXRvbXMiOlt7ImxldHRlciI6IiIsImNsYXVzZSI6IiJ9XSwidHJhbnMiOlt7ImZvcm11bGEiOiIifV19" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJUaGVyZSBpcyBldmlkZW5jZSBhZ2FpbnN0IHRoZW0gaWYgdGhleSBjb21taXR0ZWQgZnJhdWQuIiwicmVmRm9ybXVsYSI6InAg4oaSIHIiLCJyZWZBdG9tcyI6W119XSwid3NBdG9tcyI6W3sibGV0dGVyIjoiIiwiY2xhdXNlIjoiIn1dLCJ0cmFucyI6W3siZm9ybXVsYSI6IiJ9XX0=" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJVbmxlc3MgdGhleSBhcmUgY2hhcmdlZCwgdGhlcmUgaXMgbm8gZXZpZGVuY2UgYWdhaW5zdCB0aGVtLiIsInJlZkZvcm11bGEiOiLCrCBxIOKGkiDCrHIiLCJyZWZBdG9tcyI6W119XSwid3NBdG9tcyI6W3sibGV0dGVyIjoiIiwiY2xhdXNlIjoiIn1dLCJ0cmFucyI6W3siZm9ybXVsYSI6IiJ9XX0=" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
 <h3 id="validity-1">validity</h3>
 <p>The argument is <em>invalid</em> because there is an assignment on
 which the premises are true and the conclusion false, namely, <span
@@ -162,15 +148,9 @@ biased.</li>
 <p><span class="math inline">\(q\)</span>: The coin lands heads.</p>
 <p><span class="math inline">\(r\)</span>: The coin lands tails.</p>
 <p><span class="math inline">\(s\)</span>: The coin is biased.</p>
-<pre class="Translate Prop" data-system="gamutPND"
-data-options="exam, nocheck" data-submission="none"><code>1. p -&gt;((q \/ r) /\ -(q /\ r))  : If you flip the coin, then it will land heads or tails but not both.
-|p -&gt;((q \/ r) /\ -(q /\ r))</code></pre>
-<pre class="Translate Prop" data-system="gamutPND"
-data-options="exam, nocheck" data-submission="none"><code>2. s -&gt; q : If the coin is biased, then it will land heads.
-|s -&gt; q </code></pre>
-<pre class="Translate Prop" data-system="gamutPND"
-data-options="exam, nocheck" data-submission="none"><code>3. (p /\ r) -&gt; - s : if you flip the coin and the coin lands tails, then it is not biased.
-| (p /\ r) -&gt; - s</code></pre>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJJZiB5b3UgZmxpcCB0aGUgY29pbiwgdGhlbiBpdCB3aWxsIGxhbmQgaGVhZHMgb3IgdGFpbHMgYnV0IG5vdCBib3RoLiIsInJlZkZvcm11bGEiOiJwIOKGkigocSDiiKggcikg4oinIMKsKHEg4oinIHIpKSIsInJlZkF0b21zIjpbXX1dLCJ3c0F0b21zIjpbeyJsZXR0ZXIiOiIiLCJjbGF1c2UiOiIifV0sInRyYW5zIjpbeyJmb3JtdWxhIjoiIn1dfQ==" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJJZiB0aGUgY29pbiBpcyBiaWFzZWQsIHRoZW4gaXQgd2lsbCBsYW5kIGhlYWRzLiIsInJlZkZvcm11bGEiOiJzIOKGkiBxIiwicmVmQXRvbXMiOltdfV0sIndzQXRvbXMiOlt7ImxldHRlciI6IiIsImNsYXVzZSI6IiJ9XSwidHJhbnMiOlt7ImZvcm11bGEiOiIifV19" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJpZiB5b3UgZmxpcCB0aGUgY29pbiBhbmQgdGhlIGNvaW4gbGFuZHMgdGFpbHMsIHRoZW4gaXQgaXMgbm90IGJpYXNlZC4iLCJyZWZGb3JtdWxhIjoiKHAg4oinIHIpIOKGkiDCrCBzIiwicmVmQXRvbXMiOltdfV0sIndzQXRvbXMiOlt7ImxldHRlciI6IiIsImNsYXVzZSI6IiJ9XSwidHJhbnMiOlt7ImZvcm11bGEiOiIifV19" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
 <h3 id="validity-2">validity</h3>
 <p>The argument is valid because there is a derivation of its conclusion
 from its premises.</p>
@@ -209,15 +189,9 @@ train.</li>
 Monica.</p>
 <p><span class="math inline">\(r\)</span>: You’re boarding a westbound
 train.</p>
-<pre class="Translate Prop" data-system="gamutPND"
-data-options="exam, nocheck" data-submission="none"><code>1. p -&gt;(q -&gt; r)  : If you&#39;re in the Expo line, then you will reach Santa Monica only if you board a westbound train. 
-|p -&gt;(q -&gt; r)</code></pre>
-<pre class="Translate Prop" data-system="gamutPND"
-data-options="exam, nocheck" data-submission="none"><code>2. p /\ -r : Although you&#39;re in the Expo line, you&#39;re not boarding a westbound train.
-|p /\ -r</code></pre>
-<pre class="Translate Prop" data-system="gamutPND"
-data-options="exam, nocheck" data-submission="none"><code>3. - q : You will not reach Santa Monica.
-| -q</code></pre>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJJZiB5b3UncmUgaW4gdGhlIEV4cG8gbGluZSwgdGhlbiB5b3Ugd2lsbCByZWFjaCBTYW50YSBNb25pY2Egb25seSBpZiB5b3UgYm9hcmQgYSB3ZXN0Ym91bmQgdHJhaW4uIiwicmVmRm9ybXVsYSI6InAg4oaSKHEg4oaSIHIpIiwicmVmQXRvbXMiOltdfV0sIndzQXRvbXMiOlt7ImxldHRlciI6IiIsImNsYXVzZSI6IiJ9XSwidHJhbnMiOlt7ImZvcm11bGEiOiIifV19" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJBbHRob3VnaCB5b3UncmUgaW4gdGhlIEV4cG8gbGluZSwgeW91J3JlIG5vdCBib2FyZGluZyBhIHdlc3Rib3VuZCB0cmFpbi4iLCJyZWZGb3JtdWxhIjoicCDiiKcgwqxyIiwicmVmQXRvbXMiOltdfV0sIndzQXRvbXMiOlt7ImxldHRlciI6IiIsImNsYXVzZSI6IiJ9XSwidHJhbnMiOlt7ImZvcm11bGEiOiIifV19" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJZb3Ugd2lsbCBub3QgcmVhY2ggU2FudGEgTW9uaWNhLiIsInJlZkZvcm11bGEiOiLCrCBxIiwicmVmQXRvbXMiOltdfV0sIndzQXRvbXMiOlt7ImxldHRlciI6IiIsImNsYXVzZSI6IiJ9XSwidHJhbnMiOlt7ImZvcm11bGEiOiIifV19" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
 <h3 id="validity-3">validity</h3>
 <p>The argument is <em>valid</em> because there is a derivation of its
 conclusion from its premises.</p>
@@ -253,18 +227,10 @@ someone else is dealt an ace.</li>
 hearts.</p>
 <p><span class="math inline">\(s\)</span>: Someone else is dealt an
 ace.</p>
-<pre class="Translate Prop" data-system="gamutPND"
-data-options="exam, nocheck" data-submission="none"><code>1. q -&gt; p  : I will win the hand if I&#39;m dealt an ace.
-|q -&gt; p</code></pre>
-<pre class="Translate Prop" data-system="gamutPND"
-data-options="exam, nocheck" data-submission="none"><code>2. r -&gt; (-s -&gt; p) : If I&#39;m dealt a four of hearts, then I will still win the hand unless someone else is dealt an ace.
-|r -&gt; (-s -&gt; p) </code></pre>
-<pre class="Translate Prop" data-system="gamutPND"
-data-options="exam, nocheck" data-submission="none"><code>3. q \/ r : I will be dealt an ace or a four of hearts.
-| q \/ r</code></pre>
-<pre class="Translate Prop" data-system="gamutPND"
-data-options="exam, nocheck" data-submission="none"><code>4. p : I will win the hand.
-|p</code></pre>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJJIHdpbGwgd2luIHRoZSBoYW5kIGlmIEknbSBkZWFsdCBhbiBhY2UuIiwicmVmRm9ybXVsYSI6InEg4oaSIHAiLCJyZWZBdG9tcyI6W119XSwid3NBdG9tcyI6W3sibGV0dGVyIjoiIiwiY2xhdXNlIjoiIn1dLCJ0cmFucyI6W3siZm9ybXVsYSI6IiJ9XX0=" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJJZiBJJ20gZGVhbHQgYSBmb3VyIG9mIGhlYXJ0cywgdGhlbiBJIHdpbGwgc3RpbGwgd2luIHRoZSBoYW5kIHVubGVzcyBzb21lb25lIGVsc2UgaXMgZGVhbHQgYW4gYWNlLiIsInJlZkZvcm11bGEiOiJyIOKGkiAowqxzIOKGkiBwKSIsInJlZkF0b21zIjpbXX1dLCJ3c0F0b21zIjpbeyJsZXR0ZXIiOiIiLCJjbGF1c2UiOiIifV0sInRyYW5zIjpbeyJmb3JtdWxhIjoiIn1dfQ==" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJJIHdpbGwgYmUgZGVhbHQgYW4gYWNlIG9yIGEgZm91ciBvZiBoZWFydHMuIiwicmVmRm9ybXVsYSI6InEg4oioIHIiLCJyZWZBdG9tcyI6W119XSwid3NBdG9tcyI6W3sibGV0dGVyIjoiIiwiY2xhdXNlIjoiIn1dLCJ0cmFucyI6W3siZm9ybXVsYSI6IiJ9XX0=" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJJIHdpbGwgd2luIHRoZSBoYW5kLiIsInJlZkZvcm11bGEiOiJwIiwicmVmQXRvbXMiOltdfV0sIndzQXRvbXMiOlt7ImxldHRlciI6IiIsImNsYXVzZSI6IiJ9XSwidHJhbnMiOlt7ImZvcm11bGEiOiIifV19" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
 <h3 id="validity-4">validity</h3>
 <p>The argument is <em>invalid</em> because there is an assignment on
 which the premises are true and the conclusion false, namely, <span
