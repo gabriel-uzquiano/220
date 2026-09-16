@@ -6,8 +6,8 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.39">
 
   <meta name="author" content="Gabriel Uzquiano">
   <title>PHIL 220 slides – validity</title>
@@ -17,9 +17,6 @@
   <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
   <style>
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -32,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-5cde01b1358b36af9c1b84d05fb52047.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-4449bf1c5b09ee48072c537cc9310dff.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -323,11 +320,16 @@ Gabriel Uzquiano
 </div>
 </div>
 <p>To search for a counterexample, follow the steps below:</p>
+<div>
 <ol type="1">
-<li class="fragment"><p>Focus on assignments that <strong>make the conclusion false</strong><br>For <span class="math inline">\(\neg r \to q\)</span> to be false, <span class="math inline">\(\neg r\)</span> must be true and <span class="math inline">\(q\)</span> must be false. Therefore, we look at assignments on which both <span class="math inline">\(r\)</span> is false and <span class="math inline">\(q\)</span> is false.</p></li>
-<li class="fragment"><p>Ask <strong>which of the assignments that remain make the premises true</strong>.<br>There are just two options for <span class="math inline">\(r\)</span> is false and <span class="math inline">\(q\)</span> is false, namely, assignments on which <span class="math inline">\(p\)</span> is true and assignments on which <span class="math inline">\(p\)</span> is false. If <span class="math inline">\(p\)</span> is true and <span class="math inline">\(r\)</span> and <span class="math inline">\(q\)</span> are false, then premise 1 will be <em>true</em> because <span class="math inline">\(q \to r\)</span> comes out true and premise 2 will be true because <span class="math inline">\(\neg r \to p\)</span> has a true consequent.</p></li>
-<li class="fragment"><p>If you <strong>find a counterexample</strong>, then <strong>the argument is invalid</strong>.<br>Make <span class="math inline">\(p : T\)</span>, <span class="math inline">\(q : F\)</span>, <span class="math inline">\(r : F\)</span>.</p></li>
+<li class="fragment"><p>Focus on assignments that <strong>make the conclusion false</strong></p>
+<p>For <span class="math inline">\(\neg r \to q\)</span> to be false, <span class="math inline">\(\neg r\)</span> must be true and <span class="math inline">\(q\)</span> must be false. Therefore, we look at assignments on which both <span class="math inline">\(r\)</span> is false and <span class="math inline">\(q\)</span> is false.</p></li>
+<li class="fragment"><p>Ask <strong>which of the assignments that remain make the premises true</strong>.</p>
+<p>There are just two options for <span class="math inline">\(r\)</span> is false and <span class="math inline">\(q\)</span> is false, namely, assignments on which <span class="math inline">\(p\)</span> is true and assignments on which <span class="math inline">\(p\)</span> is false. If <span class="math inline">\(p\)</span> is true and <span class="math inline">\(r\)</span> and <span class="math inline">\(q\)</span> are false, then premise 1 will be <em>true</em> because <span class="math inline">\(q \to r\)</span> comes out true and premise 2 will be true because <span class="math inline">\(\neg r \to p\)</span> has a true consequent.</p></li>
+<li class="fragment"><p>If you <strong>find a counterexample</strong>, then <strong>the argument is invalid</strong>.</p>
+<p>Make <span class="math inline">\(p : T\)</span>, <span class="math inline">\(q : F\)</span>, <span class="math inline">\(r : F\)</span>. The assignment <span class="math inline">\(T F F\)</span> is a counterexample to validity.</p></li>
 </ol>
+</div>
 </section>
 <section id="example-1" class="slide level2 smaller">
 <h2>example 1</h2>
@@ -364,16 +366,18 @@ q \to \neg r
 q : T \qquad r : T
 \]</span></p>
 <p>So, we need consider only <strong>2</strong> rows out the 8:</p>
+<div style="font-size: 75%;">
 <p><span class="math display">\[
 \begin{array}{|c|c|c|c|c|c|}
 \hline
-p &amp; q &amp; r &amp;  q \to \neg r  \ \\
+p &amp; q &amp; r &amp; p \to ((q \wedge \neg r) \vee (r \wedge q)) &amp; p \wedge q &amp; r \vee \neg p &amp; q \to \neg r \\
 \hline
-T &amp; T &amp; T &amp; \color{red}{F}  \\
-F &amp; T &amp; T &amp;  \color{red}{F} \\
+T &amp; T &amp; T &amp; &amp;  &amp; &amp;  \color{red}{F}  \\
+F &amp; T &amp; T &amp; &amp;  &amp; &amp;  \color{red}{F} \\
 \hline
 \end{array}
 \]</span></p>
+</div>
 </div>
 </div></div>
 </section>
@@ -432,7 +436,7 @@ F &amp; T &amp; T &amp; &amp; F &amp; &amp;  \color{red}{F} \\
 </div>
 <p>There are \(2^3 = 8\) assignments.</p>
 <p>A full truth table would require 8 rows.</p>
-<p>We now employ the <strong>search for counterexample method</strong>:</p>
+<p>We now employ the <strong>search for a counterexample method</strong>:</p>
 </div>
 </div><div class="column" style="width:55%;">
 <div class="fragment">
@@ -451,10 +455,10 @@ p : T \qquad r : F
 <p><span class="math display">\[
 \begin{array}{|c|c|c|c|c|c|}
 \hline
-p &amp; q &amp; r &amp;  p \to r  \ \\
+p &amp; q &amp; r &amp; p \vee q &amp; \neg r \to q &amp; p \to  r \\
 \hline
-T &amp; T &amp; F &amp; \color{red}{F}  \\
-T &amp; F &amp; F &amp;  \color{red}{F} \\
+T &amp; T &amp; F &amp;  &amp;  &amp;   \color{red}{F}  \\
+T &amp; F &amp; F &amp;  &amp;  &amp;   \color{red}{F} \\
 \hline
 \end{array}
 \]</span></p>
@@ -505,7 +509,7 @@ T &amp; F &amp; F &amp; \color{red}{T} &amp; F &amp;   \color{red}{F} \\
 <p><strong>argument</strong></p>
 <div class="argument">
 <ol type="1">
-<li>If the government levies another tax on companies, then employment will fall or inflation will rise.</li>
+<li>If the government levies another tax, then employment will fall or inflation will rise.</li>
 <li>If inflation rises, then if the government levies another tax, then employment will fall.</li>
 </ol>
 <div class="conclusion">
@@ -532,7 +536,7 @@ T &amp; F &amp; F &amp; \color{red}{T} &amp; F &amp;   \color{red}{F} \\
 </div>
 </div></div>
 <p><strong>key</strong></p>
-<p><span class="math inline">\(p\)</span> : The government levies another tax on companies.</p>
+<p><span class="math inline">\(p\)</span> : The government levies another tax.</p>
 <p><span class="math inline">\(q\)</span> : Employment falls.</p>
 <p><span class="math inline">\(r\)</span> : Inflation rises.</p>
 </section>
@@ -553,10 +557,10 @@ q : F \qquad r : F
 <p><span class="math display">\[
 \begin{array}{|c|c|c|c|c|c|}
 \hline
-p &amp; q &amp; r &amp;  q \vee r  \ \\
+p &amp; q &amp; r &amp;  p \to (q \vee r) &amp; r \to (p \to q) &amp; q \vee r  \ \\
 \hline
-T &amp; F &amp; F &amp; \color{red}{F}  \\
-F &amp; F &amp; F &amp;  \color{red}{F} \\
+T &amp; T &amp; F &amp; &amp; &amp;  \color{red}{F}  \\
+F &amp; F &amp; F &amp;  &amp; &amp; \color{red}{F} \\
 \hline
 \end{array}
 \]</span></p>
@@ -599,13 +603,13 @@ F &amp; F &amp; F &amp; \color{red}{T} &amp; \color{red}{T} &amp; \color{red}{F}
 <p><strong>argument</strong></p>
 <div class="argument">
 <ol type="1">
-<li>If the coin lands heads, it will not land tails, and if it lands tails, it will not land heads.</li>
-<li>It is not the case that I tossed the coin and it landed heads.</li>
-<li>It is not the case that if I tossed the coin, then it landed tails.</li>
+<li>If the coin lands heads, it won’t land tails, and if it lands tails, it won’t land heads.</li>
+<li>It’s not the case that I tossed the coin and it landed heads.</li>
+<li>It’s not the case that if I tossed the coin, then it landed tails.</li>
 </ol>
 <div class="conclusion">
 <ol start="3" type="1">
-<li>I did not toss the coin.</li>
+<li>I didn’t toss the coin.</li>
 </ol>
 </div>
 </div>
@@ -616,7 +620,7 @@ F &amp; F &amp; F &amp; \color{red}{T} &amp; \color{red}{T} &amp; \color{red}{F}
 <p><strong>argument form</strong></p>
 <div class="argument">
 <ol type="1">
-<li><span class="math inline">\((p \to \neg q) \wedge (q \to \neg r)\)</span></li>
+<li><span class="math inline">\((p \to \neg q) \wedge (q \to \neg p)\)</span></li>
 <li><span class="math inline">\(\neg (r \wedge p)\)</span></li>
 <li><span class="math inline">\(\neg (r \to q)\)</span></li>
 </ol>
@@ -649,12 +653,12 @@ r : T
 <p><span class="math display">\[
 \begin{array}{|c|c|c|c|c|c|}
 \hline
-p &amp; q &amp; r &amp;  \neg r  \ \\
+p &amp; q &amp; r &amp; (p \to \neg q) \wedge (q \to \neg p) &amp; \neg (r \wedge p) &amp; \neg (r \to q) &amp; \neg r  \ \\
 \hline
-T &amp; T &amp; T &amp;  \color{red}{F} \\
-F &amp; T &amp; T &amp;  \color{red}{F} \\
-T &amp; F &amp; T &amp;  \color{red}{F}  \\
-F &amp; F &amp; T &amp;  \color{red}{F} \\
+T &amp; T &amp; T &amp;  &amp;   &amp;  &amp; \color{red}{F} \\
+F &amp; T &amp; T &amp;  &amp;   &amp;  &amp; \color{red}{F} \\
+T &amp; F &amp; T &amp;  &amp;   &amp;  &amp; \color{red}{F} \\
+F &amp; F &amp; T &amp;  &amp;   &amp;  &amp; \color{red}{F} \\
 \hline
 \end{array}
 \]</span></p>
@@ -668,12 +672,12 @@ F &amp; F &amp; T &amp;  \color{red}{F} \\
 <p><span class="math display">\[
 \begin{array}{|c|c|c|c|c|c|}
 \hline
-p &amp; q &amp; r &amp; \neg (r \to q) &amp; \neg r  \ \\
+p &amp; q &amp; r &amp; (p \to \neg q) \wedge (q \to \neg p) &amp; \neg (r \wedge p) &amp; \neg (r \to q) &amp; \neg r  \ \\
 \hline
-T &amp; T &amp; T &amp; F &amp; \color{red}{F} \\
-F &amp; T &amp; T &amp; F &amp; \color{red}{F} \\
-T &amp; F &amp; T &amp; \color{red}{T} &amp; \color{red}{F}  \\
-F &amp; F &amp; T &amp; \color{red}{T} &amp; \color{red}{F} \\
+T &amp; T &amp; T &amp;  &amp;   &amp; F &amp; \color{red}{F} \\
+F &amp; T &amp; T &amp;  &amp;   &amp; F &amp; \color{red}{F} \\
+T &amp; F &amp; T &amp;  &amp;   &amp; \color{red}{T}  &amp; \color{red}{F} \\
+F &amp; F &amp; T &amp;  &amp;   &amp; \color{red}{T} &amp; \color{red}{F} \\
 \hline
 \end{array}
 \]</span></p>
@@ -682,10 +686,12 @@ F &amp; F &amp; T &amp; \color{red}{T} &amp; \color{red}{F} \\
 <p><span class="math display">\[
 \begin{array}{|c|c|c|c|c|c|}
 \hline
-p &amp; q &amp; r &amp; \neg (r \wedge p) &amp; \neg (r \to q) &amp; \neg r  \ \\
+p &amp; q &amp; r &amp; (p \to \neg q) \wedge (q \to \neg p) &amp; \neg (r \wedge p) &amp; \neg (r \to q) &amp; \neg r  \ \\
 \hline
-T &amp; F &amp; T &amp; F &amp; \color{red}{T} &amp; \color{red}{F}  \\
-F &amp; F &amp; T &amp; \color{red}{T} &amp; \color{red}{T} &amp; \color{red}{F} \\
+T &amp; T &amp; T &amp;  &amp;   &amp; F &amp; \color{red}{F} \\
+F &amp; T &amp; T &amp;  &amp;   &amp; F &amp; \color{red}{F} \\
+T &amp; F &amp; T &amp;  &amp; F  &amp; \color{red}{T}  &amp; \color{red}{F} \\
+F &amp; F &amp; T &amp;  &amp; \color{red}{T}  &amp; \color{red}{T} &amp; \color{red}{F} \\
 \hline
 \end{array}
 \]</span></p>
@@ -697,13 +703,16 @@ F &amp; F &amp; T &amp; \color{red}{T} &amp; \color{red}{T} &amp; \color{red}{F}
 <p><span class="math display">\[
 \begin{array}{|c|c|c|c|c|c|}
 \hline
-p &amp; q &amp; r &amp; (p \to \neg q) \wedge (q \to \neg r) &amp; \neg (r \wedge p) &amp; \neg (r \to q) &amp; \neg r  \ \\
+p &amp; q &amp; r &amp; (p \to \neg q) \wedge (q \to \neg p) &amp; \neg (r \wedge p) &amp; \neg (r \to q) &amp; \neg r  \ \\
 \hline
-F &amp; F &amp; T &amp; F &amp;  \color{red}{T} &amp; \color{red}{T} &amp; \color{red}{F} \\
+T &amp; T &amp; T &amp;  &amp;   &amp; F &amp; \color{red}{F} \\
+F &amp; T &amp; T &amp;  &amp;   &amp; F &amp; \color{red}{F} \\
+T &amp; F &amp; T &amp;  &amp; F  &amp; \color{red}{T}  &amp; \color{red}{F} \\
+F &amp; F &amp; T &amp; \color{red}{T} &amp; \color{red}{T}  &amp; \color{red}{T} &amp; \color{red}{F} \\
 \hline
 \end{array}
 \]</span></p>
-<p>We conclude that there is <strong>no counterexample</strong> to validity. <strong>The argument is valid.</strong></p>
+<p>We conclude that \(F F T\) is a <strong>counterexample</strong> to validity. <strong>The argument is invalid.</strong></p>
 
 
 </section></section>
@@ -898,7 +907,7 @@ F &amp; F &amp; T &amp; F &amp;  \color{red}{T} &amp; \color{red}{T} &amp; \colo
         margin: 6.0e-2,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -925,173 +934,190 @@ F &amp; F &amp; T &amp; F &amp;  \color{red}{T} &amp; \color{red}{T} &amp; \colo
       });
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
-      window.document.addEventListener("DOMContentLoaded", function (event) {
-        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-        tabsets.forEach(function(tabset) {
-          const tabby = new Tabby('#' + tabset.id);
-        });
-        const isCodeAnnotation = (el) => {
-          for (const clz of el.classList) {
-            if (clz.startsWith('code-annotation-')) {                     
-              return true;
-            }
-          }
-          return false;
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
         }
-        const onCopySuccess = function(e) {
-          // button target
-          const button = e.trigger;
-          // don't keep focus
-          button.blur();
-          // flash "checked"
-          button.classList.add('code-copy-button-checked');
-          var currentTitle = button.getAttribute("title");
-          button.setAttribute("title", "Copied!");
-          let tooltip;
-          if (window.bootstrap) {
-            button.setAttribute("data-bs-toggle", "tooltip");
-            button.setAttribute("data-bs-placement", "left");
-            button.setAttribute("data-bs-title", "Copied!");
-            tooltip = new bootstrap.Tooltip(button, 
-              { trigger: "manual", 
-                customClass: "code-copy-button-tooltip",
-                offset: [0, -8]});
-            tooltip.show();    
-          }
-          setTimeout(function() {
-            if (tooltip) {
-              tooltip.hide();
-              button.removeAttribute("data-bs-title");
-              button.removeAttribute("data-bs-toggle");
-              button.removeAttribute("data-bs-placement");
-            }
-            button.setAttribute("title", currentTitle);
-            button.classList.remove('code-copy-button-checked');
-          }, 1000);
-          // clear code selection
-          e.clearSelection();
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
         }
-        const getTextToCopy = function(trigger) {
-          const outerScaffold = trigger.parentElement.cloneNode(true);
-          const codeEl = outerScaffold.querySelector('code');
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
           for (const childEl of codeEl.children) {
             if (isCodeAnnotation(childEl)) {
               childEl.remove();
             }
           }
           return codeEl.innerText;
-        }
-        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-          text: getTextToCopy
-        });
-        clipboard.on('success', onCopySuccess);
-        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-            text: getTextToCopy,
-            container: window.document.getElementById('quarto-embedded-source-code-modal')
-          });
-          clipboardModal.on('success', onCopySuccess);
-        }
-          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-          var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp('/' + window.location.host + '/');
-          var isInternal = (href) => {
-              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-          }
-          // Inspect non-navigation links and adorn them if external
-         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-          for (var i=0; i<links.length; i++) {
-            const link = links[i];
-            if (!isInternal(link.href)) {
-              // undo the damage that might have been done by quarto-nav.js in the case of
-              // links that we want to consider external
-              if (link.dataset.originalHref !== undefined) {
-                link.href = link.dataset.originalHref;
-              }
-            }
-          }
-        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-          const config = {
-            allowHTML: true,
-            maxWidth: 500,
-            delay: 100,
-            arrow: false,
-            appendTo: function(el) {
-                return el.closest('section.slide') || el.parentElement;
-            },
-            interactive: true,
-            interactiveBorder: 10,
-            theme: 'light-border',
-            placement: 'bottom-start',
-          };
-          if (contentFn) {
-            config.content = contentFn;
-          }
-          if (onTriggerFn) {
-            config.onTrigger = onTriggerFn;
-          }
-          if (onUntriggerFn) {
-            config.onUntrigger = onUntriggerFn;
-          }
-            config['offset'] = [0,0];
-            config['maxWidth'] = 700;
-          window.tippy(el, config); 
-        }
-        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-        for (var i=0; i<noterefs.length; i++) {
-          const ref = noterefs[i];
-          tippyHover(ref, function() {
-            // use id or data attribute instead here
-            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-            try { href = new URL(href).hash; } catch {}
-            const id = href.replace(/^#\/?/, "");
-            const note = window.document.getElementById(id);
-            if (note) {
-              return note.innerHTML;
-            } else {
-              return "";
-            }
-          });
-        }
-        const findCites = (el) => {
-          const parentEl = el.parentElement;
-          if (parentEl) {
-            const cites = parentEl.dataset.cites;
-            if (cites) {
-              return {
-                el,
-                cites: cites.split(' ')
-              };
-            } else {
-              return findCites(el.parentElement)
-            }
-          } else {
-            return undefined;
-          }
-        };
-        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-        for (var i=0; i<bibliorefs.length; i++) {
-          const ref = bibliorefs[i];
-          const citeInfo = findCites(ref);
-          if (citeInfo) {
-            tippyHover(citeInfo.el, function() {
-              var popup = window.document.createElement('div');
-              citeInfo.cites.forEach(function(cite) {
-                var citeDiv = window.document.createElement('div');
-                citeDiv.classList.add('hanging-indent');
-                citeDiv.classList.add('csl-entry');
-                var biblioDiv = window.document.getElementById('ref-' + cite);
-                if (biblioDiv) {
-                  citeDiv.innerHTML = biblioDiv.innerHTML;
-                }
-                popup.appendChild(citeDiv);
-              });
-              return popup.innerHTML;
-            });
-          }
-        }
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      </script>
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
     
 
 </body></html>
