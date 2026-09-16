@@ -29,51 +29,35 @@ format:
 
 # translation {.divider}
 
-We know how to use truth tables to assess the validity of arguments already written in the language of propositional logic.
-
-::: {.notes}
-One minute. Set up the gap: truth tables work on formulas, but the arguments we actually meet are in English. Translation is the bridge.
-:::
+We know how to use truth tables to assess the validity of arguments written in the language of propositional logic.
 
 ## but arguments come to us in English
 
-To assess the validity of a *natural language* argument, we first need to translate its premises and conclusion into the language of propositional logic.
+To assess the validity of a *natural language* argument, we first translate its premises and conclusion into the language of propositional logic.
 
 . . .
 
-Only then can we run a truth table on it.
+Only then can we use a truth table on it.
 
-::: {.notes}
-Emphasize the order of operations: translate first, test second. Today is entirely about the first step.
-:::
-
-## the plan
+. . . 
 
 Three steps, applied to each sentence in turn:
 
 ::: {.incremental}
-1. **paraphrase** the sentence to reveal how it is built from simpler sentences by truth-functional connectives — 'not', 'and', 'or', 'if &hellip; then &hellip;'
+1. **paraphrase** the sentence to reveal how it is built from simpler sentences by connectives: 'not', 'and', 'or', 'if &hellip; then &hellip;'
 2. **replace each connective** with its formal counterpart
 3. **replace the simplest sentences** that remain with propositional variables
 :::
 
-::: {.notes}
-Preview only — do not dwell. The two worked examples that follow are where this actually lands.
-:::
 
-# worked example: the British are coming {.divider}
 
-::: {.notes}
-Paul Revere's ride. A classic, and useful precisely because the English is loaded with connectives.
-:::
+# example 1: the British are coming {.divider}
+
 
 ## the argument
 
 > The British are coming by sea. For if they are coming by land, then Paul Revere should light two lamps. And if the British are not coming by land, then they are coming by sea. However, Paul Revere did not light two lamps.
 
-::: {.notes}
-Read it aloud once before showing the premise-conclusion form on the next slide.
-:::
 
 ## in premise-conclusion form
 
@@ -87,118 +71,58 @@ Read it aloud once before showing the premise-conclusion form on the next slide.
 :::
 :::
 
-::: {.notes}
-This is the target. Everything on the next three slides is about turning these four sentences into formulas.
-:::
 
-## step 1 — paraphrase {.smaller}
+## step 1. paraphrase 
 
 We use parentheses to reveal how each sentence is built from simpler ones.
 
-::: {.incremental}
-1. ([**If**]{.underline .cardinal} the British are coming by land, [**then**]{.underline .cardinal} Paul Revere is supposed to light two lamps).
-2. ([**If**]{.underline .cardinal} the British are [**not**]{.underline .cardinal} coming by land, [**then**]{.underline .cardinal} they are coming by sea.)
-3. Paul Revere did [**not**]{.underline .cardinal} light two lamps.
+::: {.argument}
+1. ([**If**]{.cardinal} the British are coming by land, [**then**]{.cardinal} Paul Revere is supposed to light two lamps).
+2. ([**If**]{.cardinal} the British are [**not**]{.cardinal} coming by land, [**then**]{.cardinal} they are coming by sea.)
+3. Paul Revere did [**not**]{.cardinal} light two lamps.
+
+::: {.conclusion}
 4. The British are coming by sea.
 :::
-
-::: {.notes}
-Nothing has changed in meaning — we are only making the grammatical skeleton visible. Point at 'if', 'not', 'then' as they light up.
 :::
 
-## step 2 — propositional connectives
+
+
+## step 2. propositional connectives
 
 We replace each connective with its formal counterpart:
 
-| English | Symbol |
-|---|---|
-| not | $\neg$ |
-| and | $\wedge$ |
-| or | $\vee$ |
-| if &hellip;, then &hellip; | $\to$ |
+::: {.argument}
+1. (The British are coming by land $\to$ Paul Revere should light two lamps).
+2. ($\neg$ The British are coming by land $\to$ they are coming by sea.)
+3. $\neg$ Paul Revere did light two lamps.
 
-: {.symbols tbl-colwidths="[50,50]"}
-
-::: {.notes}
-Same table as the formal-languages deck. Worth a thirty-second recall before applying it.
-:::
-
-## step 2 continued — applying it {.smaller}
-
-::: {.incremental}
-1. (The British are coming by land $\to$ Paul Revere will light two lamps).
-2. ($\neg$ The British are coming by land $\to$ The British are coming by sea).
-3. $\neg$ Paul Revere lit two lamps.
+::: {.conclusion}
 4. The British are coming by sea.
 :::
-
-::: {.notes}
-Each line is a direct substitution from the previous slide — no new decisions being made here yet.
 :::
 
-## step 3 — propositional variables {.smaller}
 
-**translation key**
 
-::: {.columns}
-::: {.column width="33%"}
-$p$: The British are coming by land
-:::
-::: {.column width="33%"}
-$q$: Paul Revere lights two lamps
-:::
-::: {.column width="33%"}
-$r$: The British are coming by sea
-:::
-:::
+## step 3. propositional variables 
 
-Now translate each line of the argument yourself:
+We now specify a **translation key**:
 
-::: {.notes}
-Ask the room to double check each line against the key before moving on — this is the step where a mismatched variable does the most damage.
-:::
-
-## translate it: premise 1 {.smaller}
-
-**key**: $p$: British coming by land &nbsp;&nbsp; $q$: Paul Revere lights two lamps &nbsp;&nbsp; $r$: British coming by sea
-
-```{.Translate .Prop system="gamutPND" submission="none"}
-1. p > q: If the British are coming by land, Paul Revere should light two lamps
-```
-
-::: {.notes}
-Let them type it in before revealing — this is the same sentence from the premise-conclusion slide, now translated live.
-:::
-
-## translate it: premise 2 {.smaller}
-
-**key**: $p$: British coming by land &nbsp;&nbsp; $q$: Paul Revere lights two lamps &nbsp;&nbsp; $r$: British coming by sea
-
-```{.Translate .Prop system="gamutPND" submission="none"}
-2. -p > r: If the British are not coming by land, then they are coming by sea
-```
-
-## translate it: premise 3 {.smaller}
-
-**key**: $p$: British coming by land &nbsp;&nbsp; $q$: Paul Revere lights two lamps &nbsp;&nbsp; $r$: British coming by sea
-
-```{.Translate .Prop system="gamutPND" submission="none"}
-3. -q: Paul Revere did not light two lamps
-```
-
-## translate it: the conclusion {.smaller}
-
-**key**: $p$: British coming by land &nbsp;&nbsp; $q$: Paul Revere lights two lamps &nbsp;&nbsp; $r$: British coming by sea
-
-```{.Translate .Prop system="gamutPND" submission="none"}
-4. r: The British are coming by sea
-```
-
-## the argument, fully translated
+::: {style="font-size: 0.7em;"}
 
 ::: {.argument}
-1. $p \to q$
-2. $\neg p \to r$
+$p$: The British are coming by land.
+
+$q$: Paul Revere should light two lamps.
+
+$r$: The British are coming by sea.
+:::
+
+:::
+
+::: {.argument}
+1. $(p \to q)$
+2. $(\neg p \to r)$
 3. $\neg q$
 
 ::: {.conclusion}
@@ -206,13 +130,10 @@ Let them type it in before revealing — this is the same sentence from the prem
 :::
 :::
 
-::: {.notes}
-Recap slide — the four answers just checked live, gathered into the finished argument.
-:::
 
-## testing validity
+## the question of validity
 
-We now have an argument in the language of propositional logic, so the truth table method applies directly.
+We are now in a position to use a truth table to check for validity:
 
 ```{.TruthTable mode="validity"}
 (p -> q)
@@ -221,29 +142,26 @@ We now have an argument in the language of propositional logic, so the truth tab
 r
 ```
 
-::: {.notes}
-No row makes all three premises true and the conclusion false — the argument is valid. Run the table live rather than reading off a pre-filled one if time allows.
-:::
+The argument is **valid**.
 
-## putting it all together
+## summary
 
-One last pass over the British-are-coming argument — this time, do all three steps yourself in a single interactive worksheet: pick out the atomic sentences, assign them letters, and translate the argument.
+One last pass over the natural language argument. This time, do all three steps yourself in a single interactive worksheet. Select your own translation key and translate the argument:
 
 [Open the full exercise in the translation app](https://gabriel-uzquiano.github.io/prop-translation/#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJJZiB0aGUgQnJpdGlzaCBhcmUgY29taW5nIGJ5IGxhbmQsIFBhdWwgUmV2ZXJlIHdpbGwgbGlnaHQgdHdvIGxhbXBzLiIsInJlZkZvcm11bGEiOiIiLCJyZWZBdG9tcyI6W119LHsidGV4dCI6IklmIHRoZSBCcml0aXNoIGFyZSBub3QgY29taW5nIGJ5IGxhbmQsIHRoZW4gdGhleSBhcmUgY29taW5nIGJ5IHNlYS4iLCJyZWZGb3JtdWxhIjoiIiwicmVmQXRvbXMiOltdfSx7InRleHQiOiJQYXVsIFJldmVyZSBkaWQgbm90IGxpZ2h0IHR3byBsYW1wcy4iLCJyZWZGb3JtdWxhIjoiIiwicmVmQXRvbXMiOltdfSx7InRleHQiOiJUaGUgQnJpdGlzaCBhcmUgY29taW5nIGJ5IHNlYS4iLCJyZWZGb3JtdWxhIjoiIiwicmVmQXRvbXMiOltdfV0sIndzQXRvbXMiOlt7ImxldHRlciI6IiIsImNsYXVzZSI6IiJ9XSwidHJhbnMiOlt7ImZvcm11bGEiOiIifSx7ImZvcm11bGEiOiIifSx7ImZvcm11bGEiOiIifSx7ImZvcm11bGEiOiIifV19)
 
-::: {.notes}
-This link opens the full app (not just the translation card) with the argument's four sentences pre-loaded and no answer key given — clicking it during the talk opens an overlay thanks to preview-links, so there's no need to leave the deck. Good for a live cold-call: let a student drive the whole pipeline from scratch.
-:::
 
-# worked example: interest rates {.divider}
 
-::: {.notes}
-Second pass, faster. The point now is fluency, not the method itself.
-:::
+# example 2: interest rates {.divider}
+
 
 ## the argument
 
 > Interest rates will rise or they will stay the same. If interest rates rise, then inflation will not rise. But if they stay the same, then inflation will rise. Inflation will not rise. Therefore, interest rates will rise.
+
+. . . 
+
+**in premise-conclusion form** 
 
 ::: {.argument}
 1. Interest rates will rise or they will stay the same.
@@ -256,73 +174,115 @@ Second pass, faster. The point now is fluency, not the method itself.
 :::
 :::
 
-::: {.notes}
-Give the room thirty seconds to spot the connectives themselves before you narrate them.
+
+
+## translation key {.smaller}
+
+
+We specify a **translation key**:
+
+::: {.argument}
+$p$: Interest rates will rise.
+
+$q$: Interest rates will stay the same.
+
+$r$: Inflation will rise.
 :::
 
-## translating it {.smaller}
 
-**translation key**
 
-::: {.columns}
-::: {.column width="33%"}
-$p$: Interest rates will rise
-:::
-::: {.column width="33%"}
-$q$: Interest rates will stay the same
-:::
-::: {.column width="33%"}
-$r$: Inflation will rise
+## premise 1 {.smaller}
+
+::: {style="font-size: 0.8em;"}
+::: {.argument}
+$p$: Interest rates will rise.
+
+$q$: Interest rates will stay the same.
+
+$r$: Inflation will rise.
 :::
 :::
 
-Your turn — translate each line yourself:
-
-::: {.notes}
-Walk it once, fast: 'or' becomes ∨, 'if...then...not' becomes → with a ¬ on the consequent, and so on. Same three steps as before, just compressed onto one slide.
-:::
-
-## translate it: premise 1 {.smaller}
-
-**key**: $p$: rates rise &nbsp;&nbsp; $q$: rates stay the same &nbsp;&nbsp; $r$: inflation rises
 
 ```{.Translate .Prop system="gamutPND" submission="none"}
 1. p \/ q: Interest rates will rise or they will stay the same
 ```
 
-## translate it: premise 2 {.smaller}
+## premise 2 {.smaller}
 
-**key**: $p$: rates rise &nbsp;&nbsp; $q$: rates stay the same &nbsp;&nbsp; $r$: inflation rises
+::: {style="font-size: 0.8em;"}
+::: {.argument}
+$p$: Interest rates will rise.
+
+$q$: Interest rates will stay the same.
+
+$r$: Inflation will rise.
+:::
+:::
 
 ```{.Translate .Prop system="gamutPND" submission="none"}
 2. p > -r: If interest rates rise, then inflation will not rise
 ```
 
-## translate it: premise 3 {.smaller}
+## premise 3 {.smaller}
 
-**key**: $p$: rates rise &nbsp;&nbsp; $q$: rates stay the same &nbsp;&nbsp; $r$: inflation rises
+::: {style="font-size: 0.8em;"}
+::: {.argument}
+$p$: Interest rates will rise.
+
+$q$: Interest rates will stay the same.
+
+$r$: Inflation will rise.
+:::
+:::
 
 ```{.Translate .Prop system="gamutPND" submission="none"}
 3. q > r: If they stay the same, then inflation will rise
 ```
 
-## translate it: premise 4 {.smaller}
+## premise 4 {.smaller}
 
-**key**: $p$: rates rise &nbsp;&nbsp; $q$: rates stay the same &nbsp;&nbsp; $r$: inflation rises
+::: {style="font-size: 0.8em;"}
+::: {.argument}
+$p$: Interest rates will rise.
+
+$q$: Interest rates will stay the same.
+
+$r$: Inflation will rise.
+:::
+:::
 
 ```{.Translate .Prop system="gamutPND" submission="none"}
 4. -r: Inflation will not rise
 ```
 
-## translate it: the conclusion {.smaller}
+## conclusion {.smaller}
 
-**key**: $p$: rates rise &nbsp;&nbsp; $q$: rates stay the same &nbsp;&nbsp; $r$: inflation rises
+::: {style="font-size: 0.8em;"}
+::: {.argument}
+$p$: Interest rates will rise.
+
+$q$: Interest rates will stay the same.
+
+$r$: Inflation will rise.
+:::
+:::
 
 ```{.Translate .Prop system="gamutPND" submission="none"}
 5. p: Interest rates will rise
 ```
 
-## the argument, fully translated
+## the argument translated
+
+::: {style="font-size: 0.8em;"}
+::: {.argument}
+$p$: Interest rates will rise.
+
+$q$: Interest rates will stay the same.
+
+$r$: Inflation will rise.
+:::
+:::
 
 ::: {.argument}
 1. $p \vee q$
@@ -335,11 +295,9 @@ Walk it once, fast: 'or' becomes ∨, 'if...then...not' becomes → with a ¬ on
 :::
 :::
 
-::: {.notes}
-Recap slide — gathers the five answers just checked live into the finished argument.
-:::
 
-## testing validity
+
+## the question of validity
 
 ```{.TruthTable mode="validity"}
 (p \/ q)
@@ -349,77 +307,55 @@ Recap slide — gathers the five answers just checked live into the finished arg
 p
 ```
 
-::: {.notes}
-Again valid. Two worked examples, two valid arguments — the next section is where translation gets genuinely tricky.
-:::
 
 # issues with translation {.divider}
 
-Some English phrases resist a single, mechanical paraphrase.
-
-::: {.notes}
-Tone shift here: the method from the first half is easy to state and hard to apply cleanly. That is the point of this section.
-:::
+Some issues require special discussion.
 
 ## structural ambiguity {.smaller}
+
+English is fraught with ambiguity. Sometimes the ambiguity is lexical, e.g., 'I will wait for you near the bank', but sometimes it is a matter of syntactic structure:
 
 > The British are coming and Paul Revere will light one lamp or he will light two lamps.
 
 . . .
 
+There are at least two potential interpretations:
+
 ::: {.incremental}
-- ((The British are coming [**and**]{.underline .cardinal} Paul Revere will light one lamp) [**or**]{.underline .cardinal} Paul Revere will light two lamps) — **or** is the main connective
-- (The British are coming [**and**]{.underline .cardinal} (Paul Revere will light one lamp [**or**]{.underline .cardinal} Paul Revere will light two lamps)) — **and** is the main connective
+1. ((The British are coming **and** Paul Revere will light one lamp) [**or**]{.cardinal} Paul Revere will light two lamps)
+
+
+2. (The British are coming [**and**]{.cardinal} (Paul Revere will light one lamp **or** Paul Revere will light two lamps)) 
 :::
 
-::: {.notes}
-Both parses are grammatical. English does not disambiguate; we have to, and we have to say so out loud when it happens.
+. . .
+
+Notice that **or** is the main connective of the first interpretation, whereas **and** is the main connective of the second.
+
+
+
+## they are not equivalent {.smaller}
+
+
+::: {style="font-size: 0.8em;"}
+
+::: {.argument}
+$p$: The British are coming.
+
+$q$: Paul Revere lights one lamp.
+
+$r$: Paul Revere lights two lamps.
+:::
 :::
 
-## the two translations disagree {.smaller}
 
-**translation key**: $p$: The British are coming &nbsp;&nbsp; $q$: Paul Revere lights one lamp &nbsp;&nbsp; $r$: Paul Revere lights two lamps
-
-::: {.columns}
-::: {.column width="40%"}
-$((p \wedge q) \vee r)$
-
-$(p \wedge (q \vee r))$
-
-<br/>
-
-They are **not equivalent**: they diverge when $p$ and $q$ are false and $r$ is true.
-:::
-
-::: {.column width="60%"}
 ```{.TruthTable mode="equivalence"}
 ((p /\ q) \/ r)
 (p /\ (q \/ r))
 ```
-:::
-:::
 
-::: {.notes}
-The whole reason we bother flagging the ambiguity: the two readings are not just stylistically different, they have different truth conditions.
-:::
 
-## practice: which connective is main? {.smaller}
-
-Consider the sentence again:
-
-> The British are coming and Paul Revere will light one lamp or he will light two lamps.
-
-```{.QualitativeProblem .MultipleSelection options="check" submission="none"}
-A.
-|* and
-|* or
-| not
-Explanation: The sentence is genuinely ambiguous between two parses — one where 'and' is the main connective, one where 'or' is. 'Not' does not occur in the sentence at all.
-```
-
-::: {.notes}
-Let them try it before revealing. If everyone converges on one answer, ask what the other reading would sound like out loud.
-:::
 
 ## neither &hellip; nor &hellip; {.smaller}
 
@@ -427,64 +363,97 @@ Let them try it before revealing. If everyone converges on one answer, ask what 
 
 . . .
 
-Two acceptable paraphrases, matching the same truth conditions:
+There are at least two interpretations with identical truth conditions:
 
 ::: {.incremental}
-- (Paul Revere will [**not**]{.underline .cardinal} light one lamp [**and**]{.underline .cardinal} Paul Revere will [**not**]{.underline .cardinal} light two lamps)
-- It is [**not**]{.underline .cardinal} the case that (Paul Revere will light one [**or**]{.underline .cardinal} two lamps)
+1. (Paul Revere will **not** light one lamp [**and**]{.cardinal} Paul Revere will **not** light two lamps)
+
+
+2. It is [**not**]{.cardinal} the case that (Paul Revere will light one **or** two lamps)
 :::
 
 . . .
 
-**translation key**: $p$: Paul Revere lights one lamp &nbsp;&nbsp; $q$: Paul Revere lights two lamps
+::: {style="font-size: 0.8em;"}
 
-$$
-(\neg p \wedge \neg q)
-$$
+::: {.argument}
+$p$: Paul Revere lights one lamp.
 
-::: {.notes}
-Both paraphrases are legitimate and translate to the same formula, up to a De Morgan equivalence — worth a passing mention if the room is ready for it, otherwise skip.
+$q$: Paul Revere lights two lamps.
+:::
 :::
 
-## only if — and how it differs from if {.smaller}
+```{.TruthTable mode="equivalence"}
+(~p /\ ~q)
+~(p \/ q)
+```
+
+## &hellip; only if &hellip; versus &hellip; if &hellip; {.smaller}
+
 
 ::: {.columns}
 ::: {.column width="50%"}
-**only if**
+&hellip; **only if** &hellip;
 
-> Paul Revere will light two lamps *only if* the British are coming by sea.
+> Paul Revere will light two lamps *only if* the British come by sea.
 
-Paraphrase: [**if**]{.underline .cardinal} Paul Revere lights two lamps, [**then**]{.underline .cardinal} the British have come by sea.
 
-Coming by sea is **necessary** for lighting two lamps.
+::: {.argument}
+[**If**]{.cardinal} Paul Revere lights two lamps, [**then**]{.cardinal} the British must have come by sea.
+:::
+
+::: {style="font-size: 0.8em;"}
+
+::: {.argument}
+$p$: The British come by sea.
+
+$q$: Paul Revere lights two lamps.
+:::
+:::
+
 
 $$
 p \to q
 $$
+Coming by sea is **necessary** for lighting two lamps. Compare:
+
+>I will win the lottery *only if* I buy a ticket.
 :::
 
 ::: {.column width="50%"}
 ::: {.fragment}
-**if**
+&hellip; **if** &hellip;
 
 > Paul Revere will light two lamps *if* the British come by sea.
 
-Paraphrase: [**if**]{.underline .cardinal} the British come by sea, [**then**]{.underline .cardinal} Paul Revere lights two lamps.
+::: {.argument}
+[**If**]{.cardinal} the British come by sea, [**then**]{.cardinal} Paul Revere lights two lamps.
+:::
 
-Coming by sea is **sufficient** for lighting two lamps.
+::: {style="font-size: 0.8em;"}
+
+::: {.argument}
+$p$: The British come by sea.
+
+$q$: Paul Revere lights two lamps.
+:::
+:::
+
 
 $$
 q \to p
 $$
+Coming by sea is **sufficient** for lighting two lamps. Compare:
+
+>I will win the lottery *if* I buy a ticket.
+
+
 :::
 :::
 :::
 
-::: {.notes}
-The lottery analogy is the fastest way to make this land: 'I will win the lottery only if I buy a ticket' (necessary) versus 'I will win the lottery if I buy a ticket' (false — and obviously so, which is the giveaway that 'if' and 'only if' point in different directions).
-:::
 
-## if, and only if, &hellip; {.smaller}
+## &hellip; if, and only if, &hellip; {.smaller}
 
 > Paul Revere will light two lamps if, and only if, the British are coming by sea.
 
@@ -492,11 +461,20 @@ The lottery analogy is the fastest way to make this land: 'I will win the lotter
 
 A conjunction of the two conditionals from the previous slide:
 
-::: {.incremental}
-- (Paul Revere will light two lamps [**if**]{.underline .cardinal} the British are coming by sea) [**and**]{.underline .cardinal} (Paul Revere will light two lamps [**only if**]{.underline .cardinal} the British are coming by sea)
+::: {.argument}
+(Paul Revere will light two lamps [**if**]{.cardinal} the British are coming by sea) [**and**]{.cardinal} (Paul Revere will light two lamps [**only if**]{.cardinal} the British are coming by sea)
 :::
 
 . . .
+
+::: {style="font-size: 0.8em;"}
+
+::: {.argument}
+$p$: The British come by sea.
+
+$q$: Paul Revere lights two lamps.
+:::
+:::
 
 $$
 (q \to p) \wedge (p \to q)
@@ -504,20 +482,17 @@ $$
 
 . . .
 
-We abbreviate formulas of this shape with $\leftrightarrow$:
+We abbreviate formulas of this form with $\leftrightarrow$:
 $$
 (\varphi \leftrightarrow \psi) := (\varphi \to \psi) \wedge (\psi \to \varphi)
 $$
 
-::: {.notes}
-It is fine to translate directly using ↔ once the abbreviation has been introduced — flag that this is a defined shorthand, not a fifth primitive connective.
-:::
+
 
 ## unless {.smaller}
 
 > Paul Revere will light one lamp unless the British are coming by sea.
 
-**translation key**: $p$: The British are coming by sea &nbsp;&nbsp; $q$: Paul Revere lights one lamp
 
 . . .
 
@@ -525,7 +500,20 @@ Two equivalent paraphrases:
 
 ::: {.columns}
 ::: {.column width="50%"}
-[**If**]{.underline .cardinal} the British are [**not**]{.underline .cardinal} coming by sea, [**then**]{.underline .cardinal} Paul Revere lights one lamp.
+
+::: {.argument}
+[**If**]{.cardinal} the British are **not** coming by sea, [**then**]{.cardinal} Paul Revere lights one lamp.
+:::
+
+::: {style="font-size: 0.8em;"}
+
+::: {.argument}
+$p$: The British come by sea.
+
+$q$: Paul Revere lights two lamps.
+:::
+:::
+
 
 $$
 \neg p \to q
@@ -534,7 +522,19 @@ $$
 
 ::: {.column width="50%"}
 ::: {.fragment}
-Paul Revere lights one lamp [**or**]{.underline .cardinal} the British are coming by sea.
+
+::: {.argument}
+Paul Revere lights one lamp [**or**]{.cardinal} the British are coming by sea.
+::: 
+
+::: {style="font-size: 0.8em;"}
+
+::: {.argument}
+$p$: The British come by sea.
+
+$q$: Paul Revere lights two lamps.
+:::
+:::
 
 $$
 p \vee q
@@ -543,32 +543,8 @@ $$
 :::
 :::
 
-::: {.notes}
-Both are correct and, in fact, logically equivalent — a nice callback to the equivalence check from the ambiguity slide, this time confirming agreement rather than disagreement.
-:::
 
-## practice: translating 'unless' {.smaller}
 
-**translation key**: $p$: the British are coming by land &nbsp;&nbsp; $q$: Paul Revere lights two lamps
 
-```{.Translate .Prop system="gamutPND" submission="none"}
-B. -q > -p: If Paul Revere does not light two lamps, then the British are not coming by land
-```
 
-::: {.notes}
-Deliberately plain — no unless, no only-if — to check the mechanics survive once the special phrases are set aside. Now open-ended (type the formula) rather than multiple choice, matching how the app is used elsewhere in this deck.
-:::
 
-## Next time
-
-Next time we turn from translation back to the **syntax** of propositional logic: how to build a formula's parse tree and pick out its main connective — exactly the tool that would settle the ambiguity slide without having to guess.
-
-Notes for this session: [gabriel-uzquiano.github.io/220/notes/translation.html](https://gabriel-uzquiano.github.io/220/notes/translation.html)
-
-::: {.aside}
-The slides cover material from [Chapter 2](https://gabriel-uzquiano.github.io/logic/proplogic.html#proplogic) of [Introduction to Logic](https://gabriel-uzquiano.github.io/logic/).
-:::
-
-::: {.notes}
-Wrap-up. If the ambiguity slide sparked debate, tell them syntax next time gives a mechanical way to settle it.
-:::
