@@ -112,7 +112,7 @@ $r$: My client had an accomplice inside.
 
 
 ```{.Translate .Prop system="gamutPND" submission="none"}
-1. ~r: She did not have an accomplice inside.
+2. ~r: She did not have an accomplice inside.
 ```
 
 
@@ -130,7 +130,7 @@ $r$: My client had an accomplice inside.
 
 
 ```{.Translate .Prop system="gamutPND" submission="none"}
-1. ~p: There are no signs of forced entry.
+3. ~p: There are no signs of forced entry.
 ```
 
 
@@ -148,7 +148,7 @@ $r$: My client had an accomplice inside.
 :::
 
 ```{.Translate .Prop system="gamutPND" submission="none"}
-5. ~q: My client is not the burglar.
+4. ~q: My client is not the burglar.
 ```
 
 ## the argument translated
@@ -262,7 +262,7 @@ $t$: The mind is divisible.
 
 
 ```{.Translate .Prop system="gamutPND" submission="none"}
-1. ~t -> ~r: The mind is not material unless it is divisible.
+2. ~t -> ~r: The mind is not material unless it is divisible.
 ```
 
 
@@ -282,7 +282,7 @@ $t$: The mind is divisible.
 
 
 ```{.Translate .Prop system="gamutPND" submission="none"}
-1. q /\ ~t: The brain is material, but the mind is not divisible.
+3. q /\ ~t: The brain is material, but the mind is not divisible.
 ```
 
 
@@ -302,7 +302,7 @@ $t$: The mind is divisible.
 :::
 
 ```{.Translate .Prop system="gamutPND" submission="none"}
-5. ~p: The mind and the brain are not one and the same thing.
+4. ~p: The mind and the brain are not one and the same thing.
 ```
 
 ## the argument translated
@@ -437,7 +437,230 @@ $$
 It follows that the argument is **valid**.
 
 
-# example 3: the Argus deal {.divider}
+# example 3: insurance {.divider}
+
+## the argument
+
+> Your insurer will cover your expenses only if you are at fault or are current with your monthly payments. But if you are current with your monthly payments, then you can afford to cover the expenses yourself. So, your insurer will not cover your expenses unless you can afford to cover them yourself.
+
+
+## in premise-conclusion form
+
+::: {.argument}
+1. Your insurer will cover your expenses only if you are at fault or are current with your monthly payments.
+2. If you are current with your monthly payments, then you can afford to cover the expenses yourself.
+
+::: {.conclusion}
+3. Your insurer will not cover your expenses unless you can afford to cover them yourself.
+:::
+:::
+
+
+## translation key {.smaller}
+
+
+We specify a **translation key**:
+
+::: {.argument}
+$p$: Your insurer will cover your expenses.
+
+$q$: You are at fault.
+
+$r$: You are current with your monthly payments.
+
+$t$: You can afford to cover the expenses yourself.
+:::
+
+
+## premise 1 {.smaller}
+
+::: {style="font-size: 0.8em;"}
+::: {.argument}
+$p$: Your insurer will cover your expenses.
+
+$q$: You are at fault.
+
+$r$: You are current with your monthly payments.
+
+$t$: You can afford to cover the expenses yourself.
+:::
+:::
+
+
+```{.Translate .Prop system="gamutPND" submission="none"}
+1. p -> (q \/ r): Your insurer will cover your expenses only if you are at fault or are current with your monthly payments.
+```
+
+
+## premise 2 {.smaller}
+
+::: {style="font-size: 0.8em;"}
+::: {.argument}
+$p$: Your insurer will cover your expenses.
+
+$q$: You are at fault.
+
+$r$: You are current with your monthly payments.
+
+$t$: You can afford to cover the expenses yourself.
+:::
+:::
+
+
+```{.Translate .Prop system="gamutPND" submission="none"}
+2. r -> t: If you are current with your monthly payments, then you can afford to cover the expenses yourself.
+```
+
+
+
+
+
+## conclusion {.smaller}
+
+::: {style="font-size: 0.8em;"}
+::: {.argument}
+$p$: Your insurer will cover your expenses.
+
+$q$: You are at fault.
+
+$r$: You are current with your monthly payments.
+
+$t$: You can afford to cover the expenses yourself.
+:::
+:::
+
+```{.Translate .Prop system="gamutPND" submission="none"}
+3. ~t -> ~p: Your insurer will not cover your expenses unless you can afford to cover them yourself.
+```
+
+## the argument translated
+
+::: {style="font-size: 0.8em;"}
+::: {.argument}
+$p$: Your insurer will cover your expenses.
+
+$q$: You are at fault.
+
+$r$: You are current with your monthly payments.
+
+$t$: You can afford to cover the expenses yourself.
+:::
+:::
+
+::: {.argument}
+1. $p \to (q \vee r)$
+2. $r \to t$
+
+::: {.conclusion}
+3. $\neg t \to \neg p$
+:::
+:::
+
+## the question of validity
+
+There are \\(2\^4 = 16\\) assignments.
+
+A full truth table would require 16 rows ...
+
+```{.TruthTable mode="validity"}
+p -> (q \/ r)
+r -> t
+~ t -> ~p
+```
+
+
+
+
+
+
+
+
+## search for a counterexample
+
+
+We now employ the **search for a counterexample method**:
+
+::: {.incremental}
+1.  Focus on assignments that **make the conclusion false**
+
+   
+2.  Ask **which of the assignments that remain make the premises true**.
+    
+
+3.  If we **find a counterexample**, then **the argument is invalid**. 
+
+      **Otherwise**, **the argument is valid**.
+
+:::
+
+##  make the conclusion false 
+
+To make the conclusion $\neg t \to \neg p$ **false**, we must have:
+
+$$
+t : F \qquad p : T
+$$
+
+So, we need look only at **4** rows out the 16:
+
+$$
+\begin{array}{|c|c|c|c|c|c|c|}
+\hline
+p & q & r & t &p \to (q \vee r) & r \to t & \neg t \to \neg p \\
+\hline
+T & T & T & F & &  &   \color{red}{F} \\
+T & T & F & F & &  &   \color{red}{F} \\
+T & F & T & F & &  &   \color{red}{F} \\
+T & F & F & F& &  &   \color{red}{F} \\
+\hline
+\end{array}
+$$
+
+## filter the candidate rows {.smaller}
+
+To make the third premise $r \to t$ true, we rule out rows at which 
+
+$$
+r : T \qquad t : F
+$$
+    This narrows down the field of potential counterexamples to two rows:
+    
+  $$
+\begin{array}{|c|c|c|c|c|c|c|}
+\hline
+p & q & r & t &p \to (q \vee r) & r \to t & \neg t \to \neg p \\
+\hline
+T & T & F & F & & \color{red}{T} &   \color{red}{F} \\
+T & F & F & F & & \color{red}{T} &   \color{red}{F} \\
+\hline
+\end{array}
+$$
+    
+    
+To make the first premise $p \to (q \vee r)$ true, we need only make $q$ true, which means that the first row is now a counterexample to validity:
+
+ $$
+\begin{array}{|c|c|c|c|c|c|c|}
+\hline
+p & q & r & t &p \to (q \vee r) & r \to t & \neg t \to \neg p \\
+\hline
+T & T & F & F &  \color{red}{T} & \color{red}{T} &   \color{red}{F} \\
+\hline
+\end{array}
+$$
+So, we found a counterexample to validity in the assignment:
+$$
+p : T \qquad q : T \qquad r : F \qquad t : F
+$$
+
+It follows that the argument is **invalid**.
+
+
+
+
+
+
+# example 4: the Argus deal {.divider}
 
 Here is an argument adapted from W. O. Quine's *Methods of Logic*.
 
