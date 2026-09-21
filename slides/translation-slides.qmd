@@ -56,7 +56,7 @@ Three steps, applied to each sentence in turn:
 
 ## the argument
 
-> The British are coming by sea. For if they are coming by land, then Paul Revere will light two lamps. And if the British are not coming by land, then they are coming by sea. However, Paul Revere did not light two lamps.
+> The British are coming by sea. For if they are coming by land, then Paul Revere will light two lamps. And if the British are not coming by land, then they are coming by sea. However, Paul Revere will not light two lamps.
 
 
 ## in premise-conclusion form
@@ -64,7 +64,7 @@ Three steps, applied to each sentence in turn:
 ::: {.argument}
 1. If the British are coming by land, Paul Revere will light two lamps.
 2. If the British are not coming by land, then they are coming by sea.
-3. Paul Revere did not light two lamps.
+3. Paul Revere will not light two lamps.
 
 ::: {.conclusion}
 4. The British are coming by sea.
@@ -79,7 +79,7 @@ We use parentheses to reveal how each sentence is built from simpler ones.
 ::: {.argument}
 1. ([**If**]{.cardinal} the British are coming by land, [**then**]{.cardinal} Paul Revere will light two lamps).
 2. ([**If**]{.cardinal} the British are **not** coming by land, [**then**]{.cardinal} they are coming by sea.)
-3. Paul Revere did [**not**]{.cardinal} light two lamps.
+3. Paul Revere will [**not**]{.cardinal} light two lamps.
 
 ::: {.conclusion}
 4. The British are coming by sea.
@@ -93,9 +93,9 @@ We use parentheses to reveal how each sentence is built from simpler ones.
 We replace each connective with its formal counterpart:
 
 ::: {.argument}
-1. (The British are coming by land $\to$ Paul Revere should light two lamps).
+1. (The British are coming by land $\to$ Paul Revere will light two lamps).
 2. ($\neg$ The British are coming by land $\to$ they are coming by sea.)
-3. $\neg$ Paul Revere did light two lamps.
+3. $\neg$ Paul Revere will light two lamps.
 
 ::: {.conclusion}
 4. The British are coming by sea.
@@ -113,7 +113,7 @@ We now specify a **translation key**:
 ::: {.argument}
 $p$: The British are coming by land.
 
-$q$: Paul Revere should light two lamps.
+$q$: Paul Revere will light two lamps.
 
 $r$: The British are coming by sea.
 :::
@@ -166,7 +166,7 @@ One last pass over the natural language argument. This time, do all three steps 
 ::: {.argument}
 1. Interest rates will rise or they will stay the same.
 2. If interest rates rise, then inflation will not rise.
-3. If they stay the same, then inflation will rise.
+3. If interest rates stay the same, then inflation will rise.
 4. Inflation will not rise.
 
 ::: {.conclusion}
@@ -381,9 +381,9 @@ There are at least two interpretations with identical truth conditions:
 ::: {style="font-size: 0.8em;"}
 
 ::: {.argument}
-$p$: Paul Revere lights one lamp.
+$p$: Paul Revere will light one lamp.
 
-$q$: Paul Revere lights two lamps.
+$q$: Paul Revere will light two lamps.
 :::
 :::
 
@@ -556,6 +556,13 @@ $$
 :::
 :::
 
+
+## they are equivalent ... {.smaller}
+
+```{.TruthTable mode="equivalence"}
+(~q -> p)
+(p \/ q)
+```
 
 
 
