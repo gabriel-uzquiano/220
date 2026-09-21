@@ -593,6 +593,42 @@ This is the chain-reaction style of counterexample search: falsifying the conclu
 Optional, same as the previous example — the reasoning already settled the question.
 :::
 
+# your turn: the accomplice {.divider}
+
+::: {.notes}
+An unguided practice round, not a walked-through example. Same 'only if' nesting as the mind-and-brain argument, but this time it's the students who translate — give them a few minutes before opening the worksheet.
+:::
+
+## the argument
+
+> If there are no signs of forced entry, then my client was the burglar only if she had an accomplice inside the building. My client didn't have an accomplice inside the building. There are no signs of forced entry. So, my client was not the burglar.
+
+::: {.notes}
+Same cast of characters as the earlier burglar example, but note the explicit 'only if' in premise 1 in place of the earlier nested 'if...then' — worth asking the room whether that changes the logic (it doesn't).
+:::
+
+## in premise-conclusion form
+
+::: {.argument}
+1. If there are no signs of forced entry, then my client was the burglar only if she had an accomplice inside the building.
+2. My client did not have an accomplice inside the building.
+3. There are no signs of forced entry.
+
+::: {.conclusion}
+4. My client was not the burglar.
+:::
+:::
+
+## try it yourself
+
+Paraphrase, translate, and test for validity — on your own, in one worksheet. Pick your own translation key:
+
+[Open the exercise in the translation app](https://gabriel-uzquiano.github.io/prop-translation/#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJJZiB0aGVyZSBhcmUgbm8gc2lnbnMgb2YgZm9yY2VkIGVudHJ5LCB0aGVuIG15IGNsaWVudCB3YXMgdGhlIGJ1cmdsYXIgb25seSBpZiBzaGUgaGFkIGFuIGFjY29tcGxpY2UgaW5zaWRlIHRoZSBidWlsZGluZyIsInJlZkZvcm11bGEiOiIiLCJyZWZBdG9tcyI6W119LHsidGV4dCI6Ik15IGNsaWVudCBkaWRuJ3QgaGF2ZSBhbiBhY2NvbXBsaWNlIGluc2lkZSB0aGUgYnVpbGRpbmciLCJyZWZGb3JtdWxhIjoiIiwicmVmQXRvbXMiOltdfSx7InRleHQiOiJUaGVyZSBhcmUgbm8gc2lnbnMgb2YgZm9yY2VkIGVudHJ5IiwicmVmRm9ybXVsYSI6IiIsInJlZkF0b21zIjpbXX0seyJ0ZXh0IjoiTXkgY2xpZW50IHdhcyBub3QgdGhlIGJ1cmdsYXIiLCJyZWZGb3JtdWxhIjoiIiwicmVmQXRvbXMiOltdfV0sIndzQXRvbXMiOlt7ImxldHRlciI6IiIsImNsYXVzZSI6IiJ9XSwidHJhbnMiOlt7ImZvcm11bGEiOiIifSx7ImZvcm11bGEiOiIifSx7ImZvcm11bGEiOiIifSx7ImZvcm11bGEiOiIifV19)
+
+::: {.notes}
+If time allows, collect a couple of students' translation keys on the board — different keys can still yield the same formula up to renaming, and the truth table will confirm the argument is valid either way.
+:::
+
 ## Next time
 
 Both large arguments today turned out valid, but for different reasons: one because a value was forced false by the premise's own structure, the other because the chase for a counterexample ran into a flat contradiction. Watch for that difference — it comes up again when we look at proofs.
