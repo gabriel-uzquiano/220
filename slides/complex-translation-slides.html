@@ -147,20 +147,7 @@ Gabriel Uzquiano
 <section>
 <section id="complex-translation" class="title-slide slide level1 divider center">
 <h1>complex translation</h1>
-<p>We now put translation to work on real, messy, natural-language arguments.</p>
-<aside class="notes">
-<p>One minute. This deck assumes the translation skills from last time and puts them to the test on arguments nobody wrote with a truth table in mind.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<p>We now put translation to work on complex natural language arguments.</p>
 </section>
 <section id="the-plan" class="slide level2">
 <h2>the plan</h2>
@@ -170,62 +157,24 @@ Gabriel Uzquiano
 <li class="fragment"><strong>translate</strong> the argument into the language of propositional logic</li>
 <li class="fragment">use a <strong>truth table</strong> to determine whether the argument is valid</li>
 </ol>
-<aside class="notes">
-<p>Same three steps as always — the only thing that changes is that the English is now dense enough that step 1 takes real work.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section></section>
 <section>
-<section id="worked-example-the-burglar" class="title-slide slide level1 divider center">
-<h1>worked example: the burglar</h1>
-<aside class="notes">
-<p>A closing-argument style example — good for showing that ‘if…then…if…then…’ chains are just nested conditionals.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<section id="example-1-the-burglar" class="title-slide slide level1 divider center">
+<h1>example 1: the burglar</h1>
+
 </section>
 <section id="the-argument" class="slide level2">
 <h2>the argument</h2>
 <blockquote>
-<p>My client is not the burglar. For if there are no signs of forced entry, then, if my client had been the burglar, she would have had an accomplice inside the building. But we can discard that option, as no one in the building could have known my client before today. Nor are there any signs of forced entry.</p>
+<p>My client is not the burglar. For several reasons. If there are no signs of forced entry, then my client is the burglar only if she had an accomplice inside. But we can discard that option, as no one in the building could have known my client before today. Nor are there any signs of forced entry.</p>
 </blockquote>
-<aside class="notes">
-<p>Read it aloud once. The conclusion is announced first (‘my client is not the burglar’) — worth flagging, since English often states the conclusion before the premises.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="in-premise-conclusion-form" class="slide level2">
 <h2>in premise-conclusion form</h2>
 <div class="argument">
 <ol type="1">
-<li>If there are no signs of forced entry, then if my client had been the burglar, then she would have had an accomplice inside the building.</li>
-<li>She did not have an accomplice inside the building.</li>
+<li>If there are no signs of forced entry, then my client is the burglar only if she had an accomplice inside.</li>
+<li>She did not have an accomplice inside.</li>
 <li>There are no signs of forced entry.</li>
 </ol>
 <div class="conclusion">
@@ -234,365 +183,282 @@ Gabriel Uzquiano
 </ol>
 </div>
 </div>
-<aside class="notes">
-<p>Premise 1 is a conditional whose consequent is itself a conditional — that nesting is the whole challenge of this example.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
-<section id="translation-key" class="slide level2">
+<section id="translation-key" class="slide level2 smaller">
 <h2>translation key</h2>
-<div class="columns">
-<div class="column" style="width:33%;">
-<p><span class="math inline">\(p\)</span>: There are signs of forced entry</p>
-</div><div class="column" style="width:33%;">
-<p><span class="math inline">\(q\)</span>: My client is the burglar</p>
-</div><div class="column" style="width:33%;">
-<p><span class="math inline">\(r\)</span>: My client had an accomplice inside the building</p>
-</div></div>
-<p>Now translate each line of the argument yourself:</p>
-<aside class="notes">
-<p>Double-check the key before typing — with three variables sharing a slide, it is easy to swap <span class="math inline">\(p\)</span> and <span class="math inline">\(r\)</span>.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<p>We specify a <strong>translation key</strong>:</p>
+<div class="argument">
+<p><span class="math inline">\(p\)</span>: There are signs of forced entry.</p>
+<p><span class="math inline">\(q\)</span>: My client is the burglar.</p>
+<p><span class="math inline">\(r\)</span>: My client had an accomplice inside.</p>
+</div>
 </section>
-<section id="translate-it-premise-1" class="slide level2 smaller">
-<h2>translate it: premise 1</h2>
-<p><strong>key</strong>: <span class="math inline">\(p\)</span>: signs of forced entry &nbsp;&nbsp; <span class="math inline">\(q\)</span>: client is the burglar &nbsp;&nbsp; <span class="math inline">\(r\)</span>: client had an accomplice</p>
-<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJJZiB0aGVyZSBhcmUgbm8gc2lnbnMgb2YgZm9yY2VkIGVudHJ5LCB0aGVuIGlmIG15IGNsaWVudCB3YXMgdGhlIGJ1cmdsYXIsIHRoZW4gc2hlIGhhZCBhbiBhY2NvbXBsaWNlIGluc2lkZSB0aGUgYnVpbGRpbmciLCJyZWZGb3JtdWxhIjoiwqxwIOKGkiAocSDihpIgcikiLCJyZWZBdG9tcyI6W119XSwid3NBdG9tcyI6W3sibGV0dGVyIjoiIiwiY2xhdXNlIjoiIn1dLCJ0cmFucyI6W3siZm9ybXVsYSI6IiJ9XX0=" style="width: 100%; height: 580px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
-<aside class="notes">
-<p>The nested conditional from the argument slide, unpacked: negate p for ‘no signs’, then the whole ‘if q then r’ becomes the consequent.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<section id="premise-1" class="slide level2 smaller">
+<h2>premise 1</h2>
+<div style="font-size: 0.8em;">
+<div class="argument">
+<p><span class="math inline">\(p\)</span>: There are signs of forced entry.</p>
+<p><span class="math inline">\(q\)</span>: My client is the burglar.</p>
+<p><span class="math inline">\(r\)</span>: My client had an accomplice inside.</p>
+</div>
+</div>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJJZiB0aGVyZSBhcmUgbm8gc2lnbnMgb2YgZm9yY2VkIGVudHJ5LCB0aGVuIG15IGNsaWVudCBpcyB0aGUgYnVyZ2xhciBvbmx5IGlmIHNoZSBoYWQgYW4gYWNjb21wbGljZSBpbnNpZGUuIiwicmVmRm9ybXVsYSI6IsKscCDihpIgKHEg4oaSIHIpIiwicmVmQXRvbXMiOltdfV0sIndzQXRvbXMiOlt7ImxldHRlciI6IiIsImNsYXVzZSI6IiJ9XSwidHJhbnMiOlt7ImZvcm11bGEiOiIifV19" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
 </section>
-<section id="translate-it-premise-2" class="slide level2 smaller">
-<h2>translate it: premise 2</h2>
-<p><strong>key</strong>: <span class="math inline">\(p\)</span>: signs of forced entry &nbsp;&nbsp; <span class="math inline">\(q\)</span>: client is the burglar &nbsp;&nbsp; <span class="math inline">\(r\)</span>: client had an accomplice</p>
-<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJTaGUgZGlkIG5vdCBoYXZlIGFuIGFjY29tcGxpY2UgaW5zaWRlIHRoZSBidWlsZGluZyIsInJlZkZvcm11bGEiOiLCrHIiLCJyZWZBdG9tcyI6W119XSwid3NBdG9tcyI6W3sibGV0dGVyIjoiIiwiY2xhdXNlIjoiIn1dLCJ0cmFucyI6W3siZm9ybXVsYSI6IiJ9XX0=" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
+<section id="premise-2" class="slide level2 smaller">
+<h2>premise 2</h2>
+<div style="font-size: 0.8em;">
+<div class="argument">
+<p><span class="math inline">\(p\)</span>: There are signs of forced entry.</p>
+<p><span class="math inline">\(q\)</span>: My client is the burglar.</p>
+<p><span class="math inline">\(r\)</span>: My client had an accomplice inside.</p>
+</div>
+</div>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJTaGUgZGlkIG5vdCBoYXZlIGFuIGFjY29tcGxpY2UgaW5zaWRlLiIsInJlZkZvcm11bGEiOiLCrHIiLCJyZWZBdG9tcyI6W119XSwid3NBdG9tcyI6W3sibGV0dGVyIjoiIiwiY2xhdXNlIjoiIn1dLCJ0cmFucyI6W3siZm9ybXVsYSI6IiJ9XX0=" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
 </section>
-<section id="translate-it-premise-3" class="slide level2 smaller">
-<h2>translate it: premise 3</h2>
-<p><strong>key</strong>: <span class="math inline">\(p\)</span>: signs of forced entry &nbsp;&nbsp; <span class="math inline">\(q\)</span>: client is the burglar &nbsp;&nbsp; <span class="math inline">\(r\)</span>: client had an accomplice</p>
-<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJUaGVyZSBhcmUgbm8gc2lnbnMgb2YgZm9yY2VkIGVudHJ5IiwicmVmRm9ybXVsYSI6IsKscCIsInJlZkF0b21zIjpbXX1dLCJ3c0F0b21zIjpbeyJsZXR0ZXIiOiIiLCJjbGF1c2UiOiIifV0sInRyYW5zIjpbeyJmb3JtdWxhIjoiIn1dfQ==" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
+<section id="premise-3" class="slide level2 smaller">
+<h2>premise 3</h2>
+<div style="font-size: 0.8em;">
+<div class="argument">
+<p><span class="math inline">\(p\)</span>: There are signs of forced entry.</p>
+<p><span class="math inline">\(q\)</span>: My client is the burglar.</p>
+<p><span class="math inline">\(r\)</span>: My client had an accomplice inside.</p>
+</div>
+</div>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJUaGVyZSBhcmUgbm8gc2lnbnMgb2YgZm9yY2VkIGVudHJ5LiIsInJlZkZvcm11bGEiOiLCrHAiLCJyZWZBdG9tcyI6W119XSwid3NBdG9tcyI6W3sibGV0dGVyIjoiIiwiY2xhdXNlIjoiIn1dLCJ0cmFucyI6W3siZm9ybXVsYSI6IiJ9XX0=" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
 </section>
-<section id="translate-it-the-conclusion" class="slide level2 smaller">
-<h2>translate it: the conclusion</h2>
-<p><strong>key</strong>: <span class="math inline">\(p\)</span>: signs of forced entry &nbsp;&nbsp; <span class="math inline">\(q\)</span>: client is the burglar &nbsp;&nbsp; <span class="math inline">\(r\)</span>: client had an accomplice</p>
-<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJNeSBjbGllbnQgaXMgbm90IHRoZSBidXJnbGFyIiwicmVmRm9ybXVsYSI6IsKscSIsInJlZkF0b21zIjpbXX1dLCJ3c0F0b21zIjpbeyJsZXR0ZXIiOiIiLCJjbGF1c2UiOiIifV0sInRyYW5zIjpbeyJmb3JtdWxhIjoiIn1dfQ==" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
+<section id="conclusion" class="slide level2 smaller">
+<h2>conclusion</h2>
+<div style="font-size: 0.8em;">
+<div class="argument">
+<p><span class="math inline">\(p\)</span>: There are signs of forced entry.</p>
+<p><span class="math inline">\(q\)</span>: My client is the burglar.</p>
+<p><span class="math inline">\(r\)</span>: My client had an accomplice inside.</p>
+</div>
+</div>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJNeSBjbGllbnQgaXMgbm90IHRoZSBidXJnbGFyLiIsInJlZkZvcm11bGEiOiLCrHEiLCJyZWZBdG9tcyI6W119XSwid3NBdG9tcyI6W3sibGV0dGVyIjoiIiwiY2xhdXNlIjoiIn1dLCJ0cmFucyI6W3siZm9ybXVsYSI6IiJ9XX0=" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
 </section>
-<section id="the-argument-fully-translated" class="slide level2">
-<h2>the argument, fully translated</h2>
+<section id="the-argument-translated" class="slide level2">
+<h2>the argument translated</h2>
+<div style="font-size: 0.8em;">
+<div class="argument">
+<p><span class="math inline">\(p\)</span>: There are signs of forced entry.</p>
+<p><span class="math inline">\(q\)</span>: My client is the burglar.</p>
+<p><span class="math inline">\(r\)</span>: My client had an accomplice inside.</p>
+</div>
+</div>
 <div class="argument">
 <ol type="1">
 <li><span class="math inline">\(\neg p \to (q \to r)\)</span></li>
 <li><span class="math inline">\(\neg r\)</span></li>
 <li><span class="math inline">\(\neg p\)</span></li>
-</ol>
-<div class="conclusion">
-<ol start="4" type="1">
 <li><span class="math inline">\(\neg q\)</span></li>
 </ol>
+<div class="conclusion">
+<ol start="5" type="1">
+<li><span class="math inline">\(p\)</span></li>
+</ol>
 </div>
 </div>
-<aside class="notes">
-<p>Recap slide — the four answers just checked live, gathered into the finished argument.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
-<section id="testing-validity" class="slide level2">
-<h2>testing validity</h2>
-<div class="truth-table-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=validity#v1:eyJmb3JtdWxhcyI6WyIoLXAgLT4gKHEgLT4gcikpIiwiLXIiLCItcCIsIi1xIl19" style="width: 100%; height: 600px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Truth-table exercise: validity"></iframe></div>
-<aside class="notes">
-<p>No row makes all three premises true and the conclusion false — the argument is valid.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<section id="the-question-of-validity" class="slide level2">
+<h2>the question of validity</h2>
+<div class="truth-table-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=validity#v1:eyJmb3JtdWxhcyI6WyJ+cCAtPiAocSAtPiByKSIsIn5yIiwifnAiLCJ+cSJdfQ==" style="width: 100%; height: 600px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Truth-table exercise: validity"></iframe></div>
 </section></section>
 <section>
-<section id="worked-example-mind-and-brain" class="title-slide slide level1 divider center">
-<h1>worked example: mind and brain</h1>
-<aside class="notes">
-<p>This one has a sting in its tail — unlike the burglar argument, it turns out to be invalid. Good for showing that the method finds invalidity just as readily as validity.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<section id="example-2-mind-and-brain" class="title-slide slide level1 divider center">
+<h1>example 2: mind and brain</h1>
+
 </section>
 <section id="the-argument-1" class="slide level2">
 <h2>the argument</h2>
 <blockquote>
-<p>If the mind is the same thing as the brain, then the mind is made of matter only if the brain is made of matter. Unless the mind is mortal, it is not made of matter. The brain is made of matter. Therefore, the mind is not the same thing as the brain.</p>
+<p>If the mind and the brain are one and the same thing, then the mind is material only if the brain is. But the mind is not material unless it is divisible. The brain is material, but the mind is not divisible. So the mind and the brain are not one and the same thing.</p>
 </blockquote>
-<aside class="notes">
-<p>‘Only if’ and ‘unless’ both appear here — both were covered last time, so this is also a review of those two phrases.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="in-premise-conclusion-form-1" class="slide level2">
 <h2>in premise-conclusion form</h2>
 <div class="argument">
 <ol type="1">
-<li>If the mind is the same thing as the brain, then the mind is made of matter only if the brain is made of matter.</li>
-<li>Unless the mind is mortal, it is not made of matter.</li>
-<li>The brain is made of matter.</li>
+<li>If the mind and the brain are one and the same thing, then the mind is material only if the brain is.</li>
+<li>The mind is not material unless it is divisible.</li>
+<li>The brain is material, but the mind is not divisible.</li>
 </ol>
 <div class="conclusion">
 <ol start="4" type="1">
-<li>The mind is not the same thing as the brain.</li>
+<li>The mind and the brain are not one and the same thing.</li>
 </ol>
 </div>
 </div>
-<aside class="notes">
-<p>Ask the room to paraphrase premises 1 and 2 out loud before moving to the key — ‘only if’ and ‘unless’ are exactly the phrases that trip people up under time pressure.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
-<section id="translation-key-1" class="slide level2">
+<section id="translation-key-1" class="slide level2 smaller">
 <h2>translation key</h2>
-<div class="columns">
-<div class="column" style="width:25%;">
-<p><span class="math inline">\(p\)</span>: the mind is the same thing as the brain</p>
-</div><div class="column" style="width:25%;">
-<p><span class="math inline">\(q\)</span>: the mind is made of matter</p>
-</div><div class="column" style="width:25%;">
-<p><span class="math inline">\(r\)</span>: the brain is made of matter</p>
-</div><div class="column" style="width:25%;">
-<p><span class="math inline">\(t\)</span>: the mind is mortal</p>
-</div></div>
-<p>Now translate each line of the argument yourself:</p>
-<aside class="notes">
-<p>Four variables this time — worth pointing out that <span class="math inline">\(s\)</span> is skipped in favor of <span class="math inline">\(t\)</span> purely so it doesn’t get confused with ‘the same thing’.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<p>We specify a <strong>translation key</strong>:</p>
+<div class="argument">
+<p><span class="math inline">\(p\)</span>: The mind and the brain are one and the same thing.</p>
+<p><span class="math inline">\(q\)</span>: The mind is material.</p>
+<p><span class="math inline">\(r\)</span>: The brain is material.</p>
+<p><span class="math inline">\(t\)</span>: The mind is divisible.</p>
+</div>
 </section>
-<section id="translate-it-premise-1-1" class="slide level2 smaller">
-<h2>translate it: premise 1</h2>
-<p><strong>key</strong>: <span class="math inline">\(p\)</span>: mind=brain &nbsp;&nbsp; <span class="math inline">\(q\)</span>: mind is matter &nbsp;&nbsp; <span class="math inline">\(r\)</span>: brain is matter &nbsp;&nbsp; <span class="math inline">\(t\)</span>: mind is mortal</p>
-<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJJZiB0aGUgbWluZCBpcyB0aGUgc2FtZSB0aGluZyBhcyB0aGUgYnJhaW4sIHRoZW4gdGhlIG1pbmQgaXMgbWFkZSBvZiBtYXR0ZXIgb25seSBpZiB0aGUgYnJhaW4gaXMgbWFkZSBvZiBtYXR0ZXIiLCJyZWZGb3JtdWxhIjoicCDihpIgKHEg4oaSIHIpIiwicmVmQXRvbXMiOltdfV0sIndzQXRvbXMiOlt7ImxldHRlciI6IiIsImNsYXVzZSI6IiJ9XSwidHJhbnMiOlt7ImZvcm11bGEiOiIifV19" style="width: 100%; height: 580px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
-<aside class="notes">
-<p>‘Only if’ inside the consequent becomes its own conditional q → r, matching last session’s ‘only if’ slide exactly.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<section id="premise-1-1" class="slide level2 smaller">
+<h2>premise 1</h2>
+<div style="font-size: 0.8em;">
+<div class="argument">
+<p><span class="math inline">\(p\)</span>: The mind and the brain are one and the same thing.</p>
+<p><span class="math inline">\(q\)</span>: The mind is material.</p>
+<p><span class="math inline">\(r\)</span>: The brain is material.</p>
+<p><span class="math inline">\(t\)</span>: The mind is divisible.</p>
+</div>
+</div>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJJZiB0aGUgbWluZCBhbmQgdGhlIGJyYWluIGFyZSBvbmUgYW5kIHRoZSBzYW1lIHRoaW5nLCB0aGVuIHRoZSBtaW5kIGlzIG1hdGVyaWFsIG9ubHkgaWYgdGhlIGJyYWluIGlzLiIsInJlZkZvcm11bGEiOiJwIOKGkiAocSDihpIgcikiLCJyZWZBdG9tcyI6W119XSwid3NBdG9tcyI6W3sibGV0dGVyIjoiIiwiY2xhdXNlIjoiIn1dLCJ0cmFucyI6W3siZm9ybXVsYSI6IiJ9XX0=" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
 </section>
-<section id="translate-it-premise-2-1" class="slide level2 smaller">
-<h2>translate it: premise 2</h2>
-<p><strong>key</strong>: <span class="math inline">\(p\)</span>: mind=brain &nbsp;&nbsp; <span class="math inline">\(q\)</span>: mind is matter &nbsp;&nbsp; <span class="math inline">\(r\)</span>: brain is matter &nbsp;&nbsp; <span class="math inline">\(t\)</span>: mind is mortal</p>
-<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJVbmxlc3MgdGhlIG1pbmQgaXMgbW9ydGFsLCBpdCBpcyBub3QgbWFkZSBvZiBtYXR0ZXIiLCJyZWZGb3JtdWxhIjoiwqx0IOKGkiDCrHEiLCJyZWZBdG9tcyI6W119XSwid3NBdG9tcyI6W3sibGV0dGVyIjoiIiwiY2xhdXNlIjoiIn1dLCJ0cmFucyI6W3siZm9ybXVsYSI6IiJ9XX0=" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
-<aside class="notes">
-<p>‘Unless’ becomes ‘if not’ — same paraphrase as last time’s unless slide.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<section id="premise-2-1" class="slide level2 smaller">
+<h2>premise 2</h2>
+<div style="font-size: 0.8em;">
+<div class="argument">
+<p><span class="math inline">\(p\)</span>: The mind and the brain are one and the same thing.</p>
+<p><span class="math inline">\(q\)</span>: The mind is material.</p>
+<p><span class="math inline">\(r\)</span>: The brain is material.</p>
+<p><span class="math inline">\(t\)</span>: The mind is divisible.</p>
+</div>
+</div>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJUaGUgbWluZCBpcyBub3QgbWF0ZXJpYWwgdW5sZXNzIGl0IGlzIGRpdmlzaWJsZS4iLCJyZWZGb3JtdWxhIjoiwqx0IOKGkiDCrHIiLCJyZWZBdG9tcyI6W119XSwid3NBdG9tcyI6W3sibGV0dGVyIjoiIiwiY2xhdXNlIjoiIn1dLCJ0cmFucyI6W3siZm9ybXVsYSI6IiJ9XX0=" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
 </section>
-<section id="translate-it-premise-3-1" class="slide level2 smaller">
-<h2>translate it: premise 3</h2>
-<p><strong>key</strong>: <span class="math inline">\(p\)</span>: mind=brain &nbsp;&nbsp; <span class="math inline">\(q\)</span>: mind is matter &nbsp;&nbsp; <span class="math inline">\(r\)</span>: brain is matter &nbsp;&nbsp; <span class="math inline">\(t\)</span>: mind is mortal</p>
-<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJUaGUgYnJhaW4gaXMgbWFkZSBvZiBtYXR0ZXIiLCJyZWZGb3JtdWxhIjoiciIsInJlZkF0b21zIjpbXX1dLCJ3c0F0b21zIjpbeyJsZXR0ZXIiOiIiLCJjbGF1c2UiOiIifV0sInRyYW5zIjpbeyJmb3JtdWxhIjoiIn1dfQ==" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
+<section id="premise-3-1" class="slide level2 smaller">
+<h2>premise 3</h2>
+<div style="font-size: 0.8em;">
+<div class="argument">
+<p><span class="math inline">\(p\)</span>: The mind and the brain are one and the same thing.</p>
+<p><span class="math inline">\(q\)</span>: The mind is material.</p>
+<p><span class="math inline">\(r\)</span>: The brain is material.</p>
+<p><span class="math inline">\(t\)</span>: The mind is divisible.</p>
+</div>
+</div>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJUaGUgYnJhaW4gaXMgbWF0ZXJpYWwsIGJ1dCB0aGUgbWluZCBpcyBub3QgZGl2aXNpYmxlLiIsInJlZkZvcm11bGEiOiJxIOKIpyDCrHQiLCJyZWZBdG9tcyI6W119XSwid3NBdG9tcyI6W3sibGV0dGVyIjoiIiwiY2xhdXNlIjoiIn1dLCJ0cmFucyI6W3siZm9ybXVsYSI6IiJ9XX0=" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
 </section>
-<section id="translate-it-the-conclusion-1" class="slide level2 smaller">
-<h2>translate it: the conclusion</h2>
-<p><strong>key</strong>: <span class="math inline">\(p\)</span>: mind=brain &nbsp;&nbsp; <span class="math inline">\(q\)</span>: mind is matter &nbsp;&nbsp; <span class="math inline">\(r\)</span>: brain is matter &nbsp;&nbsp; <span class="math inline">\(t\)</span>: mind is mortal</p>
-<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJUaGUgbWluZCBpcyBub3QgdGhlIHNhbWUgdGhpbmcgYXMgdGhlIGJyYWluIiwicmVmRm9ybXVsYSI6IsKscCIsInJlZkF0b21zIjpbXX1dLCJ3c0F0b21zIjpbeyJsZXR0ZXIiOiIiLCJjbGF1c2UiOiIifV0sInRyYW5zIjpbeyJmb3JtdWxhIjoiIn1dfQ==" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
+<section id="conclusion-1" class="slide level2 smaller">
+<h2>conclusion</h2>
+<div style="font-size: 0.8em;">
+<div class="argument">
+<p><span class="math inline">\(p\)</span>: The mind and the brain are one and the same thing.</p>
+<p><span class="math inline">\(q\)</span>: The mind is material.</p>
+<p><span class="math inline">\(r\)</span>: The brain is material.</p>
+<p><span class="math inline">\(t\)</span>: The mind is divisible.</p>
+</div>
+</div>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJUaGUgbWluZCBhbmQgdGhlIGJyYWluIGFyZSBub3Qgb25lIGFuZCB0aGUgc2FtZSB0aGluZy4iLCJyZWZGb3JtdWxhIjoiwqxwIiwicmVmQXRvbXMiOltdfV0sIndzQXRvbXMiOlt7ImxldHRlciI6IiIsImNsYXVzZSI6IiJ9XSwidHJhbnMiOlt7ImZvcm11bGEiOiIifV19" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
 </section>
-<section id="the-argument-fully-translated-1" class="slide level2">
-<h2>the argument, fully translated</h2>
+<section id="the-argument-translated-1" class="slide level2">
+<h2>the argument translated</h2>
+<div style="font-size: 0.8em;">
+<div class="argument">
+<p><span class="math inline">\(p\)</span>: The mind and the brain are one and the same thing.</p>
+<p><span class="math inline">\(q\)</span>: The mind is material.</p>
+<p><span class="math inline">\(r\)</span>: The brain is material.</p>
+<p><span class="math inline">\(t\)</span>: The mind is divisible.</p>
+</div>
+</div>
 <div class="argument">
 <ol type="1">
 <li><span class="math inline">\(p \to (q \to r)\)</span></li>
-<li><span class="math inline">\(\neg t \to \neg q\)</span></li>
-<li><span class="math inline">\(r\)</span></li>
-</ol>
-<div class="conclusion">
-<ol start="4" type="1">
+<li><span class="math inline">\(\neg t \to \neg r\)</span></li>
+<li><span class="math inline">\(q \wedge \neg t\)</span></li>
 <li><span class="math inline">\(\neg p\)</span></li>
 </ol>
+<div class="conclusion">
+<ol start="5" type="1">
+<li><span class="math inline">\(p\)</span></li>
+</ol>
 </div>
 </div>
-<aside class="notes">
-<p>Recap slide — the four answers just checked live, gathered into the finished argument.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
-<section id="testing-validity-1" class="slide level2">
-<h2>testing validity</h2>
-<div class="truth-table-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=validity#v1:eyJmb3JtdWxhcyI6WyIocCAtPiAocSAtPiByKSkiLCIoLXQgLT4gLXEpIiwiciIsIi1wIl19" style="width: 100%; height: 600px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Truth-table exercise: validity"></iframe></div>
-<aside class="notes">
-<p>Let the room run the table before revealing anything — this is the case where it does <em>not</em> come out valid, and it lands better if they find that themselves.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<section id="the-question-of-validity-1" class="slide level2">
+<h2>the question of validity</h2>
+<p>There are \(2^4 = 16\) assignments.</p>
+<p>A full truth table would require 16 rows …</p>
+<div class="truth-table-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=validity#v1:eyJmb3JtdWxhcyI6WyJwIC0+IChxIC0+IHIpIiwifnQgLT4gfiByIiwicSAvXFwgfiB0IiwifiBwIl19" style="width: 100%; height: 600px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Truth-table exercise: validity"></iframe></div>
 </section>
-<section id="finding-a-counterexample" class="slide level2 smaller">
-<h2>finding a counterexample</h2>
-<ul>
-<li class="fragment">to make the conclusion <span class="math inline">\(\neg p\)</span> false, we need <span class="math inline">\(p\)</span> <strong>true</strong></li>
-<li class="fragment">premise 3 already forces <span class="math inline">\(r\)</span> <strong>true</strong></li>
-<li class="fragment">setting <span class="math inline">\(q\)</span> and <span class="math inline">\(t\)</span> both <strong>false</strong> keeps premises 1 and 2 true as well</li>
-<li class="fragment"><strong>assignment</strong> (<span class="math inline">\(p, q, r, t\)</span>) = (T, F, T, F): every premise is true, the conclusion is false</li>
-</ul>
-<div class="fragment">
-<p><strong>The argument is invalid.</strong></p>
-<aside class="notes">
-<p>A nice moment to stress that ‘sounds compelling in English’ is not the same as ‘valid’ — this argument reads persuasively but the truth table finds the gap.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</div>
+<section id="search-for-a-counterexample" class="slide level2">
+<h2>search for a counterexample</h2>
+<p>We now employ the <strong>search for a counterexample method</strong>:</p>
+<ol type="1">
+<li class="fragment"><p>Focus on assignments that <strong>make the conclusion false</strong></p></li>
+<li class="fragment"><p>Ask <strong>which of the assignments that remain make the premises true</strong>.</p></li>
+<li class="fragment"><p>If we <strong>find a counterexample</strong>, then <strong>the argument is invalid</strong>.</p>
+<p><strong>Otherwise</strong>, <strong>the argument is valid</strong>.</p></li>
+</ol>
+</section>
+<section id="make-the-conclusion-false" class="slide level2">
+<h2>make the conclusion false</h2>
+<p>To make the conclusion <span class="math inline">\(\neg p\)</span> <strong>false</strong>, we must have:</p>
+<p><span class="math display">\[
+p : T
+\]</span></p>
+<p>So, we need look only at <strong>8</strong> rows out the 16:</p>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|c|c|}
+\hline
+p &amp; q &amp; r &amp; t &amp;p \to (q \to r) &amp; \neg t \to \neg r &amp; q \wedge \neg t &amp; \neg p \\
+\hline
+T &amp; T &amp; T &amp; T &amp; &amp;  &amp;  &amp; \color{red}{F}  \\
+T &amp; T &amp; T &amp; F &amp; &amp;  &amp;  &amp; \color{red}{F} \\
+T &amp; T &amp; F &amp; T &amp; &amp;  &amp;  &amp; \color{red}{F} \\
+T &amp; T &amp; F &amp; F &amp; &amp;  &amp;  &amp; \color{red}{F} \\
+T &amp; F &amp; T &amp; T &amp; &amp;  &amp;  &amp; \color{red}{F} \\
+T &amp; F &amp; T &amp; F &amp; &amp;  &amp;  &amp; \color{red}{F} \\
+T &amp; F &amp; F &amp; T &amp; &amp;  &amp;  &amp; \color{red}{F} \\
+T &amp; F &amp; F &amp; F&amp; &amp;  &amp;  &amp; \color{red}{F} \\
+\hline
+\end{array}
+\]</span></p>
+</section>
+<section id="filter-the-candidate-rows" class="slide level2 smaller">
+<h2>filter the candidate rows</h2>
+<p>To make the third premise <span class="math inline">\(q \wedge \neg t\)</span> true, we consider only rows at which</p>
+<p><span class="math display">\[
+q : T \qquad t : F
+\]</span> This narrows down the field of potential counterexamples to two rows:</p>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|c|c|}
+\hline
+p &amp; q &amp; r &amp; t &amp;p \to (q \to r) &amp; \neg t \to \neg r &amp; q \wedge \neg t &amp; \neg p \\
+\hline
+T &amp; T &amp; F &amp; T &amp; &amp;  &amp; \color{red}{T}  &amp; \color{red}{F} \\
+T &amp; T &amp; F &amp; F &amp; &amp;  &amp; \color{red}{T} &amp; \color{red}{F} \\
+\hline
+\end{array}
+\]</span></p>
+<p>To make the second premise <span class="math inline">\(\neg t \to \neg r\)</span> true, we rule out the row at which <span class="math inline">\(t\)</span> is false and <span class="math inline">\(r\)</span> is true:</p>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|c|c|}
+\hline
+p &amp; q &amp; r &amp; t &amp;p \to (q \to r) &amp; \neg t \to \neg r &amp; q \wedge \neg t &amp; \neg p \\
+\hline
+T &amp; T &amp; F &amp; T &amp; &amp; \color{red}{T} &amp; \color{red}{T}  &amp; \color{red}{F} \\
+\hline
+\end{array}
+\]</span></p>
+<p>The row that remains <strong>falsifies</strong> the first premise, which means that it is <strong>not</strong> a counterexample to validity:</p>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|c|c|}
+\hline
+p &amp; q &amp; r &amp; t &amp;p \to (q \to r) &amp; \neg t \to \neg r &amp; q \wedge \neg t &amp; \neg p \\
+\hline
+T &amp; T &amp; F &amp; T &amp; F &amp; \color{red}{T} &amp; \color{red}{T}  &amp; \color{red}{F} \\
+\hline
+\end{array}
+\]</span> It follows that the argument is <strong>valid</strong>.</p>
 </section></section>
 <section>
-<section id="worked-example-the-argus-deal" class="title-slide slide level1 divider center">
-<h1>worked example: the Argus deal</h1>
-<aside class="notes">
-<p>Adapted from Quine. Five variables and 32 rows — too many to fill by hand, which is exactly the point: this is where the truth-table <em>method</em> still works even when brute-force table-filling doesn’t.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<section id="example-3-the-argus-deal" class="title-slide slide level1 divider center">
+<h1>example 3: the Argus deal</h1>
+<p>Here is an argument adapted from W. O. Quine’s <em>Methods of Logic</em>.</p>
 </section>
 <section id="the-argument-2" class="slide level2">
 <h2>the argument</h2>
 <blockquote>
 <p>If Jones is ill or Smith is away, then unless Robinson comes to his senses, neither will the Argus deal be concluded nor will the directors declare a dividend. Consequently, if Smith is away and Robinson does not come to his senses, the Argus deal will not be concluded.</p>
 </blockquote>
-<aside class="notes">
-<p>This argument has just two sentences: one premise, one conclusion (flagged by ‘consequently’). Everything else is packed inside those two sentences.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="in-premise-conclusion-form-2" class="slide level2">
 <h2>in premise-conclusion form</h2>
@@ -606,455 +472,126 @@ Gabriel Uzquiano
 </ol>
 </div>
 </div>
-<aside class="notes">
-<p>Worth pausing here — students often expect an argument to have several premises. This one has exactly one, and it does all the work.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
-<section id="translation-key-2" class="slide level2">
+<section id="translation-key-2" class="slide level2 smaller">
 <h2>translation key</h2>
-<div class="columns">
-<div class="column" style="width:20%;">
-<p><span class="math inline">\(p\)</span>: Jones is ill</p>
-</div><div class="column" style="width:20%;">
-<p><span class="math inline">\(q\)</span>: Smith is away</p>
-</div><div class="column" style="width:20%;">
-<p><span class="math inline">\(r\)</span>: Robinson comes to his senses</p>
-</div><div class="column" style="width:20%;">
-<p><span class="math inline">\(s\)</span>: the Argus deal is completed</p>
-</div><div class="column" style="width:20%;">
-<p><span class="math inline">\(t\)</span>: the directors declare a dividend</p>
-</div></div>
-<p>Now translate the premise and the conclusion yourself:</p>
-<aside class="notes">
-<p>‘Neither … nor …’ and ‘unless’ both reappear here, now nested three levels deep inside one sentence. Take it phrase by phrase.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<p>We specify a <strong>translation key</strong>:</p>
+<div class="argument">
+<p><span class="math inline">\(p\)</span>: Jones is ill.</p>
+<p><span class="math inline">\(q\)</span>: Smith is away.</p>
+<p><span class="math inline">\(r\)</span>: Robinson comes to his senses.</p>
+<p><span class="math inline">\(t\)</span>: The Argus deal will be concluded.</p>
+<p><span class="math inline">\(s\)</span>: The directors will declare a dvidend.</p>
+</div>
 </section>
-<section id="translate-it-the-premise" class="slide level2 smaller">
-<h2>translate it: the premise</h2>
-<p><strong>key</strong>: <span class="math inline">\(p\)</span>: Jones ill &nbsp;&nbsp; <span class="math inline">\(q\)</span>: Smith away &nbsp;&nbsp; <span class="math inline">\(r\)</span>: Robinson comes to senses &nbsp;&nbsp; <span class="math inline">\(s\)</span>: deal completed &nbsp;&nbsp; <span class="math inline">\(t\)</span>: dividend declared</p>
-<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJJZiBKb25lcyBpcyBpbGwgb3IgU21pdGggaXMgYXdheSwgdGhlbiBpZiBSb2JpbnNvbiBkb2VzIG5vdCBjb21lIHRvIGhpcyBzZW5zZXMsIHRoZW4gdGhlIEFyZ3VzIGRlYWwgd2lsbCBub3QgYmUgY29tcGxldGVkIGFuZCB0aGUgZGlyZWN0b3JzIHdpbGwgbm90IGRlY2xhcmUgYSBkaXZpZGVuZCIsInJlZkZvcm11bGEiOiIocCDiiKggcSkg4oaSICjCrHIg4oaSICjCrHMg4oinIMKsdCkpIiwicmVmQXRvbXMiOltdfV0sIndzQXRvbXMiOlt7ImxldHRlciI6IiIsImNsYXVzZSI6IiJ9XSwidHJhbnMiOlt7ImZvcm11bGEiOiIifV19" style="width: 100%; height: 580px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
-<aside class="notes">
-<p>Build it from the outside in: the main connective is the first ‘if…then’, ‘unless’ gives the inner conditional, and ‘neither…nor…’ gives the conjunction of two negations at the very center.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<section id="premise-1-2" class="slide level2 smaller">
+<h2>premise 1</h2>
+<div style="font-size: 0.8em;">
+<div class="argument">
+<p><span class="math inline">\(p\)</span>: Jones is ill.</p>
+<p><span class="math inline">\(q\)</span>: Smith is away.</p>
+<p><span class="math inline">\(r\)</span>: Robinson comes to his senses.</p>
+<p><span class="math inline">\(t\)</span>: The Argus deal will be concluded.</p>
+<p><span class="math inline">\(s\)</span>: The directors will declare a dvidend.</p>
+</div>
+</div>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJJZiBKb25lcyBpcyBpbGwgb3IgU21pdGggaXMgYXdheSwgdGhlbiB1bmxlc3MgUm9iaW5zb24gY29tZXMgdG8gaGlzIHNlbnNlcywgbmVpdGhlciB3aWxsIHRoZSBBcmd1cyBkZWFsIGJlIGNvbmNsdWRlZCBub3Igd2lsbCB0aGUgZGlyZWN0b3JzIGRlY2xhcmUgYSBkaXZpZGVuZC4iLCJyZWZGb3JtdWxhIjoiKHAg4oioIHEpIOKGkiAowqxyIOKGkiAowqx0IOKIpyDCrHMpKSIsInJlZkF0b21zIjpbXX1dLCJ3c0F0b21zIjpbeyJsZXR0ZXIiOiIiLCJjbGF1c2UiOiIifV0sInRyYW5zIjpbeyJmb3JtdWxhIjoiIn1dfQ==" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
 </section>
-<section id="translate-it-the-conclusion-2" class="slide level2 smaller">
-<h2>translate it: the conclusion</h2>
-<p><strong>key</strong>: <span class="math inline">\(p\)</span>: Jones ill &nbsp;&nbsp; <span class="math inline">\(q\)</span>: Smith away &nbsp;&nbsp; <span class="math inline">\(r\)</span>: Robinson comes to senses &nbsp;&nbsp; <span class="math inline">\(s\)</span>: deal completed &nbsp;&nbsp; <span class="math inline">\(t\)</span>: dividend declared</p>
-<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJJZiBTbWl0aCBpcyBhd2F5IGFuZCBSb2JpbnNvbiBkb2VzIG5vdCBjb21lIHRvIGhpcyBzZW5zZXMsIHRoZW4gdGhlIEFyZ3VzIGRlYWwgd2lsbCBub3QgYmUgY29uY2x1ZGVkIiwicmVmRm9ybXVsYSI6IihxIOKIpyDCrHIpIOKGkiDCrHMiLCJyZWZBdG9tcyI6W119XSwid3NBdG9tcyI6W3sibGV0dGVyIjoiIiwiY2xhdXNlIjoiIn1dLCJ0cmFucyI6W3siZm9ybXVsYSI6IiJ9XX0=" style="width: 100%; height: 580px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
+<section id="conclusion-2" class="slide level2 smaller">
+<h2>conclusion</h2>
+<div style="font-size: 0.8em;">
+<div class="argument">
+<p><span class="math inline">\(p\)</span>: Jones is ill.</p>
+<p><span class="math inline">\(q\)</span>: Smith is away.</p>
+<p><span class="math inline">\(r\)</span>: Robinson comes to his senses.</p>
+<p><span class="math inline">\(t\)</span>: The Argus deal will be concluded.</p>
+<p><span class="math inline">\(s\)</span>: The directors will declare a dvidend.</p>
+</div>
+</div>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJJZiBTbWl0aCBpcyBhd2F5IGFuZCBSb2JpbnNvbiBkb2VzIG5vdCBjb21lIHRvIGhpcyBzZW5zZXMsIHRoZW4gdGhlIEFyZ3VzIGRlYWwgd2lsbCBub3QgYmUgY29uY2x1ZGVkLiIsInJlZkZvcm11bGEiOiIocSDiiKcgwqxyKSDihpIgwqx0IiwicmVmQXRvbXMiOltdfV0sIndzQXRvbXMiOlt7ImxldHRlciI6IiIsImNsYXVzZSI6IiJ9XSwidHJhbnMiOlt7ImZvcm11bGEiOiIifV19" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
 </section>
-<section id="the-argument-fully-translated-2" class="slide level2">
-<h2>the argument, fully translated</h2>
+<section id="the-argument-translated-2" class="slide level2">
+<h2>the argument translated</h2>
+<div style="font-size: 0.8em;">
+<div class="argument">
+<p><span class="math inline">\(p\)</span>: Jones is ill.</p>
+<p><span class="math inline">\(q\)</span>: Smith is away.</p>
+<p><span class="math inline">\(r\)</span>: Robinson comes to his senses.</p>
+<p><span class="math inline">\(t\)</span>: The Argus deal will be concluded.</p>
+<p><span class="math inline">\(s\)</span>: The directors will declare a dvidend.</p>
+</div>
+</div>
 <div class="argument">
 <ol type="1">
-<li><span class="math inline">\((p \vee q) \to (\neg r \to (\neg s \wedge \neg t))\)</span></li>
+<li><span class="math inline">\((p \vee q) \to (\neg r \to (\neg t \wedge \neg s) )\)</span></li>
 </ol>
 <div class="conclusion">
-<ol start="2" type="1">
-<li><span class="math inline">\((q \wedge \neg r) \to \neg s\)</span></li>
+<ol start="5" type="1">
+<li><span class="math inline">\((q \wedge \neg r) \to \neg t\)</span></li>
 </ol>
 </div>
 </div>
-<aside class="notes">
-<p>Recap slide — the premise and conclusion just checked live, gathered together.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
-<section id="why-a-full-table-wont-help" class="slide level2 smaller">
-<h2>why a full table won’t help</h2>
-<p>This argument has <strong>five</strong> propositional variables: <span class="math inline">\(p, q, r, s, t\)</span>.</p>
-<div class="fragment">
-<p>A full truth table needs <span class="math inline">\(2^5 = 32\)</span> rows — too many to fill out by hand.</p>
-</div>
-<div class="fragment">
-<p>Instead, we look directly for a <strong>counterexample</strong>: an assignment making the premise true and the conclusion false. If none exists, the argument is valid.</p>
-<aside class="notes">
-<p>This is the pivot of the whole lecture: the truth-table <em>idea</em> (check every assignment) still works even when the truth-table <em>artifact</em> becomes impractical.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</div>
+<section id="the-question-of-validity-2" class="slide level2">
+<h2>the question of validity</h2>
+<p>There are \(2^5 = 32\) assignments.</p>
+<p>A full truth table would require 32 rows!</p>
+<div class="truth-table-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=validity#v1:eyJmb3JtdWxhcyI6WyIocCBcXC8gcSkgLT4gKH5yIC0+ICh+dCAvXFwgfnMpKSIsIihxIC9cXCB+cikgLT4gfnQiXX0=" style="width: 100%; height: 600px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Truth-table exercise: validity"></iframe></div>
 </section>
-<section id="searching-for-a-counterexample" class="slide level2 smaller">
-<h2>searching for a counterexample</h2>
-<p>To make the conclusion <span class="math inline">\((q \wedge \neg r) \to \neg s\)</span> false, we need:</p>
+<section id="search-for-a-counterexample-1" class="slide level2">
+<h2>search for a counterexample</h2>
+<p>We now employ the <strong>search for a counterexample method</strong>:</p>
+<ol type="1">
+<li class="fragment"><p>Focus on assignments that <strong>make the conclusion false</strong></p></li>
+<li class="fragment"><p>Ask <strong>which of the assignments that remain make the premises true</strong>.</p></li>
+<li class="fragment"><p>If we <strong>find a counterexample</strong>, then <strong>the argument is invalid</strong>.</p>
+<p><strong>Otherwise</strong>, <strong>the argument is valid</strong>.</p></li>
+</ol>
+</section>
+<section id="make-the-conclusion-false-1" class="slide level2">
+<h2>make the conclusion false</h2>
+<p>To make the conclusion <span class="math inline">\((q \wedge \neg r) \to \neg t\)</span> <strong>false</strong>, we must have:</p>
+<p><span class="math display">\[
+q : T \qquad r : F \qquad s : T
+\]</span></p>
+<p>So, we need look only at <strong>4</strong> rows out the 32:</p>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|c|}
+\hline
+p &amp; q &amp; r &amp; t &amp; s &amp; (p \vee q) \to (\neg r \to (\neg t \wedge \neg s) ) &amp; (q \wedge \neg r) \to \neg t \\
+\hline
+T &amp; T &amp; F &amp; T &amp; T &amp;  &amp;   \color{red}{F} \\
+T &amp; T &amp; F &amp; F &amp; T &amp;  &amp;   \color{red}{F} \\
+F &amp; T &amp; F &amp; T &amp; T &amp;  &amp;   \color{red}{F} \\
+F &amp; T &amp; F &amp; F &amp; T &amp;  &amp;   \color{red}{F} \\
+\hline
+\end{array}
+\]</span></p>
+</section>
+<section id="filter-the-candidate-rows-1" class="slide level2">
+<h2>filter the candidate rows</h2>
+<p>We want to make the first premise <span class="math inline">\((p \vee q) \to (\neg r \to (\neg t \wedge \neg s) )\)</span> true. Unfortunately:</p>
 <ul>
-<li class="fragment"><span class="math inline">\(q\)</span> <strong>true</strong>, <span class="math inline">\(r\)</span> <strong>false</strong> (to make <span class="math inline">\(q \wedge \neg r\)</span> true)</li>
-<li class="fragment"><span class="math inline">\(s\)</span> <strong>true</strong> (to make <span class="math inline">\(\neg s\)</span> false)</li>
+<li><span class="math inline">\(p \vee q\)</span> comes out true in all four rows, and</li>
+<li><span class="math inline">\(\neg r \to (\neg t \wedge \neg s)\)</span> comes out false in all four rows.</li>
 </ul>
-<div class="fragment">
-<p>But then, in the premise, <span class="math inline">\(q\)</span> true already makes <span class="math inline">\((p \vee q)\)</span> <strong>true</strong>, and <span class="math inline">\(s\)</span> true makes <span class="math inline">\((\neg s \wedge \neg t)\)</span> <strong>false</strong> — so <span class="math inline">\(\neg r \to (\neg s \wedge \neg t)\)</span> comes out <strong>false</strong>, forcing the whole premise <strong>false</strong>.</p>
-</div>
-<div class="fragment">
-<p><strong>No assignment makes the premise true and the conclusion false — the argument is valid.</strong></p>
-<aside class="notes">
-<p>The key move: once q, r, and s are pinned down by the conclusion, p and t are irrelevant — the premise is forced false no matter what they are. That’s what makes this a proof of validity rather than just one failed attempt at a counterexample.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</div>
-</section>
-<section id="confirming-it-optional" class="slide level2 smaller">
-<h2>confirming it (optional)</h2>
-<p>For the patient: the full 32-row table agrees with the reasoning above.</p>
-<div class="truth-table-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=validity#v1:eyJmb3JtdWxhcyI6WyIoKHAgXFwvIHEpIC0+ICgtciAtPiAoLXMgL1xcIC10KSkpIiwiKChxIC9cXCAtcikgLT4gLXMpIl19" style="width: 100%; height: 600px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Truth-table exercise: validity"></iframe></div>
-<aside class="notes">
-<p>Optional — no need to click through all 32 rows live. The point of the previous slide was to avoid needing to.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<p>So, the first premise comes out false in <strong>all rows that remain.</strong></p>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|c|}
+\hline
+p &amp; q &amp; r &amp; t &amp; s &amp; (p \vee q) \to (\neg r \to (\neg t \wedge \neg s) ) &amp; (q \wedge \neg r) \to \neg t \\
+\hline
+T &amp; T &amp; F &amp; T &amp; T &amp; F &amp;   \color{red}{F} \\
+T &amp; T &amp; F &amp; F &amp; T &amp; F &amp;   \color{red}{F} \\
+F &amp; T &amp; F &amp; T &amp; T &amp; F &amp;   \color{red}{F} \\
+F &amp; T &amp; F &amp; F &amp; T &amp; F &amp;   \color{red}{F} \\
+\hline
+\end{array}
+\]</span></p>
+<p>It follows that the argument is <strong>valid</strong>.</p>
+
+
 </section></section>
-<section>
-<section id="worked-example-the-horse-race" class="title-slide slide level1 divider center">
-<h1>worked example: the horse race</h1>
-<aside class="notes">
-<p>Adapted from Resnik. Another five-variable, 32-row case — same technique as the Argus deal, this time landing on validity for a different structural reason (a flat-out contradiction rather than a forced-false premise).</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="the-argument-3" class="slide level2">
-<h2>the argument</h2>
-<blockquote>
-<p>If the horse loses a shoe, the owner will shoe the horse or hire someone to do so. If the owner shoes the horse, the owner will have a sore back. The race will be canceled if the owner has a sore back. So, if the horse loses a shoe and the owner does not hire someone to shoe the horse, the race will be canceled.</p>
-</blockquote>
-<aside class="notes">
-<p>Three short conditionals building a chain, then a conclusion that combines two of the antecedents. Good preparation for the reasoning on the next few slides.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="in-premise-conclusion-form-3" class="slide level2">
-<h2>in premise-conclusion form</h2>
-<div class="argument">
-<ol type="1">
-<li>If the horse loses a shoe, then the owner will shoe the horse or hire someone to do so.</li>
-<li>If the owner shoes the horse, then the owner will have a sore back.</li>
-<li>The race will be canceled if the owner has a sore back.</li>
-</ol>
-<div class="conclusion">
-<ol start="4" type="1">
-<li>If the horse loses a shoe and the owner does not hire someone to shoe the horse, the race will be canceled.</li>
-</ol>
-</div>
-</div>
-<aside class="notes">
-<p>Premise 3 is a plain ‘if’ (not ‘only if’), so it paraphrases straightforwardly to ‘if sore back, then canceled’ despite the English order being reversed.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="translation-key-3" class="slide level2">
-<h2>translation key</h2>
-<div class="columns">
-<div class="column" style="width:20%;">
-<p><span class="math inline">\(p\)</span>: horse loses a shoe</p>
-</div><div class="column" style="width:20%;">
-<p><span class="math inline">\(q\)</span>: owner shoes the horse</p>
-</div><div class="column" style="width:20%;">
-<p><span class="math inline">\(r\)</span>: owner hires someone</p>
-</div><div class="column" style="width:20%;">
-<p><span class="math inline">\(s\)</span>: owner has a sore back</p>
-</div><div class="column" style="width:20%;">
-<p><span class="math inline">\(t\)</span>: race is canceled</p>
-</div></div>
-<p>Now translate each line of the argument yourself:</p>
-<aside class="notes">
-<p>Five variables again, but this time no ‘only if’ or ‘unless’ — a chance to see that length and variable count are the source of difficulty here, not exotic phrasing.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="translate-it-premise-1-2" class="slide level2 smaller">
-<h2>translate it: premise 1</h2>
-<p><strong>key</strong>: <span class="math inline">\(p\)</span>: loses shoe &nbsp;&nbsp; <span class="math inline">\(q\)</span>: owner shoes horse &nbsp;&nbsp; <span class="math inline">\(r\)</span>: owner hires someone &nbsp;&nbsp; <span class="math inline">\(s\)</span>: sore back &nbsp;&nbsp; <span class="math inline">\(t\)</span>: race canceled</p>
-<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJJZiB0aGUgaG9yc2UgbG9zZXMgYSBzaG9lLCB0aGVuIHRoZSBvd25lciB3aWxsIHNob2UgdGhlIGhvcnNlIG9yIGhpcmUgc29tZW9uZSB0byBkbyBzbyIsInJlZkZvcm11bGEiOiJwIOKGkiAocSDiiKggcikiLCJyZWZBdG9tcyI6W119XSwid3NBdG9tcyI6W3sibGV0dGVyIjoiIiwiY2xhdXNlIjoiIn1dLCJ0cmFucyI6W3siZm9ybXVsYSI6IiJ9XX0=" style="width: 100%; height: 580px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
-</section>
-<section id="translate-it-premise-2-2" class="slide level2 smaller">
-<h2>translate it: premise 2</h2>
-<p><strong>key</strong>: <span class="math inline">\(p\)</span>: loses shoe &nbsp;&nbsp; <span class="math inline">\(q\)</span>: owner shoes horse &nbsp;&nbsp; <span class="math inline">\(r\)</span>: owner hires someone &nbsp;&nbsp; <span class="math inline">\(s\)</span>: sore back &nbsp;&nbsp; <span class="math inline">\(t\)</span>: race canceled</p>
-<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJJZiB0aGUgb3duZXIgc2hvZXMgdGhlIGhvcnNlLCB0aGUgb3duZXIgd2lsbCBoYXZlIGEgc29yZSBiYWNrIiwicmVmRm9ybXVsYSI6InEg4oaSIHMiLCJyZWZBdG9tcyI6W119XSwid3NBdG9tcyI6W3sibGV0dGVyIjoiIiwiY2xhdXNlIjoiIn1dLCJ0cmFucyI6W3siZm9ybXVsYSI6IiJ9XX0=" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
-</section>
-<section id="translate-it-premise-3-2" class="slide level2 smaller">
-<h2>translate it: premise 3</h2>
-<p><strong>key</strong>: <span class="math inline">\(p\)</span>: loses shoe &nbsp;&nbsp; <span class="math inline">\(q\)</span>: owner shoes horse &nbsp;&nbsp; <span class="math inline">\(r\)</span>: owner hires someone &nbsp;&nbsp; <span class="math inline">\(s\)</span>: sore back &nbsp;&nbsp; <span class="math inline">\(t\)</span>: race canceled</p>
-<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJJZiB0aGUgb3duZXIgaGFzIGEgc29yZSBiYWNrLCB0aGVuIHRoZSByYWNlIHdpbGwgYmUgY2FuY2VsZWQiLCJyZWZGb3JtdWxhIjoicyDihpIgdCIsInJlZkF0b21zIjpbXX1dLCJ3c0F0b21zIjpbeyJsZXR0ZXIiOiIiLCJjbGF1c2UiOiIifV0sInRyYW5zIjpbeyJmb3JtdWxhIjoiIn1dfQ==" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
-</section>
-<section id="translate-it-the-conclusion-3" class="slide level2 smaller">
-<h2>translate it: the conclusion</h2>
-<p><strong>key</strong>: <span class="math inline">\(p\)</span>: loses shoe &nbsp;&nbsp; <span class="math inline">\(q\)</span>: owner shoes horse &nbsp;&nbsp; <span class="math inline">\(r\)</span>: owner hires someone &nbsp;&nbsp; <span class="math inline">\(s\)</span>: sore back &nbsp;&nbsp; <span class="math inline">\(t\)</span>: race canceled</p>
-<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJJZiB0aGUgaG9yc2UgbG9zZXMgYSBzaG9lIGFuZCB0aGUgb3duZXIgZG9lcyBub3QgaGlyZSBzb21lb25lIHRvIHNob2UgdGhlIGhvcnNlLCB0aGVuIHRoZSByYWNlIHdpbGwgYmUgY2FuY2VsZWQiLCJyZWZGb3JtdWxhIjoiKHAg4oinIMKscikg4oaSIHQiLCJyZWZBdG9tcyI6W119XSwid3NBdG9tcyI6W3sibGV0dGVyIjoiIiwiY2xhdXNlIjoiIn1dLCJ0cmFucyI6W3siZm9ybXVsYSI6IiJ9XX0=" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
-</section>
-<section id="the-argument-fully-translated-3" class="slide level2">
-<h2>the argument, fully translated</h2>
-<div class="argument">
-<ol type="1">
-<li><span class="math inline">\(p \to (q \vee r)\)</span></li>
-<li><span class="math inline">\(q \to s\)</span></li>
-<li><span class="math inline">\(s \to t\)</span></li>
-</ol>
-<div class="conclusion">
-<ol start="4" type="1">
-<li><span class="math inline">\((p \wedge \neg r) \to t\)</span></li>
-</ol>
-</div>
-</div>
-<aside class="notes">
-<p>Recap slide — the four answers just checked live, gathered into the finished argument.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="why-a-full-table-wont-help-1" class="slide level2 smaller">
-<h2>why a full table won’t help</h2>
-<p>Five propositional variables again: <span class="math inline">\(p, q, r, s, t\)</span> — a <span class="math inline">\(2^5 = 32\)</span>-row table.</p>
-<div class="fragment">
-<p>We look for a counterexample directly instead of filling out every row.</p>
-</div>
-</section>
-<section id="searching-for-a-counterexample-1" class="slide level2 smaller">
-<h2>searching for a counterexample</h2>
-<p>To make the conclusion <span class="math inline">\((p \wedge \neg r) \to t\)</span> false, we need:</p>
-<ul>
-<li class="fragment"><span class="math inline">\(p\)</span> <strong>true</strong>, <span class="math inline">\(r\)</span> <strong>false</strong> (to make <span class="math inline">\(p \wedge \neg r\)</span> true)</li>
-<li class="fragment"><span class="math inline">\(t\)</span> <strong>false</strong></li>
-</ul>
-<div class="fragment">
-<p>Chasing that through the premises:</p>
-<ul>
-<li class="fragment">premise 3 (<span class="math inline">\(s \to t\)</span>) forces <span class="math inline">\(s\)</span> <strong>false</strong>, or else it would be false</li>
-<li class="fragment">premise 2 (<span class="math inline">\(q \to s\)</span>) then forces <span class="math inline">\(q\)</span> <strong>false</strong>, or else <em>it</em> would be false</li>
-<li class="fragment">but now premise 1 (<span class="math inline">\(p \to (q \vee r)\)</span>) has <span class="math inline">\(p\)</span> true and both <span class="math inline">\(q, r\)</span> <strong>false</strong> — so <span class="math inline">\(q \vee r\)</span> is false, making premise 1 <strong>false</strong></li>
-</ul>
-</div>
-<div class="fragment">
-<p><strong>No assignment makes every premise true and the conclusion false — the argument is valid.</strong></p>
-<aside class="notes">
-<p>This is the chain-reaction style of counterexample search: falsifying the conclusion forces a cascade of forced values back through the premises until something breaks. Here, premise 1 is what breaks.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</div>
-</section>
-<section id="confirming-it-optional-1" class="slide level2 smaller">
-<h2>confirming it (optional)</h2>
-<div class="truth-table-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=validity#v1:eyJmb3JtdWxhcyI6WyIocCAtPiAocSBcXC8gcikpIiwiKHEgLT4gcykiLCIocyAtPiB0KSIsIigocCAvXFwgLXIpIC0+IHQpIl19" style="width: 100%; height: 600px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Truth-table exercise: validity"></iframe></div>
-<aside class="notes">
-<p>Optional, same as the previous example — the reasoning already settled the question.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section></section>
-<section>
-<section id="your-turn-the-accomplice" class="title-slide slide level1 divider center">
-<h1>your turn: the accomplice</h1>
-<aside class="notes">
-<p>An unguided practice round, not a walked-through example. Same ‘only if’ nesting as the mind-and-brain argument, but this time it’s the students who translate — give them a few minutes before opening the worksheet.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="the-argument-4" class="slide level2">
-<h2>the argument</h2>
-<blockquote>
-<p>If there are no signs of forced entry, then my client was the burglar only if she had an accomplice inside the building. My client didn’t have an accomplice inside the building. There are no signs of forced entry. So, my client was not the burglar.</p>
-</blockquote>
-<aside class="notes">
-<p>Same cast of characters as the earlier burglar example, but note the explicit ‘only if’ in premise 1 in place of the earlier nested ‘if…then’ — worth asking the room whether that changes the logic (it doesn’t).</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="in-premise-conclusion-form-4" class="slide level2">
-<h2>in premise-conclusion form</h2>
-<div class="argument">
-<ol type="1">
-<li>If there are no signs of forced entry, then my client was the burglar only if she had an accomplice inside the building.</li>
-<li>My client did not have an accomplice inside the building.</li>
-<li>There are no signs of forced entry.</li>
-</ol>
-<div class="conclusion">
-<ol start="4" type="1">
-<li>My client was not the burglar.</li>
-</ol>
-</div>
-</div>
-</section>
-<section id="try-it-yourself" class="slide level2">
-<h2>try it yourself</h2>
-<p>Paraphrase, translate, and test for validity — on your own, in one worksheet. Pick your own translation key:</p>
-<p><a href="https://gabriel-uzquiano.github.io/prop-translation/#v1:eyJzZW50ZW5jZXMiOiBbeyJ0ZXh0IjogIklmIHRoZXJlIGFyZSBubyBzaWducyBvZiBmb3JjZWQgZW50cnksIHRoZW4gbXkgY2xpZW50IHdhcyB0aGUgYnVyZ2xhciBvbmx5IGlmIHNoZSBoYWQgYW4gYWNjb21wbGljZSBpbnNpZGUgdGhlIGJ1aWxkaW5nIiwgInJlZkZvcm11bGEiOiAiwqxw4oaSKHHihpJyKSIsICJyZWZBdG9tcyI6IFt7ImxldHRlciI6ICJwIiwgImNsYXVzZSI6ICJUaGVyZSBhcmUgc2lnbnMgb2YgZm9yY2VkIGVudHJ5In0sIHsibGV0dGVyIjogInEiLCAiY2xhdXNlIjogIk15IGNsaWVudCB3YXMgdGhlIGJ1cmdsYXIifSwgeyJsZXR0ZXIiOiAiciIsICJjbGF1c2UiOiAiU2hlIGhhZCBhbiBhY2NvbXBsaWNlIGluc2lkZSB0aGUgYnVpbGRpbmcifV19LCB7InRleHQiOiAiTXkgY2xpZW50IGRpZG4ndCBoYXZlIGFuIGFjY29tcGxpY2UgaW5zaWRlIHRoZSBidWlsZGluZyIsICJyZWZGb3JtdWxhIjogIsKsciIsICJyZWZBdG9tcyI6IFt7ImxldHRlciI6ICJwIiwgImNsYXVzZSI6ICJUaGVyZSBhcmUgc2lnbnMgb2YgZm9yY2VkIGVudHJ5In0sIHsibGV0dGVyIjogInEiLCAiY2xhdXNlIjogIk15IGNsaWVudCB3YXMgdGhlIGJ1cmdsYXIifSwgeyJsZXR0ZXIiOiAiciIsICJjbGF1c2UiOiAiU2hlIGhhZCBhbiBhY2NvbXBsaWNlIGluc2lkZSB0aGUgYnVpbGRpbmcifV19LCB7InRleHQiOiAiVGhlcmUgYXJlIG5vIHNpZ25zIG9mIGZvcmNlZCBlbnRyeSIsICJyZWZGb3JtdWxhIjogIsKscCIsICJyZWZBdG9tcyI6IFt7ImxldHRlciI6ICJwIiwgImNsYXVzZSI6ICJUaGVyZSBhcmUgc2lnbnMgb2YgZm9yY2VkIGVudHJ5In0sIHsibGV0dGVyIjogInEiLCAiY2xhdXNlIjogIk15IGNsaWVudCB3YXMgdGhlIGJ1cmdsYXIifSwgeyJsZXR0ZXIiOiAiciIsICJjbGF1c2UiOiAiU2hlIGhhZCBhbiBhY2NvbXBsaWNlIGluc2lkZSB0aGUgYnVpbGRpbmcifV19LCB7InRleHQiOiAiTXkgY2xpZW50IHdhcyBub3QgdGhlIGJ1cmdsYXIiLCAicmVmRm9ybXVsYSI6ICLCrHEiLCAicmVmQXRvbXMiOiBbeyJsZXR0ZXIiOiAicCIsICJjbGF1c2UiOiAiVGhlcmUgYXJlIHNpZ25zIG9mIGZvcmNlZCBlbnRyeSJ9LCB7ImxldHRlciI6ICJxIiwgImNsYXVzZSI6ICJNeSBjbGllbnQgd2FzIHRoZSBidXJnbGFyIn0sIHsibGV0dGVyIjogInIiLCAiY2xhdXNlIjogIlNoZSBoYWQgYW4gYWNjb21wbGljZSBpbnNpZGUgdGhlIGJ1aWxkaW5nIn1dfV0sICJ3c0F0b21zIjogW3sibGV0dGVyIjogIiIsICJjbGF1c2UiOiAiIn1dLCAidHJhbnMiOiBbeyJmb3JtdWxhIjogIiJ9LCB7ImZvcm11bGEiOiAiIn0sIHsiZm9ybXVsYSI6ICIifSwgeyJmb3JtdWxhIjogIiJ9XX0=">Open the exercise in the translation app</a></p>
-<aside class="notes">
-<p>If time allows, collect a couple of students’ translation keys on the board — different keys can still yield the same formula up to renaming, and the truth table will confirm the argument is valid either way.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="next-time" class="slide level2">
-<h2>Next time</h2>
-<p>Both large arguments today turned out valid, but for different reasons: one because a value was forced false by the premise’s own structure, the other because the chase for a counterexample ran into a flat contradiction. Watch for that difference — it comes up again when we look at proofs.</p>
-<p>Notes for this session: <a href="https://gabriel-uzquiano.github.io/220/notes/complex-translation.html">gabriel-uzquiano.github.io/220/notes/complex-translation.html</a></p>
-
-<aside class="notes">
-<p>Wrap-up. If time is short, the horse-race counterexample search is the one to walk through live — it has the clearest chain of forced values.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-
-<aside><div>
-<p>The slides cover material from <a href="https://gabriel-uzquiano.github.io/logic/proplogic.html#proplogic">Chapter 2</a> of <a href="https://gabriel-uzquiano.github.io/logic/">Introduction to Logic</a>.</p>
-</div></aside></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
