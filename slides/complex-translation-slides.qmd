@@ -29,11 +29,8 @@ format:
 
 # complex translation {.divider}
 
-We now put translation to work on real, messy, natural-language arguments.
+We now put translation to work on complex natural language arguments.
 
-::: {.notes}
-One minute. This deck assumes the translation skills from last time and puts them to the test on arguments nobody wrote with a truth table in mind.
-:::
 
 ## the plan
 
@@ -45,29 +42,22 @@ Three steps, applied to each argument in turn:
 3. use a **truth table** to determine whether the argument is valid
 :::
 
-::: {.notes}
-Same three steps as always — the only thing that changes is that the English is now dense enough that step 1 takes real work.
-:::
 
-# worked example: the burglar {.divider}
 
-::: {.notes}
-A closing-argument style example — good for showing that 'if...then...if...then...' chains are just nested conditionals.
-:::
+# example 1: the burglar {.divider}
+
 
 ## the argument
 
-> My client is not the burglar. For if there are no signs of forced entry, then, if my client had been the burglar, she would have had an accomplice inside the building. But we can discard that option, as no one in the building could have known my client before today. Nor are there any signs of forced entry.
+> My client is not the burglar. For several reasons. If there are no signs of forced entry, then my client is the burglar only if she had an accomplice inside. But we can discard that option, as no one in the building could have known my client before today. Nor are there any signs of forced entry.
 
-::: {.notes}
-Read it aloud once. The conclusion is announced first ('my client is not the burglar') — worth flagging, since English often states the conclusion before the premises.
-:::
+
 
 ## in premise-conclusion form
 
 ::: {.argument}
-1. If there are no signs of forced entry, then if my client had been the burglar, then she would have had an accomplice inside the building.
-2. She did not have an accomplice inside the building.
+1. If there are no signs of forced entry, then my client is the burglar only if she had an accomplice inside.
+2. She did not have an accomplice inside.
 3. There are no signs of forced entry.
 
 ::: {.conclusion}
@@ -75,247 +65,387 @@ Read it aloud once. The conclusion is announced first ('my client is not the bur
 :::
 :::
 
-::: {.notes}
-Premise 1 is a conditional whose consequent is itself a conditional — that nesting is the whole challenge of this example.
+
+## translation key {.smaller}
+
+
+We specify a **translation key**:
+
+::: {.argument}
+$p$: There are signs of forced entry.
+
+$q$: My client is the burglar.
+
+$r$: My client had an accomplice inside.
 :::
 
-## translation key
 
-::: {.columns}
-::: {.column width="33%"}
-$p$: There are signs of forced entry
-:::
-::: {.column width="33%"}
-$q$: My client is the burglar
-:::
-::: {.column width="33%"}
-$r$: My client had an accomplice inside the building
-:::
-:::
+## premise 1 {.smaller}
 
-Now translate each line of the argument yourself:
+::: {style="font-size: 0.8em;"}
+::: {.argument}
+$p$: There are signs of forced entry.
 
-::: {.notes}
-Double-check the key before typing — with three variables sharing a slide, it is easy to swap $p$ and $r$.
+$q$: My client is the burglar.
+
+$r$: My client had an accomplice inside.
+:::
 :::
 
-## translate it: premise 1 {.smaller}
-
-**key**: $p$: signs of forced entry &nbsp;&nbsp; $q$: client is the burglar &nbsp;&nbsp; $r$: client had an accomplice
-
-```{.Translate .Prop system="gamutPND" submission="none" height="580px"}
-1. -p > (q > r): If there are no signs of forced entry, then if my client was the burglar, then she had an accomplice inside the building
-```
-
-::: {.notes}
-The nested conditional from the argument slide, unpacked: negate p for 'no signs', then the whole 'if q then r' becomes the consequent.
-:::
-
-## translate it: premise 2 {.smaller}
-
-**key**: $p$: signs of forced entry &nbsp;&nbsp; $q$: client is the burglar &nbsp;&nbsp; $r$: client had an accomplice
 
 ```{.Translate .Prop system="gamutPND" submission="none"}
-2. -r: She did not have an accomplice inside the building
+1. ~p -> (q -> r): If there are no signs of forced entry, then my client is the burglar only if she had an accomplice inside.
 ```
 
-## translate it: premise 3 {.smaller}
 
-**key**: $p$: signs of forced entry &nbsp;&nbsp; $q$: client is the burglar &nbsp;&nbsp; $r$: client had an accomplice
+## premise 2 {.smaller}
+
+::: {style="font-size: 0.8em;"}
+::: {.argument}
+$p$: There are signs of forced entry.
+
+$q$: My client is the burglar.
+
+$r$: My client had an accomplice inside.
+:::
+:::
+
 
 ```{.Translate .Prop system="gamutPND" submission="none"}
-3. -p: There are no signs of forced entry
+1. ~r: She did not have an accomplice inside.
 ```
 
-## translate it: the conclusion {.smaller}
 
-**key**: $p$: signs of forced entry &nbsp;&nbsp; $q$: client is the burglar &nbsp;&nbsp; $r$: client had an accomplice
+## premise 3 {.smaller}
+
+::: {style="font-size: 0.8em;"}
+::: {.argument}
+$p$: There are signs of forced entry.
+
+$q$: My client is the burglar.
+
+$r$: My client had an accomplice inside.
+:::
+:::
+
 
 ```{.Translate .Prop system="gamutPND" submission="none"}
-4. -q: My client is not the burglar
+1. ~p: There are no signs of forced entry.
 ```
 
-## the argument, fully translated
+
+
+## conclusion {.smaller}
+
+::: {style="font-size: 0.8em;"}
+::: {.argument}
+$p$: There are signs of forced entry.
+
+$q$: My client is the burglar.
+
+$r$: My client had an accomplice inside.
+:::
+:::
+
+```{.Translate .Prop system="gamutPND" submission="none"}
+5. ~q: My client is not the burglar.
+```
+
+## the argument translated
+
+::: {style="font-size: 0.8em;"}
+::: {.argument}
+$p$: There are signs of forced entry.
+
+$q$: My client is the burglar.
+
+$r$: My client had an accomplice inside.
+:::
+:::
 
 ::: {.argument}
 1. $\neg p \to (q \to r)$
 2. $\neg r$
 3. $\neg p$
+4. $\neg q$
 
 ::: {.conclusion}
-4. $\neg q$
+5. $p$
 :::
 :::
 
-::: {.notes}
-Recap slide — the four answers just checked live, gathered into the finished argument.
-:::
-
-## testing validity
+## the question of validity
 
 ```{.TruthTable mode="validity"}
-(-p -> (q -> r))
--r
--p
--q
+~p -> (q -> r)
+~r
+~p
+~q
 ```
 
-::: {.notes}
-No row makes all three premises true and the conclusion false — the argument is valid.
-:::
 
-# worked example: mind and brain {.divider}
 
-::: {.notes}
-This one has a sting in its tail — unlike the burglar argument, it turns out to be invalid. Good for showing that the method finds invalidity just as readily as validity.
-:::
+
+
+
+# example 2: mind and brain {.divider}
+
 
 ## the argument
 
-> If the mind is the same thing as the brain, then the mind is made of matter only if the brain is made of matter. Unless the mind is mortal, it is not made of matter. The brain is made of matter. Therefore, the mind is not the same thing as the brain.
+> If the mind and the brain are one and the same thing, then the mind is material only if the brain is. But the mind is not material unless it is divisible. The brain is material, but the mind is not divisible. So the mind and the brain are not one and the same thing.
 
-::: {.notes}
-'Only if' and 'unless' both appear here — both were covered last time, so this is also a review of those two phrases.
-:::
+
 
 ## in premise-conclusion form
 
 ::: {.argument}
-1. If the mind is the same thing as the brain, then the mind is made of matter only if the brain is made of matter.
-2. Unless the mind is mortal, it is not made of matter.
-3. The brain is made of matter.
+1. If the mind and the brain are one and the same thing, then the mind is material only if the brain is.
+2. The mind is not material unless it is divisible.
+3. The brain is material, but the mind is not divisible.
 
 ::: {.conclusion}
-4. The mind is not the same thing as the brain.
+4. The mind and the brain are not one and the same thing.
 :::
 :::
 
-::: {.notes}
-Ask the room to paraphrase premises 1 and 2 out loud before moving to the key — 'only if' and 'unless' are exactly the phrases that trip people up under time pressure.
+
+## translation key {.smaller}
+
+
+We specify a **translation key**:
+
+::: {.argument}
+$p$: The mind and the brain are one and the same thing.
+
+$q$: The mind is material.
+
+$r$: The brain is material.
+
+$t$: The mind is divisible.
 :::
 
-## translation key
 
-::: {.columns}
-::: {.column width="25%"}
-$p$: the mind is the same thing as the brain
-:::
-::: {.column width="25%"}
-$q$: the mind is made of matter
-:::
-::: {.column width="25%"}
-$r$: the brain is made of matter
-:::
-::: {.column width="25%"}
-$t$: the mind is mortal
+## premise 1 {.smaller}
+
+::: {style="font-size: 0.8em;"}
+::: {.argument}
+$p$: The mind and the brain are one and the same thing.
+
+$q$: The mind is material.
+
+$r$: The brain is material.
+
+$t$: The mind is divisible.
 :::
 :::
 
-Now translate each line of the argument yourself:
-
-::: {.notes}
-Four variables this time — worth pointing out that $s$ is skipped in favor of $t$ purely so it doesn't get confused with 'the same thing'.
-:::
-
-## translate it: premise 1 {.smaller}
-
-**key**: $p$: mind=brain &nbsp;&nbsp; $q$: mind is matter &nbsp;&nbsp; $r$: brain is matter &nbsp;&nbsp; $t$: mind is mortal
-
-```{.Translate .Prop system="gamutPND" submission="none" height="580px"}
-1. p > (q > r): If the mind is the same thing as the brain, then the mind is made of matter only if the brain is made of matter
-```
-
-::: {.notes}
-'Only if' inside the consequent becomes its own conditional q → r, matching last session's 'only if' slide exactly.
-:::
-
-## translate it: premise 2 {.smaller}
-
-**key**: $p$: mind=brain &nbsp;&nbsp; $q$: mind is matter &nbsp;&nbsp; $r$: brain is matter &nbsp;&nbsp; $t$: mind is mortal
 
 ```{.Translate .Prop system="gamutPND" submission="none"}
-2. -t > -q: Unless the mind is mortal, it is not made of matter
+1. p -> (q -> r): If the mind and the brain are one and the same thing, then the mind is material only if the brain is.
 ```
 
-::: {.notes}
-'Unless' becomes 'if not' — same paraphrase as last time's unless slide.
+
+## premise 2 {.smaller}
+
+::: {style="font-size: 0.8em;"}
+::: {.argument}
+$p$: The mind and the brain are one and the same thing.
+
+$q$: The mind is material.
+
+$r$: The brain is material.
+
+$t$: The mind is divisible.
+:::
 :::
 
-## translate it: premise 3 {.smaller}
-
-**key**: $p$: mind=brain &nbsp;&nbsp; $q$: mind is matter &nbsp;&nbsp; $r$: brain is matter &nbsp;&nbsp; $t$: mind is mortal
 
 ```{.Translate .Prop system="gamutPND" submission="none"}
-3. r: The brain is made of matter
+1. ~t -> ~r: The mind is not material unless it is divisible.
 ```
 
-## translate it: the conclusion {.smaller}
 
-**key**: $p$: mind=brain &nbsp;&nbsp; $q$: mind is matter &nbsp;&nbsp; $r$: brain is matter &nbsp;&nbsp; $t$: mind is mortal
+## premise 3 {.smaller}
+
+::: {style="font-size: 0.8em;"}
+::: {.argument}
+$p$: The mind and the brain are one and the same thing.
+
+$q$: The mind is material.
+
+$r$: The brain is material.
+
+$t$: The mind is divisible.
+:::
+:::
+
 
 ```{.Translate .Prop system="gamutPND" submission="none"}
-4. -p: The mind is not the same thing as the brain
+1. q /\ ~t: The brain is material, but the mind is not divisible.
 ```
 
-## the argument, fully translated
+
+
+## conclusion {.smaller}
+
+::: {style="font-size: 0.8em;"}
+::: {.argument}
+$p$: The mind and the brain are one and the same thing.
+
+$q$: The mind is material.
+
+$r$: The brain is material.
+
+$t$: The mind is divisible.
+:::
+:::
+
+```{.Translate .Prop system="gamutPND" submission="none"}
+5. ~p: The mind and the brain are not one and the same thing.
+```
+
+## the argument translated
+
+::: {style="font-size: 0.8em;"}
+::: {.argument}
+$p$: The mind and the brain are one and the same thing.
+
+$q$: The mind is material.
+
+$r$: The brain is material.
+
+$t$: The mind is divisible.
+:::
+:::
 
 ::: {.argument}
 1. $p \to (q \to r)$
-2. $\neg t \to \neg q$
-3. $r$
+2. $\neg t \to \neg r$
+3. $q \wedge \neg t$
+4. $\neg p$
 
 ::: {.conclusion}
-4. $\neg p$
+5. $p$
 :::
 :::
 
-::: {.notes}
-Recap slide — the four answers just checked live, gathered into the finished argument.
-:::
+## the question of validity
 
-## testing validity
+There are \\(2\^4 = 16\\) assignments.
+
+A full truth table would require 16 rows ...
 
 ```{.TruthTable mode="validity"}
-(p -> (q -> r))
-(-t -> -q)
-r
--p
+p -> (q -> r)
+~t -> ~ r
+q /\ ~ t
+~ p
 ```
 
-::: {.notes}
-Let the room run the table before revealing anything — this is the case where it does *not* come out valid, and it lands better if they find that themselves.
-:::
 
-## finding a counterexample {.smaller}
+## search for a counterexample
+
+
+We now employ the **search for a counterexample method**:
 
 ::: {.incremental}
-- to make the conclusion $\neg p$ false, we need $p$ **true**
-- premise 3 already forces $r$ **true**
-- setting $q$ and $t$ both **false** keeps premises 1 and 2 true as well
-- **assignment** ($p, q, r, t$) = (T, F, T, F): every premise is true, the conclusion is false
+1.  Focus on assignments that **make the conclusion false**
+
+   
+2.  Ask **which of the assignments that remain make the premises true**.
+    
+
+3.  If we **find a counterexample**, then **the argument is invalid**. 
+
+      **Otherwise**, **the argument is valid**.
+
 :::
 
-. . .
+##  make the conclusion false 
 
-**The argument is invalid.**
+To make the conclusion $\neg p$ **false**, we must have:
 
-::: {.notes}
-A nice moment to stress that 'sounds compelling in English' is not the same as 'valid' — this argument reads persuasively but the truth table finds the gap.
-:::
+$$
+p : T
+$$
 
-# worked example: the Argus deal {.divider}
+So, we need look only at **8** rows out the 16:
 
-::: {.notes}
-Adapted from Quine. Five variables and 32 rows — too many to fill by hand, which is exactly the point: this is where the truth-table *method* still works even when brute-force table-filling doesn't.
-:::
+$$
+\begin{array}{|c|c|c|c|c|c|c|c|}
+\hline
+p & q & r & t &p \to (q \to r) & \neg t \to \neg r & q \wedge \neg t & \neg p \\
+\hline
+T & T & T & T & &  &  & \color{red}{F}  \\
+T & T & T & F & &  &  & \color{red}{F} \\
+T & T & F & T & &  &  & \color{red}{F} \\
+T & T & F & F & &  &  & \color{red}{F} \\
+T & F & T & T & &  &  & \color{red}{F} \\
+T & F & T & F & &  &  & \color{red}{F} \\
+T & F & F & T & &  &  & \color{red}{F} \\
+T & F & F & F& &  &  & \color{red}{F} \\
+\hline
+\end{array}
+$$
+
+## filter the candidate rows {.smaller}
+
+To make the third premise $q \wedge \neg t$ true, we consider only rows at which 
+
+$$
+q : T \qquad t : F
+$$
+    This narrows down the field of potential counterexamples to two rows:
+
+
+$$
+\begin{array}{|c|c|c|c|c|c|c|c|}
+\hline
+p & q & r & t &p \to (q \to r) & \neg t \to \neg r & q \wedge \neg t & \neg p \\
+\hline
+T & T & F & T & &  & \color{red}{T}  & \color{red}{F} \\
+T & T & F & F & &  & \color{red}{T} & \color{red}{F} \\
+\hline
+\end{array}
+$$
+
+
+To make the second premise $\neg t \to \neg r$ true, we rule out the row at which $t$ is false and $r$ is true:
+
+$$
+\begin{array}{|c|c|c|c|c|c|c|c|}
+\hline
+p & q & r & t &p \to (q \to r) & \neg t \to \neg r & q \wedge \neg t & \neg p \\
+\hline
+T & T & F & T & & \color{red}{T} & \color{red}{T}  & \color{red}{F} \\
+\hline
+\end{array}
+$$
+
+The row that remains **falsifies** the first premise, which means that it is **not** a counterexample to validity:
+
+$$
+\begin{array}{|c|c|c|c|c|c|c|c|}
+\hline
+p & q & r & t &p \to (q \to r) & \neg t \to \neg r & q \wedge \neg t & \neg p \\
+\hline
+T & T & F & T & F & \color{red}{T} & \color{red}{T}  & \color{red}{F} \\
+\hline
+\end{array}
+$$
+It follows that the argument is **valid**.
+
+
+# example 3: the Argus deal {.divider}
+
+Here is an argument adapted from W. O. Quine's *Methods of Logic*.
 
 ## the argument
 
 > If Jones is ill or Smith is away, then unless Robinson comes to his senses, neither will the Argus deal be concluded nor will the directors declare a dividend. Consequently, if Smith is away and Robinson does not come to his senses, the Argus deal will not be concluded.
 
-::: {.notes}
-This argument has just two sentences: one premise, one conclusion (flagged by 'consequently'). Everything else is packed inside those two sentences.
-:::
+
 
 ## in premise-conclusion form
 
@@ -327,318 +457,175 @@ This argument has just two sentences: one premise, one conclusion (flagged by 'c
 :::
 :::
 
-::: {.notes}
-Worth pausing here — students often expect an argument to have several premises. This one has exactly one, and it does all the work.
-:::
 
-## translation key
 
-::: {.columns}
-::: {.column width="20%"}
-$p$: Jones is ill
-:::
-::: {.column width="20%"}
-$q$: Smith is away
-:::
-::: {.column width="20%"}
-$r$: Robinson comes to his senses
-:::
-::: {.column width="20%"}
-$s$: the Argus deal is completed
-:::
-::: {.column width="20%"}
-$t$: the directors declare a dividend
-:::
-:::
+## translation key {.smaller}
 
-Now translate the premise and the conclusion yourself:
 
-::: {.notes}
-'Neither ... nor ...' and 'unless' both reappear here, now nested three levels deep inside one sentence. Take it phrase by phrase.
-:::
-
-## translate it: the premise {.smaller}
-
-**key**: $p$: Jones ill &nbsp;&nbsp; $q$: Smith away &nbsp;&nbsp; $r$: Robinson comes to senses &nbsp;&nbsp; $s$: deal completed &nbsp;&nbsp; $t$: dividend declared
-
-```{.Translate .Prop system="gamutPND" submission="none" height="580px"}
-1. (p \/ q) > (-r > (-s /\ -t)): If Jones is ill or Smith is away, then if Robinson does not come to his senses, then the Argus deal will not be completed and the directors will not declare a dividend
-```
-
-::: {.notes}
-Build it from the outside in: the main connective is the first 'if...then', 'unless' gives the inner conditional, and 'neither...nor...' gives the conjunction of two negations at the very center.
-:::
-
-## translate it: the conclusion {.smaller}
-
-**key**: $p$: Jones ill &nbsp;&nbsp; $q$: Smith away &nbsp;&nbsp; $r$: Robinson comes to senses &nbsp;&nbsp; $s$: deal completed &nbsp;&nbsp; $t$: dividend declared
-
-```{.Translate .Prop system="gamutPND" submission="none" height="580px"}
-2. (q /\ -r) > -s: If Smith is away and Robinson does not come to his senses, then the Argus deal will not be concluded
-```
-
-## the argument, fully translated
+We specify a **translation key**:
 
 ::: {.argument}
-1. $(p \vee q) \to (\neg r \to (\neg s \wedge \neg t))$
+$p$: Jones is ill.
+
+$q$: Smith is away.
+
+$r$: Robinson comes to his senses.
+
+$t$: The Argus deal will be concluded.
+
+$s$: The directors will declare a dvidend.
+:::
+
+
+## premise 1 {.smaller}
+
+::: {style="font-size: 0.8em;"}
+::: {.argument}
+$p$: Jones is ill.
+
+$q$: Smith is away.
+
+$r$: Robinson comes to his senses.
+
+$t$: The Argus deal will be concluded.
+
+$s$: The directors will declare a dvidend.
+:::
+:::
+
+
+```{.Translate .Prop system="gamutPND" submission="none"}
+1. (p \/ q) -> (~r -> (~t /\ ~s)): If Jones is ill or Smith is away, then unless Robinson comes to his senses, neither will the Argus deal be concluded nor will the directors declare a dividend.
+```
+
+
+
+## conclusion {.smaller}
+
+::: {style="font-size: 0.8em;"}
+::: {.argument}
+$p$: Jones is ill.
+
+$q$: Smith is away.
+
+$r$: Robinson comes to his senses.
+
+$t$: The Argus deal will be concluded.
+
+$s$: The directors will declare a dvidend.
+:::
+:::
+
+```{.Translate .Prop system="gamutPND" submission="none"}
+5. (q /\ ~r) -> ~t: If Smith is away and Robinson does not come to his senses, then the Argus deal will not be concluded.
+```
+
+## the argument translated
+
+::: {style="font-size: 0.8em;"}
+::: {.argument}
+$p$: Jones is ill.
+
+$q$: Smith is away.
+
+$r$: Robinson comes to his senses.
+
+$t$: The Argus deal will be concluded.
+
+$s$: The directors will declare a dvidend.
+:::
+:::
+
+::: {.argument}
+1. $(p \vee q) \to (\neg r \to (\neg t \wedge \neg s) )$
 
 ::: {.conclusion}
-2. $(q \wedge \neg r) \to \neg s$
+5. $(q \wedge \neg r) \to \neg t$
 :::
 :::
 
-::: {.notes}
-Recap slide — the premise and conclusion just checked live, gathered together.
-:::
 
-## why a full table won't help {.smaller}
 
-This argument has **five** propositional variables: $p, q, r, s, t$.
+## the question of validity
 
-. . .
+There are \\(2\^5 = 32\\) assignments.
 
-A full truth table needs $2^5 = 32$ rows — too many to fill out by hand.
-
-. . .
-
-Instead, we look directly for a **counterexample**: an assignment making the premise true and the conclusion false. If none exists, the argument is valid.
-
-::: {.notes}
-This is the pivot of the whole lecture: the truth-table *idea* (check every assignment) still works even when the truth-table *artifact* becomes impractical.
-:::
-
-## searching for a counterexample {.smaller}
-
-To make the conclusion $(q \wedge \neg r) \to \neg s$ false, we need:
-
-::: {.incremental}
-- $q$ **true**, $r$ **false** (to make $q \wedge \neg r$ true)
-- $s$ **true** (to make $\neg s$ false)
-:::
-
-. . .
-
-But then, in the premise, $q$ true already makes $(p \vee q)$ **true**, and $s$ true makes $(\neg s \wedge \neg t)$ **false** — so $\neg r \to (\neg s \wedge \neg t)$ comes out **false**, forcing the whole premise **false**.
-
-. . .
-
-**No assignment makes the premise true and the conclusion false — the argument is valid.**
-
-::: {.notes}
-The key move: once q, r, and s are pinned down by the conclusion, p and t are irrelevant — the premise is forced false no matter what they are. That's what makes this a proof of validity rather than just one failed attempt at a counterexample.
-:::
-
-## confirming it (optional) {.smaller}
-
-For the patient: the full 32-row table agrees with the reasoning above.
+A full truth table would require 32 rows!
 
 ```{.TruthTable mode="validity"}
-((p \/ q) -> (-r -> (-s /\ -t)))
-((q /\ -r) -> -s)
+(p \/ q) -> (~r -> (~t /\ ~s))
+(q /\ ~r) -> ~t
 ```
 
-::: {.notes}
-Optional — no need to click through all 32 rows live. The point of the previous slide was to avoid needing to.
-:::
 
-# worked example: the horse race {.divider}
+## search for a counterexample
 
-::: {.notes}
-Adapted from Resnik. Another five-variable, 32-row case — same technique as the Argus deal, this time landing on validity for a different structural reason (a flat-out contradiction rather than a forced-false premise).
-:::
 
-## the argument
-
-> If the horse loses a shoe, the owner will shoe the horse or hire someone to do so. If the owner shoes the horse, the owner will have a sore back. The race will be canceled if the owner has a sore back. So, if the horse loses a shoe and the owner does not hire someone to shoe the horse, the race will be canceled.
-
-::: {.notes}
-Three short conditionals building a chain, then a conclusion that combines two of the antecedents. Good preparation for the reasoning on the next few slides.
-:::
-
-## in premise-conclusion form
-
-::: {.argument}
-1. If the horse loses a shoe, then the owner will shoe the horse or hire someone to do so.
-2. If the owner shoes the horse, then the owner will have a sore back.
-3. The race will be canceled if the owner has a sore back.
-
-::: {.conclusion}
-4. If the horse loses a shoe and the owner does not hire someone to shoe the horse, the race will be canceled.
-:::
-:::
-
-::: {.notes}
-Premise 3 is a plain 'if' (not 'only if'), so it paraphrases straightforwardly to 'if sore back, then canceled' despite the English order being reversed.
-:::
-
-## translation key
-
-::: {.columns}
-::: {.column width="20%"}
-$p$: horse loses a shoe
-:::
-::: {.column width="20%"}
-$q$: owner shoes the horse
-:::
-::: {.column width="20%"}
-$r$: owner hires someone
-:::
-::: {.column width="20%"}
-$s$: owner has a sore back
-:::
-::: {.column width="20%"}
-$t$: race is canceled
-:::
-:::
-
-Now translate each line of the argument yourself:
-
-::: {.notes}
-Five variables again, but this time no 'only if' or 'unless' — a chance to see that length and variable count are the source of difficulty here, not exotic phrasing.
-:::
-
-## translate it: premise 1 {.smaller}
-
-**key**: $p$: loses shoe &nbsp;&nbsp; $q$: owner shoes horse &nbsp;&nbsp; $r$: owner hires someone &nbsp;&nbsp; $s$: sore back &nbsp;&nbsp; $t$: race canceled
-
-```{.Translate .Prop system="gamutPND" submission="none" height="580px"}
-1. p > (q \/ r): If the horse loses a shoe, then the owner will shoe the horse or hire someone to do so
-```
-
-## translate it: premise 2 {.smaller}
-
-**key**: $p$: loses shoe &nbsp;&nbsp; $q$: owner shoes horse &nbsp;&nbsp; $r$: owner hires someone &nbsp;&nbsp; $s$: sore back &nbsp;&nbsp; $t$: race canceled
-
-```{.Translate .Prop system="gamutPND" submission="none"}
-2. q > s: If the owner shoes the horse, the owner will have a sore back
-```
-
-## translate it: premise 3 {.smaller}
-
-**key**: $p$: loses shoe &nbsp;&nbsp; $q$: owner shoes horse &nbsp;&nbsp; $r$: owner hires someone &nbsp;&nbsp; $s$: sore back &nbsp;&nbsp; $t$: race canceled
-
-```{.Translate .Prop system="gamutPND" submission="none"}
-3. s > t: If the owner has a sore back, then the race will be canceled
-```
-
-## translate it: the conclusion {.smaller}
-
-**key**: $p$: loses shoe &nbsp;&nbsp; $q$: owner shoes horse &nbsp;&nbsp; $r$: owner hires someone &nbsp;&nbsp; $s$: sore back &nbsp;&nbsp; $t$: race canceled
-
-```{.Translate .Prop system="gamutPND" submission="none"}
-4. (p /\ -r) > t: If the horse loses a shoe and the owner does not hire someone to shoe the horse, then the race will be canceled
-```
-
-## the argument, fully translated
-
-::: {.argument}
-1. $p \to (q \vee r)$
-2. $q \to s$
-3. $s \to t$
-
-::: {.conclusion}
-4. $(p \wedge \neg r) \to t$
-:::
-:::
-
-::: {.notes}
-Recap slide — the four answers just checked live, gathered into the finished argument.
-:::
-
-## why a full table won't help {.smaller}
-
-Five propositional variables again: $p, q, r, s, t$ — a $2^5 = 32$-row table.
-
-. . .
-
-We look for a counterexample directly instead of filling out every row.
-
-## searching for a counterexample {.smaller}
-
-To make the conclusion $(p \wedge \neg r) \to t$ false, we need:
+We now employ the **search for a counterexample method**:
 
 ::: {.incremental}
-- $p$ **true**, $r$ **false** (to make $p \wedge \neg r$ true)
-- $t$ **false**
+1.  Focus on assignments that **make the conclusion false**
+
+   
+2.  Ask **which of the assignments that remain make the premises true**.
+    
+
+3.  If we **find a counterexample**, then **the argument is invalid**. 
+
+      **Otherwise**, **the argument is valid**.
+
 :::
 
-. . .
+##  make the conclusion false 
 
-Chasing that through the premises:
+To make the conclusion $(q \wedge \neg r) \to \neg t$ **false**, we must have:
 
-::: {.incremental}
-- premise 3 ($s \to t$) forces $s$ **false**, or else it would be false
-- premise 2 ($q \to s$) then forces $q$ **false**, or else *it* would be false
-- but now premise 1 ($p \to (q \vee r)$) has $p$ true and both $q, r$ **false** — so $q \vee r$ is false, making premise 1 **false**
-:::
+$$
+q : T \qquad r : F \qquad s : T
+$$
 
-. . .
+So, we need look only at **4** rows out the 32:
 
-**No assignment makes every premise true and the conclusion false — the argument is valid.**
+$$
+\begin{array}{|c|c|c|c|c|c|c|}
+\hline
+p & q & r & t & s & (p \vee q) \to (\neg r \to (\neg t \wedge \neg s) ) & (q \wedge \neg r) \to \neg t \\
+\hline 
+T & T & F & T & T &  &   \color{red}{F} \\
+T & T & F & F & T &  &   \color{red}{F} \\
+F & T & F & T & T &  &   \color{red}{F} \\
+F & T & F & F & T &  &   \color{red}{F} \\
+\hline
+\end{array}
+$$
 
-::: {.notes}
-This is the chain-reaction style of counterexample search: falsifying the conclusion forces a cascade of forced values back through the premises until something breaks. Here, premise 1 is what breaks.
-:::
+## filter the candidate rows
 
-## confirming it (optional) {.smaller}
+We want to make the first premise $(p \vee q) \to (\neg r \to (\neg t \wedge \neg s) )$ true. Unfortunately:
 
-```{.TruthTable mode="validity"}
-(p -> (q \/ r))
-(q -> s)
-(s -> t)
-((p /\ -r) -> t)
-```
+- $p \vee q$ comes out true in all four rows, and
+- $\neg r \to (\neg t \wedge \neg s)$ comes out false in all four rows. 
 
-::: {.notes}
-Optional, same as the previous example — the reasoning already settled the question.
-:::
+So, the first premise comes out false in **all rows that remain.**
 
-# your turn: the accomplice {.divider}
 
-::: {.notes}
-An unguided practice round, not a walked-through example. Same 'only if' nesting as the mind-and-brain argument, but this time it's the students who translate — give them a few minutes before opening the worksheet.
-:::
 
-## the argument
+$$
+\begin{array}{|c|c|c|c|c|c|c|}
+\hline
+p & q & r & t & s & (p \vee q) \to (\neg r \to (\neg t \wedge \neg s) ) & (q \wedge \neg r) \to \neg t \\
+\hline 
+T & T & F & T & T & F &   \color{red}{F} \\
+T & T & F & F & T & F &   \color{red}{F} \\
+F & T & F & T & T & F &   \color{red}{F} \\
+F & T & F & F & T & F &   \color{red}{F} \\
+\hline
+\end{array}
+$$
 
-> If there are no signs of forced entry, then my client was the burglar only if she had an accomplice inside the building. My client didn't have an accomplice inside the building. There are no signs of forced entry. So, my client was not the burglar.
 
-::: {.notes}
-Same cast of characters as the earlier burglar example, but note the explicit 'only if' in premise 1 in place of the earlier nested 'if...then' — worth asking the room whether that changes the logic (it doesn't).
-:::
+It follows that the argument is **valid**.
 
-## in premise-conclusion form
 
-::: {.argument}
-1. If there are no signs of forced entry, then my client was the burglar only if she had an accomplice inside the building.
-2. My client did not have an accomplice inside the building.
-3. There are no signs of forced entry.
 
-::: {.conclusion}
-4. My client was not the burglar.
-:::
-:::
 
-## try it yourself
-
-Paraphrase, translate, and test for validity — on your own, in one worksheet. Pick your own translation key:
-
-[Open the exercise in the translation app](https://gabriel-uzquiano.github.io/prop-translation/#v1:eyJzZW50ZW5jZXMiOiBbeyJ0ZXh0IjogIklmIHRoZXJlIGFyZSBubyBzaWducyBvZiBmb3JjZWQgZW50cnksIHRoZW4gbXkgY2xpZW50IHdhcyB0aGUgYnVyZ2xhciBvbmx5IGlmIHNoZSBoYWQgYW4gYWNjb21wbGljZSBpbnNpZGUgdGhlIGJ1aWxkaW5nIiwgInJlZkZvcm11bGEiOiAiwqxw4oaSKHHihpJyKSIsICJyZWZBdG9tcyI6IFt7ImxldHRlciI6ICJwIiwgImNsYXVzZSI6ICJUaGVyZSBhcmUgc2lnbnMgb2YgZm9yY2VkIGVudHJ5In0sIHsibGV0dGVyIjogInEiLCAiY2xhdXNlIjogIk15IGNsaWVudCB3YXMgdGhlIGJ1cmdsYXIifSwgeyJsZXR0ZXIiOiAiciIsICJjbGF1c2UiOiAiU2hlIGhhZCBhbiBhY2NvbXBsaWNlIGluc2lkZSB0aGUgYnVpbGRpbmcifV19LCB7InRleHQiOiAiTXkgY2xpZW50IGRpZG4ndCBoYXZlIGFuIGFjY29tcGxpY2UgaW5zaWRlIHRoZSBidWlsZGluZyIsICJyZWZGb3JtdWxhIjogIsKsciIsICJyZWZBdG9tcyI6IFt7ImxldHRlciI6ICJwIiwgImNsYXVzZSI6ICJUaGVyZSBhcmUgc2lnbnMgb2YgZm9yY2VkIGVudHJ5In0sIHsibGV0dGVyIjogInEiLCAiY2xhdXNlIjogIk15IGNsaWVudCB3YXMgdGhlIGJ1cmdsYXIifSwgeyJsZXR0ZXIiOiAiciIsICJjbGF1c2UiOiAiU2hlIGhhZCBhbiBhY2NvbXBsaWNlIGluc2lkZSB0aGUgYnVpbGRpbmcifV19LCB7InRleHQiOiAiVGhlcmUgYXJlIG5vIHNpZ25zIG9mIGZvcmNlZCBlbnRyeSIsICJyZWZGb3JtdWxhIjogIsKscCIsICJyZWZBdG9tcyI6IFt7ImxldHRlciI6ICJwIiwgImNsYXVzZSI6ICJUaGVyZSBhcmUgc2lnbnMgb2YgZm9yY2VkIGVudHJ5In0sIHsibGV0dGVyIjogInEiLCAiY2xhdXNlIjogIk15IGNsaWVudCB3YXMgdGhlIGJ1cmdsYXIifSwgeyJsZXR0ZXIiOiAiciIsICJjbGF1c2UiOiAiU2hlIGhhZCBhbiBhY2NvbXBsaWNlIGluc2lkZSB0aGUgYnVpbGRpbmcifV19LCB7InRleHQiOiAiTXkgY2xpZW50IHdhcyBub3QgdGhlIGJ1cmdsYXIiLCAicmVmRm9ybXVsYSI6ICLCrHEiLCAicmVmQXRvbXMiOiBbeyJsZXR0ZXIiOiAicCIsICJjbGF1c2UiOiAiVGhlcmUgYXJlIHNpZ25zIG9mIGZvcmNlZCBlbnRyeSJ9LCB7ImxldHRlciI6ICJxIiwgImNsYXVzZSI6ICJNeSBjbGllbnQgd2FzIHRoZSBidXJnbGFyIn0sIHsibGV0dGVyIjogInIiLCAiY2xhdXNlIjogIlNoZSBoYWQgYW4gYWNjb21wbGljZSBpbnNpZGUgdGhlIGJ1aWxkaW5nIn1dfV0sICJ3c0F0b21zIjogW3sibGV0dGVyIjogIiIsICJjbGF1c2UiOiAiIn1dLCAidHJhbnMiOiBbeyJmb3JtdWxhIjogIiJ9LCB7ImZvcm11bGEiOiAiIn0sIHsiZm9ybXVsYSI6ICIifSwgeyJmb3JtdWxhIjogIiJ9XX0=)
-
-::: {.notes}
-If time allows, collect a couple of students' translation keys on the board — different keys can still yield the same formula up to renaming, and the truth table will confirm the argument is valid either way.
-:::
-
-## Next time
-
-Both large arguments today turned out valid, but for different reasons: one because a value was forced false by the premise's own structure, the other because the chase for a counterexample ran into a flat contradiction. Watch for that difference — it comes up again when we look at proofs.
-
-Notes for this session: [gabriel-uzquiano.github.io/220/notes/complex-translation.html](https://gabriel-uzquiano.github.io/220/notes/complex-translation.html)
-
-::: {.aside}
-The slides cover material from [Chapter 2](https://gabriel-uzquiano.github.io/logic/proplogic.html#proplogic) of [Introduction to Logic](https://gabriel-uzquiano.github.io/logic/).
-:::
-
-::: {.notes}
-Wrap-up. If time is short, the horse-race counterexample search is the one to walk through live — it has the clearest chain of forced values.
-:::
