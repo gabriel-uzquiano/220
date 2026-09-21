@@ -56,13 +56,13 @@ Three steps, applied to each sentence in turn:
 
 ## the argument
 
-> The British are coming by sea. For if they are coming by land, then Paul Revere should light two lamps. And if the British are not coming by land, then they are coming by sea. However, Paul Revere did not light two lamps.
+> The British are coming by sea. For if they are coming by land, then Paul Revere will light two lamps. And if the British are not coming by land, then they are coming by sea. However, Paul Revere did not light two lamps.
 
 
 ## in premise-conclusion form
 
 ::: {.argument}
-1. If the British are coming by land, Paul Revere should light two lamps.
+1. If the British are coming by land, Paul Revere will light two lamps.
 2. If the British are not coming by land, then they are coming by sea.
 3. Paul Revere did not light two lamps.
 
@@ -77,8 +77,8 @@ Three steps, applied to each sentence in turn:
 We use parentheses to reveal how each sentence is built from simpler ones.
 
 ::: {.argument}
-1. ([**If**]{.cardinal} the British are coming by land, [**then**]{.cardinal} Paul Revere is supposed to light two lamps).
-2. ([**If**]{.cardinal} the British are [**not**]{.cardinal} coming by land, [**then**]{.cardinal} they are coming by sea.)
+1. ([**If**]{.cardinal} the British are coming by land, [**then**]{.cardinal} Paul Revere will light two lamps).
+2. ([**If**]{.cardinal} the British are **not** coming by land, [**then**]{.cardinal} they are coming by sea.)
 3. Paul Revere did [**not**]{.cardinal} light two lamps.
 
 ::: {.conclusion}
@@ -131,7 +131,7 @@ $r$: The British are coming by sea.
 :::
 
 
-## the question of validity
+## the question of validity {.smaller}
 
 We are now in a position to use a truth table to check for validity:
 
@@ -331,12 +331,6 @@ There are at least two potential interpretations:
 
 . . .
 
-Notice that **or** is the main connective of the first interpretation, whereas **and** is the main connective of the second.
-
-
-
-## they are not equivalent {.smaller}
-
 
 ::: {style="font-size: 0.8em;"}
 
@@ -348,6 +342,16 @@ $q$: Paul Revere lights one lamp.
 $r$: Paul Revere lights two lamps.
 :::
 :::
+
+::: {.incremental}
+1. $((p \wedge q) \vee r)$
+
+
+2. $(p \wedge (q \vee r))$
+:::
+
+
+## they are not equivalent ... {.smaller}
 
 
 ```{.TruthTable mode="equivalence"}
@@ -383,6 +387,16 @@ $q$: Paul Revere lights two lamps.
 :::
 :::
 
+
+::: {.incremental}
+1. $(\neg p \wedge \neg q)$
+
+
+2. $\neg (p \vee q)$
+:::
+
+## they are equivalent ... {.smaller}
+
 ```{.TruthTable mode="equivalence"}
 (~p /\ ~q)
 ~(p \/ q)
@@ -405,9 +419,9 @@ $q$: Paul Revere lights two lamps.
 ::: {style="font-size: 0.8em;"}
 
 ::: {.argument}
-$p$: The British come by sea.
+$p$: Paul Revere lights two lamps.
 
-$q$: Paul Revere lights two lamps.
+$q$: The British come by sea.
 :::
 :::
 
@@ -433,9 +447,9 @@ Coming by sea is **necessary** for lighting two lamps. Compare:
 ::: {style="font-size: 0.8em;"}
 
 ::: {.argument}
-$p$: The British come by sea.
+$p$: Paul Revere lights two lamps.
 
-$q$: Paul Revere lights two lamps.
+$q$: The British come by sea.
 :::
 :::
 
@@ -470,9 +484,9 @@ A conjunction of the two conditionals from the previous slide:
 ::: {style="font-size: 0.8em;"}
 
 ::: {.argument}
-$p$: The British come by sea.
+$p$: Paul Revere lights two lamps.
 
-$q$: Paul Revere lights two lamps.
+$q$: The British come by sea.
 :::
 :::
 
@@ -482,7 +496,7 @@ $$
 
 . . .
 
-We abbreviate formulas of this form with $\leftrightarrow$:
+We sometimes use $\leftrightarrow$ to abbreviate formulas of this form:
 $$
 (\varphi \leftrightarrow \psi) := (\varphi \to \psi) \wedge (\psi \to \varphi)
 $$
@@ -508,15 +522,14 @@ Two equivalent paraphrases:
 ::: {style="font-size: 0.8em;"}
 
 ::: {.argument}
-$p$: The British come by sea.
+$p$: Paul Revere lights one lamp.
 
-$q$: Paul Revere lights two lamps.
+$q$: The British come by sea.
 :::
 :::
-
 
 $$
-\neg p \to q
+\neg q \to p
 $$
 :::
 
@@ -530,9 +543,9 @@ Paul Revere lights one lamp [**or**]{.cardinal} the British are coming by sea.
 ::: {style="font-size: 0.8em;"}
 
 ::: {.argument}
-$p$: The British come by sea.
+$p$: Paul Revere lights one lamp.
 
-$q$: Paul Revere lights two lamps.
+$q$: The British come by sea.
 :::
 :::
 
