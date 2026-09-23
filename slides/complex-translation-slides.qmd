@@ -822,7 +822,7 @@ F & T & F & F & T &  &   \color{red}{F} \\
 \end{array}
 $$
 
-## filter the candidate rows
+## filter the candidate rows {.smaller}
 
 We want to make the first premise $(p \vee q) \to (\neg r \to (\neg t \wedge \neg s) )$ true. Unfortunately:
 
