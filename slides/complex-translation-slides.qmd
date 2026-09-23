@@ -362,15 +362,15 @@ We now employ the **search for a counterexample method**:
 
 :::
 
-##  make the conclusion false 
+##  make the conclusion false {.smaller}
 
-To make the conclusion $\neg p$ **false**, we must have:
+To make the conclusion $\neg p$ **false**, we must have $p: T$:
 
 $$
 p : T
 $$
 
-So, we need look only at **8** rows out the 16:
+So, we need only look at **8** rows out the 16:
 
 $$
 \begin{array}{|c|c|c|c|c|c|c|c|}
@@ -593,7 +593,7 @@ We now employ the **search for a counterexample method**:
 
 :::
 
-##  make the conclusion false 
+##  make the conclusion false {.smaller}
 
 To make the conclusion $\neg t \to \neg p$ **false**, we must have:
 
@@ -650,7 +650,7 @@ T & T & F & F &  \color{red}{T} & \color{red}{T} &   \color{red}{F} \\
 $$
 So, we found a counterexample to validity in the assignment:
 $$
-p : T \qquad q : T \qquad r : F \qquad t : F
+p : T \qquad q : T \qquad r : F \qquad r : F
 $$
 
 It follows that the argument is **invalid**.
@@ -799,7 +799,7 @@ We now employ the **search for a counterexample method**:
 
 :::
 
-##  make the conclusion false 
+##  make the conclusion false {.smaller}
 
 To make the conclusion $(q \wedge \neg r) \to \neg t$ **false**, we must have:
 
