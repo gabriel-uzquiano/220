@@ -39,7 +39,7 @@ Three steps, applied to each argument in turn:
 ::: {.incremental}
 1. write the argument in **premise-conclusion form**
 2. **translate** the argument into the language of propositional logic
-3. use the **search for a counterexample method** to determine whether the argument is valid
+3. use a **truth table** or the **search for a counterexample method** to determine whether the argument is valid
 :::
 
 
@@ -167,10 +167,10 @@ $r$: My client had an accomplice inside.
 1. $\neg p \to (q \to r)$
 2. $\neg r$
 3. $\neg p$
-4. $\neg q$
+
 
 ::: {.conclusion}
-5. $p$
+4. $\neg q$
 :::
 :::
 
@@ -262,7 +262,7 @@ $t$: The mind is divisible.
 
 
 ```{.Translate .Prop system="gamutPND" submission="none"}
-2. ~t -> ~r: The mind is not material unless it is divisible.
+2. ~t -> ~q: The mind is not material unless it is divisible.
 ```
 
 
@@ -282,7 +282,7 @@ $t$: The mind is divisible.
 
 
 ```{.Translate .Prop system="gamutPND" submission="none"}
-3. q /\ ~t: The brain is material, but the mind is not divisible.
+3. r /\ ~t: The brain is material, but the mind is not divisible.
 ```
 
 
@@ -321,8 +321,8 @@ $t$: The mind is divisible.
 
 ::: {.argument}
 1. $p \to (q \to r)$
-2. $\neg t \to \neg r$
-3. $q \wedge \neg t$
+2. $\neg t \to \neg q$
+3. $r \wedge \neg t$
 4. $\neg p$
 
 ::: {.conclusion}
@@ -338,8 +338,8 @@ A full truth table would require 16 rows ...
 
 ```{.TruthTable mode="validity"}
 p -> (q -> r)
-~t -> ~ r
-q /\ ~ t
+~t -> ~ q
+r /\ ~ t
 ~ p
 ```
 
@@ -364,7 +364,7 @@ We now employ the **search for a counterexample method**:
 
 ##  make the conclusion false {.smaller}
 
-To make the conclusion $\neg p$ **false**, we must have $p: T$:
+To make the **conclusion** $\neg p$ **false**, we must have $p: T$:
 
 $$
 p : T
@@ -375,7 +375,7 @@ So, we need only look at **8** rows out the 16:
 $$
 \begin{array}{|c|c|c|c|c|c|c|c|}
 \hline
-p & q & r & t &p \to (q \to r) & \neg t \to \neg r & q \wedge \neg t & \neg p \\
+p & q & r & t &p \to (q \to r) & \neg t \to \neg q & r \wedge \neg t & \neg p \\
 \hline
 T & T & T & T & &  &  & \color{red}{F}  \\
 T & T & T & F & &  &  & \color{red}{F} \\
@@ -391,10 +391,10 @@ $$
 
 ## filter the candidate rows {.smaller}
 
-To make the third premise $q \wedge \neg t$ true, we consider only rows at which 
+To make the **third premise** $r \wedge \neg t$ true, we consider only rows at which 
 
 $$
-q : T \qquad t : F
+r : T \qquad t : F
 $$
     This narrows down the field of potential counterexamples to two rows:
 
@@ -402,39 +402,39 @@ $$
 $$
 \begin{array}{|c|c|c|c|c|c|c|c|}
 \hline
-p & q & r & t &p \to (q \to r) & \neg t \to \neg r & q \wedge \neg t & \neg p \\
+p & q & r & t &p \to (q \to r) & \neg t \to \neg q & r \wedge \neg t & \neg p \\
 \hline
-T & T & F & T & &  & \color{red}{T}  & \color{red}{F} \\
-T & T & F & F & &  & \color{red}{T} & \color{red}{F} \\
+T & T & T & F & &  & \color{red}{T}  & \color{red}{F} \\
+T & F & T & F & &  & \color{red}{T} & \color{red}{F} \\
 \hline
 \end{array}
 $$
 
 
-To make the second premise $\neg t \to \neg r$ true, we rule out the row at which $t$ is false and $r$ is true:
+To make the **second premise** $\neg t \to \neg q$ true, we rule out the row at which $t$ is false and $q$ is true:
 
 $$
 \begin{array}{|c|c|c|c|c|c|c|c|}
 \hline
-p & q & r & t &p \to (q \to r) & \neg t \to \neg r & q \wedge \neg t & \neg p \\
+p & q & r & t &p \to (q \to r) & \neg t \to \neg q & r \wedge \neg t & \neg p \\
 \hline
-T & T & F & T & & \color{red}{T} & \color{red}{T}  & \color{red}{F} \\
+T & F & F & T & & \color{red}{T} & \color{red}{T}  & \color{red}{F} \\
 \hline
 \end{array}
 $$
 
-The row that remains **falsifies** the first premise, which means that it is **not** a counterexample to validity:
+The row that remains makes the **first premise** true, which means that it **is** a counterexample to validity:
 
 $$
 \begin{array}{|c|c|c|c|c|c|c|c|}
 \hline
-p & q & r & t &p \to (q \to r) & \neg t \to \neg r & q \wedge \neg t & \neg p \\
+p & q & r & t &p \to (q \to r) & \neg t \to \neg q & r \wedge \neg t & \neg p \\
 \hline
-T & T & F & T & F & \color{red}{T} & \color{red}{T}  & \color{red}{F} \\
+T & T & F & T & \color{red}{T} & \color{red}{T} & \color{red}{T}  & \color{red}{F} \\
 \hline
 \end{array}
 $$
-It follows that the argument is **valid**.
+It follows that the argument is **invalid**.
 
 
 # example 3: insurance {.divider}
@@ -595,7 +595,7 @@ We now employ the **search for a counterexample method**:
 
 ##  make the conclusion false {.smaller}
 
-To make the conclusion $\neg t \to \neg p$ **false**, we must have:
+To make the **conclusion** $\neg t \to \neg p$ **false**, we must have:
 
 $$
 t : F \qquad p : T
@@ -618,7 +618,7 @@ $$
 
 ## filter the candidate rows {.smaller}
 
-To make the third premise $r \to t$ true, we rule out rows at which 
+To make the **third premise** $r \to t$ true, we **rule out** rows at which 
 
 $$
 r : T \qquad t : F
@@ -637,7 +637,7 @@ T & F & F & F & & \color{red}{T} &   \color{red}{F} \\
 $$
     
     
-To make the first premise $p \to (q \vee r)$ true, we need only make $q$ true, which means that the first row is now a counterexample to validity:
+To make the **first premise** $p \to (q \vee r)$ true, we need only make $q$ true, which means that the first row is now a counterexample to validity:
 
  $$
 \begin{array}{|c|c|c|c|c|c|c|}
@@ -763,13 +763,13 @@ $s$: The directors will declare a dvidend.
 1. $(p \vee q) \to (\neg r \to (\neg t \wedge \neg s) )$
 
 ::: {.conclusion}
-5. $(q \wedge \neg r) \to \neg t$
+2. $(q \wedge \neg r) \to \neg t$
 :::
 :::
 
 
 
-## the question of validity
+## the question of validity {.smaller}
 
 There are \\(2\^5 = 32\\) assignments.
 
@@ -801,10 +801,10 @@ We now employ the **search for a counterexample method**:
 
 ##  make the conclusion false {.smaller}
 
-To make the conclusion $(q \wedge \neg r) \to \neg t$ **false**, we must have:
+To make the **conclusion** $(q \wedge \neg r) \to \neg t$ **false**, we must have:
 
 $$
-q : T \qquad r : F \qquad s : T
+q : T \qquad r : F \qquad t : T
 $$
 
 So, we need look only at **4** rows out the 32:
@@ -815,21 +815,27 @@ $$
 p & q & r & t & s & (p \vee q) \to (\neg r \to (\neg t \wedge \neg s) ) & (q \wedge \neg r) \to \neg t \\
 \hline 
 T & T & F & T & T &  &   \color{red}{F} \\
-T & T & F & F & T &  &   \color{red}{F} \\
 F & T & F & T & T &  &   \color{red}{F} \\
-F & T & F & F & T &  &   \color{red}{F} \\
+T & T & F & T & F &  &   \color{red}{F} \\
+F & T & F & T & F &  &   \color{red}{F} \\
 \hline
 \end{array}
 $$
 
 ## filter the candidate rows {.smaller}
 
-We want to make the first premise $(p \vee q) \to (\neg r \to (\neg t \wedge \neg s) )$ true. Unfortunately:
+We want to make the **first premise** $(p \vee q) \to (\neg r \to (\neg t \wedge \neg s) )$ true. Unfortunately:
 
-- $p \vee q$ comes out true in all four rows, and
-- $\neg r \to (\neg t \wedge \neg s)$ comes out false in all four rows. 
+- $p \vee q$ comes out **true** in all four rows, and
+- $\neg r \to (\neg t \wedge \neg s)$ comes out **false** in all four rows. 
 
-So, the first premise comes out false in **all rows that remain.**
+So, the first premise 
+
+$$
+(p \vee q) \to (\neg r \to (\neg t \wedge \neg s) )
+$$
+
+comes out **false** in **all rows that remain.**
 
 
 
@@ -838,10 +844,10 @@ $$
 \hline
 p & q & r & t & s & (p \vee q) \to (\neg r \to (\neg t \wedge \neg s) ) & (q \wedge \neg r) \to \neg t \\
 \hline 
-T & T & F & T & T & F &   \color{red}{F} \\
-T & T & F & F & T & F &   \color{red}{F} \\
+T & T & F & T & T & F  &   \color{red}{F} \\
 F & T & F & T & T & F &   \color{red}{F} \\
-F & T & F & F & T & F &   \color{red}{F} \\
+T & T & F & T & F & F &   \color{red}{F} \\
+F & T & F & T & F & F &   \color{red}{F} \\
 \hline
 \end{array}
 $$
