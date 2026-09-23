@@ -39,7 +39,7 @@ Three steps, applied to each argument in turn:
 ::: {.incremental}
 1. write the argument in **premise-conclusion form**
 2. **translate** the argument into the language of propositional logic
-3. use a **truth table** to determine whether the argument is valid
+3. use the **search for a counterexample method** to determine whether the argument is valid
 :::
 
 
