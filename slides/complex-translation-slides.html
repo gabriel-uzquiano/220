@@ -155,7 +155,7 @@ Gabriel Uzquiano
 <ol type="1">
 <li class="fragment">write the argument in <strong>premise-conclusion form</strong></li>
 <li class="fragment"><strong>translate</strong> the argument into the language of propositional logic</li>
-<li class="fragment">use the <strong>search for a counterexample method</strong> to determine whether the argument is valid</li>
+<li class="fragment">use a <strong>truth table</strong> or the <strong>search for a counterexample method</strong> to determine whether the argument is valid</li>
 </ol>
 </section></section>
 <section>
@@ -251,11 +251,10 @@ Gabriel Uzquiano
 <li><span class="math inline">\(\neg p \to (q \to r)\)</span></li>
 <li><span class="math inline">\(\neg r\)</span></li>
 <li><span class="math inline">\(\neg p\)</span></li>
-<li><span class="math inline">\(\neg q\)</span></li>
 </ol>
 <div class="conclusion">
-<ol start="5" type="1">
-<li><span class="math inline">\(p\)</span></li>
+<ol start="4" type="1">
+<li><span class="math inline">\(\neg q\)</span></li>
 </ol>
 </div>
 </div>
@@ -322,7 +321,7 @@ Gabriel Uzquiano
 <p><span class="math inline">\(t\)</span>: The mind is divisible.</p>
 </div>
 </div>
-<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJUaGUgbWluZCBpcyBub3QgbWF0ZXJpYWwgdW5sZXNzIGl0IGlzIGRpdmlzaWJsZS4iLCJyZWZGb3JtdWxhIjoiwqx0IOKGkiDCrHIiLCJyZWZBdG9tcyI6W119XSwid3NBdG9tcyI6W3sibGV0dGVyIjoiIiwiY2xhdXNlIjoiIn1dLCJ0cmFucyI6W3siZm9ybXVsYSI6IiJ9XX0=" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJUaGUgbWluZCBpcyBub3QgbWF0ZXJpYWwgdW5sZXNzIGl0IGlzIGRpdmlzaWJsZS4iLCJyZWZGb3JtdWxhIjoiwqx0IOKGkiDCrHEiLCJyZWZBdG9tcyI6W119XSwid3NBdG9tcyI6W3sibGV0dGVyIjoiIiwiY2xhdXNlIjoiIn1dLCJ0cmFucyI6W3siZm9ybXVsYSI6IiJ9XX0=" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
 </section>
 <section id="premise-3-1" class="slide level2 smaller">
 <h2>premise 3</h2>
@@ -334,7 +333,7 @@ Gabriel Uzquiano
 <p><span class="math inline">\(t\)</span>: The mind is divisible.</p>
 </div>
 </div>
-<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJUaGUgYnJhaW4gaXMgbWF0ZXJpYWwsIGJ1dCB0aGUgbWluZCBpcyBub3QgZGl2aXNpYmxlLiIsInJlZkZvcm11bGEiOiJxIOKIpyDCrHQiLCJyZWZBdG9tcyI6W119XSwid3NBdG9tcyI6W3sibGV0dGVyIjoiIiwiY2xhdXNlIjoiIn1dLCJ0cmFucyI6W3siZm9ybXVsYSI6IiJ9XX0=" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
+<div class="translate-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-translation/?card=translation#v1:eyJzZW50ZW5jZXMiOlt7InRleHQiOiJUaGUgYnJhaW4gaXMgbWF0ZXJpYWwsIGJ1dCB0aGUgbWluZCBpcyBub3QgZGl2aXNpYmxlLiIsInJlZkZvcm11bGEiOiJyIOKIpyDCrHQiLCJyZWZBdG9tcyI6W119XSwid3NBdG9tcyI6W3sibGV0dGVyIjoiIiwiY2xhdXNlIjoiIn1dLCJ0cmFucyI6W3siZm9ybXVsYSI6IiJ9XX0=" style="width: 100%; height: 500px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Translation exercise"></iframe></div>
 </section>
 <section id="conclusion-1" class="slide level2 smaller">
 <h2>conclusion</h2>
@@ -361,8 +360,8 @@ Gabriel Uzquiano
 <div class="argument">
 <ol type="1">
 <li><span class="math inline">\(p \to (q \to r)\)</span></li>
-<li><span class="math inline">\(\neg t \to \neg r\)</span></li>
-<li><span class="math inline">\(q \wedge \neg t\)</span></li>
+<li><span class="math inline">\(\neg t \to \neg q\)</span></li>
+<li><span class="math inline">\(r \wedge \neg t\)</span></li>
 <li><span class="math inline">\(\neg p\)</span></li>
 </ol>
 <div class="conclusion">
@@ -376,7 +375,7 @@ Gabriel Uzquiano
 <h2>the question of validity</h2>
 <p>There are \(2^4 = 16\) assignments.</p>
 <p>A full truth table would require 16 rows …</p>
-<div class="truth-table-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=validity#v1:eyJmb3JtdWxhcyI6WyJwIC0+IChxIC0+IHIpIiwifnQgLT4gfiByIiwicSAvXFwgfiB0IiwifiBwIl19" style="width: 100%; height: 600px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Truth-table exercise: validity"></iframe></div>
+<div class="truth-table-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=validity#v1:eyJmb3JtdWxhcyI6WyJwIC0+IChxIC0+IHIpIiwifnQgLT4gfiBxIiwiciAvXFwgfiB0IiwifiBwIl19" style="width: 100%; height: 600px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Truth-table exercise: validity"></iframe></div>
 </section>
 <section id="search-for-a-counterexample" class="slide level2">
 <h2>search for a counterexample</h2>
@@ -390,7 +389,7 @@ Gabriel Uzquiano
 </section>
 <section id="make-the-conclusion-false" class="slide level2 smaller">
 <h2>make the conclusion false</h2>
-<p>To make the conclusion <span class="math inline">\(\neg p\)</span> <strong>false</strong>, we must have <span class="math inline">\(p: T\)</span>:</p>
+<p>To make the <strong>conclusion</strong> <span class="math inline">\(\neg p\)</span> <strong>false</strong>, we must have <span class="math inline">\(p: T\)</span>:</p>
 <p><span class="math display">\[
 p : T
 \]</span></p>
@@ -398,7 +397,7 @@ p : T
 <p><span class="math display">\[
 \begin{array}{|c|c|c|c|c|c|c|c|}
 \hline
-p &amp; q &amp; r &amp; t &amp;p \to (q \to r) &amp; \neg t \to \neg r &amp; q \wedge \neg t &amp; \neg p \\
+p &amp; q &amp; r &amp; t &amp;p \to (q \to r) &amp; \neg t \to \neg q &amp; r \wedge \neg t &amp; \neg p \\
 \hline
 T &amp; T &amp; T &amp; T &amp; &amp;  &amp;  &amp; \color{red}{F}  \\
 T &amp; T &amp; T &amp; F &amp; &amp;  &amp;  &amp; \color{red}{F} \\
@@ -414,40 +413,40 @@ T &amp; F &amp; F &amp; F&amp; &amp;  &amp;  &amp; \color{red}{F} \\
 </section>
 <section id="filter-the-candidate-rows" class="slide level2 smaller">
 <h2>filter the candidate rows</h2>
-<p>To make the third premise <span class="math inline">\(q \wedge \neg t\)</span> true, we consider only rows at which</p>
+<p>To make the <strong>third premise</strong> <span class="math inline">\(r \wedge \neg t\)</span> true, we consider only rows at which</p>
 <p><span class="math display">\[
-q : T \qquad t : F
+r : T \qquad t : F
 \]</span> This narrows down the field of potential counterexamples to two rows:</p>
 <p><span class="math display">\[
 \begin{array}{|c|c|c|c|c|c|c|c|}
 \hline
-p &amp; q &amp; r &amp; t &amp;p \to (q \to r) &amp; \neg t \to \neg r &amp; q \wedge \neg t &amp; \neg p \\
+p &amp; q &amp; r &amp; t &amp;p \to (q \to r) &amp; \neg t \to \neg q &amp; r \wedge \neg t &amp; \neg p \\
 \hline
-T &amp; T &amp; F &amp; T &amp; &amp;  &amp; \color{red}{T}  &amp; \color{red}{F} \\
-T &amp; T &amp; F &amp; F &amp; &amp;  &amp; \color{red}{T} &amp; \color{red}{F} \\
-\hline
-\end{array}
-\]</span></p>
-<p>To make the second premise <span class="math inline">\(\neg t \to \neg r\)</span> true, we rule out the row at which <span class="math inline">\(t\)</span> is false and <span class="math inline">\(r\)</span> is true:</p>
-<p><span class="math display">\[
-\begin{array}{|c|c|c|c|c|c|c|c|}
-\hline
-p &amp; q &amp; r &amp; t &amp;p \to (q \to r) &amp; \neg t \to \neg r &amp; q \wedge \neg t &amp; \neg p \\
-\hline
-T &amp; T &amp; F &amp; T &amp; &amp; \color{red}{T} &amp; \color{red}{T}  &amp; \color{red}{F} \\
+T &amp; T &amp; T &amp; F &amp; &amp;  &amp; \color{red}{T}  &amp; \color{red}{F} \\
+T &amp; F &amp; T &amp; F &amp; &amp;  &amp; \color{red}{T} &amp; \color{red}{F} \\
 \hline
 \end{array}
 \]</span></p>
-<p>The row that remains <strong>falsifies</strong> the first premise, which means that it is <strong>not</strong> a counterexample to validity:</p>
+<p>To make the <strong>second premise</strong> <span class="math inline">\(\neg t \to \neg q\)</span> true, we rule out the row at which <span class="math inline">\(t\)</span> is false and <span class="math inline">\(q\)</span> is true:</p>
 <p><span class="math display">\[
 \begin{array}{|c|c|c|c|c|c|c|c|}
 \hline
-p &amp; q &amp; r &amp; t &amp;p \to (q \to r) &amp; \neg t \to \neg r &amp; q \wedge \neg t &amp; \neg p \\
+p &amp; q &amp; r &amp; t &amp;p \to (q \to r) &amp; \neg t \to \neg q &amp; r \wedge \neg t &amp; \neg p \\
 \hline
-T &amp; T &amp; F &amp; T &amp; F &amp; \color{red}{T} &amp; \color{red}{T}  &amp; \color{red}{F} \\
+T &amp; F &amp; F &amp; T &amp; &amp; \color{red}{T} &amp; \color{red}{T}  &amp; \color{red}{F} \\
 \hline
 \end{array}
-\]</span> It follows that the argument is <strong>valid</strong>.</p>
+\]</span></p>
+<p>The row that remains makes the <strong>first premise</strong> true, which means that it <strong>is</strong> a counterexample to validity:</p>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|c|c|}
+\hline
+p &amp; q &amp; r &amp; t &amp;p \to (q \to r) &amp; \neg t \to \neg q &amp; r \wedge \neg t &amp; \neg p \\
+\hline
+T &amp; T &amp; F &amp; T &amp; \color{red}{T} &amp; \color{red}{T} &amp; \color{red}{T}  &amp; \color{red}{F} \\
+\hline
+\end{array}
+\]</span> It follows that the argument is <strong>invalid</strong>.</p>
 </section></section>
 <section>
 <section id="example-3-insurance" class="title-slide slide level1 divider center">
@@ -560,7 +559,7 @@ T &amp; T &amp; F &amp; T &amp; F &amp; \color{red}{T} &amp; \color{red}{T}  &am
 </section>
 <section id="make-the-conclusion-false-1" class="slide level2 smaller">
 <h2>make the conclusion false</h2>
-<p>To make the conclusion <span class="math inline">\(\neg t \to \neg p\)</span> <strong>false</strong>, we must have:</p>
+<p>To make the <strong>conclusion</strong> <span class="math inline">\(\neg t \to \neg p\)</span> <strong>false</strong>, we must have:</p>
 <p><span class="math display">\[
 t : F \qquad p : T
 \]</span></p>
@@ -580,7 +579,7 @@ T &amp; F &amp; F &amp; F&amp; &amp;  &amp;   \color{red}{F} \\
 </section>
 <section id="filter-the-candidate-rows-1" class="slide level2 smaller">
 <h2>filter the candidate rows</h2>
-<p>To make the third premise <span class="math inline">\(r \to t\)</span> true, we rule out rows at which</p>
+<p>To make the <strong>third premise</strong> <span class="math inline">\(r \to t\)</span> true, we <strong>rule out</strong> rows at which</p>
 <p><span class="math display">\[
 r : T \qquad t : F
 \]</span> This narrows down the field of potential counterexamples to two rows:</p>
@@ -594,7 +593,7 @@ T &amp; F &amp; F &amp; F &amp; &amp; \color{red}{T} &amp;   \color{red}{F} \\
 \hline
 \end{array}
 \]</span></p>
-<p>To make the first premise <span class="math inline">\(p \to (q \vee r)\)</span> true, we need only make <span class="math inline">\(q\)</span> true, which means that the first row is now a counterexample to validity:</p>
+<p>To make the <strong>first premise</strong> <span class="math inline">\(p \to (q \vee r)\)</span> true, we need only make <span class="math inline">\(q\)</span> true, which means that the first row is now a counterexample to validity:</p>
 <p><span class="math display">\[
 \begin{array}{|c|c|c|c|c|c|c|}
 \hline
@@ -685,13 +684,13 @@ p : T \qquad q : T \qquad r : F \qquad r : F
 <li><span class="math inline">\((p \vee q) \to (\neg r \to (\neg t \wedge \neg s) )\)</span></li>
 </ol>
 <div class="conclusion">
-<ol start="5" type="1">
+<ol start="2" type="1">
 <li><span class="math inline">\((q \wedge \neg r) \to \neg t\)</span></li>
 </ol>
 </div>
 </div>
 </section>
-<section id="the-question-of-validity-3" class="slide level2">
+<section id="the-question-of-validity-3" class="slide level2 smaller">
 <h2>the question of validity</h2>
 <p>There are \(2^5 = 32\) assignments.</p>
 <p>A full truth table would require 32 rows!</p>
@@ -709,9 +708,9 @@ p : T \qquad q : T \qquad r : F \qquad r : F
 </section>
 <section id="make-the-conclusion-false-2" class="slide level2 smaller">
 <h2>make the conclusion false</h2>
-<p>To make the conclusion <span class="math inline">\((q \wedge \neg r) \to \neg t\)</span> <strong>false</strong>, we must have:</p>
+<p>To make the <strong>conclusion</strong> <span class="math inline">\((q \wedge \neg r) \to \neg t\)</span> <strong>false</strong>, we must have:</p>
 <p><span class="math display">\[
-q : T \qquad r : F \qquad s : T
+q : T \qquad r : F \qquad t : T
 \]</span></p>
 <p>So, we need look only at <strong>4</strong> rows out the 32:</p>
 <p><span class="math display">\[
@@ -720,30 +719,34 @@ q : T \qquad r : F \qquad s : T
 p &amp; q &amp; r &amp; t &amp; s &amp; (p \vee q) \to (\neg r \to (\neg t \wedge \neg s) ) &amp; (q \wedge \neg r) \to \neg t \\
 \hline
 T &amp; T &amp; F &amp; T &amp; T &amp;  &amp;   \color{red}{F} \\
-T &amp; T &amp; F &amp; F &amp; T &amp;  &amp;   \color{red}{F} \\
 F &amp; T &amp; F &amp; T &amp; T &amp;  &amp;   \color{red}{F} \\
-F &amp; T &amp; F &amp; F &amp; T &amp;  &amp;   \color{red}{F} \\
+T &amp; T &amp; F &amp; T &amp; F &amp;  &amp;   \color{red}{F} \\
+F &amp; T &amp; F &amp; T &amp; F &amp;  &amp;   \color{red}{F} \\
 \hline
 \end{array}
 \]</span></p>
 </section>
 <section id="filter-the-candidate-rows-2" class="slide level2 smaller">
 <h2>filter the candidate rows</h2>
-<p>We want to make the first premise <span class="math inline">\((p \vee q) \to (\neg r \to (\neg t \wedge \neg s) )\)</span> true. Unfortunately:</p>
+<p>We want to make the <strong>first premise</strong> <span class="math inline">\((p \vee q) \to (\neg r \to (\neg t \wedge \neg s) )\)</span> true. Unfortunately:</p>
 <ul>
-<li><span class="math inline">\(p \vee q\)</span> comes out true in all four rows, and</li>
-<li><span class="math inline">\(\neg r \to (\neg t \wedge \neg s)\)</span> comes out false in all four rows.</li>
+<li><span class="math inline">\(p \vee q\)</span> comes out <strong>true</strong> in all four rows, and</li>
+<li><span class="math inline">\(\neg r \to (\neg t \wedge \neg s)\)</span> comes out <strong>false</strong> in all four rows.</li>
 </ul>
-<p>So, the first premise comes out false in <strong>all rows that remain.</strong></p>
+<p>So, the first premise</p>
+<p><span class="math display">\[
+(p \vee q) \to (\neg r \to (\neg t \wedge \neg s) )
+\]</span></p>
+<p>comes out <strong>false</strong> in <strong>all rows that remain.</strong></p>
 <p><span class="math display">\[
 \begin{array}{|c|c|c|c|c|c|c|}
 \hline
 p &amp; q &amp; r &amp; t &amp; s &amp; (p \vee q) \to (\neg r \to (\neg t \wedge \neg s) ) &amp; (q \wedge \neg r) \to \neg t \\
 \hline
-T &amp; T &amp; F &amp; T &amp; T &amp; F &amp;   \color{red}{F} \\
-T &amp; T &amp; F &amp; F &amp; T &amp; F &amp;   \color{red}{F} \\
+T &amp; T &amp; F &amp; T &amp; T &amp; F  &amp;   \color{red}{F} \\
 F &amp; T &amp; F &amp; T &amp; T &amp; F &amp;   \color{red}{F} \\
-F &amp; T &amp; F &amp; F &amp; T &amp; F &amp;   \color{red}{F} \\
+T &amp; T &amp; F &amp; T &amp; F &amp; F &amp;   \color{red}{F} \\
+F &amp; T &amp; F &amp; T &amp; F &amp; F &amp;   \color{red}{F} \\
 \hline
 \end{array}
 \]</span></p>
