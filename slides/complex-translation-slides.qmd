@@ -323,10 +323,10 @@ $t$: The mind is divisible.
 1. $p \to (q \to r)$
 2. $\neg t \to \neg q$
 3. $r \wedge \neg t$
-4. $\neg p$
+
 
 ::: {.conclusion}
-5. $p$
+4. $\neg p$
 :::
 :::
 
