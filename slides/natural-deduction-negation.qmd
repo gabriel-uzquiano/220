@@ -5,7 +5,7 @@ author: "Gabriel Uzquiano"
 format:
   revealjs:
     theme: [default, custom.scss]
-    output-file: natural-deduction-conditional-disjunction-slides.html
+    output-file: natural-deduction-negation.html
     slide-number: c/t
     chalkboard: true          # press B for a blank board, C to draw on a slide
     preview-links: auto       # links open in an overlay, without leaving the deck
