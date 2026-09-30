@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.9.38">
 
   <meta name="author" content="Gabriel Uzquiano">
-  <title>PHIL 220 slides – natural deduction: conditional and disjunction</title>
+  <title>PHIL 220 slides – natural deduction: negation</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -198,7 +198,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">natural deduction: conditional and disjunction</h1>
+  <h1 class="title">natural deduction: negation</h1>
   <p class="subtitle">PHIL 220. Introduction to Logic</p>
 
 <div class="quarto-title-authors">
@@ -211,369 +211,269 @@ Gabriel Uzquiano
 
 </section>
 <section>
-<section id="natural-deduction-conditional-and-disjunction" class="title-slide slide level1 divider center">
-<h1>natural deduction: conditional and disjunction</h1>
-<p>We have introduction and elimination rules for conjunction. We now look at two more connectives: conditional and disjunction.</p>
+<section id="natural-deduction-negation" class="title-slide slide level1 divider center">
+<h1>natural deduction: negation</h1>
+<p>We have introduction and elimination rules for conjunction, conditional, and disjunction. We now introduce rules for negation.</p>
 </section>
-<section id="where-we-left-off" class="slide level2">
-<h2>where we left off</h2>
+<section id="a-marker-for-contradiction-bot" class="slide level2 smaller">
+<h2>a marker for contradiction: <span class="math inline">\(\bot\)</span></h2>
+<p>To reason with negation in the course of a proof, we introduce a marker we use to record the fact that we have arrived at a contradiction. Think of <span class="math inline">\(\bot\)</span> <em>not</em> as part of the vocabulary of propositional logic, but rather as a punctuation device we use for purposes of proofs.</p>
+<p>We will introduce <strong>four</strong> rules for negation:</p>
 <ul>
-<li class="fragment"><span class="math inline">\(R\)</span>: repetition <span class="math inline">\(\checkmark\)</span></li>
-<li class="fragment">I<span class="math inline">\(\wedge\)</span>: conjunction introduction <span class="math inline">\(\checkmark\)</span></li>
-<li class="fragment">E<span class="math inline">\(\wedge\)</span>: conjunction elimination <span class="math inline">\(\checkmark\)</span></li>
-<li class="fragment">E<span class="math inline">\(\to\)</span>: conditional elimination (<em>modus ponens</em>) <em>to do</em></li>
-<li class="fragment">I<span class="math inline">\(\to\)</span>: conditional introduction (<em>conditional proof</em>) <em>to do</em></li>
-<li class="fragment">I<span class="math inline">\(\vee\)</span>: disjunction introduction <em>to do</em></li>
-<li class="fragment">E<span class="math inline">\(\vee\)</span>: disjunction elimination (<em>proof by cases</em>) <em>to do</em></li>
-</ul>
-</section></section>
-<section>
-<section id="the-conditional" class="title-slide slide level1 divider center">
-<h1>the conditional</h1>
-<p>Two rules:</p>
-<ul>
-<li><p>one <strong>elimination rule</strong> explains how to exploit a conditional <span class="math inline">\(\varphi \to \psi\)</span> from a prior line.</p></li>
-<li><p>one <strong>introduction rule</strong> explains when you may write a conditional <span class="math inline">\(\varphi \to \psi\)</span> on the basis of prior lines.</p></li>
+<li class="fragment">negation introduction I<span class="math inline">\(\neg\)</span></li>
+<li class="fragment">negation elimination E<span class="math inline">\(\neg\)</span></li>
+<li class="fragment">ex falso sequitor quodlibet EFSQ</li>
+<li class="fragment">double negation <span class="math inline">\(\neg \neg\)</span></li>
 </ul>
 </section>
-<section id="elimination-rule-eto" class="slide level2">
-<h2>elimination rule: E<span class="math inline">\(\to\)</span></h2>
+<section id="elimination-rule-eneg" class="slide level2 smaller">
+<h2>elimination rule: E<span class="math inline">\(\neg\)</span></h2>
 <div class="argument">
 <ol type="1">
-<li><span class="math inline">\(\varphi \to \psi\)</span></li>
 <li><span class="math inline">\(\varphi\)</span></li>
+<li><span class="math inline">\(\neg \varphi\)</span></li>
 </ol>
 <div class="conclusion">
 <ol start="3" type="1">
-<li><span class="math inline">\(\psi\)</span></li>
+<li><span class="math inline">\(\bot\)</span></li>
 </ol>
 </div>
 </div>
-<p>You may write <span class="math inline">\(\psi\)</span> if <span class="math inline">\(\varphi \to \psi\)</span> and <span class="math inline">\(\varphi\)</span> are both available at prior lines. This is what we have called <em>modus ponens</em> in the past.</p>
+<p>You may write <span class="math inline">\(\bot\)</span> if both a formula <span class="math inline">\(\varphi\)</span> and its negation <span class="math inline">\(\neg \varphi\)</span> are available from prior lines.</p>
+<div class="fragment">
+<p>The rule explains that we may write use the marker <span class="math inline">\(\bot\)</span> to record the fact that we have arrived at a contradiction.</p>
+</div>
 </section>
-<section id="how-to-apply-eto" class="slide level2">
-<h2>how to apply E<span class="math inline">\(\to\)</span></h2>
+<section id="introduction-rule-ineg" class="slide level2 smaller">
+<h2>introduction rule: I<span class="math inline">\(\neg\)</span></h2>
+<p>You may write <span class="math inline">\(\neg \varphi\)</span> if you can prove <span class="math inline">\(\bot\)</span> from the <strong>assumption</strong> that <span class="math inline">\(\varphi\)</span>.</p>
+<p>Once you complete the subproof, bracket the lines of that subproof and never appeal to them again.</p>
+</section>
+<section id="how-to-combine-eneg-and-ineg" class="slide level2 smaller">
+<h2>how to combine E<span class="math inline">\(\neg\)</span> and I<span class="math inline">\(\neg\)</span></h2>
 <div class="columns">
 <div class="column" style="width:58%;">
+<div style="height: 50px;">
+
+</div>
 <div class="argument">
 <ol type="1">
-<li><span class="math inline">\((p \wedge q) \to t\)</span></li>
-<li><span class="math inline">\(q\)</span></li>
-<li><span class="math inline">\(p\)</span></li>
+<li><span class="math inline">\(p \to q\)</span></li>
+<li><span class="math inline">\(\neg q\)</span></li>
 </ol>
 <div class="conclusion">
-<ol start="4" type="1">
-<li><span class="math inline">\(t\)</span></li>
+<ol start="2" type="1">
+<li><span class="math inline">\(\neg p\)</span></li>
 </ol>
 </div>
 </div>
 </div><div class="column" style="width:42%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-options="indent resize fonts popout render tabindent" data-submission="none" data-card="verify"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>1. (p /\ q) -&gt; t, p, q :|-: t</span>
-<span id="cb1-2"><a></a>|(p /\ q) -&gt; t :assumption</span>
-<span id="cb1-3"><a></a>|p :assumption</span>
-<span id="cb1-4"><a></a>|q :assumption</span>
-<span id="cb1-5"><a></a>|p/\q :I/\ 2,3</span>
-<span id="cb1-6"><a></a>|t :E-&gt; 1,4</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-options="indent resize fonts popout render tabindent" data-submission="none" data-card="verify"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>1. p -&gt; q, -q :|-: -p</span>
+<span id="cb1-2"><a></a>|p -&gt; q :assumption</span>
+<span id="cb1-3"><a></a>|-q :assumption</span>
+<span id="cb1-4"><a></a>| p :assumption</span>
+<span id="cb1-5"><a></a>| q :E-&gt; 1, 3</span>
+<span id="cb1-6"><a></a>| !? :E- 2, 4</span>
+<span id="cb1-7"><a></a>|-p :I- 3-5</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><span class="math display">\[
-(p \wedge q) \to t, q, p \vdash t
+p \to q, \neg q \vdash \neg p
+\]</span></p>
+</div><ul>
+<li class="fragment">line 3 opens the subproof</li>
+<li class="fragment">line 6 closes it and discharges the assumption.</li>
+</ul>
+</div>
+</section>
+<section id="two-more-examples" class="slide level2 smaller">
+<h2>two more examples</h2>
+<div class="columns">
+<div class="column" style="width:48%;">
+<p><span class="math display">\[
+p \to \neg p \vdash \neg p
+\]</span></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-options="indent resize fonts popout render tabindent" data-submission="none" data-card="verify"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>2. p -&gt; -p :|-: -p</span>
+<span id="cb2-2"><a></a>|p -&gt; -p :assumption</span>
+<span id="cb2-3"><a></a>| p :assumption</span>
+<span id="cb2-4"><a></a>| -p :E-&gt; 1, 2</span>
+<span id="cb2-5"><a></a>| !? :E- 2, 3</span>
+<span id="cb2-6"><a></a>|-p :I- 2-4</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:48%;">
+<p><span class="math display">\[
+\neg (p \vee q) \vdash \neg p \wedge \neg q
+\]</span></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-options="indent resize fonts popout render tabindent" data-submission="none" data-card="verify"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>3. -(p \/ q) :|-: -p /\ -q</span>
+<span id="cb3-2"><a></a>|-(p\/q) :assumption</span>
+<span id="cb3-3"><a></a>| p :assumption</span>
+<span id="cb3-4"><a></a>| p \/ q :I\/ 2</span>
+<span id="cb3-5"><a></a>| !? :E- 1, 3</span>
+<span id="cb3-6"><a></a>|-p :I- 2-4</span>
+<span id="cb3-7"><a></a>| q :assumption</span>
+<span id="cb3-8"><a></a>| p \/ q :I\/ 6</span>
+<span id="cb3-9"><a></a>| !? :E- 1, 7</span>
+<span id="cb3-10"><a></a>|-q :I- 6-8</span>
+<span id="cb3-11"><a></a>|-p /\ -q :I/\ 5, 9</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></div>
+</section>
+<section id="ex-falso-sequitor-quodlibet-efsq" class="slide level2 smaller">
+<h2>ex falso sequitor quodlibet: EFSQ</h2>
+<p>Negation is a special connective in that its introduction and elimination rules are not sufficient to account for all valid arguments in which the connective occurs.</p>
+<p>One further rule is EFSQ:</p>
+<div class="fragment">
+<div class="argument">
+<ol type="1">
+<li><span class="math inline">\(\bot\)</span></li>
+</ol>
+<div class="conclusion">
+<ol start="2" type="1">
+<li><span class="math inline">\(\varphi\)</span></li>
+</ol>
+</div>
+</div>
+<p>You may write <em>any</em> formula once an occurrence of <span class="math inline">\(\bot\)</span> becomes available at a prior line.</p>
+</div>
+<div class="fragment">
+<p>The Latin phrase <em>ex falso sequitur quodlibet</em> just means that anything at all follows from a contradiction, and we will use the initials EFSQ to abbreviate the rule.</p>
+</div>
+</section>
+<section id="how-to-apply-efsq" class="slide level2 smaller">
+<h2>how to apply EFSQ</h2>
+<div class="columns">
+<div class="column" style="width:58%;">
+<div style="height: 50px;">
+
+</div>
+<div class="argument">
+<ol type="1">
+<li><span class="math inline">\(p\)</span></li>
+<li><span class="math inline">\(\neg p\)</span></li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li><span class="math inline">\(q\)</span></li>
+</ol>
+</div>
+</div>
+</div><div class="column" style="width:42%;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-options="indent resize fonts popout render tabindent" data-submission="none" data-card="verify"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>4. p, -p :|-: q</span>
+<span id="cb4-2"><a></a>|p :assumption</span>
+<span id="cb4-3"><a></a>|-p :assumption</span>
+<span id="cb4-4"><a></a>|!? :E- 1,2</span>
+<span id="cb4-5"><a></a>|q :EFSQ 3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><span class="math display">\[
+p, \neg p \vdash \neg q
 \]</span></p>
 </div></div>
 </section>
-<section id="one-more-example" class="slide level2">
-<h2>one more example</h2>
+<section id="two-more-examples-1" class="slide level2 smaller">
+<h2>two more examples</h2>
 <div class="columns">
-<div class="column" style="width:58%;">
+<div class="column" style="width:48%;">
+<p><span class="math display">\[
+p \vee q, \neg p \vdash q
+\]</span></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-options="indent resize fonts popout render tabindent" data-submission="none" data-card="verify"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a></a>5. p \/ q, -p :|-: q</span>
+<span id="cb5-2"><a></a>|p \/ q :assumption</span>
+<span id="cb5-3"><a></a>|-p :assumption</span>
+<span id="cb5-4"><a></a>| p :assumption</span>
+<span id="cb5-5"><a></a>| !? :E- 2, 3</span>
+<span id="cb5-6"><a></a>| q :EFSQ 4</span>
+<span id="cb5-7"><a></a>|p -&gt; q :I-&gt; 3-5</span>
+<span id="cb5-8"><a></a>| q :assumption</span>
+<span id="cb5-9"><a></a>| q :rep 7</span>
+<span id="cb5-10"><a></a>|q -&gt; q :I-&gt; 7-8</span>
+<span id="cb5-11"><a></a>|q :E\/ 1, 6, 9</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:48%;">
+<p><span class="math display">\[
+p \wedge q, \neg p \vdash r
+\]</span></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-options="indent resize fonts popout render tabindent" data-submission="none" data-card="verify"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a></a>6. p /\ q, -p :|-: r</span>
+<span id="cb6-2"><a></a>|p/\q :assumption</span>
+<span id="cb6-3"><a></a>|-p :assumption</span>
+<span id="cb6-4"><a></a>|p :E/\ 1</span>
+<span id="cb6-5"><a></a>|!? :E- 2, 3</span>
+<span id="cb6-6"><a></a>|r :EFSQ 4</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></div>
+</section>
+<section id="double-negation-neg-neg" class="slide level2 smaller">
+<h2>double negation: <span class="math inline">\(\neg \neg\)</span></h2>
 <div class="argument">
 <ol type="1">
-<li><span class="math inline">\(p \to (q \to r)\)</span></li>
-<li><span class="math inline">\(p \wedge q\)</span></li>
+<li><span class="math inline">\(\neg \neg \varphi\)</span></li>
+</ol>
+<div class="conclusion">
+<ol start="2" type="1">
+<li><span class="math inline">\(\varphi\)</span></li>
+</ol>
+</div>
+</div>
+<p>You may write a formula <span class="math inline">\(\varphi\)</span> once its double negation <span class="math inline">\(\neg \neg \varphi\)</span> becomes available at a prior line.</p>
+</section>
+<section id="how-to-apply-neg-neg" class="slide level2 smaller">
+<h2>how to apply <span class="math inline">\(\neg \neg\)</span></h2>
+<div class="columns">
+<div class="column" style="width:58%;">
+<div style="height: 50px;">
+
+</div>
+<div class="argument">
+<ol type="1">
+<li><span class="math inline">\(\neg p \to \neg q\)</span></li>
+<li><span class="math inline">\(q\)</span></li>
 </ol>
 <div class="conclusion">
 <ol start="3" type="1">
-<li><span class="math inline">\(r\)</span></li>
+<li><span class="math inline">\(p\)</span></li>
 </ol>
 </div>
 </div>
 </div><div class="column" style="width:42%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-options="indent resize fonts popout render tabindent" data-submission="none" data-card="verify"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>1. p -&gt; (q -&gt; r), p /\ q :|-: r</span>
-<span id="cb2-2"><a></a>|p -&gt; (q -&gt; r) :assumption</span>
-<span id="cb2-3"><a></a>|p/\q :assumption</span>
-<span id="cb2-4"><a></a>|p :E/\ 2</span>
-<span id="cb2-5"><a></a>|q -&gt; r :E-&gt; 1,3</span>
-<span id="cb2-6"><a></a>|q :E/\ 2</span>
-<span id="cb2-7"><a></a>|r :E-&gt; 4,5</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-options="indent resize fonts popout render tabindent" data-submission="none" data-card="verify"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a></a>7. -p -&gt; -q, q :|-: p</span>
+<span id="cb7-2"><a></a>|-p -&gt; -q :assumption</span>
+<span id="cb7-3"><a></a>|q :assumption</span>
+<span id="cb7-4"><a></a>| -p :assumption</span>
+<span id="cb7-5"><a></a>| -q :E-&gt; 1, 3</span>
+<span id="cb7-6"><a></a>| !? :E- 2, 4</span>
+<span id="cb7-7"><a></a>|--p :I- 3-5</span>
+<span id="cb7-8"><a></a>|p :-- 6</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><span class="math display">\[
-p \to (q \to r), p \wedge q \vdash r
+\neg p \to \neg q, q \vdash p
 \]</span></p>
 </div></div>
 </section>
 <section id="practice" class="slide level2 smaller">
 <h2>practice</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-options="indent resize fonts popout render tabindent" data-submission="none"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>1. p, (p /\ q) -&gt; r, p -&gt; q :|-: r</span>
-<span id="cb3-2"><a></a>|p :assumption</span>
-<span id="cb3-3"><a></a>|(p /\ q) -&gt; r :assumption</span>
-<span id="cb3-4"><a></a>|p -&gt; q :assumption</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="introduction-rule-ito" class="slide level2 smaller">
-<h2>introduction rule: I<span class="math inline">\(\to\)</span></h2>
-<p>You may write <span class="math inline">\(\varphi \to \psi\)</span> if you can prove <span class="math inline">\(\psi\)</span> from the <strong>assumption</strong> that <span class="math inline">\(\varphi\)</span>.</p>
-<p>Once you complete the subproof, bracket the lines of that subproof and never appeal to them again.</p>
-</section>
-<section id="how-to-apply-ito" class="slide level2 smaller">
-<h2>how to apply I<span class="math inline">\(\to\)</span></h2>
-<div class="columns">
-<div class="column" style="width:58%;">
-<div class="argument">
-<ol type="1">
-<li><span class="math inline">\(p \to (q \wedge r)\)</span></li>
-</ol>
-<div class="conclusion">
-<ol start="2" type="1">
-<li><span class="math inline">\(p \to r\)</span></li>
-</ol>
-</div>
-</div>
-</div><div class="column" style="width:42%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-options="indent resize fonts popout render tabindent" data-submission="none" data-card="verify"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>1. p -&gt; (q /\ r) :|-: p -&gt; r</span>
-<span id="cb4-2"><a></a>|p -&gt; (q /\ r) :assumption</span>
-<span id="cb4-3"><a></a>| p :assumption</span>
-<span id="cb4-4"><a></a>| q/\r :E-&gt; 1,2</span>
-<span id="cb4-5"><a></a>| r :E/\ 3</span>
-<span id="cb4-6"><a></a>|p -&gt; r :I-&gt; 2-4</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><span class="math display">\[
-p \to (q \wedge r) \vdash p \to r
-\]</span></p>
-</div><ul>
-<li class="fragment">line 2 opens the subproof</li>
-<li class="fragment">line 5 closes it and discharges the assumption.</li>
-</ul>
-</div>
-</section>
-<section id="another-application" class="slide level2 smaller">
-<h2>another application</h2>
-<div class="columns">
-<div class="column" style="width:58%;">
-<div class="argument">
-<ol type="1">
-<li><span class="math inline">\(p \to r\)</span></li>
-<li><span class="math inline">\(q \to t\)</span></li>
-</ol>
-<div class="conclusion">
-<ol start="3" type="1">
-<li><span class="math inline">\((p \wedge q) \to (r \wedge t)\)</span></li>
-</ol>
-</div>
-</div>
-</div><div class="column" style="width:42%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-options="indent resize fonts popout render tabindent" data-submission="none" data-card="verify"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a></a>1. p -&gt; r, q -&gt; t :|-: (p /\ q) -&gt; (r /\ t)</span>
-<span id="cb5-2"><a></a>|p -&gt; r :assumption</span>
-<span id="cb5-3"><a></a>|q -&gt; t :assumption</span>
-<span id="cb5-4"><a></a>| p/\q :assumption</span>
-<span id="cb5-5"><a></a>| p :E/\ 3</span>
-<span id="cb5-6"><a></a>| r :E-&gt; 1,4</span>
-<span id="cb5-7"><a></a>| q :E/\ 3</span>
-<span id="cb5-8"><a></a>| t :E-&gt; 2,6</span>
-<span id="cb5-9"><a></a>| r/\t :I/\ 5,7</span>
-<span id="cb5-10"><a></a>|(p /\ q) -&gt; (r /\ t) :I-&gt; 3-8</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><span class="math display">\[
-p \to r, q \to t \vdash (p \wedge q) \to (r \wedge t)
-\]</span></p>
-</div></div>
-</section>
-<section id="practice-1" class="slide level2">
-<h2>practice</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-options="indent resize fonts popout render tabindent" data-submission="none"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a></a>1. p -&gt; (q -&gt; r) :|-: q -&gt; (p -&gt; r)</span>
-<span id="cb6-2"><a></a>|p -&gt; (q -&gt; r) :assumption</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section></section>
-<section>
-<section id="disjunction" class="title-slide slide level1 divider center">
-<h1>disjunction</h1>
-<p>Two rules:</p>
-<ul>
-<li><p>one <strong>introduction rule</strong> to explain when to write a disjunction <span class="math inline">\(\varphi \vee \psi\)</span> on the basis of prior lines.</p></li>
-<li><p>one <strong>elimination rule</strong> to explain how to exploit a disjunction <span class="math inline">\(\varphi \vee \psi\)</span> from a prior line</p></li>
-</ul>
-</section>
-<section id="introduction-rule-ivee" class="slide level2">
-<h2>introduction rule: I<span class="math inline">\(\vee\)</span></h2>
-<div class="argument">
-<ol type="1">
-<li><span class="math inline">\(\varphi\)</span></li>
-</ol>
-<div class="conclusion">
-<ol start="2" type="1">
-<li><span class="math inline">\(\varphi \vee \psi\)</span></li>
-</ol>
-</div>
-</div>
-<p>You may write <span class="math inline">\(\varphi \vee \psi\)</span> once either disjunct is available at a prior line.</p>
-</section>
-<section id="how-to-apply-ivee" class="slide level2">
-<h2>how to apply I<span class="math inline">\(\vee\)</span></h2>
-<div class="columns">
-<div class="column" style="width:58%;">
-<div class="argument">
-<ol type="1">
-<li><span class="math inline">\(p\)</span></li>
-<li><span class="math inline">\(q\)</span></li>
-</ol>
-<div class="conclusion">
-<ol start="2" type="1">
-<li><span class="math inline">\((p \vee r) \vee (r \vee q)\)</span></li>
-</ol>
-</div>
-</div>
-</div><div class="column" style="width:42%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-options="indent resize fonts popout render tabindent" data-submission="none" data-card="verify"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a></a>1. p, q :|-: (p \/ r) /\ (r \/ q)</span>
-<span id="cb7-2"><a></a>|p :assumption</span>
-<span id="cb7-3"><a></a>|q :assumption</span>
-<span id="cb7-4"><a></a>|p\/r :I\/ 1</span>
-<span id="cb7-5"><a></a>|r\/q :I\/ 2</span>
-<span id="cb7-6"><a></a>|(p\/r)/\(r\/q) :I/\ 3,4</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><span class="math display">\[
-p, q \vdash (p \vee r) \vee (r \vee q)
-\]</span></p>
-</div></div>
-</section>
-<section id="another-application-1" class="slide level2">
-<h2>another application</h2>
-<div class="columns">
-<div class="column" style="width:58%;">
-<div class="argument">
-<ol type="1">
-<li><span class="math inline">\(p\)</span></li>
-<li><span class="math inline">\((p \vee q) \to r\)</span></li>
-</ol>
-<div class="conclusion">
-<ol start="2" type="1">
-<li><span class="math inline">\(r\)</span></li>
-</ol>
-</div>
-</div>
-</div><div class="column" style="width:42%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" data-options="indent resize fonts popout render tabindent" data-submission="none" data-card="verify"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a></a>1. p, (p \/ q) -&gt; r :|-: r</span>
-<span id="cb8-2"><a></a>|p :assumption</span>
-<span id="cb8-3"><a></a>|(p \/ q) -&gt; r :assumption</span>
-<span id="cb8-4"><a></a>|p\/q :I\/ 1</span>
-<span id="cb8-5"><a></a>|r :E-&gt; 2,3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><span class="math display">\[
-p, (p \vee q) \to r \vdash r
-\]</span></p>
-</div></div>
-</section>
-<section id="practice-2" class="slide level2 smaller">
-<h2>practice</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" data-options="indent resize fonts popout render tabindent" data-submission="none"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a></a>1. p /\ q :|-: (p \/ r) /\ (q \/ t)</span>
-<span id="cb9-2"><a></a>|p/\q :assumption</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="elimination-rule-evee" class="slide level2 smaller">
-<h2>elimination rule: E<span class="math inline">\(\vee\)</span></h2>
-<div class="argument">
-<ol type="1">
-<li><span class="math inline">\(\varphi \vee \psi\)</span></li>
-<li><span class="math inline">\(\varphi \to \chi\)</span></li>
-<li><span class="math inline">\(\psi \to \chi\)</span></li>
-</ol>
-<div class="conclusion">
-<ol start="4" type="1">
-<li><span class="math inline">\(\chi\)</span></li>
-</ol>
-</div>
-</div>
-<p>You may write <span class="math inline">\(\chi\)</span> on the basis of <span class="math inline">\(\varphi \vee \psi\)</span> in the presence of two conditionals:</p>
-<ul>
-<li><p><span class="math inline">\(\varphi \to \chi\)</span></p></li>
-<li><p><span class="math inline">\(\psi \to \chi\)</span></p></li>
-</ul>
-<p>You will often have to establish the conditionals by indepedendent applications of I<span class="math inline">\(\to\)</span></p>
-</section>
-<section id="how-to-apply-evee" class="slide level2 smaller">
-<h2>how to apply E<span class="math inline">\(\vee\)</span></h2>
-<div class="columns">
-<div class="column" style="width:58%;">
-<div class="argument">
-<ol type="1">
-<li><span class="math inline">\(p \to r\)</span></li>
-<li><span class="math inline">\(q \to r\)</span></li>
-<li><span class="math inline">\(r \to t\)</span></li>
-<li><span class="math inline">\(p \vee q\)</span></li>
-</ol>
-<div class="conclusion">
-<ol start="4" type="1">
-<li><span class="math inline">\(t\)</span></li>
-</ol>
-</div>
-</div>
-</div><div class="column" style="width:42%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10" data-options="indent resize fonts popout render tabindent" data-submission="none" data-card="verify" height="590px"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a></a>1. p -&gt; r, q -&gt; r, r -&gt; t, p \/ q :|-: t</span>
-<span id="cb10-2"><a></a>|p -&gt; r :assumption</span>
-<span id="cb10-3"><a></a>|q -&gt; r :assumption</span>
-<span id="cb10-4"><a></a>|r -&gt; t :assumption</span>
-<span id="cb10-5"><a></a>|p\/q :assumption</span>
-<span id="cb10-6"><a></a>| p :assumption</span>
-<span id="cb10-7"><a></a>| r :E-&gt; 1, 5</span>
-<span id="cb10-8"><a></a>| t :E-&gt; 3, 6</span>
-<span id="cb10-9"><a></a>|p -&gt; t :I-&gt; 5-7</span>
-<span id="cb10-10"><a></a>| q :assumption</span>
-<span id="cb10-11"><a></a>| r :E-&gt; 2, 9</span>
-<span id="cb10-12"><a></a>| t :E-&gt; 3, 10</span>
-<span id="cb10-13"><a></a>|q -&gt; t :I-&gt; 9-11</span>
-<span id="cb10-14"><a></a>|t :E\/ 4, 8, 12</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div></div>
-</section>
-<section id="two-more-applications" class="slide level2 smaller">
-<h2>two more applications</h2>
-<div class="columns">
-<div class="column" style="width:48%;">
-<p><span class="math display">\[
-(p \wedge q) \vee (r \wedge p) \vdash p
-\]</span></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11" data-options="indent resize fonts popout render tabindent" data-submission="none" data-card="verify"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a></a>1. (p /\ q) \/ (r /\ p) :|-: p</span>
-<span id="cb11-2"><a></a>|(p /\ q) \/ (r /\ p) :assumption</span>
-<span id="cb11-3"><a></a>| p/\q :assumption</span>
-<span id="cb11-4"><a></a>| p :E/\ 2</span>
-<span id="cb11-5"><a></a>|(p/\q) -&gt; p :I-&gt; 2-3</span>
-<span id="cb11-6"><a></a>| r/\p :assumption</span>
-<span id="cb11-7"><a></a>| p :E/\ 5</span>
-<span id="cb11-8"><a></a>|(r/\p) -&gt; p :I-&gt; 5-6</span>
-<span id="cb11-9"><a></a>|p :E\/ 1, 4, 7</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div><div class="column" style="width:48%;">
-<p><span class="math display">\[
-(p \wedge q) \vee (r \wedge p) \vdash q \vee r
-\]</span></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12" data-options="indent resize fonts popout render tabindent" data-submission="none" data-card="verify"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a></a>1. (p /\ q) \/ (p /\ r) :|-: q \/ r</span>
-<span id="cb12-2"><a></a>|(p /\ q) \/ (p /\ r) :assumption</span>
-<span id="cb12-3"><a></a>| p/\q :assumption</span>
-<span id="cb12-4"><a></a>| q :E/\ 2</span>
-<span id="cb12-5"><a></a>| q\/r :I\/ 3</span>
-<span id="cb12-6"><a></a>|(p/\q) -&gt; (q\/r) :I-&gt; 2-4</span>
-<span id="cb12-7"><a></a>| p/\r :assumption</span>
-<span id="cb12-8"><a></a>| r :E/\ 6</span>
-<span id="cb12-9"><a></a>| q\/r :I\/ 7</span>
-<span id="cb12-10"><a></a>|(p/\r) -&gt; (q\/r) :I-&gt; 6-8</span>
-<span id="cb12-11"><a></a>|q\/r :E\/ 1, 5, 9</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" data-options="indent resize fonts popout render tabindent" data-submission="none"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a></a>8. :|-: p \/ -p</span>
+<span id="cb8-2"><a></a>| -(p \/ -p) :assumption</span>
+<span id="cb8-3"><a></a>|  p :assumption</span>
+<span id="cb8-4"><a></a>|  p \/ -p :I\/ 2</span>
+<span id="cb8-5"><a></a>|  !? :E- 1, 3</span>
+<span id="cb8-6"><a></a>| -p :I- 2-4</span>
+<span id="cb8-7"><a></a>| p \/ -p :I\/ 5</span>
+<span id="cb8-8"><a></a>| !? :E- 1, 6</span>
+<span id="cb8-9"><a></a>|--(p\/-p) :I- 1-7</span>
+<span id="cb8-10"><a></a>|p\/-p :-- 8</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section></section>
 <section>
 <section id="worked-example" class="title-slide slide level1 divider center">
-<h1>worked example</h1>
+<h1># worked example</h1>
 <p>All four rules, on an argument from natural language.</p>
 </section>
 <section id="a-natural-language-argument" class="slide level2 smaller">
 <h2>a natural language argument</h2>
 <blockquote>
-<p>The British are coming by land or they are coming by sea. Paul Revere will light one lamp if the British are coming by land. However, Paul Revere will light two lamps if they are coming by sea. So, Paul Revere will light one lamp or he will light two lamps.</p>
+<p>If you flip the coin, then it will land heads or tails but not both. I’ll win only if the coin lands heads. However, you’ll win only if the coin lands tails. As a matter of fact, you’ll flip the coin. So, we will not both win.</p>
 </blockquote>
 <p><strong>in premise-conclusion form</strong></p>
 <div class="argument">
 <ol type="1">
-<li>The British are coming by land or they are coming by sea.</li>
-<li>If the British are coming by land, then Paul Revere will light one lamp.</li>
-<li>If the British are coming by sea, then Paul Revere will light two lamps.</li>
+<li>If you flip the coin, then it will land heads or tails but not both</li>
+<li>I will win only if the coin lands heads.</li>
+<li>You will win only if the coin lands tails</li>
+<li>You will flip the coin.</li>
 </ol>
 <div class="conclusion">
-<ol start="4" type="1">
-<li>Paul Revere will light one lamp or he will light two lamps.</li>
+<ol start="5" type="1">
+<li>We will not both win.</li>
 </ol>
 </div>
 </div>
@@ -584,49 +484,45 @@ p, (p \vee q) \to r \vdash r
 <div class="column" style="width:48%;">
 <div style="font-size: 0.72em;">
 <div class="argument">
-<p><span class="math inline">\(p\)</span>: The British are coming by land.</p>
-<p><span class="math inline">\(q\)</span>: The British are coming by sea.</p>
-<p><span class="math inline">\(r\)</span>: Paul Revere will light one lamp.</p>
-<p><span class="math inline">\(s\)</span>: Paul Revere will light two lamps.</p>
+<p><span class="math inline">\(p\)</span>: You flip the coin.</p>
+<p><span class="math inline">\(q\)</span>: The coin lands heads.</p>
+<p><span class="math inline">\(r\)</span>: The coin lands tails.</p>
+<p><span class="math inline">\(s\)</span>: I will win.</p>
+<p><span class="math inline">\(t\)</span>: You will win.</p>
 </div>
 </div>
 <div class="argument">
 <ol type="1">
-<li><span class="math inline">\(p \vee q\)</span></li>
-<li><span class="math inline">\(p \to r\)</span></li>
-<li><span class="math inline">\(q \to s\)</span></li>
+<li><span class="math inline">\(p \to ((q \vee r) \wedge \neg (q \wedge r))\)</span></li>
+<li><span class="math inline">\(s \to q\)</span></li>
+<li><span class="math inline">\(t \to r\)</span></li>
+<li><span class="math inline">\(p\)</span></li>
 </ol>
 <div class="conclusion">
 <ol start="4" type="1">
-<li><span class="math inline">\(r \vee s\)</span></li>
+<li><span class="math inline">\(\neg (s \wedge t)\)</span></li>
 </ol>
 </div>
 </div>
 </div><div class="column" style="width:52%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13" data-options="indent resize fonts popout render tabindent" data-submission="none" data-card="verify" height="560px"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a></a>1. p \/ q, p -&gt; r, q -&gt; s :|-: r \/ s</span>
-<span id="cb13-2"><a></a>|p\/q :assumption</span>
-<span id="cb13-3"><a></a>|p -&gt; r :assumption</span>
-<span id="cb13-4"><a></a>|q -&gt; s :assumption</span>
-<span id="cb13-5"><a></a>| p :assumption</span>
-<span id="cb13-6"><a></a>| r :E-&gt; 2,4</span>
-<span id="cb13-7"><a></a>| r\/s :I\/ 5</span>
-<span id="cb13-8"><a></a>|p -&gt; (r\/s) :I-&gt; 4-6</span>
-<span id="cb13-9"><a></a>| q :assumption</span>
-<span id="cb13-10"><a></a>| s :E-&gt; 3,8</span>
-<span id="cb13-11"><a></a>| r\/s :I\/ 9</span>
-<span id="cb13-12"><a></a>|q -&gt; (r\/s) :I-&gt; 8-10</span>
-<span id="cb13-13"><a></a>|r\/s :E\/ 1, 7, 11</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" data-options="indent resize fonts popout render tabindent" data-submission="none" data-card="verify"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a></a>9. p -&gt; ((q \/ r) /\ -(q/\ r)), s -&gt; q, t -&gt; r, p :|-: -(s/\t)</span>
+<span id="cb9-2"><a></a>|p -&gt; ((q \/ r) /\ -(q/\ r)) :assumption</span>
+<span id="cb9-3"><a></a>|s -&gt; q :assumption</span>
+<span id="cb9-4"><a></a>|t -&gt; r :assumption</span>
+<span id="cb9-5"><a></a>|p :assumption</span>
+<span id="cb9-6"><a></a>| s/\t :assumption</span>
+<span id="cb9-7"><a></a>| s :E/\ 5</span>
+<span id="cb9-8"><a></a>| t :E/\ 5</span>
+<span id="cb9-9"><a></a>| q :E-&gt; 2, 6</span>
+<span id="cb9-10"><a></a>| r :E-&gt; 3, 7</span>
+<span id="cb9-11"><a></a>| q/\r :I/\ 8, 9</span>
+<span id="cb9-12"><a></a>| (q \/ r) /\ -(q/\ r) :E-&gt; 1, 4</span>
+<span id="cb9-13"><a></a>| -(q/\ r) :E/\ 11</span>
+<span id="cb9-14"><a></a>| !? :E- 10, 12</span>
+<span id="cb9-15"><a></a>|-(s/\t) :I- 5-13</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>```</p>
 </div><p>The argument is <strong>valid</strong> because there is a proof of the conclusion from its premises.</p>
 </div>
-</section>
-<section id="four-rules-one-system" class="slide level2">
-<h2>four rules, one system</h2>
-<ul>
-<li class="fragment">E<span class="math inline">\(\to\)</span>: from <span class="math inline">\(\varphi \to \psi\)</span> and <span class="math inline">\(\varphi\)</span>, infer <span class="math inline">\(\psi\)</span></li>
-<li class="fragment">I<span class="math inline">\(\to\)</span>: derive <span class="math inline">\(\psi\)</span> from assumed <span class="math inline">\(\varphi\)</span>, discharge to get <span class="math inline">\(\varphi \to \psi\)</span></li>
-<li class="fragment">I<span class="math inline">\(\vee\)</span>: from <span class="math inline">\(\varphi\)</span> (or <span class="math inline">\(\psi\)</span>), infer <span class="math inline">\(\varphi \vee \psi\)</span></li>
-<li class="fragment">E<span class="math inline">\(\vee\)</span>: from <span class="math inline">\(\varphi \vee \psi\)</span>, <span class="math inline">\(\varphi \to \chi\)</span>, <span class="math inline">\(\psi \to \chi\)</span>, infer <span class="math inline">\(\chi\)</span></li>
-</ul>
 
 
 </section></section>
