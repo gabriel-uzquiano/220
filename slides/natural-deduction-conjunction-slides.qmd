@@ -22,7 +22,7 @@ format:
 
 # natural deduction: conjunction {.divider}
 
-Truth tables provide a decision method for propositional validity. They enable one to decide in a finite number of steps whether a given argument in propositional logic is valid:
+Truth tables provide a decision method for propositional validity. They enable us to decide in a finite number of steps whether a given argument in propositional logic is valid:
 
 :::{.incremental}
 - If the argument is valid, there is no row of the truth table on which the premises come out true and the conclusion false.
@@ -39,11 +39,11 @@ Unfortunately, truth tables are not helpful when it comes to more complex formal
 
 . . .
 
-One more strategy for propositional validity involves proofs:
+The other strategy for propositional validity involves proofs:
 
 . . .
 
-If an argument is valid, then there is **a proof** of the conclusion from the premises, which consists of a chain of simple inferences governed by sanctioned rules of inference associated with each connective.
+If an argument is valid, then there is **a proof** of the conclusion from the premises, which consists of **a chain of simple inferences** governed by sanctioned **rules of inference associated with each connective.**
 
 
 ## the plan {.smaller}
@@ -65,6 +65,7 @@ If an argument is valid, then there is **a proof** of the conclusion from the pr
 :::
 
 ::: {.column width="42%"}
+We break down the argument into two simple steps:
 
 ::: {.incremental}
 - from 1 and 3: 
@@ -80,7 +81,11 @@ If an argument is valid, then there is **a proof** of the conclusion from the pr
 :::
 
 ::: {.incremental}
-- One step proceeds from premises 1 and 3 and is sanctioned by the semantic behavior of **and**: given $\varphi$ and $\psi$, we may infer the conjunction $\varphi$ **and** $\psi$.
+- One step proceeds from premises 1 and 3 and is sanctioned by the semantic behavior of **and**: 
+
+
+    given $\varphi$ and $\psi$, we may infer the conjunction $\varphi$ **and** $\psi$.
+    
 - The other step proceeds from premise 2 and the outcome of the prior step and is sanctioned by the behavior of **if** ... **then**: given a conditional 
 
     **if** $\varphi$, **then** $\psi$
@@ -134,9 +139,13 @@ $r$: Inflation will come down.
 
 ::: {.incremental}
 - Lines 1, 2, and 3 are premises
-- Line 4 is obtained from lines 1 and 3 by $I\wedge$: from $\varphi$ and $\psi$, infer $\varphi \wedge \psi$
+- Line 4 is obtained from lines 1 and 3 by $I\wedge$: 
+
+    from $\varphi$ and $\psi$, infer $\varphi \wedge \psi$
     
-- Line 5 is obtained from lines 2 and 4 by $E\to$: from if $\varphi$, then $\psi$ and $\varphi$ infer $\psi$
+- Line 5 is obtained from lines 2 and 4 by the rule of inference $E\to$: 
+  
+    from if $\varphi$, then $\psi$ and $\varphi$ infer $\psi$
     
 - Line 5 completes the proof because the formula is exactly the **conclusion** we are after.
 :::
@@ -157,11 +166,15 @@ The last formula is the *conclusion*.
 
 . . . 
 
+::: {style="height: 30px;"}
+:::
+
+
 If an argument of propositional logic is valid, then *there is a proof of its conclusion from its premises*.
 
 ## a catalogue of rules of inference
 
-To each connective there corresponds at least two rules of inference:
+Each connective comes with at least two rules of inference:
 
 ::: {.incremental}
 - an **introduction** rule: 
@@ -170,7 +183,7 @@ To each connective there corresponds at least two rules of inference:
     
 - an **elimination** rule: 
 
-    when you may *exploit* one that is already available
+    when you may *exploit* one that is already available from a prior line
 :::
 
 . . .

@@ -1,0 +1,400 @@
+---
+title: "natural deduction: negation"
+subtitle: "PHIL 220. Introduction to Logic"
+author: "Gabriel Uzquiano"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    output-file: natural-deduction-conditional-disjunction-slides.html
+    slide-number: c/t
+    chalkboard: true          # press B for a blank board, C to draw on a slide
+    preview-links: auto       # links open in an overlay, without leaving the deck
+    history: false
+    transition: none          # no swooping; the content should not move
+    center: false
+    width: 1100
+    height: 750
+    margin: 0.06
+    hash-type: title
+    menu:
+      side: left
+---
+
+# natural deduction: negation {.divider}
+
+We have introduction and elimination rules for conjunction, conditional, and disjunction. We now introduce rules for negation.
+
+## a marker for contradiction: $\bot$ {.smaller}
+
+To reason with negation in the course of a proof, we introduce a marker we use to record the fact that we have arrived at a contradiction. Think of $\bot$ *not* as part of the vocabulary of propositional logic, but rather as a punctuation device we use for purposes of proofs.
+
+We will introduce **four** rules for negation:
+
+::: {.incremental}
+- negation introduction I$\neg$
+- negation elimination E$\neg$
+- ex falso sequitor quodlibet EFSQ
+- double negation $\neg \neg$
+::: 
+
+
+## elimination rule: E$\neg$ {.smaller}
+
+::: {.argument}
+1. $\varphi$
+2. $\neg \varphi$
+
+::: {.conclusion}
+3. $\bot$
+:::
+:::
+
+You may write $\bot$ if both a formula $\varphi$ and its negation $\neg \varphi$ are available from prior lines.
+
+. . . 
+
+The rule explains that we may write use the marker $\bot$ to record the fact that we have arrived at a contradiction.
+
+
+
+## introduction rule: I$\neg$ {.smaller}
+
+You may write $\neg \varphi$ if you can prove $\bot$ from the **assumption** that $\varphi$. 
+
+Once you complete the subproof, bracket the lines of that subproof and never appeal to them again.
+
+
+
+## how to combine E$\neg$ and I$\neg$ {.smaller}
+
+
+::: {.columns}
+::: {.column width="58%"}
+
+::: {style="height: 50px;"}
+:::
+
+::: {.argument}
+1. $p \to q$
+2. $\neg q$
+
+::: {.conclusion}
+2. $\neg p$
+:::
+:::
+
+:::
+
+::: {.column width="42%"}
+```{.ProofChecker .GamutPND options="indent resize fonts popout render tabindent" submission="none" card="verify"}
+1. p -> q, -q :|-: -p
+|p -> q :assumption
+|-q :assumption
+| p :assumption
+| q :E-> 1, 3
+| !? :E- 2, 4
+|-p :I- 3-5
+```
+
+
+$$
+p \to q, \neg q \vdash \neg p
+$$
+:::
+
+::: {.incremental}
+- line 3 opens the subproof
+- line 6 closes it and discharges the assumption.
+:::
+:::
+
+
+
+
+
+
+
+
+
+
+## two more examples {.smaller}
+
+::: {.columns}
+::: {.column width="48%"}
+$$
+p \to \neg p \vdash \neg p
+$$
+
+```{.ProofChecker .GamutPND options="indent resize fonts popout render tabindent" submission="none" card="verify"}
+2. p -> -p :|-: -p
+|p -> -p :assumption
+| p :assumption
+| -p :E-> 1, 2
+| !? :E- 2, 3
+|-p :I- 2-4
+
+```
+:::
+::: {.column width="48%"}
+$$
+\neg (p \vee q) \vdash \neg p \wedge \neg q
+$$
+
+```{.ProofChecker .GamutPND options="indent resize fonts popout render tabindent" submission="none" card="verify"}
+3. -(p \/ q) :|-: -p /\ -q
+|-(p\/q) :assumption
+| p :assumption
+| p \/ q :I\/ 2
+| !? :E- 1, 3
+|-p :I- 2-4
+| q :assumption
+| p \/ q :I\/ 6
+| !? :E- 1, 7
+|-q :I- 6-8
+|-p /\ -q :I/\ 5, 9
+```
+:::
+:::
+
+## ex falso sequitor quodlibet: EFSQ {.smaller}
+
+Negation is a special connective in that its introduction and elimination rules are not sufficient to account for all valid arguments in which the connective occurs. 
+
+One further rule is EFSQ:
+
+. . . 
+
+::: {.argument}
+1. $\bot$
+
+::: {.conclusion}
+2. $\varphi$
+:::
+:::
+
+You may write *any* formula once an occurrence of $\bot$ becomes available at a prior line.
+
+. . . 
+
+The Latin phrase *ex falso sequitur quodlibet* just means that anything at all follows from a contradiction, and we will use the initials EFSQ to abbreviate the rule.
+
+## how to apply EFSQ {.smaller}
+
+::: {.columns}
+::: {.column width="58%"}
+
+::: {style="height: 50px;"}
+:::
+
+::: {.argument}
+1. $p$
+2. $\neg p$
+
+::: {.conclusion}
+3. $q$
+:::
+:::
+
+:::
+
+::: {.column width="42%"}
+```{.ProofChecker .GamutPND options="indent resize fonts popout render tabindent" submission="none" card="verify"}
+4. p, -p :|-: q
+|p :assumption
+|-p :assumption
+|!? :E- 1,2
+|q :EFSQ 3
+```
+
+
+$$
+p, \neg p \vdash \neg q
+$$
+:::
+
+:::
+
+
+## two more examples {.smaller}
+
+::: {.columns}
+::: {.column width="48%"}
+$$
+p \vee q, \neg p \vdash q
+$$
+
+```{.ProofChecker .GamutPND options="indent resize fonts popout render tabindent" submission="none" card="verify"}
+5. p \/ q, -p :|-: q
+|p \/ q :assumption
+|-p :assumption
+| p :assumption
+| !? :E- 2, 3
+| q :EFSQ 4
+|p -> q :I-> 3-5
+| q :assumption
+| q :rep 7
+|q -> q :I-> 7-8
+|q :E\/ 1, 6, 9
+```
+:::
+::: {.column width="48%"}
+$$
+p \wedge q, \neg p \vdash r
+$$
+
+```{.ProofChecker .GamutPND options="indent resize fonts popout render tabindent" submission="none" card="verify"}
+6. p /\ q, -p :|-: r
+|p/\q :assumption
+|-p :assumption
+|p :E/\ 1
+|!? :E- 2, 3
+|r :EFSQ 4
+```
+:::
+:::
+
+## double negation: $\neg \neg$ {.smaller}
+
+::: {.argument}
+1. $\neg \neg \varphi$
+
+::: {.conclusion}
+2. $\varphi$
+:::
+:::
+
+You may write a formula $\varphi$ once its double negation $\neg \neg \varphi$ becomes available at a prior line.
+
+## how to apply $\neg \neg$ {.smaller}
+
+::: {.columns}
+::: {.column width="58%"}
+
+::: {style="height: 50px;"}
+:::
+
+::: {.argument}
+1. $\neg p \to \neg q$
+2. $q$
+
+::: {.conclusion}
+3. $p$
+:::
+:::
+
+:::
+
+::: {.column width="42%"}
+```{.ProofChecker .GamutPND options="indent resize fonts popout render tabindent" submission="none" card="verify"}
+7. -p -> -q, q :|-: p
+|-p -> -q :assumption
+|q :assumption
+| -p :assumption
+| -q :E-> 1, 3
+| !? :E- 2, 4
+|--p :I- 3-5
+|p :-- 6
+```
+
+
+$$
+\neg p \to \neg q, q \vdash p
+$$
+:::
+
+:::
+
+## practice {.smaller}
+
+```{.ProofChecker .GamutPND options="indent resize fonts popout render tabindent" submission="none"}
+8. :|-: p \/ -p
+| -(p \/ -p) :assumption
+|  p :assumption
+|  p \/ -p :I\/ 2
+|  !? :E- 1, 3
+| -p :I- 2-4
+| p \/ -p :I\/ 5
+| !? :E- 1, 6
+|--(p\/-p) :I- 1-7
+|p\/-p :-- 8
+```
+
+# # worked example {.divider}
+
+All four rules, on an argument from natural language.
+
+
+## a natural language argument {.smaller}
+
+> If you flip the coin, then it will land heads or tails but not both. I'll win only if the coin lands heads. However, you'll win only if the coin lands tails. As a matter of fact, you'll flip the coin. So, we will not both win.
+
+**in premise-conclusion form**
+
+::: {.argument}
+1. If you flip the coin, then it will land heads or tails but not both
+2. I will win only if the coin lands heads.
+3. You will win only if the coin lands tails
+4. You will flip the coin.
+
+::: {.conclusion}
+5. We will not both win.
+:::
+:::
+
+## translation {.smaller}
+
+::: {.columns}
+::: {.column width="48%"}
+::: {style="font-size: 0.72em;"}
+::: {.argument}
+$p$: You flip the coin.
+
+$q$: The coin lands heads.
+
+$r$: The coin lands tails.
+
+$s$: I will win.
+
+$t$: You will win.
+:::
+:::
+
+::: {.argument}
+1. $p \to ((q \vee r) \wedge \neg (q \wedge r))$
+2. $s \to q$
+3. $t \to r$
+4. $p$
+
+::: {.conclusion}
+4. $\neg (s \wedge t)$
+:::
+:::
+
+:::
+
+::: {.column width="52%"}
+```{.ProofChecker .GamutPND options="indent resize fonts popout render tabindent" submission="none" card="verify"}
+9. p -> ((q \/ r) /\ -(q/\ r)), s -> q, t -> r, p :|-: -(s/\t)
+|p -> ((q \/ r) /\ -(q/\ r)) :assumption
+|s -> q :assumption
+|t -> r :assumption
+|p :assumption
+| s/\t :assumption
+| s :E/\ 5
+| t :E/\ 5
+| q :E-> 2, 6
+| r :E-> 3, 7
+| q/\r :I/\ 8, 9
+| (q \/ r) /\ -(q/\ r) :E-> 1, 4
+| -(q/\ r) :E/\ 11
+| !? :E- 10, 12
+|-(s/\t) :I- 5-13
+```
+```
+:::
+The argument is **valid** because there is a proof of the conclusion from its premises.
+:::
+
+
+
+
