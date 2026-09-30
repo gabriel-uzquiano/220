@@ -31,74 +31,8 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-5cde01b1358b36af9c1b84d05fb52047.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-c00c920e2c99d1bdc0d9a77fa3d92647.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -268,13 +202,7 @@ Gabriel Uzquiano
 </div>
 </div>
 </div><div class="column" style="width:42%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-options="indent resize fonts popout render tabindent" data-submission="none" data-card="verify"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>1. p -&gt; q, -q :|-: -p</span>
-<span id="cb1-2"><a></a>|p -&gt; q :assumption</span>
-<span id="cb1-3"><a></a>|-q :assumption</span>
-<span id="cb1-4"><a></a>| p :assumption</span>
-<span id="cb1-5"><a></a>| q :E-&gt; 1, 3</span>
-<span id="cb1-6"><a></a>| !? :E- 2, 4</span>
-<span id="cb1-7"><a></a>|-p :I- 3-5</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="proofchecker-embed" style="margin: 0.4rem 0 0.5rem; width: 96%; margin-left: 2%;"><iframe src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=p%20%E2%86%92%20q%2C%20%C2%ACq&amp;c=%C2%ACp&amp;pr=p%20%E2%86%92%20q%20P%0A%C2%ACq%20P%0A%20p%20A%0A%20q%20%E2%86%92E%201%2C%203%0A%20%E2%8A%A5%20%C2%ACE%202%2C%204%0A%C2%ACp%20%C2%ACI%203-5" style="width: 100%; height: 390px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Proof: p → q, ¬q ⊢ ¬p"></iframe></div>
 <p><span class="math display">\[
 p \to q, \neg q \vdash \neg p
 \]</span></p>
@@ -291,27 +219,12 @@ p \to q, \neg q \vdash \neg p
 <p><span class="math display">\[
 p \to \neg p \vdash \neg p
 \]</span></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-options="indent resize fonts popout render tabindent" data-submission="none" data-card="verify"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>2. p -&gt; -p :|-: -p</span>
-<span id="cb2-2"><a></a>|p -&gt; -p :assumption</span>
-<span id="cb2-3"><a></a>| p :assumption</span>
-<span id="cb2-4"><a></a>| -p :E-&gt; 1, 2</span>
-<span id="cb2-5"><a></a>| !? :E- 2, 3</span>
-<span id="cb2-6"><a></a>|-p :I- 2-4</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="proofchecker-embed" style="margin: 0.4rem 0 0.5rem; width: 96%; margin-left: 2%;"><iframe src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=p%20%E2%86%92%20%C2%ACp&amp;c=%C2%ACp&amp;pr=p%20%E2%86%92%20%C2%ACp%20P%0A%20p%20A%0A%20%C2%ACp%20%E2%86%92E%201%2C%202%0A%20%E2%8A%A5%20%C2%ACE%202%2C%203%0A%C2%ACp%20%C2%ACI%202-4" style="width: 100%; height: 350px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Proof: p → ¬p ⊢ ¬p"></iframe></div>
 </div><div class="column" style="width:48%;">
 <p><span class="math display">\[
 \neg (p \vee q) \vdash \neg p \wedge \neg q
 \]</span></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-options="indent resize fonts popout render tabindent" data-submission="none" data-card="verify"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>3. -(p \/ q) :|-: -p /\ -q</span>
-<span id="cb3-2"><a></a>|-(p\/q) :assumption</span>
-<span id="cb3-3"><a></a>| p :assumption</span>
-<span id="cb3-4"><a></a>| p \/ q :I\/ 2</span>
-<span id="cb3-5"><a></a>| !? :E- 1, 3</span>
-<span id="cb3-6"><a></a>|-p :I- 2-4</span>
-<span id="cb3-7"><a></a>| q :assumption</span>
-<span id="cb3-8"><a></a>| p \/ q :I\/ 6</span>
-<span id="cb3-9"><a></a>| !? :E- 1, 7</span>
-<span id="cb3-10"><a></a>|-q :I- 6-8</span>
-<span id="cb3-11"><a></a>|-p /\ -q :I/\ 5, 9</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="proofchecker-embed" style="margin: 0.4rem 0 0.5rem; width: 96%; margin-left: 2%;"><iframe src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=%C2%AC%28p%20%E2%88%A8%20q%29&amp;c=%C2%ACp%20%E2%88%A7%20%C2%ACq&amp;pr=%C2%AC%28p%E2%88%A8q%29%20P%0A%20p%20A%0A%20p%20%E2%88%A8%20q%20%E2%88%A8I%202%0A%20%E2%8A%A5%20%C2%ACE%201%2C%203%0A%C2%ACp%20%C2%ACI%202-4%0A%20q%20A%0A%20p%20%E2%88%A8%20q%20%E2%88%A8I%206%0A%20%E2%8A%A5%20%C2%ACE%201%2C%207%0A%C2%ACq%20%C2%ACI%206-8%0A%C2%ACp%20%E2%88%A7%20%C2%ACq%20%E2%88%A7I%205%2C%209" style="width: 100%; height: 550px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Proof: ¬(p ∨ q) ⊢ ¬p ∧ ¬q"></iframe></div>
 </div></div>
 </section>
 <section id="ex-falso-sequitor-quodlibet-efsq" class="slide level2 smaller">
@@ -354,11 +267,7 @@ p \to \neg p \vdash \neg p
 </div>
 </div>
 </div><div class="column" style="width:42%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-options="indent resize fonts popout render tabindent" data-submission="none" data-card="verify"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>4. p, -p :|-: q</span>
-<span id="cb4-2"><a></a>|p :assumption</span>
-<span id="cb4-3"><a></a>|-p :assumption</span>
-<span id="cb4-4"><a></a>|!? :E- 1,2</span>
-<span id="cb4-5"><a></a>|q :EFSQ 3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="proofchecker-embed" style="margin: 0.4rem 0 0.5rem; width: 96%; margin-left: 2%;"><iframe src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=p%2C%20%C2%ACp&amp;c=q&amp;pr=p%20P%0A%C2%ACp%20P%0A%E2%8A%A5%20%C2%ACE%201%2C%202%0Aq%20EFSQ%203" style="width: 100%; height: 310px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Proof: p, ¬p ⊢ q"></iframe></div>
 <p><span class="math display">\[
 p, \neg p \vdash \neg q
 \]</span></p>
@@ -371,27 +280,12 @@ p, \neg p \vdash \neg q
 <p><span class="math display">\[
 p \vee q, \neg p \vdash q
 \]</span></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-options="indent resize fonts popout render tabindent" data-submission="none" data-card="verify"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a></a>5. p \/ q, -p :|-: q</span>
-<span id="cb5-2"><a></a>|p \/ q :assumption</span>
-<span id="cb5-3"><a></a>|-p :assumption</span>
-<span id="cb5-4"><a></a>| p :assumption</span>
-<span id="cb5-5"><a></a>| !? :E- 2, 3</span>
-<span id="cb5-6"><a></a>| q :EFSQ 4</span>
-<span id="cb5-7"><a></a>|p -&gt; q :I-&gt; 3-5</span>
-<span id="cb5-8"><a></a>| q :assumption</span>
-<span id="cb5-9"><a></a>| q :rep 7</span>
-<span id="cb5-10"><a></a>|q -&gt; q :I-&gt; 7-8</span>
-<span id="cb5-11"><a></a>|q :E\/ 1, 6, 9</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="proofchecker-embed" style="margin: 0.4rem 0 0.5rem; width: 96%; margin-left: 2%;"><iframe src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=p%20%E2%88%A8%20q%2C%20%C2%ACp&amp;c=q&amp;pr=p%20%E2%88%A8%20q%20P%0A%C2%ACp%20P%0A%20p%20A%0A%20%E2%8A%A5%20%C2%ACE%202%2C%203%0A%20q%20EFSQ%204%0Ap%20%E2%86%92%20q%20%E2%86%92I%203-5%0A%20q%20A%0A%20q%20R%207%0Aq%20%E2%86%92%20q%20%E2%86%92I%207-8%0Aq%20%E2%88%A8E%201%2C%206%2C%209" style="width: 100%; height: 550px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Proof: p ∨ q, ¬p ⊢ q"></iframe></div>
 </div><div class="column" style="width:48%;">
 <p><span class="math display">\[
 p \wedge q, \neg p \vdash r
 \]</span></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-options="indent resize fonts popout render tabindent" data-submission="none" data-card="verify"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a></a>6. p /\ q, -p :|-: r</span>
-<span id="cb6-2"><a></a>|p/\q :assumption</span>
-<span id="cb6-3"><a></a>|-p :assumption</span>
-<span id="cb6-4"><a></a>|p :E/\ 1</span>
-<span id="cb6-5"><a></a>|!? :E- 2, 3</span>
-<span id="cb6-6"><a></a>|r :EFSQ 4</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="proofchecker-embed" style="margin: 0.4rem 0 0.5rem; width: 96%; margin-left: 2%;"><iframe src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=p%20%E2%88%A7%20q%2C%20%C2%ACp&amp;c=r&amp;pr=p%E2%88%A7q%20P%0A%C2%ACp%20P%0Ap%20%E2%88%A7E%201%0A%E2%8A%A5%20%C2%ACE%202%2C%203%0Ar%20EFSQ%204" style="width: 100%; height: 350px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Proof: p ∧ q, ¬p ⊢ r"></iframe></div>
 </div></div>
 </section>
 <section id="double-negation-neg-neg" class="slide level2 smaller">
@@ -427,14 +321,7 @@ p \wedge q, \neg p \vdash r
 </div>
 </div>
 </div><div class="column" style="width:42%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-options="indent resize fonts popout render tabindent" data-submission="none" data-card="verify"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a></a>7. -p -&gt; -q, q :|-: p</span>
-<span id="cb7-2"><a></a>|-p -&gt; -q :assumption</span>
-<span id="cb7-3"><a></a>|q :assumption</span>
-<span id="cb7-4"><a></a>| -p :assumption</span>
-<span id="cb7-5"><a></a>| -q :E-&gt; 1, 3</span>
-<span id="cb7-6"><a></a>| !? :E- 2, 4</span>
-<span id="cb7-7"><a></a>|--p :I- 3-5</span>
-<span id="cb7-8"><a></a>|p :-- 6</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="proofchecker-embed" style="margin: 0.4rem 0 0.5rem; width: 96%; margin-left: 2%;"><iframe src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=%C2%ACp%20%E2%86%92%20%C2%ACq%2C%20q&amp;c=p&amp;pr=%C2%ACp%20%E2%86%92%20%C2%ACq%20P%0Aq%20P%0A%20%C2%ACp%20A%0A%20%C2%ACq%20%E2%86%92E%201%2C%203%0A%20%E2%8A%A5%20%C2%ACE%202%2C%204%0A%C2%AC%C2%ACp%20%C2%ACI%203-5%0Ap%20DN%206" style="width: 100%; height: 430px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Proof: ¬p → ¬q, q ⊢ p"></iframe></div>
 <p><span class="math display">\[
 \neg p \to \neg q, q \vdash p
 \]</span></p>
@@ -442,16 +329,7 @@ p \wedge q, \neg p \vdash r
 </section>
 <section id="practice" class="slide level2 smaller">
 <h2>practice</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" data-options="indent resize fonts popout render tabindent" data-submission="none"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a></a>8. :|-: p \/ -p</span>
-<span id="cb8-2"><a></a>| -(p \/ -p) :assumption</span>
-<span id="cb8-3"><a></a>|  p :assumption</span>
-<span id="cb8-4"><a></a>|  p \/ -p :I\/ 2</span>
-<span id="cb8-5"><a></a>|  !? :E- 1, 3</span>
-<span id="cb8-6"><a></a>| -p :I- 2-4</span>
-<span id="cb8-7"><a></a>| p \/ -p :I\/ 5</span>
-<span id="cb8-8"><a></a>| !? :E- 1, 6</span>
-<span id="cb8-9"><a></a>|--(p\/-p) :I- 1-7</span>
-<span id="cb8-10"><a></a>|p\/-p :-- 8</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="proofchecker-embed" style="margin: 0.4rem 0 0.5rem; width: 96%; margin-left: 2%;"><iframe src="https://gabriel-uzquiano.github.io/proof-checker/#c=p%20%E2%88%A8%20%C2%ACp&amp;pr=%20%C2%AC%28p%20%E2%88%A8%20%C2%ACp%29%20A%0A%20%20p%20A%0A%20%20p%20%E2%88%A8%20%C2%ACp%20%E2%88%A8I%202%0A%20%20%E2%8A%A5%20%C2%ACE%201%2C%203%0A%20%C2%ACp%20%C2%ACI%202-4%0A%20p%20%E2%88%A8%20%C2%ACp%20%E2%88%A8I%205%0A%20%E2%8A%A5%20%C2%ACE%201%2C%206%0A%C2%AC%C2%AC%28p%E2%88%A8%C2%ACp%29%20%C2%ACI%201-7%0Ap%E2%88%A8%C2%ACp%20DN%208" style="width: 100%; height: 804px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Proof: ⊢ p ∨ ¬p"></iframe></div>
 </section></section>
 <section>
 <section id="worked-example" class="title-slide slide level1 divider center">
@@ -505,21 +383,7 @@ p \wedge q, \neg p \vdash r
 </div>
 </div>
 </div><div class="column" style="width:52%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" data-options="indent resize fonts popout render tabindent" data-submission="none" data-card="verify"><pre class="sourceCode numberSource ProofChecker GamutPND number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a></a>9. p -&gt; ((q \/ r) /\ -(q/\ r)), s -&gt; q, t -&gt; r, p :|-: -(s/\t)</span>
-<span id="cb9-2"><a></a>|p -&gt; ((q \/ r) /\ -(q/\ r)) :assumption</span>
-<span id="cb9-3"><a></a>|s -&gt; q :assumption</span>
-<span id="cb9-4"><a></a>|t -&gt; r :assumption</span>
-<span id="cb9-5"><a></a>|p :assumption</span>
-<span id="cb9-6"><a></a>| s/\t :assumption</span>
-<span id="cb9-7"><a></a>| s :E/\ 5</span>
-<span id="cb9-8"><a></a>| t :E/\ 5</span>
-<span id="cb9-9"><a></a>| q :E-&gt; 2, 6</span>
-<span id="cb9-10"><a></a>| r :E-&gt; 3, 7</span>
-<span id="cb9-11"><a></a>| q/\r :I/\ 8, 9</span>
-<span id="cb9-12"><a></a>| (q \/ r) /\ -(q/\ r) :E-&gt; 1, 4</span>
-<span id="cb9-13"><a></a>| -(q/\ r) :E/\ 11</span>
-<span id="cb9-14"><a></a>| !? :E- 10, 12</span>
-<span id="cb9-15"><a></a>|-(s/\t) :I- 5-13</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="proofchecker-embed" style="margin: 0.4rem 0 0.5rem; width: 96%; margin-left: 2%;"><iframe src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=p%20%E2%86%92%20%28%28q%20%E2%88%A8%20r%29%20%E2%88%A7%20%C2%AC%28q%E2%88%A7%20r%29%29%2C%20s%20%E2%86%92%20q%2C%20t%20%E2%86%92%20r%2C%20p&amp;c=%C2%AC%28s%E2%88%A7t%29&amp;pr=p%20%E2%86%92%20%28%28q%20%E2%88%A8%20r%29%20%E2%88%A7%20%C2%AC%28q%E2%88%A7%20r%29%29%20P%0As%20%E2%86%92%20q%20P%0At%20%E2%86%92%20r%20P%0Ap%20P%0A%20s%E2%88%A7t%20A%0A%20s%20%E2%88%A7E%205%0A%20t%20%E2%88%A7E%205%0A%20q%20%E2%86%92E%202%2C%206%0A%20r%20%E2%86%92E%203%2C%207%0A%20q%E2%88%A7r%20%E2%88%A7I%208%2C%209%0A%20%28q%20%E2%88%A8%20r%29%20%E2%88%A7%20%C2%AC%28q%E2%88%A7%20r%29%20%E2%86%92E%201%2C%204%0A%20%C2%AC%28q%E2%88%A7%20r%29%20%E2%88%A7E%2011%0A%20%E2%8A%A5%20%C2%ACE%2010%2C%2012%0A%C2%AC%28s%E2%88%A7t%29%20%C2%ACI%205-13" style="width: 100%; height: 710px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Proof: p → ((q ∨ r) ∧ ¬(q∧ r)), s → q, t → r, p ⊢ ¬(s∧t)"></iframe></div>
 <p>```</p>
 </div><p>The argument is <strong>valid</strong> because there is a proof of the conclusion from its premises.</p>
 </div>
