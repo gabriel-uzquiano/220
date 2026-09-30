@@ -143,3 +143,57 @@ $presentation-line-height: 1.35;
 }
 
 .reveal .cardinal { color: #7a003c; }
+
+// Natural deduction: Fitch-style derivations (added for the natural-deduction
+// sessions). Kept in the same idiom as .argument/.conclusion above — cardinal
+// rule, Palatino, quiet.
+
+.reveal .goal {
+  font-size: 0.85em;
+  margin-bottom: 0.35em;
+}
+
+.reveal table.proof {
+  border-collapse: collapse;
+  margin: 0 0 0.4em 0;
+  font-size: 0.8em;
+}
+
+.reveal table.proof td {
+  border: none;
+  padding: 0.1em 0;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.reveal table.proof td.num {
+  color: #999;
+  text-align: right;
+  padding-right: 0.5em;
+  width: 1.7em;
+}
+
+.reveal table.proof td.formula {
+  padding-left: 0.1em;
+}
+
+.reveal table.proof .bar {
+  display: inline-block;
+  width: 0.8em;
+  height: 1.15em;
+  border-left: 1px solid #7a003c;
+  margin-right: 0.3em;
+  vertical-align: middle;
+}
+
+.reveal table.proof td.rule {
+  color: #666;
+  font-size: 0.85em;
+  padding-left: 1.8em;
+  font-style: italic;
+}
+
+// Two proofs side by side inside .columns.
+.reveal .columns table.proof {
+  font-size: 0.72em;
+}

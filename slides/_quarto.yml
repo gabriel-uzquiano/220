@@ -19,11 +19,16 @@ website:
   search: false
 
 # Lua filters, applied in order to every deck.
-#   carnap-widgets.lua  → turns `.QualitativeProblem` code blocks into
-#                          interactive multiple-choice widgets.
-#   checker-widget.lua  → turns `.FormulaChecker` code blocks into iframe
-#                          embeds of the propositional formula checker at
-#                          gabriel-uzquiano.github.io/prop-formula-checker.
+#   carnap-widgets.lua       → turns `.QualitativeProblem` code blocks into
+#                               interactive multiple-choice widgets.
+#   checker-widget.lua       → turns `.FormulaChecker` code blocks into
+#                               iframe embeds of the propositional formula
+#                               checker at gabriel-uzquiano.github.io/prop-formula-checker.
+#   proof-checker-widget.lua → turns `.ProofChecker` code blocks (the same
+#                               Carnap-syntax proofs already used in notes/)
+#                               into iframe embeds of the live proof checker
+#                               at gabriel-uzquiano.github.io/proof-checker.
 filters:
   - carnap-widgets.lua
   - checker-widget.lua
+  - proof-checker-widget.lua
