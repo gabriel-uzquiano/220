@@ -66,8 +66,8 @@ You may write $\psi$ if $\varphi \to \psi$ and $\varphi$ are both available at p
 
 ::: {.argument}
 1. $(p \wedge q) \to t$
-2. $q$
-3. $p$
+2. $p$
+3. $q$
 
 ::: {.conclusion}
 4. $t$
@@ -87,7 +87,7 @@ You may write $\psi$ if $\varphi \to \psi$ and $\varphi$ are both available at p
 ```
 
 $$
-(p \wedge q) \to t, q, p \vdash t
+(p \wedge q) \to t, p, q \vdash t
 $$
 :::
 :::
