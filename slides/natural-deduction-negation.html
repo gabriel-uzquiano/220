@@ -183,6 +183,36 @@ Gabriel Uzquiano
 <p>You may write <span class="math inline">\(\neg \varphi\)</span> if you can prove <span class="math inline">\(\bot\)</span> from the <strong>assumption</strong> that <span class="math inline">\(\varphi\)</span>.</p>
 <p>Once you complete the subproof, bracket the lines of that subproof and never appeal to them again.</p>
 </section>
+<section id="rationale-for-ineg" class="slide level2 smaller">
+<h2>rationale for I<span class="math inline">\(\neg\)</span></h2>
+<div class="argument">
+<ol type="1">
+<li>If my client did it, then she walked into the library at 9AM.</li>
+<li>If my client walked into the library at 9AM, then she was not seen at the garden at the same time.</li>
+<li>My client was seen at the garden at 9AM.</li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li>My client did not do it.</li>
+</ol>
+</div>
+</div>
+<p>How should we argue for that conclusion?</p>
+<ol type="1">
+<li class="fragment"><strong>Assume</strong> that my client did it.</li>
+<li class="fragment">Reason <strong>within that assumption</strong>:
+<ul>
+<li class="fragment">my client walked into the library at 9AM</li>
+<li class="fragment">my client was not seen at the garden at 9AM</li>
+<li class="fragment">my client was seen at the garden at 9AM</li>
+<li class="fragment"><span class="math inline">\(\bot\)</span></li>
+</ul></li>
+<li class="fragment"><strong>Exit the scope of the assumption</strong> to conclude:
+<ul>
+<li class="fragment">it is <em>not</em> the case that my client did it.</li>
+</ul></li>
+</ol>
+</section>
 <section id="how-to-combine-eneg-and-ineg" class="slide level2 smaller">
 <h2>how to combine E<span class="math inline">\(\neg\)</span> and I<span class="math inline">\(\neg\)</span></h2>
 <div class="columns">
@@ -330,10 +360,9 @@ p \wedge q, \neg p \vdash r
 <section id="practice" class="slide level2 smaller">
 <h2>practice</h2>
 <div class="proofchecker-embed" style="margin: 0.4rem 0 0.5rem; width: 96%; margin-left: 2%;"><iframe src="https://gabriel-uzquiano.github.io/proof-checker/#c=p%20%E2%88%A8%20%C2%ACp&amp;pr=%20%C2%AC%28p%20%E2%88%A8%20%C2%ACp%29%20A%0A%20%20p%20A%0A%20%20p%20%E2%88%A8%20%C2%ACp%20%E2%88%A8I%202%0A%20%20%E2%8A%A5%20%C2%ACE%201%2C%203%0A%20%C2%ACp%20%C2%ACI%202-4%0A%20p%20%E2%88%A8%20%C2%ACp%20%E2%88%A8I%205%0A%20%E2%8A%A5%20%C2%ACE%201%2C%206%0A%C2%AC%C2%AC%28p%E2%88%A8%C2%ACp%29%20%C2%ACI%201-7%0Ap%E2%88%A8%C2%ACp%20DN%208" style="width: 100%; height: 804px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Proof: ⊢ p ∨ ¬p"></iframe></div>
-</section></section>
-<section>
-<section id="worked-example" class="title-slide slide level1 divider center">
-<h1># worked example</h1>
+</section>
+<section id="worked-example" class="slide level2 divider">
+<h2>worked example</h2>
 <p>All four rules, on an argument from natural language.</p>
 </section>
 <section id="a-natural-language-argument" class="slide level2 smaller">
