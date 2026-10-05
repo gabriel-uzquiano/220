@@ -234,10 +234,39 @@ p \to (q \to r), p \wedge q \vdash r
 <h2>practice</h2>
 <div class="proofchecker-embed" style="margin: 0.4rem 0 0.5rem; width: 96%; margin-left: 2%;"><iframe src="https://gabriel-uzquiano.github.io/proof-checker/#p=p%2C%20%28p%20%E2%88%A7%20q%29%20%E2%86%92%20r%2C%20p%20%E2%86%92%20q&amp;c=r&amp;pr=p%20P%0A%28p%20%E2%88%A7%20q%29%20%E2%86%92%20r%20P%0Ap%20%E2%86%92%20q%20P" style="width: 100%; height: 620px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Proof: p, (p ∧ q) → r, p → q ⊢ r"></iframe></div>
 </section>
-<section id="introduction-rule-ito" class="slide level2 smaller">
+<section id="introduction-rule-ito" class="slide level2">
 <h2>introduction rule: I<span class="math inline">\(\to\)</span></h2>
 <p>You may write <span class="math inline">\(\varphi \to \psi\)</span> if you can prove <span class="math inline">\(\psi\)</span> from the <strong>assumption</strong> that <span class="math inline">\(\varphi\)</span>.</p>
 <p>Once you complete the subproof, bracket the lines of that subproof and never appeal to them again.</p>
+</section>
+<section id="rationale-for-ito" class="slide level2 smaller">
+<h2>rationale for I<span class="math inline">\(\to\)</span></h2>
+<div class="argument">
+<ol type="1">
+<li>If interest rates are now lowered below 2% and the economy is near full employment, then inflation will rise above the 2% target.</li>
+<li>The economy is near full employment.</li>
+</ol>
+<div class="conclusion">
+<ol start="3" type="1">
+<li>If interest rates are lowered below 2%, then inflation will rise above the 2% target.</li>
+</ol>
+</div>
+</div>
+<p>How would you argue for that conclusion given that interest rates are <strong>not</strong> lowered below 2%?</p>
+<ol type="1">
+<li class="fragment"><strong>Assume</strong> that interest rates are now lowered below 2%.</li>
+<li class="fragment">Reason <strong>within that assumption</strong> that</li>
+</ol>
+<ul>
+<li class="fragment">interest rates are now lowered below 2% and the economy is near full employment.</li>
+<li class="fragment">inflation will rise above the 2% target.</li>
+</ul>
+<ol start="3" type="1">
+<li class="fragment"><strong>Exit the scope of the assumption</strong> to conclude:</li>
+</ol>
+<ul>
+<li class="fragment">if interest rates are lowered below 2%, then inflation will rise above the 2% target.</li>
+</ul>
 </section>
 <section id="how-to-apply-ito" class="slide level2 smaller">
 <h2>how to apply I<span class="math inline">\(\to\)</span></h2>
