@@ -63,6 +63,33 @@ You may write $\neg \varphi$ if you can prove $\bot$ from the **assumption** tha
 
 Once you complete the subproof, bracket the lines of that subproof and never appeal to them again.
 
+## rationale for I$\neg$ {.smaller}
+::: {.argument}
+1. If my client did it, then she walked into the library at 9AM.
+2. If my client walked into the library at 9AM, then she was not seen at the garden at the same time.
+3. My client was seen at the garden at 9AM.
+
+::: {.conclusion}
+3. My client did not do it.
+:::
+:::
+How should we argue for that conclusion?
+
+::: {.incremental}
+1. **Assume** that my client did it.
+2. Reason **within that assumption**:
+   - my client walked into the library at 9AM
+   - my client was not seen at the garden at 9AM
+   - my client was seen at the garden at 9AM
+   - $\bot$
+3. **Exit the scope of the assumption** to conclude:
+   - it is *not* the case that my client did it.
+:::
+
+
+
+
+
 
 
 ## how to combine E$\neg$ and I$\neg$ {.smaller}
@@ -319,7 +346,7 @@ $$
 |p\/-p :-- 8
 ```
 
-# # worked example {.divider}
+## worked example {.divider}
 
 All four rules, on an argument from natural language.
 
