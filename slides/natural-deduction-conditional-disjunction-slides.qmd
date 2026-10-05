@@ -303,7 +303,7 @@ prior line.
 2. $q$
 
 ::: {.conclusion}
-2. $(p \vee r) \vee (r \vee q)$
+2. $(p \vee r) \wedge (r \vee q)$
 :::
 :::
 
@@ -320,7 +320,7 @@ prior line.
 ```
 
 $$
-p, q \vdash (p \vee r) \vee (r \vee q)
+p, q \vdash (p \vee r) \wedge (r \vee q)
 $$
 :::
 
