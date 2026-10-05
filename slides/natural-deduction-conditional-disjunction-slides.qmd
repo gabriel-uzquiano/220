@@ -142,11 +142,37 @@ $$
 
 
 
-## introduction rule: I$\to$ {.smaller}
+## introduction rule: I$\to$ 
 
 You may write $\varphi \to \psi$ if you can prove $\psi$ from the **assumption** that $\varphi$. 
 
 Once you complete the subproof, bracket the lines of that subproof and never appeal to them again.
+
+
+## rationale for I$\to$ {.smaller}
+
+::: {.argument}
+1. If interest rates are now lowered below 2% and the economy is near full employment, then inflation will rise above the 2% target.
+2. The economy is near full employment.
+
+::: {.conclusion}
+3. If interest rates are lowered below 2%, then inflation will rise above the 2% target.
+:::
+:::
+
+How would you argue for that conclusion given that interest rates are **not** lowered below 2%?
+
+::: {.incremental}
+1. **Assume** that interest rates are now lowered below 2%.
+2. Reason **within that assumption** that 
+
+  - interest rates are now lowered below 2% and the economy is near full employment.
+  - inflation will rise above the 2% target.
+  
+3. **Exit the scope of the assumption** to conclude:
+
+  - if interest rates are lowered below 2%, then inflation will rise above the 2% target.
+:::
 
 
 ## how to apply I$\to$ {.smaller}
