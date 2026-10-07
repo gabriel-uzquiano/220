@@ -188,7 +188,7 @@ Gabriel Uzquiano
 <div class="argument">
 <ol type="1">
 <li>If my client did it, then she walked into the library at 9AM.</li>
-<li>If my client walked into the library at 9AM, then she was not seen at the garden at the same time.</li>
+<li>If my client walked into the library at 9AM, then she was not seen at the garden at 9AM.</li>
 <li>My client was seen at the garden at 9AM.</li>
 </ol>
 <div class="conclusion">
@@ -202,10 +202,10 @@ Gabriel Uzquiano
 <li class="fragment"><strong>Assume</strong> that my client did it.</li>
 <li class="fragment">Reason <strong>within that assumption</strong>:
 <ul>
-<li class="fragment">my client walked into the library at 9AM</li>
-<li class="fragment">my client was not seen at the garden at 9AM</li>
-<li class="fragment">my client was seen at the garden at 9AM</li>
-<li class="fragment"><span class="math inline">\(\bot\)</span></li>
+<li class="fragment">my client walked into the library at 9AM (from 1 and assumption)</li>
+<li class="fragment">my client was not seen at the garden at 9AM (from 2 and prior line)</li>
+<li class="fragment">my client was seen at the garden at 9AM (from 3)</li>
+<li class="fragment"><span class="math inline">\(\bot\)</span> (from E<span class="math inline">\(\neg\)</span> and prior lines)</li>
 </ul></li>
 <li class="fragment"><strong>Exit the scope of the assumption</strong> to conclude:
 <ul>
@@ -296,6 +296,11 @@ p \to \neg p \vdash \neg p
 </ol>
 </div>
 </div>
+<div style="height: 20px;">
+
+</div>
+<p>This argument is <strong>valid</strong>: no assignment can make the premises true and the conclusion false (simply because no assignment can make the premises true.)</p>
+<p>So, we should be able to prove the conclusion from its premises …</p>
 </div><div class="column" style="width:42%;">
 <div class="proofchecker-embed" style="margin: 0.4rem 0 0.5rem; width: 96%; margin-left: 2%;"><iframe src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=p%2C%20%C2%ACp&amp;c=q&amp;pr=p%20P%0A%C2%ACp%20P%0A%E2%8A%A5%20%C2%ACE%201%2C%202%0Aq%20EFSQ%203" style="width: 100%; height: 310px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="Proof: p, ¬p ⊢ q"></iframe></div>
 <p><span class="math display">\[
