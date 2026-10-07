@@ -341,7 +341,7 @@ $$
 
 ## practice {.smaller}
 
-```{.ProofChecker .GamutPND options="indent resize fonts popout render tabindent" submission="none"}
+```{.ProofChecker .GamutPND options="indent resize fonts popout render tabindent" submission="none" card="verify"}
 8. :|-: p \/ -p
 | -(p \/ -p) :assumption
 |  p :assumption
