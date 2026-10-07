@@ -66,7 +66,7 @@ Once you complete the subproof, bracket the lines of that subproof and never app
 ## rationale for I$\neg$ {.smaller}
 ::: {.argument}
 1. If my client did it, then she walked into the library at 9AM.
-2. If my client walked into the library at 9AM, then she was not seen at the garden at the same time.
+2. If my client walked into the library at 9AM, then she was not seen at the garden at 9AM.
 3. My client was seen at the garden at 9AM.
 
 ::: {.conclusion}
@@ -78,10 +78,10 @@ How should we argue for that conclusion?
 ::: {.incremental}
 1. **Assume** that my client did it.
 2. Reason **within that assumption**:
-   - my client walked into the library at 9AM
-   - my client was not seen at the garden at 9AM
-   - my client was seen at the garden at 9AM
-   - $\bot$
+   - my client walked into the library at 9AM (from 1 and assumption)
+   - my client was not seen at the garden at 9AM (from 2 and prior line)
+   - my client was seen at the garden at 9AM (from 3)
+   - $\bot$ (from E$\neg$ and prior lines)
 3. **Exit the scope of the assumption** to conclude:
    - it is *not* the case that my client did it.
 :::
@@ -221,6 +221,14 @@ The Latin phrase *ex falso sequitur quodlibet* just means that anything at all f
 3. $q$
 :::
 :::
+
+::: {style="height: 20px;"}
+:::
+
+This argument is **valid**: no assignment can make the premises true and the conclusion false (simply because no assignment can make the premises true.)
+
+So, we should be able to prove the conclusion from its premises ...
+
 
 :::
 
