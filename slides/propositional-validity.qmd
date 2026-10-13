@@ -1,0 +1,631 @@
+---
+title: "propositional validity"
+subtitle: "PHIL 220. Introduction to Logic"
+author: "Gabriel Uzquiano"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    output-file: propositional-validity.html
+    slide-number: c/t
+    chalkboard: true          # press B for a blank board, C to draw on a slide
+    preview-links: auto       # links open in an overlay, without leaving the deck
+    history: false
+    transition: none          # no swooping; the content should not move
+    center: false
+    width: 1100
+    height: 750
+    margin: 0.06
+    hash-type: title
+    menu:
+      side: left
+---
+
+# propositional validity {.divider} 
+
+We now combine all the tools we have developed for the assessment of real life arguments.
+
+We will look at the four arguments included in the practice midterm.
+
+We will consider other arguments drawn from English.
+
+## practice midterm  {.smaller}
+
+We now look at each of the arguments in the practice midterm in turn. 
+
+Each argument will be:
+
+- put in **premise-conclusion form**
+- **translated into** the language of **propositional logic**
+- assessed for **validity**. 
+  - if the argument is valid, a proof will be given
+  - if the argument is invalid, an assignment will be provided on which premises are true and the conclusion false.
+
+## argument A {.smaller}
+
+> If you tossed the coin and it landed heads, then it didn't land tails. You tossed the coin, but it landed tails. Therefore, the coin didn't land heads.
+
+**premise-conclusion form**
+
+::: {.argument}
+1. If you tossed the coin and it landed heads, then it didn't land tails.
+2. You tossed the coin, but it landed tails.
+
+::: {.conclusion}
+3. The coin didn't land heads.
+:::
+:::
+
+
+## {.smaller}
+
+
+
+::: {.columns}
+::: {.column width="48%"}
+**translation**
+
+::: {.argument}
+$p$: You tossed the coin.
+
+$q$: The coin landed heads.
+
+$r$: The coin landed tails.
+:::
+
+::: {.argument}
+1. $(p \wedge q) \to \neg r$
+2. $p \wedge r$
+
+::: {.conclusion}
+3. $\neg q$
+:::
+:::
+
+:::
+
+::: {.column width="52%"}
+**validity**
+
+::: {style="height: 10px;"}
+:::
+
+::: {style="font-size: 0.9em;"}
+The argument is **valid** because there is a proof of the conclusion from its premises:
+:::
+
+::: {style="height: 10px;"}
+:::
+
+```{.ProofChecker .GamutPND options="indent resize fonts popout render tabindent" submission="none" card="verify"}
+A. (p /\ q) -> ~r, p /\ r :|-: - q
+|(p /\ q) -> ~r :assumption
+|p /\ r :assumption
+| q :assumption
+| p :E/\ 2
+| p /\ q :I/\ 3, 4
+| ~r :E-> 1, 5
+| r :E/\ 2
+| !? :E- 6, 7
+|-q :I- 3-8
+```
+:::
+:::
+
+
+## argument B {.smaller}
+
+> The car will not start unless you turn the ignition and there is gas in the tank. There is gas in the tank. Therefore, the car will start if you turn the ignition.
+
+**premise-conclusion form**
+
+::: {.argument}
+1. The car will not start unless you turn the ignition and there is gas in the tank.
+2. There is gas in the tank.
+
+::: {.conclusion}
+3. The car will start if you turn the ignition.
+:::
+:::
+
+
+## {.smaller}
+
+
+::: {.columns}
+
+::: {.column width="48%"}
+**translation**
+
+::: {.argument}
+$p$: The car will start.
+
+$q$: You turn the ignition.
+
+$r$: There is gas in the tank.
+:::
+
+::: {.argument}
+1. $\neg (q \wedge r) \to \neg p$
+2. $r$
+
+::: {.conclusion}
+3. $q \to p$
+:::
+:::
+:::
+
+::: {.column width="52%"}
+**validity**
+
+::: {style="height: 10px;"}
+:::
+
+::: {style="font-size: 0.9em;"}
+The argument is **invalid** as there is an assignment on which the premises are true and the conclusion false: 
+
+$$
+FTT.
+$$
+:::
+
+::: {style="height: 10px;"}
+:::
+
+$$
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+p & q & r & \neg (q \wedge r) \to \neg p & \ r \ & q \to  p \\
+\hline
+F & T & T & \color{red}{T} &  \color{red}{T}  &   \color{red}{F}  \\
+\hline
+\end{array}
+$$
+
+:::
+:::
+
+
+## argument C {.smaller}
+
+> If the policy is sound, then inflation will fall. If inflation falls, then the economy will decelerate and
+unemployment might rise. Therefore, if the policy is sound, then unemployment might rise.
+
+**premise-conclusion form**
+
+::: {.argument}
+1. If the policy is sound, then inflation will fall.
+2. If inflation falls, then the economy will decelerate and
+unemployment might rise.
+
+::: {.conclusion}
+3. If the policy is sound, then unemployment might rise.
+:::
+:::
+
+## {.smaller}
+
+::: {.columns}
+::: {.column width="48%"}
+**translation**
+
+
+::: {.argument}
+$p$: The policy is sound.
+
+$q$: Inflation will fall.
+
+$r$: The economy will decelerate.
+
+$s$: Unemployment might rise.
+:::
+
+
+::: {.argument}
+1. $p \to q$
+2. $q \to (r \wedge s)$
+
+::: {.conclusion}
+3. $p \to s$
+:::
+:::
+
+:::
+
+::: {.column width="52%"}
+**validity**
+
+::: {style="height: 10px;"}
+:::
+
+::: {style="font-size: 0.9em;"}
+The argument is **valid** because there is a proof of the conclusion from its premises:
+:::
+
+::: {style="height: 10px;"}
+:::
+
+```{.ProofChecker .GamutPND options="indent resize fonts popout render tabindent" submission="none" card="verify"}
+C. p -> q, q -> (r /\ s) :|-: p -> s
+|p -> q :assumption
+|q -> (r /\ s) :assumption
+| p :assumption
+| q :E-> 1, 3
+| r /\ s :E-> 2, 4 
+| s :E/\ 5
+|p -> s :I-> 3-6
+```
+
+:::
+:::
+
+
+
+## argument D {.smaller}
+
+> If your argument is sound, then it is valid and its premises are true. Your argument is not sound. So,
+if your argument is valid, then its premises are not true.
+
+**premise-conclusion form**
+
+::: {.argument}
+1. If your argument is sound, then it is valid and its premises are true.
+2. Your argument is not sound.
+
+::: {.conclusion}
+3. If your argument is valid, then its premises are not true.
+:::
+:::
+
+
+## {.smaller}
+
+::: {.columns}
+::: {.column width="48%"}
+**translation**
+
+
+::: {.argument}
+$p$: Your argument is sound.
+
+$q$: Your argument is valid.
+
+$r$: Your argument's premises are true.
+:::
+
+
+::: {.argument}
+1. $p \to (q \wedge r)$
+2. $\neg p$
+
+::: {.conclusion}
+3. $q \to \neg r$
+:::
+:::
+
+:::
+
+::: {.column width="52%"}
+**validity**
+
+::: {style="height: 10px;"}
+:::
+
+::: {style="font-size: 0.9em;"}
+The argument is **invalid** as there is an assignment on which the premises are true and the conclusion false: 
+
+$$
+FTT.
+$$
+:::
+
+::: {style="height: 10px;"}
+:::
+
+$$
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+p & q & r & p \to (q \wedge r)  & \ \neg p \ & q \to  \neg r \\
+\hline
+F & T & T & \color{red}{T} &  \color{red}{T}  &   \color{red}{F}  \\
+\hline
+\end{array}
+$$
+:::
+:::
+
+## practice {.smaller}
+
+> You'll be rich tomorrow if you buy a lottery ticket from me. You'll buy a ticket from me if the lottery is rigged and you think that I'm part of the scheme. The lottery is rigged, but you won't be rich tomorrow. Therefore, you don't think that I'm part of the scheme.
+
+**premise-conclusion form**
+
+::: {.argument}
+1. You'll be rich tomorrow if you buy a lottery ticket from me.
+2. You'll buy a ticket from me if the lottery is rigged and you think that I'm part of the scheme.
+3. The lottery is rigged, but you won't be rich tomorrow.
+
+::: {.conclusion}
+4. You don't think that I'm part of the scheme.
+:::
+:::
+
+
+## {.smaller}
+
+::: {.columns}
+::: {.column width="48%"}
+**translation**
+
+
+::: {.argument}
+$p$: You will be rich tomorrow.
+
+$q$: You buy a lottery ticket from me.
+
+$r$: The lottery is rigged.
+
+$s$: You think I'm part of the scheme.
+:::
+
+
+::: {.argument}
+1. $q \to p$
+2. $(r \wedge s) \to q$
+3. $r \wedge \neg p$
+
+::: {.conclusion}
+4. $\neg s$
+:::
+:::
+
+:::
+
+::: {.column width="52%"}
+**validity**
+
+::: {style="height: 10px;"}
+:::
+
+::: {style="font-size: 0.9em;"}
+The argument is **valid** because there is a proof of the conclusion from its premises:
+:::
+
+
+
+```{.ProofChecker .GamutPND options="indent resize fonts popout render tabindent" submission="none" card="verify"}
+E. q -> p, (r /\ s) -> q, r /\ ~p :|-: ~s
+|q -> p :assumption
+|(r /\ s) -> q :assumption
+|r /\ ~p :assumption
+| s :assumption
+| r :E/\  3
+| r /\ s :I/\ 4, 5 
+| q :E-> 2, 6
+| p :E-> 1, 7
+| ~p :E/\  3
+| !? :E- 8, 9
+|-s :I- 4-10
+```
+
+:::
+:::
+
+## more practice {.smaller}
+
+> If the board committed fraud, then they'll be charged if there is any evidence against them. There is evidence against them if they committed fraud. So, unless they are charged, there is no evidence against them.
+
+**premise-conclusion form**
+
+::: {.argument}
+1. If the board committed fraud, then they'll be charged if there is any evidence against them.
+2. There is evidence against them if they committed fraud.
+
+::: {.conclusion}
+3. Unless they are charged, there is no evidence against them.
+:::
+:::
+
+## {.smaller}
+
+
+::: {.columns}
+
+::: {.column width="48%"}
+**translation**
+
+::: {.argument}
+$p$: The board committed fraud.
+
+$q$: The board will be charged.
+
+$r$: There is evidence against the board.
+:::
+
+::: {.argument}
+1. $p \to (r \to q)$
+2. $p \to r$
+
+::: {.conclusion}
+3. $\neg q \to \neg r$
+:::
+:::
+:::
+
+::: {.column width="52%"}
+**validity**
+
+::: {style="height: 10px;"}
+:::
+
+::: {style="font-size: 0.9em;"}
+The argument is **invalid** as there is an assignment on which the premises are true and the conclusion false: 
+
+$$
+FFT.
+$$
+:::
+
+::: {style="height: 10px;"}
+:::
+
+$$
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+p & q & r & p \to (r \to q) & p \to r & \neg q \to \neg r \\
+\hline
+F & F & T & \color{red}{T} &  \color{red}{T}  &   \color{red}{F}  \\
+\hline
+\end{array}
+$$
+
+:::
+:::
+
+## more practice {.smaller}
+
+> If you're in the Expo line, then you'll reach Santa Monica only if you board a westbound train. Although you're in the Expo line, you're not boarding a westbound train. Therefore, you won't reach Santa Monica.
+
+**premise-conclusion form**
+
+::: {.argument}
+1. If you're in the Expo line, then you'll reach Santa Monica only if you board a westbound train.
+2. Although you're in the Expo line, you're not boarding a westbound train.
+
+
+::: {.conclusion}
+3. You won't reach Santa Monica.
+:::
+:::
+
+
+## {.smaller}
+
+::: {.columns}
+::: {.column width="48%"}
+**translation**
+
+
+::: {.argument}
+$p$: You are in the Expo line.
+
+$q$: You will reach Santa Monica.
+
+$r$: You board a westbound train.
+:::
+
+
+::: {.argument}
+1. $p \to (q \to r)$
+2. $p \wedge \neg r$
+
+::: {.conclusion}
+3. $\neg q$
+:::
+:::
+
+:::
+
+::: {.column width="52%"}
+**validity**
+
+::: {style="height: 10px;"}
+:::
+
+::: {style="font-size: 0.9em;"}
+The argument is **valid** because there is a proof of the conclusion from its premises:
+:::
+
+
+
+```{.ProofChecker .GamutPND options="indent resize fonts popout render tabindent" submission="none" card="verify"}
+F. p -> (q -> r), p /\ ~ r :|-: ~q
+|p -> (q -> r) :assumption
+|p /\ ~ r  :assumption
+| q :assumption
+| p :E/\  2
+| q -> r :E-> 1, 4 
+| r :E-> 3, 5
+| ~r :E/\  2
+| !? :E- 6, 7
+|-q :I- 3-8
+```
+
+:::
+:::
+
+
+
+## more practice {.smaller}
+
+> I'll win the hand if I'm dealt an ace. Unless someone else is dealt an ace, I will still win the hand with a four of hearts. I'll be dealt an ace or a four of hearts. Therefore, I'll win the hand.
+
+**premise-conclusion form**
+
+::: {.argument}
+1. I'll win the hand if I'm dealt an ace.
+2. Unless someone else is dealt an ace, I will still win the hand with a four of hearts.
+3. I'll be dealt an ace or a four of hearts.
+
+::: {.conclusion}
+4. I'll win the hand.
+:::
+:::
+
+## {.smaller}
+
+
+::: {.columns}
+
+::: {.column width="48%"}
+**translation**
+
+::: {.argument}
+$p$: I'll win the hand.
+
+$q$: I'm dealt an ace.
+
+$r$: Someone else is dealt an ace.
+
+$s$: I'm dealt a four of hearts.
+:::
+
+::: {.argument}
+1. $q \to p$
+2. $\neg r \to (s \to p)$
+3. $q \vee s$
+
+::: {.conclusion}
+3. $p$
+:::
+:::
+:::
+
+::: {.column width="52%"}
+**validity**
+
+::: {style="height: 10px;"}
+:::
+
+::: {style="font-size: 0.9em;"}
+The argument is **invalid** as there is an assignment on which the premises are true and the conclusion false: 
+
+$$
+FFTT.
+$$
+:::
+
+::: {style="height: 10px;"}
+:::
+
+$$
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+p & q & r & s & q \to p & \neg r \to (s \to p) & q \vee s & p \\
+\hline
+F & F & T & T & \color{red}{T} &  \color{red}{T}  &  \color{red}{T}&   \color{red}{F}  \\
+\hline
+\end{array}
+$$
+
+:::
+:::
