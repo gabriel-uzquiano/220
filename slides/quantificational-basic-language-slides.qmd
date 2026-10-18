@@ -1,0 +1,601 @@
+---
+title: "basic quantificational language"
+subtitle: "PHIL 220. Introduction to Logic"
+author: "Gabriel Uzquiano"
+filters:
+  - carnap-widgets.lua
+  - checker-widget.lua
+  - ql-checker-widget.lua
+  - truth-table-widgets.lua
+  - translate-widget.lua
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    output-file: quantificational-basic-language-slides.html
+    slide-number: c/t
+    chalkboard: true          # press B for a blank board, C to draw on a slide
+    preview-links: auto
+    history: false
+    transition: none
+    center: false
+    width: 1100
+    height: 750
+    margin: 0.06
+    hash-type: title
+    menu:
+      side: left
+---
+
+# beyond propositional logic {.divider}
+
+Propositional logic does not account for the validity of a variety of natural language arguments.
+
+## a valid argument {.smaller}
+
+> Every US citizen can travel to the UK without a visa. You are a US citizen. Therefore, you can travel to the UK without a visa.
+
+. . .
+
+::: {.argument}
+1. Every US citizen is permitted to travel to the UK without a visa.
+2. You are a US citizen.
+
+::: {.conclusion}
+3. Therefore, you are permitted to travel to the UK without a visa.
+:::
+:::
+
+. . .
+
+This appears to be an instance of a valid argument form:
+
+
+::: {.columns}
+::: {.column width="33%"}
+
+::: {.argument}
+1. Every $A$ is $B$.
+2. $a$ is $A$.
+
+::: {.conclusion}
+3. $a$ is $B$.
+:::
+:::
+
+:::
+
+
+::: {.column width="33%"}
+
+::: {.argument}
+1. Every **logician** is **a philosopher**.
+2. **Kurt** is a **logician**.
+
+::: {.conclusion}
+3. **Kurt** is a **philosopher**
+:::
+:::
+
+:::
+
+::: {.column width="33%"}
+
+::: {.argument}
+1. Every **professor** is **a parking permit holder**.
+2. **Beth** is a **professor**.
+
+::: {.conclusion}
+3. **Beth** is **parking permit holder**.
+:::
+:::
+
+:::
+
+:::
+
+
+## propositional validity {.smaller}
+
+::: {.columns}
+::: {style="font-size: 0.8em;"}
+
+::: {.column width="40%"}
+**translation**
+
+::: {.argument}
+1. Every US citizen is permitted to travel to the UK without a visa.
+2. You are a US citizen.
+
+::: {.conclusion}
+3. Therefore, you are permitted to travel to the UK without a visa.
+:::
+:::
+
+::: {.argument}
+$p$: \ Every US citizen is permitted to travel to the UK without a visa.
+
+$q$: \ You are a US citizen.
+
+$r$: \ You are permitted to travel to the UK without a visa.
+:::
+
+::: {.argument}
+1. $p$
+2. $q$
+
+::: {.conclusion}
+3. $r$
+:::
+:::
+:::
+::: {.column width="10%"}
+:::
+::: {.column width="50%"}
+**validity**
+
+::: {style="font-size: 0.9em;"}
+The argument is **invalid** as there is an assignment on which the premises are true and the conclusion false: 
+
+$$
+TTF.
+$$
+:::
+
+::: {style="height: 10px;"}
+:::
+
+$$
+\begin{array}{|c|c|c||c|c|c|}
+\hline
+p & q & r &  p & \ q \ & \ r \\
+\hline
+T & T & T & \color{red}{T} &  \color{red}{T}  &   \color{red}{F}  \\
+\hline
+\end{array}
+$$
+
+:::
+
+:::
+
+:::
+
+
+## the limits of propositional logic {.smaller}
+
+Propositional logic is too coarse-grained to represent the forms of a variety of valid arguments:
+
+::: {.columns}
+::: {.column width="48%"}
+::: {.argument}
+1. Every $A$ is $B$
+2. $a$ is $A$
+
+::: {.conclusion}
+3. $a$ is $B$
+:::
+:::
+
+
+::: {.argument}
+1. Some $A$ is $B$
+2. Every $B$ is $C$
+
+::: {.conclusion}
+3. Some $A$ is $C$
+:::
+:::
+:::
+
+::: {.column width="48%"}
+::: {.fragment}
+::: {.argument}
+1. No $A$ is $B$
+2. $a$ is $A$
+
+::: {.conclusion}
+3. $a$ is not $B$
+:::
+:::
+
+::: {.argument}
+1. No $A$ is $B$
+2. Some $C$ is $B$
+
+::: {.conclusion}
+3. Some $C$ is not $A$
+:::
+:::
+:::
+:::
+:::
+
+
+
+# three categories {.divider}
+
+Designators, predicates, and quantifier phrases.
+
+## designators {.smaller}
+
+::: {.definition}
+A **designator** is an expression whose primary function is to designate something.
+:::
+
+. . .
+
+- [Zeno]{.mark} is a Greek philosopher
+- [Wednesday]{.mark} comes between [Tuesday]{.mark} and [Thursday]{.mark}
+- [The Griffith Observatory]{.mark} is a historic-cultural landmark, and [it]{.mark} is free to visit
+- Someone will meet [you]{.mark} before [lunch]{.mark}
+- All philosophers are curious
+
+. . .
+
+
+Notice that the occurrence of 'it' in the third sentence co-refers with 'The Griffith Observatory'. But not all pronouns act as a designator: *Something* is a landmark, and *it* is free to visit.
+
+
+## predicates {.smaller}
+
+::: {.definition}
+A **predicate** is an expression that combines with one or more designators to form a sentence, which says of some thing or things that they are a certain way or stand in a certain relation.
+:::
+
+. . .
+
+- Zeno [is a Greek philosopher]{.mark}
+- Wednesday [comes between]{.mark} Tuesday [and]{.mark} Thursday
+- Something [is a historic-cultural landmark]{.mark}, and it [is free to visit]{.mark}
+- Someone [will meet]{.mark} you [before]{.mark} lunch
+- All philosophers [are curious]{.mark}
+
+. . .
+
+
+Predicates come with a different number of **gaps** or **arguments**: 
+
+'\_\_ is a Greek philosopher' takes one; 
+
+'\_\_ loves \_\_' takes two;
+
+'\_\_ comes between \_\_ and \_\_' takes three.
+
+
+## quantifier phrases {.smaller}
+
+::: {.definition}
+A **quantifier phrase** is an expression used to indicate generality.
+:::
+
+. . .
+
+- [Something]{.mark} is a historic-cultural landmark, and it is free to visit
+- [Someone]{.mark} will meet you before lunch
+- [All philosophers]{.mark} are curious
+
+Since `nobody' is not a designator, the arguments below differ in form:
+
+::: {.columns}
+::: {.column width="46%"}
+::: {.fragment}
+**premises**
+
+1. Jon is taller than Maria.
+2. Maria is taller than Sam.
+
+::: {.conclusion}
+**conclusion**
+
+3. Jon is taller than Sam.
+:::
+:::
+:::
+
+::: {.column width="50%"}
+
+::: {.fragment}
+**premises**
+
+1. Jon is taller than nobody.
+2. Nobody is taller than Sam.
+
+::: {.conclusion}
+**conclusion**
+
+3. Jon is taller than Sam.
+:::
+:::
+
+:::
+:::
+
+
+## binding pronouns {.smaller}
+
+Quantifier phrases may **bind** occurrences of pronouns:
+
+- [Something]{.mark} is a historic-cultural landmark, and [it]{.mark} is free to visit.
+
+- [Every]{.mark} Mercedes is expensive if [it]{.mark} is on sale.
+
+- [Some]{.mark} apple is red, and [it]{.mark} is delicious.
+
+. . .
+
+The language of quantificational logic comes with formal counterparts for each category of expression.
+
+# the basic language {.divider}
+
+To specify the syntax, we provide a **vocabulary** and a **grammar**.
+
+
+## vocabulary {.smaller}
+
+The vocabulary of quantificational logic contains six types of symbols:
+
+. . .
+
+Constants
+
+:   These are the lowercase letters $a$, $b$, $c$, $d$, and $e$ with or without numerical subscripts:
+   $$
+   a,  b, c, d, e
+   $$
+
+. . .
+
+Predicates
+
+:   These are uppercase letters $P$, $Q$, $R$, $S$, and $T$ with or without numerical subscripts:
+   $$
+   P,  Q, R, S, T
+   $$
+
+. . . 
+
+Variables
+
+:   These are the lowercase letters $x$, $y$, and $z$ with or without numerical subscripts:
+   $$
+   x, y, z
+   $$
+
+## vocabulary {.smaller}
+
+
+
+Connectives
+
+:   These are formal counterparts of 'not', 'or', 'and', and 'if $\dots$, then $\dots$':
+   $$
+   \neg, \vee, \wedge, \to
+   $$
+
+. . .
+
+Quantifiers
+
+:   These are symbols $\forall$ and $\exists$ for the universal and existential quantifier respectively:
+   $$
+   \forall, \exists
+   $$
+
+. . .
+
+Parentheses
+
+:   There are two parentheses:
+   $$
+   ), (
+   $$
+
+. . .
+
+**Nothing else** is a symbol of the language.
+
+## grammar {.smaller}
+
+Which expressions count as a formula of quantificational logic?
+
+### atomic formula 
+
+::: {.definition}
+If $P$ is a predicate with $n$ argument places (or gaps) and each of $\tau_1, \dots, \tau_n$ is a constant or a variable, then $P\tau_1 \dots \tau_n$ is an **atomic formula**.
+:::
+
+Atomic formulas are predications:
+
+$$
+Pa, \quad Qab, \quad Px, \quad Qacxb, \quad \dots
+$$
+They are formal counterparts of basic English sentences:
+
+- Sam is tall
+
+- Sam lives next to Jenna
+
+- She is tall.
+
+- It lies between London, Madrid and Berlin.
+
+
+
+## formula {.smaller}
+
+:::{.incremental}
+1. All *atomic formulas* are *formulas*.\
+2. If $\varphi$ and $\psi$ are *formulas*, then each of
+$$
+\neg  \varphi, (\varphi \wedge \psi), (\varphi \vee \psi), (\varphi \to \psi)
+$$
+is a *formula*.\
+3. If $\varphi$ is a formula and $v$ is a variable, then $\forall v\, \varphi$ and $\exists v\, \varphi$ are formulas.  
+4. Nothing else is a *formula*.
+:::
+
+
+. . . 
+
+::: {style="height: 10px;"}
+:::
+
+
+**example:** $(\forall x Pxy \to \exists y Qab)$
+
+::: {.incremental}
+- By rule 2, it is a formula if $\forall x Pxy$ and $\exists y Qab$ are.
+- By rule 3, $\forall x Pxy$ is a formula if $Pxy$ is.
+- By rule 3, $\exists y Qab$ is a formula if $Qab$ is.
+- By rule 1, $Pxy$ and $Qab$ are formulas because they are atomic formulas.
+:::
+
+
+
+
+## example: $(\forall x Pxy \to \exists y Qab)$ {.smaller}
+
+
+The formula checker produces a parse tree for the formula:
+
+```{.QLFormulaChecker card="tree" height="450px"}
+(∀x Pxy → ∃y Qab)
+```
+
+## example: $\forall x (Pxy \to \exists y Qab)$ {.smaller}
+
+Compare with another case:
+
+::: {.incremental}
+- By rule 3, it is a formula if $(Pxy \to \exists y Qab)$ is.
+- By rule 2, $(Pxy \to \exists y Qab)$ is a formula if $Pxy$ and $\exists y Qab$ are.
+- By rule 3, $\exists y Qab$ is a formula if $Qab$ is.
+- By rule 1, $Pxy$ and $Qab$ are formulas because they are atomic formulas.
+:::
+
+```{.QLFormulaChecker card="tree" height="425px"}
+∀x(Pxy → ∃y Qab)
+```
+
+## practice: build the tree
+
+Identify the main connective at each stage.
+
+```{.QLFormulaChecker card="formula"}
+∀x(Pxy → ∃y Qab)
+```
+
+# free and bound variables {.divider}
+
+Not all formulas are alike.
+
+## scope
+
+::: {.columns}
+::: {.column width="48%"}
+$$
+(\forall x Px \to \exists y Qxy)
+$$
+
+::: {.fragment .caption}
+The last occurrence of $x$ lies **outside** the scope of $\forall x$.
+:::
+
+```{.QLFormulaChecker card="tree" height="450px"}
+(∀x Px → ∃y Qxy)
+```
+:::
+
+::: {.column width="48%"}
+$$
+\forall x (Px \to \exists y Qxy)
+$$
+
+::: {.fragment .caption}
+The last occurrence of $x$ lies **inside** the scope of $\forall x$.
+:::
+
+```{.QLFormulaChecker card="tree" height="450px"}
+∀x (Px → ∃y Qxy)
+```
+:::
+:::
+
+. . .
+
+
+
+## free occurrences {.smaller}
+
+::: {.definition}
+1. All occurrences of a variable in an atomic formula are **free**.
+2. Free occurrences in $\varphi$ and $\psi$ remain free in $\neg\varphi$, $(\varphi \wedge \psi)$, $(\varphi \vee \psi)$, $(\varphi \to \psi)$.
+3. No occurrence of $v$ is free in $\forall v\, \varphi$ or $\exists v\, \varphi$.
+:::
+
+. . .
+
+An occurrence is **free** if it has not been captured by a quantifier.
+
+::: {style="height: 10px;"}
+:::
+
+
+**example:** $(Px \to (Qxy \to \forall x Rxx))$ {.smaller}
+
+::: {.incremental}
+- By rule 1, $x$ is free in $Px$; by rule 2 it stays free in $(Px \to \psi)$.
+- By rule 1, $x$ is free in $Qxy$; by rule 2 it stays free in $(Qxy \to \psi)$.
+- By rule 3, the last two occurrences of $x$, in $\forall x Rxx$, are not free.
+:::
+
+
+
+## example: $(Px \to (Qxy \to \forall x Rxx))$ {.smaller}
+
+
+```{.QLFormulaChecker card="tree-vars"}
+(Px → (Qxy → ∀x Rxx))
+```
+
+## bound, open, closed {.smaller}
+
+::: {.definition}
+An occurrence of a variable is **bound** iff it is not free.
+:::
+
+::: {.definition .fragment}
+A variable occurs **freely** in a formula iff some of its occurrences are free.
+:::
+
+::: {.definition .fragment}
+A formula is **open** iff some variable occurs freely in it. Otherwise it is **closed**.
+:::
+
+::: {.definition .fragment}
+A **sentence** of quantificational logic is a closed formula.
+:::
+
+## open or closed? {.smaller}
+
+::: {.columns}
+::: {.column width="48%"}
+```{.QLFormulaChecker card="full" height="560px"}
+(∀x Px → ∃y Qxy)
+```
+:::
+
+::: {.column width="48%"}
+```{.QLFormulaChecker card="full" height="560px"}
+∀x(Px → ∃y Qxy)
+```
+:::
+:::
+
+## practice {.smaller}
+
+Build the tree, mark each occurrence free or bound, then decide: open or closed?
+
+```{.QLFormulaChecker card="formula"}
+∃x(Px ∧ ∀y(Rxy → Qz))
+```
