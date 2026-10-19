@@ -564,6 +564,15 @@ Pa, \quad Qab, \quad Px, \quad Qacxb, \quad \dots
 <h1>free and bound variables</h1>
 <p>Not all formulas are alike.</p>
 </section>
+<section id="scope-at-a-glance" class="slide level2">
+<h2>scope at a glance</h2>
+<p>Each quantifier governs the formula that immediately follows it.</p>
+<div class="diagram"><svg viewbox="0 0 490 150" width="490" height="150" xmlns="http://www.w3.org/2000/svg"><text x="20" y="120" font-size="30" fill="#1f5fbf">∀x</text><text x="70" y="120" font-size="30" fill="#222">(</text><text x="102" y="120" font-size="30" fill="#222">Px</text><text x="152" y="120" font-size="30" fill="#222">→</text><text x="184" y="120" font-size="30" fill="#c2410c">∃y</text><text x="234" y="120" font-size="30" fill="#222">(</text><text x="266" y="120" font-size="30" fill="#222">Qy</text><text x="316" y="120" font-size="30" fill="#222">∧</text><text x="348" y="120" font-size="30" fill="#222">Rxy</text><text x="416" y="120" font-size="30" fill="#222">)</text><text x="448" y="120" font-size="30" fill="#222">)</text><path d="M35,90 Q240,10 460,90" fill="none" stroke="#1f5fbf" stroke-width="3"></path><path d="M199,92 Q306,45 428,92" fill="none" stroke="#c2410c" stroke-width="3"></path></svg></div>
+<ul>
+<li class="fragment">The scope of <span class="v1"><span class="math inline">\(\forall x\)</span></span> is the entire formula, and the occurrence of <span class="math inline">\(x\)</span> in <span class="math inline">\(Rxy\)</span> is bound by it.</li>
+<li class="fragment">The scope of <span class="v2"><span class="math inline">\(\exists y\)</span></span> is only <span class="math inline">\((Qy \wedge Rxy)\)</span>.</li>
+</ul>
+</section>
 <section id="scope" class="slide level2">
 <h2>scope</h2>
 <div class="columns">
@@ -599,7 +608,7 @@ Pa, \quad Qab, \quad Px, \quad Qacxb, \quad \dots
 <div style="height: 10px;">
 
 </div>
-<p><strong>example:</strong> <span class="math inline">\((Px \to (Qxy \to \forall x Rxx))\)</span> {.smaller}</p>
+<p><strong>example:</strong> <span class="math inline">\((Px \to (Qxy \to \forall x Rxx))\)</span></p>
 <ul>
 <li class="fragment">By rule 1, <span class="math inline">\(x\)</span> is free in <span class="math inline">\(Px\)</span>; by rule 2 it stays free in <span class="math inline">\((Px \to \psi)\)</span>.</li>
 <li class="fragment">By rule 1, <span class="math inline">\(x\)</span> is free in <span class="math inline">\(Qxy\)</span>; by rule 2 it stays free in <span class="math inline">\((Qxy \to \psi)\)</span>.</li>
