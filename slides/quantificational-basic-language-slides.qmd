@@ -489,6 +489,21 @@ Identify the main connective at each stage.
 
 Not all formulas are alike.
 
+
+## scope at a glance
+
+Each quantifier governs the formula that immediately follows it.
+
+```{=html}
+<div class="diagram"><svg viewBox="0 0 490 150" width="490" height="150" xmlns="http://www.w3.org/2000/svg"><text x="20" y="120" font-size="30" fill="#1f5fbf">∀x</text><text x="70" y="120" font-size="30" fill="#222">(</text><text x="102" y="120" font-size="30" fill="#222">Px</text><text x="152" y="120" font-size="30" fill="#222">→</text><text x="184" y="120" font-size="30" fill="#c2410c">∃y</text><text x="234" y="120" font-size="30" fill="#222">(</text><text x="266" y="120" font-size="30" fill="#222">Qy</text><text x="316" y="120" font-size="30" fill="#222">∧</text><text x="348" y="120" font-size="30" fill="#222">Rxy</text><text x="416" y="120" font-size="30" fill="#222">)</text><text x="448" y="120" font-size="30" fill="#222">)</text><path d="M35,90 Q240,10 460,90" fill="none" stroke="#1f5fbf" stroke-width="3"/><path d="M199,92 Q306,45 428,92" fill="none" stroke="#c2410c" stroke-width="3"/></svg></div>
+```
+
+::: {.incremental}
+- The scope of [$\forall x$]{.v1} is the entire formula, and the occurrence of $x$ in $Rxy$ is bound by it.
+- The scope of [$\exists y$]{.v2} is only $(Qy \wedge Rxy)$.
+:::
+
+
 ## scope
 
 ::: {.columns}
@@ -541,7 +556,7 @@ An occurrence is **free** if it has not been captured by a quantifier.
 :::
 
 
-**example:** $(Px \to (Qxy \to \forall x Rxx))$ {.smaller}
+**example:** $(Px \to (Qxy \to \forall x Rxx))$ 
 
 ::: {.incremental}
 - By rule 1, $x$ is free in $Px$; by rule 2 it stays free in $(Px \to \psi)$.
