@@ -147,7 +147,7 @@ Gabriel Uzquiano
 <section>
 <section id="beyond-propositional-logic" class="title-slide slide level1 divider center">
 <h1>beyond propositional logic</h1>
-<p>Propositional logic does not account for the validity of a variety of natural language arguments.</p>
+<p>Propositional logic does not account for the validity of many natural language arguments.</p>
 </section>
 <section id="a-valid-argument" class="slide level2 smaller">
 <h2>a valid argument</h2>
@@ -183,6 +183,7 @@ Gabriel Uzquiano
 </div>
 </div>
 </div><div class="column" style="width:33%;">
+<div class="fragment">
 <div class="argument">
 <ol type="1">
 <li>Every <strong>logician</strong> is <strong>a philosopher</strong>.</li>
@@ -194,7 +195,9 @@ Gabriel Uzquiano
 </ol>
 </div>
 </div>
+</div>
 </div><div class="column" style="width:33%;">
+<div class="fragment">
 <div class="argument">
 <ol type="1">
 <li>Every <strong>professor</strong> is <strong>a parking permit holder</strong>.</li>
@@ -204,6 +207,7 @@ Gabriel Uzquiano
 <ol start="3" type="1">
 <li><strong>Beth</strong> is <strong>parking permit holder</strong>.</li>
 </ol>
+</div>
 </div>
 </div>
 </div></div>
@@ -347,7 +351,7 @@ T &amp; T &amp; T &amp; \color{red}{T} &amp;  \color{red}{T}  &amp;   \color{red
 <section id="predicates" class="slide level2 smaller">
 <h2>predicates</h2>
 <div class="definition">
-<p>A <strong>predicate</strong> is an expression that combines with one or more designators to form a sentence, which says of some thing or things that they are a certain way or stand in a certain relation.</p>
+<p>A <strong>predicate</strong> is an expression that combines with one or more designators to form a sentence, which says of some thing (or things) that they are a certain way (or stand in a certain relation).</p>
 </div>
 <div class="fragment">
 <ul>
@@ -375,8 +379,9 @@ T &amp; T &amp; T &amp; \color{red}{T} &amp;  \color{red}{T}  &amp;   \color{red
 <li><mark>Something</mark> is a historic-cultural landmark, and it is free to visit</li>
 <li><mark>Someone</mark> will meet you before lunch</li>
 <li><mark>All philosophers</mark> are curious</li>
+<li><mark>Nobody</mark> told me about the meeting</li>
 </ul>
-<p>Since `nobody’ is not a designator, the arguments below differ in form:</p>
+<p>Since ‘nobody’ is not a designator, the arguments below <strong>differ in form</strong>:</p>
 <div class="columns">
 <div class="column" style="width:46%;">
 <div class="fragment">
@@ -531,9 +536,9 @@ Pa, \quad Qab, \quad Px, \quad Qacxb, \quad \dots
 </div>
 <p><strong>example:</strong> <span class="math inline">\((\forall x Pxy \to \exists y Qab)\)</span></p>
 <ul>
-<li class="fragment">By rule 2, it is a formula if <span class="math inline">\(\forall x Pxy\)</span> and <span class="math inline">\(\exists y Qab\)</span> are.</li>
-<li class="fragment">By rule 3, <span class="math inline">\(\forall x Pxy\)</span> is a formula if <span class="math inline">\(Pxy\)</span> is.</li>
-<li class="fragment">By rule 3, <span class="math inline">\(\exists y Qab\)</span> is a formula if <span class="math inline">\(Qab\)</span> is.</li>
+<li class="fragment">By rule 2, it is a formula if <span class="math inline">\(\forall x \ Pxy\)</span> and <span class="math inline">\(\exists y \ Qab\)</span> are.</li>
+<li class="fragment">By rule 3, <span class="math inline">\(\forall x \ Pxy\)</span> is a formula if <span class="math inline">\(Pxy\)</span> is.</li>
+<li class="fragment">By rule 3, <span class="math inline">\(\exists y \ Qab\)</span> is a formula if <span class="math inline">\(Qab\)</span> is.</li>
 <li class="fragment">By rule 1, <span class="math inline">\(Pxy\)</span> and <span class="math inline">\(Qab\)</span> are formulas because they are atomic formulas.</li>
 </ul>
 </div>
@@ -545,14 +550,17 @@ Pa, \quad Qab, \quad Px, \quad Qacxb, \quad \dots
 </section>
 <section id="example-forall-x-pxy-to-exists-y-qab-1" class="slide level2 smaller">
 <h2>example: <span class="math inline">\(\forall x (Pxy \to \exists y Qab)\)</span></h2>
-<p>Compare with another case:</p>
+<p>Compare with another case: <span class="math inline">\(\forall x (Pxy \to \exists y Qab)\)</span></p>
 <ul>
 <li class="fragment">By rule 3, it is a formula if <span class="math inline">\((Pxy \to \exists y Qab)\)</span> is.</li>
 <li class="fragment">By rule 2, <span class="math inline">\((Pxy \to \exists y Qab)\)</span> is a formula if <span class="math inline">\(Pxy\)</span> and <span class="math inline">\(\exists y Qab\)</span> are.</li>
 <li class="fragment">By rule 3, <span class="math inline">\(\exists y Qab\)</span> is a formula if <span class="math inline">\(Qab\)</span> is.</li>
 <li class="fragment">By rule 1, <span class="math inline">\(Pxy\)</span> and <span class="math inline">\(Qab\)</span> are formulas because they are atomic formulas.</li>
 </ul>
-<div class="checker-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/ql-formula-checker/?card=tree#v1:eyJmIjoi4oiAeChQeHkg4oaSIOKIg3kgUWFiKSJ9" style="width: 100%; height: 425px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="QL formula checker (tree)"></iframe></div>
+</section>
+<section id="example-forall-x-pxy-to-exists-y-qab-2" class="slide level2 smaller">
+<h2>example: <span class="math inline">\(\forall x (Pxy \to \exists y Qab)\)</span></h2>
+<div class="checker-embed" style="margin: 0.4rem 0 0.5rem; width: 92%; margin-left: 4%;"><iframe src="https://gabriel-uzquiano.github.io/ql-formula-checker/?card=tree#v1:eyJmIjoi4oiAeChQeHkg4oaSIOKIg3kgUWFiKSJ9" style="width: 100%; height: 550px; border: 1px solid #ddd; border-radius: 4px; background: #fffff8;" loading="lazy" title="QL formula checker (tree)"></iframe></div>
 </section>
 <section id="practice-build-the-tree" class="slide level2">
 <h2>practice: build the tree</h2>
@@ -569,7 +577,7 @@ Pa, \quad Qab, \quad Px, \quad Qacxb, \quad \dots
 <p>Each quantifier governs the formula that immediately follows it.</p>
 <div class="diagram"><svg viewbox="0 0 490 150" width="490" height="150" xmlns="http://www.w3.org/2000/svg"><text x="20" y="120" font-size="30" fill="#1f5fbf">∀x</text><text x="70" y="120" font-size="30" fill="#222">(</text><text x="102" y="120" font-size="30" fill="#222">Px</text><text x="152" y="120" font-size="30" fill="#222">→</text><text x="184" y="120" font-size="30" fill="#c2410c">∃y</text><text x="234" y="120" font-size="30" fill="#222">(</text><text x="266" y="120" font-size="30" fill="#222">Qy</text><text x="316" y="120" font-size="30" fill="#222">∧</text><text x="348" y="120" font-size="30" fill="#222">Rxy</text><text x="416" y="120" font-size="30" fill="#222">)</text><text x="448" y="120" font-size="30" fill="#222">)</text><path d="M35,90 Q240,10 460,90" fill="none" stroke="#1f5fbf" stroke-width="3"></path><path d="M199,92 Q306,45 428,92" fill="none" stroke="#c2410c" stroke-width="3"></path></svg></div>
 <ul>
-<li class="fragment">The scope of <span class="v1"><span class="math inline">\(\forall x\)</span></span> is the entire formula, and the occurrence of <span class="math inline">\(x\)</span> in <span class="math inline">\(Rxy\)</span> is bound by it.</li>
+<li class="fragment">The scope of <span class="v1"><span class="math inline">\(\forall x\)</span></span> is the formula <span class="math inline">\(Px \to \exists y (Qy \wedge Rxy)\)</span>, and the occurrence of <span class="math inline">\(x\)</span> in <span class="math inline">\(Rxy\)</span> is bound by it.</li>
 <li class="fragment">The scope of <span class="v2"><span class="math inline">\(\exists y\)</span></span> is only <span class="math inline">\((Qy \wedge Rxy)\)</span>.</li>
 </ul>
 </section>
