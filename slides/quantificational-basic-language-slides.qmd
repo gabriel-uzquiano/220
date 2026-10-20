@@ -28,7 +28,7 @@ format:
 
 # beyond propositional logic {.divider}
 
-Propositional logic does not account for the validity of a variety of natural language arguments.
+Propositional logic does not account for the validity of many natural language arguments.
 
 ## a valid argument {.smaller}
 
@@ -67,6 +67,7 @@ This appears to be an instance of a valid argument form:
 
 ::: {.column width="33%"}
 
+::: {.fragment}
 ::: {.argument}
 1. Every **logician** is **a philosopher**.
 2. **Kurt** is a **logician**.
@@ -78,8 +79,11 @@ This appears to be an instance of a valid argument form:
 
 :::
 
+:::
+
 ::: {.column width="33%"}
 
+::: {.fragment}
 ::: {.argument}
 1. Every **professor** is **a parking permit holder**.
 2. **Beth** is a **professor**.
@@ -87,6 +91,8 @@ This appears to be an instance of a valid argument form:
 ::: {.conclusion}
 3. **Beth** is **parking permit holder**.
 :::
+:::
+
 :::
 
 :::
@@ -239,7 +245,7 @@ Notice that the occurrence of 'it' in the third sentence co-refers with 'The Gri
 ## predicates {.smaller}
 
 ::: {.definition}
-A **predicate** is an expression that combines with one or more designators to form a sentence, which says of some thing or things that they are a certain way or stand in a certain relation.
+A **predicate** is an expression that combines with one or more designators to form a sentence, which says of some thing (or things) that they are a certain way (or stand in a certain relation).
 :::
 
 . . .
@@ -273,8 +279,9 @@ A **quantifier phrase** is an expression used to indicate generality.
 - [Something]{.mark} is a historic-cultural landmark, and it is free to visit
 - [Someone]{.mark} will meet you before lunch
 - [All philosophers]{.mark} are curious
+- [Nobody]{.mark} told me about the meeting
 
-Since `nobody' is not a designator, the arguments below differ in form:
+Since 'nobody' is not a designator, the arguments below **differ in form**:
 
 ::: {.columns}
 ::: {.column width="46%"}
@@ -444,9 +451,9 @@ is a *formula*.\
 **example:** $(\forall x Pxy \to \exists y Qab)$
 
 ::: {.incremental}
-- By rule 2, it is a formula if $\forall x Pxy$ and $\exists y Qab$ are.
-- By rule 3, $\forall x Pxy$ is a formula if $Pxy$ is.
-- By rule 3, $\exists y Qab$ is a formula if $Qab$ is.
+- By rule 2, it is a formula if $\forall x \ Pxy$ and $\exists y \ Qab$ are.
+- By rule 3, $\forall x \ Pxy$ is a formula if $Pxy$ is.
+- By rule 3, $\exists y \ Qab$ is a formula if $Qab$ is.
 - By rule 1, $Pxy$ and $Qab$ are formulas because they are atomic formulas.
 :::
 
@@ -464,7 +471,7 @@ The formula checker produces a parse tree for the formula:
 
 ## example: $\forall x (Pxy \to \exists y Qab)$ {.smaller}
 
-Compare with another case:
+Compare with another case: $\forall x (Pxy \to \exists y Qab)$
 
 ::: {.incremental}
 - By rule 3, it is a formula if $(Pxy \to \exists y Qab)$ is.
@@ -473,7 +480,11 @@ Compare with another case:
 - By rule 1, $Pxy$ and $Qab$ are formulas because they are atomic formulas.
 :::
 
-```{.QLFormulaChecker card="tree" height="425px"}
+
+
+## example: $\forall x (Pxy \to \exists y Qab)$ {.smaller}
+
+```{.QLFormulaChecker card="tree" height="550px"}
 ∀x(Pxy → ∃y Qab)
 ```
 
@@ -499,7 +510,7 @@ Each quantifier governs the formula that immediately follows it.
 ```
 
 ::: {.incremental}
-- The scope of [$\forall x$]{.v1} is the entire formula, and the occurrence of $x$ in $Rxy$ is bound by it.
+- The scope of [$\forall x$]{.v1} is the formula $Px \to \exists y (Qy \wedge Rxy)$, and the occurrence of $x$ in $Rxy$ is bound by it.
 - The scope of [$\exists y$]{.v2} is only $(Qy \wedge Rxy)$.
 :::
 
