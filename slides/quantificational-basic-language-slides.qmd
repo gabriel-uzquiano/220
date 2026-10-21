@@ -155,7 +155,7 @@ $$
 \hline
 p & q & r &  p & \ q \ & \ r \\
 \hline
-T & T & T & \color{red}{T} &  \color{red}{T}  &   \color{red}{F}  \\
+T & T & F & \color{red}{T} &  \color{red}{T}  &   \color{red}{F}  \\
 \hline
 \end{array}
 $$
@@ -424,7 +424,7 @@ They are formal counterparts of basic English sentences:
 
 - She is tall.
 
-- It lies between London, Madrid and Berlin.
+- Paris lies between London, it, and Berlin.
 
 
 
