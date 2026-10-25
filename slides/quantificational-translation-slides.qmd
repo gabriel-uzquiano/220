@@ -791,7 +791,7 @@ We proceed in three steps:
 What claims do these make? 
 
 ::: {.columns}
-::: {.column width="25%"}
+::: {.column width="35%"}
 **translation key**
 
 ::: {.argument}
@@ -804,7 +804,7 @@ $Px$: $x$ is a philosopher
 
 :::
 
-::: {.column width="75%"}
+::: {.column width="65%"}
 
 ::: {style="height: 40px;"}
 :::
