@@ -207,8 +207,8 @@ Gabriel Uzquiano
 </div>
 </div><div class="column" style="width:70%;">
 <div class="argument">
-<p>Every <span class="v1">thing</span> is such that <strong>if</strong> <span class="v1">it</span> is a whale, <strong>then</strong> <span class="v1">it</span> lives underwater.</p>
-<p>Every <span class="v1"><span class="math inline">\(x\)</span></span> is such that (<span class="v1"><span class="math inline">\(x\)</span></span> is a whale <span class="math inline">\(\to\)</span> <span class="v1"><span class="math inline">\(x\)</span></span> lives underwater).</p>
+<p>For every <span class="v1">thing</span>, <strong>if</strong> <span class="v1">it</span> is a whale, <strong>then</strong> <span class="v1">it</span> lives underwater.</p>
+<p>For every <span class="v1"><span class="math inline">\(x\)</span></span>, (<span class="v1"><span class="math inline">\(x\)</span></span> is a whale <span class="math inline">\(\to\)</span> <span class="v1"><span class="math inline">\(x\)</span></span> lives underwater).</p>
 </div>
 <div class="fragment">
 <p><span class="math display">\[
@@ -230,8 +230,8 @@ Gabriel Uzquiano
 </div>
 </div><div class="column" style="width:70%;">
 <div class="argument">
-<p>Some <span class="v1">thing</span> is such that <span class="v1">it</span> is a whale <strong>and</strong> <span class="v1">it</span> came close to shore.</p>
-<p>Some <span class="v1"><span class="math inline">\(x\)</span></span> is such that (<span class="v1"><span class="math inline">\(x\)</span></span> is a whale <span class="math inline">\(\wedge\)</span> <span class="v1"><span class="math inline">\(x\)</span></span> came close to shore).</p>
+<p>For some <span class="v1">thing</span>, <span class="v1">it</span> is a whale <strong>and</strong> <span class="v1">it</span> came close to shore.</p>
+<p>For some <span class="v1"><span class="math inline">\(x\)</span></span>, (<span class="v1"><span class="math inline">\(x\)</span></span> is a whale <span class="math inline">\(\wedge\)</span> <span class="v1"><span class="math inline">\(x\)</span></span> came close to shore).</p>
 </div>
 <div class="fragment">
 <p><span class="math display">\[
@@ -270,24 +270,24 @@ Gabriel Uzquiano
 <p>The context, not the grammar, selects the quantifier.</p>
 </div>
 </section>
-<section id="only-cetaceans-are-whales" class="slide level2 smaller">
-<h2>only cetaceans are whales</h2>
+<section id="only-mammals-are-whales" class="slide level2 smaller">
+<h2>only mammals are whales</h2>
 <div class="columns">
 <div class="column" style="width:30%;">
 <p><strong>translation key</strong></p>
 <div class="argument">
 <p>Domain: Animals</p>
-<p><span class="math inline">\(Px\)</span>: <span class="math inline">\(x\)</span> is a cetacean</p>
+<p><span class="math inline">\(Px\)</span>: <span class="math inline">\(x\)</span> is a mammal</p>
 <p><span class="math inline">\(Qx\)</span>: <span class="math inline">\(x\)</span> is a whale</p>
 </div>
 </div><div class="column" style="width:70%;">
 <blockquote>
-<p>Only cetaceans are whales.</p>
+<p>Only mammals are whales.</p>
 </blockquote>
 <div class="argument">
-<p>Every whale is a cetacean.</p>
-<p>Every <span class="v1"><span class="math inline">\(x\)</span></span> is such that <span class="v1"><span class="math inline">\(x\)</span></span> is a whale <strong>only if</strong> <span class="v1"><span class="math inline">\(x\)</span></span> is a cetacean.</p>
-<p>Every <span class="v1"><span class="math inline">\(x\)</span></span> is such that (<strong>if</strong> <span class="v1"><span class="math inline">\(x\)</span></span> is a whale, <strong>then</strong> <span class="v1"><span class="math inline">\(x\)</span></span> is a cetacean).</p>
+<p>Every whale is a mammal.</p>
+<p>For every <span class="v1"><span class="math inline">\(x\)</span></span>, <span class="v1"><span class="math inline">\(x\)</span></span> is a whale <strong>only if</strong> <span class="v1"><span class="math inline">\(x\)</span></span> is a mammal.</p>
+<p>For every <span class="v1"><span class="math inline">\(x\)</span></span>, (<strong>if</strong> <span class="v1"><span class="math inline">\(x\)</span></span> is a whale, <strong>then</strong> <span class="v1"><span class="math inline">\(x\)</span></span> is a mammal).</p>
 </div>
 <div class="fragment">
 <p><span class="math display">\[
@@ -295,7 +295,7 @@ Gabriel Uzquiano
 \]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="only-cetaceans-are-whales.svg" class="quarto-figure quarto-figure-center" width="300"></p>
+<p><img data-src="only-mammals-are-whales.svg" class="quarto-figure quarto-figure-center" width="300"></p>
 </figure>
 </div>
 <div style="text-align: center;">
@@ -309,18 +309,18 @@ Gabriel Uzquiano
 <div class="columns">
 <div class="column" style="width:48%;">
 <blockquote>
-<p>Only cetaceans are whales.</p>
+<p>Only mammals are whales.</p>
 </blockquote>
 <div class="argument">
 <p><span class="math display">\[
 \forall x \ (Qx \to Px)
 \]</span></p>
-<p>Every whale is a cetacean. <strong>True.</strong></p>
+<p>Every whale is a mammal. <strong>True.</strong></p>
 </div>
 </div><div class="column" style="width:48%;">
 <div class="fragment">
 <blockquote>
-<p><del>Only cetaceans are whales.</del></p>
+<p><del>Only mammals are whales.</del></p>
 </blockquote>
 <div class="argument">
 <div style="height: 40px;">
@@ -330,7 +330,7 @@ Gabriel Uzquiano
 <div style="height: 3px;">
 
 </div>
-<p>Every cetacean is a whale. <strong>False. Dolphins are cetaceans.</strong></p>
+<p>Every mammal is a whale. <strong>False. Elephants are mammals.</strong></p>
 </div>
 </div>
 </div></div>
@@ -357,10 +357,10 @@ Gabriel Uzquiano
 <p>Some whales eat only krill.</p>
 </blockquote>
 <div class="argument">
-<p>Some <span class="v1"><span class="math inline">\(x\)</span></span> is such that <span class="v1"><span class="math inline">\(x\)</span></span> is a whale <strong>and</strong> <span class="v1"><span class="math inline">\(x\)</span></span> eats only krill.</p>
-<p>Some <span class="v1"><span class="math inline">\(x\)</span></span> is such that (<span class="v1"><span class="math inline">\(x\)</span></span> is a whale <span class="math inline">\(\wedge\)</span> <span class="slot"><span class="v1"><span class="math inline">\(x\)</span></span> eats only krill</span><span class="math inline">\()\)</span></p>
+<p>For some <span class="v1"><span class="math inline">\(x\)</span></span>, <span class="v1"><span class="math inline">\(x\)</span></span> is a whale <strong>and</strong> <span class="v1"><span class="math inline">\(x\)</span></span> eats only krill.</p>
+<p>For some <span class="v1"><span class="math inline">\(x\)</span></span>, (<span class="v1"><span class="math inline">\(x\)</span></span> is a whale <span class="math inline">\(\wedge\)</span> <span class="slot"><span class="v1"><span class="math inline">\(x\)</span></span> eats only krill</span><span class="math inline">\()\)</span></p>
 <p><span class="v1"><span class="math inline">\(x\)</span></span> eats only krill <span class="math inline">\(\;\leadsto\;\)</span> for every <span class="v2"><span class="math inline">\(y\)</span></span>, (<span class="v1"><span class="math inline">\(x\)</span></span> eats <span class="v2"><span class="math inline">\(y\)</span></span> <span class="math inline">\(\to\)</span> <span class="v2"><span class="math inline">\(y\)</span></span> is krill)</p>
-<p>Some <span class="v1"><span class="math inline">\(x\)</span></span> is such that (<span class="v1"><span class="math inline">\(x\)</span></span> is a whale <span class="math inline">\(\wedge\)</span> for every <span class="v2"><span class="math inline">\(y\)</span></span>, (<span class="v1"><span class="math inline">\(x\)</span></span> eats <span class="v2"><span class="math inline">\(y\)</span></span> <span class="math inline">\(\to\)</span> <span class="v2"><span class="math inline">\(y\)</span></span> is krill)).</p>
+<p>For some <span class="v1"><span class="math inline">\(x\)</span></span>, (<span class="v1"><span class="math inline">\(x\)</span></span> is a whale <span class="math inline">\(\wedge\)</span> for every <span class="v2"><span class="math inline">\(y\)</span></span>, (<span class="v1"><span class="math inline">\(x\)</span></span> eats <span class="v2"><span class="math inline">\(y\)</span></span> <span class="math inline">\(\to\)</span> <span class="v2"><span class="math inline">\(y\)</span></span> is krill)).</p>
 </div>
 <div class="fragment">
 <p><span class="math display">\[
@@ -385,7 +385,7 @@ Gabriel Uzquiano
 </blockquote>
 <div class="argument">
 <p>All whales are <strong>not</strong> fish.</p>
-<p>Every <span class="v1"><span class="math inline">\(x\)</span></span> is such that (<span class="v1"><span class="math inline">\(x\)</span></span> is a whale <span class="math inline">\(\to\)</span> <span class="math inline">\(\neg\)</span> <span class="v1"><span class="math inline">\(x\)</span></span> is a fish).</p>
+<p>For every <span class="v1"><span class="math inline">\(x\)</span></span>, (<span class="v1"><span class="math inline">\(x\)</span></span> is a whale <span class="math inline">\(\to\)</span> <span class="math inline">\(\neg\)</span> <span class="v1"><span class="math inline">\(x\)</span></span> is a fish).</p>
 </div>
 <div class="fragment">
 <p><span class="math display">\[
@@ -394,8 +394,8 @@ Gabriel Uzquiano
 </div>
 <div class="fragment">
 <div class="argument">
-<p>It’s <strong>not</strong> the case that some whale is a fish.</p>
-<p><span class="math inline">\(\neg\)</span> some <span class="v1"><span class="math inline">\(x\)</span></span> is such that (<span class="v1"><span class="math inline">\(x\)</span></span> is a whale <span class="math inline">\(\wedge\)</span> <span class="v1"><span class="math inline">\(x\)</span></span> is a fish).</p>
+<p>It’s <strong>not</strong> the case that some whales are fish.</p>
+<p><span class="math inline">\(\neg\)</span> for some <span class="v1"><span class="math inline">\(x\)</span></span>, (<span class="v1"><span class="math inline">\(x\)</span></span> is a whale <span class="math inline">\(\wedge\)</span> <span class="v1"><span class="math inline">\(x\)</span></span> is a fish).</p>
 </div>
 </div>
 <div class="fragment">
@@ -450,7 +450,7 @@ Gabriel Uzquiano
 </blockquote>
 <div class="argument">
 <p><strong>If</strong> some whale breathes air, <strong>then</strong> all whales breathe air.</p>
-<p>If (some <span class="v1"><span class="math inline">\(x\)</span></span> is such that (<span class="v1"><span class="math inline">\(x\)</span></span> is a whale <span class="math inline">\(\wedge\)</span> <span class="v1"><span class="math inline">\(x\)</span></span> breathes air) <span class="math inline">\(\to\)</span> every <span class="v1"><span class="math inline">\(x\)</span></span> is such that (<span class="v1"><span class="math inline">\(x\)</span></span> is a whale <span class="math inline">\(\to\)</span> <span class="v1"><span class="math inline">\(x\)</span></span> breathes air).</p>
+<p>If (for some <span class="v1"><span class="math inline">\(x\)</span></span>, (<span class="v1"><span class="math inline">\(x\)</span></span> is a whale <span class="math inline">\(\wedge\)</span> <span class="v1"><span class="math inline">\(x\)</span></span> breathes air) <span class="math inline">\(\to\)</span> for every <span class="v1"><span class="math inline">\(x\)</span></span>, (<span class="v1"><span class="math inline">\(x\)</span></span> is a whale <span class="math inline">\(\to\)</span> <span class="v1"><span class="math inline">\(x\)</span></span> breathes air).</p>
 </div>
 <div class="fragment">
 <p><span class="math display">\[
@@ -463,7 +463,7 @@ Gabriel Uzquiano
 </div></div>
 </section>
 <section id="any-v-every" class="slide level2 smaller">
-<h2>‘any’ v ‘every’</h2>
+<h2>any v every</h2>
 <div class="columns">
 <div class="column" style="width:48%;">
 <blockquote>
@@ -530,8 +530,8 @@ Gabriel Uzquiano
 <p>Everything has a cause.</p>
 </blockquote>
 <div class="argument">
-<p>Every <span class="v1"><span class="math inline">\(x\)</span></span> is such that <span class="v1"><span class="math inline">\(x\)</span></span> has a cause.</p>
-<p>Every <span class="v1"><span class="math inline">\(x\)</span></span> is such that some <span class="v2"><span class="math inline">\(y\)</span></span> is such that <span class="v2"><span class="math inline">\(y\)</span></span> causes <span class="v1"><span class="math inline">\(x\)</span></span>.</p>
+<p>For every <span class="v1"><span class="math inline">\(x\)</span></span>, <span class="v1"><span class="math inline">\(x\)</span></span> has a cause.</p>
+<p>For every <span class="v1"><span class="math inline">\(x\)</span></span>, for some <span class="v2"><span class="math inline">\(y\)</span></span>, <span class="v2"><span class="math inline">\(y\)</span></span> causes <span class="v1"><span class="math inline">\(x\)</span></span>.</p>
 </div>
 <div class="fragment">
 <p><span class="math display">\[
@@ -554,8 +554,8 @@ Gabriel Uzquiano
 <p>Something is a cause of everything.</p>
 </blockquote>
 <div class="argument">
-<p>Some <span class="v1"><span class="math inline">\(x\)</span></span> is such that <span class="v1"><span class="math inline">\(x\)</span></span> causes everything.</p>
-<p>Some <span class="v1"><span class="math inline">\(x\)</span></span> is such that every <span class="v2"><span class="math inline">\(y\)</span></span> is such that <span class="v1"><span class="math inline">\(x\)</span></span> causes <span class="v2"><span class="math inline">\(y\)</span></span>.</p>
+<p>For some <span class="v1"><span class="math inline">\(x\)</span></span>, <span class="v1"><span class="math inline">\(x\)</span></span> causes everything.</p>
+<p>For some <span class="v1"><span class="math inline">\(x\)</span></span>, for every <span class="v2"><span class="math inline">\(y\)</span></span>, <span class="v1"><span class="math inline">\(x\)</span></span> causes <span class="v2"><span class="math inline">\(y\)</span></span>.</p>
 </div>
 <div class="fragment">
 <p><span class="math display">\[
