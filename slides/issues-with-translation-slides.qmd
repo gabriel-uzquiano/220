@@ -47,15 +47,15 @@ Special quantifier phrases and structural ambiguity.
 
 1. Some quantifier phrases call for different quantifiers in different contexts: 'a $P$', 'only $P$', 'no $P$', 'any $P$'.
 
-2. Sentences with **multiple quantifiers** often give rise to **structural ambiguity**.
+2. Sentences with *multiple quantifiers* often give rise to *structural ambiguity*.
 
 # special quantifier phrases {.divider}
 
 'a $P$', 'only $P$', 'no $P$', and 'any $P$'.
 
-## 'an $F$'
+## a $P$
 
-The indefinite article 'a' often gives rise to ambiguity. But in each case below, one interpretation is more salient than the other:
+The indefinite article 'a' often gives rise to ambiguity. Context often makes one interpretation more salient than the other:
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -65,9 +65,11 @@ The indefinite article 'a' often gives rise to ambiguity. But in each case below
 :::
 
 ::: {.column width="50%"}
-> **Every** whale lives underwater.
+> *Every* whale lives underwater.
+  *Some* whale lives underwater.
 
-> **Some** whale came close to shore.
+> *Some* whale came close to shore.
+  *Every* whale came close to shore.
 :::
 :::
 
@@ -178,7 +180,7 @@ The context, not the grammar, selects the quantifier.
 :::
 
 
-## 'only cetaceans are whales' {.smaller}
+## only cetaceans are whales {.smaller}
 
 ::: {.columns}
 ::: {.column width="30%"}
@@ -302,7 +304,7 @@ $$
 :::
 :::
 
-## 'no $P$' {.smaller}
+## no $P$ {.smaller}
 
 ::: {.columns}
 ::: {.column width="30%"}
@@ -356,7 +358,7 @@ Both translations are acceptable: they are equivalent.
 
 
 
-## 'any' {.smaller}
+## any {.smaller}
 
 One difficulty with 'any' is that it calls for different quantifiers in different contexts.
 
