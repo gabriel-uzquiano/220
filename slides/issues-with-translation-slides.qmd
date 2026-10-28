@@ -382,7 +382,7 @@ $Qx$: $x$ breathes air
 ::: {.argument}
 All whales breathe air.
 
-Every [$x$]{.v1} is such that ([$x$]{.v1} is a whale $\to$ [$x$]{.v1} breathes air).
+For every [$x$]{.v1}, ([$x$]{.v1} is a whale $\to$ [$x$]{.v1} breathes air).
 :::
 
 ::: {.fragment}
@@ -472,35 +472,6 @@ Trivial.
 
 Multiple generality and the order of quantifiers.
 
-## there is a cause for everything {.smaller}
-
-::: {.columns}
-::: {.column width="30%"}
-**translation key**
-
-::: {.argument}
-Domain: Events
-
-$Rxy$: $x$ causes $y$
-:::
-:::
-
-::: {.column width="70%"}
-
-> There is a cause for everything.
-
-::: {.fragment}
-There are two candidate interpretations:
-
-::: {.argument}
-1. Everything has some cause or other.
-
-2. Some one thing is the cause of everything.
-:::
-:::
-:::
-:::
-
 ## everything has a cause {.smaller}
 
 ::: {.columns}
@@ -518,6 +489,35 @@ $Rxy$: $x$ causes $y$
 
 > Everything has a cause.
 
+::: {.fragment}
+There are two candidate interpretations:
+
+::: {.argument}
+1. Everything has some cause or another.
+
+2. Some one thing is the cause of everything.
+:::
+:::
+:::
+:::
+
+## everything has some cause or another {.smaller}
+
+::: {.columns}
+::: {.column width="30%"}
+**translation key**
+
+::: {.argument}
+Domain: Events
+
+$Rxy$: $x$ causes $y$
+:::
+:::
+
+::: {.column width="70%"}
+
+> Everything has some cause or another.
+
 ::: {.argument}
 For every [$x$]{.v1}, [$x$]{.v1} has a cause.
 
@@ -532,7 +532,7 @@ $$
 :::
 :::
 
-## something causes everything {.smaller}
+## something is a cause of everything {.smaller}
 
 ::: {.columns}
 ::: {.column width="30%"}
@@ -598,7 +598,7 @@ $Rxy$: $x$ registers for $y$
 Again a choice between two **non-equivalent** interpretations:
 
 ::: {.argument}
-1. Each student must register for some logic class or other.
+1. Each student must register for some logic class or another.
 
 2. There is one logic class every student must register for.
 :::
@@ -625,14 +625,14 @@ $Rxy$: $x$ registers for $y$
 
 ::: {.column width="75%"}
 
-> Each student must register for some logic class or other.
+> Each student must register for some logic class or another.
 
 ::: {.argument}
 For every [$x$]{.v1}, ([$x$]{.v1} is a student $\to$ [[$x$]{.v1} must register for some logic class]{.slot}$)$
 
 [$x$]{.v1} must register for some logic class $\;\leadsto\;$ for some [$y$]{.v2}, ([$y$]{.v2} is a logic class $\wedge$ [$x$]{.v1} must register for [$y$]{.v2})
 
-Every [$x$]{.v1} is such that ([$x$]{.v1} is a student $\to$ some [$y$]{.v2} is such that ([$y$]{.v2} is a logic class $\wedge$ [$x$]{.v1} must register for [$y$]{.v2})).
+For every [$x$]{.v1}, ([$x$]{.v1} is a student $\to$ some [$y$]{.v2} is such that ([$y$]{.v2} is a logic class $\wedge$ [$x$]{.v1} must register for [$y$]{.v2})).
 :::
 
 ::: {.fragment}
